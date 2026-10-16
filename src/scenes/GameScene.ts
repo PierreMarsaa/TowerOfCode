@@ -7,9 +7,8 @@ import { NpcBehaviorSystem } from '@/systems/NpcBehaviorSystem'
 import { saveManager } from '@/systems/SaveManager'
 import { getMapById } from '@/data/maps/MapRegistry'
 import { i18n } from '@/i18n/I18nManager'
-import { getChallenge } from '@/data/challenges'
 import { MAP_WIDTH_TILES, MAP_HEIGHT_TILES, TILE_SIZE } from '@/config/game.config'
-import type { ChallengeConfig, MapData } from '@/data/types'
+import type { MapData } from '@/data/types'
 import { buildTiledMapJson } from '@/utils/buildTiledMapJson'
 import { AnimatedTileSystem } from '@/systems/AnimatedTileSystem'
 import { HpManager } from '@/systems/HpManager'
@@ -19,6 +18,22 @@ import { HeartPickupManager } from './managers/HeartPickupManager'
 import { WarpManager } from './managers/WarpManager'
 import { Companion } from '@/entities/Companion'
 import { SCENE } from '@/utils/constants'
+import { mapDisplayName } from '@/utils/i18n-helpers'
+import { buildBattlePlan, isTrainer, trainerIdOf, type BattlePlan } from '@/systems/TrainerBattle'
+import type { DialogSceneData } from '@/scenes/DialogScene'
+import type { ChallengeResult } from '@/scenes/ChallengeScene'
+
+export interface GameSceneData {
+  mapId?: string
+  fromDirection?: 'up' | 'down'
+  fromMapId?: string
+  /** Map built in memory (editor test mode, death restart) */
+  mapData?: MapData
+  /** Write progress to the save. Defaults to false when mapData is given (editor test mode) */
+  persist?: boolean
+  /** Trainers beaten this session when not persisting (carried across death restarts) */
+  sessionDefeats?: string[]
+}
 
 export class GameScene extends Phaser.Scene {
   private player!: Player
@@ -36,17 +51,68 @@ export class GameScene extends Phaser.Scene {
   private escKey?: Phaser.Input.Keyboard.Key
   private mapData!: MapData
   private pristineMap!: string  // JSON snapshot for clean restart
-  private challengeStateOnEntry: string[] = []
+  private persist = true
+  private sessionDefeats: string[] = []
   private isDead = false
   private talkingNpc?: NPC
   private companion?: Companion
+  private deathOverlay?: HTMLDivElement
+
+  // Scene-event handlers are fields so they can be removed by reference on shutdown:
+  // scene.events outlives a restart, so anonymous handlers would pile up per map load.
+  private readonly onChallengeClosed = (result?: ChallengeResult): void => {
+    if (result?.won && result.trainerId) this.recordDefeat(result.trainerId)
+    // Sync HUD when returning from challenge (HP may have changed)
+    this.heartHud?.update(this.hpManager.hp)
+    if (this.hpManager.isDead) {
+      this.handleDeath()
+    }
+  }
+
+  private readonly onNpcInteract = (npc: NPC): void => {
+    this.behaviorSystem.markDetected(npc)
+    npc.showBubble(this, '...', false)
+    this.talkingNpc = npc
+    this.handleNPCInteraction(npc)
+  }
+
+  // On resume (after dialog/challenge): flush stale keyboard state,
+  // briefly block interactions, and re-check gatekeepers
+  private readonly onResume = (): void => {
+    this.input.keyboard!.resetKeys()
+    if (this.talkingNpc) {
+      this.talkingNpc.hideBubble()
+      this.talkingNpc = undefined
+    }
+    if (this.hpManager.isDead) return
+    this.interaction.setEnabled(false)
+    this.time.delayedCall(300, () => this.interaction.setEnabled(true))
+    this.updateGatekeepers()
+  }
+
+  // Runs on scene shutdown (map change, menu) and on game destroy (editor test mode)
+  private readonly onShutdown = (): void => {
+    this.events.off('challenge-closed', this.onChallengeClosed)
+    this.events.off('npc-interact', this.onNpcInteract)
+    this.events.off('resume', this.onResume)
+    this.events.off('shutdown', this.onShutdown)
+    this.events.off('destroy', this.onShutdown)
+    const langBtn = document.getElementById('lang-toggle')
+    if (langBtn) langBtn.style.display = ''
+    this.deathOverlay?.remove()
+    this.deathOverlay = undefined
+    this.escKey = undefined // the keyboard plugin destroys its keys on shutdown
+  }
 
   constructor() {
     super({ key: SCENE.GAME })
   }
 
-  create(data?: { mapId?: string; fromDirection?: 'up' | 'down'; fromMapId?: string; mapData?: MapData }): void {
+  create(data?: GameSceneData): void {
     this.isDead = false
+    // Editor test mode passes a map in memory: keep its progress out of the real save
+    this.persist = data?.persist ?? !data?.mapData
+    this.sessionDefeats = [...(data?.sessionDefeats ?? [])]
 
     // Resolve map: from direct data (test mode), then registry, then save, fallback
     const save = saveManager
@@ -59,10 +125,7 @@ export class GameScene extends Phaser.Scene {
     this.mapData = mapData
 
     // Persist current map (skip in test mode)
-    if (!data?.mapData) save.setCurrentMap(mapData.id)
-
-    // Snapshot challenge state so we can restore on death
-    this.challengeStateOnEntry = [...save.getCompletedChallenges()]
+    if (this.persist) save.setCurrentMap(mapData.id)
 
     const mapW = mapData.width ?? MAP_WIDTH_TILES
     const mapH = mapData.height ?? MAP_HEIGHT_TILES
@@ -185,16 +248,21 @@ export class GameScene extends Phaser.Scene {
 
     // Warp system (stairs, teleports)
     this.warpManager = new WarpManager(this, this.gridMovement, mapData, this.player)
+    this.warpManager.onTeleport = () => this.placeCompanionBehindPlayer()
+  }
+
+  /** After a teleport, put the companion right behind the player (or on the player's tile if that's blocked) */
+  private placeCompanionBehindPlayer(): void {
+    if (!this.companion) return
+    const behind = Companion.behindPosition(this.player.tileX, this.player.tileY, this.player.facing)
+    const spot = this.gridMovement.isBlocked(behind.x, behind.y)
+      ? { x: this.player.tileX, y: this.player.tileY }
+      : behind
+    this.companion.teleportTo(this, spot.x, spot.y, this.player.facing)
   }
 
   private setupEventHandlers(): void {
-    // Sync HUD when returning from challenge (HP may have changed)
-    this.events.on('challenge-closed', () => {
-      this.heartHud?.update(this.hpManager.hp)
-      if (this.hpManager.isDead) {
-        this.handleDeath()
-      }
-    })
+    this.events.on('challenge-closed', this.onChallengeClosed)
 
     // Behavior system (detect, lookout, patrol)
     this.behaviorSystem = new NpcBehaviorSystem(this, this.npcs, this.gridMovement, this.player)
@@ -202,30 +270,18 @@ export class GameScene extends Phaser.Scene {
     // Interaction system
     this.interaction = new InteractionSystem(this, this.npcs, this.gridMovement, this.player)
 
+    // Beaten trainers no longer spot the player (they stay put; talk to them for a rematch)
+    for (const npc of this.npcs) {
+      if (isTrainer(npc.data) && this.isDefeated(trainerIdOf(this.mapData.id, npc.data))) {
+        this.behaviorSystem.markDetected(npc)
+      }
+    }
+
     // Hide gatekeepers if map is already complete
     this.updateGatekeepers()
 
-    // NPC interaction handler
-    this.events.on('npc-interact', (npc: NPC) => {
-      this.behaviorSystem.markDetected(npc)
-      npc.showBubble(this, '...', false)
-      this.talkingNpc = npc
-      this.handleNPCInteraction(npc)
-    })
-
-    // On resume (after dialog/challenge): flush stale keyboard state,
-    // briefly block interactions, and re-check gatekeepers
-    this.events.on('resume', () => {
-      this.input.keyboard!.resetKeys()
-      if (this.talkingNpc) {
-        this.talkingNpc.hideBubble()
-        this.talkingNpc = undefined
-      }
-      if (this.hpManager.isDead) return
-      this.interaction.setEnabled(false)
-      this.time.delayedCall(300, () => this.interaction.setEnabled(true))
-      this.updateGatekeepers()
-    })
+    this.events.on('npc-interact', this.onNpcInteract)
+    this.events.on('resume', this.onResume)
   }
 
   private setupCamera(map: Phaser.Tilemaps.Tilemap): void {
@@ -235,11 +291,10 @@ export class GameScene extends Phaser.Scene {
   }
 
   private showMapName(mapData: MapData): void {
-    const mapNameKey = `${mapData.id.replace('-', '_')}_name`
     const banner = this.add.text(
       this.cameras.main.centerX,
       this.cameras.main.centerY - 40,
-      i18n.t(mapNameKey),
+      mapDisplayName(mapData),
       { fontSize: '18px', color: '#ffffff', fontFamily: 'monospace', backgroundColor: '#000000aa', padding: { x: 12, y: 6 } }
     ).setOrigin(0.5).setScrollFactor(0).setDepth(100)
 
@@ -262,13 +317,8 @@ export class GameScene extends Phaser.Scene {
     const langBtn = document.getElementById('lang-toggle')
     if (langBtn) langBtn.style.display = 'none'
 
-    this.events.on('shutdown', () => {
-      if (langBtn) langBtn.style.display = ''
-      if (this.escKey) {
-        this.input.keyboard!.removeKey(this.escKey)
-        this.escKey = undefined
-      }
-    })
+    this.events.once('shutdown', this.onShutdown)
+    this.events.once('destroy', this.onShutdown)
   }
 
   update(_time: number, delta: number): void {
@@ -322,26 +372,42 @@ export class GameScene extends Phaser.Scene {
   }
 
 
-  private handleNPCInteraction(npc: NPC): void {
-    // Gatekeepers use a fixed dialog key
-    const dialogKey = npc.data.behavior === 'gatekeeper'
-      ? 'gatekeeper_blocked'
-      : npc.data.dialogKey
+  private isDefeated(trainerId: string): boolean {
+    return this.persist ? saveManager.isTrainerDefeated(trainerId) : this.sessionDefeats.includes(trainerId)
+  }
 
-    // Always present challenges fresh — NPCs are independent
-    let challengeConfig: ChallengeConfig | undefined
-    if (npc.data.challengeIds?.length) {
-      challengeConfig = getChallenge(npc.data.challengeIds[0])
+  private recordDefeat(trainerId: string): void {
+    if (this.persist) saveManager.defeatTrainer(trainerId)
+    else if (!this.sessionDefeats.includes(trainerId)) this.sessionDefeats.push(trainerId)
+  }
+
+  private handleNPCInteraction(npc: NPC): void {
+    let plan: BattlePlan | undefined
+    let contentError = false
+    if (isTrainer(npc.data)) {
+      // A fresh draw of questions on every battle
+      const result = buildBattlePlan(this.mapData.id, npc.data)
+      if (typeof result === 'string') {
+        console.error(`[content] ${result}`)
+        contentError = true // the trainer says so instead of silently becoming a plain NPC
+      } else {
+        plan = result
+      }
     }
 
+    const defeated = !!plan && this.isDefeated(plan.trainerId)
+
+    // Gatekeepers use a fixed dialog key; beaten trainers say a post-defeat line
+    // (then offer a rematch); trainers without lines get a generic one
+    let dialogKey = npc.data.dialogKey
+    if (npc.data.behavior === 'gatekeeper') dialogKey = 'gatekeeper_blocked'
+    else if (contentError) dialogKey = 'trainer_content_missing'
+    else if (defeated) dialogKey = 'trainer_defeated'
+    else if (plan) dialogKey ??= 'trainer_battle_intro'
+
+    const data: DialogSceneData = { dialogKey, npcName: npc.data.name, plan, defeated }
     this.scene.pause()
-    this.scene.launch(SCENE.DIALOG, {
-      dialogKey,
-      npcName: npc.data.name,
-      challengeConfig,
-      challengeIds: npc.data.challengeIds,
-      challengeCompleted: false,
-    })
+    this.scene.launch(SCENE.DIALOG, data)
   }
 
 
@@ -359,6 +425,7 @@ export class GameScene extends Phaser.Scene {
       'position:fixed;inset:0;z-index:10010;display:flex;flex-direction:column;align-items:center;justify-content:center;' +
       'background:rgba(0,0,0,0);pointer-events:none;font-family:monospace;transition:background 0.5s;'
     document.body.appendChild(overlay)
+    this.deathOverlay = overlay
 
     const title = document.createElement('div')
     title.style.cssText =
@@ -380,13 +447,20 @@ export class GameScene extends Phaser.Scene {
       subtitle.style.opacity = '1'
     })
 
-    // Restart map after delay — restore challenge state so NPCs re-trigger
+    // Restart the map with full hearts. Progress is kept ("not hurt"): completed
+    // exercises and beaten trainers stay; only the trainer you lost to fights again.
     this.time.delayedCall(2000, () => {
       overlay.remove()
-      saveManager.setCompletedChallenges(this.challengeStateOnEntry)
+      this.deathOverlay = undefined
       // Use pristine snapshot so NPCs/blocks/hearts are in original positions
       const cleanMap: MapData = JSON.parse(this.pristineMap)
-      this.scene.start(SCENE.GAME, { mapId: cleanMap.id, mapData: cleanMap })
+      const restart: GameSceneData = {
+        mapId: cleanMap.id,
+        mapData: cleanMap,
+        persist: this.persist,
+        sessionDefeats: this.sessionDefeats,
+      }
+      this.scene.start(SCENE.GAME, restart)
     })
   }
 }

@@ -15,6 +15,8 @@ export class GridMovementSystem {
   readonly tiles: TileChecker
   private lastDirection: Direction = 'down'
   private isSliding = false
+  /** "x,y,dir" states already visited during the current ice/arrow chain (loop guard) */
+  private slideVisited = new Set<string>()
   private pushBlockCallback: ((blockTileX: number, blockTileY: number, dir: Direction) => boolean) | null = null
   private moveCompleteCallback: ((fromX: number, fromY: number, toX: number, toY: number, dir: Direction) => void) | null = null
   private dustEmitter: Phaser.GameObjects.Particles.ParticleEmitter
@@ -110,6 +112,7 @@ export class GridMovementSystem {
     }
 
     this.player.facing = dir
+    this.slideVisited.clear() // a player-initiated move starts a fresh chain
     this.executeMove(dir)
   }
 
@@ -177,16 +180,20 @@ export class GridMovementSystem {
 
     const effect = this.tiles.getEffect(this.player.tileX, this.player.tileY)
 
-    if (effect?.effect === 'ice') {
-      this.isSliding = true
-      this.executeMove(this.lastDirection)
-      return
-    }
+    let nextDir: Direction | null = null
+    if (effect?.effect === 'ice') nextDir = this.lastDirection
+    else if (effect?.effect === 'redirect' && effect.direction) nextDir = effect.direction
 
-    if (effect?.effect === 'redirect' && effect.direction) {
-      this.isSliding = true
-      this.executeMove(effect.direction)
-      return
+    if (nextDir) {
+      // Arrows pointing at each other would bounce the player forever: stop
+      // the chain as soon as it repeats a tile + direction
+      const state = `${this.player.tileX},${this.player.tileY},${nextDir}`
+      if (!this.slideVisited.has(state)) {
+        this.slideVisited.add(state)
+        this.isSliding = true
+        this.executeMove(nextDir)
+        return
+      }
     }
 
     this.isSliding = false

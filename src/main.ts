@@ -8,8 +8,9 @@ import { ChallengeScene } from '@/scenes/ChallengeScene'
 import { TransitionScene } from '@/scenes/TransitionScene'
 import { i18n } from '@/i18n/I18nManager'
 import { saveManager } from '@/systems/SaveManager'
+import { validateContent } from '@/data/validateContent'
 
-new Phaser.Game({
+const game = new Phaser.Game({
   type: Phaser.AUTO,
   width: CANVAS_WIDTH,
   height: CANVAS_HEIGHT,
@@ -28,6 +29,13 @@ new Phaser.Game({
   },
   scene: [BootScene, MenuScene, GameScene, DialogScene, ChallengeScene, TransitionScene],
 })
+
+// Dev-only: a handle for debugging and automated browser checks, and a content check
+// that flags map references the course no longer has (both stripped from production builds)
+if (import.meta.env.DEV) {
+  (window as unknown as { __game: Phaser.Game }).__game = game
+  for (const problem of validateContent()) console.error(`[content] ${problem}`)
+}
 
 // Global language toggle — no scene interaction, just swap the language
 const FLAGS: Record<string, string> = { en: '\u{1F1EC}\u{1F1E7}', fr: '\u{1F1EB}\u{1F1F7}' }

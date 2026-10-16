@@ -1,0 +1,4065 @@
+[
+  {
+    "id": "python_5_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "variable",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "What is a String?",
+      "fr": "Qu'est-ce qu'une chaîne de caractères ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "I already introduced you to strings so it's normal if you have a déjà-vu. In the next chapters, we will explore them in depth.",
+            "fr": "Je t'ai déjà présenté les chaînes de caractères, donc c'est normal si tu as un air de déjà-vu. Dans les prochains chapitres, nous allons les explorer en profondeur."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A string is a sequence of characters. In Python, strings are created by enclosing characters in quotes.",
+            "fr": "Une chaîne de caractères est une séquence de caractères. En Python, les chaînes sont créées en entourant les caractères avec des guillemets."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "name = \"Aquachu\"\nprint(name)\n\nmessage = 'Hello, trainer!'\nprint(message)",
+            "fr": "nom = \"Aquachu\"\nprint(nom)\n\nmessage = 'Bonjour, dresseur !'\nprint(message)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can use either single quotes (') or double quotes (\") to create a string in Python.",
+            "fr": "Tu peux utiliser des guillemets simples (') ou des guillemets doubles (\") pour créer une chaîne en Python."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_1_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "quotes",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Creating Strings",
+      "fr": "Créer des chaînes de caractères"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following is a valid way to create a string in Python?",
+            "fr": "Laquelle des méthodes suivantes est valide pour créer une chaîne de caractères en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```name = \"Aquachu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```name = (Aquachu)```"
+          },
+          {
+            "type": "text",
+            "value": "```name = Aquachu```"
+          },
+          {
+            "type": "text",
+            "value": "```name = /Aquachu/```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Strings in Python must be enclosed in quotes (either single or double quotes).",
+        "fr": "Les chaînes en Python doivent être entourées de guillemets (simples ou doubles)."
+      }
+    }
+  },
+  {
+    "id": "python_5_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "multiline",
+        "triple quotes",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Special Characters in Strings",
+      "fr": "Caractères spéciaux dans les chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python allows you use special characters in strings, such as newlines, tabs, quote. Usually, the backslash (\\) is used to do this.",
+            "fr": "Python te permet d'utiliser des caractères spéciaux dans les chaînes, comme les nouvelles lignes, les tabulations et les guillemets. En général, le caractère antislash (\\) est utilisé pour cela."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- Newline: ```\\n```\n- Tab: ```\\t```\n- Single quote: ```\\'```\n- Double quote: ```\\\"```",
+            "fr": "- Nouvelle ligne : ```\\n```\n- Tabulation : ```\\t```\n- Guillemets simples : ```\\'```\n- Guillemets doubles : ```\\\"```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "print('Hello,\\nTrainer!')\nprint('\\tMy name is \\'Pierre\\'!')",
+            "fr": "print('Bonjour,\\nDresseur !')\nprint('\\tJe suis \\'Pierre\\' !')"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_1_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "variable",
+        "quotes",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Creating String Variables",
+      "fr": "Créer des variables de type chaîne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Fill in the blanks to create valid string variables:",
+            "fr": "Remplis les blancs pour créer des variables de type chaîne valides :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_name = {{}}Aquachu{{}}\nprint(codemon_name)\ngreeting = {{}}'Hello, trainer!'{{}}\nprint(greeting)",
+        "options": [
+          "\"",
+          "\"",
+          "'",
+          "'",
+          "'",
+          "'"
+        ],
+        "correctAnswers": {
+          "1": "'",
+          "2": "'",
+          "3": "\"",
+          "4": "\""
+        }
+      },
+      "hint": {
+        "en": "In Python, you can create strings using either single quotes (') or double quotes (\"). Both work the same way, as long as you use the same type of quotes to open and close the string.",
+        "fr": "En Python, tu peux créer des chaînes en utilisant soit des guillemets simples (') soit des guillemets doubles (\"). Les deux fonctionnent de la même façon, tant que tu utilises le même type de guillemets pour ouvrir et fermer la chaîne."
+      }
+    }
+  },
+  {
+    "id": "python_5_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "concatenation",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "String Concatenation",
+      "fr": "Concaténation de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Like numbers, strings can use operators. This is pretty useful in some situations like wanting to combine two strings together or displaying the same character multiple times.",
+            "fr": "Comme les nombres, les chaînes peuvent utiliser des opérateurs. C'est très utile dans certaines situations, comme vouloir combiner deux chaînes ensemble ou afficher le même caractère plusieurs fois."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's start with concatenation. It means joining strings together. In Python, you can use the + operator to concatenate strings.",
+            "fr": "Commençons par la concaténation. Cela signifie joindre des chaînes ensemble. En Python, tu peux utiliser l'opérateur + pour concaténer des chaînes."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "first_name = \"Aqua\"\nlast_name = \"chu\"\nfull_name = first_name + last_name\nprint(full_name)"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "strings and numbers are different",
+              "fr": "les chaînes et les nombres sont différents"
+            },
+            "content": {
+              "en": "Remember: The + operator works differently for strings and numbers. With strings, it concatenates them. With numbers, it adds them.",
+              "fr": "Souviens-toi : L'opérateur + fonctionne différemment pour les strings et les nombres. Avec les chaînes, il les concatène. Avec les nombres, il les additionne."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_1_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "concatenation",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "String Concatenation Result",
+      "fr": "Résultat de la concaténation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quel sera le résultat du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "name = \"Flora\" + \"chu\"\npower = \"leaf\"\nprint(name + \" has \" + power + \" power!\")",
+            "fr": "nom = \"Flora\" + \"chu\"\npouvoir = \"feuille\"\nprint(nom + \" a le pouvoir \" + pouvoir + \" !\")"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Florachu has leaf power!",
+              "fr": "Florachu a le pouvoir feuille !"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Flora + chu has leaf power!",
+              "fr": "Flora + chu a le pouvoir feuille !"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Florachu has leafpower!",
+              "fr": "Florachu a le pouvoirfeuille !"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: cannot concatenate strings and variables",
+              "fr": "Erreur : impossible de concaténer des chaînes et des variables"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The code concatenates the strings \"Flora\" and \"chu\" to form \"Florachu\", then concatenates this with the strings \" has \", the value of the power variable (\"leaf\"), and the string \" power!\" to produce the final output.",
+        "fr": "Le code concatène les chaînes \"Flora\" et \"chu\" pour former \"Florachu\", puis concatène cela avec les chaînes \" a le pouvoir \", la valeur de la variable power (\"feuille\"), et la chaîne \" pouvoir !\" pour produire le résultat final."
+      }
+    }
+  },
+  {
+    "id": "python_5_1_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "repetition",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "String Repetition",
+      "fr": "Répétition de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can repeat a string using the * operator followed by the number of repetitions.",
+            "fr": "En Python, tu peux répéter une chaîne en utilisant l'opérateur * suivi du nombre de répétitions."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "\nstar = \"*\"\nprint(star * 10)\n\ncodemon_call = \"Pyrochu! \"\nprint(codemon_call * 3)\n\npattern = \"-=\"\nprint(pattern * 5)"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "String repetition is useful for creating patterns, borders, or repeating text elements in your program.",
+            "fr": "La répétition de chaînes est utile pour créer des motifs, des bordures ou répéter des éléments textuels dans ton programme."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_1_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "creation",
+        "concatenation",
+        "repetition",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "String Operations and Results",
+      "fr": "Opérations sur les chaînes et résultats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each string operation with its correct result:",
+            "fr": "Associe chaque opération sur les chaînes avec son résultat correct :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```\"Aqua\" + \"chu\"```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Aquachu\"```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```\"Go! \" * 3```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Go! Go! Go! \"```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"1\" + \" \" + \"2\"```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"1 2\"```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"=\" * 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"==========\"```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_1_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "concatenation",
+        "repetition",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Codémon Lineup",
+      "fr": "Équipe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Join 3 Codémon names and repeat a cheer.",
+            "fr": "Assemble 3 noms de Codémon et répète un cri."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "a = \"Aquachu\"\nb = \"Pyrochu\"\nc = \"Florachu\"\nd = a {{}} b {{}} c\nprint(d)\n\ncheer = \"Go! \"\ne = cheer {{}} 3\nprint(e)",
+        "options": [
+          "+",
+          "*",
+          "+",
+          "*",
+          "+",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "+",
+          "2": "+",
+          "3": "*"
+        }
+      },
+      "hint": {
+        "en": "`+` joins strings, `*` repeats them.",
+        "fr": "`+` assemble les chaînes, `*` les répète."
+      }
+    }
+  },
+  {
+    "id": "python_5_1_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "concatenation",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Combining Concatenation and Repetition",
+      "fr": "Combiner la concaténation et la répétition"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the output of the following code ?",
+            "fr": "Quel est le résultat du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "border = '=' * 5\ntitle = ' Codémon Battle '\nheader = border + title + border\nprint(header)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```===== Codémon Battle =====```"
+          },
+          {
+            "type": "text",
+            "value": "```=====Codémon Battle=====```"
+          },
+          {
+            "type": "text",
+            "value": "```===== Codémon Battle=====```"
+          },
+          {
+            "type": "text",
+            "value": "```= = = = = Codémon Battle = = = = =```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The code first creates a border of 5 equal signs using repetition. Then it concatenates the border, the title with spaces, and another border to create the full header.",
+        "fr": "Le code crée d'abord une bordure de 5 signes égaux en utilisant la répétition. Ensuite, il concatène la bordure, le titre avec des espaces, et une autre bordure pour créer l'en-tête complet."
+      }
+    }
+  },
+  {
+    "id": "python_5_1_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "concatenation",
+        "repetition",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle Announcement",
+      "fr": "Annonce de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a battle announcement for a Codémon match! Use string concatenation and repetition to build an impressive banner. Your announcement should include:\n- A decorative border using repetition\n- The names of two Codémon battling (like Aquachu vs Pyrochu)\n- A battle message\n- Another decorative border",
+            "fr": "Crée une annonce de combat pour un match Codémon ! Utilise la concaténation et la répétition de chaînes pour construire une bannière impressionnante. Ton annonce doit inclure :\n- Une bordure décorative utilisant la répétition\n- Les noms de deux Codémon qui s'affrontent (comme Aquachu vs Pyrochu)\n- Un message de combat\n- Une autre bordure décorative"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create your battle announcement here\n",
+          "fr": "# Crée ton annonce de combat ici\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# One possible solution\nborder = \"=\" * 30\nstars = \"*\" * 10\n\ncodemon1 = \"Aquachu\"\ncodemon2 = \"Pyrochu\"\n\nbattle_text = codemon1 + \" VS \" + codemon2\nannouncement = \" BATTLE TIME! \"\n\nprint(border)\nprint(stars + announcement + stars)\nprint(battle_text)\nprint(border)",
+            "fr": "# Une solution parmi tant d'autres\nborder = \"=\" * 30\nstars = \"*\" * 10\n\ncodemon1 = \"Aquachu\"\ncodemon2 = \"Pyrochu\"\n\nbattle_text = codemon1 + \" VS \" + codemon2\nannouncement = \" C'EST L'HEURE DU COMBAT ! \"\n\nprint(border)\nprint(stars + announcement + stars)\nprint(battle_text)\nprint(border)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "len"
+      ]
+    },
+    "title": {
+      "en": "String Length with len()",
+      "fr": "Longueur des strings avec len()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, we can find out how many characters are in a string using the ```len()``` function. (short for length)",
+            "fr": "En Python, nous pouvons savoir combien de caractères se trouvent dans un string en utilisant la fonction ```len()``` (abréviation du mot anglais length, qui veut dire longueur)."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\nname_length = len(codemon_name)\nprint(\"The name\", codemon_name, \"has\", name_length, \"characters.\")\n\nphrase = \"I love my Codémon!\"\nprint(\"The phrase has\", len(phrase), \"characters.\")",
+            "fr": "codemon_name = \"Aquachu\"\nname_length = len(codemon_name)\nprint(\"Le nom\", codemon_name, \"a\", name_length, \"caractères.\")\n\nphrase = \"J'aime mon Codémon !\"\nprint(\"La phrase a\", len(phrase), \"caractères.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "What len() counts",
+              "fr": "Ce que len() compte"
+            },
+            "content": {
+              "en": "The len() function counts EVERYTHING in a string:\n- Letters (a, b, c...)\n- Numbers (1, 2, 3...)\n- Spaces ( )\n- Special characters (!, @, #...)\n- Punctuation (., ,, ;...)",
+              "fr": "La fonction len() compte TOUT dans un string:\n- Lettres (a, b, c...)\n- Chiffres (1, 2, 3...)\n- Espaces ( )\n- Caractères spéciaux (!, @, #...)\n- Ponctuation (., ,, ;...)"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_2_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "len"
+      ]
+    },
+    "title": {
+      "en": "Counting Characters",
+      "fr": "Compter les caractères"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the length of the string \"Pyrochu rocks!\"?",
+            "fr": "Quelle est la longueur de la chaîne \"Pyrochu rocks!\" ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "14"
+          },
+          {
+            "type": "text",
+            "value": "13"
+          },
+          {
+            "type": "text",
+            "value": "15"
+          },
+          {
+            "type": "text",
+            "value": "12"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember to count all characters: letters, the space, and the exclamation mark.",
+        "fr": "N'oublie pas de compter tous les caractères : les lettres, l'espace et le point d'exclamation."
+      }
+    }
+  },
+  {
+    "id": "python_5_2_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "index"
+      ]
+    },
+    "title": {
+      "en": "String Indexing",
+      "fr": "Indexation des chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can access individual characters in a string using indexing. Each character has a position (index) in the string, starting from 0 for the first character.",
+            "fr": "En Python, tu peux accéder aux caractères individuels d'une chaîne en utilisant l'indexation. Chaque caractère a une position (index) dans la chaîne, commençant à 0 pour le premier caractère."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_string_index"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "To access a character at a specific position, use square brackets [ ] with the index number:",
+            "fr": "Pour accéder à un caractère à une position spécifique, utilise des crochets [ ] avec le numéro d'index :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = \"Florachu\"\n\n# First character (index 0)\nfirst_char = codemon[0]\nprint(\"First character: \", first_char)\n\n# Fourth character (index 3)\nfourth_char = codemon[3]\nprint(\"Fourth character: \", fourth_char)",
+            "fr": "codemon = \"Florachu\"\n\n# Premier caractère (index 0)\npremier_caractere = codemon[0]\nprint(\"Premier caractère :\", premier_caractere)\n\n# Quatrième caractère (index 3)\nquatrieme_caractere = codemon[3]\nprint(\"Quatrième caractère :\", quatrieme_caractere)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Index starts at 0!",
+              "fr": "L'index commence à 0 !"
+            },
+            "content": {
+              "en": "Remember that in Python (and most programming languages), the first character in a string is at index 0, not 1. So the characters in \"Florachu\" are at positions:\nF = 0, l = 1, o = 2, r = 3, a = 4, c = 5, h = 6, u = 7",
+              "fr": "N'oublie pas qu'en Python (et dans la plupart des langages de programmation), le premier caractère d'une chaîne est à l'index 0, pas 1. Donc les caractères dans \"Florachu\" sont aux positions :\nF = 0, l = 1, o = 2, r = 3, a = 4, c = 5, h = 6, u = 7"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_2_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "index"
+      ]
+    },
+    "title": {
+      "en": "Negative Indexing",
+      "fr": "Indexation négative"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python also allows you to use negative indices to access characters from the end of the string:\n\n- -1 refers to the last character\n- -2 refers to the second-to-last character\n- And so on...",
+            "fr": "Python te permet également d'utiliser des indices négatifs pour accéder aux caractères depuis la fin de la chaîne :\n\n- -1 fait référence au dernier caractère\n- -2 fait référence à l'avant-dernier caractère\n- Et ainsi de suite..."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_string_negative_index"
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = \"Florachu\"\n\n# Last character\nlast_char = codemon[-1]\nprint(\"Last character: \", last_char)\n\n# Second-to-last character\nsecond_last = codemon[-2]\nprint(\"Second-to-last character: \", second_last)",
+            "fr": "codemon = \"Florachu\"\n\n# Dernier caractère\ndernier_caractere = codemon[-1]\nprint(\"Dernier caractère : \", dernier_caractere)\n\n# Avant-dernier caractère\navant_dernier = codemon[-2]\nprint(\"Avant-dernier caractère : \", avant_dernier)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Negative index starts at -1!",
+              "fr": "L'index négatif commence à -1 !"
+            },
+            "content": {
+              "en": "In python, index in normal order starts at 0, while negative index starts at -1. So the characters in \"Florachu\" are at positions:\nF = 0 or -8, l = 1 or -7, o = 2 or -6, r = 3 or -5, a = 4 or -4, c = 5 or -3, h = 6 or -2, u = 7 or -1",
+              "fr": "En Python, l'index en ordre normal commence à 0, tandis que l'index négatif commence à -1. Donc les caractères dans \"Florachu\" sont aux positions :\nF = 0 ou -8, l = 1 ou -7, o = 2 ou -6, r = 3 ou -5, a = 4 ou -4, c = 5 ou -3, h = 6 ou -2, u = 7 ou -1"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_2_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "index"
+      ]
+    },
+    "title": {
+      "en": "Accessing Characters",
+      "fr": "Accéder aux caractères"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Fill in the blanks to extract the correct characters from the Codémon name.",
+            "fr": "Complète les trous pour extraire les bons caractères du nom du Codémon. Le premier, le dernier et le troisième caractères."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = \"Pyrochu\"\n\n# Get the first character (P)\nfirst = codemon[{{}}]\n\n# Get the last character (u)\nlast = codemon[{{}}]\n\n# Get the third character (r)\nthird = codemon[{{}}]\n\nprint(first, third, last)",
+        "options": [
+          "0",
+          "-1",
+          "2",
+          "1",
+          "3",
+          "-3"
+        ],
+        "correctAnswers": {
+          "1": "0",
+          "2": "-1",
+          "3": "2"
+        }
+      },
+      "hint": {
+        "en": "Remember: indices start at 0, and negative indices start at -1.",
+        "fr": "Rappelle-toi : les indices commencent à 0, et les indices négatifs commencent à -1."
+      }
+    }
+  },
+  {
+    "id": "python_5_2_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "index",
+        "len"
+      ]
+    },
+    "title": {
+      "en": "Get the Last Character",
+      "fr": "Trouver le Dernier Caractère"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "To get the ***last character*** of a string, we can use the length minus one. (or negative indexing but we already covered that)",
+            "fr": "Pour obtenir le ***dernier caractère*** d'une chaîne, on peut utilise la longueur moins un. (ou l'indexation négative mais on a déjà vu ça)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "name = \"Florachu\"\nlength = len(name)\nlast_char = name[length - 1]\nprint(\"Last character:\", last_char)",
+            "fr": "nom = \"Florachu\"\nlongueur = len(nom)\ndernier = nom[longueur - 1]\nprint(\"Dernier caractère :\", dernier)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "```len(name)``` gives the number of characters. Since counting starts at 0, the ***last position*** is len - 1.",
+            "fr": "```len(nom)``` donne le nombre de caractères. Comme on commence à compter à 0, la ***dernière position*** est len - 1."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Why len - 1?",
+              "fr": "Pourquoi len - 1 ?"
+            },
+            "content": {
+              "en": "If a string has 8 characters. The length is 8. The indices go from 0 to 7. So last character is at position len - 1 => 8 - 1 = 7.",
+              "fr": "Si une chaîne a 8 caractères. La longueur est 8. Les indices vont de 0 à 7. Donc le dernier caractère est à la position len - 1 => 8 - 1 = 7."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_2_7",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "index"
+      ]
+    },
+    "title": {
+      "en": "Matching Indices",
+      "fr": "Associer les indices"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each index with the character it would return from the string \"Aquachu\".",
+            "fr": "Associe chaque indice avec le caractère qu'il renverrait de la chaîne \"Aquachu\"."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```Aquachu[0]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "A"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```Aquachu[3]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "a"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```Aquachu[-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "u"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```Aquachu[-3]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "c"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_2_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "index",
+        "error"
+      ]
+    },
+    "title": {
+      "en": "Index Errors",
+      "fr": "Erreurs d'index"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "It's important to be careful when using indices. If you try to access an index that doesn't exist in the string, Python will raise an IndexError : index out of range.",
+            "fr": "Il est important d'être prudent lorsque tu utilises des indices. Si tu essaies d'accéder à un index qui n'existe pas dans la chaîne, Python générera une erreur IndexError : index out of range."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = \"Aquachu\" # 7 characters\n# Let's access a non-existing index\nprint(codemon[10]) # This will raise an IndexError",
+            "fr": "codemon = \"Aquachu\" # 7 caractères\n# Essayons d'accéder à un index inexistant\nprint(codemon[10]) # Cela générera une erreur IndexError"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Avoid Index Errors",
+              "fr": "Éviter les erreurs d'index"
+            },
+            "content": {
+              "en": "If a string has length n, the valid indices are from 0 to n-1 (or -1 to -n for negative indices). Always make sure your index is within this range!",
+              "fr": "Si une chaîne a une longueur n, les indices valides vont de 0 à n-1 (ou de -1 à -n pour les indices négatifs). Assure-toi toujours que ton index est dans cette plage !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_2_9",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "len",
+        "index",
+        "immutable"
+      ]
+    },
+    "title": {
+      "en": "String Operations and Results",
+      "fr": "Opérations sur les chaînes et résultats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operation with its correct result for the string ```name = \"Pyrochu\"```.",
+            "fr": "Associe chaque opération avec son résultat correct pour la chaîne ```name = \"Pyrochu\"```."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```len(name)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "7"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```name[0]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "P"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```name[-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "u"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```name[len(name)-2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "h"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_2_10",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "len",
+        "index",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Codémon Name Analyzer",
+      "fr": "Analyseur de nom Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a Codémon name analyzer! Choose a Codémon name and write a program that:\n- Displays the length of the name using ```len()```\n- Extracts and displays the first character (using index 0)\n- Extracts and displays the last character (using negative index or len()-1)\n- Creates a Codémon code by concatenating the first and last letters",
+            "fr": "Crée un analyseur de nom Codémon ! Choisis un nom de Codémon et écris un programme qui :\n- Affiche la longueur du nom en utilisant ```len()```\n- Extrait et affiche le premier caractère (en utilisant l'index 0)\n- Extrait et affiche le dernier caractère (en utilisant un index négatif ou len()-1)\n- Crée un code Codémon en concaténant la première et la dernière lettre"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Analyze your Codémon name here\n",
+          "fr": "# Analyse ton nom de Codémon ici\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\n\n# Display length\nname_length = len(codemon_name)\nprint(\"Name:\", codemon_name)\nprint(\"Length:\", name_length)\n\n# First character\nfirst_char = codemon_name[0]\nprint(\"First character:\", first_char)\n\n# Last character\nlast_char = codemon_name[-1]\nprint(\"Last character:\", last_char)\n\n# Create code\ncode = first_char + last_char\nprint(\"Codémon code:\", code)",
+            "fr": "codemon_name = \"Aquachu\"\n\n# Afficher la longueur\nname_length = len(codemon_name)\nprint(\"Nom :\", codemon_name)\nprint(\"Longueur :\", name_length)\n\n# Premier caractère\nfirst_char = codemon_name[0]\nprint(\"Premier caractère :\", first_char)\n\n# Dernier caractère\nlast_char = codemon_name[-1]\nprint(\"Dernier caractère :\", last_char)\n\n# Créer le code\ncode = first_char + last_char\nprint(\"Code Codémon :\", code)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "Introduction to String Slicing",
+      "fr": "Introduction au découpage de chaînes (slicing)"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "String slicing is a way to extract a part of a string (a substring). It's like cutting a piece from a string.",
+            "fr": "Le découpage de chaînes (slicing) est une façon d'extraire une partie d'une chaîne (une sous-chaîne). C'est comme couper un morceau."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The basic syntax for slicing is: string[start:end]\n\nWhere:\n- start is the index where the slice starts (inclusive)\n- end is the index where the slice ends (exclusive)",
+            "fr": "La syntaxe de base pour le découpage est: string[début:fin]\n\nOù:\n- début est l'indice où commence le découpage (inclus)\n- fin est l'indice où se termine le découpage (exclus)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\n\n# Get the first 4 characters\nfirst_part = codemon_name[0:4]\nprint(first_part)\n\n# Get the last 3 characters\nlast_part = codemon_name[4:7]\nprint(last_part)",
+            "fr": "nom_codemon = \"Aquachu\"\n\n# 4 premiers caractères\npremière_partie = nom_codemon[0:4]\nprint(première_partie)\n\n# 3 derniers caractères\ndernière_partie = nom_codemon[4:7]\nprint(dernière_partie)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Remember that in Python, string indices start at 0, not 1. So the first character is at index 0, the second at index 1, and so on.",
+            "fr": "N'oublie pas qu'en Python, les indices de chaînes commencent à 0, pas à 1. Donc le premier caractère est à l'indice 0, le deuxième à l'indice 1, et ainsi de suite."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Important Note",
+              "fr": "Note importante"
+            },
+            "content": {
+              "en": "The end index is NOT included in the slice. So [0:4] gives you characters at positions 0, 1, 2, and 3, but not 4.",
+              "fr": "L'indice de fin n'est PAS inclus dans le découpage. Donc [0:4] te donne les caractères aux positions 0, 1, 2 et 3, mais pas 4."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_3_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "Basic String Slicing",
+      "fr": "Découpage de chaînes de base"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will the following code print?",
+            "fr": "Qu'affichera le code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon = \"Florachu\"\nprint(codemon[0:5])"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "Flora"
+          },
+          {
+            "type": "text",
+            "value": "Florac"
+          },
+          {
+            "type": "text",
+            "value": "Flor"
+          },
+          {
+            "type": "text",
+            "value": "Florach"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The slice [0:X] includes characters at indices 0, 1, 2, .. and X - 1. The end index (X) is NOT included.",
+        "fr": "Rappelle-toi : le découpage [0:X] inclut les caractères aux indices 0, 1, 2, .. et X - 1. L'indice de fin (X) n'est PAS inclus."
+      }
+    }
+  },
+  {
+    "id": "python_5_3_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "shorthand"
+      ]
+    },
+    "title": {
+      "en": "Smarter Slicing",
+      "fr": "Slice plus intelligemment"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python provides shortcuts for string slicing:\n\n- If you omit the start index, Python uses 0 as the default start\n- If you omit the end index, Python uses the length of the string as the default end",
+            "fr": "Python fournit des 'raccourcis' pour le découpage de chaînes :\n\n- Si tu omets l'indice de début, Python utilise 0 comme début par défaut\n- Si tu omets l'indice de fin, Python utilise la longueur de la chaîne comme fin par défaut"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = \"Pyrochu\"\nprint(codemon[:4]) # Same as codemon[0:4]\nprint(codemon[4:]) # Same as codemon[4:len(codemon)]\nprint(codemon[:]) # Same as codemon[0:len(codemon)]",
+            "fr": "codemon = \"Pyrochu\"\nprint(codemon[:4]) # Pareil que codemon[0:4]\nprint(codemon[4:]) # Pareil que codemon[4:len(codemon)]\nprint(codemon[:]) # Pareil que codemon[0:len(codemon)]"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_3_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "shorthand"
+      ]
+    },
+    "title": {
+      "en": "Slicing Expression Results",
+      "fr": "Résultats des expressions de découpage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each slicing expression with its result for the string codemon = \"Aquachu\"",
+            "fr": "Associe chaque expression de découpage avec son résultat pour la chaîne codemon = \"Aquachu\""
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```codemon[:3]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "Aqu"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```codemon[3:]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "achu"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```codemon[2:5]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "uac"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```codemon[:]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "Aquachu"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_3_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "negative indices"
+      ]
+    },
+    "title": {
+      "en": "Negative Indices in Slicing",
+      "fr": "Indices négatifs dans le découpage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python allows negative indices in slicing. Negative indices count from the end of the string:\n\n- -1 refers to the last character\n- -2 refers to the second-to-last character\n- And so on...",
+            "fr": "Python permet des indices négatifs dans le découpage. Les indices négatifs comptent à partir de la fin de la chaîne :\n\n- -1 fait référence au dernier caractère\n- -2 fait référence à l'avant-dernier caractère\n- Et ainsi de suite..."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = \"Florachu\"\n\n# Last 3 characters\nprint(codemon[-3:])  # Same as codemon[5:8]\n\n# Everything except the last 2 characters\nprint(codemon[:-2])  # Same as codemon[0:6]\n\n# From the third character to the second-to-last character\nprint(codemon[2:-2])  # Same as codemon[2:6]",
+            "fr": "codemon = \"Florachu\"\n\n# 3 derniers caractères\nprint(codemon[-3:])  # Pareil que codemon[5:8]\n\n# Tout sauf les 2 derniers caractères\nprint(codemon[:-2])  # Pareil que codemon[0:6]\n\n# Du troisième caractère à l'avant-dernier caractère\nprint(codemon[2:-2])  # Pareil que codemon[2:6]"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Visualizing Negative Indices",
+              "fr": "Visualiser les indices négatifs"
+            },
+            "content": {
+              "en": "For the string \"Florachu\":\nIndices:          0  1  2  3  4  5  6  7\nCharacters:   F   l   o  r   a  c   h  u\nNeg indices:-8 -7 -6 -5 -4 -3 -2 -1",
+              "fr": "Pour la chaîne \"Florachu\" :\nIndices :          0  1  2  3  4  5  6  7\nCaractères :   F   l   o  r   a  c   h  u\nIndices nég.:-8 -7 -6 -5 -4 -3 -2 -1"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_3_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "negative indices"
+      ]
+    },
+    "title": {
+      "en": "Practice with Negative Slicing",
+      "fr": "Pratique avec découpage négatif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the following code to get the specified parts of the Codémon name using negative indices.",
+            "fr": "Complète le code suivant pour obtenir les parties spécifiées du nom du Codémon en utilisant des indices négatifs."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = \"Pyrochu\"\n\n# Get the last 3 characters (\"chu\")\nlast_part = codemon[{{}}:]\nprint(last_part)\n\n# Get everything except the last 3 characters (\"Pyro\")\nfirst_part = codemon[{{}}:{{}}]\nprint(first_part)",
+        "options": [
+          "-3",
+          "0",
+          "-3",
+          "3",
+          "2",
+          "2"
+        ],
+        "correctAnswers": {
+          "1": "-3",
+          "2": "0",
+          "3": "-3"
+        }
+      },
+      "hint": {
+        "en": "Remember: To get the last N characters, use [-N:]. To exclude the last N characters, use [:-N].",
+        "fr": "Rappelle-toi : pour obtenir les N derniers caractères, utilise [-N:]. Pour exclure les N derniers caractères, utilise [:-N]."
+      }
+    }
+  },
+  {
+    "id": "python_5_3_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "step"
+      ]
+    },
+    "title": {
+      "en": "Slicing with Step",
+      "fr": "Découpage avec pas"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Slicing can include a third parameter: the step. The full syntax is: string[start:end:step]",
+            "fr": "Le découpage peut inclure un troisième paramètre : le pas (step en anglais). La syntaxe complète est : string[début:fin:pas]"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The step determines how many characters to move forward. For example, if the step is 2, it means you take every second character.",
+            "fr": "Le pas détermine de combien de caractères avancer. Par exemple, si le pas est 2, cela signifie que tu prends un caractère sur 2."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_slicing_step"
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = \"Florachu\"\n\n# Every character (step=1 is default)\nprint(codemon[::1])  # Same as codemon[:]\n\n# Every second character\nprint(codemon[::2])  # F, o, a, h\n\n# Every third character\nprint(codemon[::3])  # F, r, h",
+            "fr": "codemon = \"Florachu\"\n\n# Chaque caractère (step=1 est par défaut)\nprint(codemon[::1])  # Pareil que codemon[:]\n\n# Chaque deuxième caractère (1 sur 2)\nprint(codemon[::2])  # F, o, a, h\n\n# Chaque troisième caractère (1 sur 3)\nprint(codemon[::3])  # F, r, h"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The step parameter can also be negative, which means traversing the string from right to left (in reverse).",
+            "fr": "Le paramètre de pas peut aussi être négatif, ce qui signifie parcourir la chaîne de droite à gauche (à l'envers)."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = \"Florachu\"\n\n# Reverse the string\nprint(codemon[::-1])  # uhcarolF\n\n# Every second character, in reverse\nprint(codemon[::-2])  # ucrl",
+            "fr": "codemon = \"Florachu\"\n\n# Inverser la chaîne\nprint(codemon[::-1])  # uhcarolF\n\n# Chaque deuxième caractère, à l'envers\nprint(codemon[::-2])  # ucrl"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_3_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "step"
+      ]
+    },
+    "title": {
+      "en": "Slicing with Step Parameter",
+      "fr": "Découpage avec paramètre de pas"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will the following code print?",
+            "fr": "Qu'affichera le code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon = \"Pyrochu\"\nprint(codemon[1:6:2])"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "yoh"
+          },
+          {
+            "type": "text",
+            "value": "yroc"
+          },
+          {
+            "type": "text",
+            "value": "yoc"
+          },
+          {
+            "type": "text",
+            "value": "yo"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The slice [a:b:c] starts at index a, stops before index b, and takes every c-th character.",
+        "fr": "Rappelle-toi : le découpage [a:b:c] commence à l'indice a, s'arrête avant l'indice b, et prend chaque c-ième caractère."
+      }
+    }
+  },
+  {
+    "id": "python_5_3_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "step"
+      ]
+    },
+    "title": {
+      "en": "Reverse String with Slicing",
+      "fr": "Inverser une chaîne avec le découpage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to reverse the Codémon name using string slicing.",
+            "fr": "Complète le code pour inverser le nom du Codémon en utilisant le découpage de chaîne."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = \"Aquachu\"\n\nreversed_name = codemon[::{{}}]\nprint(reversed_name)  # Should print: \"uhcauqA\"",
+        "options": [
+          "-1",
+          "0",
+          "-1",
+          "-2",
+          "1"
+        ],
+        "correctAnswers": {
+          "1": "-1"
+        }
+      },
+      "hint": {
+        "en": "Remember: To reverse a string completely, you can use [::-1].",
+        "fr": "Rappelle-toi : pour inverser complètement une chaîne, tu peux utiliser [::-1]."
+      }
+    }
+  },
+  {
+    "id": "python_5_3_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "slicing",
+        "step"
+      ]
+    },
+    "title": {
+      "en": "Advanced Slicing Expressions",
+      "fr": "Expressions de découpage avancées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each slicing expression with its result for the string ```codemon = \"Florachu\"```",
+            "fr": "Associe chaque expression de découpage avec son résultat pour la chaîne ```codemon = \"Florachu\"```"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```codemon[::2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "Foah"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```codemon[::-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "uhcarolF"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```codemon[1:7:3]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "la"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```codemon[-1:-7:-2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "ucr"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_3_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "slicing",
+        "step",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Codémon Secret Code Generator",
+      "fr": "Générateur de code secret Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a secret code generator for your Codémon! Choose a Codémon name and write a program that:\n- Extracts the first 4 characters using slicing and stores it in a variable\n- Extracts the last 3 characters using negative slicing and stores it in a variable\n- Reverses the last 3 characters using ```[::-1]``` and stores it in a variable\n- Gets every second character from the full name using step and stores it in a variable\n- Concatenates all these variables together to create a unique secret code",
+            "fr": "Crée un générateur de code secret pour ton Codémon ! Choisis un nom de Codémon et écris un programme qui :\n- Extrait les 4 premiers caractères en utilisant le découpage et stocke ça dans une variable\n- Extrait les 3 derniers caractères en utilisant le découpage négatif et stocke ça dans une variable\n- Inverse ces 3 derniers caractères en utilisant ```[::-1]``` et stocke ça dans une variable\n- Récupère un caractère sur deux du nom complet en utilisant le pas et stocke ça dans une variable\n- Concatène toutes ces variables ensemble pour créer un code secret unique"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create your secret code here\n",
+          "fr": "# Crée ton code secret ici\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "codemon_name = \"Florachu\"\n\nfirst_part = codemon_name[:4]\nlast_part = codemon_name[-3:]\nreversed_part = last_part[::-1]\nalternate_chars = codemon_name[::2]\n\nsecret_code = first_part + \"-\" + last_part + \"-\" + reversed_part + \"-\" + alternate_chars\nprint(\"Secret code:\", secret_code)",
+            "fr": "codemon_name = \"Florachu\"\n\nfirst_part = codemon_name[:4]\nlast_part = codemon_name[-3:]\nreversed_part = last_part[::-1]\nalternate_chars = codemon_name[::2]\n\nsecret_code = first_part + \"-\" + last_part + \"-\" + reversed_part + \"-\" + alternate_chars\nprint(\"Code secret :\", secret_code)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Introduction to String Methods",
+      "fr": "Introduction aux méthodes de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, strings come with built-in methods that help you work with text. These methods are special functions that belong to string objects and can help you transform and analyze text.",
+            "fr": "En Python, les chaînes de caractères sont accompagnées de méthodes qui t'aident à manipuler du texte. Ces méthodes sont des fonctions spéciales qui appartiennent aux objets string et peuvent t'aider à transformer et analyser du texte."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You call a string method using the dot notation after a string: ```string_variable.method_name()```",
+            "fr": "On appelle une méthode de chaîne en utilisant la notation point après une chaîne: ```variable_chaine.nom_methode()```"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Important Note",
+              "fr": "Note importante"
+            },
+            "content": {
+              "en": "String methods don't change the original string. They return a new string with the changes applied. This is because strings in Python are immutable (cannot be changed after creation).",
+              "fr": "Les méthodes de chaînes ne modifient pas la chaîne originale. Elles renvoient une nouvelle chaîne avec les modifications appliquées. C'est parce que les chaînes en Python sont immuables (ne peuvent pas être modifiées après création)."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_4_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "upper",
+        "lower"
+      ]
+    },
+    "title": {
+      "en": "Changing Case with upper() and lower()",
+      "fr": "Changer la casse avec upper() et lower()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```upper()``` and ```lower()``` methods are used to convert strings to uppercase or lowercase letters.",
+            "fr": "Les méthodes ```upper()``` et ```lower()``` sont utilisées pour convertir des chaînes en lettres majuscules ou minuscules."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Examples with upper() and lower()\ncodemon_type = \"Water\"\n\n# Convert to uppercase\nupper_case = codemon_type.upper()\nprint(\"Uppercase:\", upper_case)\n\n# Convert to lowercase\nlower_case = codemon_type.lower()\nprint(\"Lowercase:\", lower_case)",
+            "fr": "# Exemples avec upper() et lower()\ntype_codemon = \"Eau\"\n\n# Convertir en majuscules\nmajuscule = type_codemon.upper()\nprint(\"Majuscules:\", majuscule)\n\n# Convertir en minuscules\nminuscule = type_codemon.lower()\nprint(\"Minuscules:\", minuscule)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Changing case??",
+              "fr": "Changer la casse ??"
+            },
+            "content": {
+              "en": "Case for strings refers to whether letters are uppercase (A-Z) or lowercase (a-z). \"Aquachu\" and \"aquachu\" are the same word, but they have different cases.",
+              "fr": "La casse pour les chaînes de caractères fait référence à la façon dont les lettres sont écrites, en majuscules (A-Z) ou en minuscules (a-z). \"Aquachu\" et \"aquachu\" sont le même mot, mais ils ont des casses différentes."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_4_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "upper",
+        "lower"
+      ]
+    },
+    "title": {
+      "en": "Understanding upper() and lower()",
+      "fr": "Comprendre upper() et lower()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Consider the following code:",
+            "fr": "Considère le code suivant:"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "name = \"Florachu\"\nupper_name = name.upper()\nprint(upper_name)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed?",
+            "fr": "Qu'est-ce qui sera affiché?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```FLORACHU```"
+          },
+          {
+            "type": "text",
+            "value": "```Florachu```"
+          },
+          {
+            "type": "text",
+            "value": "```florachu```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error message",
+              "fr": "Un message d'erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The upper() method converts all characters in the string to uppercase and returns the new string.",
+        "fr": "La méthode upper() convertit tous les caractères de la chaîne en majuscules et retourne la nouvelle chaîne."
+      }
+    }
+  },
+  {
+    "id": "python_5_4_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "strip"
+      ]
+    },
+    "title": {
+      "en": "Removing Whitespace with strip()",
+      "fr": "Supprimer les espaces avec strip()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```strip()``` method removes whitespace (spaces, tabs, newlines) from the beginning and end of a string.",
+            "fr": "La méthode ```strip()``` supprime les espaces blancs (espaces, tabulations, sauts de ligne) du début et de la fin d'une chaîne."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# String with extra spaces\ntext_with_spaces = \"   Pyrochu   \"\nprint(\"Original: \" + text_with_spaces + \".\")\n\n# Remove spaces with strip()\nclean_text = text_with_spaces.strip()\nprint(\"After strip(): \" + clean_text + \".\")",
+            "fr": "# Chaîne avec des espaces supplémentaires\ntexte_avec_espaces = \"   Pyrochu   \"\nprint(\"Original : \" + texte_avec_espaces + \".\")\n\n# On supprime les espaces avec strip()\ntexte_nettoye = texte_avec_espaces.strip()\nprint(\"Après strip() : \" + texte_nettoye + \".\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```strip()``` method is especially useful when cleaning user input or processing data from external sources.",
+            "fr": "La méthode ```strip()``` est particulièrement utile pour nettoyer les entrées utilisateur ou traiter des données provenant de sources externes."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Note about strip()",
+              "fr": "Note sur strip()"
+            },
+            "content": {
+              "en": "The strip() method only removes whitespace from the beginning and end of a string, not from within the string.",
+              "fr": "La méthode strip() supprime uniquement les espaces blancs du début et de la fin d'une chaîne, pas ceux à l'intérieur."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_4_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "strip"
+      ]
+    },
+    "title": {
+      "en": "Using strip() Correctly",
+      "fr": "Utiliser strip() correctement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to clean up the Codémon name by removing extra spaces using the correct string method.",
+            "fr": "Complète le code pour nettoyer le nom du Codémon en supprimant les espaces supplémentaires à l'aide de la méthode de chaîne appropriée."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_name = \"  Aquachu  \"\nprint(codemon_name + '.')\n\n# Remove the extra spaces\nclean_name = codemon_name.{{}}()\nprint(clean_name + '.')",
+        "options": [
+          "strip",
+          "remove",
+          "trim",
+          "clean",
+          "whitespace"
+        ],
+        "correctAnswers": {
+          "1": "strip"
+        }
+      },
+      "hint": {
+        "en": "The method that removes whitespace from the beginning and end of a string is a common cleaning operation in text processing.",
+        "fr": "La méthode qui supprime les espaces blancs du début et de la fin d'une chaîne est une opération de nettoyage courante dans le traitement de texte."
+      }
+    }
+  },
+  {
+    "id": "python_5_4_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Checking Substrings with the 'in' Operator",
+      "fr": "Vérifier les sous-chaînes avec l'opérateur 'in'"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```in``` operator checks if a substring exists within another string. It returns ```True``` if the substring is found, and ```False``` otherwise.",
+            "fr": "L'opérateur ```in``` vérifie si une sous-chaîne existe dans une autre chaîne. Il renvoie ```True``` si la sous-chaîne est trouvée, et ```False``` sinon."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Unlike ```upper()```, ```lower()```, and ```strip()```, ```in``` is not a method but an operator, so the syntax is different.",
+            "fr": "Contrairement à ```upper()```, ```lower()``` et ```strip()```, ```in``` n'est pas une méthode mais un opérateur, donc la syntaxe est différente."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\n\n# Check if 'Aqua' is in the name\nprint(\"Aqua\" in codemon_name)\n\n# Check if 'aqua' is in the name\nprint(\"aqua\" in codemon_name) # NOT found, case-sensitive, Aqua != aqua",
+            "fr": "nom_codemon = \"Aquachu\"\n\n# Vérifie si 'Aqua' est dans le nom\nprint(\"Aqua\" in nom_codemon)\n\n# Vérifie si 'aqua' est dans le nom\nprint(\"aqua\" in nom_codemon) # NON trouvé, sensible à la casse, Aqua != aqua"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```in``` operator is case-sensitive. If you need to do a case-insensitive check, you can convert both strings to the same case first.",
+            "fr": "L'opérateur ```in``` est sensible à la casse. Si tu as besoin de faire une vérification insensible à la casse, tu peux d'abord convertir les deux chaînes à la même casse."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_4_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Using the 'in' Operator",
+      "fr": "Utiliser l'opérateur 'in'"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will the following code print?",
+            "fr": "Qu'est-ce que le code suivant va afficher ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_types = \"WaterFireGrass\"\n\nprint(\"fire\" in codemon_types)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The 'in' operator is case-sensitive. Pay attention to uppercase and lowercase letters in the strings being compared.",
+        "fr": "Rappelle-toi : L'opérateur 'in' est sensible à la casse. Fais attention aux lettres majuscules et minuscules dans les chaînes comparées."
+      }
+    }
+  },
+  {
+    "id": "python_5_4_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "replace"
+      ]
+    },
+    "title": {
+      "en": "Replacing Text with replace()",
+      "fr": "Remplacer du texte avec replace()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```replace()``` method allows you to replace occurrences of a substring with another string.",
+            "fr": "La méthode ```replace()``` te permet de remplacer les occurrences d'une sous-chaîne par une autre chaîne."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Syntax: ```string.replace(old, new, count)```\n- ```old```: the substring to replace\n- ```new```: the string to replace it with\n- ```count``` (optional): maximum number of replacements to make",
+            "fr": "Syntaxe: ```chaine.replace(ancien, nouveau, nombre)```\n- ```ancien```: la sous-chaîne à remplacer\n- ```nouveau```: la chaîne qui la remplacera\n- ```nombre``` (optionnel): nombre maximum de remplacements à effectuer"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Basic replace() example\nsentence = \"I choose Aquachu! Aquachu is a water type.\"\n\n# Replace all occurrences of Aquachu with Pyrochu\nnew_sentence = sentence.replace(\"Aquachu\", \"Pyrochu\")\nprint(new_sentence)\n\n# Replace only the first occurrence\nfirst_only = sentence.replace(\"Aquachu\", \"Pyrochu\", 1)\nprint(first_only)",
+            "fr": "# Exemple basique de replace()\nphrase = \"Je choisis Aquachu ! Aquachu est un type eau.\"\n\n# Remplace toutes les occurrences de Aquachu par Pyrochu\nnouvelle_phrase = phrase.replace(\"Aquachu\", \"Pyrochu\")\nprint(nouvelle_phrase)\n\n# Remplace seulement la première occurrence\nseulement_premiere = phrase.replace(\"Aquachu\", \"Pyrochu\", 1)\nprint(seulement_premiere)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "replace() Behavior",
+              "fr": "Comportement de replace()"
+            },
+            "content": {
+              "en": "By default, replace() replaces all occurrences of the substring. If you want to limit the number of replacements, use the optional count parameter. Like other string methods, replace() returns a new string and doesn't modify the original.",
+              "fr": "Par défaut, replace() remplace toutes les occurrences de la sous-chaîne. Si tu veux limiter le nombre de remplacements, utilise le paramètre optionnel nombre. Comme les autres méthodes de chaîne, replace() renvoie une nouvelle chaîne et ne modifie pas l'originale."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_4_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "replace"
+      ]
+    },
+    "title": {
+      "en": "Using the replace() Method",
+      "fr": "Utiliser la méthode replace()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to replace 'Fire' with 'Water' in the description of a Codémon.",
+            "fr": "Complète le code pour remplacer 'Feu' par 'Eau' dans la description d'un Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "description = \"Pyrochu is a Fire type. He breathes Fire.\"\n\n# Replace 'Fire' with 'Water'\nnew_description = description.{{}}(\"{{}}\"{{}} \"{{}}\")\n\nprint(new_description)",
+        "options": [
+          "replace",
+          "Fire",
+          ",",
+          "Water",
+          "swap",
+          "change",
+          "substring"
+        ],
+        "correctAnswers": {
+          "1": "replace",
+          "2": "Fire",
+          "3": ",",
+          "4": "Water"
+        }
+      },
+      "hint": {
+        "en": "The replace() method takes at least two arguments: the substring to find and the string to replace it with.",
+        "fr": "La méthode replace() prend au moins deux arguments : la sous-chaîne à trouver et la chaîne qui la remplacera."
+      }
+    }
+  },
+  {
+    "id": "python_5_4_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Match String Methods with Their Purpose",
+      "fr": "Associe les méthodes de chaînes à leur fonction"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each string method or operator with its correct purpose.",
+            "fr": "Associe chaque méthode ou opérateur de chaîne à sa fonction correcte."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```upper()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Converts all characters to uppercase",
+                "fr": "Convertit tous les caractères en majuscules"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```lower()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Converts all characters to lowercase",
+                "fr": "Convertit tous les caractères en minuscules"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```strip()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes whitespace from beginning and end",
+                "fr": "Supprime les espaces du début et de la fin"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```in```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if a substring exists in a string",
+                "fr": "Vérifie si une sous-chaîne existe dans une chaîne"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": "```replace()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Replaces occurrences of a substring with another string",
+                "fr": "Remplace les occurrences d'une sous-chaîne par une autre chaîne"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_4_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "methods",
+        "output"
+      ]
+    },
+    "title": {
+      "en": "Match Code with Output",
+      "fr": "Associe le code avec sa sortie"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each code snippet with its correct output.",
+            "fr": "Associe chaque extrait de code à sa sortie correcte."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```\"Aquachu\".upper()```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```AQUACHU```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```\"  Flora  \".strip()```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```Flora```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"chu\" in \"Pyrochu\"```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"A\".replace(\"A\", \"B\")```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```B```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_4_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "methods",
+        "upper",
+        "lower",
+        "strip",
+        "replace",
+        "in",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle Message Formatter",
+      "fr": "Formateur de message de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a message formatter for Codémon battles! You receive a battle announcement with some mistakes that need fixing. Write a program that:\n- Removes extra whitespace from the beginning and end and stores it in a variable\n- Converts the message to uppercase and stores it in a variable\n- Fixes the mistake: it's not Aquachu but Pyrochu, replace it and store it in a variable\n- Prints the cleaned and formatted message",
+            "fr": "Crée un formateur de message pour les combats Codémon ! Tu reçois une annonce de combat avec quelques erreurs qui doivent être corrigées. Écris un programme qui :\n- Supprime les espaces supplémentaires du début et de la fin et stocke ça dans une variable\n- Convertit le message en majuscules et stocke ça dans une variable\n- Corrige l'erreur : ce n'est pas Aquachu mais Pyrochu, remplace-le et stocke ça dans une variable\n- Affiche le message nettoyé et formaté"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "messy_message = \"   Aquachu enters the battle arena!   \"\n\n# Clean and format the message here\n",
+          "fr": "messy_message = \"   Aquachu entre dans l'arène de combat !   \"\n\n# Nettoie et formate le message ici\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "messy_message = \"   Aquachu enters the battle arena!   \"\n\nclean_message = messy_message.strip()\nprint(\"After strip():\", clean_message)\n\nupper_message = clean_message.upper()\nprint(\"After upper():\", upper_message)\n\nfinal_message = upper_message.replace(\"AQUACHU\", \"PYROCHU\")\nprint(\"After replace():\", final_message)\n\nprint(\"\\nFinal message:\", final_message)",
+            "fr": "messy_message = \"   Aquachu entre dans l'arène de combat !   \"\n\nclean_message = messy_message.strip()\nprint(\"Après strip() :\", clean_message)\n\nupper_message = clean_message.upper()\nprint(\"Après upper() :\", upper_message)\n\nfinal_message = upper_message.replace(\"AQUACHU\", \"PYROCHU\")\nprint(\"Après replace() :\", final_message)\n\nprint(\"\\nMessage final :\", final_message)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_5_1",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "strings",
+        "comparison",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Valid Codémon Name Check",
+      "fr": "Vérification de nom de Codémon valide"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if the Codémon's name is valid (more than 3 characters).",
+            "fr": "Vérifie si le nom du Codémon est valide (plus de 3 caractères)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_name = \"Aquachu\"\n\nis_valid = len(codemon_name) {{}} 3\nprint(is_valid)",
+        "options": [
+          ">",
+          "<",
+          ">=",
+          "=="
+        ],
+        "correctAnswers": {
+          "1": ">"
+        }
+      },
+      "hint": {
+        "en": "len() count the number of characters in a string. Count the characters and compare with 3.",
+        "fr": "len() compte le nombre de caractères dans une chaîne. Compte les caractères et compare avec 3."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_2",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "concatenation",
+        "repetition",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Battle Banner Creation",
+      "fr": "Création de bannière de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a battle banner by repeating decorations and adding the title.",
+            "fr": "Crée une bannière de combat en répétant les décorations et en ajoutant le titre."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "decoration = \"=\"\ntitle = \"BATTLE\"\n\nbanner = decoration {{}} 3 {{}} \" \" {{}} title {{}} \" \" {{}} decoration {{}} 3\nprint(banner)",
+        "options": [
+          "*",
+          "+",
+          "*",
+          "+",
+          "+",
+          "*",
+          "+",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "*",
+          "2": "+",
+          "3": "+",
+          "4": "+",
+          "5": "+",
+          "6": "*"
+        }
+      },
+      "hint": {
+        "en": "Use * to repeat strings and + to concatenate them.",
+        "fr": "Utilise * pour répéter les chaînes et + pour les concaténer."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "concatenation",
+        "f-strings",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Codémon Welcome Message",
+      "fr": "Message de bienvenue Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a welcome message using an f-string with the trainer's name and level.",
+            "fr": "Crée un message de bienvenue utilisant un f-string avec le nom du dresseur et le niveau."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "trainer_name = \"Pi\"\nlevel = 1\nmessage = {{}}\"Welcome {{}} to level {{}}!\"\nprint(message)",
+        "options": [
+          "f",
+          "{trainer_name}",
+          "{level}",
+          "+"
+        ],
+        "correctAnswers": {
+          "1": "f",
+          "2": "{trainer_name}",
+          "3": "{level}"
+        }
+      },
+      "hint": {
+        "en": "f-string format requires the prefix 'f' and curly braces for variables.",
+        "fr": "Une f-string nécessite le préfixe 'f' et des accolades pour les variables."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "indexing",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "String Indexing",
+      "fr": "Indexation de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each string indexing expression on the left with the result on the right.",
+            "fr": "Associe chaque expression d'indexation de gauche avec le résultat de droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```\"Aquachu\"[0]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"A\"```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```\"Pyrochu\"[-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"u\"```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"Fire\"[1:3]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"ir\"```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"Water\"[:2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Wa\"```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_5_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "types",
+        "conversion",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Type Conversion and Addition",
+      "fr": "Conversion de type et addition"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the final value of total_score in this code sequence?",
+            "fr": "Quelle est la valeur finale de total_score dans cette séquence de code?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "score = '10'\nbonus = 5\ntotal_score = int(score) + bonus\nprint(total_score)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```15```"
+          },
+          {
+            "type": "text",
+            "value": "```105```"
+          },
+          {
+            "type": "text",
+            "value": "```'105'```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```Error```",
+              "fr": "```Erreur```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about type conversion and addition.",
+        "fr": "Réfléchis à la conversion de type et à l'addition."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "strings",
+        "type_conversion",
+        "concatenation"
+      ]
+    },
+    "title": {
+      "en": "Type Conversion Result",
+      "fr": "Résultat de conversion de type"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the result of: ```str(3.14) + '0'```?",
+            "fr": "Quel sera le résultat de : ```str(3.14) + '0'```?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"3.140\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"3.14\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": "```\"3140\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about string concatenation and type conversion.",
+        "fr": "Réfléchis à la concaténation de chaînes et à la conversion de type."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "slicing",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "String Slicing Result",
+      "fr": "Résultat de découpage de chaîne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the result of: ```\"Florachu\"[2:6]```?",
+            "fr": "Quel sera le résultat de : ```\"Florachu\"[2:6]```?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"orac\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"lora\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"orach\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Slicing starts at the first index and stops before the second index.",
+        "fr": "Le découpage commence au premier index et s'arrête avant le second index."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "slicing",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Advanced String Slicing",
+      "fr": "Découpage de chaînes avancé"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each slicing expression on the left with the result on the right.",
+            "fr": "Associe chaque expression de découpage de gauche avec le résultat de droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```\"Python\"[::2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Pto\"```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```\"Hello\"[::-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"olleH\"```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"Codémon\"[-3:]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"mon\"```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"Battle\"[1:-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"attl\"```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_5_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "concatenation",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "String Concatenation Welcome",
+      "fr": "Bienvenue par concaténation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a welcome message using string concatenation.",
+            "fr": "Crée un message de bienvenue en utilisant la concaténation de chaînes."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "trainer_name = \"Pi\"\nmessage = \"Welcome, \" {{}} trainer_name {{}} \"!\"\nprint(message)",
+        "options": [
+          "+",
+          ",",
+          "and",
+          "*",
+          "+",
+          ",",
+          "and",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "+",
+          "2": "+"
+        }
+      },
+      "hint": {
+        "en": "String concatenation is similar to math addition.",
+        "fr": "La concaténation de chaînes est similaire à une addition mathématique."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "operators",
+        "membership"
+      ]
+    },
+    "title": {
+      "en": "String Membership Check",
+      "fr": "Vérification d'appartenance de chaîne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will ```print(\"chu\" in \"Aquachu\")``` display?",
+            "fr": "Que va afficher ```print(\"chu\" in \"Aquachu\")```?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": "```\"chu\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The 'in' operator checks if a substring exists within a string.",
+        "fr": "L'opérateur 'in' vérifie si une sous-chaîne existe dans une chaîne."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_11",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "slicing",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "String Slicing and Methods",
+      "fr": "Découpage et méthodes de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Extract the first three characters.",
+            "fr": "Extrait les trois premiers caractères."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_type = \"pyrochu\"\nresult = codemon_type{{}}{{}}{{}}{{}}\nprint(result)",
+        "options": [
+          "[",
+          ":",
+          "3",
+          "]"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": ":",
+          "3": "3",
+          "4": "]"
+        }
+      },
+      "hint": {
+        "en": "Slicing uses square brackets and a colon to specify the range. The format is [start:end:step].",
+        "fr": "Le découpage utilise des crochets et un deux-points pour spécifier la plage. Le format est [début:fin:pas]."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "f-strings",
+        "formatting"
+      ]
+    },
+    "title": {
+      "en": "F-string Number Formatting",
+      "fr": "Formatage de nombres en f-string"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will ```print(f\"{3.14159:.2f}\")``` display?",
+            "fr": "Que va afficher ```print(f\"{3.14159:.2f}\")```?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"3.14\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"3.142\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"3.1416\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"3\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": ".Xf after a number means the number will be displayed with X digits after the decimal point.",
+        "fr": ".Xf après un nombre signifie que le nombre sera affiché avec X chiffres après la virgule."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_13",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "types",
+        "data_types"
+      ]
+    },
+    "title": {
+      "en": "Variable Types",
+      "fr": "Types de variables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match variables on the left with their types on the right.",
+            "fr": "Associe chaque variable de gauche avec son type de droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```level = 42```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```int```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```power = 3.14```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```float```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```name = \"Aquachu\"```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```str```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```rare = True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```bool```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_5_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "methods",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "String Cleaning Result",
+      "fr": "Résultat de nettoyage de chaîne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the final result after cleaning this messy name?",
+            "fr": "Quel sera le résultat final après avoir nettoyé ce nom en désordre ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "messy_name = \"  pYrOcHu  \"\nclean_name = messy_name.strip().lower().capitalize()\nprint(clean_name)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Pyrochu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"pyrochu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"PYROCHU\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"  pYrOcHu  \"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Follow each method step by step: strip removes spaces, lower makes lowercase, capitalize makes first letter uppercase.",
+        "fr": "Suis chaque méthode étape par étape : strip enlève les espaces, lower met en minuscules, capitalize met la première lettre en majuscule."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_15",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "operations",
+        "multiplication"
+      ]
+    },
+    "title": {
+      "en": "String Multiplication",
+      "fr": "Multiplication de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you multiply a string by a number in Python? Example: ```\"hi\" * 3```",
+            "fr": "Que se passe-t-il quand tu multiplies une chaîne par un nombre en Python ? Exemple : ```\"hi\" * 3```"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"hihihi\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": "```\"hi3\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"3hi\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about string repetition in Python.",
+        "fr": "Pense à la répétition de chaînes en Python."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_16",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "boolean",
+        "operators",
+        "validation"
+      ]
+    },
+    "title": {
+      "en": "Password Validation",
+      "fr": "Validation de mot de passe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if the password is long enough and contains the required character.",
+            "fr": "Vérifie si le mot de passe est assez long et contient le caractère requis."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "password = \"securePW1\"\nrequired_char = \"1\"\n\nis_valid = len(password) {{}} 8 {{}} required_char {{}} password\nprint(is_valid)",
+        "options": [
+          ">=",
+          "and",
+          "in",
+          "==",
+          "or",
+          "replace",
+          "find"
+        ],
+        "correctAnswers": {
+          "1": ">=",
+          "2": "and",
+          "3": "in"
+        }
+      },
+      "hint": {
+        "en": "The 'in' keyword allows you to check if a character is present in a string.",
+        "fr": "Le mot clé 'in' permet de vérifier si un caractère est présent dans une chaîne."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_17",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "concatenation",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "String Concatenation Result",
+      "fr": "Résultat de concaténation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be stored in message?\n```message = \"Hello\" + \" \" + \"World\"```",
+            "fr": "Que sera stocké dans message ?\n```message = \"Hello\" + \" \" + \"World\"```"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Hello World\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"HelloWorld\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Hello  World\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "String concatenation is similar to math addition.",
+        "fr": "La concaténation de chaînes est similaire à une addition mathématique."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_18",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "f-strings",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Trainer Score Message",
+      "fr": "Message de score de dresseur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a message using an f-string.",
+            "fr": "Crée un message en utilisant une f-string."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "trainer_name = \"Bob\"\nscore = 95\n\nmessage = {{}}\"Trainer {{}} has score {{}}\"\nprint(message)",
+        "options": [
+          "f",
+          "{trainer_name}",
+          "{score}",
+          "trainer_name",
+          "score",
+          "+",
+          "+"
+        ],
+        "correctAnswers": {
+          "1": "f",
+          "2": "{trainer_name}",
+          "3": "{score}"
+        }
+      },
+      "hint": {
+        "en": "Remember to use f prefix and curly braces.",
+        "fr": "N'oublie pas d'utiliser le préfixe f et les accolades."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_19",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "concatenation",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "String Operations Results",
+      "fr": "Résultats d'opérations sur chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match the expression from the left with the result from the right.",
+            "fr": "Associe chaque expression de gauche avec le résultat de droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```\"Hello\" + \"!\"```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Hello!\"```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```str(42)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"42\"```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```len(\"Pyrochu\")```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```7```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"Hi\" * 2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"HiHi\"```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_5_20",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "type_conversion",
+        "errors"
+      ]
+    },
+    "title": {
+      "en": "Type Compatibility Error",
+      "fr": "Erreur de compatibilité de type"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you try to add a number and a string?\n```score = 42\nmessage = score + \" points\"```",
+            "fr": "Que se passe-t-il lorsque tu ajoutes un nombre et une chaîne ?\n```score = 42\nmessage = score + \" points\"```"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": "```\"42 points\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"42points\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about type compatibility, can you add a number and a string?",
+        "fr": "Pense à la compatibilité des types, peux-tu faire une addition avec un nombre et une chaîne ?"
+      }
+    }
+  },
+  {
+    "id": "python_5_5_21",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "type_conversion",
+        "concatenation"
+      ]
+    },
+    "title": {
+      "en": "Score Conversion Fix",
+      "fr": "Correction de conversion de score"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Convert score so we can print the message without errors.",
+            "fr": "Convertis score pour que nous puissions afficher le message sans erreurs."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "score = 100\nmessage = \"Score: \" + {{}}(score)\nprint(message)",
+        "options": [
+          "str",
+          "int",
+          "float",
+          "bool"
+        ],
+        "correctAnswers": {
+          "1": "str"
+        }
+      },
+      "hint": {
+        "en": "Remember to convert numbers before concatenating.",
+        "fr": "N'oublie pas de convertir les nombres avant de les concaténer."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "methods",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "String Comparison Result",
+      "fr": "Résultat de comparaison de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of: ```\"FIRE\" == \"fire\".upper()```?",
+            "fr": "Quel est le résultat de : ```\"FIRE\" == \"fire\".upper()```?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```Error```",
+              "fr": "```Erreur```"
+            }
+          },
+          {
+            "type": "text",
+            "value": "```\"FIRE\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The upper() method converts the string to uppercase before comparison.",
+        "fr": "La méthode upper() convertit la chaîne en majuscules avant la comparaison."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_23",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "operators",
+        "membership"
+      ]
+    },
+    "title": {
+      "en": "Type Search in Name",
+      "fr": "Recherche de type dans le nom"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if the type name is contained in the Codémon's full name.",
+            "fr": "Vérifie si le nom du type est contenu dans le nom complet du Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_name = \"Pyrochu\"\ntype_name = \"Pyro\"\n\nhas_type = type_name {{}} codemon_name\nprint(has_type)",
+        "options": [
+          "in",
+          "==",
+          "+",
+          "is"
+        ],
+        "correctAnswers": {
+          "1": "in"
+        }
+      },
+      "hint": {
+        "en": "The 'in' operator checks if one string is contained within another.",
+        "fr": "L'opérateur 'in' vérifie si une chaîne est contenue dans une autre."
+      }
+    }
+  },
+  {
+    "id": "python_5_5_24",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "methods",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "String Methods Results",
+      "fr": "Résultats des méthodes de chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each string method on the left with the result on the right.",
+            "fr": "Associe chaque méthode de chaîne de gauche avec le résultat de droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```\"Hello\".lower()```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"hello\"```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```\"pyrochu\".upper()```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"PYROCHU\"```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"  hi  \".strip()```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"hi\"```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"abc\".replace('b', 'B')```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"aBc\"```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_5_5_25",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "strings",
+        "operators",
+        "len"
+      ]
+    },
+    "title": {
+      "en": "Name Length Check",
+      "fr": "Vérification de longueur de nom"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if the Codémon name has at least the minimum required length.",
+            "fr": "Vérifie si le nom du Codémon a au moins la longueur minimale requise."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_name = \"Aquachu\"\nmin_length = 5\n\nis_valid = len(codemon_name) {{}} min_length\nprint(is_valid)",
+        "options": [
+          ">=",
+          ">",
+          "==",
+          "<"
+        ],
+        "correctAnswers": {
+          "1": ">="
+        }
+      },
+      "hint": {
+        "en": "Having enough length means len() is greater than or equal to the minimum.",
+        "fr": "Avoir assez de longueur signifie que len() est supérieure ou égale au minimum."
+      }
+    }
+  },
+  {
+    "id": "python_5_6_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "methods",
+        "strip",
+        "len",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Tournament Registration - Name Validation",
+      "fr": "Inscription au tournoi - Validation du nom"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Codémon Grand Tournament!",
+            "fr": "Bienvenue au Grand Tournoi Codémon !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The registration system has received a messy Codémon name entry. Your job is to clean it up and validate it.\n\nCreate a program that:\n- Takes the messy name and removes extra whitespace\n- Capitalizes the first letter and makes the rest lowercase (proper name format). Hint: the ```.capitalize()``` method will help you!\n- Checks if the name length is between 3 and 10 characters (inclusive)\n- Prints the cleaned and formatted name",
+            "fr": "Le système d'inscription a reçu un nom de Codémon mal saisi. Ton travail est de le nettoyer et de le valider.\n\nCrée un programme qui :\n- Prend le nom désordonné et supprime les espaces supplémentaires\n- Met la première lettre en majuscule et le reste en minuscules (format de nom propre). Astuce : la méthode ```.capitalize()``` va t'aider !\n- Vérifie si la longueur du nom est entre 3 et 10 caractères (inclus)\n- Affiche le nom nettoyé et formaté"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "messy_name = \"  aquaCHU  \"\n\n# Clean and validate the name here\n\n",
+          "fr": "messy_name = \"  aquaCHU  \"\n\n# Nettoie et valide le nom ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "messy_name = \"  aquaCHU  \"\nclean_name = messy_name.strip()\nformatted_name = clean_name.capitalize()\nname_length = len(formatted_name)\nprint(\"Registration for\", formatted_name)\nprint(\"Length is\", name_length)",
+            "fr": "messy_name = \"  aquaCHU  \"\nclean_name = messy_name.strip()\nformatted_name = clean_name.capitalize()\nname_length = len(formatted_name)\nprint(\"Inscription pour\", formatted_name)\nprint(\"La longueur est de\", name_length)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_6_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "slicing",
+        "indexing",
+        "operations",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Stats Analysis - Power Calculation",
+      "fr": "Analyse des stats - Calcul de puissance"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The tournament official asks for Aquachu's stats, but they're stored in the system in a compact string format: \"ATK:75-DEF:60-SPD:85\". (All numbers are 2 digits)\n\nYou need to extract each stat one by one to report them:\n- Extract the attack value (the number after 'ATK:')\n- Extract the defense value (the number after 'DEF:')\n- Extract the speed value (the number after 'SPD:')\n- Calculate the average of all three stats\n- Print all the extracted values and the average",
+            "fr": "L'arbitre du tournoi demande les stats d'Aquachu, mais elles sont stockées dans le système dans un format de chaîne compact : \"ATK:75-DEF:60-SPD:85\". (Tous les nombres ont 2 chiffres)\n\nTu dois extraire chaque stat une par une pour les communiquer :\n- Extrait la valeur d'attaque (le nombre après 'ATK:')\n- Extrait la valeur de défense (le nombre après 'DEF:')\n- Extrait la valeur de vitesse (le nombre après 'SPD:')\n- Calcule la moyenne des trois stats\n- Affiche toutes les valeurs extraites et la moyenne"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "stats = \"ATK:75-DEF:60-SPD:85\"\n\n# Extract and analyze Aquachu's stats here\n\n",
+          "fr": "stats = \"ATK:75-DEF:60-SPD:85\"\n\n# Extrait et analyse les stats d'Aquachu ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "stats = \"ATK:75-DEF:60-SPD:85\"\n\nattack = int(stats[4:6])\ndefense = int(stats[11:13])\nspeed = int(stats[-2:])\nprint(\"Aquachu's stats:\", attack, defense, speed)\n\naverage = (attack + defense + speed) / 3\nprint(\"Average stat:\", average)",
+            "fr": "stats = \"ATK:75-DEF:60-SPD:85\"\n\nattack = int(stats[4:6])\ndefense = int(stats[11:13])\nspeed = int(stats[-2:])\nprint(\"Stats d'Aquachu :\", attack, defense, speed)\n\naverage = (attack + defense + speed) / 3\nprint(\"Stat moyenne :\", average)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_5_6_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "string",
+        "methods",
+        "slicing",
+        "f-strings",
+        "python"
+      ]
+    },
+    "title": {
+      "en": "Complete Tournament Card",
+      "fr": "Carte de tournoi complète"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Perfect! You've registered Aquachu and reported its stats to the tournament official.\n\nNow, the official hands you a form and asks you to write all of Aquachu's information on it - this will become Aquachu's official fighting card!\n\nYou have all the data ready: name, type, level, and stats. Your job is to make it look professional and impressive!",
+            "fr": "Parfait ! Tu as inscrit Aquachu et communiqué ses stats à l'officiel du tournoi.\n\nMaintenant, l'officiel te tend un formulaire et te demande d'y écrire toutes les informations d'Aquachu - ce sera la carte de combat officielle d'Aquachu !\n\nTu as toutes les données prêtes : nom, type, niveau et stats. Ton travail est de la rendre professionnelle et impressionnante !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can make it look professional by using:\n- Decorative borders (╔═╗ ║ ╚═╝ ╠═╣) to frame the card\n- F-strings to display the information\n- Alignment with ```<X``` (like ```<25```) to make everything line up nicely",
+            "fr": "Tu peux la rendre professionnelle en utilisant :\n- Des bordures décoratives (╔═╗ ║ ╚═╝ ╠═╣) pour encadrer la carte\n- Des f-strings pour afficher les informations\n- L'alignement avec ```<X``` (comme ```<25```) pour que tout soit bien aligné"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Aquachu's tournament data\nname = \"Aquachu\"\ntype, level = \"water\", 18\nattack, defense, speed = 75, 60, 85\naverage_stat = (attack + defense + speed) / 3\n\n# Create Aquachu's beautiful fighting card here\n\n",
+          "fr": "# Données d'Aquachu pour le tournoi\nname = \"Aquachu\"\ntype, level = \"water\", 18\nattack, defense, speed = 75, 60, 85\naverage_stat = (attack + defense + speed) / 3\n\n# Crée la belle carte de combat d'Aquachu ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "name = \"Aquachu\"\ntype, level = \"water\", 18\nattack, defense, speed = 75, 60, 85\naverage_stat = (attack + defense + speed) / 3\n\nprint(\"╔═══════════════════════════════════╗\")\nprint(\"║    CODÉMON FIGHTING CARD          ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(f\"║ Name: {name:<27} ║\")\nprint(f\"║ Type: {type.upper():<27} ║\")\nprint(f\"║ Level: {level:<26} ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(\"║           BATTLE STATS            ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(f\"║ ATK: {attack:<28} ║\")\nprint(f\"║ DEF: {defense:<28} ║\")\nprint(f\"║ SPD: {speed:<28} ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(f\"║ Average: {average_stat:<24.1f} ║\")\nprint(\"╚═══════════════════════════════════╝\")",
+            "fr": "name = \"Aquachu\"\ntype, level = \"water\", 18\nattack, defense, speed = 75, 60, 85\naverage_stat = (attack + defense + speed) / 3\n\nprint(\"╔═══════════════════════════════════╗\")\nprint(\"║    CARTE DE COMBAT CODÉMON        ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(f\"║ Nom: {name:<28} ║\")\nprint(f\"║ Type: {type.upper():<27} ║\")\nprint(f\"║ Niveau: {level:<25} ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(\"║          STATS DE COMBAT          ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(f\"║ ATK: {attack:<28} ║\")\nprint(f\"║ DEF: {defense:<28} ║\")\nprint(f\"║ SPD: {speed:<28} ║\")\nprint(\"╠═══════════════════════════════════╣\")\nprint(f\"║ Moyenne: {average_stat:<24.1f} ║\")\nprint(\"╚═══════════════════════════════════╝\")"
+          }
+        }
+      ]
+    }
+  }
+]

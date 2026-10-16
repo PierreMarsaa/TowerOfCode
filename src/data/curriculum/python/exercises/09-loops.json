@@ -1,0 +1,4139 @@
+[
+  {
+    "id": "python_9_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "iteration"
+      ]
+    },
+    "title": {
+      "en": "Introduction to For Loops",
+      "fr": "Introduction aux boucles For"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A for loop allows you to repeat a block of code multiple times. It's like giving instructions to do something over and over with different items in a collection.",
+            "fr": "Une boucle for te permet de répéter un bloc de code plusieurs fois. C'est comme donner des instructions pour faire quelque chose avec chacun des éléments d'un ensemble."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's the basic syntax of a for loop in Python:",
+            "fr": "Voici la syntaxe de base d'une boucle for en Python :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "for item in collection:\n    # Code to execute for each item",
+            "fr": "for item in collection:\n    # Code à exécuter pour chaque élément"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see a simple example with a list of Codémon names:",
+            "fr": "Voyons un exemple simple avec une liste de noms de Codémon :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\nfor codemon in codemons:\n    print(\"I choose you,\", codemon, \"!\")",
+            "fr": "codemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\nfor codemon in codemons:\n    print(\"Je te choisis,\", codemon, \"!\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example, we base the loop on the ```codemons``` list with 3 names. The loop goes through each name one by one, and the code inside the loop runs for each name.",
+            "fr": "Dans cet exemple, on base la boucle sur la liste ```codemons``` avec 3 noms. La boucle parcourt chaque nom un par un, et le code à l'intérieur de la boucle s'exécute pour chaque nom."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_1_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "For Loop Syntax",
+      "fr": "Syntaxe de la boucle For"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following is the correct syntax for a for loop in Python?",
+            "fr": "Laquelle des syntaxes suivantes est correcte pour une boucle for en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "for item in collection:\n    # code block"
+          },
+          {
+            "type": "codeBlock",
+            "value": "for (item in collection) {\n    # code block\n}"
+          },
+          {
+            "type": "codeBlock",
+            "value": "for item = collection:\n    # code block"
+          },
+          {
+            "type": "codeBlock",
+            "value": "for each item in collection:\n    # code block"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember : the correct syntax for a for loop in Python is for followed by a variable name, the keyword in, the collection, and a colon. The body of the loop must be indented.",
+        "fr": "Souviens-toi : la syntaxe correcte pour une boucle for en Python est for suivi d'un nom de variable, du mot-clé in, de la collection, et d'un deux-points. Le corps de la boucle doit être indenté."
+      }
+    }
+  },
+  {
+    "id": "python_9_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "lists"
+      ]
+    },
+    "title": {
+      "en": "Iterating Over Lists",
+      "fr": "Parcourir des listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "One of the most common uses of for loops is to iterate over items in a list. Each time the loop runs, the loop variable takes the value of the next item in the list.",
+            "fr": "L'une des utilisations les plus courantes des boucles for est de parcourir les éléments d'une liste. Chaque fois que la boucle s'exécute, la variable de boucle prend la valeur de l'élément suivant dans la liste."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "levels = [5, 10, 15, 20]\n\n# Loop through each level\nfor level in levels:\n    print(\"Codémon at level\", level)",
+            "fr": "niveaux = [5, 10, 15, 20]\n\n# Parcours de chaque niveau\nfor niveau in niveaux:\n    print(\"Codémon au niveau\", niveau)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Within the loop, you can basically do whatever you want, it's normal Python code. You can print the value, perform calculations, or even modify other variables.",
+            "fr": "À l'intérieur de la boucle, tu peux faire à peu près tout ce que tu veux, c'est du code Python normal. Tu peux afficher la valeur, effectuer des calculs ou même modifier d'autres variables."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "powers = [10, 20, 30, 40]\n\n# Calculate and print double the power for each value\nfor power in powers:\n    doubled_power = power * 2\n    print(\"Original power:\", power, \"Doubled:\", doubled_power)",
+            "fr": "puissances = [10, 20, 30, 40]\n\n# Calculer et afficher le double de la puissance pour chaque valeur\nfor puissance in puissances:\n    puissance_doublee = puissance * 2\n    print(\"Puissance originale :\", puissance, \"Double :\", puissance_doublee)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Loop Variable Scope",
+              "fr": "Scope de la variable de boucle"
+            },
+            "content": {
+              "en": "The loop variable (like 'codemon', 'level', or 'power' in our examples) is created when the loop starts. It continues to exist after the loop ends, containing the last value it was assigned during the loop.",
+              "fr": "La variable de boucle (comme 'codemon', 'level' ou 'power' dans nos exemples) est créée lorsque la boucle commence. Elle continue d'exister après la fin de la boucle, contenant la dernière valeur qui lui a été assignée pendant la boucle."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_1_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "lists"
+      ]
+    },
+    "title": {
+      "en": "Complete the For Loop",
+      "fr": "Complète la boucle For"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the for loop to print each Codémon type with an appropriate message.",
+            "fr": "Complète la boucle for pour afficher chaque type de Codémon avec un message approprié."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "types = [\"water\", \"fire\", \"grass\"]\n\n{{}} c_type {{}} types:\n    print(c_type, \"is a type of Codémon.\")",
+        "options": [
+          "for",
+          "in",
+          "each",
+          "from",
+          "of",
+          "element"
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in"
+        }
+      },
+      "hint": {
+        "en": "The syntax for a for loop requires the 'for' keyword, followed by a variable name, then 'in', and finally the collection to iterate over.",
+        "fr": "La syntaxe d'une boucle for nécessite le mot-clé 'for', suivi d'un nom de variable, puis 'in', et enfin la collection à parcourir."
+      }
+    }
+  },
+  {
+    "id": "python_9_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "Using range() with For Loops",
+      "fr": "Utiliser range() avec les boucles For"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```range()``` function is commonly used with for loops to repeat an action a specific number of times or to generate a sequence of numbers.",
+            "fr": "La fonction ```range()``` est couramment utilisée avec les boucles for pour répéter une action un nombre spécifique de fois ou pour générer une séquence de nombres."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# range(stop) - Creates a sequence from 0 to stop-1\nprint(\"range(5):\")\nfor i in range(5):\n    print(i)\n\n# range(start, stop, step) - Creates a sequence with a specific step\nprint(\"range(1, 10, 2):\")\nfor i in range(0, 10, 2):\n    print(i)",
+            "fr": "# range(stop) - Crée une séquence de 0 à stop-1\nprint(\"range(5):\")\nfor i in range(5):\n    print(i)\n\n# range(start, stop, step) - Crée une séquence avec un pas spécifique\nprint(\"range(1, 10, 2):\")\nfor i in range(0, 10, 2):\n    print(i)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "```range()``` can take one, two, or three parameters:\n1. One parameter: ```range(stop)``` will start at ```0``` and stop at the ```stop - 1```\n2. Two parameters: ```range(start, stop)``` will start at the ```start``` number and stop at ```stop - 1```\n3. Three parameters: ```range(start, stop, step)``` starts at ```start```, stops at ```stop - 1```, and increments by ```step``` each time.",
+            "fr": "```range()``` peut prendre un, deux ou trois paramètres :\n1. Un paramètre : ```range(stop)``` commencera à ```0``` et s'arrêtera à ```stop - 1```\n2. Deux paramètres : ```range(start, stop)``` commencera au nombre ```start``` et s'arrêtera à ```stop - 1```\n3. Trois paramètres : ```range(start, stop, step)``` commencera à ```start```, s'arrêtera à ```stop - 1```, et incrémentera de ```step``` à chaque fois."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_1_6",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "Match Range Expressions",
+      "fr": "Associe les expressions Range"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each range expression with the sequence of numbers it generates.",
+            "fr": "Associe chaque expression range avec la séquence de nombres qu'elle génère."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```range(5)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```0, 1, 2, 3, 4```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```range(2, 6)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```2, 3, 4, 5```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```range(1, 10, 2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```1, 3, 5, 7, 9```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```range(10, 5, -1)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```10, 9, 8, 7, 6```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_1_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "Understanding Range Parameters",
+      "fr": "Comprendre les paramètres de Range"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which range expression would generate the sequence: 2, 4, 6, 8, 10?",
+            "fr": "Quelle expression range générerait la séquence : 2, 4, 6, 8, 10 ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```range(1, 12, 2)```"
+          },
+          {
+            "type": "text",
+            "value": "```range(2, 10, 2)```"
+          },
+          {
+            "type": "text",
+            "value": "```range(2, 11, 2)```"
+          },
+          {
+            "type": "text",
+            "value": "```range(0, 10, 2)```"
+          }
+        ],
+        "correctAnswer": 2
+      },
+      "hint": {
+        "en": "When using range(start, stop, step), remember that it includes start but excludes stop.",
+        "fr": "Quand tu utilises range(start, stop, step), rappelle-toi qu'il inclut start mais exclut stop."
+      }
+    }
+  },
+  {
+    "id": "python_9_1_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Tracing Loop Variable Values",
+      "fr": "Suivre les valeurs des variables de boucle"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Consider the following code:",
+            "fr": "Considère le code suivant :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "items = [\"potion\", \"revive\", \"codeball\"]\nfor item in items:\n    print(item)"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the entire output of this code?",
+            "fr": "Quel sera le résultat affiché de ce code ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"potion\", \"revive\", \"codeball\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"codeball\", \"revive\", \"potion\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"item\", \"item\", \"item\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "There is going to be an error",
+              "fr": "Il va y avoir une erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that in 'for item in items', the variable 'item' takes on each value from the list in order.",
+        "fr": "Rappelle-toi que dans 'for item in items', la variable 'item' prend chaque valeur de la liste dans l'ordre."
+      }
+    }
+  },
+  {
+    "id": "python_9_1_9",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "Advanced Range Expressions",
+      "fr": "Expressions Range avancées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each range expression with the sequence it generates.",
+            "fr": "Associe chaque expression range avec la séquence qu'elle génère."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```range(10, 0, -2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```10, 8, 6, 4, 2```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```range(5, 20, 5)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```5, 10, 15```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```range(3, 4)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```3```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```range(0, -5, -1)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```0, -1, -2, -3, -4```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_1_10",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "accumulation"
+      ]
+    },
+    "title": {
+      "en": "Accumulating Values in Loops",
+      "fr": "Accumuler des valeurs dans les boucles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A common pattern with loops is to accumulate or calculate a result based on all items in a collection. For example, summing numbers.",
+            "fr": "Un truc qu'on fait beaucoup avec les boucles c'est de calculer un résultat basé sur tous les éléments d'une collection. Par exemple, additionner des nombres."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Example: Summing values in a list",
+            "fr": "Exemple : Additionner des valeurs dans une liste"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "powers = [45, 60, 35, 50]\n\n# Initialize the total to 0\ntotal_power = 0\n\n# Add each power to the total\nfor power in powers:\n    total_power = total_power + power\n\nprint(\"Total power:\", total_power)",
+            "fr": "puissances = [45, 60, 35, 50]\n\n# Initialise le total à 0\ntotal_puissance = 0\n\n# Ajoute chaque puissance au total\nfor puissance in puissances:\n    total_puissance = total_puissance + puissance\n\nprint(\"Puissance totale :\", total_puissance)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Accumulation Pattern",
+              "fr": "Modèle d'accumulation"
+            },
+            "content": {
+              "en": "The accumulation pattern generally follows these steps:\n1. Initialize an accumulator (like total_power = 0 or an empty list)\n2. Loop through the collection\n3. Update the accumulator with each item\n4. After the loop, the accumulator contains the final result",
+              "fr": "Le modèle d'accumulation suit généralement ces étapes :\n1. Initialiser un accumulateur (comme total_power = 0 ou une liste vide)\n2. Parcourir la collection\n3. Mettre à jour l'accumulateur avec chaque élément\n4. Après la boucle, l'accumulateur contient le résultat final"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_1_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "code execution"
+      ]
+    },
+    "title": {
+      "en": "What Will This Loop Print?",
+      "fr": "Que va afficher cette boucle ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quel sera le résultat du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "elements = [\"water\", \"fire\", \"grass\"]\nresult = \"\"\n\nfor element in elements:\n    result = result + element[0]\n\nprint(result)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```wfg```"
+          },
+          {
+            "type": "text",
+            "value": "```WFG```"
+          },
+          {
+            "type": "text",
+            "value": "```waterfiregrass```"
+          },
+          {
+            "type": "text",
+            "value": "```WATERFIREGRASS```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Looping over a list using a ```in``` statement allows you to access each element directly.",
+        "fr": "Boucler sur une liste en utilisant une instruction ```in``` permet d'accéder directement à chaque élément."
+      }
+    }
+  },
+  {
+    "id": "python_9_1_12",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "nested loops"
+      ]
+    },
+    "title": {
+      "en": "Loops with Indices",
+      "fr": "Boucles avec indices"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Another way to access indices AND values of the list is using range() with the length of the list:",
+            "fr": "Une autre façon d'accéder aux indices ET aux valeurs d'une liste est d'utiliser range() avec la longueur de la liste :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\nfor i in range(len(codemons)):\n    print(\"Position\", i, \"contains\", codemons[i])",
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to Use Indices",
+              "fr": "Quand utiliser les indices"
+            },
+            "content": {
+              "en": "Use indices when you need to:\n- Know the position of each item\n- Access multiple items in relation to the current item (like the next or previous item)\n- Modify the original list while iterating",
+              "fr": "Utilise les indices quand tu as besoin de :\n- Connaître la position de chaque élément\n- Accéder à plusieurs éléments en relation avec l'élément actuel (comme l'élément suivant ou précédent)\n- Modifier la liste originale pendant l'itération"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_1_13",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "indices"
+      ]
+    },
+    "title": {
+      "en": "Working with Indices",
+      "fr": "Travailler avec les indices"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to print each Codémon's name along with its power level using indices.",
+            "fr": "Complète le code pour afficher le nom de chaque Codémon avec son niveau de puissance en utilisant les indices."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "names = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\npowers = [75, 80, 70]\n\n# Use range and len to loop through indices\nfor i in {{}}({{}}(names)):\n    print(names[{{}}], \"has a power level of\", powers[{{}}])",
+        "options": [
+          "range",
+          "len",
+          "i",
+          "names",
+          "powers",
+          "enumerate",
+          "list",
+          "i"
+        ],
+        "correctAnswers": {
+          "1": "range",
+          "2": "len",
+          "3": "i",
+          "4": "i"
+        }
+      },
+      "hint": {
+        "en": "When using indices, range(len(list)) creates a sequence of indices from 0 to the length of the list minus 1. You can then use these indices to access corresponding elements in multiple lists.",
+        "fr": "Lorsque tu utilises des indices, range(len(liste)) crée une séquence d'indices de 0 à la longueur de la liste moins 1. Tu peux ensuite utiliser ces indices pour accéder aux éléments correspondants dans plusieurs listes."
+      }
+    }
+  },
+  {
+    "id": "python_9_1_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "list operations"
+      ]
+    },
+    "title": {
+      "en": "Analyzing Loop Behavior",
+      "fr": "Analyser le comportement d'une boucle"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the final value of result after this code executes?",
+            "fr": "Quelle sera la valeur finale de result après l'exécution de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "numbers = [5, 2, 8, 1, 7]\nresult = 0\n\nfor i in range(len(numbers)):\n  if i % 2 == 0:  # If index is even\n    result += numbers[i]",
+            "fr": "nombres = [5, 2, 8, 1, 7]\nresultat = 0\n\nfor i dans range(len(nombres)):\n  if i % 2 == 0:  # Si l'indice est pair\n    resultat += nombres[i]"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "20"
+          },
+          {
+            "type": "text",
+            "value": "23"
+          },
+          {
+            "type": "text",
+            "value": "15"
+          },
+          {
+            "type": "text",
+            "value": "10"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "In this exercise we loop through the whole list but a condition kind of filter what we add to the result.",
+        "fr": "Dans cet exercice, nous parcourons toute la liste, mais une condition filtre ce que nous ajoutons au résultat."
+      }
+    }
+  },
+  {
+    "id": "python_9_1_15",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "summary",
+        "techniques"
+      ]
+    },
+    "title": {
+      "en": "Three Ways to Use For Loops",
+      "fr": "Trois façons d'utiliser les boucles For"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You've learned three different techniques for using for loops in Python. Each technique is useful in different situations. Let's review them:",
+            "fr": "Tu as appris trois techniques différentes pour utiliser les boucles for en Python. Chaque technique est utile dans différentes situations. Récapitulons-les :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Technique 1: Looping Directly Over a List***",
+            "fr": "***Technique 1 : Boucler directement sur une liste***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": "# Technique 1: Direct iteration over list\ncodemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\nfor codemon in codemons:\n    print(codemon)"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Technique 2: Looping with range()***",
+            "fr": "***Technique 2 : Boucler avec range()***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": "# Technique 2: Using range() to repeat N times\n# Repeat 5 times\nfor i in range(5):\n    print(\"Training session\", i + 1)"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Technique 3: Looping with range(len())***",
+            "fr": "***Technique 3 : Boucler avec range(len())***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": "# Technique 3: Using range(len()) to access indices\nnames = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\npowers = [75, 80, 70]\n\nfor i in range(len(names)):\n    print(\"Position\", i, \":\", names[i], \"with power\", powers[i])"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Quick Decision Guide",
+              "fr": "Guide de décision rapide"
+            },
+            "content": {
+              "en": "- ***Need only values?*** → Use ```for item in list```\n- ***Need to repeat N times?*** → Use ```for i in range(N)```\n- ***Need indices or multiple lists?*** → Use ```for i in range(len(list))```",
+              "fr": "- ***Besoin seulement des valeurs ?*** → Utilise ```for item in list```\n- ***Besoin de répéter N fois ?*** → Utilise ```for i in range(N)```\n- ***Besoin des indices ou plusieurs listes ?*** → Utilise ```for i in range(len(list))```"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_1_16",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "range",
+        "nested loops",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Codémon Challenge - Training Session Analyzer",
+      "fr": "Défi Codémon - Analyseur de session d'entraînement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Training Session Analyzer! You need to analyze the performance of your Codémon team during training.\n\n***Your tasks:***\n1. Loop through each Codémon name and simulate 3 training rounds for each one. Display which Codémon is training and which round it is. (Hint: like nested if statements, you can nest loops inside other loops!)\n2. Loop through both the names and experience_gained lists using indices to display how much experience each Codémon gained",
+            "fr": "Bienvenue à l'Analyseur de session d'entraînement ! Tu dois analyser la performance de ton équipe de Codémon pendant l'entraînement.\n\n***Tes tâches :***\n1. Parcours chaque nom de Codémon et simule 3 rounds d'entraînement pour chacun. Affiche quel Codémon s'entraîne et quel est le numéro du round. (Astuce : comme les if imbriqués, tu peux imbriquer des boucles dans d'autres boucles !)\n2. Parcours les listes de noms et d'expérience gagnée en utilisant les indices pour afficher combien d'expérience chaque Codémon a gagné"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "print(\"=== TRAINING SESSION ANALYZER ===\")\n\ncodemon_names = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nexperience_gained = [150, 200, 175]\n\n# Task 1: Loop through each Codémon and simulate 3 training rounds\nprint(\"\\n--- Training Sessions ---\")\n\n# Task 2: Display experience gained by each Codémon using indices\nprint(\"\\n--- Experience Report ---\")\n\n",
+          "fr": "print(\"=== ANALYSEUR DE SESSION D'ENTRAÎNEMENT ===\")\n\ncodemon_noms = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nexperience_gagnee = [150, 200, 175]\n\n# Tâche 1 : Parcours chaque Codémon et simule 3 rounds d'entraînement\nprint(\"\\n--- Sessions d'entraînement ---\")\n\n# Tâche 2 : Affiche l'expérience gagnée par chaque Codémon en utilisant les indices\nprint(\"\\n--- Rapport d'expérience ---\")\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "print(\"=== TRAINING SESSION ANALYZER ===\")\n\ncodemon_names = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nexperience_gained = [150, 200, 175]\n\n# Task 1: Nested loops - each Codémon trains 3 times\nprint(\"\\n--- Training Sessions ---\")\nfor name in codemon_names:\n  for round_num in range(3):\n    print(f\"{name} is training - Round {round_num + 1}\")\n\n# Task 2: Display experience gained using indices\nprint(\"\\n--- Experience Report ---\")\nfor i in range(len(codemon_names)):\n  print(f\"{codemon_names[i]} gained {experience_gained[i]} XP\")",
+            "fr": "print(\"=== ANALYSEUR DE SESSION D'ENTRAÎNEMENT ===\")\n\ncodemon_noms = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nexperience_gagnee = [150, 200, 175]\n\n# Tâche 1 : Boucles imbriquées - chaque Codémon s'entraîne 3 fois\nprint(\"\\n--- Sessions d'entraînement ---\")\nfor nom in codemon_noms:\n  for num_round in range(3):\n    print(f\"{nom} s'entraîne - Round {num_round + 1}\")\n\n# Tâche 2 : Affiche l'expérience gagnée en utilisant les indices\nprint(\"\\n--- Rapport d'expérience ---\")\nfor i in range(len(codemon_noms)):\n  print(f\"{codemon_noms[i]} a gagné {experience_gagnee[i]} XP\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "introduction"
+      ]
+    },
+    "title": {
+      "en": "Introduction to While Loops",
+      "fr": "Introduction aux boucles While"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A while loop allows you to repeat a block of code as long as a condition is True. Unlike for loops which iterate over a sequence, while loops continue until a condition becomes False.",
+            "fr": "Une boucle while te permet de répéter un bloc de code tant qu'une condition est Vraie. Contrairement aux boucles for qui parcourent une séquence, les boucles while continuent jusqu'à ce qu'une condition devienne Fausse."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The basic syntax is:",
+            "fr": "La syntaxe de base est :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "while condition:\n    # code to execute\n    # update something to eventually make the condition False",
+            "fr": "while condition:\n    # code à exécuter\n    # mettre à jour quelque chose pour rendre la condition Fausse à un moment"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's a simple example of a while loop that counts from 1 to 5:",
+            "fr": "Voici un exemple simple d'une boucle while qui compte de 1 à 5 :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "count = 1 # Initialize counter\n\n# Loop while count is less than or equal to 5\nwhile count <= 5:\n    print(count)\n    count = count + 1  # Update the counter\n\nprint(\"Loop finished!\")",
+            "fr": "compteur = 1 # Initialiser le compteur\n\n# Boucler tant que le compteur est inférieur ou égal à 5\nwhile compteur <= 5:\n    print(compteur)\n    compteur = compteur + 1  # Mettre à jour le compteur\n\nprint(\"Boucle terminée !\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice three important parts:\n1. We initialize a variable before the loop\n2. We use this variable in the condition\n3. We update the variable inside the loop. This way, when the condition becomes False, the loop stops.",
+            "fr": "Remarque trois parties importantes :\n1. Nous initialisons une variable avant la boucle\n2. Nous utilisons cette variable dans la condition\n3. Nous mettons à jour la variable à l'intérieur de la boucle. Ainsi, quand la condition devient fausse, la boucle s'arrête."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "execution flow"
+      ]
+    },
+    "title": {
+      "en": "How While Loops Work",
+      "fr": "Comment fonctionnent les boucles While"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's understand how a while loop works step by step:",
+            "fr": "Comprenons comment fonctionne une boucle while étape par étape :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "1. Python evaluates the condition\n2. If the condition is True, the code inside the loop executes\n3. After executing the code, Python goes back to step 1\n4. If the condition is False, Python skips the loop and continues with the code after it",
+            "fr": "1. Python évalue la condition\n2. Si la condition est Vraie, le code à l'intérieur de la boucle s'exécute\n3. Après avoir exécuté le code, Python revient à l'étape 1\n4. Si la condition est Fausse, Python saute la boucle et continue avec le code qui suit"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's trace through this example with codemon_level starting at 1 and increasing until it reaches 5:",
+            "fr": "Suivons cet exemple avec niveau_codemon commençant à 1 et augmentant jusqu'à atteindre 5 :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_level = 1\n\nwhile codemon_level < 5:\n    print(\"Training Codémon! Current level:\", codemon_level)\n    codemon_level = codemon_level + 1\n    \nprint(\"Training complete! Final level:\", codemon_level)",
+            "fr": "niveau_codemon = 1\n\nwhile niveau_codemon < 5:\n    print(\"Entraînement du Codémon ! Niveau actuel :\", niveau_codemon)\n    niveau_codemon = niveau_codemon + 1\n    \nprint(\"Entraînement terminé ! Niveau final :\", niveau_codemon)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Loop Execution Trace",
+              "fr": "Trace d'exécution de la boucle"
+            },
+            "content": {
+              "en": "1. Start: codemon_level = 1\n2. Check: 1 < 5? Yes → Execute loop\n3. Print level 1, increase to 2\n4. Check: 2 < 5? Yes → Execute loop\n5. Print level 2, increase to 3\n6. Check: 3 < 5? Yes → Execute loop\n7. Print level 3, increase to 4\n8. Check: 4 < 5? Yes → Execute loop\n9. Print level 4, increase to 5\n10. Check: 5 < 5? No → Exit loop\n11. Print final level: 5",
+              "fr": "1. Début : niveau_codemon = 1\n2. Vérification : 1 < 5 ? Oui → Exécuter la boucle\n3. Afficher niveau 1, augmenter à 2\n4. Vérification : 2 < 5 ? Oui → Exécuter la boucle\n5. Afficher niveau 2, augmenter à 3\n6. Vérification : 3 < 5 ? Oui → Exécuter la boucle\n7. Afficher niveau 3, augmenter à 4\n8. Vérification : 4 < 5 ? Oui → Exécuter la boucle\n9. Afficher niveau 4, augmenter à 5\n10. Vérification : 5 < 5 ? Non → Sortir de la boucle\n11. Afficher niveau final : 5"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_2_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Correct While Loop Syntax",
+      "fr": "Syntaxe correcte d'une boucle While"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following is the correct syntax for a while loop in Python?",
+            "fr": "Laquelle des syntaxes suivantes est correcte pour une boucle while en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```while condition:```"
+          },
+          {
+            "type": "text",
+            "value": "```while (condition) {}```"
+          },
+          {
+            "type": "text",
+            "value": "```while condition```"
+          },
+          {
+            "type": "text",
+            "value": "```while: condition```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember : a while loop in Python is built with the keyword 'while', followed by a condition, a colon, and then the indented block of code that will execute as long as the condition is true.",
+        "fr": "Souviens-toi : une boucle while en Python est construite avec le mot-clé 'while', suivi d'une condition, d'un deux-points, puis du bloc de code indenté qui s'exécutera tant que la condition est vraie."
+      }
+    }
+  },
+  {
+    "id": "python_9_2_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Complete the While Loop",
+      "fr": "Complète la boucle While"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the while loop to print numbers from 1 to 5:",
+            "fr": "Complète la boucle while pour afficher les nombres de 1 à 5 :"
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "num = 1\n\n{{}} num <= 5:\n  print(num)\n  num = num {{}} 1",
+        "options": [
+          "while",
+          "for",
+          "print",
+          "input",
+          "+",
+          "-",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "while",
+          "2": "+"
+        }
+      },
+      "hint": {
+        "en": "A while loop needs the 'while' keyword, followed by a condition that will become False eventually.",
+        "fr": "Une boucle while a besoin du mot-clé 'while', suivi d'une condition qui finira par devenir Fausse."
+      }
+    }
+  },
+  {
+    "id": "python_9_2_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "infinite loops"
+      ]
+    },
+    "title": {
+      "en": "Danger: Infinite Loops",
+      "fr": "Danger : Les boucles infinies"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A common error with while loops is creating an infinite loop - a loop that never ends because its condition never becomes False.",
+            "fr": "Une erreur courante avec les boucles while est de créer une boucle infinie - une boucle qui ne se termine jamais parce que sa condition ne devient jamais Fausse."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This happens when you forget to update the variable(s) used in the condition, or update them incorrectly.",
+            "fr": "Cela se produit quand tu oublies de mettre à jour la/les variable(s) utilisée(s) dans la condition, ou que tu les mets à jour incorrectement."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "IMPORTANT: Avoid Infinite Loops",
+              "fr": "IMPORTANT : Évite les boucles infinies"
+            },
+            "content": {
+              "en": "If you run an infinite loop, your program might freeze or crash. Make sure your loop condition can eventually become False.\n\nWe won't run the code examples for infinite loops below to avoid crashing your app!",
+              "fr": "Si tu exécutes une boucle infinie, ton programme pourrait se figer ou planter. Assure-toi que la condition de ta boucle puisse éventuellement devenir Fausse.\n\nNous n'exécuterons pas les exemples de code pour les boucles infinies ci-dessous pour éviter de faire planter ton application !"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Example of an infinite loop (DO NOT RUN THIS!):",
+            "fr": "Exemple de boucle infinie (NE PAS EXÉCUTER !) :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "# This would run forever!\ncounter = 1\nwhile counter <= 5:\n    print(counter)\n    # Oops! We forgot to increment counter!\n    # counter stays 1 forever, we never leave the loop cause we stay under 5!",
+            "fr": "# Cela tournerait indéfiniment !\ncompteur = 1\nwhile compteur <= 5:\n    print(compteur)\n    # Oups ! On a oublié d'incrémenter le compteur !\n   # le compteur reste à 1 pour toujours, on ne quitte jamais la boucle car on reste en dessous de 5 !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's the correct version:",
+            "fr": "Voici la version correcte :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "counter = 1\nwhile counter <= 5:\n    print(counter)\n    counter = counter + 1  # Don't forget this line!",
+            "fr": "compteur = 1\nwhile compteur <= 5:\n    print(compteur)\n    compteur = compteur + 1  # N'oublie pas cette ligne !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_2_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "infinite loops"
+      ]
+    },
+    "title": {
+      "en": "Spot the Infinite Loop",
+      "fr": "Repère la boucle infinie"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following code snippets would create an infinite loop?",
+            "fr": "Lequel des extraits de code suivants créerait une boucle infinie ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "power = 5\nwhile power < 10:\n    print(\"Power level:\", power)\n    power = power - 1"
+          },
+          {
+            "type": "codeBlock",
+            "value": "health = 100\nwhile health > 0:\n    print(\"Codémon is healthy!\")\n    health = health - 10"
+          },
+          {
+            "type": "codeBlock",
+            "value": "level = 1\nwhile level < 10:\n    print(\"Current level:\", level)\n    level = level + 1"
+          },
+          {
+            "type": "codeBlock",
+            "value": "x = 0\nwhile x < 5:\n    print(x)\n    x = x + 1"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Look at how the variable in the condition changes within the loop body. Will it ever make the condition false?",
+        "fr": "Regarde comment la variable dans la condition change dans le corps de la boucle. Est-ce qu'elle rendra un jour la condition fausse ?"
+      }
+    }
+  },
+  {
+    "id": "python_9_2_7",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "output"
+      ]
+    },
+    "title": {
+      "en": "Match While Loops with Outputs",
+      "fr": "Associe les boucles While avec leurs sorties"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each while loop with its correct output:",
+            "fr": "Associe chaque boucle while avec sa sortie correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "codeBlock",
+              "value": "x = 1\nwhile x <= 3:\n    print(x)\n    x += 1"
+            },
+            "match": {
+              "type": "codeBlock",
+              "value": "1\n2\n3"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "codeBlock",
+              "value": "x = 5\nwhile x > 0:\n    print(x)\n    x -= 2"
+            },
+            "match": {
+              "type": "codeBlock",
+              "value": "5\n3\n1"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "codeBlock",
+              "value": "x = 0\nwhile x < 3:\n    x += 1\n    print(x * 2)"
+            },
+            "match": {
+              "type": "codeBlock",
+              "value": "2\n4\n6"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "codeBlock",
+              "value": "x = 10\nwhile x > 5:\n    print(x)\n    x -= 1"
+            },
+            "match": {
+              "type": "codeBlock",
+              "value": "10\n9\n8\n7\n6"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_2_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "condition"
+      ]
+    },
+    "title": {
+      "en": "Fix the Infinite Loop",
+      "fr": "Corrige la boucle infinie"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "This code would create an infinite loop. Add a line to fix it so that it counts from 1 to 5 and then stops:",
+            "fr": "Ce code créerait une boucle infinie. Ajoute une ligne pour le corriger afin qu'il compte de 1 à 5 puis s'arrête :"
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "count = 1\n\nwhile count <= 5:\n    print(\"Count is:\", count)\n    {{}} = {{}} {{}} {{}}",
+        "options": [
+          "count",
+          "count",
+          "1",
+          "total",
+          "increment",
+          "0",
+          "+"
+        ],
+        "correctAnswers": {
+          "1": "count",
+          "2": "count",
+          "3": "+",
+          "4": "1"
+        }
+      },
+      "hint": {
+        "en": "To avoid an infinite loop, you need to update the variable used in the condition so it eventually becomes False.",
+        "fr": "Pour éviter une boucle infinie, tu dois mettre à jour la variable utilisée dans la condition pour qu'elle devienne éventuellement Fausse."
+      }
+    }
+  },
+  {
+    "id": "python_9_2_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "execution"
+      ]
+    },
+    "title": {
+      "en": "Predicting While Loop Output",
+      "fr": "Prédire la sortie d'une boucle While"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of this code?",
+            "fr": "Quelle sera la sortie de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "health = 20\ndamage = 6\n\nwhile health > 0:\n    print(\"Health:\", health)\n    health = health - damage"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "Health: 20\nHealth: 14\nHealth: 8\nHealth: 2"
+          },
+          {
+            "type": "codeBlock",
+            "value": "Health: 20\nHealth: 14\nHealth: 8"
+          },
+          {
+            "type": "codeBlock",
+            "value": "Health: 20\nHealth: 14\nHealth: 8\nHealth: 2\nHealth: -4"
+          },
+          {
+            "type": "codeBlock",
+            "value": "Health: 14\nHealth: 8\nHealth: 2"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Trace through the loop step by step. The condition is checked before each iteration, so it stops when health ≤ 0.",
+        "fr": "Suis la boucle étape par étape. La condition est vérifiée avant chaque itération, donc elle s'arrête quand health ≤ 0."
+      }
+    }
+  },
+  {
+    "id": "python_9_2_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "condition"
+      ]
+    },
+    "title": {
+      "en": "Understanding When While Loops Run",
+      "fr": "Comprendre quand les boucles While s'exécutent"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When does the code inside a while loop execute?",
+            "fr": "Quand le code à l'intérieur d'une boucle while s'exécute-t-il ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Only when the condition evaluates to True",
+              "fr": "Seulement quand la condition est évaluée à True"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only when the condition evaluates to False",
+              "fr": "Seulement quand la condition est évaluée à False"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "At least once, regardless of the condition",
+              "fr": "Au moins une fois, indépendamment de la condition"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Always exactly once",
+              "fr": "Toujours exactement une fois"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that a while loop checks its condition first, then only executes if the condition is True.",
+        "fr": "Rappelle-toi qu'une boucle while vérifie sa condition d'abord, puis exécute uniquement si la condition est True."
+      }
+    }
+  },
+  {
+    "id": "python_9_2_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "conditions",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Codémon Challenge - Battle Simulator",
+      "fr": "Défi Codémon - Simulateur de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Battle Simulator! You need to simulate a Codémon battle using a while loop.\n\nSimulate a battle where a Codémon has 50 health points and takes 7 damage each turn. Use a while loop to display the health after each attack until health reaches 0 or below.",
+            "fr": "Bienvenue au Simulateur de combat ! Tu dois simuler un combat de Codémon en utilisant une boucle while.\n\nSimule un combat où un Codémon a 50 points de vie et prend 7 points de dégâts à chaque tour. Utilise une boucle while pour afficher la santé après chaque attaque jusqu'à ce que la santé atteigne 0 ou moins."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "print(\"=== BATTLE SIMULATOR ===\")\n\nhealth = 50\ndamage = 7\nturn = 1\n\n# Simulate battle with health reduction\n\n",
+          "fr": "print(\"=== SIMULATEUR DE COMBAT ===\")\n\nsante = 50\ndegats = 7\ntour = 1\n\n# Simule un combat avec réduction de santé\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "print(\"=== BATTLE SIMULATOR ===\")\n\nhealth = 50\ndamage = 7\nturn = 1\n\nwhile health > 0:\n  print(f\"Turn {turn}: Codémon takes {damage} damage!\")\n  health = health - damage\n  if health > 0:\n    print(f\"Remaining health: {health}\")\n  else:\n    print(f\"Remaining health: 0\")\n  turn = turn + 1\n\nprint(\"Codémon fainted!\")",
+            "fr": "print(\"=== SIMULATEUR DE COMBAT ===\")\n\nsante = 50\ndegats = 7\ntour = 1\n\nwhile sante > 0:\n  print(f\"Tour {tour} : Le Codémon prend {degats} points de dégâts !\")\n  sante = sante - degats\n  if sante > 0:\n    print(f\"Santé restante : {sante}\")\n  else:\n    print(f\"Santé restante : 0\")\n  tour = tour + 1\n\nprint(\"Le Codémon est K.O. !\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "break",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "Loop Control Introduction",
+      "fr": "Introduction aux contrôles de boucle"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Sometimes we need more control over our loops. Python provides two special statements for this purpose: ```break``` and ```continue```.",
+            "fr": "Parfois, nous avons besoin de plus de contrôle sur nos boucles. Python fournit deux instructions spéciales à cet effet : ```break``` et ```continue```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "These statements let you change the normal flow of a loop:\n\n- ```break```: Exits the loop completely\n- ```continue```: Skips the current iteration and moves to the next one",
+            "fr": "Ces instructions te permettent de modifier le flux normal d'une boucle :\n\n- ```break``` : Sort complètement de la boucle\n- ```continue``` : Saute l'itération actuelle et passe à la suivante"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Loop control statements help you make your loops more efficient and solve problems in different ways.",
+            "fr": "Les instructions de contrôle de boucle t'aident à rendre tes boucles plus efficaces et à résoudre des problèmes de différentes façons."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_3_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "break"
+      ]
+    },
+    "title": {
+      "en": "The break Statement",
+      "fr": "L'instruction break"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```break``` statement allows you to exit a loop immediately, regardless of the loop condition. Once ```break``` is executed, the program continues with the next statement after the loop.",
+            "fr": "L'instruction ```break``` te permet de sortir immédiatement d'une boucle, quelle que soit la condition de la boucle. Une fois que ```break``` est exécuté, le programme continue avec l'instruction suivante après la boucle."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemons = [\"Aquachu\",  \"Florachu\",  \"Pyrochu\"]\n\nfor codemon in codemons:\n  print(\"Checking\", codemon)\n  if codemon == \"Florachu\":\n    print(\"Found Florachu!\")\n    break  # Exit the loop when Florachu is found\n  \nprint(\"Search complete.\")",
+            "fr": "codemons = [\"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\nfor codemon in codemons:\n  print(\"Vérification de\", codemon)\n  if codemon == \"Florachu\":\n    print(\"Florachu trouvé !\")\n    break  # Sort de la boucle quand Florachu est trouvé\n  \nprint(\"Recherche terminée.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example, we're looking for \"Florachu\" in our list. Once we find it, we print a message and then use ```break``` to exit the loop immediately. Notice that \"Pyrochu\" is never checked because we already exited the loop.",
+            "fr": "Dans cet exemple, nous cherchons \"Florachu\" dans notre liste. Une fois trouvé, nous affichons un message puis utilisons ```break``` pour sortir immédiatement de la boucle. Remarque que \"Pyrochu\" n'est jamais vérifié car nous sommes déjà sortis de la boucle."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to use break",
+              "fr": "Quand utiliser break"
+            },
+            "content": {
+              "en": "Use break when you:\n- Found what you were looking for\n- Need to exit a loop early based on a condition\n- Want to implement an \"early exit\" strategy for efficiency",
+              "fr": "Utilise break quand tu :\n- As trouvé ce que tu cherchais\n- Dois sortir d'une boucle plus tôt en fonction d'une condition\n- Veux implémenter une stratégie de \"sortie anticipée\" pour l'efficacité"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_3_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "The continue Statement",
+      "fr": "L'instruction continue"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```continue``` statement skips the rest of the current iteration and moves directly to the next iteration of the loop. Unlike ```break```, it doesn't exit the loop completely.",
+            "fr": "L'instruction ```continue``` saute le reste de l'itération actuelle et passe directement à l'itération suivante de la boucle. Contrairement à ```break```, elle ne sort pas complètement de la boucle."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemons = [\"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\nfor codemon in codemons:\n  # Skip grass types\n  if codemon == \"Florachu\":\n    continue  # Skip to the next codemon\n    \n  print(codemon, \"is ready for battle!\")\n  \nprint(\"Battle preparation complete.\")",
+            "fr": "codemons = [\"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\nfor codemon in codemons:\n  # Skip le type plante \n  if codemon == \"Florachu\" :\n    continue  # Passe au codemon suivant\n    \n  print(codemon, \"est prêt pour le combat !\")\n  \nprint(\"Préparation au combat terminée.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example, we use ```continue``` to skip Florachu. When the condition is true, the ```continue``` statement causes the loop to jump immediately to the next iteration without executing the print statement.",
+            "fr": "Dans cet exemple, nous utilisons ```continue``` pour sauter Florachu. Lorsque la condition est vraie, l'instruction ```continue``` fait que la boucle passe immédiatement à l'itération suivante sans exécuter l'instruction print."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to use continue",
+              "fr": "Quand utiliser continue"
+            },
+            "content": {
+              "en": "Use continue when you:\n- Want to skip certain items in a collection\n- Need to avoid processing specific cases\n- Want to implement filtering logic within a loop",
+              "fr": "Utilise continue quand tu :\n- Veux sauter certains éléments dans une collection\n- Dois éviter de traiter des cas spécifiques\n- Veux implémenter une logique de filtrage dans une boucle"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_3_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "break"
+      ]
+    },
+    "title": {
+      "en": "What does break do?",
+      "fr": "Que fait break ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of this code?",
+            "fr": "Quel sera le résultat de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "for i in range(1, 6):\n  if i == 3:\n    break\n  print(i)\nprint(\"Done\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "1\n2\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n3\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n4\n5\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n3\n4\n5\nDone"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: When a break statement is executed, Python immediately exits the loop and continues with the next statement after the loop.",
+        "fr": "Rappelle-toi : Quand une instruction break est exécutée, Python sort immédiatement de la boucle et continue avec l'instruction suivante après la boucle."
+      }
+    }
+  },
+  {
+    "id": "python_9_3_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "What does continue do?",
+      "fr": "Que fait continue ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of this code?",
+            "fr": "Quel sera le résultat de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "for i in range(1, 6):\n  if i == 3:\n    continue\n  print(i)\nprint(\"Done\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n4\n5\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n3\n4\n5\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n3\nDone"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: continue skips the rest of the current iteration and moves to the next item in the loop. It doesn't exit the loop completely.",
+        "fr": "Rappelle-toi : continue saute le reste de l'itération actuelle et passe à l'élément suivant dans la boucle. Il ne sort pas complètement de la boucle."
+      }
+    }
+  },
+  {
+    "id": "python_9_3_6",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "break",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "Break vs Continue",
+      "fr": "Break vs Continue"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each scenario with the appropriate loop control statement.",
+            "fr": "Associe chaque scénario à l'instruction de contrôle de boucle appropriée."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Exit the loop when a specific value is found",
+                "fr": "Sortir de la boucle quand une valeur spécifique est trouvée"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```break```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Skip processing negative numbers",
+                "fr": "Sauter le traitement des nombres négatifs"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```continue```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Stop counting when reaching a threshold",
+                "fr": "Arrêter de compter en atteignant un seuil"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```break```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Only process even numbers in a list",
+                "fr": "Traiter uniquement les nombres pairs dans une liste"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```continue```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_3_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "break"
+      ]
+    },
+    "title": {
+      "en": "Break or Continue?",
+      "fr": "Break ou Continue ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to find the first even number and then stop the search.",
+            "fr": "Complète le code pour trouver le premier nombre pair et ensuite stop la recherche."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "numbers = [7, 3, 9, 4, 1, 8]\n\nfor num in numbers:\n  if num % 2 == 0:\n    print(\"First even number found:\", num)\n    {{}}\n    \nprint(\"Search complete.\")",
+        "options": [
+          "break",
+          "continue",
+          "pass",
+          "exit",
+          "return"
+        ],
+        "correctAnswers": {
+          "1": "break"
+        }
+      },
+      "hint": {
+        "en": "Break is used to exit the loop completely when a condition is met, Continue is used to skip the rest of the current iteration and move to the next one.",
+        "fr": "Break est utilisé pour sortir complètement de la boucle lorsqu'une condition est remplie, Continue est utilisé pour sauter le reste de l'itération actuelle et passer à la suivante."
+      }
+    }
+  },
+  {
+    "id": "python_9_3_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "Break or Continue?",
+      "fr": "Break ou Continue ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to skip negative numbers and only print positive numbers.",
+            "fr": "Complète le code pour sauter les nombres négatifs et n'afficher que les nombres positifs."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "numbers = [5, -2, 7, -1, 0, 3, -4]\n\nfor num in numbers:\n  if num < 0:\n    {{}}\n  print(num, \"is a non-negative number.\")",
+        "options": [
+          "continue",
+          "break",
+          "pass",
+          "skip",
+          "next"
+        ],
+        "correctAnswers": {
+          "1": "continue"
+        }
+      },
+      "hint": {
+        "en": "Break is used to exit the loop completely when a condition is met, Continue is used to skip the rest of the current iteration and move to the next one.",
+        "fr": "Break est utilisé pour sortir complètement de la boucle lorsqu'une condition est remplie, Continue est utilisé pour sauter le reste de l'itération actuelle et passer à la suivante."
+      }
+    }
+  },
+  {
+    "id": "python_9_3_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "break",
+        "continue",
+        "while"
+      ]
+    },
+    "title": {
+      "en": "Loop Controls in While Loops",
+      "fr": "Contrôles de boucle dans les boucles While"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```break``` and ```continue``` statements work exactly the same way in while loops as they do in for loops.",
+            "fr": "Les instructions ```break``` et ```continue``` fonctionnent exactement de la même manière dans les boucles while que dans les boucles for."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Using ```break``` .",
+            "fr": "Utilisation de ```break```."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_health = 100\nturn = 1\n\nwhile codemon_health > 0:\n  print(\"Turn\", turn, \"- Health:\", codemon_health)\n  damage = turn * 10\n  codemon_health -= damage\n  \n  # End the battle early if health drops below 50\n  if codemon_health < 50:\n    print(\"Codémon is at risk! Exiting battle.\")\n    break\n    \n  turn += 1\n\nprint(\"Battle ended.\")",
+            "fr": "sante_codemon = 100\ntour = 1\n\nwhile sante_codemon > 0:\n  print(\"Tour\", tour, \"- Santé:\", sante_codemon)\n  degats = tour * 10\n  sante_codemon -= degats\n  \n  # Terminer le combat plus tôt si la santé descend en dessous de 50\n  if sante_codemon < 50:\n    print(\"Le Codémon est en danger ! Sortie du combat.\")\n    break\n    \n  tour += 1\n\nprint(\"Combat terminé.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Using ```continue``` .",
+            "fr": "Utilisation de ```continue```."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "count = 0\n\nwhile count < 10:\n  count += 1\n  \n  # Skip even numbers\n  if count % 2 == 0:\n    continue\n    \n  print(\"Processing odd number:\", count)\n\nprint(\"Processing complete.\")",
+            "fr": "compteur = 0\n\nwhile compteur < 10:\n  compteur += 1\n  \n  # Sauter les nombres pairs\n  if compteur % 2 == 0:\n    continue\n    \n  print(\"Traitement du nombre impair :\", compteur)\n\nprint(\"Traitement terminé.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Be Careful with continue in While Loops",
+              "fr": "Sois prudent avec continue dans les boucles While"
+            },
+            "content": {
+              "en": "When using continue in a while loop, make sure your loop variable still gets updated. Otherwise, you might create an infinite loop if the update statement is placed after the continue.",
+              "fr": "Quand tu utilises continue dans une boucle while, assure-toi que ta variable de boucle est toujours mise à jour. Sinon, tu pourrais créer une boucle infinie si l'instruction de mise à jour est placée après le continue."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_3_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "loop control",
+        "break",
+        "continue",
+        "while"
+      ]
+    },
+    "title": {
+      "en": "What will this code print?",
+      "fr": "Qu'affichera ce code ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of this while loop with break?",
+            "fr": "Quel sera le résultat de cette boucle while avec break ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "i = 1\nwhile i <= 5:\n  if i == 3:\n    i += 1\n    break\n  print(i)\n  i += 1\nprint(\"Done\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "1\n2\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n3\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n4\n5\nDone"
+          },
+          {
+            "type": "codeBlock",
+            "value": "1\n2\n3\n4\n5\nDone"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Check what happens in the case where i equals 3. Where does the execution flow? What statements are executed and in what order?",
+        "fr": "Vérifie ce qui se passe dans le cas où i est égal à 3. Où va le flux d'exécution ? Quelles instructions sont exécutées et dans quel ordre ?"
+      }
+    }
+  },
+  {
+    "id": "python_9_3_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "break",
+        "continue",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Codémon Challenge - Inventory Manager",
+      "fr": "Défi Codémon - Gestionnaire d'inventaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Inventory Manager! You need to process items in your Codémon inventory using loop control statements.\n\n***Your tasks:***\n1. Loop through the items list and stop searching when you find a \"Rare Candy\". Display each item you check and a special message when you find the Rare Candy.\n2. Loop through the power_levels list and only display power levels that are 50 or higher. Skip (don't display) power levels below 50.",
+            "fr": "Bienvenue au Gestionnaire d'inventaire ! Tu dois traiter les objets dans ton inventaire Codémon en utilisant les instructions de contrôle de boucle.\n\n***Tes tâches :***\n1. Parcours la liste d'objets et arrête la recherche quand tu trouves un \"Super Bonbon\". Affiche chaque objet que tu vérifies et un message spécial quand tu trouves le Super Bonbon.\n2. Parcours la liste de niveaux de puissance et affiche uniquement les niveaux de puissance qui sont 50 ou plus. Saute (n'affiche pas) les niveaux de puissance en dessous de 50."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "print(\"=== INVENTORY MANAGER ===\")\n\n# Task 1: Find Rare Candy and stop\nprint(\"\\n--- Searching for Rare Candy ---\")\nitems = [\"Potion\", \"codeball\", \"Rare Candy\", \"Revive\", \"Super Potion\"]\n\n# Task 2: Display only high power levels (50+)\nprint(\"\\n--- High Power Levels ---\")\npower_levels = [35, 62, 48, 55, 73, 42, 68]\n\n",
+          "fr": "print(\"=== GESTIONNAIRE D'INVENTAIRE ===\")\n\n# Tâche 1 : Trouve le Super Bonbon et arrête\nprint(\"\\n--- Recherche du Super Bonbon ---\")\nobjets = [\"Potion\", \"codeball\", \"Super Bonbon\", \"Rappel\", \"Super Potion\"]\n\n# Tâche 2 : Affiche uniquement les niveaux de puissance élevés (50+)\nprint(\"\\n--- Niveaux de puissance élevés ---\")\nniveaux_puissance = [35, 62, 48, 55, 73, 42, 68]\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "print(\"=== INVENTORY MANAGER ===\")\n\n# Task 1: Find Rare Candy and stop\nprint(\"\\n--- Searching for Rare Candy ---\")\nitems = [\"Potion\", \"codeball\", \"Rare Candy\", \"Revive\", \"Super Potion\"]\n\nfor item in items:\n  print(f\"Checking: {item}\")\n  if item == \"Rare Candy\":\n    print(\"Found Rare Candy! Stopping search.\")\n    break\n\n# Task 2: Display only high power levels (50+)\nprint(\"\\n--- High Power Levels ---\")\npower_levels = [35, 62, 48, 55, 73, 42, 68]\n\nfor power in power_levels:\n  if power < 50:\n    continue\n  print(f\"Power level: {power}\")",
+            "fr": "print(\"=== GESTIONNAIRE D'INVENTAIRE ===\")\n\n# Tâche 1 : Trouve le Super Bonbon et arrête\nprint(\"\\n--- Recherche du Super Bonbon ---\")\nobjets = [\"Potion\", \"codeball\", \"Super Bonbon\", \"Rappel\", \"Super Potion\"]\n\nfor objet in objets:\n  print(f\"Vérification : {objet}\")\n  if objet == \"Super Bonbon\":\n    print(\"Super Bonbon trouvé ! Arrêt de la recherche.\")\n    break\n\n# Tâche 2 : Affiche uniquement les niveaux de puissance élevés (50+)\nprint(\"\\n--- Niveaux de puissance élevés ---\")\nniveaux_puissance = [35, 62, 48, 55, 73, 42, 68]\n\nfor puissance in niveaux_puissance:\n  if puissance < 50:\n    continue\n  print(f\"Niveau de puissance : {puissance}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_4_1",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "nested",
+        "for",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "Codémon Power Multiplication Table",
+      "fr": "Table de multiplication de puissance Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a power multiplication table for levels 1 to 3.",
+            "fr": "Crée une table de multiplication de puissance pour les niveaux 1 à 3."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}} level {{}} range(1, 4):\n  {{}} multiplier {{}} range(1, 4):\n    print(f\"{level}, {multiplier}, {level * multiplier}\")",
+        "options": [
+          "for",
+          "in",
+          "for",
+          "in",
+          "of"
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in",
+          "3": "for",
+          "4": "in"
+        }
+      },
+      "hint": {
+        "en": "Use nested loops with range to create multiplication patterns. The outer loop controls the first number, the inner loop controls the second.",
+        "fr": "Utilise des boucles imbriquées avec range pour créer des motifs de multiplication. La boucle externe contrôle le premier nombre, la boucle interne contrôle le second."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "break",
+        "continue",
+        "while"
+      ]
+    },
+    "title": {
+      "en": "Training Session",
+      "fr": "Session d'entraînement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed by this code?",
+            "fr": "Que va afficher ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "session = 1\nwhile session <= 5:\n  if session == 3:\n    session += 1\n    continue\n  print(session)\n  session += 1"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```1 2 4 5```"
+          },
+          {
+            "type": "text",
+            "value": "```1 2 3 4 5```"
+          },
+          {
+            "type": "text",
+            "value": "```1 2 5```"
+          },
+          {
+            "type": "text",
+            "value": "```1 2 4```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The continue statement skips the code to go to the next iteration. The break statement breaks out of the loop.",
+        "fr": "L'instruction continue saute le code pour passer à l'itération suivante. L'instruction break sort de la boucle."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for",
+        "lists",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Magic Item Filter",
+      "fr": "Filtre d'objets magiques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Filter and print only the magic items from your inventory.",
+            "fr": "Filtre et affiche uniquement les objets magiques de l'inventaire."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "inventory = [\"crystal_sword\", \"magic_potion\", \"magic sword\", \"etc\"]\n{{}} item {{}} inventory:\n  if \"magic\" {{}} item:\n    print(item)",
+        "options": [
+          "for",
+          "in",
+          "in",
+          "for",
+          "if",
+          "of",
+          "while"
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in",
+          "3": "in"
+        }
+      },
+      "hint": {
+        "en": "Remember the word used to check if a substring is part of a string.",
+        "fr": "Souviens-toi du mot utilisé pour vérifier si un substring (partie d'une chaîne) fait partie d'un string."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while",
+        "break"
+      ]
+    },
+    "title": {
+      "en": "Power Doubling",
+      "fr": "Doublement de puissance"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the correct way to write a loop that doubles power until it exceeds 100?",
+            "fr": "Quelle est la bonne façon d'écrire une boucle qui double la puissance jusqu'à ce qu'elle dépasse 100 ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "power = 2\nwhile power <= 100:\n  power = power * 2\nprint(power)"
+          },
+          {
+            "type": "codeBlock",
+            "value": "power = 2\nfor i in range(100):\n  power = power * 2"
+          },
+          {
+            "type": "codeBlock",
+            "value": "power = 2\nwhile True:\n  if power > 100:\n    power = power * 2"
+          },
+          {
+            "type": "codeBlock",
+            "value": "power = 2\nwhile power < 100:\n  power + power"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Only one solution is clean and correct here. Look thoroughly at the conditions.",
+        "fr": "Une seule solution est propre et correcte ici. Regarde attentivement les conditions."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle Lives",
+      "fr": "Vies de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a battle loop where your Codémon lose a life every turn.",
+            "fr": "Crée une boucle de combat où ton Codémon perd une vie à chaque tour."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "lives = 3\n{{}} lives {{}} 0:\n  print(f\"Your Codémon has {lives} lives left\")\n  lives = lives {{}} 1",
+        "options": [
+          "while",
+          ">",
+          "-",
+          "+",
+          "for",
+          "<="
+        ],
+        "correctAnswers": {
+          "1": "while",
+          "2": ">",
+          "3": "-"
+        }
+      },
+      "hint": {
+        "en": "Fairly simple, while you're Pokémon is still alive, we keep training and losing lives.",
+        "fr": "Assez simple, tant que ton Pokémon est encore en vie, on continue de s'entraîner et de perdre des vies."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "nested",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "String Pattern",
+      "fr": "Motif de chaîne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What pattern will this nested loop print?",
+            "fr": "Quel motif cette boucle imbriquée va-t-elle afficher ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "for stage in range(3):\n  for star in range(stage + 1):\n    print(\"★\", end=\"\")\n  print(\" \", end=\"\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```★ ★★ ★★★```"
+          },
+          {
+            "type": "text",
+            "value": "```★★★ ★★ ★```"
+          },
+          {
+            "type": "text",
+            "value": "```★ ★ ★```"
+          },
+          {
+            "type": "text",
+            "value": "```★★★```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Try counting both for loops in your head, you'll understand the pattern.",
+        "fr": "Essaie de compter les deux boucles for dans ta tête, tu comprendras très vite."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while",
+        "break",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "Even Power Levels",
+      "fr": "Niveaux de puissance pairs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a loop that only prints even power levels for your Codémon until reaching level 10.",
+            "fr": "Crée une boucle qui n'affiche que les niveaux de puissance pairs pour ton Codémon jusqu'à atteindre le niveau 10."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "level = 0\n{{}} level < 10:\n  level += 1\n  if level % 2 {{}} 0:\n    {{}}\n  print(level)",
+        "options": [
+          "while",
+          "!=",
+          "continue",
+          "for",
+          "==",
+          "break"
+        ],
+        "correctAnswers": {
+          "1": "while",
+          "2": "!=",
+          "3": "continue"
+        }
+      },
+      "hint": {
+        "en": "Break is used to exit the loop, while continue is used to skip the current iteration.",
+        "fr": "Break est utilisé pour sortir de la boucle, tandis que continue est utilisé pour sauter l'itération actuelle."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "Level Sequence",
+      "fr": "Séquence de niveaux"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which range() will generate the sequence: 10, 7, 4, 1 for power-down levels?",
+            "fr": "Quel range() va générer la séquence : 10, 7, 4, 1 pour les niveaux de baisse de puissance ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```range(10, 0, -3)```"
+          },
+          {
+            "type": "text",
+            "value": "```range(10, 1, -3)```"
+          },
+          {
+            "type": "text",
+            "value": "```range(10, 1, 3)```"
+          },
+          {
+            "type": "text",
+            "value": "```range(10, -3, -1)```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember range includes the start value and excludes the end value. And negative steps count down.",
+        "fr": "N'oublie pas que range inclut la valeur de départ et exclut la valeur de fin. Et les pas négatifs comptent à rebours."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for",
+        "lists"
+      ]
+    },
+    "title": {
+      "en": "Inventory Positions",
+      "fr": "Positions d'inventaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Print items from your inventory with their position numbers.",
+            "fr": "Affiche les objets de l'inventaire avec leurs numéros de position."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "items = [\"crystal_sword\", \"healing_potion\", \"magic_wand\"]\n{{}} i, item {{}} enumerate(items):\n  print(f\"Position {i+1}: {item}\")",
+        "options": [
+          "for",
+          "in",
+          "while",
+          "of",
+          ",",
+          "="
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in"
+        }
+      },
+      "hint": {
+        "en": "Use enumerate to get both the index and the item value in one loop.",
+        "fr": "Utilise enumerate pour obtenir à la fois l'index et la valeur de l'objet en une seule boucle."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "nested",
+        "break"
+      ]
+    },
+    "title": {
+      "en": "Nested Loop Break Behavior",
+      "fr": "Comportement de break dans les boucles imbriquées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when ```break``` is used in a nested loop?",
+            "fr": "Que se passe-t-il quand ```break``` est utilisé dans une boucle imbriquée ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "for day in range(3):\n  for session in range(3):\n    if session == 1:\n      break\n    print(f\"{day}{session}\", end=\" \")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```00 10 20```"
+          },
+          {
+            "type": "text",
+            "value": "```00 01 10 11 20 21```"
+          },
+          {
+            "type": "text",
+            "value": "```00 01 02```"
+          },
+          {
+            "type": "text",
+            "value": "```00```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Break only exits the inner loop, so the outer loop continues to the next iteration.",
+        "fr": "Break ne fait que sortir de la boucle interne, donc la boucle externe continue vers l'itération suivante."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_11",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Codémon Level Up",
+      "fr": "Montée de niveau Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a power leveling loop for your Codémon that stops at level 10.",
+            "fr": "Crée une boucle de progression de niveau pour ton Codémon qui s'arrête au niveau 10."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "level = 1\n{{}} level {{}} 10:\n  print(f\"Level up! Now level {level}\")\n  level {{}} 1",
+        "options": [
+          "while",
+          "<=",
+          "+=",
+          "=",
+          "-="
+        ],
+        "correctAnswers": {
+          "1": "while",
+          "2": "<=",
+          "3": "+="
+        }
+      },
+      "hint": {
+        "en": "Tips : ```x += 1``` is equivalent to ```x = x + 1```. Use it well!",
+        "fr": "Conseil : ```x += 1``` est équivalent à ```x = x + 1```."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for",
+        "range",
+        "step"
+      ]
+    },
+    "title": {
+      "en": "Training Schedule",
+      "fr": "Horaire d'entraînement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this training schedule loop print?",
+            "fr": "Que va afficher cette boucle d'horaire d'entraînement ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "for hour in range(2, 10, 3):\n  print(hour, end=\" \")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```2 5 8```"
+          },
+          {
+            "type": "text",
+            "value": "```2 3 4 5 6 7 8 9```"
+          },
+          {
+            "type": "text",
+            "value": "```3 6 9```"
+          },
+          {
+            "type": "text",
+            "value": "```2 4 6 8```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "range() have 3 parameters: start, stop, and step.",
+        "fr": "range() a 3 paramètres : start, stop et step."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_13",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "nested",
+        "break"
+      ]
+    },
+    "title": {
+      "en": "Finding Magic Items",
+      "fr": "Trouver des objets magiques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a nested loop that breaks when finding a magic item in treasure chests.",
+            "fr": "Crée une boucle imbriquée qui s'arrête quand elle trouve un objet magique dans les coffres au trésor."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "chests = [[\"gold\", \"magic_ring\"], [\"potion\", \"sword\"]]\nfound = False\n{{}} i {{}} range(len(chests)):\n  {{}} item {{}} chests[i]:\n    if \"magic\" in item:\n      found = True\n      print(item)\n      {{}}",
+        "options": [
+          "for",
+          "in",
+          "for",
+          "in",
+          "break",
+          "continue",
+          "while",
+          "==",
+          "!="
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in",
+          "3": "for",
+          "4": "in",
+          "5": "break"
+        }
+      },
+      "hint": {
+        "en": "You need to look for one magic item per chest!",
+        "fr": "Tu dois chercher un objet magique par coffre !"
+      }
+    }
+  },
+  {
+    "id": "python_9_4_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Healing Logic",
+      "fr": "Logique de soin"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's wrong with this healing loop?",
+            "fr": "Qu'est-ce qui ne va pas dans cette boucle de soin ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "max_health = 100\nhealth = 50\nwhile health < 100:\n  health += 30\n  print(health)",
+            "fr": "sante_max = 100\nsante = 50\nwhile sante < 100:\n  sante += 30\n  print(sante)"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Health can exceed max_health",
+              "fr": "La santé peut dépasser sante_max"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The loop will never end",
+              "fr": "La boucle ne va jamais se terminer"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Health will never reach 100 or more",
+              "fr": "La santé ne va jamais atteindre 100 ou plus"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The increment is too small",
+              "fr": "L'incrément est trop petit"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Try running the code in your head and compute the values.",
+        "fr": "Essaie d'exécuter le code dans ta tête et de calculer les valeurs."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_15",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for",
+        "lists",
+        "enumerate"
+      ]
+    },
+    "title": {
+      "en": "Inventory Slots",
+      "fr": "Emplacements d'inventaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Print your inventory items with their slot number (starting from 1).",
+            "fr": "Affiche les objets de l'inventaire avec leur numéro d'emplacement (commençant à 1)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "inventory = [\"crystal_sword\", \"healing_potion\", \"power_gem\"]\n{{}} slot, item {{}} {{}}(inventory):\n  print(f\"Slot {slot+1}: {item}\")",
+        "options": [
+          "for",
+          "in",
+          "enumerate",
+          "range",
+          ",",
+          "of"
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in",
+          "3": "enumerate"
+        }
+      },
+      "hint": {
+        "en": "Enumerate gives you both the index and the item.",
+        "fr": "Enumerate te donne à la fois l'index et l'objet."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_16",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "operators",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Codémon Loop Operators",
+      "fr": "Opérateurs de boucle Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operator with its meaning in Codémon battle loops.",
+            "fr": "Associe chaque opérateur avec sa signification dans les boucles de combat Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```and```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Both conditions must be true",
+                "fr": "Les deux conditions doivent être vraies"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```or```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "At least one condition must be true",
+                "fr": "Au moins une condition doit être vraie"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```<=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Less than or equal to",
+                "fr": "Inférieur ou égal à"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```!=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Not equal to",
+                "fr": "Différent de"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_4_17",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for",
+        "range",
+        "step"
+      ]
+    },
+    "title": {
+      "en": "Codémon Range Sequences",
+      "fr": "Séquences Range Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each range expression with the sequence it generates for Codémon power levels.",
+            "fr": "Associe chaque expression range avec la séquence qu'elle génère pour les niveaux de puissance Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```range(10, 0, -2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```10, 8, 6, 4, 2```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```range(1, 8, 3)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```1, 4, 7```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```range(5, 1, -1)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```5, 4, 3, 2```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```range(2, 9, 2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```2, 4, 6, 8```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_4_18",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "nested",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "Training",
+      "fr": "Entraînement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed by this training loop?",
+            "fr": "Qu'est-ce qui sera affiché par cette boucle d'entraînement ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "for day in range(2):\n  for hour in range(3):\n    if day == hour:\n      continue\n    print(f\"{day}{hour}\", end=\" \")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```01 02 10 12```"
+          },
+          {
+            "type": "text",
+            "value": "```00 01 02 10 11 12```"
+          },
+          {
+            "type": "text",
+            "value": "```01 02 10```"
+          },
+          {
+            "type": "text",
+            "value": "```00 11```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Try running the code in your head and you will understand it instantly.",
+        "fr": "Essaie d'exécuter le code dans ta tête et tu comprendras instantanément."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_19",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Health Regeneration",
+      "fr": "Régénération de santé"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a regeneration loop that caps health at maximum.",
+            "fr": "Crée une boucle de régénération qui limite la santé au maximum."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "health = 50\nmax_health = 100\n{{}} health < max_health:\n  health += 20\n  print(health)\n  if health {{}} max_health:\n    health {{}} max_health\n    print(\"health capped\", health)",
+        "options": [
+          "while",
+          ">",
+          "=",
+          "==",
+          "for",
+          "in"
+        ],
+        "correctAnswers": {
+          "1": "while",
+          "2": ">",
+          "3": "="
+        }
+      },
+      "hint": {
+        "en": "Capping health after regeneration ensures it does not exceed maximum health. Use an assignment to limit it.",
+        "fr": "Limiter la santé après la régénération garantit qu'elle ne dépasse pas la santé maximale. Utilise une affectation pour la limiter."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_20",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "break",
+        "continue",
+        "control"
+      ]
+    },
+    "title": {
+      "en": "Codémon Loop Control",
+      "fr": "Contrôle de boucle Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each Codémon training scenario with the correct loop control statement.",
+            "fr": "Associe chaque scénario d'entraînement Codémon avec la bonne instruction de contrôle de boucle."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Skip weak opponents, continue training",
+                "fr": "Sauter les adversaires faibles, continuer l'entraînement"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```continue```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Found legendary Codémon, stop searching",
+                "fr": "Trouvé un Codémon légendaire, arrêter la recherche"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```break```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Keep training until energy depleted",
+                "fr": "Continuer l'entraînement jusqu'à épuisement de l'énergie"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```while energy > 0```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Train for exactly 5 sessions",
+                "fr": "S'entraîner pendant exactement 5 sessions"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```for i in range(5)```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_4_21",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "outputs",
+        "results"
+      ]
+    },
+    "title": {
+      "en": "Codémon Loop Outputs",
+      "fr": "Résultats de boucle Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each simple Codémon loop with its output.",
+            "fr": "Associe chaque boucle Codémon simple avec son résultat."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```range(3)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```0 1 2```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```range(1, 4)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```1 2 3```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```range(5, 1, -1)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```5 4 3 2```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```range(0, 6, 2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```0 2 4```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_4_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "nested",
+        "break"
+      ]
+    },
+    "title": {
+      "en": "Nested Loop Break Effect",
+      "fr": "Effet de break dans les boucles imbriquées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens with nested exploration loops when you use break in an inner loop?",
+            "fr": "Que se passe-t-il avec des boucles d'exploration imbriquées quand tu utilises break dans une boucle interne ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "for area in range(3):\n  print(f\"Area {area}\")\n  for room in range(4):\n    if room == 2:\n      break\n    print(f\"Room {room}\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It only breaks the inner loop, outer loop continues",
+              "fr": "Elle ne casse que la boucle interne, la boucle externe continue"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It breaks both loops",
+              "fr": "Elle casse les deux boucles"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It only breaks the outer loop",
+              "fr": "Elle ne casse que la boucle externe"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It causes an error",
+              "fr": "Elle cause une erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Break and Continue affects only the loop it is in, not the outer loops.",
+        "fr": "Break et Continue n'affectent que la boucle dans laquelle ils se trouvent, pas les boucles externes."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_23",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "keywords",
+        "purposes"
+      ]
+    },
+    "title": {
+      "en": "Codémon Loop Keywords",
+      "fr": "Mots-clés de boucle Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each Codémon loop keyword with its action.",
+            "fr": "Associe chaque mot-clé de boucle Codémon avec son action."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```break```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Exit the loop immediately",
+                "fr": "Quitter la boucle immédiatement"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```continue```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Skip to next iteration",
+                "fr": "Passer à l'itération suivante"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```for```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Loop through a sequence",
+                "fr": "Boucler à travers une séquence"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```while```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Loop while condition is true",
+                "fr": "Boucler tant que la condition est vraie"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_9_4_24",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while",
+        "break",
+        "continue"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle Loop Logic",
+      "fr": "Logique de boucle de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this Codémon battle loop print?",
+            "fr": "Que va afficher cette boucle de combat Codémon ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "health = 100\nwhile True:\n  damage = 30\n  if health <= 30:\n    break\n  health -= damage\n  if health <= 50:\n    continue\n  print(f\"Health: {health}\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```Health: 70```"
+          },
+          {
+            "type": "text",
+            "value": "```Health: 70 Health: 40```"
+          },
+          {
+            "type": "text",
+            "value": "```Health: 70 Health: 40 Health: 10```"
+          },
+          {
+            "type": "text",
+            "value": "```Health: 70 Health: 0```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Try running the code in your head.",
+        "fr": "Essaie d'exécuter le code dans ta tête."
+      }
+    }
+  },
+  {
+    "id": "python_9_4_25",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "nested",
+        "range"
+      ]
+    },
+    "title": {
+      "en": "Codémon Combo Damage",
+      "fr": "Dégâts de combo Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a Codémon combo damage loop where each hit does square damage (hit 1 = 1 damage, hit 2 = 4 damage, hit 3 = 9 damage).",
+            "fr": "Crée une boucle de dégâts de combo Codémon où chaque coup fait des dégâts au carré (coup 1 = 1 dégât, coup 2 = 4 dégâts, coup 3 = 9 dégâts)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "total_damage = 0\n{{}} hit {{}} range(1, 4):\n  damage = hit {{}} hit\n  total_damage += damage\n  print(f\"Hit {hit}: {damage} damage\")",
+        "options": [
+          "for",
+          "in",
+          "*",
+          "**",
+          "+",
+          "/"
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in",
+          "3": "*"
+        }
+      },
+      "hint": {
+        "en": "```**``` means power in Python, but here, you might not need it..",
+        "fr": "```**``` signifie puissance en Python, mais ici, tu n'en a peut-être pas besoin.."
+      }
+    }
+  },
+  {
+    "id": "python_9_5_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "lists",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Tournament Challenge - Team Roster",
+      "fr": "Défi Tournoi - Liste d'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Codémon Tournament! You're preparing for the big event.\n\nLoop through your team of Codémon and display each one with its position number (starting from 1).",
+            "fr": "Bienvenue au Tournoi Codémon ! Tu te prépares pour le grand événement.\n\nParcours ton équipe de Codémon et affiche chacun avec son numéro de position (commençant à 1)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\n# Display each Codémon with its position\n\n",
+          "fr": "equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\n# Affiche chaque Codémon avec sa position\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\nfor i in range(len(team)):\n    print(f\"Position {i + 1}: {team[i]}\")",
+            "fr": "equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\nfor i in range(len(equipe)):\n    print(f\"Position {i + 1} : {equipe[i]}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_5_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "conditions",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Tournament Challenge - Battle Endurance",
+      "fr": "Défi Tournoi - Endurance au combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "First round of the tournament! Your Codémon must endure multiple attacks.\n\n- Use a while loop to simulate battle rounds. Each round, your Codémon loses 15 health points.\n- Display the health after each round until it reaches 0 or below.",
+            "fr": "Premier round du tournoi ! Ton Codémon doit endurer plusieurs attaques.\n\n- Utilise une boucle while pour simuler les rounds de combat. Chaque round, ton Codémon perd 15 points de vie\n- Affiche la santé après chaque round jusqu'à ce qu'elle atteigne 0 ou moins."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "health = 100\nround_number = 1\n\n# Simulate battle rounds\n\n",
+          "fr": "sante = 100\nnum_round = 1\n\n# Simule les rounds de combat\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "health = 100\nround_number = 1\n\nwhile health > 0:\n    print(f\"Round {round_number}: Health remaining: {health}\")\n    health = health - 15\n    round_number = round_number + 1\n\nprint(\"Codémon fainted!\")",
+            "fr": "sante = 100\nnum_round = 1\n\nwhile sante > 0:\n    print(f\"Round {num_round} : Santé restante : {sante}\")\n    sante = sante - 15\n    num_round = num_round + 1\n\nprint(\"Codémon K.O. !\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_5_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "break",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Tournament Challenge - Finding the Legendary",
+      "fr": "Défi Tournoi - Trouver le Légendaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You need to search through opponents to find the legendary Codémon to ban him from playing!\n\n- Loop through the list of opponents\n- Display each opponent you encounter\n- When you find \"Legendary\", display a special message and stop searching using",
+            "fr": "Tu dois chercher parmi les adversaires pour trouver le Codémon légendaire pour l'empêcher de combattre !\n\n- Parcours la liste des adversaires\n- Affiche chaque adversaire que tu rencontres\n- Quand tu trouves \"Legendary\", affiche un message spécial et arrête la recherche"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "opponents = [\"Codemon A\", \"Codemon B\", \"Legendary\", \"Codemon C\", \"Codemon D\"]\n\n# Search through opponents\n\n",
+          "fr": "adversaires = [\"Codemon A\", \"Codemon B\", \"Legendary\", \"Codemon C\", \"Codemon D\"]\n\n# Cherche parmi les adversaires\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "opponents = [\"Codemon A\", \"Codemon B\", \"Legendary\", \"Codemon C\", \"Codemon D\"]\n\n# Search through opponents\nfor opponent in opponents:\n  print(f\"Encountered: {opponent}\")\n  if opponent == \"Legendary\":\n    print(\"*** LEGENDARY CODÉMON FOUND! ***\")\n    break\n\nprint(\"Search complete.\")",
+            "fr": "adversaires = [\"Codemon A\", \"Codemon B\", \"Legendary\", \"Codemon C\", \"Codemon D\"]\n\n# Cherche parmi les adversaires\nfor adversaire in adversaires:\n  print(f\"Rencontré : {adversaire}\")\n  if adversaire == \"Legendary\":\n    print(\"*** CODÉMON LÉGENDAIRE TROUVÉ ! ***\")\n    break\n\nprint(\"Recherche terminée.\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_5_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "continue",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Tournament Challenge - Elite Fighters Only",
+      "fr": "Défi Tournoi - Combattants d'élite seulement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Semi-finals! Only Codémon with high power levels can compete.\n\n- Loop through the power levels\n- Only display Codémon with power level 70 or higher\n- Skip the others",
+            "fr": "Demi-finales ! Seuls les Codémon avec des niveaux de puissance élevés peuvent participer.\n\n- Parcours les niveaux de puissance\n- Affiche uniquement les Codémon avec un niveau de puissance de 70 ou plus\n- Saute les autres"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "codemon_names = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\", \"Zap\"]\npower_levels = [65, 80, 55, 75, 90]\n\n# Display only elite fighters (power >= 70)\n\n",
+          "fr": "codemon_noms = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\", \"Zap\"]\nniveaux_puissance = [65, 80, 55, 75, 90]\n\n# Affiche uniquement les combattants d'élite (puissance >= 70)\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "codemon_names = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\", \"Zap\"]\npower_levels = [65, 80, 55, 75, 90]\n\n# Display only elite fighters (power >= 70)\nfor i in range(len(codemon_names)):\n  if power_levels[i] < 70:\n    continue\n  print(f\"{codemon_names[i]} - Power: {power_levels[i]}\")",
+            "fr": "codemon_noms = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\", \"Zap\"]\nniveaux_puissance = [65, 80, 55, 75, 90]\n\n# Affiche uniquement les combattants d'élite (puissance >= 70)\nfor i in range(len(codemon_noms)):\n  if niveaux_puissance[i] < 70:\n    continue\n  print(f\"{codemon_noms[i]} - Puissance : {niveaux_puissance[i]}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_6_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "range",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle Training - Five Battles Streak",
+      "fr": "Entraînement Combat - Série de cinq combats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Time to train your Codémon! Make it fight 5 wild Codémon in a row.\n\n- Each battle makes your Codémon lose 10 HP\n- Display HP after each battle",
+            "fr": "C'est l'heure d'entraîner ton Codémon ! Fais-le combattre 5 Codémon sauvages d'affilée.\n\n- Chaque combat fait perdre 10 HP à ton Codémon\n- Affiche les HP après chaque combat"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "hp = 100\n\n# Fight 5 battles\n\n",
+          "fr": "hp = 100\n\n# Combat 5 fois\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "hp = 100\n\nfor battle in range(5):\n    hp -= 10\n    print(f\"Battle {battle + 1}: HP remaining = {hp}\")",
+            "fr": "hp = 100\n\nfor combat in range(5):\n    hp -= 10\n    print(f\"Combat {combat + 1} : HP restants = {hp}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_6_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "while loop",
+        "conditions",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle Training - Healing with Potions",
+      "fr": "Entraînement Combat - Guérison avec potions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "After 5 battles, your Codémon is at 50 HP! Time to heal it back to 100 HP.\n\n- Each potion restores 15 HP\n- Keep using potions until HP reaches 100 or more\n- Display HP after each potion",
+            "fr": "Après 5 combats, ton Codémon est à 50 HP ! Il est temps de le soigner jusqu'à 100 HP.\n\n- Chaque potion restaure 15 HP\n- Continue d'utiliser des potions jusqu'à atteindre 100 HP ou plus\n- Affiche les HP après chaque potion"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "error",
+          "expandable": true,
+          "initiallyExpanded": true,
+          "value": {
+            "title": {
+              "en": "Infinite Loop Alert!",
+              "fr": "Attention aux boucles infinie !"
+            },
+            "content": {
+              "en": "Before hitting run button, make sure your loop has a condition that will eventually be false. Otherwise, your program will get stuck in an infinite loop and you will have to restart the app !",
+              "fr": "Avant d'appuyer sur le bouton d'exécution, assure-toi que ta boucle a une condition qui deviendra éventuellement fausse. Sinon, ton programme restera bloqué dans une boucle infinie et tu devras redémarrer l'application !"
+            }
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "hp = 50\npotions_used = 0\n\n# Heal until HP reaches 100\n\n",
+          "fr": "hp = 50\npotions_utilisees = 0\n\n# Soigne jusqu'à atteindre 100 HP\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "hp = 50\npotions_used = 0\n\nwhile hp < 100:\n    hp += 15\n    potions_used += 1\n    print(f\"Potion {potions_used}: HP = {hp}\")",
+            "fr": "hp = 50\npotions_utilisees = 0\n\nwhile hp < 100:\n    hp += 15\n    potions_utilisees += 1\n    print(f\"Potion {potions_utilisees} : HP = {hp}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_6_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "nested loops",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle Training - Training Multiple Codémon",
+      "fr": "Entraînement Combat - Entraîner plusieurs Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Great! Now you know how to train one Codémon. Let's train your whole team!\n\n- Each Codémon in your team needs to complete 3 training battles\n- Display which Codémon is training and which battle number",
+            "fr": "Super ! Maintenant que tu sais entraîner un Codémon, entraînons toute l'équipe !\n\n- Chaque Codémon de ton équipe doit compléter 3 combats d'entraînement\n- Affiche quel Codémon s'entraîne et quel numéro de combat"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\n# Each Codémon does 3 battles\n\n",
+          "fr": "equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\n# Chaque Codémon fait 3 combats\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\nfor codemon in team:\n  for battle in range(3):\n    print(f\"{codemon} - Battle {battle + 1} complete!\")",
+            "fr": "equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\n\nfor codemon in equipe:\n  for combat in range(3):\n    print(f\"{codemon} - Combat {combat + 1} terminé !\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_9_6_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "loops",
+        "for loop",
+        "break",
+        "continue",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle Training - Smart Training",
+      "fr": "Entraînement Combat - Entraînement intelligent"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "It's almost the end of the training, some of your Codémon are too tired to keep going. Check each Codémon's health before last exercise.\n\n- Skip Codémon with HP < 30 (too tired to train)\n- If a Codémon has HP = 0, stop training immediately! You must rush to the Codémon Center right now!\n- Otherwise, let them train",
+            "fr": "C'est presque la fin de l'entraînement, certains de tes Codémon sont trop fatigués pour continuer. Vérifie la santé de chaque Codémon avant le dernier exercice.\n\n- Saute les Codémon avec HP < 30 (trop fatigués pour s'entraîner)\n- Si un Codémon a HP = 0, arrête l'entraînement immédiatement ! Tu dois foncer au Centre Codémon maintenant !\n- Sinon, laisse-les s'entraîner"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\nhealth_points = [45, 20, 0, 80]\n\n# Check health and train safely\n\n",
+          "fr": "equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\npoints_vie = [45, 20, 0, 80]\n\n# Vérifie la santé et entraîne en sécurité\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\nhealth_points = [45, 20, 0, 80]\n\nfor i in range(len(team)):\n  if health_points[i] == 0:\n    print(f\"{team[i]} is fainted! Stop training, go to Codémon Center NOW!\")\n    break\n  if health_points[i] < 30:\n    print(f\"{team[i]} too tired, skipping...\")\n    continue\n  print(f\"{team[i]} is training!\")",
+            "fr": "equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\npoints_vie = [45, 20, 0, 80]\n\nfor i in range(len(equipe)):\n  if points_vie[i] == 0:\n    print(f\"{equipe[i]} est K.O. ! Arrête l'entraînement, va au Centre Codémon MAINTENANT !\")\n    break\n  if points_vie[i] < 30:\n    print(f\"{equipe[i]} trop fatigué, on saute...\")\n    continue\n  print(f\"{equipe[i]} s'entraîne !\")"
+          }
+        }
+      ]
+    }
+  }
+]

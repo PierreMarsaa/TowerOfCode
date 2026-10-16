@@ -10,6 +10,7 @@ import { python } from '@codemirror/lang-python'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { defaultKeymap } from '@codemirror/commands'
 import { PythonRunner } from '@/python'
+import { i18n } from '@/i18n/I18nManager'
 
 export function createCodeMirrorReadOnly(
   container: HTMLElement,
@@ -57,7 +58,8 @@ export function createCodeMirrorEditable(
 
   const runBtn = document.createElement('button')
   runBtn.className = 'cl-run-btn'
-  runBtn.innerHTML = '<span class="play-icon">&#9654;</span> Run'
+  runBtn.innerHTML = '<span class="play-icon">&#9654;</span> '
+  runBtn.appendChild(document.createTextNode(i18n.t('code_run')))
   toolbar.appendChild(runBtn)
 
   const statusEl = document.createElement('span')
@@ -90,23 +92,23 @@ export function createCodeMirrorEditable(
 
   const consoleLabel = document.createElement('span')
   consoleLabel.className = 'cl-console-label'
-  consoleLabel.textContent = 'Console'
+  consoleLabel.textContent = i18n.t('code_console')
   consoleHeader.appendChild(consoleLabel)
 
   const clearBtn = document.createElement('button')
   clearBtn.className = 'cl-clear-btn'
-  clearBtn.textContent = 'Clear'
+  clearBtn.textContent = i18n.t('code_clear')
   consoleHeader.appendChild(clearBtn)
 
   // ── Console output (always visible) ──
   const outputEl = document.createElement('div')
   outputEl.className = 'cl-console-output'
-  outputEl.innerHTML = '<span class="cl-placeholder">&gt; Ready</span>'
+  showPlaceholder(outputEl, i18n.t('code_ready'))
   widget.appendChild(outputEl)
 
   // ── Clear handler ──
   clearBtn.addEventListener('click', () => {
-    outputEl.innerHTML = '<span class="cl-placeholder">&gt; Ready</span>'
+    showPlaceholder(outputEl, i18n.t('code_ready'))
     statusEl.textContent = ''
     statusEl.className = 'cl-run-status'
   })
@@ -116,37 +118,23 @@ export function createCodeMirrorEditable(
     const currentCode = editor.state.doc.toString()
     runBtn.disabled = true
     statusEl.className = 'cl-run-status'
-    statusEl.textContent = PythonRunner.getStatus() === 'ready' ? 'Running...' : 'Loading Python...'
+    statusEl.textContent = i18n.t(PythonRunner.getStatus() === 'ready' ? 'code_running' : 'code_loading_python')
     outputEl.innerHTML = ''
 
     try {
       const result = await PythonRunner.runCode(currentCode)
 
-      outputEl.innerHTML = ''
-      if (result.output.length > 0) {
-        for (const line of result.output) {
-          const lineEl = document.createElement('div')
-          lineEl.innerHTML = '<span class="cl-prompt">&gt; </span>'
-          const textNode = document.createTextNode(line)
-          lineEl.appendChild(textNode)
-          outputEl.appendChild(lineEl)
-        }
-      }
-      if (result.errors.length > 0) {
-        const errSpan = document.createElement('span')
-        errSpan.className = 'cl-error'
-        errSpan.textContent = result.errors.join('\n')
-        outputEl.appendChild(errSpan)
-      }
-      if (result.output.length === 0 && result.errors.length === 0) {
-        outputEl.innerHTML = '<span class="cl-placeholder">(no output)</span>'
-      }
+      renderConsoleOutput(outputEl, result.output, result.errors.join('\n'))
 
-      statusEl.textContent = result.success ? 'Done' : 'Error'
+      statusEl.textContent = i18n.t(result.success ? 'code_status_done' : 'code_status_error')
       statusEl.classList.add(result.success ? 'success' : 'error')
     } catch {
-      outputEl.innerHTML = '<span class="cl-error">Failed to run code</span>'
-      statusEl.textContent = 'Error'
+      outputEl.innerHTML = ''
+      const errSpan = document.createElement('span')
+      errSpan.className = 'cl-error'
+      errSpan.textContent = i18n.t('code_run_failed')
+      outputEl.appendChild(errSpan)
+      statusEl.textContent = i18n.t('code_status_error')
       statusEl.classList.add('error')
     } finally {
       runBtn.disabled = false
@@ -154,4 +142,34 @@ export function createCodeMirrorEditable(
   })
 
   return { editor, outputEl, runBtn }
+}
+
+/**
+ * Show a program's output in a console area: one "> " line per printed line,
+ * then the error (if any) in red, or "(no output)". Shared by Run and Submit.
+ */
+export function renderConsoleOutput(outputEl: HTMLElement, lines: string[], error?: string | null): void {
+  outputEl.innerHTML = ''
+  for (const line of lines) {
+    const lineEl = document.createElement('div')
+    lineEl.innerHTML = '<span class="cl-prompt">&gt; </span>'
+    lineEl.appendChild(document.createTextNode(line))
+    outputEl.appendChild(lineEl)
+  }
+  if (error) {
+    const errSpan = document.createElement('span')
+    errSpan.className = 'cl-error'
+    errSpan.textContent = error
+    outputEl.appendChild(errSpan)
+  }
+  if (lines.length === 0 && !error) showPlaceholder(outputEl, i18n.t('code_no_output'))
+}
+
+/** Grey one-line message in the console area (text, never HTML) */
+function showPlaceholder(outputEl: HTMLElement, text: string): void {
+  outputEl.innerHTML = ''
+  const span = document.createElement('span')
+  span.className = 'cl-placeholder'
+  span.textContent = text
+  outputEl.appendChild(span)
 }

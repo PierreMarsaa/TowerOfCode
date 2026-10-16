@@ -1,0 +1,5059 @@
+[
+  {
+    "id": "python_7_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "data structures"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Lists",
+      "fr": "Introduction aux Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, a list is a collection of items that can store different types of data. Lists are ordered, changeable, and allow duplicate values.",
+            "fr": "En Python, une liste est une collection d'éléments qui peut stocker différents types de données. Les listes sont ordonnées, modifiables et permettent d'avoir la même valeur plusieurs fois."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Lists are created using square brackets ```[ ]```, with each item separated by a comma. For example:",
+            "fr": "Les listes sont créées à l'aide de crochets ```[ ]```, chaque élément étant séparé par une virgule. Par exemple :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "# A list of Codémon names\ncodemon_list = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(codemon_list)\n\n# A list of different data types\nmixed_list = [\"Aquachu\", 10, True, 15.5]\nprint(mixed_list)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Lists are very useful when you need to store multiple related values together, like your collection of Codémon or a team's statistics.",
+            "fr": "Les listes sont très utiles lorsque tu dois stocker plusieurs valeurs liées ensemble, comme ta collection de Codémon ou les statistiques d'une équipe."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Storing different data types",
+              "fr": "Stockage de différents types de données"
+            },
+            "content": {
+              "en": "In Python, lists can store different types of data together. But it doesn't mean you should do it! It's usually not a good idea, but if you really want to do it, be careful when using them, as mixing types can lead to unexpected behavior in your code.",
+              "fr": "En Python, les listes peuvent stocker différents types de données ensemble. Mais cela ne veut pas dire que tu devrais le faire ! Ce n'est pas vraiment une bonne idée, mais si tu veux vraiment le faire, fais attention lorsque tu les utilises ! Mélanger les types peut entraîner un comportement inattendu dans ton code."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "data structures"
+      ]
+    },
+    "title": {
+      "en": "Creating Lists",
+      "fr": "Créer des Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The advised way to use lists in Python is to have all the values in it of the same type (strings, numbers, booleans). Here are some examples:",
+            "fr": "La façon recommandée d'utiliser les listes en Python est d'avoir toutes les valeurs du même type (chaînes de caractères, nombres, booléens). Voici quelques exemples :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# 1. Empty list\nempty_list = []\nprint(\"Empty list:\", empty_list)\n\n# 2. List with values\ncodemon_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(\"Codémon team:\", codemon_team)\n\n# 3. List of numbers\nlevels = [5, 10, 15, 20, 25]\nprint(\"Levels:\", levels)",
+            "fr": "# 1. Liste vide\nliste_vide = []\nprint(\"Liste vide :\", liste_vide)\n\n# 2. Liste avec des valeurs\nequipe_codemon = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(\"Équipe Codémon :\", equipe_codemon)# 3. Liste de nombres\nniveaux = [5, 10, 15, 20, 25]\nprint(\"Niveaux :\", niveaux)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_1_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "creation"
+      ]
+    },
+    "title": {
+      "en": "Creating Your Codémon Team",
+      "fr": "Créer Ton Équipe de Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create lists representing your Codémon team and their levels.",
+            "fr": "Complète le code pour créer des listes représentant ton équipe de Codémon et leurs niveaux."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# Create a list of 3 Codémon names\ncodemon_names = {{}}\nprint(codemon_names)\n# Create a list of 3 Codémon level\ncodemon_levels = {{}}\nprint(codemon_levels)",
+        "options": [
+          "[\"Aquachu\", \"Pyrochu\", \"Florachu\"]",
+          "[10, 15, 12]",
+          "\"Aquachu\", \"Pyrochu\", \"Florachu\"",
+          "10, 15, 12",
+          "(\"Aquachu\", \"Pyrochu\", \"Florachu\")",
+          "(10, 15, 12)"
+        ],
+        "correctAnswers": {
+          "1": "[\"Aquachu\", \"Pyrochu\", \"Florachu\"]",
+          "2": "[10, 15, 12]"
+        }
+      },
+      "hint": {
+        "en": "Lists in Python are created using square brackets [ ] with comma-separated values.",
+        "fr": "Les listes en Python sont créées à l'aide de crochets [ ] avec des valeurs séparées par des virgules."
+      }
+    }
+  },
+  {
+    "id": "python_7_1_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Accessing List Elements",
+      "fr": "Accéder aux Éléments d'une Liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, similarly to strings, you can access list elements using their index (position) in the list. The first element is at index 0, the second at index 1, and so on.",
+            "fr": "En Python, de la même manière qu'avec les string, tu peux accéder aux éléments d'une liste en utilisant leur index (position) dans la liste. Le premier élément est à l'index 0, le deuxième à l'index 1, et ainsi de suite."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemon_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\n# Access the first Codémon (index 0)\nfirst_codemon = codemon_team[0]\nprint(\"First Codémon:\", first_codemon)\n\n# Access the second Codémon (index 1)\nsecond_codemon = codemon_team[1]\nprint(\"Second Codémon:\", second_codemon)\n\n# Access the third Codémon (index 2)\nthird_codemon = codemon_team[2]\nprint(\"Third Codémon:\", third_codemon)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Remember that in Python (and most programming languages), list indices start at 0, not 1. So the first element is at index 0, the second at index 1, and so on.",
+            "fr": "N'oublie pas qu'en Python (et dans la plupart des langages de programmation), les indices de liste commencent à 0, pas à 1. Donc le premier élément est à l'index 0, le deuxième à l'index 1, etc."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Index Out of Range",
+              "fr": "Index Hors Limites"
+            },
+            "content": {
+              "en": "If you try to access an index that doesn't exist, Python will raise an \"IndexError\". For example, if your list has 3 items (indices 0, 1, and 2), trying to access index 3 will cause an error.",
+              "fr": "Si tu essaies d'accéder à un index qui n'existe pas, Python générera une \"IndexError\". Par exemple, si ta liste a 3 éléments (indices 0, 1 et 2), essayer d'accéder à l'index 3 provoquera une erreur."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_1_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Accessing List Elements",
+      "fr": "Accéder aux Éléments d'une Liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following list of Codémon types:",
+            "fr": "Étant donné la liste suivante de types de Codémon :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_types = [\"water\", \"fire\", \"grass\", \"electric\", \"rock\"]"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which code would correctly access the \"grass\" type?",
+            "fr": "Quel code accéderait correctement au type \"grass\" (plante) ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon_types[2]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_types[3]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_types[1]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_types[0]```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: In Python, list indices start at 0. So the first element is at index 0, the second at index 1, and so on.",
+        "fr": "Rappelle-toi : En Python, les indices de liste commencent à 0. Donc le premier élément est à l'index 0, le deuxième à l'index 1, etc."
+      }
+    }
+  },
+  {
+    "id": "python_7_1_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "negative indexing"
+      ]
+    },
+    "title": {
+      "en": "Negative Indexing in Lists",
+      "fr": "Indexation Négative dans les Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python also allows negative indexing for lists. This means you can access elements from the end of the list:",
+            "fr": "Python permet également l'indexation négative pour les listes. Cela signifie que tu peux accéder aux éléments à partir de la fin de la liste :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- ```-1``` refers to the last element\n- ```-2``` refers to the second-to-last element\n- and so on...",
+            "fr": "- ```-1``` fait référence au dernier élément\n- ```-2``` fait référence à l'avant-dernier élément\n- et ainsi de suite..."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\n# Access the last Codémon\nlast_codemon = codemon_team[-1]\nprint(\"Last Codémon:\", last_codemon)\n\n# Access the second-to-last Codémon\nsecond_last = codemon_team[-2]\nprint(\"Second-to-last Codémon:\", second_last)\n\n# Access the third-to-last Codémon\nthird_last = codemon_team[-3]\nprint(\"Third-to-last Codémon:\", third_last)",
+            "fr": "equipe_codemon = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\n# Accéder au dernier Codémon\nlast_codemon = equipe_codemon[-1]\nprint(\"Dernier Codémon :\", last_codemon)\n\n# Accéder à l'avant-dernier Codémon\nsecond_last = equipe_codemon[-2]\nprint(\"Avant-dernier Codémon :\", second_last)\n\n# Accéder au troisième à partir de la fin Codémon\nthird_last = equipe_codemon[-3]\nprint(\"Troisième à partir de la fin Codémon :\", third_last)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Negative indexing is especially useful when you don't know the exact length of the list but want to access elements from the end.",
+            "fr": "L'indexation négative est particulièrement utile lorsque tu ne connais pas la longueur exacte de la liste mais que tu veux accéder aux éléments à partir de la fin."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_1_7",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "indexing",
+        "negative indexing"
+      ]
+    },
+    "title": {
+      "en": "Match the Index to the Element",
+      "fr": "Associe l'Index à l'Élément"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the list:",
+            "fr": "Étant donné la liste :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "moves = [\"Water Splash\", \"Fire Blast\", \"Leaf Storm\", \"Thunder Shock\", \"Rock Throw\"]"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each index with the element it would access:",
+            "fr": "Associe chaque index à l'élément auquel il accéderait :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```moves[0]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Water Splash\"```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```moves[2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Leaf Storm\"```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```moves[-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Rock Throw\"```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```moves[-3]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Leaf Storm\"```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_1_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "List Slicing",
+      "fr": "Découpage de Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Similarly to strings, in addition to accessing individual elements, Python allows you to extract a portion of a list using slicing. The syntax for slicing is ```list[start:end:step]```.",
+            "fr": "Comme avec les strings, en plus d'accéder à des éléments individuels, Python te permet d'extraire une portion d'une liste en utilisant le découpage. La syntaxe pour le découpage est ```liste[début:fin:pas]```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Important notes about slicing:\n- The ```start``` index is included\n- The ```end``` index is excluded\n- If you omit ```start```, it defaults to 0\n- If you omit ```end```, it defaults to the length of the list\n- If you omit ```step```, it defaults to 1",
+            "fr": "Notes importantes sur le découpage :\n- L'index ```début``` est inclus\n- L'index ```fin``` est exclu\n- Si tu omets ```début```, il prend la valeur 0 par défaut\n- Si tu omets ```fin```, il prend la longueur de la liste par défaut\n- Si tu omets ```pas```, la valeur par défaut est 1"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_types = [\"water\", \"fire\", \"grass\", \"electric\", \"rock\", \"ice\"]\n\n# Get the first three types\nfirst_three = codemon_types[0:3]\nprint(\"First three types:\", first_three)\n\n# Shorthand for first three types\nalso_first_three = codemon_types[:3]\nprint(\"Also first three types:\", also_first_three)\n\n# Get types from index 2 to the end\nfrom_third = codemon_types[2:]\nprint(\"From third to the end:\", from_third)\n\n# Get types from index 1 to 4 (excluding 4)\nmiddle_types = codemon_types[1:4]\nprint(\"Middle types:\", middle_types)\n\n# Comment blabla\nstep_types = codemon_types[0:6:2]\nprint(\"Every other type:\", step_types)",
+            "fr": "codemon_types = [\"eau\", \"feu\", \"plante\", \"électrique\", \"roche\", \"glace\"]\n\n# Obtenir les trois premiers types\nfirst_three = codemon_types[0:3]\nprint(\"Trois premiers types :\", first_three)\n\n# Abréviation pour les trois premiers types\nalso_first_three = codemon_types[:3]\nprint(\"Aussi les trois premiers types :\", also_first_three)\n\n# Obtenir les types à partir de l'index 2 jusqu'à la fin\nfrom_third = codemon_types[2:]\nprint(\"À partir du troisième jusqu'à la fin :\", from_third)\n\n# Obtenir les types de l'index 1 à 4 (excluant 4)\nmiddle_types = codemon_types[1:4]\nprint(\"Types du milieu :\", middle_types)\n\n# Comment blabla\nstep_types = codemon_types[0:6:2]\nprint(\"1 type sur 2 :\", step_types)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_1_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "Practice List Slicing",
+      "fr": "Pratique du Découpage de Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to extract specific portions of the Codémon team list using slicing.",
+            "fr": "Complète le code pour extraire des portions spécifiques de la liste d'équipe Codémon en utilisant le découpage."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here is the goal:\n- Get the first three Codémon\n- Get the last two Codémon\n- Get the middle three Codémon (indices 1, 2, 3)",
+            "fr": "Voici l'objectif :\n- Obtenir les trois premiers Codémon\n- Obtenir les deux derniers Codémon\n- Obtenir les trois Codémon du milieu (indices 1, 2, 3)"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\", \"Zap\"]\n# Get the first three Codémon\nstarters = team[{{}}:{{}}]\nprint(starters)\n# Get the last two Codémon\nspecialists = team[{{}}:]\nprint(specialists)\n# Get the middle three Codémon (indices 1, 2, 3)\nmid_team = team[{{}}:{{}}]\nprint(mid_team)",
+        "options": [
+          "0",
+          "3",
+          "4",
+          "1",
+          "2",
+          "-2",
+          "-3"
+        ],
+        "correctAnswers": {
+          "1": "0",
+          "2": "3",
+          "3": "-2",
+          "4": "1",
+          "5": "4"
+        }
+      },
+      "hint": {
+        "en": "Remember: In slicing, the start index is included and the end index is excluded. Negative indices count from the end of the list.",
+        "fr": "Rappelle-toi : Dans le découpage, l'index de début est inclus et l'index de fin est exclu. Les indices négatifs comptent à partir de la fin de la liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_1_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "What Will This Slice Return?",
+      "fr": "Que Retournera ce Découpage ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "codeBlock",
+          "value": "elements = [\"water\", \"fire\", \"earth\", \"wind\", \"light\", \"dark\"]"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What will the expression ```elements[1:4]``` return?",
+            "fr": "Que retournera l'expression ```elements[1:4]``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "[\"fire\", \"earth\", \"wind\"]"
+          },
+          {
+            "type": "text",
+            "value": "[\"water\", \"fire\", \"earth\"]"
+          },
+          {
+            "type": "text",
+            "value": "[\"fire\", \"earth\", \"wind\", \"light\"]"
+          },
+          {
+            "type": "text",
+            "value": "[\"water\", \"fire\", \"earth\", \"wind\"]"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: In list slicing, the first index is included and the second index is excluded.",
+        "fr": "Rappelle-toi : Dans le découpage de liste, le premier index est inclus et le second index est exclu."
+      }
+    }
+  },
+  {
+    "id": "python_7_1_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "accessing",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "Match the Code to Its Result",
+      "fr": "Associe le Code à Son Résultat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "moves = [\"Bubble\", \"Ember\", \"Vine Whip\", \"Thunder Shock\", \"Growl\"]",
+            "fr": "moves = [\"Bubble\", \"Ember\", \"Vine Whip\", \"Thunder Shock\", \"Growl\"]"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each code snippet with the result it would produce:",
+            "fr": "Associe chaque extrait de code au résultat qu'il produirait :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```moves[0]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Bubble\"```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```moves[-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"Growl\"```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```moves[1:3]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[\"Ember\", \"Vine Whip\"]```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```moves[:2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[\"Bubble\", \"Ember\"]```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_1_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "indexing",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "List Challenge - Tournament Team Selection",
+      "fr": "Défi Listes - Sélection d'équipe de tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're organizing pairs for a Codémon tournament! You have a list of 4 Codémon and need to create different pair configurations using indexing and slicing.\n\nYour tasks:\n1. Get the ***first Codémon*** (will be the team captain)\n2. Get the ***last Codémon*** (will be the reserve)\n3. Create ***Pair A***: the first 2 Codémon\n4. Create ***Pair B***: the last 2 Codémon\n\nUse the appropriate indexing and slicing techniques for each task!",
+            "fr": "Tu organises des paires pour un tournoi Codémon ! Tu as une liste de 4 Codémon et tu dois créer différentes configurations de paires en utilisant l'indexation et le découpage.\n\nTes tâches :\n1. Obtenir le ***premier Codémon*** (sera le capitaine de l'équipe)\n2. Obtenir le ***dernier Codémon*** (sera la réserve)\n3. Créer ***Paire A*** : les 2 premiers Codémon\n4. Créer ***Paire B*** : les 2 derniers Codémon\n\nUtilise les techniques d'indexation et de découpage appropriées pour chaque tâche !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Tournament participants\ncodemon_roster = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\n\n# Task 1: Get the team captain (first Codémon)\n\n# Task 2: Get the reserve (last Codémon)\n\n# Task 3: Create Pair A (first 2 Codémon)\n\n# Task 4: Create Pair B (last 2 Codémon)\n",
+          "fr": "# Participants du tournoi\ncodemon_roster = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\n\n# Tâche 1 : Obtenir le capitaine de l'équipe (premier Codémon)\n\n# Tâche 2 : Obtenir la réserve (dernier Codémon)\n\n# Tâche 3 : Créer la Paire A (2 premiers Codémon)\n\n# Tâche 4 : Créer la Paire B (2 derniers Codémon)\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Tournament participants\ncodemon_roster = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\n\nprint(\"=== TOURNAMENT PAIR SELECTION ===\")\n\n# Task 1: Get the team captain (first Codémon)\ncaptain = codemon_roster[0]\nprint(f\"Team Captain: {captain}\")\n\n# Task 2: Get the reserve (last Codémon)\nreserve = codemon_roster[-1]\nprint(f\"Reserve: {reserve}\")\n\n# Task 3: Create Pair A (first 2 Codémon)\npair_a = codemon_roster[:2]\nprint(f\"Pair A: {pair_a}\")\n\n# Task 4: Create Pair B (last 2 Codémon)\npair_b = codemon_roster[-2:]\nprint(f\"Pair B: {pair_b}\")",
+            "fr": "# Participants du tournoi\ncodemon_roster = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\n\nprint(\"=== SÉLECTION DE PAIRES DE TOURNOI ===\")\n\n# Tâche 1 : Obtenir le capitaine de l'équipe (premier Codémon)\ncaptain = codemon_roster[0]\nprint(f\"Capitaine de l'équipe : {captain}\")\n\n# Tâche 2 : Obtenir la réserve (dernier Codémon)\nreserve = codemon_roster[-1]\nprint(f\"Réserve : {reserve}\")\n\n# Tâche 3 : Créer la Paire A (2 premiers Codémon)\npair_a = codemon_roster[:2]\nprint(f\"Paire A : {pair_a}\")\n\n# Tâche 4 : Créer la Paire B (2 derniers Codémon)\npair_b = codemon_roster[-2:]\nprint(f\"Paire B : {pair_b}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "List Methods Introduction",
+      "fr": "Introduction aux méthodes de liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Lists in Python come with built-in methods that allow you to manipulate them. In this chapter, we'll explore three essential methods for ***adding elements*** to lists:",
+            "fr": "Les listes en Python sont accompagnées de méthodes intégrées qui te permettent de les manipuler. Dans ce chapitre, nous allons explorer trois méthodes essentielles pour ***ajouter des éléments*** aux listes :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "• ```append()``` - Add a single item to the end of a list\n• ```insert()``` - Insert an item at a specific position\n• ```extend()``` - Add multiple elements from another iterable",
+            "fr": "• ```append()``` - Ajouter un seul élément à la fin d'une liste\n• ```insert()``` - Insérer un élément à une position spécifique\n• ```extend()``` - Ajouter plusieurs éléments d'un autre itérable"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "These methods are essential when you want to build and grow your lists. Let's use our Codémon examples to see how they work!",
+            "fr": "Ces méthodes sont essentielles lorsque tu veux construire et agrandir tes listes. Utilisons nos exemples de Codémon pour voir comment elles fonctionnent !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "append"
+      ]
+    },
+    "title": {
+      "en": "The append() Method",
+      "fr": "La méthode append()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```append()``` method adds an item to the end of a list. This is one of the most commonly used list methods when you need to grow a list.",
+            "fr": "La méthode ```append()``` ajoute un élément à la fin d'une liste. C'est l'une des méthodes de liste les plus couramment utilisées lorsque tu as besoin d'agrandir une liste."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Starting with an empty Codémon team\nmy_team = []\nprint(\"Starting team:\", my_team)\n\n# Catching Codémon one by one\nmy_team.append(\"Aquachu\")\nprint(\"After catching Aquachu:\", my_team)\n\nmy_team.append(\"Pyrochu\")\nprint(\"After catching Pyrochu:\", my_team)",
+            "fr": "# Commencer avec une équipe de Codémon vide\nmon_equipe = []\nprint(\"Équipe de départ:\", mon_equipe)\n\n# Capturer des Codémon un par un\nmon_equipe.append(\"Aquachu\")\nprint(\"Après avoir capturé Aquachu:\", mon_equipe)\n\nmon_equipe.append(\"Pyrochu\")\nprint(\"Après avoir capturé Pyrochu:\", mon_equipe)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how ```append()``` adds the new item to the end of the list. The method modifies the list directly and doesn't return a new list.",
+            "fr": "```append()``` ajoute le nouvel élément à la fin de la liste. La méthode modifie la liste directement et ne renvoie pas une nouvelle liste."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_2_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "append"
+      ]
+    },
+    "title": {
+      "en": "Using append()",
+      "fr": "Utiliser append()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to add ```\"Florachu\"``` to your Codémon team using the append() method.",
+            "fr": "Complète le code pour ajouter ```\"Florachu\"``` à ton équipe de Codémon en utilisant la méthode append()."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "my_team = [\"Aquachu\", \"Pyrochu\"]\nprint(\"Team before:\", my_team)\n\n# Add Florachu to the team\nmy_team.{{}}({{}})\nprint(\"Team after:\", my_team)",
+        "options": [
+          "append",
+          "add",
+          "\"Florachu\"",
+          "Florachu",
+          "insert"
+        ],
+        "correctAnswers": {
+          "1": "append",
+          "2": "\"Florachu\""
+        }
+      },
+      "hint": {
+        "en": "The append() method adds an item to the end of a list. The syntax is list_name.append(item).",
+        "fr": "La méthode append() ajoute un élément à la fin d'une liste. La syntaxe est nom_liste.append(élément)."
+      }
+    }
+  },
+  {
+    "id": "python_7_2_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "insert"
+      ]
+    },
+    "title": {
+      "en": "The insert() Method",
+      "fr": "La méthode insert()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```insert()``` method adds an item at a specified position in a list. This is useful when you need to add an item somewhere other than at the end of the list.",
+            "fr": "La méthode ```insert()``` ajoute un élément à une position spécifiée dans une liste. C'est utile lorsque tu dois ajouter un élément ailleurs qu'à la fin de la liste."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The syntax is ```list.insert(index, item)``` where:\n• ```index``` is the position where you want to insert the item\n• ```item``` is the value you want to add",
+            "fr": "La syntaxe est ```liste.insert(index, élément)``` où :\n• ```index``` est la position où tu veux insérer l'élément\n• ```élément``` est la valeur que tu veux ajouter"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# A team with some Codémon\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(\"Original team:\", my_team)\n\n# Insert a new Codémon at the beginning (index 0)\nmy_team.insert(0, \"insert_1\")\nprint(\"After inserting at beginning:\", my_team)\n\n# Insert a new Codémon in the middle (index 2)\nmy_team.insert(2, \"insert_2\")\nprint(\"After inserting in the middle:\", my_team)",
+            "fr": "# Une équipe avec quelques Codémon\nmon_equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(\"Équipe originale:\", mon_equipe)\n\n# Insérer un nouveau Codémon au début (index 0)\nmon_equipe.insert(0, \"insert_1\")\nprint(\"Après insertion au début:\", mon_equipe)\n\n# Insérer un nouveau Codémon au milieu (index 2)\nmon_equipe.insert(2, \"insert_2\")\nprint(\"Après insertion au milieu:\", mon_equipe)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If the index is out of range (larger than the length of the list), the item is simply appended to the end of the list (Python doesn't raise an error).",
+            "fr": "Si l'index est hors limites (plus grand que la longueur de la liste), l'élément est simplement ajouté à la fin de la liste (Python ne génère pas d'erreur)."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_2_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "insert"
+      ]
+    },
+    "title": {
+      "en": "Using insert()",
+      "fr": "Utiliser insert()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to insert \"Florachu\" as the second Codémon in your team (at index 1).",
+            "fr": "Complète le code pour insérer \"Florachu\" comme deuxième Codémon dans ton équipe (à l'index 1)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "my_team = [\"Aquachu\", \"Pyrochu\"]\nprint(\"Team before:\", my_team)\n\n# Insert Florachu as the second Codémon\nmy_team.{{}}({{}}{{}}{{}})\n\nprint(\"Team after:\", my_team)",
+        "options": [
+          "insert",
+          "append",
+          "1",
+          "2",
+          ",",
+          ":",
+          "\"Aquachu\"",
+          "\"Florachu\""
+        ],
+        "correctAnswers": {
+          "1": "insert",
+          "2": "1",
+          "3": ",",
+          "4": "\"Florachu\""
+        }
+      },
+      "hint": {
+        "en": "The insert() method adds an item at a specified position. The syntax is list.insert(index, item). List indices start at 0.",
+        "fr": "La méthode insert() ajoute un élément à une position spécifiée. La syntaxe est liste.insert(index, élément). Les indices de liste commencent à 0."
+      }
+    }
+  },
+  {
+    "id": "python_7_2_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "extend",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "The extend() Method",
+      "fr": "La méthode extend()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```extend()``` method adds all the elements from another list to the end of the current list.",
+            "fr": "La méthode ```extend()``` ajoute tous les éléments d'un autre liste à la fin de la liste actuelle."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemons_1 = ['Aquachu']\n\ncodemons_1.extend(['Pyrochu', 'Florachu'])\nprint(\"After extend():\", codemons_1)  # Adds each element individually",
+            "fr": "codemons_1 = ['Aquachu']\n\ncodemons_1.extend(['Pyrochu', 'Florachu'])\nprint(\"Après extend():\", codemons_1)  # Ajoute chaque élément individuellement"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Important:*** ```extend()``` is different from ```append()```!\n- ```append()``` adds its argument as a single item\n- ```extend()``` adds each element of the iterable individually",
+            "fr": "***Important :*** ```extend()``` est différent de ```append()``` !\n- ```append()``` ajoute son argument comme un seul élément\n- ```extend()``` ajoute chaque élément de l'itérable individuellement"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemons_1, codemons_2 = ['Aquachu'], ['Aquachu']\n\ncodemons_1.append([['Pyrochu', 'Florachu']])\ncodemons_2.extend(['Pyrochu', 'Florachu'])\n\nprint(\"After append():\", codemons_1)  # Adds the list as a single item\nprint(\"After extend():\", codemons_2)  # Adds each element individually",
+            "fr": "codemons_1, codemons_2 = ['Aquachu'], ['Aquachu']\n\ncodemons_1.append([['Pyrochu', 'Florachu']])\ncodemons_2.extend(['Pyrochu', 'Florachu'])\n\nprint(\"Après append():\", codemons_1)  # Ajoute la liste comme si c'était 1 élément\nprint(\"Après extend():\", codemons_2)  # Ajoute chaque élément individuellement"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_2_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "extend",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Understanding extend()",
+      "fr": "Comprendre extend()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the value of ```team``` after the following code runs?",
+            "fr": "Quelle sera la valeur de ```team``` après l'exécution du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "team = ['Aquachu', 'Pyrochu']\nteam.extend(['Florachu'])",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "['Aquachu', 'Pyrochu', 'Florachu']"
+          },
+          {
+            "type": "text",
+            "value": "['Aquachu', 'Pyrochu', 'F', 'l', 'o', 'r', 'a', 'c', 'h', 'u']"
+          },
+          {
+            "type": "text",
+            "value": "['Aquachu', 'Pyrochu', ['Florachu']]"
+          },
+          {
+            "type": "text",
+            "value": "['Aquachu', 'Pyrochu', ('Florachu',)]"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: When you use extend() with a string, each character of the string is added as a separate element to the list.",
+        "fr": "Souviens-toi : Quand tu utilises extend() avec une chaîne de caractères, chaque caractère de la chaîne est ajouté comme un élément séparé à la liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_2_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Match Adding Methods",
+      "fr": "Associe les méthodes d'ajout"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each method with its correct description.",
+            "fr": "Associe chaque méthode avec sa description correcte."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```y.append(item)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds a single item to the end of the list",
+                "fr": "Ajoute un seul élément à la fin de la liste"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```y.insert(0, item)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds an item at the beginning of the list",
+                "fr": "Ajoute un élément au début de la liste"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```y.extend([a, b])```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds multiple elements individually to the list",
+                "fr": "Ajoute plusieurs éléments individuellement à la liste"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```y.insert(2, item)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Inserts an item at index 2 (third position)",
+                "fr": "Insère un élément à l'index 2 (troisième position)"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_2_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "insert"
+      ]
+    },
+    "title": {
+      "en": "Understanding insert() Position",
+      "fr": "Comprendre la position de insert()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given this code, what will be the final team?",
+            "fr": "Avec ce code, quelle sera l'équipe finale ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nteam.insert(1, \"Zap\")\nprint(team)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "[\"Zap\", \"Aquachu\", \"Pyrochu\", \"Florachu\"]"
+          },
+          {
+            "type": "text",
+            "value": "[\"Aquachu\", \"Zap\", \"Pyrochu\", \"Florachu\"]"
+          },
+          {
+            "type": "text",
+            "value": "[\"Aquachu\", \"Pyrochu\", \"Zap\", \"Florachu\"]"
+          },
+          {
+            "type": "text",
+            "value": "[\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]"
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Remember: ```insert(1, item)``` places the new item at index 1 (second position), pushing existing elements to the right.",
+        "fr": "Rappelle-toi : ```insert(1, élément)``` place le nouvel élément à l'index 1 (deuxième position), en poussant les éléments existants vers la droite."
+      }
+    }
+  },
+  {
+    "id": "python_7_2_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "insert",
+        "append",
+        "extend"
+      ]
+    },
+    "title": {
+      "en": "Building Your Team",
+      "fr": "Construire ton équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to build a Codémon team step by step:\n1. Add \"Pyrochu\" to the end\n2. Insert \"Aquachu\" at the beginning\n3. Add both \"Florachu\" and \"Rockachu\" at once",
+            "fr": "Complète le code pour construire une équipe de Codémon étape par étape :\n1. Ajoute \"Pyrochu\" à la fin\n2. Insère \"Aquachu\" au début\n3. Ajoute \"Florachu\" et \"Rockachu\" en une seule fois"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = [\"Zap\"]\nprint(\"Starting team:\", team)\n\n# Add Pyrochu to the end\nteam.{{}}(\"Pyrochu\")\nprint(\"After append:\", team)\n\n# Insert Aquachu at the beginning\nteam.{{}}({{}}{{}} \"Aquachu\")\nprint(\"After insert:\", team)\n\n# Add Florachu and Rockachu at once\nteam.{{}}([\"Florachu\", \"Rockachu\"])\nprint(\"Final team:\", team)",
+        "options": [
+          "append",
+          "insert",
+          "extend",
+          "0",
+          "1",
+          ",",
+          "add"
+        ],
+        "correctAnswers": {
+          "1": "append",
+          "2": "insert",
+          "3": "0",
+          "4": ",",
+          "5": "extend"
+        }
+      },
+      "hint": {
+        "en": "Use ```append()``` to add one item at the end, ```insert(0, item)``` to add at the beginning, and ```extend()``` to add multiple items from a list.",
+        "fr": "Utilise ```append()``` pour ajouter un élément à la fin, ```insert(0, élément)``` pour ajouter au début, et ```extend()``` pour ajouter plusieurs éléments d'une liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_2_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "append",
+        "insert",
+        "extend"
+      ]
+    },
+    "title": {
+      "en": "Challenge - Build Your Dream Team",
+      "fr": "Défi - Construis ton équipe de rêve"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're building your dream Codémon team from scratch! Start with an empty list and use the three methods you've learned to create the perfect team.\n\nYour tasks:\n1. ***Add*** \"Pyrochu\" to your empty team\n2. ***Insert*** \"Aquachu\" at the beginning (it will be your leader)\n3. ***Add*** \"Florachu\" at the end\n4. ***Add multiple*** Codémon at once: [\"Zap\", \"Rockachu\"]\n\nYour final team should be: ```[\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\", \"Rockachu\"]```",
+            "fr": "Tu construis ton équipe de rêve de Codémon à partir de zéro ! Commence avec une liste vide et utilise les trois méthodes que tu as apprises pour créer l'équipe parfaite.\n\nTes tâches :\n1. ***Ajoute*** \"Pyrochu\" à ton équipe vide\n2. ***Insère*** \"Aquachu\" au début (ce sera ton leader)\n3. ***Ajoute*** \"Florachu\" à la fin\n4. ***Ajoute plusieurs*** Codémon en une fois : [\"Zap\", \"Rockachu\"]\n\nTon équipe finale devrait être : ```[\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\", \"Rockachu\"]```"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Start with an empty team\nmy_team = []\n\n# Task 1: Add Pyrochu to your empty team\n\n# Task 2: Insert Aquachu at the beginning (index 0)\n\n# Task 3: Add Florachu at the end\n\n# Task 4: Add Zap and Rockachu at once\n\n# Display your final team\nprint(\"My dream team:\", my_team)",
+          "fr": "# Commence avec une équipe vide\nmy_team = []\n\n# Tâche 1 : Ajoute Pyrochu à ton équipe vide\n\n# Tâche 2 : Insère Aquachu au début (index 0)\n\n# Tâche 3 : Ajoute Florachu à la fin\n\n# Tâche 4 : Ajoute Zap et Rockachu en une fois\n\n# Affiche ton équipe finale\nprint(\"Mon équipe de rêve :\", my_team)"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Start with an empty team\nmy_team = []\n\nprint(\"=== BUILDING MY DREAM TEAM ===\")\nprint(\"Starting team:\", my_team)\n\n# Task 1: Add Pyrochu to your empty team\nmy_team.append(\"Pyrochu\")\nprint(\"After adding Pyrochu:\", my_team)\n\n# Task 2: Insert Aquachu at the beginning (index 0)\nmy_team.insert(0, \"Aquachu\")\nprint(\"After inserting Aquachu as leader:\", my_team)\n\n# Task 3: Add Florachu at the end\nmy_team.append(\"Florachu\")\nprint(\"After adding Florachu:\", my_team)\n\n# Task 4: Add Zap and Rockachu at once\nmy_team.extend([\"Zap\", \"Rockachu\"])\nprint(\"After extending with Zap and Rockachu:\", my_team)\n\n# Display your final team\nprint(\"\\n=== FINAL DREAM TEAM ===\")\nprint(\"My dream team:\", my_team)",
+            "fr": "# Commence avec une équipe vide\nmy_team = []\n\nprint(\"=== CONSTRUCTION DE MON ÉQUIPE DE RÊVE ===\")\nprint(\"Équipe de départ :\", my_team)\n\n# Tâche 1 : Ajoute Pyrochu à ton équipe vide\nmy_team.append(\"Pyrochu\")\nprint(\"Après avoir ajouté Pyrochu :\", my_team)\n\n# Tâche 2 : Insère Aquachu au début (index 0)\nmy_team.insert(0, \"Aquachu\")\nprint(\"Après avoir inséré Aquachu comme leader :\", my_team)\n\n# Tâche 3 : Ajoute Florachu à la fin\nmy_team.append(\"Florachu\")\nprint(\"Après avoir ajouté Florachu :\", my_team)\n\n# Tâche 4 : Ajoute Zap et Rockachu en une fois\nmy_team.extend([\"Zap\", \"Rockachu\"])\nprint(\"Après avoir étendu avec Zap et Rockachu :\", my_team)\n\n# Affiche ton équipe finale\nprint(\"\\n=== ÉQUIPE DE RÊVE FINALE ===\")\nprint(\"Mon équipe de rêve :\", my_team)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "remove",
+        "pop",
+        "clear"
+      ]
+    },
+    "title": {
+      "en": "Removing Elements from Lists",
+      "fr": "Retirer des éléments des listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now that you know how to add elements to lists, let's learn how to ***remove*** them! In this chapter, we'll explore three essential methods for removing elements:",
+            "fr": "Maintenant que tu sais comment ajouter des éléments aux listes, apprenons à les ***retirer*** ! Dans ce chapitre, nous allons explorer trois méthodes essentielles pour supprimer des éléments :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "• ```remove()``` - Remove a specific item by its value\n• ```pop()``` - Remove and return an item by its position\n• ```clear()``` - Remove all items from a list",
+            "fr": "• ```remove()``` - Supprimer un élément spécifique par sa valeur\n• ```pop()``` - Supprimer et renvoyer un élément par sa position\n• ```clear()``` - Supprimer tous les éléments d'une liste"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "These methods are essential when you need to manage and clean up your lists. Let's use our Codémon examples to see how they work!",
+            "fr": "Ces méthodes sont essentielles lorsque tu as besoin de gérer et nettoyer tes listes. Utilisons nos exemples de Codémon pour voir comment elles fonctionnent !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_3_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "remove"
+      ]
+    },
+    "title": {
+      "en": "The remove() Method",
+      "fr": "La méthode remove()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```remove()``` method removes the ***FIRST*** occurrence of a specific item from a list. If the item doesn't exist in the list, Python will raise a ValueError.",
+            "fr": "La méthode ```remove()``` supprime la ***PREMIÈRE*** occurrence d'un élément spécifique d'une liste. Si l'élément n'existe pas dans la liste, Python générera une ValueError."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# A team with some Codémon\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Pyrochu\"]\nprint(\"Original team:\", my_team)\n\n# Release Pyrochu back into the wild\nmy_team.remove(\"Pyrochu\")\nprint(\"Team after removing Pyrochu:\", my_team)",
+            "fr": "# Une équipe avec quelques Codémon\nmon_equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Pyrochu\"]\nprint(\"Équipe originale:\", mon_equipe)\n\n# Relâcher Pyrochu dans la nature\nmon_equipe.remove(\"Pyrochu\")\nprint(\"Équipe après avoir retiré Pyrochu:\", mon_equipe)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Important Note",
+              "fr": "Note importante"
+            },
+            "content": {
+              "en": "The ```remove()``` method:\n• Only removes the first occurrence of the value\n• Raises a ValueError if the item is not in the list\n• Modifies the original list (doesn't create a new one)",
+              "fr": "La méthode ```remove()``` :\n• Ne supprime que la première occurrence de la valeur\n• Génère une ValueError si l'élément n'est pas dans la liste\n• Modifie la liste originale (ne crée pas une nouvelle liste)"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_3_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "remove"
+      ]
+    },
+    "title": {
+      "en": "Using remove()",
+      "fr": "Utiliser remove()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will happen when the following code runs?",
+            "fr": "Que se passera-t-il lorsque le code suivant s'exécute ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Aquachu\"]\ncodemons.remove(\"Aquachu\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```[\"Pyrochu\", \"Florachu\", \"Aquachu\"]```"
+          },
+          {
+            "type": "text",
+            "value": "```[\"Pyrochu\", \"Florachu\"]```"
+          },
+          {
+            "type": "text",
+            "value": "```[\"Aquachu\", \"Pyrochu\", \"Florachu\"]```"
+          },
+          {
+            "type": "text",
+            "value": "ValueError: \"Aquachu\" not in list"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The remove() method removes only the first occurrence of the specified value, not all occurrences.",
+        "fr": "La méthode remove() ne supprime que la première occurrence de la valeur spécifiée, pas toutes les occurrences."
+      }
+    }
+  },
+  {
+    "id": "python_7_3_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "pop"
+      ]
+    },
+    "title": {
+      "en": "The pop() Method",
+      "fr": "La méthode pop()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```pop()``` method removes an item at a specified position and returns it. If no index is specified, it removes and returns the last item in the list.",
+            "fr": "La méthode ```pop()``` supprime un élément à une position spécifiée et le renvoie. Si aucun index n'est spécifié, elle supprime et renvoie le dernier élément de la liste."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This is different from ```remove()``` in two key ways:\n• ```pop()``` works with the position (index), while ```remove()``` works with the value\n• ```pop()``` returns the removed item, while ```remove()``` doesn't return anything",
+            "fr": "C'est différent de ```remove()``` de deux manières importantes :\n• ```pop()``` fonctionne avec la position (index), tandis que ```remove()``` fonctionne avec la valeur\n• ```pop()``` renvoie l'élément supprimé, tandis que ```remove()``` ne renvoie rien"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# A team with some Codémon\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(\"Original team:\", my_team, '-'*40)\n\n# Remove and get the last Codémon\nlast_codemon = my_team.pop()\nprint(f\"Removed: {last_codemon}\")\nprint(\"Team after removing last Codémon:\", my_team, '-'*40)\n\n# Remove and get the Codémon at index 1 (the second Codémon)\nsecond_codemon = my_team.pop(1)\nprint(f\"Removed: {second_codemon}\")\nprint(\"Team after removing second Codémon:\", my_team)",
+            "fr": "# Une équipe avec quelques Codémon\nmon_equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(\"Équipe originale:\", mon_equipe, '-'*40)\n\n# Retirer et obtenir le dernier Codémon\ndernier_codemon = mon_equipe.pop()\nprint(f\"Retiré: {dernier_codemon}\")\nprint(\"Équipe après avoir retiré le dernier Codémon:\", mon_equipe, '-'*40)\n\n# Retirer et obtenir le Codémon à l'index 1 (le deuxième Codémon)\ndeuxieme_codemon = mon_equipe.pop(1)\nprint(f\"Retiré: {deuxieme_codemon}\")\nprint(\"Équipe après avoir retiré le deuxième Codémon:\", mon_equipe)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Important Note",
+              "fr": "Note importante"
+            },
+            "content": {
+              "en": "The ```pop()``` method:\n• Raises an IndexError if the list is empty or the index is out of range\n• Returns the removed item, so you can store it in a variable\n• Modifies the original list",
+              "fr": "La méthode ```pop()``` :\n• Génère une IndexError si la liste est vide ou si l'index est hors limites\n• Renvoie l'élément supprimé, tu peux donc le stocker dans une variable\n• Modifie la liste originale"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_3_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "pop"
+      ]
+    },
+    "title": {
+      "en": "Using pop()",
+      "fr": "Utiliser pop()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be stored in the variable ```removed_codemon``` after running this code?",
+            "fr": "Qu'est-ce qui sera stocké dans la variable ```removed_codemon``` après l'exécution de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nremoved_codemon = codemons.pop(1)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Aquachu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Pyrochu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Florachu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "The pop() method with an index argument removes and returns the item at that index.",
+        "fr": "La méthode pop() avec un argument d'index supprime et renvoie l'élément à cet index."
+      }
+    }
+  },
+  {
+    "id": "python_7_3_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "clear"
+      ]
+    },
+    "title": {
+      "en": "The clear() Method",
+      "fr": "La méthode clear()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```clear()``` method removes ***ALL*** items from a list, leaving you with an empty list. This is useful when you want to start fresh with an existing list.",
+            "fr": "La méthode ```clear()``` supprime ***TOUS*** les éléments d'une liste, te laissant avec une liste vide. C'est utile lorsque tu veux repartir de zéro avec une liste existante."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# A team with some Codémon\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\nprint(\"Original team:\", my_team)\n\n# Clear the entire team\nmy_team.clear()\nprint(\"After clear():\", my_team)",
+            "fr": "# Une équipe avec quelques Codémon\nmon_equipe = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\nprint(\"Équipe originale :\", mon_equipe)\n\n# Vider toute l'équipe\nmon_equipe.clear()\nprint(\"Après clear() :\", mon_equipe)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You might wonder: What's the difference between ```clear()``` and ```= []```?\n\nBoth result in an empty list, but they work differently. It's a bit tricky to explain so here is a simplified explanation if you're curious.",
+            "fr": "Tu te demandes peut-être : Quelle est la différence entre ```clear()``` et ```= []``` ?\n\nLes deux donnent une liste vide, mais ils fonctionnent différemment. C'est un peu compliqué à expliquer, donc voici une explication simplifiée si tu es curieux."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Key Difference",
+              "fr": "Différence clé"
+            },
+            "content": {
+              "en": "• ```clear()``` modifies the existing list in place (all references see the change)\n• ```= []``` creates a new empty list and reassigns the variable (other references keep the old list)",
+              "fr": "• ```clear()``` modifie la liste existante sur place (toutes les références voient le changement)\n• ```= []``` crée une nouvelle liste vide et réassigne la variable (les autres références gardent l'ancienne liste)"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_3_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "clear"
+      ]
+    },
+    "title": {
+      "en": "Using clear()",
+      "fr": "Utiliser clear()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed after running this code?",
+            "fr": "Qu'est-ce qui sera affiché après l'exécution de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nteam.clear()\nteam.append(\"Zap\")\nprint(team)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```[\"Zap\"]```"
+          },
+          {
+            "type": "text",
+            "value": "```[]```"
+          },
+          {
+            "type": "text",
+            "value": "```[\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]```"
+          },
+          {
+            "type": "text",
+            "value": "```Error: cannot append to empty list```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: ```clear()``` empties the list, but the list still exists and you can add new items to it.",
+        "fr": "Rappelle-toi : ```clear()``` vide la liste, mais la liste existe toujours et tu peux y ajouter de nouveaux éléments."
+      }
+    }
+  },
+  {
+    "id": "python_7_3_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "remove",
+        "pop",
+        "clear"
+      ]
+    },
+    "title": {
+      "en": "Choose the Right Removal Method",
+      "fr": "Choisis la bonne méthode de suppression"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code with the appropriate removal methods.",
+            "fr": "Complète le code avec les méthodes de suppression appropriées."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "codemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\n\n# 1. Remove \"Pyrochu\" by its value\ncodemons.{{}}(\"Pyrochu\")\n\n# 2. Remove and store the last Codémon\nlast = codemons.{{}}()\n\n# 3. Remove the first Codémon (at index 0)\nfirst = codemons.{{}}({{}})\n\n# 4. Remove all remaining Codémon\ncodemons.{{}}()",
+        "options": [
+          "remove",
+          "pop",
+          "clear",
+          "0",
+          "1",
+          "delete",
+          "empty",
+          "pop"
+        ],
+        "correctAnswers": {
+          "1": "remove",
+          "2": "pop",
+          "3": "pop",
+          "4": "0",
+          "5": "clear"
+        }
+      },
+      "hint": {
+        "en": "Use ```remove()``` to delete by value, ```pop()``` to delete by position (and get the item back), and ```clear()``` to empty the entire list.",
+        "fr": "Utilise ```remove()``` pour supprimer par valeur, ```pop()``` pour supprimer par position (et récupérer l'élément), et ```clear()``` pour vider toute la liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_3_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "What's the Difference?",
+      "fr": "Quelle est la différence ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the main difference between the ```remove()``` and ```pop()``` methods?",
+            "fr": "Quelle est la principale différence entre les méthodes ```remove()``` et ```pop()``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```remove()``` works with values, while ```pop()``` works with positions (indices)",
+              "fr": "```remove()``` fonctionne avec des valeurs, tandis que ```pop()``` fonctionne avec des positions (indices)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```remove()``` changes the list permanently, while ```pop()``` creates a new list",
+              "fr": "```remove()``` modifie la liste de façon permanente, tandis que ```pop()``` crée une nouvelle liste"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```remove()``` can only remove items from the end, while ```pop()``` can remove from any position",
+              "fr": "```remove()``` ne peut supprimer que des éléments à la fin, tandis que ```pop()``` peut supprimer de n'importe quelle position"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```pop()``` doesn't return anything, while ```remove()``` returns the value that was removed",
+              "fr": "```pop()``` ne renvoie rien, tandis que ```remove()``` renvoie la valeur qui a été supprimée"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The key difference is that ```remove()``` works with the value itself (e.g., remove(\"Pyrochu\")), while ```pop()``` works with the position/index (e.g., pop(1)). Additionally, ```pop()``` returns the removed item while ```remove()``` doesn't.",
+        "fr": "La différence clé est que ```remove()``` fonctionne avec la valeur elle-même (par exemple, remove(\"Pyrochu\")), tandis que ```pop()``` fonctionne avec la position/index (par exemple, pop(1)). De plus, ```pop()``` renvoie l'élément supprimé tandis que ```remove()``` ne le fait pas."
+      }
+    }
+  },
+  {
+    "id": "python_7_3_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "remove",
+        "pop",
+        "clear"
+      ]
+    },
+    "title": {
+      "en": "Match Removal Methods",
+      "fr": "Associe les méthodes de suppression"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each method with its correct description.",
+            "fr": "Associe chaque méthode avec sa description correcte."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```y.remove(\"Aquachu\")```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes the first \"Aquachu\" found in the list",
+                "fr": "Supprime le premier \"Aquachu\" trouvé dans la liste"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```y.pop()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes and returns the last item",
+                "fr": "Supprime et renvoie le dernier élément"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```y.pop(0)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes and returns the first item",
+                "fr": "Supprime et renvoie le premier élément"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```y.clear()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes all items from the list",
+                "fr": "Supprime tous les éléments de la liste"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": "```y = []```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Creates a new empty list and reassigns the variable",
+                "fr": "Crée une nouvelle liste vide et réassigne la variable"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_3_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "remove",
+        "pop",
+        "clear"
+      ]
+    },
+    "title": {
+      "en": "Challenge - Team Cleanup",
+      "fr": "Défi - Nettoyage d'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You need to reorganize your Codémon team by removing specific members! Start with a full team and use the removal methods you've learned.\n\nYour tasks:\n1. ***Remove*** \"Pyrochu\" by its name (you don't need it anymore)\n2. ***Remove and store*** the last Codémon in a variable called ```reserve```\n3. ***Remove and store*** the first Codémon (at index 0) in a variable called ```leader```\n4. Print the remaining team\n5. ***Clear*** the entire team to start fresh\n\nUse ```remove()```, ```pop()```, and ```clear()``` to complete this challenge!",
+            "fr": "Tu dois réorganiser ton équipe de Codémon en retirant des membres spécifiques ! Commence avec une équipe complète et utilise les méthodes de suppression que tu as apprises.\n\nTes tâches :\n1. ***Supprime*** \"Pyrochu\" par son nom (tu n'en as plus besoin)\n2. ***Supprime et stocke*** le dernier Codémon dans une variable appelée ```reserve```\n3. ***Supprime et stocke*** le premier Codémon (à l'index 0) dans une variable appelée ```leader```\n4. Affiche l'équipe restante\n5. ***Vide*** toute l'équipe pour repartir de zéro\n\nUtilise ```remove()```, ```pop()``` et ```clear()``` pour compléter ce défi !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Starting team\nteam = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\", \"Rockachu\"]\nprint(\"Starting team:\", team)\n\n# Task 1: Remove \"Pyrochu\" by its name\n\n# Task 2: Remove and store the last Codémon in 'reserve'\n\n# Task 3: Remove and store the first Codémon in 'leader'\n\n# Task 4: Print the remaining team\nprint(\"Remaining team:\", team)\nprint(\"Leader:\", leader)\nprint(\"Reserve:\", reserve)\n\n# Task 5: Clear the entire team\n\nprint(\"Team after clearing:\", team)",
+          "fr": "# Équipe de départ\nteam = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\", \"Rockachu\"]\nprint(\"Équipe de départ :\", team)\n\n# Tâche 1 : Supprime \"Pyrochu\" par son nom\n\n# Tâche 2 : Supprime et stocke le dernier Codémon dans 'reserve'\n\n# Tâche 3 : Supprime et stocke le premier Codémon dans 'leader'\n\n# Tâche 4 : Affiche l'équipe restante\nprint(\"Équipe restante :\", team)\nprint(\"Leader :\", leader)\nprint(\"Réserve :\", reserve)\n\n# Tâche 5 : Vide toute l'équipe\n\nprint(\"Équipe après nettoyage :\", team)"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Starting team\nteam = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\", \"Rockachu\"]\nprint(\"=== TEAM CLEANUP ===\")\nprint(\"Starting team:\", team)\n\n# Task 1: Remove \"Pyrochu\" by its name\nteam.remove(\"Pyrochu\")\nprint(\"After removing Pyrochu:\", team)\n\n# Task 2: Remove and store the last Codémon in 'reserve'\nreserve = team.pop()\nprint(f\"Reserve Codémon: {reserve}\")\nprint(\"After removing last:\", team)\n\n# Task 3: Remove and store the first Codémon in 'leader'\nleader = team.pop(0)\nprint(f\"Leader Codémon: {leader}\")\nprint(\"After removing first:\", team)\n\n# Task 4: Print the remaining team\nprint(\"\\n=== FINAL STATUS ===\")\nprint(\"Remaining team:\", team)\nprint(\"Leader:\", leader)\nprint(\"Reserve:\", reserve)\n\n# Task 5: Clear the entire team\nteam.clear()\nprint(\"\\nTeam after clearing:\", team)",
+            "fr": "# Équipe de départ\nteam = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\", \"Rockachu\"]\nprint(\"=== NETTOYAGE D'ÉQUIPE ===\")\nprint(\"Équipe de départ :\", team)\n\n# Tâche 1 : Supprime \"Pyrochu\" par son nom\nteam.remove(\"Pyrochu\")\nprint(\"Après avoir retiré Pyrochu :\", team)\n\n# Tâche 2 : Supprime et stocke le dernier Codémon dans 'reserve'\nreserve = team.pop()\nprint(f\"Codémon de réserve : {reserve}\")\nprint(\"Après avoir retiré le dernier :\", team)\n\n# Tâche 3 : Supprime et stocke le premier Codémon dans 'leader'\nleader = team.pop(0)\nprint(f\"Codémon leader : {leader}\")\nprint(\"Après avoir retiré le premier :\", team)\n\n# Tâche 4 : Affiche l'équipe restante\nprint(\"\\n=== STATUT FINAL ===\")\nprint(\"Équipe restante :\", team)\nprint(\"Leader :\", leader)\nprint(\"Réserve :\", reserve)\n\n# Tâche 5 : Vide toute l'équipe\nteam.clear()\nprint(\"\\nÉquipe après nettoyage :\", team)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "len",
+        "index",
+        "count"
+      ]
+    },
+    "title": {
+      "en": "Analyzing Lists",
+      "fr": "Analyser les listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now that you know how to add and remove elements, let's learn how to ***analyze*** your lists! In this chapter, we'll explore four essential methods and functions for getting information about lists:",
+            "fr": "Maintenant que tu sais comment ajouter et retirer des éléments, apprenons à ***analyser*** tes listes ! Dans ce chapitre, nous allons explorer quatre méthodes et fonctions essentielles pour obtenir des informations sur les listes :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "• ```len()``` - Get the number of items in a list\n• ```index()``` - Find the position of a specific item\n• ```count()``` - Count how many times an item appears\n• ```in``` - Check if an item exists in a list",
+            "fr": "• ```len()``` - Obtenir le nombre d'éléments dans une liste\n• ```index()``` - Trouver la position d'un élément spécifique\n• ```count()``` - Compter combien de fois un élément apparaît\n• ```in``` - Vérifier si un élément existe dans une liste"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "These tools are essential for understanding and working with your lists. Let's use our Codémon examples to see how they work!",
+            "fr": "Ces outils sont essentiels pour comprendre et travailler avec tes listes. Utilisons nos exemples de Codémon pour voir comment ils fonctionnent !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_4_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "len"
+      ]
+    },
+    "title": {
+      "en": "The len() Function",
+      "fr": "La fonction len()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```len()``` function returns the number of items in a list. It's very useful to check how many elements you have!",
+            "fr": "La fonction ```len()``` renvoie le nombre d'éléments dans une liste. C'est très utile pour vérifier combien d'éléments tu as !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Your Codémon team\nmy_team = [\"Zap\", \"Aquachu\", \"Pyrochu\"]\nprint(\"My team:\", my_team)\nprint(\"My team size:\", len(my_team))\nprint(\"-\" * 40)\n\n# Enemy team\nenemy_team = [\"Pyrochu\"]\nprint(\"Enemy team:\", enemy_team)\nprint(\"Enemy team size:\", len(enemy_team))\nprint(\"-\" * 40)\n\n# Empty team (just started the game!)\nempty_team = []\nprint(\"Empty team:\", empty_team)\nprint(\"Empty team size:\", len(empty_team))",
+            "fr": "# Ton équipe de Codémon\nmon_equipe = [\"Zap\", \"Aquachu\", \"Pyrochu\"]\nprint(\"Mon équipe :\", mon_equipe)\nprint(\"Taille de mon équipe :\", len(mon_equipe))\nprint(\"-\" * 40)\n\n# Équipe ennemie\nequipe_ennemie = [\"Pyrochu\"]\nprint(\"Équipe ennemie :\", equipe_ennemie)\nprint(\"Taille de l'équipe ennemie :\", len(equipe_ennemie))\nprint(\"-\" * 40)\n\n# Équipe vide (vient de commencer le jeu !)\nequipe_vide = []\nprint(\"Équipe vide :\", equipe_vide)\nprint(\"Taille de l'équipe vide :\", len(equipe_vide))"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "len() works with many types!",
+              "fr": "len() fonctionne avec plusieurs types !"
+            },
+            "content": {
+              "en": "The ```len()``` function can be used with other data types too, like strings, tuples, and dictionaries (you'll learn about those later). It's one of the most useful functions in Python!",
+              "fr": "La fonction ```len()``` peut être utilisée avec d'autres types de données aussi, comme les chaînes de caractères, les tuples et les dictionnaires (tu les apprendras plus tard). C'est l'une des fonctions les plus utiles en Python !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_4_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "len"
+      ]
+    },
+    "title": {
+      "en": "Understanding len()",
+      "fr": "Comprendre len()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quel sera le résultat du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemons = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Rockachu\"]\nprint(len(codemons))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "3"
+          },
+          {
+            "type": "text",
+            "value": "4"
+          },
+          {
+            "type": "text",
+            "value": "5"
+          },
+          {
+            "type": "text",
+            "value": "Error"
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "The len() function counts the number of items in the list.",
+        "fr": "La fonction len() compte le nombre d'éléments dans la liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_4_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "index",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "The index() Method",
+      "fr": "La méthode index()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```index()``` method finds the position of an element in a list. It returns the index of the first occurrence of the element.",
+            "fr": "La méthode ```index()``` trouve la position d'un élément dans une liste. Elle renvoie l'indice de la première occurrence de l'élément."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Basic syntax: ```list.index(element, start, end)```\n\n- ```element```: Required - the item to search for\n- ```start```: Optional - where to start the search (default is 0)\n- ```end```: Optional - where to end the search (default is the end of the list)",
+            "fr": "Syntaxe de base : ```list.index(element, start, end)```\n\n- ```element``` : Requis - l'élément à rechercher\n- ```start``` : Optionnel - où commencer la recherche (par défaut 0)\n- ```end``` : Optionnel - où terminer la recherche (par défaut la fin de la liste)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemons = ['Aquachu', 'Pyrochu', 'Florachu', 'Aquachu', 'Pyrochu']\n\n# Find the first occurrence of 'Aquachu'\nfirst_aquachu = codemons.index('Aquachu')\nprint(\"First Aquachu is at index:\", first_aquachu)\n\n# Find 'Aquachu' starting from index 1\nsecond_aquachu = codemons.index('Aquachu', 1)\nprint(\"Second Aquachu is at index:\", second_aquachu)\n\n# Find 'Pyrochu' between indices 2 and 5\nsecond_pyrochu = codemons.index('Pyrochu', 2, 5)\nprint(\"Second Pyrochu is at index:\", second_pyrochu)",
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "What if the element is not found?",
+              "fr": "Que se passe-t-il si l'élément n'est pas trouvé ?"
+            },
+            "content": {
+              "en": "If the element is not found in the list, Python will raise a ValueError. It's a good practice to check if an element is in the list before using index() with the 'in' operator.",
+              "fr": "Si l'élément n'est pas trouvé dans la liste, Python lèvera une ValueError. C'est une bonne pratique de vérifier si un élément est dans la liste avant d'utiliser index() avec l'opérateur 'in'."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_4_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "index",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Using the index() Method",
+      "fr": "Utiliser la méthode index()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "1. Find the position of the first \"Pyrochu\".\n2. Find the position of the second \"Aquachu\" (after the first one).",
+            "fr": "1. Trouve la position du premier \"Pyrochu\".\n2. Trouve la position du deuxième \"Aquachu\" (après le premier)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = ['Aquachu', 'Pyrochu', 'Florachu', 'Aquachu']\n\nfirst_pyrochu = team.{{}}('Pyrochu')\nprint(\"First Pyrochu position:\", first_pyrochu)\n\nsecond_aquachu = team.index('Aquachu', {{}})\nprint(\"Second Aquachu position:\", second_aquachu)",
+        "options": [
+          "index",
+          "find",
+          "position",
+          "1",
+          "0",
+          "5"
+        ],
+        "correctAnswers": {
+          "1": "index",
+          "2": "1"
+        }
+      },
+      "hint": {
+        "en": "Remember: The index() method returns the position of the first occurrence of an element. To find subsequent occurrences, use the start parameter to begin searching after the first occurrence.",
+        "fr": "Rappelle-toi : La méthode index() renvoie la position de la première occurrence d'un élément. Pour trouver les occurrences suivantes, utilise le paramètre start pour commencer la recherche après la première occurrence."
+      }
+    }
+  },
+  {
+    "id": "python_7_4_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "count",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "The count() Method",
+      "fr": "La méthode count()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```count()``` method returns the number of times a specified element appears in a list.",
+            "fr": "La méthode ```count()``` renvoie le nombre de fois qu'un élément spécifié apparaît dans une liste."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Basic syntax: ```list.count(element)```\n\n- ```element```: The item to count occurrences of",
+            "fr": "Syntaxe de base : ```list.count(element)```\n\n- ```element``` : L'élément dont on veut compter les occurrences"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemons = ['Aquachu', 'Pyrochu', 'Florachu', 'Aquachu', 'Pyrochu', 'Aquachu']\n\n# Count how many Aquachu are in the team\naquachu_count = codemons.count('Aquachu')\nprint(\"Number of Aquachu:\", aquachu_count)\n\n# Count how many Florachu are in the team\nflorachu_count = codemons.count('Florachu')\nprint(\"Number of Florachu:\", florachu_count)\n\n# Count a Codémon that isn't in the team\ntest_count = codemons.count('Test')\nprint(\"Number of Test:\", test_count)  # Returns 0 instead of an error",
+            "fr": "codemons = ['Aquachu', 'Pyrochu', 'Florachu', 'Aquachu', 'Pyrochu', 'Aquachu']\n\n# Compte combien d'Aquachu sont dans l'équipe\naquachu_count = codemons.count('Aquachu')\nprint(\"Nombre d'Aquachu:\", aquachu_count)\n\n# Compte combien de Florachu sont dans l'équipe\nflorachu_count = codemons.count('Florachu')\nprint(\"Nombre de Florachu:\", florachu_count)\n\n# Compte un Codémon qui n'est pas dans l'équipe\ntest_count = codemons.count('Test')\nprint(\"Nombre de Test:\", test_count)  # Renvoie 0 au lieu d'une erreur"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_4_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "count",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Using the count() Method",
+      "fr": "Utiliser la méthode count()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Que va afficher le code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "numbers = [1, 2, 3, 1, 0]\nprint(numbers.count(1) + numbers.count(0))",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "3"
+          },
+          {
+            "type": "text",
+            "value": "4"
+          },
+          {
+            "type": "text",
+            "value": "5"
+          },
+          {
+            "type": "text",
+            "value": "2"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: In Python, count() counts the occurrences of a specified value in a list.",
+        "fr": "Rappelle-toi : En Python, la méthode count() compte les occurrences d'une valeur spécifiée dans une liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_4_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "membership",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "The 'in' Operator for Lists",
+      "fr": "L'opérateur 'in' pour les Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```in``` operator allows you to check if an item exists in a list. It returns ```True``` if the item is in the list, and ```False``` if it's not.",
+            "fr": "L'opérateur ```in``` te permet de vérifier si un élément existe dans une liste. Il renvoie ```True``` si l'élément est dans la liste, et ```False``` s'il n'y est pas."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# A list of Codémon types\ncodemon_types = [\"water\", \"fire\", \"grass\", \"electric\"]\n\n# Check if \"fire\" is in the list\nprint(\"fire\" in codemon_types)\n\n# Check if \"rock\" is in the list\nprint(\"rock\" in codemon_types)",
+            "fr": "# Une liste de types de Codémon\ntypes_codemon = [\"eau\", \"feu\", \"plante\", \"électrique\"]\n\n# Vérifie si \"feu\" est dans la liste\nprint(\"feu\" in types_codemon)\n\n# Vérifie si \"roche\" est dans la liste\nprint(\"roche\" in types_codemon)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can also use ```not in``` to check if an item is NOT in the list:",
+            "fr": "Tu peux aussi utiliser ```not in``` pour vérifier si un élément N'EST PAS dans la liste :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_types = [\"water\", \"fire\", \"grass\", \"electric\"]\n\n# Check if \"rock\" is not in the list\nprint(\"rock\" not in codemon_types)",
+            "fr": "types_codemon = [\"eau\", \"feu\", \"plante\", \"électrique\"]\n\n# Vérifie si \"roche\" n'est pas dans la liste\nprint(\"roche\" not in types_codemon)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "The 'in' operator is versatile",
+              "fr": "L'opérateur 'in' est polyvalent"
+            },
+            "content": {
+              "en": "The ```in``` operator works with many Python sequences, not just lists. You can use it with strings, tuples, sets, and dictionaries.",
+              "fr": "L'opérateur ```in``` fonctionne avec de nombreuses séquences Python, pas seulement les listes. Tu peux l'utiliser avec des chaînes, des tuples, des ensembles et des dictionnaires."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_4_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "membership",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Using the 'in' Operator",
+      "fr": "Utiliser l'opérateur 'in'"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following list, what will be the result of the expression?",
+            "fr": "Étant donné la liste suivante, quel sera le résultat de l'expression ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_collection = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\n\nprint(\"Pyrochu\" in codemon_collection)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Pyrochu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```1```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The ```in``` operator checks if an item exists in a list and returns a boolean value.",
+        "fr": "Rappelle-toi : L'opérateur ```in``` vérifie si un élément existe dans une liste et renvoie une valeur booléenne."
+      }
+    }
+  },
+  {
+    "id": "python_7_4_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "membership",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Checking for Codémon Types",
+      "fr": "Vérifier les types de Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "1. Check if the desired Codémon type is available in your collection.\n2. Check if the \"rock\" type is not in your collection.",
+            "fr": "1. Vérifie si le type de Codémon souhaité est disponible dans ta collection.\n2. Vérifie si le type \"roche\" n'est pas dans ta collection."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "available_types = [\"water\", \"fire\", \"grass\"]\ndesired_type = \"fire\"\n\n# Check if the desired type is available\nif desired_type {{}} available_types:\n    print(\"You have this type!\")\nelse:\n    print(\"You don't have this type.\")\n\n# Check if \"rock\" type is not in the collection\nif \"rock\" {{}} {{}} available_types:\n    print(\"Rock type not found.\")",
+        "options": [
+          "in",
+          "=",
+          "==",
+          "not",
+          "in",
+          "!="
+        ],
+        "correctAnswers": {
+          "1": "in",
+          "2": "not",
+          "3": "in"
+        }
+      },
+      "hint": {
+        "en": "Remember: Use ```in``` to check if an element is in a list, and ```not in``` to check if it's not in the list.",
+        "fr": "Rappelle-toi : Utilise ```in``` pour vérifier si un élément est dans une liste, et ```not in``` pour vérifier s'il n'est pas dans la liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_4_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "len",
+        "index",
+        "count"
+      ]
+    },
+    "title": {
+      "en": "Match Analysis Methods",
+      "fr": "Associe les méthodes d'analyse"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each method or function with its correct description.",
+            "fr": "Associe chaque méthode ou fonction avec sa description correcte."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```len(team)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns the number of items in the list",
+                "fr": "Renvoie le nombre d'éléments dans la liste"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```team.index('Aquachu')```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Finds the position of the first 'Aquachu'",
+                "fr": "Trouve la position du premier 'Aquachu'"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```team.count('Pyrochu')```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Counts how many 'Pyrochu' are in the list",
+                "fr": "Compte combien de 'Pyrochu' sont dans la liste"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```team.index('Florachu', 2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Finds 'Florachu' starting search from index 2",
+                "fr": "Trouve 'Florachu' en commençant la recherche à l'index 2"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": "```'Zap' in team```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if 'Zap' exists in the list",
+                "fr": "Vérifie si 'Zap' existe dans la liste"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_4_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "len",
+        "index",
+        "count"
+      ]
+    },
+    "title": {
+      "en": "Analyzing a Team",
+      "fr": "Analyser une équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You need to analyze a Codémon team. Which code correctly:\n1. Gets the total number of Codémon\n2. Finds the position of 'Florachu'\n3. Counts how many 'Aquachu' are in the team\n4. Checks if 'Zap' is in the team",
+            "fr": "Tu dois analyser une équipe de Codémon. Quel code permet correctement de :\n1. Obtenir le nombre total de Codémon\n2. Trouver la position de 'Florachu'\n3. Compter combien d'Aquachu sont dans l'équipe\n4. Vérifier si 'Zap' est dans l'équipe"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "total = len(team)\nposition = team.index('Florachu')\ncount = team.count('Aquachu')\nhas_zap = 'Zap' in team"
+          },
+          {
+            "type": "codeBlock",
+            "value": "total = team.size()\nposition = team.index('Florachu')\ncount = team.count('Aquachu')\nhas_zap = 'Zap' in team"
+          },
+          {
+            "type": "codeBlock",
+            "value": "total = len(team)\nposition = team.find('Florachu')\ncount = team.count('Aquachu')\nhas_zap = team.has('Zap')"
+          },
+          {
+            "type": "codeBlock",
+            "value": "total = team.length()\nposition = team.index('Florachu')\ncount = team.count('Aquachu')\nhas_zap = team.contains('Zap')"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: ```len()``` gets the size, ```index()``` finds the position, ```count()``` counts occurrences, and ```in``` checks membership.",
+        "fr": "Rappelle-toi : ```len()``` obtient la taille, ```index()``` trouve la position, ```count()``` compte les occurrences, et ```in``` vérifie l'appartenance."
+      }
+    }
+  },
+  {
+    "id": "python_7_4_13",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "len",
+        "index",
+        "count"
+      ]
+    },
+    "title": {
+      "en": "Challenge - Team Statistics",
+      "fr": "Défi - Statistiques d'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're a Codémon trainer and need to analyze your team!\n\nYour tasks:\n1. ***Count*** the total number of Codémon in your team\n2. ***Find*** the position of \"Florachu\" in your team\n3. ***Count*** how many \"Aquachu\" you have\n4. ***Count*** how many \"Pyrochu\" you have\n5. ***Check*** if \"Zap\" is in your team\n\nUse ```len()```, ```index()```, ```count()```, and ```in``` to complete this challenge!",
+            "fr": "Tu es un dresseur de Codémon et tu dois analyser ton équipe !\n\nTes tâches :\n1. ***Compte*** le nombre total de Codémon dans ton équipe\n2. ***Trouve*** la position de \"Florachu\" dans ton équipe\n3. ***Compte*** combien d'\"Aquachu\" tu as\n4. ***Compte*** combien de \"Pyrochu\" tu as\n5. ***Vérifie*** si \"Zap\" est dans ton équipe\n\nUtilise ```len()```, ```index()```, ```count()``` et ```in``` pour compléter ce défi !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Your Codémon team\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Aquachu\", \"Zap\", \"Pyrochu\", \"Aquachu\"]\nprint(\"My team:\", my_team)\nprint(\"=\" * 50)\n\n# Task 1: Count total Codémon\n\n# Task 2: Find position of Florachu\n\n# Task 3: Count Aquachu\n\n# Task 4: Count Pyrochu\n\n# Task 5: Check if Zap is in the team\n",
+          "fr": "# Ton équipe de Codémon\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Aquachu\", \"Zap\", \"Pyrochu\", \"Aquachu\"]\nprint(\"Mon équipe :\", my_team)\nprint(\"=\" * 50)\n\n# Tâche 1 : Compte le nombre total de Codémon\n\n# Tâche 2 : Trouve la position de Florachu\n\n# Tâche 3 : Compte les Aquachu\n\n# Tâche 4 : Compte les Pyrochu\n\n# Tâche 5 : Vérifie si Zap est dans l'équipe\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Your Codémon team\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Aquachu\", \"Zap\", \"Pyrochu\", \"Aquachu\"]\nprint(\"My team:\", my_team)\nprint(\"=\" * 50)\n\n# Task 1: Count total Codémon\ntotal_codemon = len(my_team)\nprint(f\"Total Codémon in team: {total_codemon}\")\n\n# Task 2: Find position of Florachu\nflorachu_position = my_team.index(\"Florachu\")\nprint(f\"Florachu is at position: {florachu_position}\")\n\n# Task 3: Count Aquachu\naquachu_count = my_team.count(\"Aquachu\")\nprint(f\"Number of Aquachu: {aquachu_count}\")\n\n# Task 4: Count Pyrochu\npyrochu_count = my_team.count(\"Pyrochu\")\nprint(f\"Number of Pyrochu: {pyrochu_count}\")\n\n# Task 5: Check if Zap is in the team\nhas_zap = \"Zap\" in my_team\nprint(f\"Is Zap in the team? {has_zap}\")",
+            "fr": "# Ton équipe de Codémon\nmy_team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Aquachu\", \"Zap\", \"Pyrochu\", \"Aquachu\"]\nprint(\"Mon équipe :\", my_team)\nprint(\"=\" * 50)\n\n# Tâche 1 : Compte le nombre total de Codémon\ntotal_codemon = len(my_team)\nprint(f\"Total de Codémon dans l'équipe : {total_codemon}\")\n\n# Tâche 2 : Trouve la position de Florachu\nflorachu_position = my_team.index(\"Florachu\")\nprint(f\"Florachu est à la position : {florachu_position}\")\n\n# Tâche 3 : Compte les Aquachu\naquachu_count = my_team.count(\"Aquachu\")\nprint(f\"Nombre d'Aquachu : {aquachu_count}\")\n\n# Tâche 4 : Compte les Pyrochu\npyrochu_count = my_team.count(\"Pyrochu\")\nprint(f\"Nombre de Pyrochu : {pyrochu_count}\")\n\n# Tâche 5 : Vérifie si Zap est dans l'équipe\nhas_zap = \"Zap\" in my_team\nprint(f\"Est-ce que Zap est dans l'équipe ? {has_zap}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_5_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "List Operations",
+      "fr": "Opérations sur les listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now that you know how to add, remove, and analyze lists, let's learn some useful ***operations*** you can perform on them! In this chapter, we'll explore powerful tools for working with lists:",
+            "fr": "Maintenant que tu sais comment ajouter, retirer et analyser des listes, apprenons quelques ***opérations*** utiles que tu peux effectuer sur elles ! Dans ce chapitre, nous allons explorer des outils puissants pour travailler avec les listes :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "• ```min()``` and ```max()``` - Find the smallest and largest values\n• ```sum()``` - Add up all numbers in a list\n• ```+``` operator - Combine lists together\n• ```*``` operator - Repeat lists multiple times",
+            "fr": "• ```min()``` et ```max()``` - Trouver les valeurs les plus petites et les plus grandes\n• ```sum()``` - Additionner tous les nombres d'une liste\n• Opérateur ```+``` - Combiner des listes ensemble\n• Opérateur ```*``` - Répéter des listes plusieurs fois"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "These operations will make working with your Codémon teams much easier and more powerful!",
+            "fr": "Ces opérations rendront le travail avec tes équipes de Codémon beaucoup plus facile et plus puissant !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_5_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "functions",
+        "min",
+        "max"
+      ]
+    },
+    "title": {
+      "en": "min(), max(), and sum()",
+      "fr": "min(), max() et sum()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python provides built-in functions to perform calculations on lists:\n\n- ```min()``` - Returns the smallest item\n- ```max()``` - Returns the largest item\n- ```sum()``` - Adds up all numbers in the list",
+            "fr": "Python fournit des fonctions intégrées pour effectuer des calculs sur les listes :\n\n- ```min()``` - Renvoie l'élément le plus petit\n- ```max()``` - Renvoie l'élément le plus grand\n- ```sum()``` - Additionne tous les nombres de la liste"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# List of Codémon levels\nlevels = [5, 12, 8, 23, 16]\n\nprint(\"Lowest level:\", min(levels))\nprint(\"Highest level:\", max(levels))\nprint(\"Total levels:\", sum(levels))\nprint(\"Average level:\", sum(levels) / len(levels))",
+            "fr": "# Liste des niveaux de Codémon\nniveaux = [5, 12, 8, 23, 16]\n\nprint(\"Niveau le plus bas:\", min(niveaux))\nprint(\"Niveau le plus haut:\", max(niveaux))\nprint(\"Total des niveaux:\", sum(niveaux))\nprint(\"Niveau moyen:\", sum(niveaux) / len(niveaux))"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "sum() only works with numbers",
+              "fr": "sum() fonctionne seulement avec des nombres"
+            },
+            "content": {
+              "en": "While ```min()``` and ```max()``` work with strings (alphabetically), ```sum()``` only works with numbers. Trying to sum strings will cause an error.",
+              "fr": "Alors que ```min()``` et ```max()``` fonctionnent avec des chaînes (alphabétiquement), ```sum()``` fonctionne seulement avec des nombres. Essayer d'additionner des chaînes provoquera une erreur."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_5_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "functions",
+        "min",
+        "max"
+      ]
+    },
+    "title": {
+      "en": "Using min(), max(), and sum()",
+      "fr": "Utiliser min(), max() et sum()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quelle sera la sortie du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "power_levels = [10, 25, 15, 30]\nprint(sum(power_levels) - min(power_levels))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "70"
+          },
+          {
+            "type": "text",
+            "value": "80"
+          },
+          {
+            "type": "text",
+            "value": "50"
+          },
+          {
+            "type": "text",
+            "value": "20"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: sum() adds all values, min() finds the smallest. Calculate sum first, then subtract min.",
+        "fr": "Rappelle-toi : sum() additionne toutes les valeurs, min() trouve la plus petite. Calcule d'abord la somme, puis soustrais le minimum."
+      }
+    }
+  },
+  {
+    "id": "python_7_5_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "concatenation",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "List Concatenation with +",
+      "fr": "Concaténation de listes avec +"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can combine two or more lists using the ```+``` operator. This creates a new list containing all elements from the lists being combined, in order.",
+            "fr": "Tu peux combiner deux listes ou plus en utilisant l'opérateur ```+```. Cela crée une nouvelle liste contenant tous les éléments des listes combinées, dans l'ordre."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Two teams of Codémon\nteam_a = [\"Aquachu\", \"Florachu\"]\nteam_b = [\"Pyrochu\", \"Rockachu\"]\n\n# Combine the teams\ncombined_team = team_a + team_b\nprint(combined_team)\n\n# You can add more than two lists\nteam_c = [\"Windchu\"]\nall_teams = team_a + team_b + team_c\nprint(all_teams)",
+            "fr": "# Deux équipes de Codémon\nequipe_a = [\"Aquachu\", \"Florachu\"]\nequipe_b = [\"Pyrochu\", \"Rockachu\"]\n\n# Combine les équipes\nequipe_combinee = equipe_a + equipe_b\nprint(equipe_combinee)\n\n# Tu peux ajouter plus de deux listes\nequipe_c = [\"Windchu\"]\ntoutes_equipes = equipe_a + equipe_b + equipe_c\nprint(toutes_equipes)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Concatenation vs. Append",
+              "fr": "Concaténation vs. Append"
+            },
+            "content": {
+              "en": "Remember that ```+``` creates a new list, it doesn't modify the original lists. If you want to modify an existing list, you could use the ```append()``` or ```extend()``` methods instead.",
+              "fr": "N'oublie pas que ```+``` crée une nouvelle liste, il ne modifie pas les listes originales. Si tu veux modifier une liste existante, tu pourrais utiliser les méthodes ```append()``` ou ```extend()``` à la place."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_5_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "concatenation",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "List Concatenation Results",
+      "fr": "Résultats de concaténation de listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the result of the following code?",
+            "fr": "Quel sera le résultat du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "list1 = [1, 2, 3]\nlist2 = [4, 5]\nlist3 = list1 + list2\nprint(list3)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "[1, 2, 3, 4, 5]"
+          },
+          {
+            "type": "text",
+            "value": "[[1, 2, 3], [4, 5]]"
+          },
+          {
+            "type": "text",
+            "value": "[5, 7, 8]"
+          },
+          {
+            "type": "text",
+            "value": "[1, 2, 3, [4, 5]]"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The + operator joins lists by adding all elements from the second list after the elements of the first list.",
+        "fr": "Rappelle-toi : L'opérateur + joint les listes en ajoutant tous les éléments de la deuxième liste après les éléments de la première liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_5_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "repetition",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "List Repetition with *",
+      "fr": "Répétition de listes avec *"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```*``` operator allows you to repeat a list multiple times. When you multiply a list by a number, it creates a new list with the original elements repeated that many times.",
+            "fr": "L'opérateur ```*``` te permet de répéter une liste plusieurs fois. Quand tu multiplies une liste par un nombre, cela crée une nouvelle liste avec les éléments originaux répétés autant de fois."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# A starting team with one Codémon\nstarter_team = [\"Aquachu\"]\n\n# Create a team with 3 of the same Codémon\ntriple_team = starter_team * 3\nprint(triple_team)\n\n# This also works with multi-element lists\nbasic_party = [\"Potion\", \"Revive\"]\nfull_inventory = basic_party * 2\nprint(full_inventory)",
+            "fr": "# Une équipe de départ avec un Codémon\nequipe_depart = [\"Aquachu\"]\n\n# Crée une équipe avec 3 fois le même Codémon\nequipe_triple = equipe_depart * 3\nprint(equipe_triple)\n\n# Cela fonctionne aussi avec des listes à plusieurs éléments\nequipement_base = [\"Potion\", \"Rappel\"]\ninventaire_complet = equipement_base * 2\nprint(inventaire_complet)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_5_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "repetition",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "List Repetition Results",
+      "fr": "Résultats de répétition de listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quelle sera la sortie du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "items = [\"Potion\", \"Ball\"]\nprint(items * 3)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "[\"Potion\", \"Ball\", \"Potion\", \"Ball\", \"Potion\", \"Ball\"]"
+          },
+          {
+            "type": "text",
+            "value": "[\"PotionPotionPotion\", \"BallBallBall\"]"
+          },
+          {
+            "type": "text",
+            "value": "[[\"Potion\", \"Ball\"], [\"Potion\", \"Ball\"], [\"Potion\", \"Ball\"]]"
+          },
+          {
+            "type": "text",
+            "value": "[\"Potion\", \"Ball\", 3]"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The * operator with a list repeats the entire list content the specified number of times.",
+        "fr": "Rappelle-toi : L'opérateur * avec une liste répète tout le contenu de la liste le nombre de fois spécifié."
+      }
+    }
+  },
+  {
+    "id": "python_7_5_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "min",
+        "max",
+        "sum",
+        "concatenation",
+        "repetition"
+      ]
+    },
+    "title": {
+      "en": "Matching List Operations",
+      "fr": "Associer les opérations de listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operation with its correct result.",
+            "fr": "Associe chaque opération à son résultat correct."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```[1, 2, 3] + [4, 5]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[1, 2, 3, 4, 5]```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```[\"a\", \"b\"] * 2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[\"a\", \"b\", \"a\", \"b\"]```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```sum([5, 10, 15])```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```30```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```max([5, 2, 8, 1])```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```8```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_5_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "problem-solving"
+      ]
+    },
+    "title": {
+      "en": "Combining Operations",
+      "fr": "Combiner les opérations"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're preparing Codémon teams for a tournament. What will be the final result?",
+            "fr": "Tu prépares des équipes de Codémon pour un tournoi. Quel sera le résultat final ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "team_a = [\"Aquachu\", \"Florachu\"]\nteam_b = [\"Pyrochu\"]\n\nfull_team = team_a + team_b\nfinal_team = full_team * 2\n\nprint(len(final_team))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "6"
+          },
+          {
+            "type": "text",
+            "value": "3"
+          },
+          {
+            "type": "text",
+            "value": "4"
+          },
+          {
+            "type": "text",
+            "value": "5"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: First combine the lists with +, then multiply with *, finally count with len().",
+        "fr": "Rappelle-toi : D'abord combine les listes avec +, puis multiplie avec *, enfin compte avec len()."
+      }
+    }
+  },
+  {
+    "id": "python_7_5_10",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "min",
+        "max",
+        "sum",
+        "concatenation",
+        "repetition"
+      ]
+    },
+    "title": {
+      "en": "Challenge - Team Power Calculator",
+      "fr": "Défi - Calculateur de puissance d'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're analyzing Codémon teams for a tournament! Use list operations to complete these tasks:\n\n1. ***Combine*** your two teams into one big team\n2. ***Calculate*** the total power of all Codémon\n3. ***Find*** the weakest Codémon (minimum power)\n4. ***Find*** the strongest Codémon (maximum power)\n5. ***Create*** a backup team by repeating team_a twice\n\nUse ```+```, ```*```, ```sum()```, ```min()```, and ```max()``` to complete this challenge!",
+            "fr": "Tu analyses des équipes de Codémon pour un tournoi ! Utilise les opérations de listes pour accomplir ces tâches :\n\n1. ***Combine*** tes deux équipes en une grande équipe\n2. ***Calcule*** la puissance totale de tous les Codémon\n3. ***Trouve*** le Codémon le plus faible (puissance minimale)\n4. ***Trouve*** le Codémon le plus fort (puissance maximale)\n5. ***Crée*** une équipe de secours en répétant team_a deux fois\n\nUtilise ```+```, ```*```, ```sum()```, ```min()``` et ```max()``` pour compléter ce défi !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Two Codémon teams with their power levels\nteam_a = [15, 22, 18]\nteam_b = [30, 12, 25]\n\nprint(\"Team A:\", team_a)\nprint(\"Team B:\", team_b)\nprint(\"=\" * 50)\n\n# Task 1: Combine both teams\n\n# Task 2: Calculate total power\n\n# Task 3: Find weakest Codémon\n\n# Task 4: Find strongest Codémon\n\n# Task 5: Create backup team (team_a repeated twice)\n",
+          "fr": "# Deux équipes de Codémon avec leurs niveaux de puissance\nteam_a = [15, 22, 18]\nteam_b = [30, 12, 25]\n\nprint(\"Équipe A :\", team_a)\nprint(\"Équipe B :\", team_b)\nprint(\"=\" * 50)\n\n# Tâche 1 : Combine les deux équipes\n\n# Tâche 2 : Calcule la puissance totale\n\n# Tâche 3 : Trouve le Codémon le plus faible\n\n# Tâche 4 : Trouve le Codémon le plus fort\n\n# Tâche 5 : Crée une équipe de secours (team_a répété deux fois)\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Two Codémon teams with their power levels\nteam_a = [15, 22, 18]\nteam_b = [30, 12, 25]\n\nprint(\"Team A:\", team_a)\nprint(\"Team B:\", team_b)\nprint(\"=\" * 50)\n\n# Task 1: Combine both teams\nfull_team = team_a + team_b\nprint(f\"Full team: {full_team}\")\n\n# Task 2: Calculate total power\ntotal_power = sum(full_team)\nprint(f\"Total power: {total_power}\")\n\n# Task 3: Find weakest Codémon\nweakest = min(full_team)\nprint(f\"Weakest Codémon power: {weakest}\")\n\n# Task 4: Find strongest Codémon\nstrongest = max(full_team)\nprint(f\"Strongest Codémon power: {strongest}\")\n\n# Task 5: Create backup team (team_a repeated twice)\nbackup_team = team_a * 2\nprint(f\"Backup team: {backup_team}\")",
+            "fr": "# Deux équipes de Codémon avec leurs niveaux de puissance\nteam_a = [15, 22, 18]\nteam_b = [30, 12, 25]\n\nprint(\"Équipe A :\", team_a)\nprint(\"Équipe B :\", team_b)\nprint(\"=\" * 50)\n\n# Tâche 1 : Combine les deux équipes\nequipe_complete = team_a + team_b\nprint(f\"Équipe complète : {equipe_complete}\")\n\n# Tâche 2 : Calcule la puissance totale\npuissance_totale = sum(equipe_complete)\nprint(f\"Puissance totale : {puissance_totale}\")\n\n# Tâche 3 : Trouve le Codémon le plus faible\nplus_faible = min(equipe_complete)\nprint(f\"Puissance du Codémon le plus faible : {plus_faible}\")\n\n# Tâche 4 : Trouve le Codémon le plus fort\nplus_fort = max(equipe_complete)\nprint(f\"Puissance du Codémon le plus fort : {plus_fort}\")\n\n# Tâche 5 : Crée une équipe de secours (team_a répété deux fois)\nequipe_secours = team_a * 2\nprint(f\"Équipe de secours : {equipe_secours}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_7_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Clear vs Delete List",
+      "fr": "Vider vs Supprimer une liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the difference between ```items.clear()``` and ```items = []```?",
+            "fr": "Quelle est la différence entre ```items.clear()``` et ```items = []```?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "clear() empties the existing list, = [] creates a new empty list",
+              "fr": "clear() vide la liste existante, = [] crée une nouvelle liste vide"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "They do exactly the same thing",
+              "fr": "Elles font exactement la même chose"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "clear() is faster than = []",
+              "fr": "clear() est plus rapide que = []"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "= [] removes the list entirely",
+              "fr": "= [] supprime entièrement la liste"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what happens to references when you modify vs reassign a list.",
+        "fr": "Pense à ce qui arrive aux références quand tu modifies vs réassignes une liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_2",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "slicing",
+        "steps"
+      ]
+    },
+    "title": {
+      "en": "Codémon Inventory Selection",
+      "fr": "Sélection d'inventaire Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Get every ***third*** item from the Codémon inventory, starting from the beginning.",
+            "fr": "Récupèces un élément sur ***trois*** de l'inventaire Codémon, en commençant par le début."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "inventory = [\"a\", \"b\", \"c\", \"d\", \"e\", \"g\"]\nevery_third = inventory{{}}{{}}{{}}{{}}{{}}\nprint(every_third)",
+        "options": [
+          "[",
+          ":",
+          "3",
+          "]",
+          "2",
+          ":",
+          "4"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": ":",
+          "3": ":",
+          "4": "3",
+          "5": "]"
+        }
+      },
+      "hint": {
+        "en": "Slicing is done with the syntax list[start:end:step]",
+        "fr": "Le slicing se fait avec la syntaxe liste[début:fin:pas]"
+      }
+    }
+  },
+  {
+    "id": "python_7_7_3",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "List Method Results",
+      "fr": "Résultats des méthodes de liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operation with its result for ```items = [1, 2, 2, 3, 2, 4]```.",
+            "fr": "Associe chaque opération avec son résultat pour ```items = [1, 2, 2, 3, 2, 4]```."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```items.count(2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```3```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```items[-2:]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[2, 4]```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```len(items)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```6```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```items.index(4)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```5```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_7_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Append vs Extend",
+      "fr": "Append vs Extend"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's wrong with this code?",
+            "fr": "Qu'est-ce qui ne va pas dans ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_attacks = [\"fire\", \"water\"]\nspecial_attacks = [\"thunder\", \"ice\"]\ncodemon_attacks.append(special_attacks)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It adds the entire list special_attacks as a single element",
+              "fr": "Cela ajoute toute la liste special_attacks comme un seul élément"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It causes an error",
+              "fr": "Cela cause une erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It only adds the first attack",
+              "fr": "Cela n'ajoute que la première attaque"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It doesn't add anything",
+              "fr": "Cela n'ajoute rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about the difference between append and extend. One add one element, the other adds multiple elements.",
+        "fr": "Pense à la différence entre append et extend. L'un ajoute un élément, l'autre ajoute plusieurs éléments."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "strings",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "String Comparison in Lists",
+      "fr": "Comparaison de chaînes dans les listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you use min() on a list of strings?\n```codemon_attacks = [\"fireball\", \"ice\", \"thunder\"]```",
+            "fr": "Que se passe-t-il quand tu utilises min() sur une liste de chaînes ?\n```codemon_attacks = [\"fireball\", \"ice\", \"thunder\"]```"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns the shortest string (```\"ice\"```)",
+              "fr": "Renvoie la chaîne la plus courte (```\"ice\"```)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns alphabetically first (```\"fireball\"```)",
+              "fr": "Renvoie le premier par ordre alphabétique (```\"fireball\"```)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns the string with least characters",
+              "fr": "Renvoie la chaîne avec le moins de caractères"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Raises an error",
+              "fr": "Renvoie une erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "min() with numbers returns the smallest number, but with strings, what would be more logical ?\nThink about how strings are compared.",
+        "fr": "min() avec des nombres renvoie le plus petit nombre, mais avec des strings, qu'est-ce qui serait plus logique ?\nPense à la façon dont les strings sont comparées."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "slicing",
+        "negative_step"
+      ]
+    },
+    "title": {
+      "en": "Negative Step Slicing",
+      "fr": "Découpage avec pas négatif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will ```items[::-2]``` return for ```items = [1, 2, 3, 4, 5]```?",
+            "fr": "Que va renvoyer ```items[::-2]``` pour ```items = [1, 2, 3, 4, 5]```?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```[5, 3, 1]```"
+          },
+          {
+            "type": "text",
+            "value": "```[1, 3, 5]```"
+          },
+          {
+            "type": "text",
+            "value": "```[2, 4]```"
+          },
+          {
+            "type": "text",
+            "value": "```[4, 2]```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about negative step and its effect.",
+        "fr": "Pense au pas négatif et son effet."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Remove Codémon Attack",
+      "fr": "Supprimer une attaque Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Remove the \"ice\" attack from the list.",
+            "fr": "Supprime l'attaque \"ice\" de la liste."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "attacks = [\"fire\", \"ice\", \"wind\"]\nremoved_attack = attacks.{{}}({{}})\nprint(attacks)",
+        "options": [
+          "pop",
+          "1",
+          "remove",
+          "2"
+        ],
+        "correctAnswers": {
+          "1": "pop",
+          "2": "1"
+        }
+      },
+      "hint": {
+        "en": "Think about which method removes and returns an item.",
+        "fr": "Pense à quelle méthode supprime et renvoie un élément."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "index"
+      ]
+    },
+    "title": {
+      "en": "Index Method Behavior",
+      "fr": "Comportement de la méthode index"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you try to find the index of an item that appears multiple times?",
+            "fr": "Que se passe-t-il quand tu essaies de trouver l'index d'un élément qui apparaît plusieurs fois ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "items = [\"a\", \"b\", \"a\", \"c\"]\nprint(items.index(\"a\"))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns the first occurrence (0)",
+              "fr": "Retourne la première occurrence (0)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns the last occurrence (2)",
+              "fr": "Retourne la dernière occurrence (2)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns all occurrences [0, 2]",
+              "fr": "Retourne toutes les occurrences [0, 2]"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Raises an error",
+              "fr": "Lève une erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Try to remember how the index method works.",
+        "fr": "Essaie de te souvenir du fonctionnement de la méthode index."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "insert"
+      ]
+    },
+    "title": {
+      "en": "Insert Between Elements",
+      "fr": "Insérer entre les éléments"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Insert a new item between the first and second elements.",
+            "fr": "Insère un nouvel élément entre le premier et le deuxième élément."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "items = [\"first\", \"third\"]\nitems.{{}}({{}}{{}} \"second\")\nprint(items)",
+        "options": [
+          "insert",
+          "1",
+          ",",
+          "append",
+          "0",
+          "2"
+        ],
+        "correctAnswers": {
+          "1": "insert",
+          "2": "1",
+          "3": ","
+        }
+      },
+      "hint": {
+        "en": "append() adds an element to the end, the other function adds where you want but you need to precise the index!",
+        "fr": "append() ajoute un élément à la fin, l'autre fonction ajoute où tu veux mais tu dois préciser l'index !"
+      }
+    }
+  },
+  {
+    "id": "python_7_7_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "empty_check"
+      ]
+    },
+    "title": {
+      "en": "Empty List Check",
+      "fr": "Vérification de liste vide"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the most efficient way to check if a list is empty?",
+            "fr": "Quelle est la façon la plus efficace de vérifier si une liste est vide ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```if not items:```"
+          },
+          {
+            "type": "text",
+            "value": "```if len(items) == 0:```"
+          },
+          {
+            "type": "text",
+            "value": "```if items == []:```"
+          },
+          {
+            "type": "text",
+            "value": "```if items.count() == 0:```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "We're talking about an elegant solution, something short, easy to read.",
+        "fr": "On parle d'une solution élégante, quelque chose de court, facile à lire."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "concatenation"
+      ]
+    },
+    "title": {
+      "en": "List Combination Methods",
+      "fr": "Méthodes de combinaison de listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match the result for ```items = [\"a\", \"b\"]```.",
+            "fr": "Associe le résultat pour ```items = [\"a\", \"b\"]```."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```items + items```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[\"a\", \"b\", \"a\", \"b\"]```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```items * 2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[\"a\", \"b\", \"a\", \"b\"]```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```[items, items]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[[\"a\", \"b\"], [\"a\", \"b\"]]```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```items[:] + [\"d\"]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```[\"a\", \"b\", \"d\"]```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_7_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "multiplication"
+      ]
+    },
+    "title": {
+      "en": "List Multiplication Result",
+      "fr": "Résultat de multiplication de liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the result of this operation?\n```[1, 2, 3] * 2```",
+            "fr": "Quel est le résultat de cette opération ?\n```[1, 2, 3] * 2```"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```[1, 2, 3, 1, 2, 3]```"
+          },
+          {
+            "type": "text",
+            "value": "```[2, 4, 6]```"
+          },
+          {
+            "type": "text",
+            "value": "```[[1, 2, 3], [1, 2, 3]]```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what multiplying a list means.",
+        "fr": "Pense à ce que signifie multiplier une liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_13",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "insert"
+      ]
+    },
+    "title": {
+      "en": "Insert at Middle Position",
+      "fr": "Insérer au milieu"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Add an item to the middle of a list.",
+            "fr": "Ajoute un élément au milieu d'une liste."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "items = [\"start\", \"end\"]\nmiddle_index = len(items) {{}} {{}}\nitems.{{}}(middle_index{{}} \"middle\")\nprint(items)",
+        "options": [
+          "//",
+          "2",
+          "insert",
+          ",",
+          "%",
+          "4",
+          "append"
+        ],
+        "correctAnswers": {
+          "1": "//",
+          "2": "2",
+          "3": "insert",
+          "4": ","
+        }
+      },
+      "hint": {
+        "en": "Think about how to find the middle index.",
+        "fr": "Pense à comment trouver l'index du milieu."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "nested_lists",
+        "length"
+      ]
+    },
+    "title": {
+      "en": "Nested List Length",
+      "fr": "Longueur de liste imbriquée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this code produce?",
+            "fr": "Que va produire ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "items = [1, [2, 3], 4]\nprint(len(items))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```3```"
+          },
+          {
+            "type": "text",
+            "value": "```4```"
+          },
+          {
+            "type": "text",
+            "value": "```5```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Try to count the elements, not the elements and their contents.",
+        "fr": "Compte seulement les éléments, pas les éléments et leur contenu."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_15",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Replace First and Last",
+      "fr": "Remplacer premier et dernier"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Replace the ***first*** and ***last*** items with new values.",
+            "fr": "Remplace le ***premier*** et le ***dernier*** élément avec de nouvelles valeurs."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "items = [\"old\", \"keep\", \"old\"]\nitems{{}}{{}}{{}} = \"first\"\nitems{{}}{{}}{{}} = \"last\"\nprint(items)",
+        "options": [
+          "[",
+          "0",
+          "]",
+          "-1",
+          "(",
+          ")",
+          "(",
+          ")",
+          "[",
+          "]",
+          "3"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": "0",
+          "3": "]",
+          "4": "[",
+          "5": "-1",
+          "6": "]"
+        }
+      },
+      "hint": {
+        "en": "Think about positive and negative indexing.",
+        "fr": "Pense à l'indexation positive et négative."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_16",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "methods",
+        "extend"
+      ]
+    },
+    "title": {
+      "en": "Correct List Combination",
+      "fr": "Combinaison correcte de listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which method correctly adds new items from another list?",
+            "fr": "Quelle méthode ajoute correctement les éléments d'une autre liste ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```list1.extend(list2)```"
+          },
+          {
+            "type": "text",
+            "value": "```list1.append(list2)```"
+          },
+          {
+            "type": "text",
+            "value": "```list1.add(list2)```"
+          },
+          {
+            "type": "text",
+            "value": "```list1.insert(list2)```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about combining lists.",
+        "fr": "Pense à combiner des listes."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_17",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "List Method Behaviors",
+      "fr": "Comportements des méthodes de liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match the operation with its behavior.",
+            "fr": "Associe l'opération avec son comportement."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```list.append(x)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds x as a single item",
+                "fr": "Ajoute x comme un seul élément"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```list.extend(x)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds items from x individually",
+                "fr": "Ajoute les éléments de x individuellement"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```list + [x]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Creates new list with x added",
+                "fr": "Crée une nouvelle liste avec x ajouté"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```list.insert(0, x)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds x at position 0",
+                "fr": "Ajoute x à la position 0"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_7_18",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "slicing",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Middle Elements Slice",
+      "fr": "Découpage des éléments du milieu"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which slice gets all elements except first and last?\n```items = [1, 2, 3, 4, 5]```",
+            "fr": "Quelle découpe obtient tous les éléments sauf le premier et le dernier ?\n```items = [1, 2, 3, 4, 5]```"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```items[1:-1]```"
+          },
+          {
+            "type": "text",
+            "value": "```items[1:5]```"
+          },
+          {
+            "type": "text",
+            "value": "```items[0:-1]```"
+          },
+          {
+            "type": "text",
+            "value": "```items[:-1]```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about slice boundaries. We include the start index and exclude the end index.",
+        "fr": "Pense aux limites de découpage. Index de début inclus et index de fin exclus."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_19",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "errors"
+      ]
+    },
+    "title": {
+      "en": "Empty List Pop Error",
+      "fr": "Erreur de pop sur liste vide"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens if you try to remove an item from an empty list?",
+            "fr": "Que se passe-t-il si tu essaies de retirer un élément d'une liste vide ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "empty = []\nempty.pop()"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "IndexError: pop from empty list",
+              "fr": "IndexError: pop from empty list (impossible de retirer d'une liste vide)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns None",
+              "fr": "Renvoie None"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing happens",
+              "fr": "Rien ne se passe"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns an empty list",
+              "fr": "Renvoie une liste vide"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about list requirements.",
+        "fr": "Pense aux prérequis des listes."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_20",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "slicing",
+        "copy"
+      ]
+    },
+    "title": {
+      "en": "Reversed List Copy",
+      "fr": "Copie de liste inversée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a reversed copy of a list without modifying the original.",
+            "fr": "Crée une copie inversée d'une liste sans modifier l'originale."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "original = [1, 2, 3, 4]\nreversed_copy = original{{}}{{}}{{}}{{}}{{}}\nprint(reversed_copy)",
+        "options": [
+          "[",
+          ":",
+          ":",
+          "-1",
+          "]",
+          "-2",
+          "0"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": ":",
+          "3": ":",
+          "4": "-1",
+          "5": "]"
+        }
+      },
+      "hint": {
+        "en": "Think about step in slicing and negative indexing.",
+        "fr": "Pense au pas dans le slicing et à l'indexation négative."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_21",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "List Comparison Rules",
+      "fr": "Règles de comparaison de listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When comparing two lists, what happens?\n```[1, 2, 3] == [1, 2, 3]```",
+            "fr": "Que se passe-t-il lors de la comparaison de deux listes ?\n```[1, 2, 3] == [1, 2, 3]```"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Returns True if all elements are in the same order, and match",
+              "fr": "Renvoie True si tous les éléments, dans le même ordre, correspondent"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Always returns False",
+              "fr": "Renvoie toujours False"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Compares only the first element",
+              "fr": "Compare uniquement le premier élément"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Raises a TypeError",
+              "fr": "Lève une TypeError"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about list comparison rules.",
+        "fr": "Pense aux règles de comparaison des listes."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_22",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "slicing"
+      ]
+    },
+    "title": {
+      "en": "List Slicing Operations",
+      "fr": "Opérations de découpage de listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each list operation with its behavior.",
+            "fr": "Associe chaque opération de liste avec son comportement."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```items[:]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Creates a copy",
+                "fr": "Crée une copie"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```items[::-1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Reverses the list",
+                "fr": "Inverse la liste"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```items[::2]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Every second item",
+                "fr": "Un élément sur deux"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```items[-3:]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Last three items",
+                "fr": "Les trois derniers éléments"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_7_7_23",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "multiplication",
+        "repetition"
+      ]
+    },
+    "title": {
+      "en": "Repeated Values List",
+      "fr": "Liste de valeurs répétées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a list containg \"codeball\" 5 times.",
+            "fr": "Crée une liste contenant \"codeball\" 5 fois."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "value = \"codeball\"\nrepeated = {{}}value{{}}{{}} {{}}\nprint(repeated)",
+        "options": [
+          "[",
+          "]",
+          "*",
+          "5",
+          "(",
+          ")",
+          "+"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": "]",
+          "3": "*",
+          "4": "5"
+        }
+      },
+      "hint": {
+        "en": "Think about list multiplication.",
+        "fr": "Pense à la multiplication de liste."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_24",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "references"
+      ]
+    },
+    "title": {
+      "en": "List Reference Behavior",
+      "fr": "Comportement des références de liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the final value of scores?",
+            "fr": "Quelle sera la valeur finale de scores ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "scores = [10, 20, 30]\nnew_scores = scores\nscores[0] = 99"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```[99, 20, 30]```"
+          },
+          {
+            "type": "text",
+            "value": "```[10, 20, 30]```"
+          },
+          {
+            "type": "text",
+            "value": "```[10, 20, 30, 99]```"
+          },
+          {
+            "type": "text",
+            "value": "```[99]```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about list index. They always starts at .. 0.",
+        "fr": "Pense au index de liste. Ils commencent toujours à .. 0."
+      }
+    }
+  },
+  {
+    "id": "python_7_7_25",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "operations",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Access Codémon Team Members",
+      "fr": "Accéder aux membres de l'équipe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Access the second and last Codémon from your team.",
+            "fr": "Accède au deuxième et dernier Codémon de ton équipe."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = [\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Zap\"]\nsecond_codemon = team{{}}{{}}{{}}\nprint(second_codemon)\nlast_codemon = team{{}}{{}}{{}}\nprint(last_codemon)",
+        "options": [
+          "[",
+          "1",
+          "]",
+          "-1",
+          "0",
+          "4",
+          "2",
+          "[",
+          "]"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": "1",
+          "3": "]",
+          "4": "[",
+          "5": "-1",
+          "6": "]"
+        }
+      },
+      "hint": {
+        "en": "Remember that list indexing starts at 0, and negative indices count from the end.",
+        "fr": "Rappelle-toi que l'indexation des listes commence à 0, et les indices négatifs comptent depuis la fin."
+      }
+    }
+  },
+  {
+    "id": "python_7_10_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "append",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Trading Post - New Arrivals",
+      "fr": "Poste d'Échange - Nouvelles arrivées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You just opened your Trading Post! Trainers are bringing their Codémon to sell.\n\nThree trainers arrive:\n- First trainer brings \"Aquachu\"\n- Second trainer brings \"Rockachu\"\n- Third trainer brings \"Florachu\"\n\nAdd Codémon one by one to your inventory and then print it.",
+            "fr": "Tu viens d'ouvrir ton Poste d'Échange ! Des dresseurs amènent leurs Codémon à vendre.\n\nTrois dresseurs arrivent :\n- Le premier dresseur amène \"Aquachu\"\n- Le deuxième dresseur amène \"Rockachu\"\n- Le troisième dresseur amène \"Florachu\"\n\nAjoute les Codémon un par un à ton inventaire puis affiche-le."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "inventory = [\"Pyrochu\"]\n\n# Code here\n\n",
+          "fr": "inventory = [\"Pyrochu\"]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "inventory = [\"Pyrochu\"]\n\ninventory.append(\"Aquachu\")\ninventory.append(\"Rockachu\")\ninventory.append(\"Florachu\")\n\nprint(inventory)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_10_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "remove",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Trading Post - Making Sales",
+      "fr": "Poste d'Échange - Faire des ventes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Business is good! Customers are buying your Codémon.\n\nThree customers arrive:\n- First customer buys \"Aquachu\" - remove it from inventory\n- Second customer is a gambler! He wants the last Codémon in your list\n- Third customer buys \"Rockachu\" - remove it from inventory\n\nDisplay your inventory at the end.",
+            "fr": "Les affaires marchent bien ! Des clients achètent tes Codémon.\n\nTrois clients arrivent :\n- Le premier client achète \"Aquachu\" - retire-le de l'inventaire\n- Le deuxième client est un parieur ! Il veut le dernier Codémon de ta liste\n- Le troisième client achète \"Rockachu\" - retire-le de l'inventaire\n\nAffiche ton inventaire à la fin."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "inventory = [\"Pyrochu\", \"Aquachu\", \"Rockachu\", \"Florachu\"]\n\n# Code here\n\n",
+          "fr": "inventory = [\"Pyrochu\", \"Aquachu\", \"Rockachu\", \"Florachu\"]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "inventory = [\"Pyrochu\", \"Aquachu\", \"Rockachu\", \"Florachu\"]\n\ninventory.remove(\"Aquachu\")\nlast_codemon = inventory.pop()\ninventory.remove(\"Rockachu\")\n\nprint(inventory)",
+            "fr": "inventory = [\"Pyrochu\", \"Aquachu\", \"Rockachu\", \"Florachu\"]\n\ninventory.remove(\"Aquachu\")\nlast_codemon = inventory.pop()\ninventory.remove(\"Rockachu\")\n\nprint(inventory)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_10_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "extend",
+        "len",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Trading Post - Big Delivery",
+      "fr": "Poste d'Échange - Grande livraison"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Your inventory is running low! A truck arrives with a big delivery.\nThe delivery contains: [\"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n- Add all the Codémon from the delivery at once to your inventory.\n- It's the end of your day! Count how many Codémon you have in total and store it in ```total```.",
+            "fr": "Ton inventaire est presque vide ! Un camion arrive avec une grande livraison.\nLa livraison contient : [\"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n- Ajoute tous les Codémon de la livraison en une fois à ton inventaire.\n- C'est la fin de ta journée ! Compte combien de Codémon tu as au total et stocke-le dans ```total```."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "inventory = [\"Rockachu\"]\ndelivery = [\"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n# Code here\n\n",
+          "fr": "inventory = [\"Rockachu\"]\ndelivery = [\"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "inventory = [\"Rockachu\"]\ndelivery = [\"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\ninventory.extend(delivery)\ntotal = len(inventory)",
+            "fr": "inventory = [\"Rockachu\"]\ndelivery = [\"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\ninventory.extend(delivery)\ntotal = len(inventory)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_10_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "in",
+        "count",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Trading Post - Customer Request",
+      "fr": "Poste d'Échange - Demande client"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A customer walks in looking for a specific Codémon!\n\n\"Hello! I'm looking for a Zap. Do you have one?\"\n\n- Check if you have \"Zap\" in your inventory.\n- If you have it, remove it from your inventory (he buys it).\n- If you don't have it, he says: \"No problem! I'll take the Codémon you've had for the longest time. I want to make it happy again!\"\n- Remove the first Codémon from your inventory and store it in ```oldest_codemon```.",
+            "fr": "Un client entre en cherchant un Codémon spécifique !\n\n\"Bonjour ! Je cherche un Zap. En avez-vous un ?\"\n\n- Vérifie si tu as \"Zap\" dans ton inventaire.\n- Si tu en as un, retire-le de ton inventaire (il l'achète).\n- Si tu n'en as pas, il dit : \"Pas de problème ! Je vais prendre le Codémon que vous avez depuis le plus longtemps. Je veux le rendre heureux à nouveau !\"\n- Retire le premier Codémon de ton inventaire et stocke-le dans ```oldest_codemon```."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "inventory = [\"Rockachu\", \"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n# Code here\n\n",
+          "fr": "inventory = [\"Rockachu\", \"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "inventory = [\"Rockachu\", \"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\nif \"Zap\" in inventory:\n    inventory.remove(\"Zap\")\nelse:\n    oldest_codemon = inventory.pop(0)",
+            "fr": "inventory = [\"Rockachu\", \"Zap\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\nif \"Zap\" in inventory:\n    inventory.remove(\"Zap\")\nelse:\n    oldest_codemon = inventory.pop(0)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_10_5",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "clear",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Trading Post - Jeff Bezochu's Offer",
+      "fr": "Poste d'Échange - L'offre de Jeff Bezochu"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A fancy businessman walks into your Trading Post!\n\n\"Hello! I'm Jeff Bezochu, owner of Amazorb. I want to buy ALL your Codémon stock. Name your price!\"\n\n -This is a once-in-a-lifetime opportunity! Remove all Codémon from your inventory at once.\n- Display your inventory after the sale to confirm it's empty.",
+            "fr": "Un homme d'affaires chic entre dans ton Poste d'Échange !\n\n\"Bonjour ! Je suis Jeff Bezochu, propriétaire d'Amazorb. Je veux acheter TOUT votre stock de Codémon. Donnez votre prix !\"\n- C'est une opportunité unique ! Retire tous les Codémon de ton inventaire d'un coup.\n- Affiche ton inventaire après la vente pour confirmer qu'il est vide."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "inventory = [\"Rockachu\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n# Code here\n\n",
+          "fr": "inventory = [\"Rockachu\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "inventory = [\"Rockachu\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\ninventory.clear()\nprint(inventory)",
+            "fr": "inventory = [\"Rockachu\", \"Aquachu\", \"Florachu\", \"Pyrochu\"]\ninventory.clear()\nprint(inventory)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_11_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "sum",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "First Codémon - Starting Your Collection",
+      "fr": "Premiers Codémon - Débuter ta collection"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're starting your Codémon journey! You want to buy your first 3 Codémon.\n\nYou find a shop selling exactly 3 Codémon with these prices: [150, 200, 175]\n\nYou have 600 coins saved up.\n\n- Calculate the total cost and store it in ```total_cost```.\n- If you have enough money, buy all 3 Codémon! Store their names in ```my_team``` and reduce your coins.",
+            "fr": "Tu commences ton aventure Codémon ! Tu veux acheter tes 3 premiers Codémon.\n\nTu trouves une boutique vendant exactement 3 Codémon à ces prix : [150, 200, 175]\n\nTu as économisé 600 pièces.\n\n- Calcule le coût total et stocke-le dans ```total_cost```.\n- Si tu as assez d'argent, achète les 3 Codémon ! Stocke leurs noms dans ```my_team``` et réduis tes pièces."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "prices = [150, 200, 175]\ncodemon_names = [\"Pyrochu\", \"Aquachu\", \"Florachu\"]\ncoins = 600\n\n# Code here\n\n",
+          "fr": "prices = [150, 200, 175]\ncodemon_names = [\"Pyrochu\", \"Aquachu\", \"Florachu\"]\ncoins = 600\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "prices = [150, 200, 175]\ncodemon_names = [\"Pyrochu\", \"Aquachu\", \"Florachu\"]\ncoins = 600\n\ntotal_cost = sum(prices)\n\nif coins >= total_cost:\n    my_team = codemon_names\n    coins = coins - total_cost"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_11_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "max",
+        "min",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "First Codémon - Choosing Your Leader",
+      "fr": "Premiers Codémon - Choisir ton leader"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now that you have your team, you need to organize it!\n\nYour Codémon power levels: [45, 62, 38]\n- Find your team leader (the strongest Codémon) and store its power in ```leader_power```\n- Find which Codémon needs more training (the weakest one) and store its power in ```needs_training```",
+            "fr": "Maintenant que tu as ton équipe, tu dois l'organiser !\n\nNiveaux de puissance de tes Codémon : [45, 62, 38]\n- Trouve ton leader d'équipe (le Codémon le plus fort) et stocke sa puissance dans ```leader_power```\n- Trouve quel Codémon a besoin de plus d'entraînement (le plus faible) et stocke sa puissance dans ```needs_training```"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "power_levels = [45, 62, 38]\n\n# Code here\n\n",
+          "fr": "power_levels = [45, 62, 38]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "power_levels = [45, 62, 38]\n\nleader_power = max(power_levels)\nneeds_training = min(power_levels)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_7_11_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "lists",
+        "sum",
+        "max",
+        "min",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "First Codémon - Your First Battle",
+      "fr": "Premiers Codémon - Ton premier combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You meet a friend who also just started their journey! You both decide to battle with all your Codémon at the same time. Team with better average wins!\n\n- Calculate the average power of your team and store it in ```your_average```\n- Calculate the average power of your friend's team and store it in ```friend_average```\n- Display which team won: ```\"You win!\"``` or ```\"Friend wins!\"```",
+            "fr": "Tu rencontres un ami qui vient aussi de commencer son aventure ! Vous décidez de combattre avec tous vos Codémon en même temps. L'équipe avec la meilleure puissance moyenne gagne !\n\n- Calcule la puissance moyenne de ton équipe et stocke-la dans ```your_average```\n- Calcule la puissance moyenne de l'équipe de ton ami et stocke-la dans ```friend_average```\n- Affiche quelle équipe a gagné : ```\"You win!\"``` ou ```\"Friend wins!\"```"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "your_team = [45, 62, 38]\nfriend_team = [50, 48, 55]\n\n# Code here\n\n",
+          "fr": "your_team = [45, 62, 38]\nfriend_team = [50, 48, 55]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "your_team = [45, 62, 38]\nfriend_team = [50, 48, 55]\n\nyour_average = sum(your_team) / len(your_team)\nfriend_average = sum(friend_team) / len(friend_team)\n\nif your_average > friend_average:\n    print(\"You win!\")\nelse:\n    print(\"Friend wins!\")",
+            "fr": "your_team = [45, 62, 38]\nfriend_team = [50, 48, 55]\n\nyour_average = sum(your_team) / len(your_team)\nfriend_average = sum(friend_team) / len(friend_team)\n\nif your_average > friend_average:\n    print(\"You win!\")\nelse:\n    print(\"Friend wins!\")"
+          }
+        }
+      ]
+    }
+  }
+]

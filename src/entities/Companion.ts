@@ -67,7 +67,10 @@ export class Companion {
   }
 
   /** Teleport companion to a tile instantly (no animation) */
-  teleportTo(tileX: number, tileY: number, facing: Direction): void {
+  teleportTo(scene: Phaser.Scene, tileX: number, tileY: number, facing: Direction): void {
+    // Cancel an in-flight walk, otherwise its tween would drag the sprite back
+    scene.tweens.killTweensOf(this.sprite)
+    this.isMoving = false
     this.sprite.x = tileToPixel(tileX)
     this.sprite.y = tileToPixel(tileY)
     this.facing = facing

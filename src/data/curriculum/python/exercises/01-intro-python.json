@@ -1,0 +1,262 @@
+[
+  {
+    "id": "python_1_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "what is code"
+      ]
+    },
+    "title": {
+      "en": "What's Coding?",
+      "fr": "C’est quoi coder ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "***Coding*** means giving instructions to a computer, step by step, to make it do something.",
+            "fr": "***Coder***, c’est donner des instructions à un ordinateur, étape par étape, pour qu’il fasse ce que l'on veut."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "txt",
+          "value": {
+            "en": "Instruction 1\nInstruction 2\nCode is done!",
+            "fr": "Instruction 1\nInstruction 2\nC'est la fin !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "To make the computer understand these instructions, we use a ***programming language***. It's a special language that both humans and computers can understand.",
+            "fr": "Pour que l'ordinateur comprenne ces instructions, on utilise un ***langage de programmation***. C'est un langage spécial que les humains et ordinateurs peuvent comprendre."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_1_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "what is code"
+      ]
+    },
+    "title": {
+      "en": "Which language?",
+      "fr": "Quel langage ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "***Programming languages*** are basically the languages the computer and humans understands.",
+            "fr": "Les ***langages de programmation*** sont les langages que les ordinateurs (et les humains) comprennent."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this lesson, we are going to learn ***Python***! It's one of the most popular and beginner-friendly languages. It’s used by companies like Instagram, Google, and even NASA!",
+            "fr": "Dans cette leçon, on va apprendre le ***Python*** ! C'est l’un des langages les plus populaires et facile à apprendre. Il est utilisé par Instagram, Google, et même la NASA !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "success",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "What can you do with Python?",
+              "fr": "Que peut-on faire avec Python ?"
+            },
+            "content": {
+              "en": "- Build apps\n- Automate tasks\n- Make games\n- Analyze data\n- Create your own AI\n- And much more!",
+              "fr": "- Créer des applis\n- Automatiser des tâches\n- Faire des jeux\n- Analyser des données\n- Créer ta propre IA\n- Et bien plus encore !"
+            }
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "How many languages are there?",
+              "fr": "Combien de langages existe-t-il ?"
+            },
+            "content": {
+              "en": "There are a ***LOT*** of them. Too many to count! Each one is designed for different purposes. Some are great for building websites, others for talking to databases, and so on.",
+              "fr": "Il en existe un ***PAQUET***. Trop pour les compter ! Chacun est conçu pour des usages différents. Certains sont parfaits pour créer des sites web, d’autres pour interagir avec des bases de données, etc."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_1_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print"
+      ]
+    },
+    "title": {
+      "en": "How does it work?",
+      "fr": "Comment ça marche ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What you see below this message is a code editor. It's a text editor where you can write your code, run it, and see the results.",
+            "fr": "Ce que tu vois en dessous de ce message est un éditeur de code. C'est un endroit où tu peux écrire ton code, l'exécuter, et voir les résultats."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's run your first code! Just click the ▶️ run button below the code editor.",
+            "fr": "Exécutons ton premier code ! T'as juste à cliquer sur le bouton run ▶️ en dessous de l'éditeur de code."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "print(\"Hello World!\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As you can see, the message `\"Hello World!\"` is displayed in the console. You can try changing the message to something else if you want to play around!",
+            "fr": "Comme tu peux le voir, le message `\"Hello World!\"` s'affiche dans la console. Tu peux essayer de changer le message par autre chose si tu veux !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "initiallyExpanded": false,
+          "value": {
+            "title": {
+              "en": "Hello World!",
+              "fr": "Hello World !"
+            },
+            "content": {
+              "en": "The first \"hello world\" was written in 1972 by Brian Kernighan, one of the creators of the C language, to test a compiler he had just created.\n\nSince then, it has become a tradition to start with a \"hello world\" when learning a new programming language.",
+              "fr": "Le premier \"hello world\" a été écrit en 1972 par Brian Kernighan, un des créateurs du langage C, pour tester un compilateur qu'il venait de créer.\n\nDepuis c'est devenu une tradition de commencer par un \"hello world\" quand on apprend un nouveau langage de programmation."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_1_1_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "strings"
+      ]
+    },
+    "title": {
+      "en": "Choose Your Codémon!",
+      "fr": "Choisis ton Codémon !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now is the beginning of your journey! You need to choose your starter Codémon!",
+            "fr": "C'est le début de ton aventure ! Tu dois choisir ton premier Codémon !"
+          }
+        },
+        {
+          "type": "row",
+          "children": [
+            {
+              "type": "text",
+              "value": {
+                "en": "- ***Pyrochu*** 🔥\n- ***Florachu*** 🌿\n- ***Aquachu*** 💧",
+                "fr": "- ***Pyrochu*** 🔥\n- ***Florachu*** 🌿\n- ***Aquachu*** 💧"
+              }
+            },
+            {
+              "type": "image",
+              "value": "fakemon_group_starters_pixel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Replace the `???` in the code below with the name of the Codémon you want! (And then, press run to see the magic happen!)",
+            "fr": "Remplace le `???` dans le code ci-dessous par le nom du Codémon que tu veux ! (Puis appuie sur run pour voir la magie opérer !)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "print(\"I choose ??? !\")",
+            "fr": "print(\"Je choisis ??? !\")"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_1_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "intro",
+        "motivation"
+      ]
+    },
+    "title": {
+      "en": "You're Ready!",
+      "fr": "Tu es prêt !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Great job! You've written your first line of Python and chosen your Codémon.\n\nYou're now ready to explore the beautiful world of Python.\n\nI'll see you in the next lesson!",
+            "fr": "Bravo ! Tu as écrit ta première ligne de Python et choisi ton Codémon.\n\nTu es maintenant prêt à explorer le merveilleux monde de Python.\n\nOn se retrouve dans la prochaine leçon !"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_switch_to_python",
+          "caption": {
+            "en": "Just a meme",
+            "fr": "Juste un même"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,876 @@
+[
+  {
+    "id": "python_3_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "comments",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Comments",
+      "fr": "Commentaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Comments are a way to add notes to your code. They are not executed by the interpreter and are used to explain what the code does.",
+            "fr": "Les commentaires sont un moyen d'ajouter des notes à votre code. Ils ne sont pas exécutés par l'interpréteur et sont utilisés pour expliquer ce que fait le code."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, there are two ways to write comments:\n- Single-line comments start with a hashtag (```#```) symbol and continue until the end of the line.\n- Multi-line comments are enclosed in triple quotes (```\"\"\"```).",
+            "fr": "En Python, il existe deux façons d'écrire des commentaires :\n- Les commentaires sur une seule ligne commencent par un dièse / hashtag (```#```) et se poursuivent jusqu'à la fin de la ligne.\n- Les commentaires multi-lignes sont entourés de triples guillemets (```\"\"\"```)."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# This is a single-line comment\n\n\"\"\"This is a multi-line comment\nIt can span multiple lines\"\"\"",
+            "fr": "# Ceci est un commentaire sur une seule ligne\n\n\"\"\"Ceci est un commentaire multi-lignes\nIl peut s'étendre sur plusieurs lignes\"\"\""
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_1_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "comments",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Single-Line comment",
+      "fr": "Commentaire sur une seule ligne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which line contains a correctly written single-line comment?",
+            "fr": "Laquelle de ces lignes contient un commentaire sur une seule ligne correctement écrit ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```level = 100 # Level of the codemon```",
+              "fr": "```level = 100 # Niveau du codemon```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```level = 100 // Level of the codemon```",
+              "fr": "```level = 100 // Niveau du codemon```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```level = 100 /* Level of the codemon */```",
+              "fr": "```level = 100 /* Niveau du codemon */```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```level = 100 '' Level of the codemon ''```",
+              "fr": "```level = 100 '' Niveau du codemon ''```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: Single-line comments start with # and can be placed at the end of a line of code",
+        "fr": "Rappelle-toi : les commentaires sur une seule ligne commencent par # et peuvent être placés à la fin d'une ligne de code"
+      }
+    }
+  },
+  {
+    "id": "python_3_1_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "comments",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Multi-line comment",
+      "fr": "Commentaire multi-lignes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which is the correct way to write a multi-line comment in Python?",
+            "fr": "Quelle est la bonne façon d'écrire un commentaire multi-lignes en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "\"\"\"This is a\n multi-line comment\"\"\"",
+              "fr": "\"\"\"Ceci est un\n commentaire multi-lignes\"\"\""
+            }
+          },
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "\"\"This is a\n multi-line comment\"\"",
+              "fr": "\"\"Ceci est un\n commentaire multi-lignes\"\""
+            }
+          },
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "/*This is a\n multi-line comment*/",
+              "fr": "/*Ceci est un\n commentaire multi-lignes*/"
+            }
+          },
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "''This is a\n multi-line comment''",
+              "fr": "''Ceci est un\n commentaire multi-lignes''"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: Multi-line comments are enclosed in triple quotes (\"\"\")",
+        "fr": "Rappelle-toi : les commentaires multi-lignes sont entourés de triples guillemets (\"\"\")"
+      }
+    }
+  },
+  {
+    "id": "python_3_1_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "comments",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Writting good comments",
+      "fr": "Écrire de bons commentaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Comments are a double edged sword. They can help you understand your code better, but they can also make it harder to read if overused or poorly written.",
+            "fr": "Les commentaires sont une arme à double tranchant. Ils peuvent vous aider à mieux comprendre votre code, mais ils peuvent aussi le rendre plus difficile à lire s'ils sont trop utilisés ou mal écrits."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "That's why it's important to write ***good code*** FIRST, and then good comments.",
+            "fr": "C'est pourquoi il est important d'écrire d'abord du ***bon code***, puis de bons commentaires."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_useless_comments",
+          "caption": {
+            "en": "Useless comment",
+            "fr": "Commentaire inutile"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here are some ***tips***:\n- Use comments to explain why you did something, not what you did.\n- Keep your comments short and to the point.\n- Avoid using comments to explain obvious things.",
+            "fr": "Voici quelques ***conseils*** :\n- Utilisez des commentaires pour expliquer pourquoi vous avez fait quelque chose, pas ce que vous avez fait.\n- Gardez vos commentaires courts et concis.\n- Évitez d'utiliser des commentaires pour expliquer des choses évidentes."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_1_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "comments",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Good comments bad comments",
+      "fr": "Bon et mauvais commentaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which is the better written comment for the code below?",
+            "fr": "Lequel de ces commentaires est le mieux écrit pour le code ci-dessous ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": "```level = level + 1```"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "# Add a level after winning a battle",
+              "fr": "# Ajoute un niveau après avoir gagné un combat"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "# Increment the level of the codemon by 1",
+              "fr": "# Augmente le niveau du codemon de 1"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "# Add + 1",
+              "fr": "# Fait + 1"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "# Increase level",
+              "fr": "# Augmente le niveau"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: Comments should explain WHY something is done, not only WHAT is being done.",
+        "fr": "Rappelle-toi : les commentaires doivent expliquer POURQUOI quelque chose est fait, pas seulement CE QUI est fait."
+      }
+    }
+  },
+  {
+    "id": "python_3_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Print",
+      "fr": "Print"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "```print()``` is a built-in function that you already met! It's used to display output on the screen. You can use it to print strings, numbers, basically everything you want.",
+            "fr": "```print()``` est une fonction que vous avez déjà rencontrée ! Elle est utilisée pour afficher du contenu (output) dans la console. Vous pouvez l'utiliser pour afficher des strings, des nombres, plus ou moins tout ce que vous voulez."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "There are plenty of way to use print, especially to display variables. Let's see what they are!",
+            "fr": "Il existe de nombreuses façons d'utiliser print, notamment pour afficher des variables. Allons voir ça !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Print and concatenation",
+      "fr": "Print et concaténation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The concatenation method is a way to combine multiple strings into one big string and then display it. In Python, we use ```+``` to do that.",
+            "fr": "La méthode de concaténation est un moyen de combiner plusieurs strings en un seul et de l'afficher ensuite. En Python, on utilise ```+``` pour faire ça."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This method is easy to use, but it can be a bit cumbersome when you have a lot of variables to concatenate, especially if not everything is a string, because you would need to cast all of them.",
+            "fr": "Cette méthode est facile à utiliser, mais elle peut être un peu fastidieuse lorsque vous avez beaucoup de variables à concaténer, surtout si tout n'est pas un string, car vous devrez tous les convertir."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "How to cast to string?",
+              "fr": "Comment convertir en string ?"
+            },
+            "content": {
+              "en": "Casting a variable to a string is easy! You just need to use the ```str()``` function. Like this ```str(variable)```.",
+              "fr": "Convertir une variable en chaîne est facile ! Il vous suffit d'utiliser la fonction ```str()```. Comme ceci ```str(variable)```."
+            }
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(\"My Codémon name is \" + codemon_name + \" and his level is \" + str(codemon_level))",
+            "fr": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(\"Mon Codémon s'appelle \" + codemon_name + \" et son niveau est \" + str(codemon_level))"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_2_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Print and commas",
+      "fr": "Print et virgules"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Using print and commas is another way to combine variables and strings. But this time, you don't need to cast the variables to string!",
+            "fr": "Utiliser un print et des virgules est une autre façon de combiner des variables et des strings. Mais cette fois, vous n'avez pas besoin de convertir les variables en strings !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This method is really easy and natural to use, you just need to separate the elements with a comma.",
+            "fr": "Cette méthode est vraiment facile et naturelle à utiliser, il vous suffit de séparer les éléments par une virgule."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(\"My Codémon name is\", codemon_name, \"and his level is\", codemon_level)",
+            "fr": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(\"Mon Codémon s'appelle\", codemon_name, \"et son niveau est\", codemon_level)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_2_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Print and .format()",
+      "fr": "Print et .format()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Using print and .format() is another way to print variables.",
+            "fr": "Utiliser print et .format() est une autre façon d'afficher des variables."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This method is pretty logic, everytime you want to print a variable, you need to add a ```{}``` in the string. Then, you can use the ```format()``` method to replace the ```{}``` with the variable you want.",
+            "fr": "Cette méthode est assez logique, chaque fois que vous souhaitez afficher une variable, vous devez ajouter un ```{}``` dans le string. Ensuite, vous pouvez utiliser la méthode ```format()``` pour remplacer le ```{}``` par la variable que vous souhaitez."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(\"My Codémon name is {} and his level is {}\".format(codemon_name, codemon_level))",
+            "fr": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(\"Mon Codémon s'appelle {} et son niveau est {}\".format(codemon_name, codemon_level))"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_2_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Print and f-string",
+      "fr": "Print et f-string"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The last method is the f-string. It is, in my opinion, the best way to print in Python with the comma method.",
+            "fr": "La dernière méthode est la f-string. C'est, à mon avis, la meilleure façon d'afficher en Python avec la méthode des virgules."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You just need to add an ```f``` before the string, and you can put the variables between ```{``` and ```}``` and use them directly in the string.",
+            "fr": "Il vous suffit d'ajouter un ```f``` avant le string, et vous pouvez mettre les variables entre ```{``` et ```}``` et les utiliser directement dans la chaîne."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(f\"My Codémon name is {codemon_name} and his level is {codemon_level}\")",
+            "fr": "codemon_name = \"Aquachu\"\ncodemon_level = 5\nprint(f\"Mon Codémon s'appelle {codemon_name} et son niveau est {codemon_level}\")"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_2_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Print",
+      "fr": "Print"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's do a quick recap of the print function.",
+            "fr": "Faisons un rapide récapitulatif de la fonction print."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- concatenation method : ```print(\"My Codémon name is \" + str(codemon_name))```\n- commas method : ```print(\"My Codémon name is \", codemon_name)```\n- format() method : ```print(\"My Codémon name is {}\".format(codemon_name))```\n- f-string method : ```print(f\"My Codémon name is {codemon_name}\")```",
+            "fr": "- méthode de concaténation : ```print(\"Mon nom de Codémon est \" + str(codemon_name))```\n- méthode des virgules : ```print(\"Mon nom de Codémon est \", codemon_name)```\n- méthode format() : ```print(\"Mon nom de Codémon est {}\".format(codemon_name))```\n- méthode f-string : ```print(f\"Mon nom de Codémon est {codemon_name}\")```"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_3_2_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Which print method",
+      "fr": "Quelle print méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the name of this print method?",
+            "fr": "Quel est le nom de cette méthode d'affichage (print) ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": "```print(\"My Codémon name is {}\".format(codemon_name))```"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "format() method",
+              "fr": "méthode format()"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "commas method",
+              "fr": "méthode des virgules"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "concatenation method",
+              "fr": "méthode de concaténation"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "f-string method",
+              "fr": "méthode f-string"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: There are many ways to print a string in Python, commas, format(), f-string, and concatenation. Their names are pretty self-explanatory.",
+        "fr": "Rappelle-toi : il existe plusieurs façons d'afficher une chaîne en Python, avec des virgules, format(), f-string et concaténation. Leurs noms sont assez explicites."
+      }
+    }
+  },
+  {
+    "id": "python_3_2_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Which print method",
+      "fr": "Quelle print méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the name of this print method?",
+            "fr": "Quel est le nom de cette méthode d'affichage (print) ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": "```print(f\"My Codémon name is {codemon_name}\")```"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "f-string method",
+              "fr": "méthode f-string"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "format() method",
+              "fr": "méthode format()"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "commas method",
+              "fr": "méthode des virgules"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "concatenation method",
+              "fr": "méthode de concaténation"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: There are many ways to print a string in Python, commas, format(), f-string, and concatenation. Their names are pretty self-explanatory.",
+        "fr": "Rappelle-toi : il existe plusieurs façons d'afficher une chaîne en Python, avec des virgules, format(), f-string et concaténation. Leurs noms sont assez explicites."
+      }
+    }
+  },
+  {
+    "id": "python_3_2_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Which print method",
+      "fr": "Quelle print méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the name of this print method?",
+            "fr": "Quel est le nom de cette méthode d'affichage (print) ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": "```print(\"My Codémon name is \", codemon_name)```"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "commas method",
+              "fr": "méthode des virgules"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "f-string method",
+              "fr": "méthode f-string"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "format() method",
+              "fr": "méthode format()"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "concatenation method",
+              "fr": "méthode de concaténation"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: There are many ways to print a string in Python, commas, format(), f-string, and concatenation. Their names are pretty self-explanatory.",
+        "fr": "Rappelle-toi : il existe plusieurs façons d'afficher une chaîne en Python, avec des virgules, format(), f-string et concaténation. Leurs noms sont assez explicites."
+      }
+    }
+  },
+  {
+    "id": "python_3_2_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Which print method",
+      "fr": "Quelle print méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the name of this print method?",
+            "fr": "Quel est le nom de cette méthode d'affichage (print) ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": "```print(\"My Codémon name is \" + str(codemon_name))```"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "concatenation method",
+              "fr": "méthode de concaténation"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "commas method",
+              "fr": "méthode des virgules"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "f-string method",
+              "fr": "méthode f-string"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "format() method",
+              "fr": "méthode format()"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: There are many ways to print a string in Python, commas, format(), f-string, and concatenation. Their names are pretty self-explanatory.",
+        "fr": "Rappelle-toi : il existe plusieurs façons d'afficher une chaîne en Python, avec des virgules, format(), f-string et concaténation. Leurs noms sont assez explicites."
+      }
+    }
+  },
+  {
+    "id": "python_3_2_11",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "print",
+        "f-string",
+        "best-practices"
+      ]
+    },
+    "title": {
+      "en": "Best Print Methods",
+      "fr": "Meilleures méthodes de Print"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now you know different ways to print in Python. But which ones should you use?",
+            "fr": "Maintenant tu connais différentes façons d'utiliser print en Python. Mais lesquelles devrais-tu utiliser ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***In my opinion***, the best methods are:",
+            "fr": "***D'après moi***, les meilleures méthodes sont :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***1. Using commas*** - Simple and clean",
+            "fr": "***1. Utiliser les virgules*** - Simple et propre"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***2. Using f-strings*** - Modern and flexible",
+            "fr": "***2. Utiliser les f-strings*** - Moderne et flexible"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "name, level = \"Pyrochu\", 25\nprint(\"My Codémon\", name, \"is level\", level)\nprint(f\"My Codémon {name} is level {level}\")",
+            "fr": "name, level = \"Pyrochu\", 25\nprint(\"Mon Codémon\", name, \"est niveau\", level)\nprint(f\"Mon Codémon {name} est niveau {level}\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The other methods (string concatenation and .format()) work but are more constraining to use.",
+            "fr": "Les autres méthodes (concaténation de chaînes et .format()) fonctionnent mais sont plus contraignantes à utiliser."
+          }
+        }
+      ]
+    }
+  }
+]

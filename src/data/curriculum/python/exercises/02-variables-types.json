@@ -1,0 +1,3841 @@
+[
+  {
+    "id": "python_2_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "What's a Variable?",
+      "fr": "C’est quoi une Variable ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When you code, you usually need to store information that you want to reuse later. For example, the name of your Codémon or its level. To do that, you are going to use ***variables***.",
+            "fr": "Quand tu codes, tu as toujours besoin de stocker des informations pour les réutiliser plus tard. Par exemple, le nom de ton Codémon ou son niveau. Pour faire ça, tu vas utiliser des ***variables***."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_box_var",
+          "caption": {
+            "en": "a variable",
+            "fr": "une variable"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A variable is a space in your computer's memory that stores information. More precisely, 3 informations:\n- A Name → how we refer to it\n- A Type → what kind of data it holds\n- A Value → the data it contains",
+            "fr": "Une variable est un espace dans la mémoire de ton appareil qui stocke des informations. Plus précisément, 3 informations :\n- Un Nom → comment on l'appelle\n- Un Type → quel type de données elle contient\n- Une Valeur → la donnée qu’elle contient"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "initiallyExpanded": false,
+          "value": {
+            "title": {
+              "en": "Name or Address in Memory?",
+              "fr": "Nom ou adresse mémoire ?"
+            },
+            "content": {
+              "en": "In programming, we often use the term \"name\" to refer to a variable. However, in reality, a variable is more like an address in memory where data is stored. The name is just a convenient way for us to refer to that address.\n\nIt's like using an address to find a house instead of remembering the house's latitude and longitude.",
+              "fr": "En programmation, nous utilisons souvent le terme \"nom\" pour désigner une variable. En réalité, une variable est plus comme une adresse en mémoire où les données sont stockées. Le nom est juste un moyen pratique de nous référer à cette adresse.\n\nC'est comme utiliser une adresse pour trouver une maison au lieu de se souvenir de sa latitude et de sa longitude."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "How does it work ?",
+      "fr": "Comment ça marche ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "With Python, to create a variable, you just need to write the name of the variable, an equal sign, and the value we want to store.",
+            "fr": "Avec Python, pour créer une variable, il suffit d'écrire le nom de la variable, un signe égal, et la valeur que l'on veut stocker."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "name = value",
+            "fr": "nom = valeur"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As you can see, we do not precise the type of the variable. Python is smart enough to understand it by itself BUT it doesn't mean you shouldn't know the type of your variable!",
+            "fr": "Comme tu peux le voir, on ne précise pas le type de la variable. Python est assez intelligent pour le comprendre tout seul MAIS cela reste important de savoir quel est le type de ta variable !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Once created, to use the variable, you just need to write its name!",
+            "fr": "Une fois créée, si tu veux utiliser la variable, il suffit d'écrire son nom !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Typing variables",
+              "fr": "Typage de variables"
+            },
+            "content": {
+              "en": "In other programming languages, you would have to precise the type of the variable when creating it. No need in Python tho! This is one of its force (and weaknesses at the same time). It makes it easier to write code, but also easier to make mistakes.",
+              "fr": "Dans d'autres langages de programmation, tu devrais préciser le type de la variable au moment de sa création. Mais pas besoin avec Python ! C'est une de ses forces (et faiblesses en même temps). Ça rend l'écriture de code plus facile, mais aussi plus propice aux erreurs."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Your first variable!",
+      "fr": "Ta première variable !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's go back to our Codémon and create a variable to store its name.",
+            "fr": "Revenons à notre Codémon et créons une variable pour stocker son nom."
+          }
+        },
+        {
+          "type": "image",
+          "value": "fakemon_group_starters",
+          "caption": {
+            "en": "Codémon Starters",
+            "fr": "Les Codémon de départ"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here is your ***mission***: Change the ```???``` value in the code editor to the name of the Codémon you want then run the code.\n\nReminder: The names are ***Aquachu***, ***Florachu***, and ***Pyrochu***. Choose wisely!",
+            "fr": "Voici ta ***mission*** : Change la valeur ```???``` dans l'éditeur de code par le nom du Codémon que tu as choisi, tu pourras ensuite éxecuter le code.\n\nRappel: Leurs noms sont ***Aquachu***, ***Florachu***, et ***Pyrochu***. Choisis bien !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemon_name = \"???\"\nprint(codemon_name)",
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_1_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables",
+        "strings"
+      ]
+    },
+    "title": {
+      "en": "Creating a name variable",
+      "fr": "Créer une variable nom"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a variable called codemon_name and assign it the value \"Pyrochu\".",
+            "fr": "Crée une variable appelée codemon_name et assigne-lui la valeur \"Pyrochu\"."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "{{}} {{}} {{}}",
+        "options": [
+          "codemon_name",
+          "=",
+          "\"Pyrochu\""
+        ],
+        "correctAnswers": {
+          "1": "codemon_name",
+          "2": "=",
+          "3": "\"Pyrochu\""
+        }
+      },
+      "hint": {
+        "en": "We use ```=``` to assign values to variables. String values must be enclosed in quotes (either single ' or double \").",
+        "fr": "On utilise ```=``` pour assigner des valeurs aux variables. Les valeurs de type chaîne de caractères doivent être entourées de guillemets (simples ' ou doubles \")."
+      }
+    }
+  },
+  {
+    "id": "python_2_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Assignment and re-assignment",
+      "fr": "Affectation et réaffectation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Variables are called variables because their value can change!",
+            "fr": "Les variables s'appellent des variables parce que leur valeur peut changer !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "To change the value of a variable, we use the assignment operator ```=```, it's basically the same syntax as creating a variable!",
+            "fr": "Pour changer la valeur d'une variable, on utilise l'opérateur d'affectation ```=```, c'est la même syntaxe que quand tu crées une variable !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Can't get back the old value?",
+              "fr": "Impossible de récupérer l'ancienne valeur ?"
+            },
+            "content": {
+              "en": "If you change the value of a variable, the new value will replace the old one. You won't be able to get the old one back so be careful!",
+              "fr": "Si tu changes la valeur d'une variable, la nouvelle valeur remplacera l'ancienne. Tu ne pourras pas récupérer l'ancienne valeur donc code avec précaution !"
+            }
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemon_name = \"Aquachu\"\nprint(codemon_name)\n\ncodemon_name = \"Florachu\"\nprint(codemon_name)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If you run the code, you will see that the first print displays \"Aquachu\" and the second one displays \"Florachu\". This means that the value of the variable has changed. And you can't get back \"Aquachu\".",
+            "fr": "Si tu exécutes le code, tu verras que le premier print affiche \"Aquachu\" et le second \"Florachu\". Cela signifie que la valeur de la variable a changé. Et tu ne peux pas récupérer \"Aquachu\"."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_1_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Creating and changing values",
+      "fr": "Création et changement de valeur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Store the number 5 as the level of your codemon and then, change it to 6.",
+            "fr": "Stocke le nombre 5 dans le niveau de ton codemon et ensuite, change-le en 6."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_level = {{}}\n{{}} {{}} 6\nprint(codemon_level)",
+        "options": [
+          "5",
+          "5",
+          "codemon_level",
+          "Codémon_level",
+          "=",
+          "=="
+        ],
+        "correctAnswers": {
+          "1": "5",
+          "2": "codemon_level",
+          "3": "="
+        }
+      },
+      "hint": {
+        "en": "We use ```=``` to assign and re-assign values to variables. Pay also attention to the name of the variable, it should be the same!",
+        "fr": "On utilise ```=``` pour assigner et réassigner des valeurs aux variables. Fais aussi attention au nom de la variable, il doit rester le même !"
+      }
+    }
+  },
+  {
+    "id": "python_2_1_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Re-assignment of a variable",
+      "fr": "Réaffectation d'une variable"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens to the old value when you assign a new value to a variable?",
+            "fr": "Que devient l'ancienne valeur quand tu assignes une nouvelle valeur à une variable ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It is replaced and lost",
+              "fr": "Elle est remplacée et perdue"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It is kept in memory",
+              "fr": "Elle est gardée en mémoire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It becomes the \"second\" value of the variable",
+              "fr": "Elle devient la \"deuxième\" valeur de la variable"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It is kept in a list",
+              "fr": "Elle est gardée dans une liste"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember : Variables can only store one value at a time. If a new value is assigned to a variable, the old value is replaced and lost.",
+        "fr": "Souviens-toi : Les variables ne peuvent stocker qu'une seule valeur à la fois. Si une nouvelle valeur est assignée à une variable, l'ancienne valeur est remplacée et perdue."
+      }
+    }
+  },
+  {
+    "id": "python_2_1_8",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Small test!",
+      "fr": "Petit test !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Here is a small non-guided exercise to practice what you learned about variables.",
+            "fr": "Voici un petit exercice non guidé pour pratiquer ce que tu as appris sur les variables."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- Create 1 variable to store the name of your Codémon.\n- Print the name of your Codémon using ```print()```.\n- Change the name of your Codémon to something else and print it again.",
+            "fr": "- Crée 1 variable pour stocker le nom de ton Codémon.\n- Affiche le nom de ton Codémon avec ```print()```.\n- Change le nom de ton Codémon par un autre et affiche-le à nouveau."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_variable_name",
+          "caption": {
+            "en": "Just a meme",
+            "fr": "Juste un même"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here\n\n",
+          "fr": "# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "text",
+          "value": {
+            "en": "This is fairly easy, to create a var, use the ```=``` operator. To print it, use the ```print()```.",
+            "fr": "C'est assez facile, pour créer une variable, utilise l'opérateur ```=```. Pour l'afficher, utilise ```print()```."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_name = 'Pyrochu'\nprint(codemon_name)\ncodemon_name = 'Aquachu'\nprint(codemon_name)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Naming convention",
+      "fr": "Convention de nommage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "To keep things organized and consistent in the code, we use naming conventions for variables. Basically, these are rules created by developers so that variable names are clear and easy to understand.",
+            "fr": "Pour avoir un peu d'ordre et d'uniformité dans le code, on utilise des conventions de nommage pour les variables. Ce sont des règles créées par les développeurs pour que les noms de variables soient clairs et faciles à comprendre."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_naming_convention",
+          "caption": {
+            "en": "Different naming conventions",
+            "fr": "Différentes conventions de nommage"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, we use snake_case for variable names:\n- descriptive name\n- all letters are lowercase\n- underscores between words\n- no special characters\n- no numbers at the beginning\n- name in english",
+            "fr": "En Python, on utilise le snake_case :\n- nom descriptif\n- toutes les lettres sont en minuscules\n- underscores (_) entre les mots\n- pas de caractères spéciaux (é,à,&,etc.)\n- pas de chiffres au début\n- nom en anglais (si possible)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "For example: ```score_player```, ```game_level```, ```player_name```.",
+            "fr": "Par exemple : ```score_player```, ```game_level```, ```player_name```."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "initiallyExpanded": false,
+          "value": {
+            "title": {
+              "en": "Variables names in english / french",
+              "fr": "Nom de variable en anglais ?"
+            },
+            "content": {
+              "en": "Because I'm French and this course was originally written in French, some variable names might be in French. Feel free to send me an email or report the question when you see one, thanks!",
+              "fr": "Dans ce cours, j'alternerai entre des noms de variables en anglais et en français. Le but est de t'habituer à utiliser un peu d'anglais sans trop te perdre si tu ne le parles pas encore."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_2_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Variable creation following snake_case rules",
+      "fr": "Création de variable selon les règles snake_case"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of these is the correct and snake_case way to declare and assign a value to a variable in Python?",
+            "fr": "Laquelle de ces options est la bonne façon de déclarer et d'assigner une valeur à une variable en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "language": "python",
+            "value": "```codemon_name = \"Aquachu\"```"
+          },
+          {
+            "type": "text",
+            "language": "python",
+            "value": "```Codémon_name = \"Aquachu\"```"
+          },
+          {
+            "type": "text",
+            "language": "python",
+            "value": "```codemon name = \"Aquachu\"```"
+          },
+          {
+            "type": "text",
+            "language": "python",
+            "value": "```codemon n@ame = \"Aquachu\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember : snake_case, lowercase, no special characters, no numbers at the beginning, descriptive name in English.",
+        "fr": "Souviens-toi : snake_case, minuscules, pas de caractères spéciaux, pas de chiffres au début, nom descriptif en anglais."
+      }
+    }
+  },
+  {
+    "id": "python_2_2_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Naming convention",
+      "fr": "Convention de nommage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of these variable names follows snake_case naming conventions?",
+            "fr": "Laquelle de ces variables respecte les conventions de nommage en snake_case ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon_type```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon type```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon-type```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon@type```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: snake_case, lowercase, no special characters, no numbers at the beginning, descriptive name in English.",
+        "fr": "Souviens-toi : snake_case, minuscules, pas de caractères spéciaux, pas de chiffres au début, nom descriptif en anglais."
+      }
+    }
+  },
+  {
+    "id": "python_2_2_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "introduction",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Naming convention",
+      "fr": "Convention de nommage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each variable name on the left with it's issue about the naming convention on the right",
+            "fr": "Associe chaque nom de variable de gauche avec son problème concernant la convention de nommage à droite"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```Codemon_name```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "First letter is uppercase",
+                "fr": "La première lettre est en majuscule"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```codemon@name```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Special character used",
+                "fr": "Caractère spécial utilisé"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```1_codemon_name```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Starts with a number",
+                "fr": "Commence par un chiffre"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```variable```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Not descriptive enough",
+                "fr": "Pas assez descriptif"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Numeric Variables - Numbers",
+      "fr": "Variables Numériques - Nombres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Variables can hold different types of data. In this lesson, we will focus on the easiest ones: numbers!",
+            "fr": "Les variables peuvent contenir différents types de données. Dans cette leçon, nous allons nous concentrer sur les plus intuitifs : les nombres !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Python has two main types of numeric variables:\n- ***integers*** (int) : Whole numbers like 1, 0, 42, -42, -3\n- ***floating point numbers*** (float) : Decimal numbers like 3.14, -0.001, 2.71828\nHere is how to create them:",
+            "fr": "Python a deux types principaux de variables numériques :\n- ***entiers*** (int) : Nombres entiers comme 1, 0, 42, -42, -3\n- ***nombres à virgule flottante*** (float) : Nombres décimaux comme 3.14, -0.001, 2.71828\nVoici comment les créer :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "level = 1\nprint(level)\n\nweight = 3.5\nprint(weight)",
+            "fr": "niveau = 1\nprint(niveau)\n\npoids = 3.5\nprint(poids)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Those two types have different cases of application (but both are needed). Integers are used for whole numbers, like counting levels or lives, while floating point numbers are used for values that require precision, like weight or speed.",
+            "fr": "Ces deux types ont des cas d'application différents (les deux sont nécessaires). Les int sont utilisés pour les nombres entiers, comme le comptage des niveaux ou des vies, tandis que les float sont utilisés pour des valeurs qui nécessitent de la précision, comme le poids ou la vitesse."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_3_2",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Int or Float ?",
+      "fr": "Entier ou À virgule ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each number of the left with its type on the right (int or float)",
+            "fr": "Associe chaque nombre de gauche avec son type à droite. Souviens toi :\n- Entier : int\n- À virgule : float"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```4.000```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```float```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```4```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```int```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```4.2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```float```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```0```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```int```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_3_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Mathematical Operations",
+      "fr": "Opérations Mathématiques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python supports all basic math operations between:\n- Addition : ```+```\n- Subtraction : ```-```\n- Multiplication : ```*```\n- Division : ```/``` (always returns a float)\n- Integer division : ```//``` (always returns an int)\n- Power : ```**```\n- Modulo : ```%``` (remainder of a division)",
+            "fr": "Python supporte toutes les opérations mathématiques de base :\n- Addition : ```+```\n- Soustraction : ```-```\n- Multiplication : ```*```\n- Division : ```/``` (renvoie toujours un float)\n- Division entière : ```//``` (renvoie toujours un int)\n- Puissance : ```**```\n- Modulo : ```%``` (reste d'une division)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here are some more explanations for the younger ones on this app :)",
+            "fr": "Voici quelques explications supplémentaires pour les plus jeunes sur cette application :)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Integer division : //",
+              "fr": "Division entière : //"
+            },
+            "content": {
+              "en": "Divides the number and returns the whole part of the result. For example, ```5 // 2```, the result is supposed to be ```2.5``` but we make the part after the comma disappear. So we round down to ```2```.",
+              "fr": "On divise le nombre et retourne la partie entière du résultat. Par exemple, ```5 // 2```, le résultat est censé être ```2.5``` mais on fait disparaître la partie après la virgule. Donc on arrondit à la baisse et on obtient ```2```."
+            }
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Modulo (Remainder) : %",
+              "fr": "Modulo (Reste) : %"
+            },
+            "content": {
+              "en": "Gives the remainder of a division. For example, ```5 % 2```. We can fit ```2``` into ```5``` two times, because ```2 * 2 = 4```. The remainder is ```1``` because ```5 - 4 = 1```. Result of ```5 % 2``` is ```1```.",
+              "fr": "Donne le reste d'une division. Par exemple, ```5 % 2```. On peut mettre deux fois ```2``` dans ```5```, car ```2 * 2 = 4```. Le reste est ```1``` car ```5 - 4 = 1```. Le résultat de ```5 % 2``` est ```1```."
+            }
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Power : **",
+              "fr": "Puissance : **"
+            },
+            "content": {
+              "en": "Raises a number to the power of another. For example, ```2 ** 2``` means ```2``` raised to the power of ```2```, which is ```2 * 2 = 4```. So the result is ```4```.\n\n ```2 ** 3``` means ```2``` raised to the power of ```3```, which is ```2 * 2 * 2 = 8```. So the result is ```8```.",
+              "fr": "Élève un nombre à la puissance d'un autre. Par exemple, ```2 ** 2``` signifie ```2``` élevé à la puissance de ```2```, ce qui donne ```2 * 2 = 4```. Donc le résultat est ```4```.\n\n ```2 ** 3``` signifie ```2``` élevé à la puissance de ```3```, ce qui donne ```2 * 2 * 2 = 8```. Donc le résultat est ```8```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_3_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Practice with numbers!",
+      "fr": "Un peu de calcul !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each calculation of the left with its result on the right.",
+            "fr": "Associe chaque calcul de gauche avec son résultat à droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```9/2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```4.5```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```9//2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```4```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```9%2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```1```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```9**2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```81```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_3_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "More practice with numbers!",
+      "fr": "Un peu plus de calcul !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Chose the right symbol to use in the following calculations.",
+            "fr": "Choisis le bon symbole à utiliser dans les calculs suivants."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "18 {{}} 2 = 20\n18 {{}} 2 = 9\n18 {{}} 2 = 0\n18 {{}} 2 = 16",
+        "options": [
+          "+",
+          "/",
+          "%",
+          "//",
+          "*",
+          "-",
+          "**"
+        ],
+        "correctAnswers": {
+          "1": "+",
+          "2": "//",
+          "3": "%",
+          "4": "-"
+        }
+      },
+      "hint": {
+        "en": "Remember:\n- ```/``` is division (always return a float)\n- ```//``` is integer division (always returns an int)\n- ```%``` is modulo (always returns an int)\n- ```**``` is power.",
+        "fr": "Souviens-toi :\n- ```/``` est la division (renvoie toujours un float)\n- ```//``` est la division entière (renvoie toujours un int)\n- ```%``` est le modulo (renvoie toujours un int)\n- ```**``` est la puissance."
+      }
+    }
+  },
+  {
+    "id": "python_2_3_6",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Create numeric variables",
+      "fr": "Créer des variables numériques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create 2 variables:\n- an integer variable named ```age``` with your age as value\n- a floating point variable named ```height``` with your height (in meters) as value\n\nThen, print both variables.",
+            "fr": "Crée 2 variables :\n- une variable entière nommée ```age``` avec ton âge comme valeur\n- une variable à virgule flottante nommée ```height``` avec ta taille (en mètres) comme valeur\n\nEnsuite, affiche les deux variables."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here",
+          "fr": "# Code ici"
+        }
+      },
+      "solution": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You simply need to create the two variables using the assignment operator ```=```, then use the ```print()``` function to display them.",
+            "fr": "Tu dois simplement créer les deux variables en utilisant l'opérateur d'affectation ```=```, puis utiliser la fonction ```print()``` pour les afficher."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "age = 25\nheight = 1.75\nprint(age)\nprint(height)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Introduction to data types",
+      "fr": "Introduction aux types de données"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Like you saw earlier, variables can hold different types of data. Here is a really short introduction to the most basic ones.",
+            "fr": "Comme tu l'as vu plus tôt, les variables peuvent contenir différents types de données. Voici une très courte introduction aux plus basiques."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_data_types",
+          "caption": {
+            "en": "type casting",
+            "fr": "changement de type"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "There are 4 basic types.\n- Two are numbers (integer and float)\n- One is a boolean (bool)\n- The last one is a string (str).",
+            "fr": "Il y a 4 types basiques.\n- Deux sont des nombres (integer et float)\n- Un est un booléen (bool)\n- Le dernier est une chaîne de caractères (string)."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The following examples will be about numbers because we talked about them in the previous chapter.\nWe will talk about booleans and strings a bit later.",
+            "fr": "Les exemples suivants porteront sur les nombres parce qu'on en a parlé dans le chapitre précédent.\nOn parlera des booléens et des chaînes de caractères un peu plus tard."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_4_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Getting the type of a variable",
+      "fr": "Obtenir le type d'une variable"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "First, how do we see the type of a variable in Python?",
+            "fr": "D'abord, comment voir le type d'une variable en Python ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This is pretty easy, you can use the ```type()``` function and put the variable name inside the parentheses.",
+            "fr": "C'est assez simple, tu peux utiliser la fonction ```type()``` et mettre le nom de la variable à l'intérieur des parenthèses."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "level = 1 # we declare an int number\nprint(level, type(level))\n\nweight = 70.5 # we declare a float number\nprint(weight, type(weight))",
+            "fr": "level = 1 # on déclare un nombre entier\nprint(level, type(level))\n\nweight = 70.5 # on déclare un nombre float\nprint(weight, type(weight))"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If you run this code, you will see the type of each variable printed in the console. It should looks like this for the first line :```1 <class 'int'>```",
+            "fr": "Si tu exécutes ce code, tu verras le type de chaque variable affiché dans la console. Cela devrait ressembler à ceci pour la première ligne :```1 <class 'int'>```"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "So, what does this mean? The ```1``` is easy, it's the value of the variable. The ```<class 'int'>``` part tells you that this variable class is an integer (int).",
+            "fr": "Comment on lit ça ? Le ```1``` est facile, c'est la valeur de la variable. La partie ```<class 'int'>``` te dit que la classe (type) de la variable est un entier (int)."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "It works the same way the second line with the float variable! (and with every other type of variable you can create in Python)",
+            "fr": "Cela fonctionne de la même manière pour la deuxième ligne avec la variable float ! (et avec tous les autres types de variables que tu peux créer en Python)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_4_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Changing type of a number",
+      "fr": "Changer le type d'un nombre"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now that you know the basis of type, let's see how to change the type of a number.",
+            "fr": "Maintenant que tu connais les bases des types, voyons comment changer le type d'un nombre."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Now, let's say you want to change the type of one of your variables. For example, go from a float to an integer.",
+            "fr": "Disons que tu veux changer le type d'une de tes variables. Par exemple, passer d'un float à un entier."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Doing that is called ***type casting***.",
+            "fr": "Cela s'appelle un ***changement de type***. (ou ***type casting*** en anglais)"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_type_casting",
+          "caption": {
+            "en": "type casting",
+            "fr": "changement de type"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here is how to do this with numbers:\n- ```int()``` to convert a number to an integer\n- ```float()``` to convert a number to a float",
+            "fr": "Voici comment faire avec des nombres :\n- ```int()``` pour convertir un nombre en entier\n- ```float()``` pour convertir un nombre en float"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see how to use them for real in the next exercise!",
+            "fr": "Voyons comment les utiliser dans le prochain exercice !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_4_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Int to Float",
+      "fr": "Entier vers Float"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's try to convert an ```int``` to a ```float``` using ```float()```.",
+            "fr": "Essayons de convertir un entier en float en utilisant ```float()```."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_int_to_float"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Run the code to see the result!",
+            "fr": "Exécute le code pour voir le résultat !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "level = 1 # we declare an int number\nprint(level, type(level))\n\nlevel = float(1) # we declare 1 and cast to float \nprint(level, type(level))",
+            "fr": "level = 1 # on déclare un nombre entier\nprint(level, type(level))\n\nlevel = float(1) # on déclare 1 et on le cast en float \nprint(level, type(level))"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can see that the type of the variable has changed from ```int``` to ```float``` and its value is now ```1.0```.",
+            "fr": "Tu peux voir que le type de la variable a changé de ```int``` à ```float``` et sa valeur est maintenant ```1.0```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As you can see, the value didn't change much, it added a .0 at the end. This is what happens when you convert an integer to a float, it adds a decimal point.",
+            "fr": "Comme tu peux le voir, la valeur n'a pas beaucoup changé, un .0 a été ajouté à la fin. C'est ce qui se passe lorsque tu convertis un entier en float, il ajoute juste '.0'."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_4_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Float to Int",
+      "fr": "Float vers Entier"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now let's do the opposite: convert a ```float``` to an ```int``` using ```int()```.",
+            "fr": "Maintenant faisons l'inverse : convertir un float en entier en utilisant ```int()```."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_float_to_int"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Run the code to see the result!",
+            "fr": "Exécute le code pour voir le résultat !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "level = 1.5 # we declare a float number\nprint(level, type(level))\n\nlevel = int(1.5) # we declare the value and cast to int \nprint(level, type(level))",
+            "fr": "level = 1.5 # on déclare un nombre float\nprint(level, type(level))\n\nlevel = int(1.5) # on déclare la valeur et cast en int \nprint(level, type(level))"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can see that the type of the variable has changed from ```float``` to ```int``` and its value is now ```1```. It basically removed everything after the decimal point.",
+            "fr": "Tu peux voir que le type de la variable a changé de ```float``` à ```int``` et sa valeur est maintenant ```1```. Ça a simplement supprimé tout ce qui se trouvait après la virgule."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_4_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "What's the difference ?",
+      "fr": "C'est quoi la différence ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Does the final value differs between ```int(9.5)``` and ```float(9.5)``` ?",
+            "fr": "La valeur finale diffère-t-elle entre ```int(9.5)``` et ```float(9.5)``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Yes, because ```int(9.5)``` will return 9 and ```float(9.5)``` will return 9.5",
+              "fr": "Oui, parce que ```int(9.5)``` renverra 9 et ```float(9.5)``` renverra 9.5"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Yes, because both will return 9.5, but different types",
+              "fr": "Oui, parce que les deux renverront 9.5, mais avec des types différents"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "No, because ```int(9.5)``` will return 9.5 and ```float(9.5)``` will return 9",
+              "fr": "Non, parce que ```int(9.5)``` renverra 9.5 et ```float(9.5)``` renverra 9"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "No, because both will return 9.5",
+              "fr": "Non, parce que les deux renverront 9.5"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: usually casting an int to a float doesn't change the value but casting a float to an int will often change the value because it removes the decimal part.",
+        "fr": "Souviens-toi : en général, convertir un nombre entier en float ne change pas la valeur mais convertir un float en entier changera souvent la valeur car il supprime la partie décimale."
+      }
+    }
+  },
+  {
+    "id": "python_2_4_7",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Practice casting!",
+      "fr": "T'as vraiment compris ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each calculation of the left with its result on the right.",
+            "fr": "Associe chaque calcul de gauche avec son résultat à droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```int(9.2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```9```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```float(9)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```9.0```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```int(9)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```9```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```float(9.2)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```9.2```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_4_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Practice time!",
+      "fr": "L'heure de l'entrainement !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Can you guess what the following code will print? Try to run it and see if you were right!",
+            "fr": "Peux-tu deviner ce que le code suivant va afficher ? Essaie de l'exécuter et vois si tu avais raison !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "print(1+1)\nprint(1-1)\nprint(1+1.0)\nprint(1-1.0)",
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "initiallyExpanded": false,
+          "value": {
+            "title": {
+              "en": "Calcul with numbers",
+              "fr": "Calcul avec des nombres"
+            },
+            "content": {
+              "en": "If you encounter a calculation with a ```float``` and an ```int```, Python will always return a ```float```. Try to keep in mind that it will always try to keep the most precise type possible.",
+              "fr": "Si tu rencontres un calcul avec un ```float``` et un ```int```, Python renverra toujours un float. Essaie de garder à l'esprit qu'il essaiera toujours de conserver le type le plus précis possible."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_4_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "What's the result ?",
+      "fr": "Quel est le résultat ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What would be the result of ```5 + 3.0``` ?",
+            "fr": "Quel serait le résultat de ```5 + 3.0``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```8.0```"
+          },
+          {
+            "type": "text",
+            "value": "```8```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "We can't compute a float and an int together",
+              "fr": "On ne peut pas additionner un float et un int ensemble"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will raise an error",
+              "fr": "Cela va créer une erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: When mixing integers and floats in operations, Python chooses the most precise type.",
+        "fr": "Souviens-toi : lorsque tu mélanges des entiers et des flottants dans des opérations, Python choisit le type le plus précis."
+      }
+    }
+  },
+  {
+    "id": "python_2_4_10",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "variables",
+        "casting"
+      ]
+    },
+    "title": {
+      "en": "Cast yourself!",
+      "fr": "Cast toi !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a variable named ```level``` containing a float value. Then cast it to an integer because a level can't be a decimal number. Print the value and its type before and after the casting.",
+            "fr": "Crée une variable nommée ```level``` contenant une valeur float. Puis cast-la en entier car un niveau ne peut pas être un nombre décimal. Affiche la valeur et son type avant et après le casting."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here",
+          "fr": "# Code ici"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "level = 4.2\nprint(level, type(level))\n\nlevel = int(level)\nprint(level, type(level))"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_5_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Intro to Strings",
+      "fr": "Intro aux Chaînes de caractères"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Short intro",
+              "fr": "Courte introduction"
+            },
+            "content": {
+              "en": "This lesson is a short introduction to strings. There is a chapter for them later in the course, but I wanted to introduce them here like all the other data types.",
+              "fr": "Cette leçon est une courte introduction aux chaînes de caractères (strings). Il y a un chapitre qui en parle plus en profondeur plus tard, mais je voulais les présenter ici comme tous les autres types de données."
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Strings are types of data in Python. They can be created using either single quotes (```' '```) or double quotes (```\" \"```). In it, you can basically write anything you want.",
+            "fr": "Les chaînes de caractères (string) sont un type de données. Elles peuvent être créées en utilisant soit des guillemets simples (```' '```) soit des guillemets doubles (```\" \"```). Dedans, tu peux écrire à peu près n'importe quoi."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "name = 'Aquachu'\nprint(name)\n\nname = \"Aquachu\"\nprint(name)",
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When do we use strings?",
+              "fr": "Quand utilise-t-on des chaînes de caractères ?"
+            },
+            "content": {
+              "en": "Strings are used to represent text data. They can be used for names, messages, or any other textual information. Strings are also used to format output, such as displaying messages to users.",
+              "fr": "Les chaînes de caractères sont utilisées pour représenter des données textuelles. Elles peuvent être utilisées pour des noms, des messages ou toute autre information textuelle. Les chaînes de caractères sont également utilisées pour formater la sortie, comme afficher des messages aux utilisateurs."
+            }
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Don't use string when not needed",
+              "fr": "Utilise les strings seulement quand c'est nécessaire"
+            },
+            "content": {
+              "en": "The trap with strings is that you can use them to represent anything, but you should not. For example, if you want to represent a number, use an integer or a float. Don't create something like this: ```level = '20'``` because you will not be able to use it as a number.",
+              "fr": "Le piège avec les chaînes de caractères est que tu peux les utiliser pour représenter n'importe quoi, mais tu ne devrais pas. Par exemple, si tu veux représenter un nombre, utilise un entier ou un flottant. Ne crée pas quelque chose comme ça : ```level = '20'``` car tu ne pourras pas l'utiliser comme un nombre."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_5_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "quotes"
+      ]
+    },
+    "title": {
+      "en": "Quotes inside Strings",
+      "fr": "Guillemets dans les Chaînes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Sometimes you want to use quotes inside your strings. But be careful - using the same quote type will break the string!",
+            "fr": "À certain moment, tu vas vouloir utiliser des guillemets dans tes strings. Mais attention - utiliser le même type de guillemets va casser le string !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "For example, saying ```'Hello I'm here'``` will break the string because the single quote in ```I'm``` ends the string early.",
+            "fr": "Par exemple, dire ```'Je m'appelle Pierre'``` va casser le string car le guillemet simple dans ```m'appelle``` casse le string."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# ❌ This code will crash !\nmessage = 'Hello I'm here'\nprint(message)",
+            "fr": "# ❌ Ce code va avoir une erreur !\nmessage = 'Je m'appelle Pierre'\nprint(message)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***The simple solution:*** Use different quote types!",
+            "fr": "***La solution simple :*** Utilise des guillemets différents !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If you want to say ```'Hello I'm here'``` without breaking the string, you can use double quotes: ```\"Hello I'm here\"```.",
+            "fr": "Si tu veux dire ```'Je m'appelle Pierre'``` sans casser le string, tu peux utiliser des guillemets doubles : ```\"Je m'appelle Pierre\"```."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# ✅ It works!\nmessage = \"Hello I'm here\"\nprint(message)\n\n# ✅ It also works with single quotes inside double quotes!\ndialogue = 'She said \"Hello\"'\nprint(dialogue)",
+            "fr": "# ✅ Ça marche !\nmessage = \"Je m'appelle Pierre\"\nprint(message)\n\n# ✅ Ça marche aussi avec des guillemets simples dans des guillemets doubles !\ndialogue = 'Elle a dit \"Bonjour\"'\nprint(dialogue)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "The other solution: Escape characters",
+              "fr": "L'autre solution : les caractères d'échappement"
+            },
+            "content": {
+              "en": "If the string contains both single and double quotes, you can use the backslash (\\) to escape the quote that would otherwise break the string. For example, ```'Hello I\\'m here'``` or ```\"She said \\\"Hello\\\"\"```.",
+              "fr": "Si la chaîne contient à la fois des guillemets simples et des guillemets doubles, tu peux utiliser le backslash (\\) pour échapper le guillemet qui casserait autrement la chaîne. Par exemple, ```'Je m\\'appelle Pierre'``` ou ```\"Il a dit \\\"Bonjour\\\"\"```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_5_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Creating a string",
+      "fr": "Créer une chaîne de caractères"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which string is correctly created?",
+            "fr": "Quelle chaîne de caractères est créée correctement ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```message = \"It's working!\"```"
+          },
+          {
+            "type": "text",
+            "value": "```message = 'It's working!\"```"
+          },
+          {
+            "type": "text",
+            "value": "```message = \"It's working!'```"
+          },
+          {
+            "type": "text",
+            "value": "```message : \"It's working!\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: Strings can be created using either single quotes ('') or double quotes (\"\"). If you start creating a string with a single quote, you must end it with a single quote. If you start with a double quote, you must end it with a double quote.",
+        "fr": "Souviens-toi : les chaînes de caractères peuvent être créées en utilisant soit des guillemets simples ('') soit des guillemets doubles (\"\"). Si tu commences à créer une chaîne avec un guillemet simple, tu dois la terminer avec un guillemet simple. Si tu commences avec un guillemet double, tu dois la terminer avec un guillemet double."
+      }
+    }
+  },
+  {
+    "id": "python_2_5_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Create two strings",
+      "fr": "Créons deux chaînes de caractères"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "For both variables, pick either single quotes (') or double quotes (\") to create a string.",
+            "fr": "Pour les deux variables, choisis soit des guillemets simples (') soit des guillemets doubles (\") pour créer une chaîne de caractères."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_1 = {{}}Aqua\"chu{{}}\nprint(codemon_1)\ncodemon_2 = {{}}Pyro'chu{{}}\nprint(codemon_2)",
+        "options": [
+          "'",
+          "'",
+          "'",
+          "'",
+          "\"",
+          "\"",
+          "\"",
+          "\""
+        ],
+        "correctAnswers": {
+          "1": "'",
+          "2": "'",
+          "3": "\"",
+          "4": "\""
+        }
+      },
+      "hint": {
+        "en": "Remember: You can't have a single quote inside a string that starts with a single quote. The same goes for double quotes. If you want to use both, you need to escape them using a backslash (\\).",
+        "fr": "Souviens-toi : tu ne peux pas avoir de guillemet simple à l'intérieur d'une chaîne qui commence par un guillemet simple. Il en va de même pour les guillemets doubles. Si tu veux utiliser les deux, tu dois les échapper en utilisant une barre oblique inverse (\\)."
+      }
+    }
+  },
+  {
+    "id": "python_2_5_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "That's it for strings.. for now!",
+      "fr": "C'est tout pour les chaînes de caractères... pour l'instant !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "This chapter was a really short intro to strings. Now you know they exists and you know a new type of variable. But strings have a lot of uses. And for that reason, we will see them in detail in the next course!",
+            "fr": "Ce chapitre était une très courte introduction aux chaînes de caractères. Maintenant, tu sais qu'elles existent et tu connais un nouveau type de variable. Mais les chaînes de caractères ont beaucoup d'utilisations. Et pour cette raison, nous les verrons en détail dans le prochain cours !"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_strings_will_be_back"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_5_6",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "What's your name?",
+      "fr": "Quel est ton nom ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a variable named ```introduce_yourself``` that contains a string introducing yourself. For example, you can say your name and your favorite programming language. Then print the variable.",
+            "fr": "Crée une variable nommée ```introduce_yourself``` qui contient une chaîne de caractères te présentant. Par exemple, tu peux dire ton nom et ton langage de programmation préféré. Ensuite, affiche la variable."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here",
+          "fr": "# Code ici"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "introduce_yourself = 'Hello! My name is Professor Pi and my favorite programming language is Python.'\nprint(introduce_yourself)",
+            "fr": "introduce_yourself = 'Bonjour ! Je suis Professeur Pi et mon langage de programmation préféré est Python.'\nprint(introduce_yourself)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_6_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Intro to Booleans",
+      "fr": "Introduction aux booléens"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Boolean is a special type of variable that can only have two values: ```True``` or ```False```. (Pay attention to the capital letters!)",
+            "fr": "Le type booléen est un type de variable spécial qui ne peut avoir que deux valeurs : ```True``` (vrai) ou ```False``` (faux). (Attention aux majuscules !)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "It is used to represent truth values in programming. And even if it doesn't seem that impressive and pretty simple, it is actually one of the most important types in programming!",
+            "fr": "Il est utilisé pour représenter des valeurs de vérité en programmation. Et même si cela ne semble pas très impressionnant et assez simple, c'est en fait l'un des types les plus importants en programmation !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_alive = True\nprint(codemon_alive)\n\ncodemon_sleeping = False\nprint(codemon_sleeping)",
+            "fr": "codemon_en_vie = True\nprint(codemon_en_vie)\n\ncodemon_dort = False\nprint(codemon_dort)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Only TRUE or FALSE?",
+              "fr": "Seulement VRAI ou FAUX ?"
+            },
+            "content": {
+              "en": "Booleans are True/False values. But they can also be understood as 1/0, ON/OFF, YES/NO, PRESENCE/ABSENCE, etc.",
+              "fr": "Les booléens sont des valeurs VRAI/FAUX. Mais ils peuvent aussi être interprétés comme 1/0, ON/OFF, OUI/NON, PRÉSENCE/ABSENCE, etc."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_6_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Correct way of writing a Boolean variable",
+      "fr": "Écrire une variable booléenne correctement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of these is a correct way to create a Boolean variable in Python?",
+            "fr": "Lequel de ces exemples est une façon correcte de créer une variable booléenne en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon_alive = True```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_alive = TRUE```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_alive = true```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_alive = \"True\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: Boolean values must start with a capital letter in Python.",
+        "fr": "Rappelle-toi : les valeurs booléennes doivent commencer par une majuscule en Python."
+      }
+    }
+  },
+  {
+    "id": "python_2_6_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Boolean Values",
+      "fr": "Valeurs booléennes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What are the two possible values for a Boolean variable in Python?",
+            "fr": "Quelles sont les deux valeurs possibles pour une variable booléenne en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True, False```"
+          },
+          {
+            "type": "text",
+            "value": "```true, false```"
+          },
+          {
+            "type": "text",
+            "value": "```YES, NO```"
+          },
+          {
+            "type": "text",
+            "value": "```1, 0```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Boolean variables in Python can only have two values: True or False (with capital letters).",
+        "fr": "Les variables booléennes en Python ne peuvent avoir que deux valeurs : True ou False (avec des majuscules)."
+      }
+    }
+  },
+  {
+    "id": "python_2_6_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Which is a Boolean?",
+      "fr": "Lequel est un booléen ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of these variables contains a Boolean value?",
+            "fr": "Laquelle de ces variables contient une valeur booléenne ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```is_ready = False```"
+          },
+          {
+            "type": "text",
+            "value": "```age = 25```"
+          },
+          {
+            "type": "text",
+            "value": "```name = \"Pierre\"```"
+          },
+          {
+            "type": "text",
+            "value": "```level = 4.2```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "False is a Boolean value. The other variables contain a number, a string, and a decimal number.",
+        "fr": "False est une valeur booléenne. Les autres variables contiennent un nombre, une chaîne de caractères, et un nombre décimal."
+      }
+    }
+  },
+  {
+    "id": "python_2_6_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Creating a Boolean Variable",
+      "fr": "Créer une variable booléenne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a Boolean variable that indicates the Codémon is sleeping:",
+            "fr": "Complète le code pour créer une variable booléenne qui indique que le Codémon est en train de dormir :"
+          }
+        }
+      ],
+      "exercise": {
+        "text": "is_sleeping = {{}}\nprint(is_sleeping)",
+        "options": [
+          "True",
+          "true",
+          "false",
+          "TRUE",
+          "FALSE",
+          "\"True\"",
+          "\"False\""
+        ],
+        "correctAnswers": {
+          "1": "True"
+        }
+      },
+      "hint": {
+        "en": "Boolean variables can be True or False. Remember the capital letters!",
+        "fr": "Les variables booléennes peuvent être True ou False. N'oublie pas les majuscules !"
+      }
+    }
+  },
+  {
+    "id": "python_2_6_6",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Ready or not ?",
+      "fr": "Prêt ou pas ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a boolean variable ```ready_for_battle``` and set it to the value you want (boolean value). Then, print the variable and its type.",
+            "fr": "Crée une variable booléenne ```ready_for_battle``` et définis-la sur la valeur que tu souhaites (valeur booléenne). Ensuite, affiche la variable et son type."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here",
+          "fr": "# Code ici"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "ready_for_battle = True\nprint(ready_for_battle, type(ready_for_battle))"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_7_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Variable assignment",
+      "fr": "Affectation de variable"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which operator is used to assign a value to a variable?",
+            "fr": "Quel opérateur est utilisé pour assigner une valeur à une variable ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```=```"
+          },
+          {
+            "type": "text",
+            "value": "```==```"
+          },
+          {
+            "type": "text",
+            "value": "```->```"
+          },
+          {
+            "type": "text",
+            "value": "```:```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The ```=``` operator is used for assignment. ```==``` is used for comparison.",
+        "fr": "L'opérateur ```=``` est utilisé pour l'affectation. ```==``` est utilisé pour la comparaison."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_2",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Create a variable",
+      "fr": "Créer une variable"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a variable named ```codemon_health``` and assign it the int value 100.",
+            "fr": "Crée une variable nommée ```codemon_health``` et assigne-lui la valeur entière 100."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}} {{}} {{}}\nprint(codemon_health)",
+        "options": [
+          "codemon_health",
+          "codemon health",
+          "=",
+          "==",
+          "100",
+          "\"100\""
+        ],
+        "correctAnswers": {
+          "1": "codemon_health",
+          "2": "=",
+          "3": "100"
+        }
+      },
+      "hint": {
+        "en": "Use snake_case for variable names and ```=``` for assignment.",
+        "fr": "Utilise le snake_case pour les noms de variables et ```=``` pour l'affectation."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "naming",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Valid variable name",
+      "fr": "Nom de variable valide"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which variable name follows Python's snake_case convention?",
+            "fr": "Quel nom de variable suit la convention snake_case de Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```player_score```"
+          },
+          {
+            "type": "text",
+            "value": "```PlayerScore```"
+          },
+          {
+            "type": "text",
+            "value": "```player-score```"
+          },
+          {
+            "type": "text",
+            "value": "```player score```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "snake_case uses lowercase letters with underscores between words.",
+        "fr": "Le snake_case utilise des lettres minuscules avec des underscores entre les mots."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "types",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Match values with types",
+      "fr": "Associe les valeurs avec leurs types"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each value with its correct type.",
+            "fr": "Associe chaque valeur avec son type correct."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```42```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```int```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```3.14```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```float```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"Hello\"```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```str```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```bool```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_7_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Variable reassignment",
+      "fr": "Réaffectation de variable"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens to the previous value when you reassign a variable?",
+            "fr": "Qu'arrive-t-il à la valeur précédente quand tu réaffectes une variable ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It is lost and replaced by the new value",
+              "fr": "Elle est perdue et remplacée par la nouvelle valeur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It is stored in memory",
+              "fr": "Elle est stockée en mémoire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "You get an error",
+              "fr": "Tu obtiens une erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Both values coexist",
+              "fr": "Les deux valeurs coexistent"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "A variable can only hold one value at a time.",
+        "fr": "Une variable ne peut contenir qu'une seule valeur à la fois."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Basic operations",
+      "fr": "Opérations basiques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Fill in the blanks with the correct operators.",
+            "fr": "Complète les blancs avec les bons opérateurs."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "10 {{}} 5 = 15\n10 {{}} 5 = 5\n10 {{}} 5 = 50",
+        "options": [
+          "+",
+          "+",
+          "-",
+          "-",
+          "*",
+          "*",
+          "/",
+          "//"
+        ],
+        "correctAnswers": {
+          "1": "+",
+          "2": "-",
+          "3": "*"
+        }
+      },
+      "hint": {
+        "en": "That's basic math.",
+        "fr": "C'est des maths basiques."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Division types",
+      "fr": "Types de division"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```7 // 2```?",
+            "fr": "Quel est le résultat de ```7 // 2``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```3```"
+          },
+          {
+            "type": "text",
+            "value": "```3.5```"
+          },
+          {
+            "type": "text",
+            "value": "```4```"
+          },
+          {
+            "type": "text",
+            "value": "```1```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```//``` is integer division, it returns only the whole part.",
+        "fr": "```//``` est la division entière, elle renvoie seulement la partie entière."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Operators and names",
+      "fr": "Opérateurs et noms"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operator with its name.",
+            "fr": "Associe chaque opérateur avec son nom."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```**```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Power",
+                "fr": "Puissance"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```%```"
+            },
+            "match": {
+              "type": "text",
+              "value": "Modulo"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```//```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Integer division",
+                "fr": "Division entière"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```/```"
+            },
+            "match": {
+              "type": "text",
+              "value": "Division"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_7_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "casting",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Type casting",
+      "fr": "Conversion de type"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does ```float(5)``` return?",
+            "fr": "Que renvoie ```float(5)``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```5.0```"
+          },
+          {
+            "type": "text",
+            "value": "```5```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error",
+              "fr": "Une erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": "```\"5.0\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```float()``` converts an integer to a decimal number.",
+        "fr": "```float()``` convertit un entier en nombre décimal."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "casting",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Converting types",
+      "fr": "Convertir les types"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Convert the float ```3.7``` to an integer.",
+            "fr": "Convertis le float ```3.7``` en entier."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "number = 3.7\nnumber = {{}}(number)\nprint(number)",
+        "options": [
+          "int",
+          "float",
+          "str",
+          "bool",
+          "type"
+        ],
+        "correctAnswers": {
+          "1": "int"
+        }
+      },
+      "hint": {
+        "en": "To cast to an integer, use ```int()```. This will remove the decimal part.",
+        "fr": "Utilise ```int()``` pour convertir en entier. Cela va supprimer la partie décimale."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Mixed operations",
+      "fr": "Opérations mixtes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What type is the result of ```5 + 2.0```?",
+            "fr": "Quel est le type du résultat de ```5 + 2.0``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```float```"
+          },
+          {
+            "type": "text",
+            "value": "```int```"
+          },
+          {
+            "type": "text",
+            "value": "```str```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Python always returns the most precise type when mixing int and float.",
+        "fr": "Python retourne toujours le type le plus précis lorsqu'on mélange int et float."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Correct string",
+      "fr": "String correct"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which string is correctly written?",
+            "fr": "Quelle chaîne de caractères est correctement écrite ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```message = 'Hello world'```"
+          },
+          {
+            "type": "text",
+            "value": "```message = 'Hello world\"```"
+          },
+          {
+            "type": "text",
+            "value": "```message = \"Hello world'```"
+          },
+          {
+            "type": "text",
+            "value": "```message = Hello world```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Strings must start and end with the same type of quotes.",
+        "fr": "Les strings doivent commencer et finir avec le même type de guillemets."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_13",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Create strings",
+      "fr": "Créer des strings"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete to create a valid string with quotes inside.",
+            "fr": "Complète pour créer une string valide avec des guillemets à l'intérieur."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "text = {{}}I'm happy{{}}\nprint(text)",
+        "options": [
+          "\"",
+          "\"",
+          "'",
+          "'",
+          "\\",
+          "\\"
+        ],
+        "correctAnswers": {
+          "1": "\"",
+          "2": "\""
+        }
+      },
+      "hint": {
+        "en": "Use double quotes to wrap a string containing single quotes.",
+        "fr": "Utilise des guillemets doubles pour entourer une string contenant des guillemets simples."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Boolean syntax",
+      "fr": "Syntaxe des booléens"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which is the correct way to write a Boolean in Python?",
+            "fr": "Quelle est la bonne façon d'écrire un booléen en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```true```"
+          },
+          {
+            "type": "text",
+            "value": "```TRUE```"
+          },
+          {
+            "type": "text",
+            "value": "```\"True\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Booleans in Python start with a capital letter: True or False.",
+        "fr": "Les booléens en Python commencent par une majuscule : True ou False."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_15",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "naming",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Naming errors",
+      "fr": "Erreurs de nommage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each incorrect variable name with its error.",
+            "fr": "Associe chaque nom de variable incorrect avec son erreur."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```3_players```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Starts with a number",
+                "fr": "Commence par un chiffre"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```player-name```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Contains a hyphen",
+                "fr": "Contient un tiret"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```Player_Name```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Uses capital letters",
+                "fr": "Utilise des majuscules"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```player name```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Contains a space",
+                "fr": "Contient un espace"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_7_16",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "types",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Type function",
+      "fr": "Fonction type"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which function shows the type of a variable?",
+            "fr": "Quelle fonction montre le type d'une variable ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```type()```"
+          },
+          {
+            "type": "text",
+            "value": "```show()```"
+          },
+          {
+            "type": "text",
+            "value": "```typeof()```"
+          },
+          {
+            "type": "text",
+            "value": "```getType()```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Use ```type(variable)``` to see the type of a variable.",
+        "fr": "Utilise ```type(variable)``` pour voir le type d'une variable."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_17",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Power and modulo",
+      "fr": "Puissance et modulo"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the calculations.",
+            "fr": "Complète les calculs."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "2 {{}} 3 = 8\n10 {{}} 3 = 1",
+        "options": [
+          "**",
+          "**",
+          "%",
+          "%",
+          "//",
+          "/",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "**",
+          "2": "%"
+        }
+      },
+      "hint": {
+        "en": "```**``` is power, ```%``` is modulo, ```//``` is floor division and ```/``` is regular division.",
+        "fr": "```**``` est la puissance, ```%``` est le modulo, ```//``` est la division entière et ```/``` est la division classique."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_18",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Modulo result",
+      "fr": "Résultat du modulo"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```15 % 4```?",
+            "fr": "Quel est le résultat de ```15 % 4``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```3```"
+          },
+          {
+            "type": "text",
+            "value": "```4```"
+          },
+          {
+            "type": "text",
+            "value": "```3.75```"
+          },
+          {
+            "type": "text",
+            "value": "```11```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```%``` is the modulo, it returns the remainder of a division.",
+        "fr": "```%``` est le modulo, il renvoie le reste d'une division."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_19",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "casting",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Float to int",
+      "fr": "Float vers int"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```int(7.9)```?",
+            "fr": "Quel est le résultat de ```int(7.9)``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```7```"
+          },
+          {
+            "type": "text",
+            "value": "```8```"
+          },
+          {
+            "type": "text",
+            "value": "```7.9```"
+          },
+          {
+            "type": "text",
+            "value": "```7.0```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```int()``` turns a number into an integer, it does not round, it basically removes the decimal part.",
+        "fr": "```int()``` convertit un nombre en entier, il n'arrondit pas, il supprime simplement la partie décimale."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_20",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Multiple variables",
+      "fr": "Plusieurs variables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create two variables: ```attack``` with value 25 and ```defense``` with value 30.",
+            "fr": "Crée deux variables : ```attack``` avec la valeur 25 et ```defense``` avec la valeur 30."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}} = 25\n{{}} = {{}}\nprint(attack)\nprint(defense)",
+        "options": [
+          "attack",
+          "defense",
+          "30",
+          "Attack",
+          "Defense"
+        ],
+        "correctAnswers": {
+          "1": "attack",
+          "2": "defense",
+          "3": "30"
+        }
+      },
+      "hint": {
+        "en": "Remember to use lowercase for variable names (snake_case).",
+        "fr": "N'oublie pas d'utiliser des minuscules pour les noms de variables (snake_case)."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_21",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "numbers",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Calculate results",
+      "fr": "Résultats de calculs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each calculation with its result.",
+            "fr": "Associe chaque calcul avec son résultat."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```2 ** 4```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```16```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```20 // 6```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```3```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```20 % 6```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```2```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```20 / 6```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```3.333...```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_2_7_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "string",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "String with apostrophe",
+      "fr": "String avec apostrophe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How to correctly create a string containing ```don't```?",
+            "fr": "Comment créer correctement une string contenant ```don't``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```text = \"don't\"```"
+          },
+          {
+            "type": "text",
+            "value": "```text = 'don't'```"
+          },
+          {
+            "type": "text",
+            "value": "```text = don't```"
+          },
+          {
+            "type": "text",
+            "value": "```text = \"don't'```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Use double quotes to wrap a string containing an apostrophe (single quote).",
+        "fr": "Utilise des guillemets doubles pour entourer une string contenant une apostrophe (guillemet simple)."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_23",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Boolean values only",
+      "fr": "Valeurs booléennes uniquement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How many possible values can a Boolean have?",
+            "fr": "Combien de valeurs possibles un booléen peut-il avoir ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "2 (True and False)",
+              "fr": "2 (True et False)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "3 (True, False and None)",
+              "fr": "3 (True, False et None)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Infinite",
+              "fr": "Infini"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "4 (True, False, Yes, No)",
+              "fr": "4 (True, False, Yes, No)"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Booleans value are True and False.",
+        "fr": "Les valeurs booléennes sont True et False."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_24",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Reassign value",
+      "fr": "Réassigner une valeur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Change the value of ```level``` from 1 to 2. The type of the variable should remain the same.",
+            "fr": "Change la valeur de ```level``` de 1 à 2. Le type de la variable doit rester le même."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "level = 1\n{{}} {{}} {{}}\nprint(level, type(level))",
+        "options": [
+          "level",
+          "Level",
+          "=",
+          "==",
+          "2",
+          "\"2\""
+        ],
+        "correctAnswers": {
+          "1": "level",
+          "2": "=",
+          "3": "2"
+        }
+      },
+      "hint": {
+        "en": "Use the same variable name with ```=``` to reassign a new value.",
+        "fr": "Utilise le même nom de variable avec ```=``` pour réassigner une nouvelle valeur."
+      }
+    }
+  },
+  {
+    "id": "python_2_7_25",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "types",
+        "quiz"
+      ]
+    },
+    "title": {
+      "en": "Type after operation",
+      "fr": "Type après opération"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What type will ```x``` be after this code: ```x = 10 / 2```?",
+            "fr": "Quel type sera ```x``` après ce code : ```x = 10 / 2``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```float```"
+          },
+          {
+            "type": "text",
+            "value": "```int```"
+          },
+          {
+            "type": "text",
+            "value": "```str```"
+          },
+          {
+            "type": "text",
+            "value": "```bool```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Division ```/``` always returns a float.",
+        "fr": "La division ```/``` renvoie toujours un float."
+      }
+    }
+  },
+  {
+    "id": "python_2_8_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "strings",
+        "numbers"
+      ]
+    },
+    "title": {
+      "en": "Zap's Basic Stats",
+      "fr": "Les stats de base de Zap"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's create a profile for Zap, our mascot! Create three variables:\n- ```codemon_name``` containing the string ```\"Zap\"```\n- ```hp``` (health point) containing the integer ```100```\n- ```xp``` (experience point) containing the integer ```750```\n\nThen print all three variables.",
+            "fr": "Créons un profil pour Zap, notre mascotte ! Crée trois variables :\n- ```codemon_name``` contenant la chaîne ```\"Zap\"```\n- ```hp``` (point de vie) contenant l'entier ```100```\n- ```xp``` (point d'expérience) contenant l'entier ```750```\n\nPuis affiche les trois variables."
+          }
+        },
+        {
+          "type": "image",
+          "value": "fakemon_zap"
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here\n\n",
+          "fr": "# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_name = \"Zap\"\nhp = 100\nxp = 750\n\nprint(codemon_name)\nprint(hp)\nprint(xp)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_8_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "numbers",
+        "casting",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Computing Zap's Level",
+      "fr": "Calculer le niveau de Zap"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now let's calculate Zap's level! \n- Create a variable ```level``` by dividing ```xp``` by ```100```\n- Print ```level``` and its type\n- If ```level``` is not an integer already, cast it to an integer\n- Print it again with its type to see the difference.",
+            "fr": "Maintenant, calculons le niveau de Zap ! \n- Crée une variable ```level``` en divisant ```xp``` par ```100```\n- Affiche ```level``` et son type\n- Si ```level``` n'est pas déjà un entier, convertis-le en entier\n- Affiche-le à nouveau avec son type pour voir la différence."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "codemon_name = \"Zap\"\nhp = 100\nxp = 750\n\n# Code here\n\n",
+          "fr": "codemon_name = \"Zap\"\nhp = 100\nxp = 750\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_name = \"Zap\"\nhp = 100\nxp = 750\n\nlevel = xp / 100\nprint(level, type(level))\n\nlevel = int(level)\nprint(level, type(level))"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_2_8_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "boolean",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Is Zap Ready to Fight?",
+      "fr": "Zap est-il prêt à combattre ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's complete Zap's profile!\n- Create a boolean variable ```is_ready_to_fight``` and set it to ```True```\n- Print the complete profile: name, hp, xp, level, and battle readiness status.",
+            "fr": "Complétons le profil de Zap !\n- Crée une variable booléenne ```is_ready_to_fight``` et assigne-lui la valeur ```True```\n- Affiche le profil complet : nom, hp, xp, niveau, et statut de préparation au combat."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "codemon_name = \"Zap\"\nhp = 100\nxp = 750\nlevel = int(xp / 100)\n\n# Code here\n\n",
+          "fr": "codemon_name = \"Zap\"\nhp = 100\nxp = 750\nlevel = int(xp / 100)\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_name = \"Zap\"\nhp = 100\nxp = 750\n\nlevel = xp / 100\nlevel = int(level)\n\nis_ready_to_fight = True\n\nprint(codemon_name)\nprint(hp)\nprint(xp)\nprint(level)\nprint(is_ready_to_fight)"
+        }
+      ]
+    }
+  }
+]

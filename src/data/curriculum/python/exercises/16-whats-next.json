@@ -1,0 +1,404 @@
+[
+  {
+    "id": "python_16_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "congratulations",
+        "python",
+        "goodbye"
+      ]
+    },
+    "title": {
+      "en": "Homage",
+      "fr": "Hommage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You made it to the end of the Python course!",
+            "fr": "Tu es arrivé(e) à la fin du cours Python !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "I built this app for someone that was really important to me. Unfortunately, she will never see all of that, but this homage to her will live on and help others for years to come. So thank you for being here, and I hope this course has been helpful to you.",
+            "fr": "J'ai créé cette application pour une personne qui était très importante pour moi. Malheureusement, elle ne la verra jamais, mais comme cette application aide les autres, c'est un bel hommage pour elle. Donc merci d'avoir été là, de m'avoir donné de la force, et j'espère que ce cours t'a été utile."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "À bientôt, Pierre.",
+            "fr": "À bientôt, Pierre."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "congratulations",
+        "python",
+        "goodbye"
+      ]
+    },
+    "title": {
+      "en": "You Did It!",
+      "fr": "Tu l'as fait !"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Take a moment to appreciate everything you've learned:",
+            "fr": "Prends un moment pour apprécier tout ce que tu as appris :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Variables, types, strings, booleans\nConditions, loops, functions\nLists, tuples, sets, dictionaries\nError handling, file I/O\nList comprehensions, regex, lambda\nClasses, inheritance, composition\nAnd so much more!",
+            "fr": "Variables, types, strings, booléens\nConditions, boucles, fonctions\nListes, tuples, sets, dictionnaires\nGestion des erreurs, fichiers\nList comprehensions, regex, lambda\nClasses, héritage, composition\nEt tellement plus !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You're not just a beginner anymore. You have a ***solid foundation*** in Python and programming concepts that apply to ANY language.",
+            "fr": "Tu n'es plus un(e) simple débutant(e). Tu as une ***base solide*** en Python et en concepts de programmation qui s'appliquent à N'IMPORTE QUEL langage."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "congratulations",
+        "python",
+        "goodbye"
+      ]
+    },
+    "title": {
+      "en": "A Message from Prof Pi",
+      "fr": "Un message de Prof Pi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Less than 1% of the people who downloaded this app will put in the work to finish this course.",
+            "fr": "Moins de 1% des personnes qui ont téléchargé cette application feront le travail nécessaire pour terminer ce cours."
+          }
+        },
+        {
+          "type": "profPi",
+          "value": {
+            "en": "I'm so proud of you for making it this far. Remember: every expert was once a beginner. Keep coding, keep learning, and most importantly — have fun!",
+            "fr": "Je suis tellement fier de toi d'avoir tenu jusqu'ici. Rappelle-toi : chaque expert a un jour été débutant. Continue à coder, continue à apprendre, et surtout — amuse-toi !"
+          },
+          "profHead": true,
+          "fontBold": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "apis",
+        "python",
+        "web",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "APIs",
+      "fr": "Les APIs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "An ***API*** (Application Programming Interface) is a way for your program to talk to other services on the internet. Want to get the weather, translate text, or fetch data? You use an API.\n\nPython makes it super easy with the `requests` library. You send a request, you get data back — usually in JSON format (which is just like a Python dictionary!).",
+            "fr": "Une ***API*** (Application Programming Interface) est un moyen pour ton programme de communiquer avec d'autres services sur internet. Tu veux récupérer la météo, traduire du texte, ou obtenir des données ? Tu utilises une API.\n\nPython rend ça super simple avec la bibliothèque `requests`. Tu envoies une requête, tu reçois des données — généralement en format JSON (qui ressemble à un dictionnaire Python !)."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_api_diagram",
+          "caption": {
+            "en": "How an API works: Client → Request → Server → Response",
+            "fr": "Comment fonctionne une API : Client → Requête → Serveur → Réponse"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Popular free APIs to try",
+              "fr": "APIs gratuites à essayer"
+            },
+            "content": {
+              "en": "OpenWeatherMap (weather), PokéAPI (Pokémon data), JSONPlaceholder (test data), NASA API (space photos).",
+              "fr": "OpenWeatherMap (météo), PokéAPI (données Pokémon), JSONPlaceholder (données de test), NASA API (photos de l'espace)."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "web-dev",
+        "python",
+        "flask",
+        "django",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "Web Development",
+      "fr": "Développement Web"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python can power ***entire websites***! Instagram, Spotify, Netflix, Pinterest — all use Python on the backend.\n\nTwo main frameworks:\n\n- ***Flask*** — lightweight, simple, perfect for small projects and APIs\n- ***Django*** — full-featured, comes with everything built-in (auth, admin panel, database), used by Instagram",
+            "fr": "Python peut faire tourner des ***sites web entiers*** ! Instagram, Spotify, Netflix, Pinterest — tous utilisent Python côté serveur.\n\nDeux frameworks principaux :\n\n- ***Flask*** — léger, simple, parfait pour les petits projets et les APIs\n- ***Django*** — complet, tout inclus (authentification, panneau admin, base de données), utilisé par Instagram"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_web_flask_django",
+          "caption": {
+            "en": "Flask and Django — the two main Python web frameworks",
+            "fr": "Flask et Django — les deux principaux frameworks web Python"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_2_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "web",
+        "python",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "Where to start?",
+      "fr": "Par où commencer ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "profPi",
+          "value": {
+            "en": "To get started: learn HTML/CSS basics first (check the Web course in this app!), then try Flask. Build something small — a personal blog, a to-do app — and grow from there!",
+            "fr": "Pour commencer : apprends d'abord les bases du HTML/CSS (regarde le cours Web dans cette app !), puis essaie Flask. Construis un petit projet — un blog, une to-do app — et évolue à partir de là !"
+          },
+          "profHead": true,
+          "fontBold": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "data",
+        "python",
+        "pandas",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "Data Analysis",
+      "fr": "Analyse de données"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python is the ***#1 language*** for data science. Companies use it to analyze sales, predict trends, detect fraud, and even discover new medicines.\n\nThree key libraries:\n\n- ***NumPy*** — fast math and arrays\n- ***Pandas*** — data tables (like Excel but way more powerful)\n- ***Matplotlib*** — charts and graphs",
+            "fr": "Python est le ***langage n°1*** pour la data science. Les entreprises l'utilisent pour analyser les ventes, prédire les tendances, détecter la fraude, et même découvrir de nouveaux médicaments.\n\nTrois bibliothèques clés :\n\n- ***NumPy*** — calculs rapides et tableaux\n- ***Pandas*** — tableaux de données (comme Excel mais bien plus puissant)\n- ***Matplotlib*** — graphiques et visualisations"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_data_science_libs",
+          "caption": {
+            "en": "NumPy, Pandas, Matplotlib — the data science trio",
+            "fr": "NumPy, Pandas, Matplotlib — le trio de la data science"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_3_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "automation",
+        "python",
+        "scripting",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "Automation",
+      "fr": "Automatisation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "One of Python's superpowers is ***automation***. Rename 1000 files, send emails automatically, scrape data from websites, organize your folders — Python can do it all.\n\nKey tools:\n\n- `os` and `shutil` — file and folder management\n- `requests` + `BeautifulSoup` — web scraping\n- `selenium` — browser automation\n- `schedule` — run tasks at specific times",
+            "fr": "L'un des super-pouvoirs de Python est l'***automatisation***. Renommer 1000 fichiers, envoyer des emails automatiquement, récupérer des données de sites web, organiser tes dossiers — Python peut tout faire.\n\nOutils clés :\n\n- `os` et `shutil` — gestion de fichiers et dossiers\n- `requests` + `BeautifulSoup` — web scraping\n- `selenium` — automatisation du navigateur\n- `schedule` — exécuter des tâches à des heures précises"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_automation_examples",
+          "caption": {
+            "en": "Things Python can automate for you",
+            "fr": "Ce que Python peut automatiser pour toi"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_3_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "data",
+        "automation",
+        "python",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "Where to start?",
+      "fr": "Par où commencer ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "profPi",
+          "value": {
+            "en": "Data is everywhere. Learning to read it and extract meaning from it is one of the most valuable skills you can have. Start with Pandas and a dataset from Kaggle.com!",
+            "fr": "Les données sont partout. Apprendre à les lire et en extraire du sens est l'une des compétences les plus précieuses. Commence avec Pandas et un dataset de Kaggle.com !"
+          },
+          "profHead": true,
+          "fontBold": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "games",
+        "python",
+        "pygame",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "Game Development",
+      "fr": "Développement de jeux"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python can make games! While it's not used for AAA titles, it's ***perfect*** for learning game development and building 2D games.\n\n***Pygame*** is the most popular game library. It handles graphics, sound, input — everything you need. People have built platformers, puzzle games, RPGs, and even published games on Steam with it!",
+            "fr": "Python peut créer des jeux ! Même s'il n'est pas utilisé pour les gros jeux AAA, il est ***parfait*** pour apprendre le développement de jeux et créer des jeux 2D.\n\n***Pygame*** est la bibliothèque de jeux la plus populaire. Elle gère les graphismes, le son, les contrôles — tout ce qu'il faut. Des gens ont créé des platformers, des puzzles, des RPGs, et même publié des jeux sur Steam avec !"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_pygame_game_examples",
+          "caption": {
+            "en": "Games built with Python and Pygame",
+            "fr": "Jeux créés avec Python et Pygame"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_16_4_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "games",
+        "python",
+        "discovery"
+      ]
+    },
+    "title": {
+      "en": "Where to start?",
+      "fr": "Par où commencer ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "profPi",
+          "value": {
+            "en": "Games are one of the most fun ways to practice programming. Install Pygame, follow a tutorial to make Pong or Snake, and go from there. Start simple — a finished small game is better than an unfinished big one!",
+            "fr": "Les jeux sont l'une des façons les plus fun de pratiquer la programmation. Installe Pygame, suis un tuto pour faire Pong ou Snake, et pars de là. Commence simple — un petit jeu fini vaut mieux qu'un gros jeu pas terminé !"
+          },
+          "profHead": true,
+          "fontBold": false
+        }
+      ]
+    }
+  }
+]

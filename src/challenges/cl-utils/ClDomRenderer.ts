@@ -16,6 +16,38 @@ import {
   createCodeMirrorEditable as cmEditable,
 } from './ClCodeMirrorFactory'
 
+// Course images copied from Code-Life by the sync script, keyed like Code-Life
+// ("python_box_var" → src/assets/course-images/python_box_var.webp)
+const courseImageUrls = new Map(
+  Object.entries(
+    import.meta.glob('/src/assets/course-images/*', { eager: true, query: '?url', import: 'default' }) as Record<string, string>,
+  ).map(([file, url]) => [file.replace(/^.*\//, '').replace(/\.[^.]+$/, ''), url]),
+)
+
+const PROF_PI_FACE = 'characters_ProfPiHead'
+
+/**
+ * The overlay (on top of the Phaser canvas) and the panel challenges render into.
+ * Exported so a scene can own one overlay across several chained challenges.
+ */
+export function createChallengeOverlay(scene: Phaser.Scene): { overlay: HTMLDivElement; panel: HTMLDivElement } {
+  injectClStyles()
+
+  const parent = scene.game.canvas.parentElement!
+  if (getComputedStyle(parent).position === 'static') {
+    parent.style.position = 'relative'
+  }
+
+  const overlay = document.createElement('div')
+  overlay.className = 'cl-overlay'
+  const panel = document.createElement('div')
+  panel.className = 'cl-panel'
+  overlay.appendChild(panel)
+  parent.appendChild(overlay)
+
+  return { overlay, panel }
+}
+
 export class ClDomRenderer {
   private overlay: HTMLDivElement | null = null
   private panel: HTMLDivElement | null = null
@@ -26,26 +58,10 @@ export class ClDomRenderer {
    * Returns the inner panel element for content.
    */
   createOverlay(scene: Phaser.Scene): HTMLDivElement {
-    injectClStyles()
-
-    const canvas = scene.game.canvas
-    const parent = canvas.parentElement!
-
-    const parentPos = getComputedStyle(parent).position
-    if (parentPos === 'static') {
-      parent.style.position = 'relative'
-    }
-
-    this.overlay = document.createElement('div')
-    this.overlay.className = 'cl-overlay'
-
-    this.panel = document.createElement('div')
-    this.panel.className = 'cl-panel'
-    this.overlay.appendChild(this.panel)
-
-    parent.appendChild(this.overlay)
-
-    return this.panel
+    const { overlay, panel } = createChallengeOverlay(scene)
+    this.overlay = overlay
+    this.panel = panel
+    return panel
   }
 
   getOverlay(): HTMLDivElement | null {
@@ -72,7 +88,13 @@ export class ClDomRenderer {
           this.renderInfoCard(container, block)
           break
         case 'image':
-          this.renderImagePlaceholder(container, block)
+          this.renderImage(container, block)
+          break
+        case 'profPi':
+          this.renderProfPi(container, block)
+          break
+        case 'row':
+          this.renderRow(container, block)
           break
       }
     }
@@ -119,18 +141,55 @@ export class ClDomRenderer {
   // ── Private render methods ──
 
   private renderTextBlock(container: HTMLElement, block: ClContentBlock): void {
-    const raw = typeof block.value === 'string' ? block.value : resolveText(block.value)
-
     const div = document.createElement('div')
     div.className = 'cl-text-block'
+    div.innerHTML = this.formatText(resolveText(block.value))
+    container.appendChild(div)
+  }
 
+  /** Escaped text with ***bold*** / **bold** and `inline code` */
+  private formatText(raw: string): string {
     let html = escapeHtml(raw)
+    // Code-Life writes inline code as ```x```: make it `x` so backticks pair up (as info cards do)
+    html = html.replace(/```(.*?)```/g, '`$1`')
     html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong>$1</strong>')
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    html = highlightInlineCode(html)
+    return highlightInlineCode(html)
+  }
 
-    div.innerHTML = html
-    container.appendChild(div)
+  /** Prof Pi speaking: his face next to a speech bubble */
+  private renderProfPi(container: HTMLElement, block: ClContentBlock): void {
+    const row = document.createElement('div')
+    row.className = 'cl-profpi'
+
+    const faceUrl = courseImageUrls.get(PROF_PI_FACE)
+    if (faceUrl) {
+      const face = document.createElement('img')
+      face.className = 'cl-profpi-face'
+      face.src = faceUrl
+      face.alt = 'Prof Pi'
+      row.appendChild(face)
+    }
+
+    const bubble = document.createElement('div')
+    bubble.className = 'cl-profpi-bubble'
+    bubble.innerHTML = this.formatText(resolveText(block.value))
+    row.appendChild(bubble)
+
+    container.appendChild(row)
+  }
+
+  /** Blocks shown side by side (wraps on narrow screens) */
+  private renderRow(container: HTMLElement, block: ClContentBlock): void {
+    const row = document.createElement('div')
+    row.className = 'cl-row'
+    for (const child of block.children ?? []) {
+      const cell = document.createElement('div')
+      cell.className = 'cl-row-cell'
+      this.renderContentBlocks(cell, [child])
+      row.appendChild(cell)
+    }
+    container.appendChild(row)
   }
 
   private renderCodeBlock(container: HTMLElement, block: ClContentBlock): void {
@@ -213,13 +272,33 @@ export class ClDomRenderer {
     return html
   }
 
-  private renderImagePlaceholder(container: HTMLElement, block: ClContentBlock): void {
-    if (block.caption) {
+  private renderImage(container: HTMLElement, block: ClContentBlock): void {
+    const key = typeof block.value === 'string' ? block.value : ''
+    const url = courseImageUrls.get(key)
+    const caption = resolveText(block.caption)
+
+    // A few images don't exist in Code-Life either: keep the caption as a placeholder
+    if (!url) {
+      if (!caption) return
       const div = document.createElement('div')
       div.className = 'cl-image-placeholder'
-      const capVal = typeof block.caption === 'string' ? block.caption : resolveText(block.caption)
-      div.textContent = `[${capVal}]`
+      div.textContent = `[${caption}]`
       container.appendChild(div)
+      return
     }
+
+    const figure = document.createElement('figure')
+    figure.className = 'cl-figure'
+    const img = document.createElement('img')
+    img.src = url
+    img.alt = caption
+    img.loading = 'lazy'
+    figure.appendChild(img)
+    if (caption) {
+      const figcaption = document.createElement('figcaption')
+      figcaption.textContent = caption
+      figure.appendChild(figcaption)
+    }
+    container.appendChild(figure)
   }
 }

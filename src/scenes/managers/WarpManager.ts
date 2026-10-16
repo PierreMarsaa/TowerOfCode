@@ -4,6 +4,7 @@ import { i18n } from '@/i18n/I18nManager'
 import { getMapById } from '@/data/maps/MapRegistry'
 import { tileToPixel } from '@/utils/helpers'
 import { ensureSparkleTexture } from '@/utils/AnimationFactory'
+import { mapDisplayName } from '@/utils/i18n-helpers'
 import type { GridMovementSystem } from '@/systems/GridMovementSystem'
 import type { Direction, MapData } from '@/data/types'
 import { SCENE } from '@/utils/constants'
@@ -16,6 +17,9 @@ export class WarpManager {
   private sparkleEmitter: Phaser.GameObjects.Particles.ParticleEmitter
   isTransitioning = false
   private lastTeleportId: string | null = null
+  private toastStairKey: string | null = null // "coming soon" warp the player is standing on
+  /** Called after the player is teleported within the map (e.g. to move the companion) */
+  onTeleport?: () => void
 
   constructor(
     scene: Phaser.Scene,
@@ -67,6 +71,7 @@ export class WarpManager {
         this.lastTeleportId = target.id
         this.isTransitioning = false
         this.gridMovement.unfreeze()
+        this.onTeleport?.()
       }
       return
     }
@@ -83,16 +88,17 @@ export class WarpManager {
     const stair = this.mapData.stairs.find(
       s => s.tileX === playerTile.x && s.tileY === playerTile.y
     )
-    if (!stair) return
+    if (!stair) {
+      this.toastStairKey = null
+      return
+    }
 
     if (stair.targetMapId === null) {
-      this.isTransitioning = true
-      this.gridMovement.freeze()
+      // Show "coming soon" once per step onto the warp, not every frame/second
+      const key = `${stair.tileX},${stair.tileY}`
+      if (this.toastStairKey === key) return
+      this.toastStairKey = key
       this.showToast(i18n.t('stairs_coming_soon'))
-      this.scene.time.delayedCall(1500, () => {
-        this.gridMovement.unfreeze()
-        this.isTransitioning = false
-      })
       return
     }
 
@@ -102,10 +108,9 @@ export class WarpManager {
     this.gridMovement.freeze()
     this.sparkleEmitter.emitParticleAt(this.player.sprite.x, this.player.sprite.y)
     const targetMap = getMapById(stair.targetMapId)
-    const mapNameKey = `${stair.targetMapId.replace('-', '_')}_name`
     this.scene.scene.launch(SCENE.TRANSITION, {
       mapId: stair.targetMapId,
-      mapName: targetMap ? i18n.t(mapNameKey) : stair.targetMapId,
+      mapName: targetMap ? mapDisplayName(targetMap) : stair.targetMapId,
       fromDirection,
       fromMapId: this.mapData.id,
     })
@@ -130,11 +135,7 @@ export class WarpManager {
         targets: toast,
         alpha: 0,
         duration: 500,
-        onComplete: () => {
-          toast.destroy()
-          this.isTransitioning = false
-          this.gridMovement.unfreeze()
-        },
+        onComplete: () => toast.destroy(),
       })
     })
   }

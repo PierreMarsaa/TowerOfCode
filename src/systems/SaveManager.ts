@@ -1,10 +1,19 @@
 import { SAVE_KEY } from '@/config/game.config'
 import type { SaveData } from '@/data/types'
 
-const DEFAULT_SAVE: SaveData = {
-  language: 'fr',
-  currentMap: 'map-01',
-  completedChallenges: [],
+/** A brand-new save. A factory (not a shared constant) so arrays are never shared between saves. */
+function freshSave(): SaveData {
+  return {
+    language: 'fr',
+    currentMap: 'map-01',
+    completedChallenges: [],
+    defeatedTrainers: [],
+    companion: 'zap',
+  }
+}
+
+function isStringArray(value: unknown): value is string[] {
+  return Array.isArray(value) && value.every(v => typeof v === 'string')
 }
 
 class SaveManagerImpl {
@@ -14,22 +23,46 @@ class SaveManagerImpl {
     this.data = this.load()
   }
 
+  /** Read the save, tolerating missing fields, old formats and corrupt JSON */
   private load(): SaveData {
-    const raw = localStorage.getItem(SAVE_KEY)
-    if (raw) {
-      const parsed = JSON.parse(raw) as SaveData & { currentFloor?: string }
+    const fresh = freshSave()
+    const raw = this.readRaw()
+    if (!raw) return fresh
+
+    try {
+      const parsed = JSON.parse(raw) as Partial<SaveData> & { currentFloor?: unknown }
       // Migrate old saves that used "currentFloor" / "floor-" prefix
-      if ('currentFloor' in parsed) {
-        parsed.currentMap = (parsed.currentFloor as string).replace('floor-', 'map-')
-        delete parsed.currentFloor
+      const legacyMap = typeof parsed.currentFloor === 'string'
+        ? parsed.currentFloor.replace('floor-', 'map-')
+        : undefined
+      return {
+        language: parsed.language === 'en' || parsed.language === 'fr' ? parsed.language : fresh.language,
+        currentMap: typeof parsed.currentMap === 'string' ? parsed.currentMap : legacyMap ?? fresh.currentMap,
+        completedChallenges: isStringArray(parsed.completedChallenges) ? [...parsed.completedChallenges] : [],
+        defeatedTrainers: isStringArray(parsed.defeatedTrainers) ? [...parsed.defeatedTrainers] : [],
+        // Saves from before Zap was given out get Zap; an explicit null (no companion) is kept
+        companion: parsed.companion === undefined ? fresh.companion : parsed.companion,
       }
-      return parsed as SaveData
+    } catch (e) {
+      console.warn('Save data is corrupt — starting fresh', e)
+      return fresh
     }
-    return { ...DEFAULT_SAVE, completedChallenges: [] }
+  }
+
+  private readRaw(): string | null {
+    try {
+      return localStorage.getItem(SAVE_KEY)
+    } catch {
+      return null // storage blocked (private mode, sandboxed iframe)
+    }
   }
 
   save(): void {
-    localStorage.setItem(SAVE_KEY, JSON.stringify(this.data))
+    try {
+      localStorage.setItem(SAVE_KEY, JSON.stringify(this.data))
+    } catch (e) {
+      console.warn('Could not write save data', e)
+    }
   }
 
   getData(): SaveData {
@@ -37,7 +70,7 @@ class SaveManagerImpl {
   }
 
   hasSave(): boolean {
-    return localStorage.getItem(SAVE_KEY) !== null
+    return this.readRaw() !== null
   }
 
   completeChallenge(id: string): void {
@@ -49,6 +82,17 @@ class SaveManagerImpl {
 
   isChallengeCompleted(id: string): boolean {
     return this.data.completedChallenges.includes(id)
+  }
+
+  defeatTrainer(trainerId: string): void {
+    if (!this.data.defeatedTrainers.includes(trainerId)) {
+      this.data.defeatedTrainers.push(trainerId)
+      this.save()
+    }
+  }
+
+  isTrainerDefeated(trainerId: string): boolean {
+    return this.data.defeatedTrainers.includes(trainerId)
   }
 
   setCurrentMap(mapId: string): void {
@@ -79,8 +123,9 @@ class SaveManagerImpl {
     this.save()
   }
 
+  /** New game: wipe progress but keep the player's language choice */
   reset(): void {
-    this.data = { ...DEFAULT_SAVE, completedChallenges: [] }
+    this.data = { ...freshSave(), language: this.data.language }
     this.save()
   }
 }

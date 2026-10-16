@@ -1,6 +1,18 @@
 import { ChallengeBase } from '@/challenges/ChallengeBase'
-import type { ClMatchingPairsConfig } from '@/data/types'
+import type { ClMatchingPairsConfig, ClMatchingValue } from '@/data/types'
 import { resolveText } from '@/utils/i18n-helpers'
+
+/** Display text of a term or match: plain or localized, without markdown fences */
+function valueText(v: ClMatchingValue): string {
+  return resolveText(v.value).replace(/```/g, '')
+}
+
+/** Code values keep their line breaks and read left-aligned */
+function styleAsCode(btn: HTMLButtonElement, v: ClMatchingValue): void {
+  if (v.type !== 'codeBlock') return
+  btn.style.whiteSpace = 'pre'
+  btn.style.textAlign = 'left'
+}
 
 export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfig> {
   private config!: ClMatchingPairsConfig
@@ -94,7 +106,8 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
     for (let i = 0; i < pairs.length; i++) {
       const termBtn = document.createElement('button')
       termBtn.className = 'cl-match-item'
-      termBtn.textContent = pairs[i].term.value.replace(/```/g, '')
+      termBtn.textContent = valueText(pairs[i].term)
+      styleAsCode(termBtn, pairs[i].term)
       termBtn.addEventListener('click', () => {
         if (this.answered || this.lockedTerms.has(i)) return
         this.selectedTerm = i
@@ -107,12 +120,11 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
       this.termEls.push(termBtn)
 
       const matchPair = pairs[this.shuffledMatchIndices[i]]
-      const matchVal = typeof matchPair.match.value === 'string'
-        ? matchPair.match.value : resolveText(matchPair.match.value)
 
       const matchBtn = document.createElement('button')
       matchBtn.className = 'cl-match-item'
-      matchBtn.textContent = matchVal.replace(/```/g, '')
+      matchBtn.textContent = valueText(matchPair.match)
+      styleAsCode(matchBtn, matchPair.match)
       matchBtn.addEventListener('click', () => {
         if (this.answered || this.lockedMatches.has(i)) return
         this.selectedMatch = i
@@ -258,9 +270,7 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
 
   /** Resolve the display text of a match value */
   private getMatchText(pairIdx: number): string {
-    const pair = this.config.content.exercise.pairs[pairIdx]
-    const val = pair.match.value
-    return (typeof val === 'string' ? val : resolveText(val)).replace(/```/g, '')
+    return valueText(this.config.content.exercise.pairs[pairIdx].match)
   }
 
   private checkPair(termIdx: number, matchDisplayIdx: number): void {

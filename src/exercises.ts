@@ -1,36 +1,35 @@
 import Phaser from 'phaser'
-import { getAllChallenges } from '@/data/challenges'
+import { getAllChallenges, getChapterOf } from '@/data/challenges'
 import { createChallenge } from '@/challenges/ChallengeRegistry'
 import type { IChallenge } from '@/challenges/IChallenge'
-import type { ChallengeConfig } from '@/data/types'
 import { saveManager } from '@/systems/SaveManager'
 import { i18n } from '@/i18n/I18nManager'
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from '@/config/game.config'
+import { resolveText } from '@/utils/i18n-helpers'
 
 // ── Populate exercise table ──
 
+// Same language as the game (the save is shared with it)
+i18n.setLanguage(saveManager.getData().language)
+
 const challenges = getAllChallenges()
 const tbody = document.getElementById('exercise-table')!
-const lang = i18n.getLanguage()
 
 challenges.forEach((config, index) => {
   const tr = document.createElement('tr')
 
   const typeLabel = config.type
-  const name = getExerciseName(config, lang)
+  const name = resolveText(config.title)
 
   tr.innerHTML = `
     <td class="id-cell">${escapeHtml(config.id)}</td>
     <td class="type-cell">${typeLabel}</td>
+    <td class="chapter-cell">${escapeHtml(getChapterOf(config.id)?.key ?? '—')}</td>
     <td class="title-cell">${escapeHtml(name)}</td>
   `
   tr.addEventListener('click', () => openChallenge(index))
   tbody.appendChild(tr)
 })
-
-function getExerciseName(config: ChallengeConfig, lang: 'en' | 'fr'): string {
-  return config.title[lang]
-}
 
 function escapeHtml(s: string): string {
   const el = document.createElement('span')
@@ -41,6 +40,7 @@ function escapeHtml(s: string): string {
 // ── Challenge launcher ──
 
 let game: Phaser.Game | null = null
+let activeChallenge: IChallenge | null = null
 
 const listView = document.getElementById('list-view')!
 const challengeView = document.getElementById('challenge-view')!
@@ -53,8 +53,6 @@ function openChallenge(index: number) {
   listView.style.display = 'none'
   challengeView.style.display = 'block'
   backBtn.style.display = 'block'
-
-  let activeChallenge: IChallenge | null = null
 
   // Minimal Phaser game with just the challenge
   game = new Phaser.Game({
@@ -103,6 +101,11 @@ function openChallenge(index: number) {
 }
 
 function closeChallenge() {
+  // Destroy the challenge first: it owns a DOM overlay and a document key handler
+  if (activeChallenge) {
+    activeChallenge.destroy()
+    activeChallenge = null
+  }
   if (game) {
     game.destroy(true)
     game = null
@@ -117,6 +120,6 @@ backBtn.addEventListener('click', closeChallenge)
 // ESC on the page level (when no Phaser game is running) goes back to list
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && !game) {
-    window.location.href = '/'
+    window.location.href = import.meta.env.BASE_URL
   }
 })

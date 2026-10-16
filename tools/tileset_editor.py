@@ -7,7 +7,7 @@ from PIL import Image, ImageTk, ImageDraw
 import os, math, sys
 
 DEFAULT_IMAGE = os.path.join(os.path.dirname(__file__),
-    '..', 'public', 'assets', 'inspi', '16.png')
+    '..', 'design', 'inspi', '16.png')
 
 
 class TilesetEditor:

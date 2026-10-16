@@ -1,0 +1,170 @@
+[
+  {
+    "id": "python_10_11_3",
+    "lang": "en",
+    "expect": "pass",
+    "note": "in-place difference_update, own print wording",
+    "code": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\nmy_team.difference_update(banned_list)\nprint('Clean team:', my_team, 'clean?', my_team.isdisjoint(banned_list))\n"
+  },
+  {
+    "id": "python_10_11_3",
+    "lang": "en",
+    "expect": "pass",
+    "note": "set comprehension instead of the - operator",
+    "code": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\nmy_team = {c for c in my_team if c not in banned_list}\nok = len(my_team & banned_list) == 0\nprint(my_team, ok)\n"
+  },
+  {
+    "id": "python_10_11_3",
+    "lang": "en",
+    "expect": "fail",
+    "note": "intersection instead of difference",
+    "code": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\nmy_team = my_team & banned_list\nprint(my_team)\n"
+  },
+  {
+    "id": "python_10_11_3",
+    "lang": "en",
+    "expect": "fail",
+    "note": "only prints, team never updated",
+    "code": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\nprint(my_team - banned_list)\n"
+  },
+  {
+    "id": "python_10_11_3",
+    "lang": "en",
+    "expect": "fail",
+    "note": "syntax error",
+    "code": "my_team = {'Aquachu', 'Pyrochu'\nprint(my_team)\n"
+  },
+  {
+    "id": "python_13_10_2",
+    "lang": "en",
+    "expect": "pass",
+    "note": "sum() with a generator instead of the loop",
+    "code": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    return 0\n\ndef calculate_total_stats(codemon):\n  return sum(v for k, v in codemon.items() if k != 'name')\n\naquachu = {'name': 'Aquachu', 'hp': 100, 'attack': 50, 'defense': 30}\nprint(calculate_total_stats(aquachu))\n"
+  },
+  {
+    "id": "python_13_10_2",
+    "lang": "en",
+    "expect": "fail",
+    "note": "function returns only hp",
+    "code": "def calculate_total_stats(codemon):\n  return codemon['hp']\n\naquachu = {'name': 'Aquachu', 'hp': 100, 'attack': 50, 'defense': 30}\nprint(calculate_total_stats(aquachu))\n"
+  },
+  {
+    "id": "python_13_10_2",
+    "lang": "en",
+    "expect": "fail",
+    "note": "function never written",
+    "code": "aquachu = {'name': 'Aquachu', 'hp': 100, 'attack': 50, 'defense': 30}\nprint(180)\n"
+  },
+  {
+    "id": "python_7_2_11",
+    "lang": "en",
+    "expect": "pass",
+    "note": "builds the same final list another way",
+    "code": "my_team = []\nmy_team = my_team + ['Pyrochu']\nmy_team = ['Aquachu'] + my_team\nmy_team += ['Florachu', 'Zap', 'Rockachu']\nprint('My dream team:', my_team)\n"
+  },
+  {
+    "id": "python_7_2_11",
+    "lang": "en",
+    "expect": "fail",
+    "note": "Aquachu appended instead of inserted first",
+    "code": "my_team = []\nmy_team.append('Pyrochu')\nmy_team.append('Aquachu')\nmy_team.append('Florachu')\nmy_team.extend(['Zap', 'Rockachu'])\nprint(my_team)\n"
+  },
+  {
+    "id": "python_11_2_11",
+    "lang": "en",
+    "expect": "pass",
+    "note": "+= and update() instead of get()",
+    "code": "codemon = {'name': 'Pyrochu', 'type': 'fire', 'level': 10, 'power': 50}\nprint(codemon['name'], codemon['level'])\ncodemon['level'] += 5\ncodemon['power'] += 20\ncodemon.update({'wins': 1, 'hp': 120})\nprint(codemon)\n"
+  },
+  {
+    "id": "python_11_2_11",
+    "lang": "en",
+    "expect": "fail",
+    "note": "hp set to 100 instead of 120",
+    "code": "codemon = {'name': 'Pyrochu', 'type': 'fire', 'level': 10, 'power': 50}\ncodemon['level'] += 5\ncodemon['power'] += 20\ncodemon['wins'] = 1\ncodemon['hp'] = 100\nprint(codemon)\n"
+  },
+  {
+    "id": "python_9_6_1",
+    "lang": "en",
+    "expect": "pass",
+    "note": "different loop variable name",
+    "code": "hp = 100\nfor i in range(5):\n    hp = hp - 10\n    print(hp)\n"
+  },
+  {
+    "id": "python_9_6_1",
+    "lang": "en",
+    "expect": "pass",
+    "note": "while loop instead of for",
+    "code": "hp = 100\nfights = 0\nwhile fights < 5:\n    hp -= 10\n    fights += 1\n    print('HP:', hp)\n"
+  },
+  {
+    "id": "python_9_6_1",
+    "lang": "en",
+    "expect": "fail",
+    "note": "only 4 battles",
+    "code": "hp = 100\nfor battle in range(4):\n    hp -= 10\n    print(hp)\n"
+  },
+  {
+    "id": "python_9_2_11",
+    "lang": "fr",
+    "expect": "pass",
+    "note": "French names from the French starter, own loop",
+    "code": "sante = 50\ndegats = 7\ntour = 1\nwhile sante > 0:\n    sante -= degats\n    print('Tour', tour, ':', max(sante, 0))\n    tour += 1\n"
+  },
+  {
+    "id": "python_9_2_11",
+    "lang": "fr",
+    "expect": "fail",
+    "note": "English names in the French exercise (the starter named them sante/tour)",
+    "code": "health = 50\ndamage = 7\nturn = 1\nwhile health > 0:\n    health -= damage\n    turn += 1\n"
+  },
+  {
+    "id": "python_10_2_12",
+    "lang": "en",
+    "expect": "pass",
+    "note": "set operators instead of add/update/remove/discard",
+    "code": "battle_team = {'Aquachu', 'Pyrochu', 'Rockachu'}\nbattle_team |= {'Zap', 'Florachu', 'Shadowchu', 'Aquachu'}\nbattle_team -= {'Rockachu', 'Pyrochu'}\nprint(battle_team, len(battle_team))\n"
+  },
+  {
+    "id": "python_2_1_8",
+    "lang": "en",
+    "expect": "self",
+    "note": "free name and value: stays self-checked",
+    "code": "pet = 'Florachu'\nprint(pet)\npet = 'Zap'\nprint(pet)\n"
+  },
+  {
+    "id": "python_9_5_1",
+    "lang": "en",
+    "expect": "self",
+    "note": "print-only loop: stays self-checked",
+    "code": "team = ['Aquachu', 'Pyrochu', 'Florachu', 'Rockachu']\nfor n, c in enumerate(team, 1):\n    print(n, c)\n"
+  },
+  {
+    "id": "python_2_3_6",
+    "lang": "en",
+    "expect": "pass",
+    "note": "learner picks their own age and height",
+    "code": "age = 41\nheight = 1.62\nprint(age)\nprint(height)\n"
+  },
+  {
+    "id": "python_2_3_6",
+    "lang": "en",
+    "expect": "fail",
+    "note": "age stored as text instead of a number",
+    "code": "age = \"41\"\nheight = 1.62\nprint(age)\nprint(height)\n"
+  },
+  {
+    "id": "python_2_5_6",
+    "lang": "en",
+    "expect": "pass",
+    "note": "own introduction",
+    "code": "introduce_yourself = \"Hi, I'm Pierre and I love Python\"\nprint(introduce_yourself)\n"
+  },
+  {
+    "id": "python_14_8_12",
+    "lang": "en",
+    "expect": "self",
+    "note": "uses random: stays self-checked",
+    "code": "print('anything')\n"
+  }
+]

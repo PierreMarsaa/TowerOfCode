@@ -1,0 +1,5733 @@
+[
+  {
+    "id": "python_15_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What is a Class?",
+      "fr": "C'est quoi une classe ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Until now, you've used Python's built-in types: `str`, `int`, `list`... But what if you want to create your ***own*** type? Imagine you want to represent a Codémon — it has a name, a type, a level. You could use a dictionary... but Python lets you create a ***class*** instead!",
+            "fr": "Jusqu'ici, tu as utilisé les types intégrés de Python : `str`, `int`, `list`... Mais si tu veux créer ton ***propre*** type ? Imagine que tu veux représenter un Codémon — il a un nom, un type, un niveau. Tu pourrais utiliser un dictionnaire... mais Python te permet de créer une ***classe*** à la place !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A class is like a ***blueprint***. Just like a Codémon blueprint describes what every Codémon should have (name, type, level), a class describes what your custom objects should look like.",
+            "fr": "Une classe, c'est comme un ***plan de construction***. De la même manière qu'un plan de Codémon décrit ce que chaque Codémon doit avoir (nom, type, niveau), une classe décrit à quoi tes objets personnalisés doivent ressembler."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n    pass\n\nmyCdm = Codemon()\nprint(type(myCdm))",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "We just created our first class! `class Codemon:` defines the blueprint. `Codemon()` creates an ***object*** (also called an ***instance***) from that blueprint.",
+            "fr": "On vient de créer notre première classe ! `class Codemon:` définit le plan. `Codemon()` crée un ***objet*** (aussi appelé une ***instance***) à partir de ce plan."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "OOP meaning",
+              "fr": "Signification de POO"
+            },
+            "content": {
+              "en": "OOP stands for ***Object-Oriented Programming***. It's the programming paradigm we are going to talk about in the few next chapters. It organizes code around objects and their interactions.",
+              "fr": "POO signifie ***Programmation Orientée Objet***. C'est le paradigme de programmation dont nous allons parler dans les prochains chapitres. Il organise le code autour des objets et de leurs interactions."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "The __init__ Method",
+      "fr": "La méthode __init__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "An empty class isn't very useful. We need to give our Codémon some data when we create it. That's what `__init__` does — it's a special method that runs ***automatically*** when you create an object.",
+            "fr": "Une classe vide n'est pas très utile. On doit donner des données à notre Codémon quand on le crée. C'est ce que fait `__init__` — c'est une méthode spéciale qui s'exécute ***automatiquement*** quand tu crées un objet."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self):\n    print(\"A new Codémon is born!\")\n\nmyCdm = Codemon()",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "See? We didn't call `__init__` ourselves — Python calls it automatically when we write `Codemon()`.",
+            "fr": "Tu vois ? On n'a pas appelé `__init__` nous-mêmes — Python l'appelle automatiquement quand on écrit `Codemon()`."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Why the double underscores?",
+              "fr": "Pourquoi les doubles underscores ?"
+            },
+            "content": {
+              "en": "`__init__` stands for \"initialize\". The double underscores `__` around the name tell Python this is a **special method** — one that Python calls automatically for you.",
+              "fr": "`__init__` signifie \"initialize\" (initialiser). Les doubles underscores `__` autour du nom indiquent à Python que c'est une **méthode spéciale** — une méthode que Python appelle automatiquement pour toi."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Adding Attributes",
+      "fr": "Ajouter des attributs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now let's store actual data in our object. We use `self` to attach ***attributes*** (variables) to the object. `self` refers to the ***current object being created***.",
+            "fr": "Maintenant, stockons de vraies données dans notre objet. On utilise `self` pour attacher des ***attributs*** (variables) à l'objet. `self` fait référence à l'***objet en cours de création***."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, element):\n    self.name = name\n    self.element = element\n\nmyCdm = Codemon(\"Aquachu\", \"Water\")\nprint(myCdm.name)\nprint(myCdm.element)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`self.name = name` stores the value inside the object. Later, we access it with `myCdm.name`. Each object has its ***own*** copy of these attributes.",
+            "fr": "`self.name = name` stocke la valeur dans l'objet. Ensuite, on y accède avec `myCdm.name`. Chaque objet a sa ***propre*** copie de ces attributs."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_1_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Multiple Objects",
+      "fr": "Plusieurs objets"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The whole point of a class is to create ***multiple objects*** from the same blueprint. Each object has its own data.",
+            "fr": "L'intérêt d'une classe, c'est de créer ***plusieurs objets*** à partir du même plan. Chaque objet a ses propres données."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, element):\n    self.name = name\n    self.element = element\n\na = Codemon(\"Aquachu\", \"Water\")\np = Codemon(\"Pyrochu\", \"Fire\")\nprint(a.name, a.element)\nprint(p.name, p.element)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Same class, but `a` and `p` are ***different objects*** with different data. Changing one doesn't affect the other.",
+            "fr": "Même classe, mais `a` et `p` sont des ***objets différents*** avec des données différentes. Modifier l'un n'affecte pas l'autre."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_1_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Creating an Object",
+      "fr": "Créer un objet"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, level):\n    self.name = name\n    self.level = level\n\nmyCdm = Codemon(\"Florachu\", 25)\nprint(myCdm.level)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Florachu",
+              "fr": "Florachu"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "25",
+              "fr": "25"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Codemon",
+              "fr": "Codemon"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`myCdm.level` accesses the `level` attribute that was set in `__init__`.",
+        "fr": "`myCdm.level` accède à l'attribut `level` qui a été défini dans `__init__`."
+      }
+    }
+  },
+  {
+    "id": "python_15_1_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Create a Class",
+      "fr": "Créer une classe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the class to store a Codémon's name and level.",
+            "fr": "Complète la classe pour stocker le nom et le niveau d'un Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, level):\n    {{}}.name = name\n    self.{{}} = level\n\nmyCdm = Codemon(\"Zap\", 10)\nprint(myCdm.name, myCdm.level)",
+        "options": [
+          "self",
+          "level",
+          "name",
+          "myCdm",
+          "__init__"
+        ],
+        "correctAnswers": {
+          "1": "self",
+          "2": "level"
+        }
+      },
+      "hint": {
+        "en": "`self` refers to the current object. Attributes are set with `self.attribute_name`.",
+        "fr": "`self` fait référence à l'objet actuel. Les attributs sont définis avec `self.nom_attribut`."
+      }
+    }
+  },
+  {
+    "id": "python_15_1_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Default Values",
+      "fr": "Valeurs par défaut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can give parameters ***default values*** in `__init__`. This way, you don't always have to provide every argument.",
+            "fr": "Tu peux donner des ***valeurs par défaut*** aux paramètres dans `__init__`. Comme ça, tu n'es pas obligé de fournir chaque argument à chaque fois."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, element, level=1):\n    self.name = name\n    self.element = element\n    self.level = level\n\nstarter = Codemon(\"Aquachu\", \"Water\")\nveteran = Codemon(\"Pyrochu\", \"Fire\", 50)\nprint(f\"{starter.name}: Level {starter.level}\")\nprint(f\"{veteran.name}: Level {veteran.level}\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`starter` didn't specify a level, so it defaults to 1. `veteran` passed 50, so that's used instead.",
+            "fr": "`starter` n'a pas précisé de niveau, donc il vaut 1 par défaut. `veteran` a passé 50, donc c'est cette valeur qui est utilisée."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_1_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Default Values",
+      "fr": "Valeurs par défaut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\nmyCdm = Codemon(\"Rockachu\")\nprint(myCdm.hp)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Rockachu",
+              "fr": "Rockachu"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "100",
+              "fr": "100"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: missing argument",
+              "fr": "Erreur : argument manquant"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "None",
+              "fr": "None"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "When a parameter has a default value, it's used if no argument is provided.",
+        "fr": "Quand un paramètre a une valeur par défaut, elle est utilisée si aucun argument n'est fourni."
+      }
+    }
+  },
+  {
+    "id": "python_15_1_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Using Default Values",
+      "fr": "Utiliser les valeurs par défaut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the class so that HP defaults to 100.",
+            "fr": "Complète la classe pour que les HP valent 100 par défaut."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, hp={{}}):\n    self.name = name\n    self.hp = hp\n\nmyCdm = Codemon(\"Metachu\")\nprint(myCdm.{{}})",
+        "options": [
+          "100",
+          "0",
+          "hp",
+          "name",
+          "None"
+        ],
+        "correctAnswers": {
+          "1": "100",
+          "2": "hp"
+        }
+      },
+      "hint": {
+        "en": "The default value goes after `=` in the parameter. Access it with `myCdm.attribute`.",
+        "fr": "La valeur par défaut se met après `=` dans le paramètre. On y accède avec `myCdm.attribut`."
+      }
+    }
+  },
+  {
+    "id": "python_15_1_10",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Modifying Attributes",
+      "fr": "Modifier les attributs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Once an object is created, you can ***modify*** its attributes directly. Just assign a new value with `=`.",
+            "fr": "Une fois un objet créé, tu peux ***modifier*** ses attributs directement. Il suffit d'assigner une nouvelle valeur avec `=`."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\nmyCdm = Codemon(\"Aquachu\")\nprint(f\"{myCdm.name}: Level {myCdm.level}\")\nmyCdm.level = 15\nprint(f\"{myCdm.name}: Level {myCdm.level}\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can also ***add new attributes*** after creation: `myCdm.nickname = \"Aqua\"`. But it's better practice to define all attributes in `__init__`.",
+            "fr": "Tu peux aussi ***ajouter de nouveaux attributs*** après la création : `myCdm.nickname = \"Aqua\"`. Mais c'est une meilleure pratique de définir tous les attributs dans `__init__`."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_1_11",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Modify an Attribute",
+      "fr": "Modifier un attribut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to level up the Codémon by 1.",
+            "fr": "Complète le code pour augmenter le niveau du Codémon de 1."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\nmyCdm = Codemon(\"Pyrochu\", 10)\nmyCdm.{{}} = myCdm.level + {{}}\nprint(f\"{myCdm.name}: Level {myCdm.level}\")",
+        "options": [
+          "level",
+          "name",
+          "1",
+          "5",
+          "10"
+        ],
+        "correctAnswers": {
+          "1": "level",
+          "2": "1"
+        }
+      },
+      "hint": {
+        "en": "To level up by 1, set the `level` attribute to its current value plus `1`.",
+        "fr": "Pour monter d'un niveau, définis l'attribut `level` à sa valeur actuelle plus `1`."
+      }
+    }
+  },
+  {
+    "id": "python_15_1_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Independent Objects",
+      "fr": "Objets indépendants"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\na = Codemon(\"Aquachu\", 10)\nb = Codemon(\"Aquachu\", 10)\na.level = 50\nprint(b.level)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "50",
+              "fr": "50"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "10",
+              "fr": "10"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "1",
+              "fr": "1"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Each object is ***independent***. Changing one doesn't change the other, even if they have the same name.",
+        "fr": "Chaque objet est ***indépendant***. Modifier l'un ne modifie pas l'autre, même s'ils ont le même nom."
+      }
+    }
+  },
+  {
+    "id": "python_15_1_13",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "OOP Vocabulary",
+      "fr": "Vocabulaire POO"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each term with its definition.",
+            "fr": "Associe chaque terme à sa définition."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Class",
+                "fr": "Classe"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "A blueprint for creating objects",
+                "fr": "Un plan pour créer des objets"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Object",
+                "fr": "Objet"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "An instance created from a class",
+                "fr": "Une instance créée à partir d'une classe"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`__init__`",
+                "fr": "`__init__`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Method called when creating an object",
+                "fr": "Méthode appelée lors de la création d'un objet"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`self`",
+                "fr": "`self`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Refers to the current object",
+                "fr": "Fait référence à l'objet actuel"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Attribute",
+                "fr": "Attribut"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "A variable stored inside an object",
+                "fr": "Une variable stockée dans un objet"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_15_1_14",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "classes",
+        "objects",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Create a Codémon Class",
+      "fr": "Créer une classe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a `Codemon` class with:\n\n1. `__init__` that takes `name`, `element`, `level` (default 1), and `hp` (default 100)\n2. Create 3 different Codémon\n3. Level up the first one by 5\n4. Print all 3 like: `\"Aquachu (Water) - Lv.6 - HP: 100\"`",
+            "fr": "Crée une classe `Codemon` avec :\n\n1. `__init__` qui prend `name`, `element`, `level` (défaut 1) et `hp` (défaut 100)\n2. Crée 3 Codémon différents\n3. Augmente le niveau du premier de 5\n4. Affiche les 3 comme : `\"Aquachu (Water) - Lv.6 - HP: 100\"`"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create the Codemon class\n\n# Create 3 Codémon\n\n# Level up the first one by 5\n\n# Print all 3",
+          "fr": "# Créer la classe Codemon\n\n# Créer 3 Codémon\n\n# Augmenter le niveau du premier de 5\n\n# Afficher les 3"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "class Codemon:\n  def __init__(self, name, element, level=1, hp=100):\n    self.name = name\n    self.element = element\n    self.level = level\n    self.hp = hp\n\na = Codemon(\"Aquachu\", \"Water\")\np = Codemon(\"Pyrochu\", \"Fire\", 25, 200)\nf = Codemon(\"Florachu\", \"Plant\", 10)\n\na.level = a.level + 5\n\nfor myCdm in [a, p, f]:\n  print(f\"{myCdm.name} ({myCdm.element}) - Lv.{myCdm.level} - HP: {myCdm.hp}\")"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What are Methods?",
+      "fr": "C'est quoi une méthode ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You know how to store data in objects with attributes. But objects can also ***do things***! A method is a ***function defined inside a class***. Just like `\"hello\".upper()` calls the `upper()` method on a string, you can create your own methods.",
+            "fr": "Tu sais comment stocker des données dans des objets avec des attributs. Mais les objets peuvent aussi ***faire des choses*** ! Une méthode est une ***fonction définie dans une classe***. Tout comme `\"hello\".upper()` appelle la méthode `upper()` sur une chaîne, tu peux créer tes propres méthodes."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\n  def greet(self):\n    print(f\"Hi! I'm {self.name}!\")\n\nmyCdm = Codemon(\"Aquachu\")\nmyCdm.greet()",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`greet` is a method. Just like `__init__`, it takes `self` as the first parameter. We call it with `myCdm.greet()` — Python automatically passes `myCdm` as `self`.",
+            "fr": "`greet` est une méthode. Tout comme `__init__`, elle prend `self` comme premier paramètre. On l'appelle avec `myCdm.greet()` — Python passe automatiquement `myCdm` comme `self`."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Methods use self",
+      "fr": "Les méthodes utilisent self"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Inside a method, `self` gives you access to all the object's attributes. This is how methods know which Codémon they're working with.",
+            "fr": "Dans une méthode, `self` te donne accès à tous les attributs de l'objet. C'est comme ça que les méthodes savent avec quel Codémon elles travaillent."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\n  def level_up(self):\n    self.level += 1\n    print(f\"{self.name} is now level {self.level}!\")\n\nmyCdm = Codemon(\"Pyrochu\", 10)\nmyCdm.level_up()\nmyCdm.level_up()",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`level_up()` reads `self.name` and modifies `self.level`. The changes are ***permanent*** — the object keeps the new level.",
+            "fr": "`level_up()` lit `self.name` et modifie `self.level`. Les changements sont ***permanents*** — l'objet garde le nouveau niveau."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_2_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Methods with Parameters",
+      "fr": "Méthodes avec paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Methods can take extra parameters, just like regular functions. The only difference is that `self` is always first.",
+            "fr": "Les méthodes peuvent prendre des paramètres supplémentaires, tout comme les fonctions classiques. La seule différence est que `self` est toujours en premier."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\n  def attack(self, target):\n    print(f\"{self.name} attacks {target.name}!\")\n    target.level -= 1\n\na = Codemon(\"Aquachu\", 10)\np = Codemon(\"Pyrochu\", 8)\na.attack(p)\nprint(f\"{p.name}: Level {p.level}\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here `attack` takes another Codémon object as a parameter. One object can interact with another!",
+            "fr": "Ici `attack` prend un autre objet Codémon en paramètre. Un objet peut interagir avec un autre !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_2_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Define a Method",
+      "fr": "Définir une méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the method that heals the Codémon by a given amount.",
+            "fr": "Complète la méthode qui soigne le Codémon d'un montant donné."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\n  def heal({{}}, amount):\n    self.{{}} += amount\n\nmyCdm = Codemon(\"Aquachu\", 50)\nmyCdm.heal(30)\nprint(myCdm.hp)",
+        "options": [
+          "self",
+          "hp",
+          "amount",
+          "name",
+          "myCdm"
+        ],
+        "correctAnswers": {
+          "1": "self",
+          "2": "hp"
+        }
+      },
+      "hint": {
+        "en": "Every method's first parameter is `self`. The method needs to modify the HP attribute.",
+        "fr": "Le premier paramètre de chaque méthode est `self`. La méthode doit modifier l'attribut HP."
+      }
+    }
+  },
+  {
+    "id": "python_15_2_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Calling a Method",
+      "fr": "Appeler une méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\n  def take_damage(self, amount):\n    self.hp -= amount\n\nmyCdm = Codemon(\"Florachu\")\nmyCdm.take_damage(30)\nprint(myCdm.hp)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "100",
+              "fr": "100"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "70",
+              "fr": "70"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "30",
+              "fr": "30"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`take_damage(30)` subtracts 30 from the starting HP of 100.",
+        "fr": "`take_damage(30)` soustrait 30 des HP de départ qui sont 100."
+      }
+    }
+  },
+  {
+    "id": "python_15_2_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Method with Parameter",
+      "fr": "Méthode avec paramètre"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the method to transfer HP from one Codémon to another.",
+            "fr": "Complète la méthode pour transférer des HP d'un Codémon à un autre."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\n  def give_hp(self, target, amount):\n    self.hp -= amount\n    {{}}.hp += {{}}\n\na = Codemon(\"Aquachu\")\nb = Codemon(\"Pyrochu\", 50)\na.give_hp(b, 20)\nprint(a.hp, b.hp)",
+        "options": [
+          "target",
+          "amount",
+          "self",
+          "hp",
+          "20"
+        ],
+        "correctAnswers": {
+          "1": "target",
+          "2": "amount"
+        }
+      },
+      "hint": {
+        "en": "The `target` is the other Codémon receiving the HP. The `amount` is how much to add.",
+        "fr": "Le `target` est l'autre Codémon qui reçoit les HP. Le `amount` est la quantité à ajouter."
+      }
+    }
+  },
+  {
+    "id": "python_15_2_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Methods that Return Values",
+      "fr": "Méthodes qui retournent des valeurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Methods can also ***return*** values, just like functions. Use the `return` keyword.",
+            "fr": "Les méthodes peuvent aussi ***retourner*** des valeurs, comme les fonctions. Utilise le mot-clé `return`."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self.name = name\n    self.level = level\n    self.hp = hp\n\n  def power(self):\n    return self.level * 10 + self.hp\n\nmyCdm = Codemon(\"Rockachu\", 15, 120)\nprint(f\"Power: {myCdm.power()}\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`power()` calculates and returns a value. It doesn't modify the object — it just computes something from its attributes.",
+            "fr": "`power()` calcule et retourne une valeur. Elle ne modifie pas l'objet — elle calcule simplement quelque chose à partir de ses attributs."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_2_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Return from Method",
+      "fr": "Retour d'une méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\n  def is_evolved(self):\n    return self.level >= 20\n\nmyCdm = Codemon(\"Metachu\", 25)\nprint(myCdm.is_evolved())",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "True",
+              "fr": "True"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "False",
+              "fr": "False"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "25",
+              "fr": "25"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "`is_evolved()` checks if the level is 20 or more and returns a boolean.",
+        "fr": "`is_evolved()` vérifie si le niveau est 20 ou plus et retourne un booléen."
+      }
+    }
+  },
+  {
+    "id": "python_15_2_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "The __str__ Method",
+      "fr": "La méthode __str__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When you `print()` an object, Python shows something ugly like `<__main__.Codemon object>`.",
+            "fr": "Quand tu fais `print()` sur un objet, Python affiche quelque chose de moche comme `<__main__.Codemon object>`."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, element, level=1):\n    self.name = name\n    self.element = element\n    self.level = level\n\nmyCdm = Codemon(\"Aquachu\", \"Water\", 15)\nprint(myCdm)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can fix this by defining the `__str__` method — it tells Python how to convert your object to a string.",
+            "fr": "Tu peux corriger ça en définissant la méthode `__str__` — elle dit à Python comment convertir ton objet en chaîne de caractères."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, element, level=1):\n    self.name = name\n    self.element = element\n    self.level = level\n\n  def __str__(self):\n    return f\"{self.name} ({self.element}) - Lv.{self.level}\"\n\nmyCdm = Codemon(\"Aquachu\", \"Water\", 15)\nprint(myCdm)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Now `print(myCdm)` shows something readable! `__str__` must ***return*** a string (not print it).",
+            "fr": "Maintenant `print(myCdm)` affiche quelque chose de lisible ! `__str__` doit ***retourner*** une chaîne (pas l'afficher avec print)."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_2_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Define __str__",
+      "fr": "Définir __str__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the `__str__` method to display the Codémon nicely.",
+            "fr": "Complète la méthode `__str__` pour afficher le Codémon proprement."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\n  def {{}}(self):\n    return f\"{self.name}: {self.hp} HP\"\n\nmyCdm = Codemon(\"Pyrochu\", 85)\nprint({{}})",
+        "options": [
+          "__str__",
+          "__init__",
+          "myCdm",
+          "self",
+          "str"
+        ],
+        "correctAnswers": {
+          "1": "__str__",
+          "2": "myCdm"
+        }
+      },
+      "hint": {
+        "en": "The special method for string representation starts and ends with double underscores. To print an object, you pass the variable to `print()`.",
+        "fr": "La méthode spéciale pour la représentation en chaîne commence et finit par des doubles underscores. Pour afficher un objet, tu passes la variable à `print()`."
+      }
+    }
+  },
+  {
+    "id": "python_15_2_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Methods Vocabulary",
+      "fr": "Vocabulaire des méthodes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each piece of code with its description.",
+            "fr": "Associe chaque morceau de code à sa description."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`def method(self):`",
+                "fr": "`def method(self):`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "A method with no extra parameters",
+                "fr": "Une méthode sans paramètre supplémentaire"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`def method(self, x):`",
+                "fr": "`def method(self, x):`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "A method with one extra parameter",
+                "fr": "Une méthode avec un paramètre supplémentaire"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`self.attribute`",
+                "fr": "`self.attribute`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Access the object's data inside a method",
+                "fr": "Accéder aux données de l'objet dans une méthode"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`return value`",
+                "fr": "`return value`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Give back a result from a method",
+                "fr": "Renvoyer un résultat depuis une méthode"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`__str__(self)`",
+                "fr": "`__str__(self)`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Controls how print() displays the object",
+                "fr": "Contrôle comment print() affiche l'objet"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_15_2_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle Methods",
+      "fr": "Méthodes de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Add methods to the Codémon class:\n\n1. `attack(self, target)` — reduces target's HP by `self.level * 2`. Print `\"X attacks Y!\"`\n2. `is_alive(self)` — returns `True` if HP > 0\n3. `__str__(self)` — returns `\"Name (Lv.X) - HP: Y\"`\n4. Create 2 Codémon, have them attack each other, then print both",
+            "fr": "Ajoute des méthodes à la classe Codémon :\n\n1. `attack(self, target)` — réduit les HP de la cible de `self.level * 2`. Affiche `\"X attacks Y!\"`\n2. `is_alive(self)` — retourne `True` si HP > 0\n3. `__str__(self)` — retourne `\"Name (Lv.X) - HP: Y\"`\n4. Crée 2 Codémon, fais-les s'attaquer, puis affiche les deux"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self.name = name\n    self.level = level\n    self.hp = hp\n\n  # Add attack method\n\n  # Add is_alive method\n\n  # Add __str__ method\n\n# Create 2 Codémon and battle!",
+          "fr": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self.name = name\n    self.level = level\n    self.hp = hp\n\n  # Ajouter la méthode attack\n\n  # Ajouter la méthode is_alive\n\n  # Ajouter la méthode __str__\n\n# Créer 2 Codémon et combattre !"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self.name = name\n    self.level = level\n    self.hp = hp\n\n  def attack(self, target):\n    damage = self.level * 2\n    target.hp -= damage\n    print(f\"{self.name} attacks {target.name}!\")\n\n  def is_alive(self):\n    return self.hp > 0\n\n  def __str__(self):\n    return f\"{self.name} (Lv.{self.level}) - HP: {self.hp}\"\n\na = Codemon(\"Aquachu\", 15, 100)\np = Codemon(\"Pyrochu\", 12, 80)\n\na.attack(p)\np.attack(a)\n\nprint(a)\nprint(p)",
+            "fr": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self.name = name\n    self.level = level\n    self.hp = hp\n\n  def attack(self, target):\n    damage = self.level * 2\n    target.hp -= damage\n    print(f\"{self.name} attacks {target.name}!\")\n\n  def is_alive(self):\n    return self.hp > 0\n\n  def __str__(self):\n    return f\"{self.name} (Lv.{self.level}) - HP: {self.hp}\"\n\na = Codemon(\"Aquachu\", 15, 100)\np = Codemon(\"Pyrochu\", 12, 80)\n\na.attack(p)\np.attack(a)\n\nprint(a)\nprint(p)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What is Inheritance?",
+      "fr": "Qu'est-ce que l'héritage ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Imagine all Codémon share some things (name, level, HP), but each type has something special. Water Codémon have a `swim()` method, Fire ones have `burn()`. Instead of rewriting everything, you can create a ***parent class*** and have children ***inherit*** from it.",
+            "fr": "Imagine que tous les Codémon partagent certaines choses (nom, niveau, HP), mais chaque type a quelque chose de spécial. Les Codémon Eau ont une méthode `swim()`, les Feu ont `burn()`. Au lieu de tout réécrire, tu peux créer une ***classe parent*** et faire en sorte que les enfants en ***héritent***."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Inheritance means a ***child class*** gets all the attributes and methods of its ***parent class*** — for free!",
+            "fr": "L'héritage signifie qu'une ***classe enfant*** obtient tous les attributs et méthodes de sa ***classe parent*** — gratuitement !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\n  def __str__(self):\n    return f\"{self.name} (Lv.{self.level})\"\n\nclass WaterCodemon(Codemon):\n  pass\n\nmyCdm = WaterCodemon(\"Aquachu\", 15)\nprint(myCdm)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`WaterCodemon(Codemon)` — the parentheses mean \"inherits from Codemon\". Even though `WaterCodemon` is empty (`pass`), it already has `__init__` and `__str__` from the parent!",
+            "fr": "`WaterCodemon(Codemon)` — les parenthèses signifient \"hérite de Codemon\". Même si `WaterCodemon` est vide (`pass`), il possède déjà `__init__` et `__str__` du parent !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_3_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Adding Child Methods",
+      "fr": "Ajouter des méthodes enfant"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The child class can have its own methods ***in addition*** to the parent's.",
+            "fr": "La classe enfant peut avoir ses propres méthodes ***en plus*** de celles du parent."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\nclass WaterCodemon(Codemon):\n  def swim(self):\n    print(f\"{self.name} is swimming!\")\n\nmyCdm = WaterCodemon(\"Aquachu\", 10)\nmyCdm.swim()\nprint(myCdm.name)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`WaterCodemon` has `swim()` (its own) AND `name`, `level` (from the parent). The parent class does NOT have `swim()`.",
+            "fr": "`WaterCodemon` a `swim()` (sa propre méthode) ET `name`, `level` (du parent). La classe parent n'a PAS `swim()`."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_3_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Inheritance Basics",
+      "fr": "Les bases de l'héritage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when this code runs?",
+            "fr": "Que se passe-t-il quand ce code s'exécute ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def greet(self):\n    print(\"Hi!\")\n\nclass FireCodemon(Codemon):\n  def burn(self):\n    print(\"Fire!\")\n\nmyCdm = FireCodemon()\nmyCdm.greet()",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Prints \"Hi!\"",
+              "fr": "Affiche \"Hi!\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: FireCodemon has no greet",
+              "fr": "Erreur : FireCodemon n'a pas de greet"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Prints \"Fire!\"",
+              "fr": "Affiche \"Fire!\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Prints nothing",
+              "fr": "N'affiche rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Child classes inherit all methods from the parent.",
+        "fr": "Les classes enfant héritent de toutes les méthodes du parent."
+      }
+    }
+  },
+  {
+    "id": "python_15_3_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Create a Child Class",
+      "fr": "Créer une classe enfant"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a `PlantCodemon` that inherits from `Codemon`.",
+            "fr": "Complète le code pour créer un `PlantCodemon` qui hérite de `Codemon`."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n\nclass PlantCodemon({{}}):\n  def grow(self):\n    print(f\"{self.name} is growing!\")\n\nmyCdm = PlantCodemon(\"Florachu\")\nmyCdm.{{}}",
+        "options": [
+          "Codemon",
+          "PlantCodemon",
+          "grow()",
+          "name",
+          "__init__"
+        ],
+        "correctAnswers": {
+          "1": "Codemon",
+          "2": "grow()"
+        }
+      },
+      "hint": {
+        "en": "Put the parent class name in parentheses. Then call the child's own method.",
+        "fr": "Mets le nom de la classe parent entre parenthèses. Puis appelle la méthode propre à l'enfant."
+      }
+    }
+  },
+  {
+    "id": "python_15_3_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "super() — Extending __init__",
+      "fr": "super() — Étendre __init__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What if the child class needs ***extra attributes*** that the parent doesn't have? Use `super()` to call the parent's `__init__`, then add your own attributes.",
+            "fr": "Et si la classe enfant a besoin d'***attributs supplémentaires*** que le parent n'a pas ? Utilise `super()` pour appeler le `__init__` du parent, puis ajoute tes propres attributs."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\nclass WaterCodemon(Codemon):\n  def __init__(self, name, level=1, swim_speed=5):\n    super().__init__(name, level)\n    self.swim_speed = swim_speed\n\nmyCdm = WaterCodemon(\"Aquachu\", 10, 8)\nprint(f\"{myCdm.name}, Speed: {myCdm.swim_speed}\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`super().__init__(name, level)` calls the ***parent's*** `__init__`. Then `self.swim_speed = swim_speed` adds the extra attribute. This way you don't repeat the parent's code!",
+            "fr": "`super().__init__(name, level)` appelle le `__init__` du ***parent***. Puis `self.swim_speed = swim_speed` ajoute l'attribut supplémentaire. Comme ça tu ne répètes pas le code du parent !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_3_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Using super()",
+      "fr": "Utiliser super()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the child class to add a `power` attribute.",
+            "fr": "Complète la classe enfant pour ajouter un attribut `power`."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\nclass FireCodemon(Codemon):\n  def __init__(self, name, level=1, power=10):\n    {{}}().__init__(name, level)\n    self.{{}} = power\n\nmyCdm = FireCodemon(\"Pyrochu\", 5, 20)\nprint(myCdm.name, myCdm.power)",
+        "options": [
+          "super",
+          "power",
+          "self",
+          "Codemon",
+          "level"
+        ],
+        "correctAnswers": {
+          "1": "super",
+          "2": "power"
+        }
+      },
+      "hint": {
+        "en": "`super()` calls the parent. The new attribute needs to be stored with `self`.",
+        "fr": "`super()` appelle le parent. Le nouvel attribut doit être stocké avec `self`."
+      }
+    }
+  },
+  {
+    "id": "python_15_3_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Method Overriding",
+      "fr": "Surcharge de méthodes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A child class can ***replace*** a parent's method by defining it again. This is called ***method overriding***.",
+            "fr": "Une classe enfant peut ***remplacer*** une méthode du parent en la redéfinissant. C'est ce qu'on appelle la ***surcharge de méthodes***."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n\n  def attack(self):\n    print(f\"{self.name} attacks!\")\n\nclass WaterCodemon(Codemon):\n  def attack(self):\n    print(f\"{self.name} uses Water Splash!\")\n\nmyCdm = WaterCodemon(\"Aquachu\")\nmyCdm.attack()",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`WaterCodemon` has its own `attack()` which ***overrides*** the parent's version. When you call `myCdm.attack()`, Python uses the child's version.",
+            "fr": "`WaterCodemon` a son propre `attack()` qui ***surcharge*** la version du parent. Quand tu appelles `myCdm.attack()`, Python utilise la version de l'enfant."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_3_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Method Overriding",
+      "fr": "Surcharge de méthodes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is printed?",
+            "fr": "Qu'est-ce qui est affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def sound(self):\n    return \"...\"\n\nclass FireCodemon(Codemon):\n  def sound(self):\n    return \"ROAR!\"\n\nmyCdm = FireCodemon()\nprint(myCdm.sound())",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "...",
+              "fr": "..."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "ROAR!",
+              "fr": "ROAR!"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "None",
+              "fr": "None"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "When a child class defines the same method as the parent, the child's version is used.",
+        "fr": "Quand une classe enfant définit la même méthode que le parent, c'est la version de l'enfant qui est utilisée."
+      }
+    }
+  },
+  {
+    "id": "python_15_3_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Calling the Parent's Method with super()",
+      "fr": "Appeler la méthode du parent avec super()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Sometimes you want to ***extend*** the parent's method instead of completely replacing it. Use `super().method()` to call the parent's version first.",
+            "fr": "Parfois tu veux ***étendre*** la méthode du parent au lieu de la remplacer complètement. Utilise `super().method()` pour appeler d'abord la version du parent."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\n  def describe(self):\n    return f\"{self.name} (Lv.{self.level})\"\n\nclass WaterCodemon(Codemon):\n  def describe(self):\n    base = super().describe()\n    return base + \" [Water]\"\n\nmyCdm = WaterCodemon(\"Aquachu\", 15)\nprint(myCdm.describe())",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`super().describe()` calls the parent's `describe()` method, then we add `\" [Water]\"` to the result. The child ***extends*** the parent's behavior instead of replacing it.",
+            "fr": "`super().describe()` appelle la méthode `describe()` du parent, puis on ajoute `\" [Water]\"` au résultat. L'enfant ***étend*** le comportement du parent au lieu de le remplacer."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_3_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Override with super()",
+      "fr": "Surcharger avec super()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the child's `__str__` to add the element to the parent's string.",
+            "fr": "Complète le `__str__` de l'enfant pour ajouter l'élément à la chaîne du parent."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n  def __str__(self):\n    return self.name\n\nclass FireCodemon(Codemon):\n  def __str__(self):\n    return {{}}().__str__() + \" [Fire]\"\n\nmyCdm = FireCodemon(\"Pyrochu\")\n{{}}",
+        "options": [
+          "super",
+          "self",
+          "print(myCdm)",
+          "print(self)",
+          "Codemon"
+        ],
+        "correctAnswers": {
+          "1": "super",
+          "2": "print(myCdm)"
+        }
+      },
+      "hint": {
+        "en": "Use `super()` to call the parent's `__str__`, then add to the result.",
+        "fr": "Utilise `super()` pour appeler le `__str__` du parent, puis ajoute au résultat."
+      }
+    }
+  },
+  {
+    "id": "python_15_3_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Inheritance Concepts",
+      "fr": "Concepts de l'héritage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each piece of code with its description.",
+            "fr": "Associe chaque morceau de code à sa description."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`class Child(Parent):`",
+                "fr": "`class Child(Parent):`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Child inherits from Parent",
+                "fr": "Child hérite de Parent"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`super().__init__()`",
+                "fr": "`super().__init__()`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Call the parent's constructor",
+                "fr": "Appeler le constructeur du parent"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Method overriding",
+                "fr": "Surcharge de méthode"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Child replaces parent's method",
+                "fr": "L'enfant remplace la méthode du parent"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`super().method()`",
+                "fr": "`super().method()`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Call the parent's version of a method",
+                "fr": "Appeler la version du parent d'une méthode"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`pass`",
+                "fr": "`pass`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Empty class body (inherits everything)",
+                "fr": "Corps de classe vide (hérite de tout)"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_15_3_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "inheritance",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Codémon Types",
+      "fr": "Types de Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a Codémon hierarchy!\n\n1. A parent `Codemon` class with `name`, `level`, `hp`, and an `attack(target)` method that does `level * 2` damage\n2. A `WaterCodemon(Codemon)` that overrides `attack` to do `level * 3` damage and prints \"Water attack!\"\n3. Create one of each, have the WaterCodemon attack the basic Codémon, and print the target's HP after",
+            "fr": "Crée une hiérarchie de Codémon !\n\n1. Une classe parent `Codemon` avec `name`, `level`, `hp`, et une méthode `attack(target)` qui fait `level * 2` de dégâts\n2. Un `WaterCodemon(Codemon)` qui surcharge `attack` pour faire `level * 3` de dégâts et affiche \"Water attack!\"\n3. Crée un de chaque, fais attaquer le WaterCodemon sur le Codémon basique, et affiche les HP de la cible après"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Parent class\n\n# WaterCodemon\n\n# Create and battle",
+          "fr": "# Classe parent\n\n# WaterCodemon\n\n# Créer et combattre"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self.name = name\n    self.level = level\n    self.hp = hp\n\n  def attack(self, target):\n    damage = self.level * 2\n    target.hp -= damage\n    print(f\"{self.name} attacks {target.name} for {damage} damage!\")\n\nclass WaterCodemon(Codemon):\n  def attack(self, target):\n    damage = self.level * 3\n    target.hp -= damage\n    print(f\"{self.name} uses Water attack on {target.name} for {damage} damage!\")\n\ntarget = Codemon(\"Rockachu\", 10, 200)\nwater = WaterCodemon(\"Aquachu\", 10)\n\nwater.attack(target)\nprint(f\"{target.name}: {target.hp} HP\")",
+            "fr": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self.name = name\n    self.level = level\n    self.hp = hp\n\n  def attack(self, target):\n    damage = self.level * 2\n    target.hp -= damage\n    print(f\"{self.name} attacks {target.name} for {damage} damage!\")\n\nclass WaterCodemon(Codemon):\n  def attack(self, target):\n    damage = self.level * 3\n    target.hp -= damage\n    print(f\"{self.name} uses Water attack on {target.name} for {damage} damage!\")\n\ntarget = Codemon(\"Rockachu\", 10, 200)\nwater = WaterCodemon(\"Aquachu\", 10)\n\nwater.attack(target)\nprint(f\"{target.name}: {target.hp} HP\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "The Problem",
+      "fr": "Le problème"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Right now, anyone can change any attribute directly. What if someone sets HP to -500? Or changes the name to an empty string? That could break your game!",
+            "fr": "Pour l'instant, n'importe qui peut modifier n'importe quel attribut directement. Et si quelqu'un met les HP à -500 ? Ou change le nom en chaîne vide ? Ça pourrait casser ton jeu !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\nmyCdm = Codemon(\"Aquachu\")\nmyCdm.hp = -500\nprint(f\"{myCdm.name}: {myCdm.hp} HP\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Oops! A Codémon with -500 HP doesn't make sense. ***Encapsulation*** is about ***controlling*** how attributes are accessed and modified.",
+            "fr": "Oups ! Un Codémon avec -500 HP n'a aucun sens. L'***encapsulation*** consiste à ***contrôler*** comment les attributs sont consultés et modifiés."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_4_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Private Attributes",
+      "fr": "Attributs privés"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can signal that an attribute is ***private*** (not meant to be accessed directly) by prefixing it with an underscore `_`.",
+            "fr": "En Python, tu peux signaler qu'un attribut est ***privé*** (pas censé être accédé directement) en le préfixant avec un underscore `_`."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self._name = name\n    self._hp = hp\n\nmyCdm = Codemon(\"Aquachu\")\nprint(myCdm._name)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The `_` prefix is a ***convention*** — it tells other programmers \"don't touch this directly\". Python won't stop you, but you're ***not supposed to***.",
+            "fr": "Le préfixe `_` est une ***convention*** — il dit aux autres programmeurs \"ne touche pas ça directement\". Python ne t'empêchera pas, mais tu n'es ***pas censé le faire***."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Convention, not enforcement",
+              "fr": "Convention, pas obligation"
+            },
+            "content": {
+              "en": "In Python, `_name` is a convention — it still works if accessed directly. Some languages like Java actually enforce private attributes. Python trusts the programmer!",
+              "fr": "En Python, `_name` est une convention — ça fonctionne toujours si on y accède directement. Certains langages comme Java imposent réellement les attributs privés. Python fait confiance au programmeur !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_4_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Getters — Safe Access",
+      "fr": "Getters — Accès sécurisé"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Instead of accessing `_hp` directly, we create a method to ***read*** it. This is called a ***getter***.",
+            "fr": "Au lieu d'accéder à `_hp` directement, on crée une méthode pour le ***lire***. C'est ce qu'on appelle un ***getter***."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self._name = name\n    self._hp = hp\n\n  def get_hp(self):\n    return self._hp\n\n  def get_name(self):\n    return self._name\n\nmyCdm = Codemon(\"Pyrochu\", 80)\nprint(myCdm.get_name())\nprint(myCdm.get_hp())",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Now we access data through methods, not directly. This lets us ***control*** what gets returned.",
+            "fr": "Maintenant on accède aux données via des méthodes, pas directement. Ça nous permet de ***contrôler*** ce qui est retourné."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_4_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Setters — Safe Modification",
+      "fr": "Setters — Modification sécurisée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A ***setter*** is a method that modifies a private attribute with ***validation*** — it checks if the new value makes sense before applying it.",
+            "fr": "Un ***setter*** est une méthode qui modifie un attribut privé avec ***validation*** — elle vérifie si la nouvelle valeur a du sens avant de l'appliquer."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self._name = name\n    self._hp = hp\n\n  def get_hp(self):\n    return self._hp\n\n  def set_hp(self, value):\n    if value < 0:\n      self._hp = 0\n    else:\n      self._hp = value\n\nmyCdm = Codemon(\"Aquachu\")\nmyCdm.set_hp(-500)\nprint(myCdm.get_hp())",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Now even if someone tries to set HP to -500, the setter clamps it to 0. The data is ***protected***!",
+            "fr": "Maintenant même si quelqu'un essaie de mettre les HP à -500, le setter les ramène à 0. Les données sont ***protégées*** !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_4_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Why Encapsulate?",
+      "fr": "Pourquoi encapsuler ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the main benefit of using getters and setters?",
+            "fr": "Quel est le principal avantage d'utiliser des getters et setters ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Makes the code longer",
+              "fr": "Rend le code plus long"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Controls how data is accessed and modified",
+              "fr": "Contrôle comment les données sont consultées et modifiées"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Makes the code run faster",
+              "fr": "Rend le code plus rapide"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Hides the code from other programmers",
+              "fr": "Cache le code aux autres programmeurs"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Think about what happens when someone tries to set HP to -500 without a setter.",
+        "fr": "Réfléchis à ce qui se passe quand quelqu'un essaie de mettre les HP à -500 sans setter."
+      }
+    }
+  },
+  {
+    "id": "python_15_4_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Create a Getter",
+      "fr": "Créer un getter"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the getter method for the Codémon's name.",
+            "fr": "Complète la méthode getter pour le nom du Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name):\n    self._name = name\n\n  def get_name({{}}):\n    return self.{{}}\n\nmyCdm = Codemon(\"Florachu\")\nprint(myCdm.get_name())",
+        "options": [
+          "self",
+          "_name",
+          "name",
+          "myCdm",
+          "__name"
+        ],
+        "correctAnswers": {
+          "1": "self",
+          "2": "_name"
+        }
+      },
+      "hint": {
+        "en": "Getters take `self` and return the private attribute (with the `_` prefix).",
+        "fr": "Les getters prennent `self` et retournent l'attribut privé (avec le préfixe `_`)."
+      }
+    }
+  },
+  {
+    "id": "python_15_4_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Create a Setter",
+      "fr": "Créer un setter"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the setter to prevent negative levels.",
+            "fr": "Complète le setter pour empêcher les niveaux négatifs."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, level=1):\n    self._name = name\n    self._level = level\n\n  def set_level(self, value):\n    if value {{}} 1:\n      self._level = 1\n    else:\n      self.{{}} = value\n\nmyCdm = Codemon(\"Zap\")\nmyCdm.set_level(-10)\nprint(myCdm._level)",
+        "options": [
+          "<",
+          ">",
+          "_level",
+          "level",
+          "=="
+        ],
+        "correctAnswers": {
+          "1": "<",
+          "2": "_level"
+        }
+      },
+      "hint": {
+        "en": "The condition checks if the value is negative. The private attribute has a `_` prefix.",
+        "fr": "La condition vérifie si la valeur est négative. L'attribut privé a un préfixe `_`."
+      }
+    }
+  },
+  {
+    "id": "python_15_4_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Setter Validation",
+      "fr": "Validation par setter"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is printed?",
+            "fr": "Qu'est-ce qui est affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self._hp = hp\n\n  def set_hp(self, value):\n    if value > 200:\n      self._hp = 200\n    elif value < 0:\n      self._hp = 0\n    else:\n      self._hp = value\n\nmyCdm = Codemon(\"Rockachu\")\nmyCdm.set_hp(999)\nprint(myCdm._hp)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "999",
+              "fr": "999"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "200",
+              "fr": "200"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "100",
+              "fr": "100"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "0",
+              "fr": "0"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "The setter has a maximum cap. What happens when the value exceeds 200?",
+        "fr": "Le setter a un plafond maximum. Que se passe-t-il quand la valeur dépasse 200 ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_4_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Putting It All Together",
+      "fr": "Tout assembler"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see a complete class with private attributes, getters, and setters working together.",
+            "fr": "Voyons une classe complète avec des attributs privés, des getters et des setters qui fonctionnent ensemble."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self._name = name\n    self._hp = hp\n\n  def get_name(self):\n    return self._name\n\n  def get_hp(self):\n    return self._hp\n\n  def set_hp(self, value):\n    self._hp = max(0, min(value, 200))\n\n  def take_damage(self, amount):\n    self.set_hp(self._hp - amount)\n\nmyCdm = Codemon(\"Metachu\", 100)\nmyCdm.take_damage(150)\nprint(f\"{myCdm.get_name()}: {myCdm.get_hp()} HP\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Even `take_damage` uses `set_hp` internally — so the validation ***always*** applies!",
+            "fr": "Même `take_damage` utilise `set_hp` en interne — donc la validation s'applique ***toujours*** !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "The max/min pattern",
+              "fr": "Le pattern max/min"
+            },
+            "content": {
+              "en": "`max(0, min(value, 200))` clamps the value between 0 and 200. It's a common pattern to enforce min/max bounds.",
+              "fr": "`max(0, min(value, 200))` limite la valeur entre 0 et 200. C'est un pattern courant pour imposer des bornes min/max."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_4_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Encapsulation Vocabulary",
+      "fr": "Vocabulaire de l'encapsulation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each concept with its description.",
+            "fr": "Associe chaque concept à sa description."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`_attribute`",
+                "fr": "`_attribute`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Convention for private attribute",
+                "fr": "Convention pour attribut privé"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Getter",
+                "fr": "Getter"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Method that reads a private attribute",
+                "fr": "Méthode qui lit un attribut privé"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Setter",
+                "fr": "Setter"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Method that modifies with validation",
+                "fr": "Méthode qui modifie avec validation"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Encapsulation",
+                "fr": "Encapsulation"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Controlling access to data",
+                "fr": "Contrôler l'accès aux données"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`self._hp = max(0, value)`",
+                "fr": "`self._hp = max(0, value)`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Prevents negative HP",
+                "fr": "Empêche les HP négatifs"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_15_4_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "encapsulation",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Protected Codémon",
+      "fr": "Codémon protégé"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a Codémon class with proper encapsulation:\n\n1. Private attributes: `_name`, `_level`, `_hp`\n2. Getter for each attribute\n3. `set_level(value)` — must be between 1 and 100\n4. `set_hp(value)` — must be between 0 and 999\n5. `level_up()` that uses `set_level` to increase level by 1\n6. Test by trying to set extreme values",
+            "fr": "Crée une classe Codémon avec une encapsulation correcte :\n\n1. Attributs privés : `_name`, `_level`, `_hp`\n2. Getter pour chaque attribut\n3. `set_level(value)` — doit être entre 1 et 100\n4. `set_hp(value)` — doit être entre 0 et 999\n5. `level_up()` qui utilise `set_level` pour augmenter le niveau de 1\n6. Teste en essayant de mettre des valeurs extrêmes"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    # Private attributes\n\n  # Getters\n\n  # Setters with validation\n\n  # level_up method\n\n# Test it",
+          "fr": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    # Attributs privés\n\n  # Getters\n\n  # Setters avec validation\n\n  # Méthode level_up\n\n# Tester"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self._name = name\n    self._level = level\n    self._hp = hp\n\n  def get_name(self):\n    return self._name\n\n  def get_level(self):\n    return self._level\n\n  def get_hp(self):\n    return self._hp\n\n  def set_level(self, value):\n    self._level = max(1, min(value, 100))\n\n  def set_hp(self, value):\n    self._hp = max(0, min(value, 999))\n\n  def level_up(self):\n    self.set_level(self._level + 1)\n\nmyCdm = Codemon(\"Aquachu\", 99)\nmyCdm.level_up()\nprint(f\"{myCdm.get_name()}: Level {myCdm.get_level()}\")\nmyCdm.level_up()\nprint(f\"{myCdm.get_name()}: Level {myCdm.get_level()}\")\nmyCdm.set_hp(-50)\nprint(f\"HP: {myCdm.get_hp()}\")",
+            "fr": "class Codemon:\n  def __init__(self, name, level=1, hp=100):\n    self._name = name\n    self._level = level\n    self._hp = hp\n\n  def get_name(self):\n    return self._name\n\n  def get_level(self):\n    return self._level\n\n  def get_hp(self):\n    return self._hp\n\n  def set_level(self, value):\n    self._level = max(1, min(value, 100))\n\n  def set_hp(self, value):\n    self._hp = max(0, min(value, 999))\n\n  def level_up(self):\n    self.set_level(self._level + 1)\n\nmyCdm = Codemon(\"Aquachu\", 99)\nmyCdm.level_up()\nprint(f\"{myCdm.get_name()}: Level {myCdm.get_level()}\")\nmyCdm.level_up()\nprint(f\"{myCdm.get_name()}: Level {myCdm.get_level()}\")\nmyCdm.set_hp(-50)\nprint(f\"HP: {myCdm.get_hp()}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_5_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What are Special Methods?",
+      "fr": "Qu'est-ce que les méthodes spéciales ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You already know `__init__` and `__str__`. These are called ***special methods*** (or ***dunder methods*** — double underscore). Python has many more! They let your objects work with operators like `+`, `==`, `<`, and even `len()`.",
+            "fr": "Tu connais déjà `__init__` et `__str__`. Ce sont des ***méthodes spéciales*** (ou ***méthodes dunder*** — double underscore). Python en a bien d'autres ! Elles permettent à tes objets de fonctionner avec les opérateurs comme `+`, `==`, `<`, et même `len()`."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "For example, when you write `len([1,2,3])`, Python actually calls the list's `__len__` method. Let's make our objects work the same way!",
+            "fr": "Par exemple, quand tu écris `len([1,2,3])`, Python appelle en fait la méthode `__len__` de la liste. Faisons fonctionner nos objets de la même façon !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Team:\n  def __init__(self, members):\n    self.members = members\n\n  def __len__(self):\n    return len(self.members)\n\nteam = Team([\"Aquachu\", \"Pyrochu\", \"Florachu\"])\nprint(len(team))",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "By defining `__len__`, we can use `len()` on our own objects! Python translates `len(team)` into `team.__len__()`.",
+            "fr": "En définissant `__len__`, on peut utiliser `len()` sur nos propres objets ! Python traduit `len(team)` en `team.__len__()`."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_5_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "__eq__ — Equality",
+      "fr": "__eq__ — Égalité"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "By default, `==` checks if two objects are the ***exact same object*** in memory, not if they have the same data. `__eq__` lets you define what \"equal\" means for your class.",
+            "fr": "Par défaut, `==` vérifie si deux objets sont ***exactement le même objet*** en mémoire, pas s'ils ont les mêmes données. `__eq__` te permet de définir ce que \"égal\" signifie pour ta classe."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level):\n    self.name = name\n    self.level = level\n\n  def __eq__(self, other):\n    return self.name == other.name\n\na = Codemon(\"Aquachu\", 10)\nb = Codemon(\"Aquachu\", 20)\nc = Codemon(\"Pyrochu\", 10)\nprint(a == b)\nprint(a == c)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Now `==` checks if two Codémon have the ***same name***, regardless of level. You decide what \"equal\" means!",
+            "fr": "Maintenant `==` vérifie si deux Codémon ont le ***même nom***, quel que soit le niveau. C'est toi qui décides ce que \"égal\" veut dire !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_5_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "__eq__ Behavior",
+      "fr": "Comportement de __eq__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is printed?",
+            "fr": "Qu'est-ce qui est affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, level):\n    self.name = name\n    self.level = level\n\n  def __eq__(self, other):\n    return self.level == other.level\n\na = Codemon(\"Aquachu\", 10)\nb = Codemon(\"Pyrochu\", 10)\nprint(a == b)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "True",
+              "fr": "True"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "False",
+              "fr": "False"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "None",
+              "fr": "None"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "This `__eq__` compares levels, not names. Do both Codémon have the same level?",
+        "fr": "Ce `__eq__` compare les niveaux, pas les noms. Les deux Codémon ont-ils le même niveau ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_5_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "__lt__ — Less Than",
+      "fr": "__lt__ — Inférieur à"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "`__lt__` defines the `<` operator. (lt = less than). This also makes `sorted()` work on your objects!",
+            "fr": "`__lt__` définit l'opérateur `<`. (lt = less than = inférieur à). Cela permet aussi à `sorted()` (qui permet de trier) de fonctionner sur tes objets !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level):\n    self.name = name\n    self.level = level\n\n  def __lt__(self, other):\n    return self.level < other.level\n\n  def __str__(self):\n    return f\"{self.name} (Lv.{self.level})\"\n\nteam = [Codemon(\"Pyrochu\", 25), Codemon(\"Aquachu\", 10), Codemon(\"Florachu\", 15)]\nteam.sort()\nfor myCdm in team:\n  print(myCdm)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "By defining `__lt__`, Python can sort our Codémon by level! `sorted()` and `.sort()` both use `<` under the hood.",
+            "fr": "En définissant `__lt__`, Python peut trier nos Codémon par niveau ! `sorted()` et `.sort()` utilisent tous les deux `<` en interne."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_5_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Define __len__",
+      "fr": "Définir __len__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the `__len__` method so `len(team)` returns the number of Codémon.",
+            "fr": "Complète la méthode `__len__` pour que `len(team)` retourne le nombre de Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Team:\n  def __init__(self, members):\n    self.members = members\n\n  def {{}}(self):\n    return len(self.{{}})\n\nteam = Team([\"Aquachu\", \"Pyrochu\"])\nprint(len(team))",
+        "options": [
+          "__len__",
+          "__str__",
+          "members",
+          "self",
+          "team"
+        ],
+        "correctAnswers": {
+          "1": "__len__",
+          "2": "members"
+        }
+      },
+      "hint": {
+        "en": "The special method for `len()` has double underscores around \"len\". It returns the count of the internal list.",
+        "fr": "La méthode spéciale pour `len()` a des doubles underscores autour de \"len\". Elle retourne le nombre d'éléments de la liste interne."
+      }
+    }
+  },
+  {
+    "id": "python_15_5_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "__add__ — The + Operator",
+      "fr": "__add__ — L'opérateur +"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "`__add__` defines what `+` does for your objects. You can make it do anything — merge teams, combine stats, etc.",
+            "fr": "`__add__` définit ce que `+` fait pour tes objets. Tu peux lui faire faire n'importe quoi — fusionner des équipes, combiner des stats, etc."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Team:\n  def __init__(self, members):\n    self.members = members\n\n  def __add__(self, other):\n    return Team(self.members + other.members)\n\n  def __str__(self):\n    return \", \".join(self.members)\n\nteam1 = Team([\"Aquachu\", \"Pyrochu\"])\nteam2 = Team([\"Florachu\", \"Zap\"])\ncombined = team1 + team2\nprint(combined)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "`team1 + team2` calls `team1.__add__(team2)`. It creates a ***new*** Team with all members combined!",
+            "fr": "`team1 + team2` appelle `team1.__add__(team2)`. Cela crée une ***nouvelle*** Team avec tous les membres combinés !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_5_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Define __eq__",
+      "fr": "Définir __eq__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete `__eq__` so two Codémon are equal if they have the same name and level.",
+            "fr": "Complète `__eq__` pour que deux Codémon soient égaux s'ils ont le même nom et le même niveau."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, level):\n    self.name = name\n    self.level = level\n\n  def __eq__(self, other):\n    return self.name == other.name and self.{{}} == other.{{}}\n\na = Codemon(\"Aquachu\", 10)\nb = Codemon(\"Aquachu\", 10)\nprint(a == b)",
+        "options": [
+          "level",
+          "name",
+          "self",
+          "other",
+          "hp",
+          "level",
+          "name",
+          "self",
+          "other",
+          "hp"
+        ],
+        "correctAnswers": {
+          "1": "level",
+          "2": "level"
+        }
+      },
+      "hint": {
+        "en": "Both the name AND the level must match for equality.",
+        "fr": "Le nom ET le niveau doivent correspondre pour l'égalité."
+      }
+    }
+  },
+  {
+    "id": "python_15_5_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "__add__ Result",
+      "fr": "Résultat de __add__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is printed?",
+            "fr": "Qu'est-ce qui est affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Team:\n  def __init__(self, members):\n    self.members = members\n\n  def __add__(self, other):\n    return Team(self.members + other.members)\n\n  def __len__(self):\n    return len(self.members)\n\na = Team([\"Aquachu\", \"Pyrochu\"])\nb = Team([\"Florachu\"])\nc = a + b\nprint(len(c))",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "2",
+              "fr": "2"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "3",
+              "fr": "3"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "1",
+              "fr": "1"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`+` combines both teams' members into one new team. Count all members.",
+        "fr": "`+` combine les membres des deux équipes en une nouvelle équipe. Compte tous les membres."
+      }
+    }
+  },
+  {
+    "id": "python_15_5_9",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Special Methods",
+      "fr": "Méthodes spéciales"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each special method with what it enables.",
+            "fr": "Associe chaque méthode spéciale avec ce qu'elle permet."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`__len__`",
+                "fr": "`__len__`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "`len(obj)` — get length",
+                "fr": "`len(obj)` — obtenir la longueur"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`__eq__`",
+                "fr": "`__eq__`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "`obj == other` — equality check",
+                "fr": "`obj == other` — vérifier l'égalité"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`__lt__`",
+                "fr": "`__lt__`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "`obj < other` — less than",
+                "fr": "`obj < other` — inférieur à"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`__add__`",
+                "fr": "`__add__`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "`obj + other` — addition",
+                "fr": "`obj + other` — addition"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "`__str__`",
+                "fr": "`__str__`"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "`print(obj)` — string display",
+                "fr": "`print(obj)` — affichage texte"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_15_5_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Sort by Level",
+      "fr": "Trier par niveau"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete `__lt__` to sort Codémon by level.",
+            "fr": "Complète `__lt__` pour trier les Codémon par niveau."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, level):\n    self.name = name\n    self.level = level\n\n  def {{}}(self, other):\n    return self.level {{}} other.level\n\n  def __str__(self):\n    return f\"{self.name}: Lv.{self.level}\"\n\nteam = [Codemon(\"Pyrochu\", 25), Codemon(\"Aquachu\", 5)]\nteam.sort()\nfor myCdm in team:\n  print(myCdm)",
+        "options": [
+          "__lt__",
+          "__eq__",
+          "<",
+          ">",
+          "=="
+        ],
+        "correctAnswers": {
+          "1": "__lt__",
+          "2": "<"
+        }
+      },
+      "hint": {
+        "en": "\"Less than\" uses `<`. The dunder method is `__lt__`.",
+        "fr": "\"Inférieur à\" utilise `<`. La méthode dunder est `__lt__`."
+      }
+    }
+  },
+  {
+    "id": "python_15_5_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "special-methods",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Full-featured Team Class",
+      "fr": "Classe Team complète"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a `Team` class with these special methods:\n\n1. `__init__` with a `name` and `members` list\n2. `__len__` — returns number of members\n3. `__add__` — merges two teams (use the first team's name)\n4. `__eq__` — two teams are equal if they have the same members\n5. `__str__` — returns `\"TeamName: member1, member2\"`\n6. Test all 4 operations",
+            "fr": "Crée une classe `Team` avec ces méthodes spéciales :\n\n1. `__init__` avec un `name` et une liste `members`\n2. `__len__` — retourne le nombre de membres\n3. `__add__` — fusionne deux équipes (utilise le nom de la première)\n4. `__eq__` — deux équipes sont égales si elles ont les mêmes membres\n5. `__str__` — retourne `\"TeamName: member1, member2\"`\n6. Teste les 4 opérations"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Team:\n  # __init__\n\n  # __len__\n\n  # __add__\n\n  # __eq__\n\n  # __str__\n\n# Test all operations",
+          "fr": "class Team:\n  # __init__\n\n  # __len__\n\n  # __add__\n\n  # __eq__\n\n  # __str__\n\n# Tester toutes les opérations"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Team:\n  def __init__(self, name, members):\n    self.name = name\n    self.members = members\n\n  def __len__(self):\n    return len(self.members)\n\n  def __add__(self, other):\n    return Team(self.name, self.members + other.members)\n\n  def __eq__(self, other):\n    return self.members == other.members\n\n  def __str__(self):\n    return f\"{self.name}: {', '.join(self.members)}\"\n\na = Team(\"Alpha\", [\"Aquachu\", \"Pyrochu\"])\nb = Team(\"Beta\", [\"Florachu\"])\nc = a + b\n\nprint(c)\nprint(f\"Size: {len(c)}\")\nprint(f\"Equal: {a == b}\")",
+            "fr": "class Team:\n  def __init__(self, name, members):\n    self.name = name\n    self.members = members\n\n  def __len__(self):\n    return len(self.members)\n\n  def __add__(self, other):\n    return Team(self.name, self.members + other.members)\n\n  def __eq__(self, other):\n    return self.members == other.members\n\n  def __str__(self):\n    return f\"{self.name}: {', '.join(self.members)}\"\n\na = Team(\"Alpha\", [\"Aquachu\", \"Pyrochu\"])\nb = Team(\"Beta\", [\"Florachu\"])\nc = a + b\n\nprint(c)\nprint(f\"Taille: {len(c)}\")\nprint(f\"Égaux: {a == b}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_6_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What is Composition?",
+      "fr": "Qu'est-ce que la composition ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Inheritance says \"a WaterCodemon ***is a*** Codemon\". But sometimes the relationship is \"***has a***\". A Team ***has*** Codémon. A Codémon ***has*** Moves. This is called ***composition*** — objects that contain other objects.",
+            "fr": "L'héritage dit \"un WaterCodemon ***est un*** Codemon\". Mais parfois la relation est \"***a un***\". Une Team ***a*** des Codémon. Un Codémon ***a*** des Moves. C'est la ***composition*** — des objets qui contiennent d'autres objets."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Move:\n  def __init__(self, name, power):\n    self.name = name\n    self.power = power\n\nclass Codemon:\n  def __init__(self, name, moves):\n    self.name = name\n    self.moves = moves\n\nsplash = Move(\"Splash\", 20)\nfireball = Move(\"Fireball\", 40)\nmyCdm = Codemon(\"Aquachu\", [splash, fireball])\nprint(myCdm.moves[0].name)\nprint(myCdm.moves[1].power)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A `Codemon` ***has*** a list of `Move` objects. We can access the move's attributes through the Codémon: `myCdm.moves[0].name`.",
+            "fr": "Un `Codemon` ***a*** une liste d'objets `Move`. On peut accéder aux attributs du move via le Codémon : `myCdm.moves[0].name`."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_6_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Why Composition?",
+      "fr": "Pourquoi la composition ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Composition keeps your code ***organized***. Each class handles its own responsibility. `Move` knows about power and type. `Codemon` knows about name, level, and which moves it has.",
+            "fr": "La composition garde ton code ***organisé***. Chaque classe gère sa propre responsabilité. `Move` connaît la puissance et le type. `Codemon` connaît le nom, le niveau, et quels moves il possède."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Move:\n  def __init__(self, name, power):\n  self.name = name\n  self.power = power\n\n  def __str__(self):\n  return f\"{self.name} ({self.power} dmg)\"\n\nclass Codemon:\n  def __init__(self, name, moves):\n  self.name = name\n  self.moves = moves\n\n  def best_move(self):\n  best = self.moves[0]\n  for move in self.moves:\n    if move.power > best.power:\n    best = move\n  return best\n\nmoves = [Move(\"Splash\", 20), Move(\"Fireball\", 40)]\nmyCdm = Codemon(\"Pyrochu\", moves)\nprint(myCdm.best_move())",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The `Codemon` class doesn't need to know ***how*** moves work internally — it just uses them. Each class has a clear job.",
+            "fr": "La classe `Codemon` n'a pas besoin de savoir ***comment*** les moves fonctionnent en interne — elle les utilise simplement. Chaque classe a un rôle clair."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_6_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Accessing Nested Objects",
+      "fr": "Accéder aux objets imbriqués"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is printed?",
+            "fr": "Qu'est-ce qui est affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Move:\n  def __init__(self, name, power):\n    self.name = name\n    self.power = power\n\nclass Codemon:\n  def __init__(self, name, moves):\n    self.name = name\n    self.moves = moves\n\nm = Move(\"Thunder\", 35)\nmyCdm = Codemon(\"Zap\", [m])\nprint(myCdm.moves[0].power)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Thunder",
+              "fr": "Thunder"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "35",
+              "fr": "35"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Zap",
+              "fr": "Zap"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`myCdm.moves[0]` gets the first Move object, then `.power` gets its power attribute.",
+        "fr": "`myCdm.moves[0]` récupère le premier objet Move, puis `.power` accède à son attribut puissance."
+      }
+    }
+  },
+  {
+    "id": "python_15_6_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Create Composition",
+      "fr": "Créer une composition"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code so the Codémon uses its move.",
+            "fr": "Complète le code pour que le Codémon utilise son move."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Move:\n  def __init__(self, name, power):\n    self.name = name\n    self.power = power\n\nclass Codemon:\n  def __init__(self, name, move):\n    self.name = name\n    self.move = move\n\n  def attack(self):\n    print(f\"{self.name} uses {self.{{}}.{{}}}!\")\n\nm = Move(\"Splash\", 20)\nmyCdm = Codemon(\"Aquachu\", m)\nmyCdm.attack()",
+        "options": [
+          "move",
+          "name",
+          "power",
+          "self",
+          "m"
+        ],
+        "correctAnswers": {
+          "1": "move",
+          "2": "name"
+        }
+      },
+      "hint": {
+        "en": "Access the move through `self.move`, then get the move's `name` attribute.",
+        "fr": "Accède au move via `self.move`, puis récupère l'attribut `name` du move."
+      }
+    }
+  },
+  {
+    "id": "python_15_6_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "A Team Class",
+      "fr": "Une classe Team"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's build a `Team` class that ***has*** a list of `Codemon` objects. The team manages adding members and displaying them.",
+            "fr": "Construisons une classe `Team` qui ***a*** une liste d'objets `Codemon`. L'équipe gère l'ajout de membres et leur affichage."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\nclass Team:\n  def __init__(self, name):\n    self.name = name\n    self.members = []\n\n  def add(self, codemon):\n    self.members.append(codemon)\n\n  def show(self):\n    print(f\"Team {self.name}:\")\n    for myCdm in self.members:\n      print(f\"  - {myCdm.name} (Lv.{myCdm.level})\")\n\nteam = Team(\"Alpha\")\nteam.add(Codemon(\"Aquachu\", 15))\nteam.add(Codemon(\"Pyrochu\", 20))\nteam.show()",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Try reading the code and understanding how the `Team` class uses composition to manage its `Codemon` members.",
+            "fr": "Essaie de lire le code et de comprendre comment la classe `Team` utilise la composition pour gérer ses membres `Codemon`."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_6_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Add to Team",
+      "fr": "Ajouter à l'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the `add` method to add a Codémon to the team.",
+            "fr": "Complète la méthode `add` pour ajouter un Codémon à l'équipe."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Team:\n  def __init__(self):\n    self.members = []\n\n  def add(self, codemon):\n    self.members.{{}}(codemon)\n\n  def size(self):\n    return {{}}(self.members)\n\nteam = Team()\nteam.add(\"Aquachu\")\nteam.add(\"Pyrochu\")\nprint(team.size())",
+        "options": [
+          "append",
+          "add",
+          "len",
+          "size",
+          "count"
+        ],
+        "correctAnswers": {
+          "1": "append",
+          "2": "len"
+        }
+      },
+      "hint": {
+        "en": "To add to a list, use the list's `append` method. To get the count, use `len()`.",
+        "fr": "Pour ajouter à une liste, utilise la méthode `append`. Pour obtenir le nombre, utilise `len()`."
+      }
+    }
+  },
+  {
+    "id": "python_15_6_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Team Size",
+      "fr": "Taille de l'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is printed?",
+            "fr": "Qu'est-ce qui est affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Team:\n  def __init__(self):\n    self.members = []\n\n  def add(self, name):\n    self.members.append(name)\n\nteam = Team()\nteam.add(\"Aquachu\")\nteam.add(\"Pyrochu\")\nteam.add(\"Florachu\")\nprint(len(team.members))",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "0",
+              "fr": "0"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "3",
+              "fr": "3"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "2",
+              "fr": "2"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Each `add()` call appends one element. Count how many times it's called.",
+        "fr": "Chaque appel à `add()` ajoute un élément. Compte combien de fois elle est appelée."
+      }
+    }
+  },
+  {
+    "id": "python_15_6_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Methods Using Composed Objects",
+      "fr": "Méthodes utilisant des objets composés"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The real power of composition shows when methods interact with the contained objects. Let's add a method to find the strongest Codémon in a team.",
+            "fr": "La vraie puissance de la composition apparaît quand les méthodes interagissent avec les objets contenus. Ajoutons une méthode pour trouver le Codémon le plus fort d'une équipe."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n  self.name = name\n  self.level = level\n\nclass Team:\n  def __init__(self):\n  self.members = []\n\n  def add(self, codemon):\n  self.members.append(codemon)\n\n  def strongest(self):\n  best = self.members[0]\n  for myCdm in self.members:\n    if myCdm.level > best.level:\n    best = myCdm\n  return best\n\nteam = Team()\nteam.add(Codemon(\"Aquachu\", 10))\nteam.add(Codemon(\"Pyrochu\", 25))\nteam.add(Codemon(\"Florachu\", 15))\nprint(f\"Strongest: {team.strongest().name}\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As you can see in the code, the `strongest` method iterates through the team's members and compares their levels to find the strongest one.",
+            "fr": "Comme vous pouvez le voir dans le code, la méthode `strongest` parcourt les membres de l'équipe et compare leurs niveaux pour trouver le plus fort."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_6_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Find Total Level",
+      "fr": "Trouver le niveau total"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the method to calculate the total level of all team members.",
+            "fr": "Complète la méthode pour calculer le niveau total de tous les membres de l'équipe."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Team:\n  def __init__(self):\n    self.members = []\n\n  def add(self, name, level):\n    self.members.append({\"name\": name, \"level\": level})\n\n  def total_level(self):\n    total = 0\n    for myCdm in self.{{}}:\n      total += myCdm[\"{{}}\"]\n    return total\n\nteam = Team()\nteam.add(\"Aquachu\", 10)\nteam.add(\"Pyrochu\", 25)\nprint(team.total_level())",
+        "options": [
+          "members",
+          "level",
+          "name",
+          "total",
+          "myCdm"
+        ],
+        "correctAnswers": {
+          "1": "members",
+          "2": "level"
+        }
+      },
+      "hint": {
+        "en": "Loop through the `members` list. Each member has a `\"level\"` key.",
+        "fr": "Parcours la liste `members`. Chaque membre a une clé `\"level\"`."
+      }
+    }
+  },
+  {
+    "id": "python_15_6_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Composition vs Inheritance",
+      "fr": "Composition vs Héritage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each concept with its description.",
+            "fr": "Associe chaque concept avec sa description."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Inheritance",
+                "fr": "Héritage"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "\"is a\" relationship",
+                "fr": "Relation \"est un\""
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Composition",
+                "fr": "Composition"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "\"has a\" relationship",
+                "fr": "Relation \"a un\""
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Team has Codémon",
+                "fr": "Team a des Codémon"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Composition example",
+                "fr": "Exemple de composition"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Codémon has Moves",
+                "fr": "Codémon a des Moves"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Composition example",
+                "fr": "Exemple de composition"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_15_6_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "composition",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle System",
+      "fr": "Système de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Build a Codémon with moves using composition!\n\n1. `Move` class: `name`, `power`, `__str__` returns `\"MoveName (Xdmg)\"`\n2. `Codemon` class: `name`, `moves` (list of Move), method `best_move()` that returns the strongest move\n3. Create a Codémon with 2 moves and print its best move",
+            "fr": "Construis un Codémon avec des attaques en utilisant la composition !\n\n1. Classe `Move` : `name`, `power`, `__str__` retourne `\"MoveName (Xdmg)\"`\n2. Classe `Codemon` : `name`, `moves` (liste de Move), méthode `best_move()` qui retourne l'attaque la plus forte\n3. Crée un Codémon avec 2 moves et affiche son meilleur move"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Move class\n\n# Codemon class\n\n# Create and test",
+          "fr": "# Classe Move\n\n# Classe Codemon\n\n# Créer et tester"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Move:\n  def __init__(self, name, power):\n  self.name = name\n  self.power = power\n\n  def __str__(self):\n  return f\"{self.name} ({self.power}dmg)\"\n\nclass Codemon:\n  def __init__(self, name, moves):\n  self.name = name\n  self.moves = moves\n\n  def best_move(self):\n  best = self.moves[0]\n  for move in self.moves:\n    if move.power > best.power:\n    best = move\n  return best\n\nmyCdm = Codemon(\"Aquachu\", [Move(\"Splash\", 20), Move(\"Tidal Wave\", 45)])\nprint(f\"{myCdm.name}'s best: {myCdm.best_move()}\")",
+            "fr": "class Move:\n  def __init__(self, name, power):\n  self.name = name\n  self.power = power\n\n  def __str__(self):\n  return f\"{self.name} ({self.power}dmg)\"\n\nclass Codemon:\n  def __init__(self, name, moves):\n  self.name = name\n  self.moves = moves\n\n  def best_move(self):\n  best = self.moves[0]\n  for move in self.moves:\n    if move.power > best.power:\n    best = move\n  return best\n\nmyCdm = Codemon(\"Aquachu\", [Move(\"Splash\", 20), Move(\"Tidal Wave\", 45)])\nprint(f\"{myCdm.name}'s best: {myCdm.best_move()}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_7_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What is self?",
+      "fr": "Qu'est-ce que self ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In a class method, what does `self` refer to?",
+            "fr": "Dans une méthode de classe, à quoi fait référence `self` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The class itself",
+              "fr": "La classe elle-même"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The current instance of the class",
+              "fr": "L'instance actuelle de la classe"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The parent class",
+              "fr": "La classe parente"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A global variable",
+              "fr": "Une variable globale"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Think about what object is calling the method. `self` is the specific object, not the blueprint.",
+        "fr": "Réfléchis à quel objet appelle la méthode. `self` est l'objet spécifique, pas le plan."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Object Creation Output",
+      "fr": "Sortie à la création d'objet"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n    print(f\"{name} appears!\")\n\nmyCdm = Codemon(\"Aquachu\")",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`Aquachu appears!`",
+              "fr": "`Aquachu appears!`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`Codemon appears!`",
+              "fr": "`Codemon appears!`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`__init__` is called automatically when you create an object. What is the value of `name` here?",
+        "fr": "`__init__` est appelé automatiquement quand tu crées un objet. Quelle est la valeur de `name` ici ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Role of __init__",
+      "fr": "Rôle de __init__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the purpose of the `__init__` method in a class?",
+            "fr": "Quel est le rôle de la méthode `__init__` dans une classe ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "To delete an object",
+              "fr": "Supprimer un objet"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "To initialize the attributes when creating an object",
+              "fr": "Initialiser les attributs lors de la création d'un objet"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "To print the object",
+              "fr": "Afficher l'objet"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "To import a module",
+              "fr": "Importer un module"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "The name `__init__` comes from \"initialize\". It runs once, right when the object is born.",
+        "fr": "Le nom `__init__` vient de \"initialize\" (initialiser). Elle s'exécute une seule fois, au moment où l'objet est créé."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Default Parameter Behavior",
+      "fr": "Comportement des paramètres par défaut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\nmyCdm = Codemon(\"Pyrochu\")\nprint(myCdm.level)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "`None`",
+              "fr": "`None`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`0`",
+              "fr": "`0`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`1`",
+              "fr": "`1`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: missing argument",
+              "fr": "Erreur : argument manquant"
+            }
+          }
+        ],
+        "correctAnswer": 2
+      },
+      "hint": {
+        "en": "When a parameter has a default value like `level=1`, you don't need to provide it. What value will it have?",
+        "fr": "Quand un paramètre a une valeur par défaut comme `level=1`, tu n'as pas besoin de le fournir. Quelle valeur aura-t-il ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What Does Inheritance Give You?",
+      "fr": "Que t'apporte l'héritage ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the main benefit of ***inheritance*** in OOP?",
+            "fr": "Quel est le principal avantage de l'***héritage*** en POO ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It makes your code run faster",
+              "fr": "Le code s'exécute plus vite"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It lets a class reuse the attributes and methods of another class",
+              "fr": "Une classe peut réutiliser les attributs et méthodes d'une autre classe"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It prevents bugs",
+              "fr": "Cela empêche les bugs"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It encrypts the data",
+              "fr": "Cela chiffre les données"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Think about what a child class \"inherits\" from its parent. It's about reusing existing code.",
+        "fr": "Réfléchis à ce qu'une classe enfant \"hérite\" de son parent. C'est une question de réutilisation de code."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What Does super() Do?",
+      "fr": "Que fait super() ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does `super().__init__(name)` do in a child class?",
+            "fr": "Que fait `super().__init__(name)` dans une classe enfant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n\nclass WaterCodemon(Codemon):\n  def __init__(self, name, swim_speed):\n    super().__init__(name)\n    self.swim_speed = swim_speed",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It creates a new parent object",
+              "fr": "Cela crée un nouvel objet parent"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It calls the parent class's `__init__` to set up `name`",
+              "fr": "Cela appelle le `__init__` de la classe parente pour initialiser `name`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It deletes the parent class",
+              "fr": "Cela supprime la classe parente"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It skips the parent's initialization",
+              "fr": "Cela saute l'initialisation du parent"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`super()` gives you access to the parent class. So `super().__init__()` calls the parent's constructor.",
+        "fr": "`super()` te donne accès à la classe parente. Donc `super().__init__()` appelle le constructeur du parent."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Method Overriding",
+      "fr": "Redéfinition de méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def cry(self):\n    return \"Roar!\"\n\nclass Aquachu(Codemon):\n  def cry(self):\n    return \"Splash!\"\n\nmyCdm = Aquachu()\nprint(myCdm.cry())",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "`Roar!`",
+              "fr": "`Roar!`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`Splash!`",
+              "fr": "`Splash!`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`Roar! Splash!`",
+              "fr": "`Roar! Splash!`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "When a child class defines a method with the same name as the parent, the child's version takes priority.",
+        "fr": "Quand une classe enfant définit une méthode avec le même nom que le parent, la version de l'enfant est prioritaire."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Private Attribute Convention",
+      "fr": "Convention d'attribut privé"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, what does naming an attribute with an underscore prefix like `_hp` mean?",
+            "fr": "En Python, que signifie nommer un attribut avec un underscore comme `_hp` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The attribute is completely inaccessible from outside",
+              "fr": "L'attribut est complètement inaccessible de l'extérieur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The attribute is encrypted",
+              "fr": "L'attribut est chiffré"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It's a convention that signals the attribute is private and shouldn't be accessed directly",
+              "fr": "C'est une convention qui signale que l'attribut est privé et ne devrait pas être accédé directement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It makes the attribute read-only",
+              "fr": "Cela rend l'attribut en lecture seule"
+            }
+          }
+        ],
+        "correctAnswer": 2
+      },
+      "hint": {
+        "en": "Python doesn't truly enforce private attributes. The underscore is a signal to other developers.",
+        "fr": "Python n'impose pas vraiment les attributs privés. L'underscore est un signal pour les autres développeurs."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What Does a Getter Do?",
+      "fr": "Que fait un getter ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the purpose of a ***getter*** method in a class?",
+            "fr": "Quel est le but d'une méthode ***getter*** dans une classe ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, hp):\n    self._hp = hp\n\n  def get_hp(self):\n    return self._hp",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "To modify a private attribute",
+              "fr": "Modifier un attribut privé"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "To safely read a private attribute without exposing it directly",
+              "fr": "Lire un attribut privé en sécurité sans l'exposer directement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "To delete a private attribute",
+              "fr": "Supprimer un attribut privé"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "To create a new attribute",
+              "fr": "Créer un nouvel attribut"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "A getter \"gets\" a value. It provides controlled access to a private attribute.",
+        "fr": "Un getter \"récupère\" une valeur. Il fournit un accès contrôlé à un attribut privé."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What Does __str__ Return?",
+      "fr": "Que retourne __str__ ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, level):\n    self.name = name\n    self.level = level\n\n  def __str__(self):\n    return f\"{self.name} Lv.{self.level}\"\n\nmyCdm = Codemon(\"Florachu\", 5)\nprint(myCdm)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "`<__main__.Codemon object at 0x...>`",
+              "fr": "`<__main__.Codemon object at 0x...>`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`Florachu Lv.5`",
+              "fr": "`Florachu Lv.5`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`Codemon Lv.5`",
+              "fr": "`Codemon Lv.5`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`__str__` is called automatically by `print()`. It returns a human-readable string representation of the object.",
+        "fr": "`__str__` est appelé automatiquement par `print()`. Il retourne une représentation lisible de l'objet."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What Does __eq__ Control?",
+      "fr": "Que contrôle __eq__ ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does defining `__eq__` in a class allow you to control?",
+            "fr": "Que permet de contrôler la définition de `__eq__` dans une classe ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "How objects are printed",
+              "fr": "Comment les objets sont affichés"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "How objects are compared with `==`",
+              "fr": "Comment les objets sont comparés avec `==`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "How objects are sorted",
+              "fr": "Comment les objets sont triés"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "How objects are created",
+              "fr": "Comment les objets sont créés"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "The `eq` in `__eq__` stands for \"equals\". Think about which operator tests equality.",
+        "fr": "Le `eq` dans `__eq__` vient de \"equals\" (égal). Réfléchis à quel opérateur teste l'égalité."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What Does __len__ Enable?",
+      "fr": "Qu'active __len__ ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Team:\n  def __init__(self):\n    self.members = [\"Aquachu\", \"Pyrochu\"]\n\n  def __len__(self):\n    return len(self.members)\n\nt = Team()\nprint(len(t))",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: `len()` doesn't work on custom objects",
+              "fr": "Erreur : `len()` ne fonctionne pas sur les objets personnalisés"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`2`",
+              "fr": "`2`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`0`",
+              "fr": "`0`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`None`",
+              "fr": "`None`"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`__len__` makes `len()` work on your custom objects. How many members are in the list?",
+        "fr": "`__len__` permet à `len()` de fonctionner sur tes objets. Combien de membres y a-t-il dans la liste ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_13",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What Does __lt__ Enable?",
+      "fr": "Qu'active __lt__ ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "If you define `__lt__` in your class, which operation becomes possible?",
+            "fr": "Si tu définis `__lt__` dans ta classe, quelle opération devient possible ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Using `+` between two objects",
+              "fr": "Utiliser `+` entre deux objets"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Using `<` to compare two objects",
+              "fr": "Utiliser `<` pour comparer deux objets"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Using `len()` on an object",
+              "fr": "Utiliser `len()` sur un objet"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Using `print()` on an object",
+              "fr": "Utiliser `print()` sur un objet"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`lt` stands for \"less than\". Each special method maps to a specific operator.",
+        "fr": "`lt` signifie \"less than\" (inférieur à). Chaque méthode spéciale correspond à un opérateur."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "What is Composition?",
+      "fr": "Qu'est-ce que la composition ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does ***composition*** mean in OOP?",
+            "fr": "Que signifie la ***composition*** en POO ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "A class inherits from another class",
+              "fr": "Une classe hérite d'une autre classe"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A class contains objects of other classes as attributes",
+              "fr": "Une classe contient des objets d'autres classes comme attributs"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Two classes share the same methods",
+              "fr": "Deux classes partagent les mêmes méthodes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A class is defined inside another class",
+              "fr": "Une classe est définie dans une autre classe"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Composition is a \"has-a\" relationship. A Team \"has\" Codémon, rather than \"is a\" Codémon.",
+        "fr": "La composition est une relation \"a un\". Une équipe \"a des\" Codémon, plutôt qu'elle \"est un\" Codémon."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_15",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Object Type",
+      "fr": "Type d'un objet"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does `type(myCdm)` return when `myCdm = Codemon(\"Aquachu\")`?",
+            "fr": "Que retourne `type(myCdm)` quand `myCdm = Codemon(\"Aquachu\")` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n\nmyCdm = Codemon(\"Aquachu\")\nprint(type(myCdm))",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "`<class 'str'>`",
+              "fr": "`<class 'str'>`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`<class 'Codemon'>`",
+              "fr": "`<class 'Codemon'>`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`<class 'object'>`",
+              "fr": "`<class 'object'>`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`Codemon`",
+              "fr": "`Codemon`"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "`type()` returns the class of an object. The object was created from the `Codemon` class.",
+        "fr": "`type()` retourne la classe d'un objet. L'objet a été créé à partir de la classe `Codemon`."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_16",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Complete a Class Definition",
+      "fr": "Complète une définition de classe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the class definition for a Codémon.",
+            "fr": "Complète la définition de classe pour un Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "{{}} Codemon:\n  def __init__(self, name):\n    self.name = name\n\nmyCdm = Codemon(\"Aquachu\")\nprint(myCdm.name)",
+        "options": [
+          "class",
+          "def",
+          "object",
+          "new"
+        ],
+        "correctAnswers": {
+          "1": "class"
+        }
+      },
+      "hint": {
+        "en": "What keyword do you use to define a new class in Python?",
+        "fr": "Quel mot-clé utilises-tu pour définir une nouvelle classe en Python ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_17",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Complete __init__",
+      "fr": "Complète __init__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the constructor so each Codémon has a `name` and `element`.",
+            "fr": "Complète le constructeur pour que chaque Codémon ait un `name` et un `element`."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, element):\n    self.name = name\n    self.{{}} = {{}}\n\nmyCdm = Codemon(\"Pyrochu\", \"Fire\")\nprint(myCdm.element)",
+        "options": [
+          "element",
+          "name",
+          "self",
+          "type",
+          "element",
+          "name",
+          "self",
+          "type"
+        ],
+        "correctAnswers": {
+          "1": "element",
+          "2": "element"
+        }
+      },
+      "hint": {
+        "en": "You need to store the `element` parameter as an attribute of the object using `self`.",
+        "fr": "Tu dois stocker le paramètre `element` comme attribut de l'objet avec `self`."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_18",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Complete a Method Call",
+      "fr": "Complète un appel de méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code so the Codémon levels up and we print the new level.",
+            "fr": "Complète le code pour que le Codémon monte de niveau et qu'on affiche le nouveau niveau."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, level=1):\n    self.name = name\n    self.level = level\n\n  def level_up(self):\n    self.level += 1\n\nmyCdm = Codemon(\"Florachu\")\nmyCdm.{{}}()\nprint(myCdm.{{}})",
+        "options": [
+          "level_up",
+          "level",
+          "name",
+          "__init__"
+        ],
+        "correctAnswers": {
+          "1": "level_up",
+          "2": "level"
+        }
+      },
+      "hint": {
+        "en": "First call the method that increases the level, then access the attribute that stores it.",
+        "fr": "Appelle d'abord la méthode qui augmente le niveau, puis accède à l'attribut qui le stocke."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_19",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Complete Inheritance Syntax",
+      "fr": "Complète la syntaxe d'héritage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code so `WaterCodemon` inherits from `Codemon`.",
+            "fr": "Complète le code pour que `WaterCodemon` hérite de `Codemon`."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n\n  def cry(self):\n    return \"Roar!\"\n\nclass WaterCodemon({{}}):\n  pass\n\nmyCdm = WaterCodemon(\"Aquachu\")\nprint(myCdm.cry())",
+        "options": [
+          "Codemon",
+          "self",
+          "object",
+          "WaterCodemon"
+        ],
+        "correctAnswers": {
+          "1": "Codemon"
+        }
+      },
+      "hint": {
+        "en": "To inherit from a class, put the parent class name inside the parentheses after the child class name.",
+        "fr": "Pour hériter d'une classe, mets le nom de la classe parente entre les parenthèses après le nom de la classe enfant."
+      }
+    }
+  },
+  {
+    "id": "python_15_7_20",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Complete super() Call",
+      "fr": "Complète l'appel super()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the child class so it properly initializes the parent's `name` attribute.",
+            "fr": "Complète la classe enfant pour qu'elle initialise correctement l'attribut `name` du parent."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name):\n    self.name = name\n\nclass FireCodemon(Codemon):\n  def __init__(self, name, temperature):\n    {{}}().__init__(name)\n    self.temperature = temperature\n\nmyCdm = FireCodemon(\"Pyrochu\", 800)\nprint(myCdm.name, myCdm.temperature)",
+        "options": [
+          "super",
+          "self",
+          "Codemon",
+          "parent"
+        ],
+        "correctAnswers": {
+          "1": "super"
+        }
+      },
+      "hint": {
+        "en": "Which built-in function gives you access to the parent class from inside a child class?",
+        "fr": "Quelle fonction intégrée te donne accès à la classe parente depuis une classe enfant ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_21",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Complete __str__",
+      "fr": "Complète __str__"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the method's name so `print(myCdm)` displays `Aquachu - 100HP`.",
+            "fr": "Complète le nom de la méthode pour que `print(myCdm)` affiche `Aquachu - 100HP`."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\n  def {{}}(self):\n    return f\"{self.name} - {self.hp}HP\"\n\nmyCdm = Codemon(\"Aquachu\")\nprint(myCdm)",
+        "options": [
+          "__str__",
+          "__init__",
+          "__repr__",
+          "display"
+        ],
+        "correctAnswers": {
+          "1": "__str__"
+        }
+      },
+      "hint": {
+        "en": "Which special method does `print()` call to get a string representation of an object?",
+        "fr": "Quelle méthode spéciale `print()` appelle-t-il pour obtenir la représentation textuelle d'un objet ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "advanced",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Output Prediction: Inheritance",
+      "fr": "Prédiction de sortie : Héritage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self.hp = hp\n\nclass EliteCodemon(Codemon):\n  def __init__(self, name):\n    super().__init__(name, 200)\n\nmyCdm = EliteCodemon(\"Metachu\")\nprint(myCdm.hp)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "`100`",
+              "fr": "`100`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`200`",
+              "fr": "`200`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "`None`",
+              "fr": "`None`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "The child class calls `super().__init__(name, 200)`. What value does the parent receive for `hp`?",
+        "fr": "La classe enfant appelle `super().__init__(name, 200)`. Quelle valeur le parent reçoit-il pour `hp` ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_23",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Calling Parent Methods",
+      "fr": "Appeler les méthodes du parent"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Can a child class call a method defined in its parent class?",
+            "fr": "Une classe enfant peut-elle appeler une méthode définie dans sa classe parente ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "class Codemon:\n  def cry(self):\n    return \"Roar!\"\n\nclass Aquachu(Codemon):\n  pass\n\nmyCdm = Aquachu()\nprint(myCdm.cry())",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "No, it causes an error",
+              "fr": "Non, cela provoque une erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Yes, it prints `Roar!`",
+              "fr": "Oui, cela affiche `Roar!`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Yes, but it prints `None`",
+              "fr": "Oui, mais cela affiche `None`"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only if you use `super().cry()`",
+              "fr": "Seulement si tu utilises `super().cry()`"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Inheritance means the child class gets all methods from the parent. Can the child use them directly?",
+        "fr": "L'héritage signifie que la classe enfant obtient toutes les méthodes du parent. L'enfant peut-il les utiliser directement ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_24",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "advanced",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Setter Validation",
+      "fr": "Validation avec un setter"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the setter so HP can never go below 0.",
+            "fr": "Complète le setter pour que les HP ne puissent jamais descendre en dessous de 0."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Codemon:\n  def __init__(self, name, hp=100):\n    self.name = name\n    self._hp = hp\n\n  def set_hp(self, value):\n    self._hp = {{}}(0, value)\n\n  def get_hp(self):\n    return self._hp\n\nmyCdm = Codemon(\"Rockachu\")\nmyCdm.set_hp(-50)\nprint(myCdm.get_hp())",
+        "options": [
+          "max",
+          "min",
+          "abs",
+          "int"
+        ],
+        "correctAnswers": {
+          "1": "max"
+        }
+      },
+      "hint": {
+        "en": "You want the bigger value between 0 and the given value. Which function returns the larger of two numbers?",
+        "fr": "Tu veux la plus grande valeur entre 0 et la valeur donnée. Quelle fonction retourne le plus grand de deux nombres ?"
+      }
+    }
+  },
+  {
+    "id": "python_15_7_25",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "advanced",
+      "tags": [
+        "quizz",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Composition Access Pattern",
+      "fr": "Accès par composition"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to access the move's power through the Codémon object.",
+            "fr": "Complète le code pour accéder à la puissance de l'attaque via l'objet Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "run": true,
+        "language": "python",
+        "text": "class Move:\n  def __init__(self, name, power):\n    self.name = name\n    self.power = power\n\nclass Codemon:\n  def __init__(self, name, move):\n    self.name = name\n    self.move = move\n\nflame = Move(\"Flame Burst\", 40)\nmyCdm = Codemon(\"Pyrochu\", flame)\nprint(myCdm.{{}}.{{}})",
+        "options": [
+          "move",
+          "power",
+          "name",
+          "flame"
+        ],
+        "correctAnswers": {
+          "1": "move",
+          "2": "power"
+        }
+      },
+      "hint": {
+        "en": "First access the Codémon's `move` attribute, then chain to the Move's `power` attribute.",
+        "fr": "Accède d'abord à l'attribut `move` du Codémon, puis chaîne vers l'attribut `power` du Move."
+      }
+    }
+  },
+  {
+    "id": "python_15_8_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "challenge",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Basic Codémon",
+      "fr": "Codémon basique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a `Codemon` class with:\n\n1. `__init__` taking `name`, `element`, `level` (default 1), `hp` (default 100)\n2. A `__str__` method that returns `\"Aquachu [Water] Lv.1 - 100HP\"`\n3. Create 2 Codémon and print them",
+            "fr": "Crée une classe `Codemon` avec :\n\n1. `__init__` prenant `name`, `element`, `level` (défaut 1), `hp` (défaut 100)\n2. Une méthode `__str__` qui retourne `\"Aquachu [Water] Lv.1 - 100HP\"`\n3. Crée 2 Codémon et affiche-les"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Codemon:\n  # Create __init__ with name, element, level (default 1), hp (default 100)\n\n  # Create __str__ that returns \"Name [Element] Lv.X - YHP\"\n\n# Create 2 Codémon and print them",
+          "fr": "class Codemon:\n  # Créer __init__ avec name, element, level (défaut 1), hp (défaut 100)\n\n  # Créer __str__ qui retourne \"Name [Element] Lv.X - YHP\"\n\n# Créer 2 Codémon et les afficher"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, element, level=1, hp=100):\n    self.name = name\n    self.element = element\n    self.level = level\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] Lv.{self.level} - {self.hp}HP\"\n\na = Codemon(\"Aquachu\", \"Water\")\np = Codemon(\"Pyrochu\", \"Fire\", 3, 120)\nprint(a)\nprint(p)",
+            "fr": "class Codemon:\n  def __init__(self, name, element, level=1, hp=100):\n    self.name = name\n    self.element = element\n    self.level = level\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] Lv.{self.level} - {self.hp}HP\"\n\na = Codemon(\"Aquachu\", \"Water\")\np = Codemon(\"Pyrochu\", \"Fire\", 3, 120)\nprint(a)\nprint(p)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_8_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "challenge",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Battle Methods",
+      "fr": "Méthodes de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Build on the `Codemon` class and add:\n\n1. `attack(self, target)` — deals `level * 3` damage to target's HP. Print `\"X attacks Y for Z damage!\"`\n2. `heal(self, amount)` — restores HP but caps at 100 (max HP)\n3. `is_alive(self)` — returns `True` if HP > 0\n4. Create 2 Codémon and make them fight until one faints!",
+            "fr": "Complète la classe `Codemon` et ajoute :\n\n1. `attack(self, target)` — inflige `level * 3` dégâts aux HP de la cible. Affiche `\"X attacks Y for Z damage!\"`\n2. `heal(self, amount)` — restaure les HP mais plafonné à 100 (HP max)\n3. `is_alive(self)` — retourne `True` si HP > 0\n4. Crée 2 Codémon et fais-les combattre jusqu'à ce qu'un s'évanouisse !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Codemon:\n  def __init__(self, name, element, level=1, hp=100):\n    self.name = name\n    self.element = element\n    self.level = level\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] Lv.{self.level} - {self.hp}HP\"\n\n  # Add attack(self, target)\n\n  # Add heal(self, amount) - cap at 100\n\n  # Add is_alive(self)\n\n# Create 2 Codémon and battle until one faints",
+          "fr": "class Codemon:\n  def __init__(self, name, element, level=1, hp=100):\n    self.name = name\n    self.element = element\n    self.level = level\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] Lv.{self.level} - {self.hp}HP\"\n\n  # Ajouter attack(self, target)\n\n  # Ajouter heal(self, amount) - plafonné à 100\n\n  # Ajouter is_alive(self)\n\n# Créer 2 Codémon et combattre jusqu'à KO"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, element, level=1, hp=100):\n    self.name = name\n    self.element = element\n    self.level = level\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] Lv.{self.level} - {self.hp}HP\"\n\n  def attack(self, target):\n    damage = self.level * 3\n    target.hp -= damage\n    print(f\"{self.name} attacks {target.name} for {damage} damage!\")\n\n  def heal(self, amount):\n    self.hp = min(100, self.hp + amount)\n\n  def is_alive(self):\n    return self.hp > 0\n\na = Codemon(\"Aquachu\", \"Water\", 5)\np = Codemon(\"Pyrochu\", \"Fire\", 4)\n\nwhile a.is_alive() and p.is_alive():\n  a.attack(p)\n  if p.is_alive():\n    p.attack(a)\n\nprint(a)\nprint(p)",
+            "fr": "class Codemon:\n  def __init__(self, name, element, level=1, hp=100):\n    self.name = name\n    self.element = element\n    self.level = level\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] Lv.{self.level} - {self.hp}HP\"\n\n  def attack(self, target):\n    damage = self.level * 3\n    target.hp -= damage\n    print(f\"{self.name} attacks {target.name} for {damage} damage!\")\n\n  def heal(self, amount):\n    self.hp = min(100, self.hp + amount)\n\n  def is_alive(self):\n    return self.hp > 0\n\na = Codemon(\"Aquachu\", \"Water\", 5)\np = Codemon(\"Pyrochu\", \"Fire\", 4)\n\nwhile a.is_alive() and p.is_alive():\n  a.attack(p)\n  if p.is_alive():\n    p.attack(a)\n\nprint(a)\nprint(p)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_8_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "advanced",
+      "tags": [
+        "challenge",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Codémon with Moves",
+      "fr": "Codémon avec des attaques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Time for ***composition***! Create:\n\n1. A `Move` class with `name` and `power`\n2. A `Codemon` class with `name`, `hp`, and a `moves` list\n3. A `best_move(self)` method that returns the strongest move\n4. A `use_move(self, move_name, target)` method that deals damage\n5. Create 2 Codémon and make one attack the other!",
+            "fr": "Place à la ***composition*** ! Crée :\n\n1. Une classe `Move` avec `name` et `power`\n2. Une classe `Codemon` avec `name`, `hp`, et une liste `moves`\n3. Une méthode `best_move(self)` qui retourne l'attaque la plus forte\n4. Une méthode `use_move(self, move_name, target)` qui inflige les dégâts\n5. Crée 2 Codémon et fais-en un attaquer l'autre !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Move:\n  # name, power\n  pass\n\nclass Codemon:\n  # name, hp, moves\n  pass\n\n  def best_move(self):\n  pass\n\n  def use_move(self, move_name, target):\n  pass\n\n# Create 2 Codémon with moves, attack!",
+          "fr": "class Move:\n  # name, power\n  pass\n\nclass Codemon:\n  # name, hp, moves\n  pass\n\n  def best_move(self):\n  pass\n\n  def use_move(self, move_name, target):\n  pass\n\n# Créer 2 Codémon avec des attaques, attaquer !"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Move:\n  def __init__(self, name, power):\n  self.name = name\n  self.power = power\n\nclass Codemon:\n  def __init__(self, name, hp, moves):\n  self.name = name\n  self.hp = hp\n  self.moves = moves\n\n  def best_move(self):\n  best = self.moves[0]\n  for move in self.moves:\n    if move.power > best.power:\n    best = move\n  return best\n\n  def use_move(self, move_name, target):\n  for move in self.moves:\n    if move.name == move_name:\n    target.hp -= move.power\n    print(f\"{self.name} uses {move.name}! {move.power} dmg!\")\n    return\n\na = Codemon(\"Aquachu\", 100, [Move(\"Splash\", 15), Move(\"Tidal Wave\", 35)])\np = Codemon(\"Pyrochu\", 100, [Move(\"Ember\", 20), Move(\"Inferno\", 30)])\n\nbest = a.best_move()\na.use_move(best.name, p)\nprint(f\"{p.name}: {p.hp} HP\")",
+            "fr": "class Move:\n  def __init__(self, name, power):\n  self.name = name\n  self.power = power\n\nclass Codemon:\n  def __init__(self, name, hp, moves):\n  self.name = name\n  self.hp = hp\n  self.moves = moves\n\n  def best_move(self):\n  best = self.moves[0]\n  for move in self.moves:\n    if move.power > best.power:\n    best = move\n  return best\n\n  def use_move(self, move_name, target):\n  for move in self.moves:\n    if move.name == move_name:\n    target.hp -= move.power\n    print(f\"{self.name} uses {move.name}! {move.power} dmg!\")\n    return\n\na = Codemon(\"Aquachu\", 100, [Move(\"Splash\", 15), Move(\"Tidal Wave\", 35)])\np = Codemon(\"Pyrochu\", 100, [Move(\"Ember\", 20), Move(\"Inferno\", 30)])\n\nbest = a.best_move()\na.use_move(best.name, p)\nprint(f\"{p.name}: {p.hp} HP\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_9_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "intermediate",
+      "tags": [
+        "challenge",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Team Builder",
+      "fr": "Créateur d'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a `Team` class to manage Codémon:\n\n1. `__init__(self, name)` — team name and empty `members` list\n2. `add(self, codemon)` — add a Codémon to the team\n3. `remove(self, name)` — remove a Codémon by name\n4. `show(self)` — print the team name and all members\n5. `__len__` — return the number of members\n\nTest by adding 3 Codémon, removing one, and printing the team size.",
+            "fr": "Crée une classe `Team` pour gérer des Codémon :\n\n1. `__init__(self, name)` — nom de l'équipe et liste `members` vide\n2. `add(self, codemon)` — ajouter un Codémon à l'équipe\n3. `remove(self, name)` — retirer un Codémon par nom\n4. `show(self)` — afficher le nom de l'équipe et tous les membres\n5. `__len__` — retourner le nombre de membres\n\nTeste en ajoutant 3 Codémon, en retirant un, et en affichant la taille de l'équipe."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Codemon:\n  def __init__(self, name, element, hp=100):\n    self.name = name\n    self.element = element\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] - {self.hp}HP\"\n\nclass Team:\n  # __init__ with name and empty members\n\n  # add(codemon)\n\n  # remove(name)\n\n  # show()\n\n  # __len__\n\n# Create a team, add 3 Codémon, remove one, show team",
+          "fr": "class Codemon:\n  def __init__(self, name, element, hp=100):\n    self.name = name\n    self.element = element\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] - {self.hp}HP\"\n\nclass Team:\n  # __init__ avec name et members vide\n\n  # add(codemon)\n\n  # remove(name)\n\n  # show()\n\n  # __len__\n\n# Créer une équipe, ajouter 3 Codémon, en retirer un, afficher"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, element, hp=100):\n    self.name = name\n    self.element = element\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] - {self.hp}HP\"\n\nclass Team:\n  def __init__(self, name):\n    self.name = name\n    self.members = []\n\n  def add(self, codemon):\n    self.members.append(codemon)\n\n  def remove(self, name):\n    self.members = [m for m in self.members if m.name != name]\n\n  def show(self):\n    print(f\"Team {self.name}:\")\n    for m in self.members:\n      print(f\"  {m}\")\n\n  def __len__(self):\n    return len(self.members)\n\nteam = Team(\"Alpha\")\nteam.add(Codemon(\"Aquachu\", \"Water\"))\nteam.add(Codemon(\"Pyrochu\", \"Fire\"))\nteam.add(Codemon(\"Florachu\", \"Plant\"))\nteam.show()\nprint(f\"Size: {len(team)}\")\nteam.remove(\"Pyrochu\")\nteam.show()\nprint(f\"Size: {len(team)}\")",
+            "fr": "class Codemon:\n  def __init__(self, name, element, hp=100):\n    self.name = name\n    self.element = element\n    self.hp = hp\n\n  def __str__(self):\n    return f\"{self.name} [{self.element}] - {self.hp}HP\"\n\nclass Team:\n  def __init__(self, name):\n    self.name = name\n    self.members = []\n\n  def add(self, codemon):\n    self.members.append(codemon)\n\n  def remove(self, name):\n    self.members = [m for m in self.members if m.name != name]\n\n  def show(self):\n    print(f\"Team {self.name}:\")\n    for m in self.members:\n      print(f\"  {m}\")\n\n  def __len__(self):\n    return len(self.members)\n\nteam = Team(\"Alpha\")\nteam.add(Codemon(\"Aquachu\", \"Water\"))\nteam.add(Codemon(\"Pyrochu\", \"Fire\"))\nteam.add(Codemon(\"Florachu\", \"Plant\"))\nteam.show()\nprint(f\"Size: {len(team)}\")\nteam.remove(\"Pyrochu\")\nteam.show()\nprint(f\"Size: {len(team)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_9_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "advanced",
+      "tags": [
+        "challenge",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Team Battle",
+      "fr": "Combat d'équipes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Two Codémon battle! The rules:\n\n1. Each Codémon deals `10` damage per attack\n2. They take turns attacking until one faints (HP <= 0)\n3. Print each attack and the winner!",
+            "fr": "Deux Codémon s'affrontent ! Les règles :\n\n1. Chaque Codémon inflige `10` dégâts par attaque\n2. Ils attaquent à tour de rôle jusqu'à ce que l'un tombe (HP <= 0)\n3. Affiche chaque attaque et le gagnant !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Codemon:\n  def __init__(self, name, hp=50):\n    self.name = name\n    self.hp = hp\n\n  def attack(self, target):\n    target.hp -= 10\n    print(f\"{self.name} hits {target.name}! ({target.hp}HP left)\")\n\n  def is_alive(self):\n    return self.hp > 0\n\n# Create 2 Codémon\n# Battle loop: take turns until one faints\n# Print the winner",
+          "fr": "class Codemon:\n  def __init__(self, name, hp=50):\n    self.name = name\n    self.hp = hp\n\n  def attack(self, target):\n    target.hp -= 10\n    print(f\"{self.name} hits {target.name}! ({target.hp}HP left)\")\n\n  def is_alive(self):\n    return self.hp > 0\n\n# Créer 2 Codémon\n# Boucle de combat : attaquer à tour de rôle\n# Afficher le gagnant"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, hp=50):\n    self.name = name\n    self.hp = hp\n\n  def attack(self, target):\n    target.hp -= 10\n    print(f\"{self.name} hits {target.name}! ({target.hp}HP left)\")\n\n  def is_alive(self):\n    return self.hp > 0\n\na = Codemon(\"Aquachu\", 50)\np = Codemon(\"Pyrochu\", 40)\n\nwhile a.is_alive() and p.is_alive():\n  a.attack(p)\n  if p.is_alive():\n    p.attack(a)\n\nif a.is_alive():\n  print(f\"{a.name} wins!\")\nelse:\n  print(f\"{p.name} wins!\")",
+            "fr": "class Codemon:\n  def __init__(self, name, hp=50):\n    self.name = name\n    self.hp = hp\n\n  def attack(self, target):\n    target.hp -= 10\n    print(f\"{self.name} hits {target.name}! ({target.hp}HP left)\")\n\n  def is_alive(self):\n    return self.hp > 0\n\na = Codemon(\"Aquachu\", 50)\np = Codemon(\"Pyrochu\", 40)\n\nwhile a.is_alive() and p.is_alive():\n  a.attack(p)\n  if p.is_alive():\n    p.attack(a)\n\nif a.is_alive():\n  print(f\"{a.name} wins!\")\nelse:\n  print(f\"{p.name} wins!\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_15_9_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "advanced",
+      "tags": [
+        "challenge",
+        "classes",
+        "python",
+        "oop"
+      ]
+    },
+    "title": {
+      "en": "Codémon Team Battle",
+      "fr": "Combat d'équipe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a `Team` class that holds a list of Codémon!\n\n1. A `Team` class with `name` and `members` (list of Codémon)\n2. A `first_alive(self)` method that returns the first member with HP > 0\n3. Battle two teams: each team's first alive Codémon attacks the other, until one team has none left",
+            "fr": "Crée une classe `Team` qui contient une liste de Codémon !\n\n1. Une classe `Team` avec `name` et `members` (liste de Codémon)\n2. Une méthode `first_alive(self)` qui retourne le premier membre avec HP > 0\n3. Fais combattre deux équipes : le premier Codémon vivant de chaque équipe attaque l'autre, jusqu'à ce qu'une équipe n'en ait plus"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "class Codemon:\n  def __init__(self, name, hp=50):\n  self.name = name\n  self.hp = hp\n\n  def attack(self, target):\n  target.hp -= 10\n  print(f\"{self.name} hits {target.name}! ({target.hp}HP)\")\n\n  def is_alive(self):\n  return self.hp > 0\n\nclass Team:\n  def __init__(self, name, members):\n  pass\n\n  def first_alive(self):\n  pass\n\n# Create 2 teams, battle!",
+          "fr": "class Codemon:\n  def __init__(self, name, hp=50):\n  self.name = name\n  self.hp = hp\n\n  def attack(self, target):\n  target.hp -= 10\n  print(f\"{self.name} hits {target.name}! ({target.hp}HP)\")\n\n  def is_alive(self):\n  return self.hp > 0\n\nclass Team:\n  def __init__(self, name, members):\n  pass\n\n  def first_alive(self):\n  pass\n\n# Créer 2 équipes, combattre !"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "class Codemon:\n  def __init__(self, name, hp=50):\n  self.name = name\n  self.hp = hp\n\n  def attack(self, target):\n  target.hp -= 10\n  print(f\"{self.name} hits {target.name}! ({target.hp}HP)\")\n\n  def is_alive(self):\n  return self.hp > 0\n\nclass Team:\n  def __init__(self, name, members):\n  self.name = name\n  self.members = members\n\n  def first_alive(self):\n  for m in self.members:\n    if m.is_alive():\n    return m\n  return None\n\nt1 = Team(\"Fire\", [Codemon(\"Pyrochu\", 30), Codemon(\"Zap\", 30)])\nt2 = Team(\"Water\", [Codemon(\"Aquachu\", 40), Codemon(\"Florachu\", 20)])\n\nwhile t1.first_alive() and t2.first_alive():\n  f1 = t1.first_alive()\n  f2 = t2.first_alive()\n  f1.attack(f2)\n  if f2.is_alive():\n  f2.attack(f1)\n\nif t1.first_alive():\n  print(f\"{t1.name} wins!\")\nelse:\n  print(f\"{t2.name} wins!\")",
+            "fr": "class Codemon:\n  def __init__(self, name, hp=50):\n  self.name = name\n  self.hp = hp\n\n  def attack(self, target):\n  target.hp -= 10\n  print(f\"{self.name} hits {target.name}! ({target.hp}HP)\")\n\n  def is_alive(self):\n  return self.hp > 0\n\nclass Team:\n  def __init__(self, name, members):\n  self.name = name\n  self.members = members\n\n  def first_alive(self):\n  for m in self.members:\n    if m.is_alive():\n    return m\n  return None\n\nt1 = Team(\"Fire\", [Codemon(\"Pyrochu\", 30), Codemon(\"Zap\", 30)])\nt2 = Team(\"Water\", [Codemon(\"Aquachu\", 40), Codemon(\"Florachu\", 20)])\n\nwhile t1.first_alive() and t2.first_alive():\n  f1 = t1.first_alive()\n  f2 = t2.first_alive()\n  f1.attack(f2)\n  if f2.is_alive():\n  f2.attack(f1)\n\nif t1.first_alive():\n  print(f\"{t1.name} wins!\")\nelse:\n  print(f\"{t2.name} wins!\")"
+          }
+        }
+      ]
+    }
+  }
+]

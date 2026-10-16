@@ -12,5 +12,19 @@
   "gatekeeper_blocked": [
     "You shall not pass!",
     "Complete all the challenges on this map before moving on."
+  ],
+  "trainer_battle_intro": [
+    "You there! Let's see what you know!"
+  ],
+  "prof_pi_battle": [
+    "Welcome to the Training Maze! I'm Professor Pi.",
+    "Every trainer here will test what you know. Beat them with your knowledge, not your fists!",
+    "Let's start with the basics: variables. Zap, you're up!"
+  ],
+  "trainer_defeated": [
+    "You beat me fair and square! Keep practicing and you'll climb this tower in no time."
+  ],
+  "trainer_content_missing": [
+    "Hmm... my challenge seems to have disappeared from the course. (Content error: please tell the developer!)"
   ]
 }

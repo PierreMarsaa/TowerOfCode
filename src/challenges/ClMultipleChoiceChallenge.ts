@@ -80,10 +80,12 @@ export class ClMultipleChoiceChallenge extends ChallengeBase<ClMultipleChoiceCon
       const btn = document.createElement('button')
       btn.className = 'cl-btn'
       btn.style.textAlign = 'left'
-      const text = resolveOptionText(options[originalIdx])
-      if (options[originalIdx].language) {
+      const option = options[originalIdx]
+      const text = resolveOptionText(option)
+      if (option.language || option.type === 'codeBlock') {
         const code = document.createElement('code')
         code.innerHTML = tokenizePython(text)
+        if (option.type === 'codeBlock') code.style.whiteSpace = 'pre' // keep multi-line snippets intact
         btn.appendChild(code)
       } else {
         btn.textContent = text
@@ -187,22 +189,11 @@ export class ClMultipleChoiceChallenge extends ChallengeBase<ClMultipleChoiceCon
 
     // Show feedback
     this.feedbackArea.innerHTML = ''
-    const hintText = resolveText(this.config.content.hint)
-
     const feedback = document.createElement('div')
     feedback.className = correct ? 'cl-success' : 'cl-failure'
     feedback.textContent = correct ? this.t('challenge_feedback_correct') : this.t('challenge_feedback_incorrect')
     this.feedbackArea.appendChild(feedback)
-
-    if (hintText) {
-      const hintDiv = document.createElement('div')
-      hintDiv.className = 'cl-text-block'
-      hintDiv.style.color = correct ? '#22aa22' : '#cc6600'
-      hintDiv.style.fontSize = '12px'
-      hintDiv.style.textAlign = 'center'
-      hintDiv.textContent = hintText
-      this.feedbackArea.appendChild(hintDiv)
-    }
+    this.showHint(this.feedbackArea, this.config.content.hint, correct)
 
     if (correct) {
       this.answered = true

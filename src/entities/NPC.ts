@@ -25,7 +25,9 @@ export class NPC {
 
   constructor(scene: Phaser.Scene, npcData: NPCData) {
     this.data = npcData
-    this.animPrefix = (npcData.name || 'npc').toLowerCase().replace(/\s+/g, '-')
+    // Animations depend only on the spritesheet, so key them by sprite: two NPCs
+    // with the same name but different sprites must not share animations
+    this.animPrefix = `npc-${npcData.spriteKey}`
     this.facing = npcData.facing
 
     const row = DIR_ROW[npcData.facing]

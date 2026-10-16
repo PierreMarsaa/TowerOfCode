@@ -1,0 +1,4954 @@
+[
+  {
+    "id": "python_10_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "introduction",
+        "data structures"
+      ]
+    },
+    "title": {
+      "en": "What is a Set?",
+      "fr": "Qu'est-ce qu'un set ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A ***set*** is a collection of unique elements in Python. The most important characteristic of a set is that it automatically removes duplicates - each element can only appear once.",
+            "fr": "Un ***set*** est une collection d'éléments uniques en Python. La caractéristique la plus importante d'un set est qu'il supprime automatiquement les doublons - chaque élément ne peut apparaître qu'une seule fois."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Sets are created using curly braces ```{}``` or the ```set()``` function:",
+            "fr": "Les sets sont créés en utilisant des accolades ```{}``` ou la fonction ```set()``` :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "# Creating a set of Codémon types\ncodemon_types = {'water', 'fire', 'plant'}\nprint(codemon_types)\nprint(type(codemon_types))",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how the set contains unique values. If we try to add duplicates, the set will keep only one copy of each element.",
+            "fr": "Comme tu peux le voir, le set contient des valeurs uniques. Si nous essayons d'ajouter des doublons, le set ne gardera qu'une seule copie de chaque élément."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Sets are Unordered",
+              "fr": "Les sets ne sont pas ordonnés"
+            },
+            "content": {
+              "en": "Unlike lists, sets don't maintain any specific order. The elements might appear in a different order each time you print the set.",
+              "fr": "Contrairement aux listes, les sets ne maintiennent pas d'ordre spécifique. Les éléments peuvent apparaître dans un ordre différent à chaque fois que tu affiches le set."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "uniqueness",
+        "duplicates"
+      ]
+    },
+    "title": {
+      "en": "The Power of Uniqueness",
+      "fr": "Le pouvoir de l'unicité"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The uniqueness property of sets is what makes them special. When you create a set with duplicate values, Python automatically keeps only one copy of each element.",
+            "fr": "La propriété d'unicité des sets est ce qui les rend spéciaux. Lorsque tu crées un set avec des valeurs en double, Python garde automatiquement une seule copie de chaque élément."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_list = ['Aquachu', 'Pyrochu', 'Aquachu', 'Florachu', 'Aquachu']\nprint('Original list:', codemon_list)\nprint('Number of items:', len(codemon_list))\n\n# Convert to set - duplicates are removed\ncodemon_set = set(codemon_list)\nprint('\\nAs a set:', codemon_set)\nprint('Number of unique items:', len(codemon_set))",
+            "fr": "liste_codemon = ['Aquachu', 'Pyrochu', 'Aquachu', 'Florachu', 'Aquachu']\nprint('Liste originale :', liste_codemon)\nprint('Nombre d\\'éléments :', len(liste_codemon))\n\n# Conversion en set - les doublons sont supprimés\nset_codemon = set(liste_codemon)\nprint('\\nEn tant que set :', set_codemon)\nprint('Nombre d\\'éléments uniques :', len(set_codemon))"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example:\n- The list has 5 items (with duplicates)\n- The set has only 3 items (unique values only)\n- All duplicate 'Aquachu' entries were automatically removed",
+            "fr": "Dans cet exemple :\n- La liste a 5 éléments (avec des doublons)\n- Le set n'a que 3 éléments (valeurs uniques seulement)\n- Toutes les entrées 'Aquachu' en double ont été automatiquement supprimées"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Practical Use Case",
+              "fr": "Cas d'usage pratique"
+            },
+            "content": {
+              "en": "Sets are perfect when you need to find unique values in a collection, like counting how many different types of Codémon a trainer has caught, regardless of how many of each type they have.",
+              "fr": "Les sets sont parfaits quand tu as besoin de trouver des valeurs uniques dans une collection, comme compter combien de types différents de Codémon un dresseur a capturés, peu importe combien il en a de chaque type."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_1_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "uniqueness"
+      ]
+    },
+    "title": {
+      "en": "Understanding Set Uniqueness",
+      "fr": "Comprendre l'unicité des sets"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following code, what will be the output?",
+            "fr": "Étant donné le code suivant, quel sera le résultat ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "types = {'fire', 'water', 'fire', 'plant', 'water', 'fire'}\nprint(len(types))",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```3```"
+          },
+          {
+            "type": "text",
+            "value": "```6```"
+          },
+          {
+            "type": "text",
+            "value": "```5```"
+          },
+          {
+            "type": "text",
+            "value": "```An error will occur```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that sets automatically remove duplicates. Count how many unique values are in the set.",
+        "fr": "Rappelle-toi que les sets suppriment automatiquement les doublons. Compte combien de valeurs uniques il y a dans le set."
+      }
+    }
+  },
+  {
+    "id": "python_10_1_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "creation",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Different Ways to Create Sets",
+      "fr": "Différentes façons de créer des sets"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "There are two main ways to create sets in Python:\n  - Using curly braces ```{}```\n  - Using the ```set()``` constructor",
+            "fr": "Il y a deux façons principales de créer des sets en Python :\n  - En utilisant des accolades ```{}```\n  - En utilisant du constructeur ```set()```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_set1 = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint('Method 1:', codemon_set1)",
+            "fr": "set_codemon1 = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint('Méthode 1 :', set_codemon1)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_list = ['Aquachu', 'Pyrochu', 'Florachu']\ncodemon_set2 = set(codemon_list)\nprint('Method 2:', codemon_set2)",
+            "fr": "liste_codemon = ['Aquachu', 'Pyrochu', 'Florachu']\nset_codemon2 = set(liste_codemon)\nprint('Méthode 2 :', set_codemon2)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "initiallyExpanded": true,
+          "value": {
+            "title": {
+              "en": "Common Pitfall: Empty Sets",
+              "fr": "Piège courant : Sets vides"
+            },
+            "content": {
+              "en": "To create an empty set, you MUST use ```set()```. Using ```{}``` creates an empty dictionary, not an empty set!",
+              "fr": "Pour créer un set vide, tu DOIS utiliser ```set()```. Utiliser ```{}``` crée un dictionnaire vide, pas un set vide !"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can also create a set from any iterable (list, tuple, string):",
+            "fr": "Tu peux aussi créer un set à partir de n'importe quel itérable (liste, tuple, chaîne) :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "letters = set('Aquachu') # From a string\nprint('Letters in Aquachu:', letters)\n\n# From a tuple\ncodemon_tuple = ('fire', 'water', 'fire', 'plant')\nunique_types = set(codemon_tuple)\nprint('Unique types:', unique_types)",
+            "fr": "lettres = set('Aquachu') # Avec un string\nprint('Lettres dans Aquachu :', lettres)\n\n# À partir d'un tuple\ntuple_codemon = ('fire', 'water', 'fire', 'plant')\ntypes_uniques = set(tuple_codemon)\nprint('Types uniques :', types_uniques)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_1_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "creation",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Creating Empty Collections",
+      "fr": "Créer des collections vides"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following correctly creates an empty set?",
+            "fr": "Lequel des éléments suivants crée correctement un set vide ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```empty_set = set()```"
+          },
+          {
+            "type": "text",
+            "value": "```empty_set = {}```"
+          },
+          {
+            "type": "text",
+            "value": "```empty_set = []```"
+          },
+          {
+            "type": "text",
+            "value": "```empty_set = set([])```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that {} creates an empty dictionary, not a set. Think about the correct syntax for creating an empty set.",
+        "fr": "Rappelle-toi que {} crée un dictionnaire vide, pas un set. Réfléchis à la syntaxe correcte pour créer un set vide."
+      }
+    }
+  },
+  {
+    "id": "python_10_1_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "lists",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Sets vs Lists: Key Differences",
+      "fr": "Sets vs Listes : Différences clés"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "While both sets and lists are collections in Python, they have important differences. Lists are ordered and allow duplicate elements, while sets are unordered and only store unique elements.",
+            "fr": "Bien que les sets et les listes soient tous deux des collections en Python, ils ont des différences importantes. Les listes sont ordonnées et permettent des éléments en double, tandis que les sets ne sont pas ordonnés et ne stockent que des éléments uniques."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_list = ['Aquachu', 'Pyrochu', 'Aquachu']\nprint('List:', codemon_list)\nprint('First item:', codemon_list[0])  # Can access by index\nprint('Length:', len(codemon_list))  # Counts duplicates\n\ncodemon_set = {'Aquachu', 'Pyrochu', 'Aquachu'}\nprint('\\nSet:', codemon_set)\nprint('Length:', len(codemon_set))  # Only unique items\n# print(codemon_set[0])  # This would cause an error!",
+            "fr": "liste_codemon = ['Aquachu', 'Pyrochu', 'Aquachu']\nprint('Liste :', liste_codemon)\nprint('Premier élément :', liste_codemon[0])  # Peut accéder par index\nprint('Longueur :', len(liste_codemon))  # Compte les doublons\n\nset_codemon = {'Aquachu', 'Pyrochu', 'Aquachu'}\nprint('\\nSet :', set_codemon)\nprint('Longueur :', len(set_codemon))  # Seulement des éléments uniques\n# print(set_codemon[0])  # Cela provoquerait une erreur !"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Key differences:\n\n***Lists***:\n- Maintain order of elements\n- Allow duplicate values\n- Can access elements by index: ```my_list[0]```\n- Use square brackets: ```[]```\n\n***Sets***:\n- Don't maintain order\n- Only unique values\n- Cannot access by index\n- Use curly braces: ```{}```",
+            "fr": "Différences clés :\n\n***Listes***:\n- Maintiennent l'ordre des éléments\n- Permettent les valeurs en double\n- Peuvent accéder aux éléments par index : ```ma_liste[0]```\n- Utilisent des crochets : ```[]```\n\n***Sets***:\n- Ne maintiennent pas l'ordre\n- Seulement des valeurs uniques\n- Ne peuvent pas accéder par index\n- Utilisent des accolades : ```{}```"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to Use Each",
+              "fr": "Quand utiliser chacun"
+            },
+            "content": {
+              "en": "Use ***lists*** when:\n- Order matters\n- You need to access elements by position\n- Duplicates are meaningful\n\nUse ***sets*** when:\n- You only care about unique values\n- Order doesn't matter\n- You need to check membership quickly",
+              "fr": "Utilise des ***listes*** quand :\n- L'ordre compte\n- Tu as besoin d'accéder aux éléments par position\n- Les doublons sont significatifs\n\nUtilise des ***sets*** quand :\n- Tu te soucies seulement des valeurs uniques\n- L'ordre n'a pas d'importance\n- Tu as besoin de vérifier l'appartenance rapidement"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_1_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "creation"
+      ]
+    },
+    "title": {
+      "en": "Create Your First Set",
+      "fr": "Crée ton premier set"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a set of Codémon types and then convert a list with duplicates into a set.",
+            "fr": "Complète le code pour créer un set de types de Codémon puis convertir une liste avec des doublons en set."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# List with duplicates\ncaught_types = ['fire', 'water', 'fire', 'plant', 'water']\n\n# Convert list to set to get unique types\nunique_types = {{}}({{}})\nprint('Unique caught types:', unique_types)",
+        "options": [
+          "set",
+          "caught_types",
+          "list"
+        ],
+        "correctAnswers": {
+          "1": "set",
+          "2": "caught_types"
+        }
+      },
+      "hint": {
+        "en": "Remember: sets are created with curly braces, and you can convert other collections to sets using the set() function.",
+        "fr": "Rappelle-toi : les sets sont créés avec des accolades, et tu peux convertir d'autres collections en sets en utilisant la fonction set()."
+      }
+    }
+  },
+  {
+    "id": "python_10_1_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "understanding"
+      ]
+    },
+    "title": {
+      "en": "Match Code with Output",
+      "fr": "Associe le code avec le résultat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each piece of code with its output:",
+            "fr": "Associe chaque morceau de code avec son résultat :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```len({'fire', 'water', 'plant'})```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```3```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```len({'fire', 'fire', 'water'})```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```2```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```type({})```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```<class 'dict'>```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```type(set())```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```<class 'set'>```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_1_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "lists",
+        "use cases"
+      ]
+    },
+    "title": {
+      "en": "Choosing the Right Data Structure",
+      "fr": "Choisir la bonne structure de données"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A trainer wants to keep track of all the different types of Codémon they've encountered, without counting duplicates. Which data structure should they use?",
+            "fr": "Un dresseur veut garder une trace de tous les différents types de Codémon qu'il a rencontrés, sans compter les doublons. Quelle structure de données devrait-il utiliser ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "A set, because it automatically keeps only unique values",
+              "fr": "Un set, car il garde automatiquement seulement les valeurs uniques"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A list, because it maintains the order of encounters",
+              "fr": "Une liste, car elle maintient l'ordre des rencontres"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A string, because it's easy to read",
+              "fr": "Une chaîne de caractères, car elle est facile à lire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A tuple, because it's immutable",
+              "fr": "Un tuple, car il est immuable"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about which data structure's main characteristic matches the requirement of 'without counting duplicates'.",
+        "fr": "Réfléchis à quelle structure de données a comme caractéristique principale de correspondre à l'exigence de 'sans compter les doublons'."
+      }
+    }
+  },
+  {
+    "id": "python_10_1_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "conversion"
+      ]
+    },
+    "title": {
+      "en": "Finding Unique Values",
+      "fr": "Trouver les valeurs uniques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to find how many unique Codémon types are in the trainer's collection.",
+            "fr": "Complète le code pour trouver combien de types de Codémon uniques sont dans la collection du dresseur."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# Trainer's collection with many duplicates\ncollection = ['fire', 'water', 'fire', 'plant', 'water', 'fire', 'electric', 'water']\n\n# Convert to set to get unique types\nunique_types = {{}}({{}})\n\n# Count unique types\ncount = {{}}(unique_types)\n\nprint(f'The trainer has {count} unique types')\nprint('Types:', unique_types)",
+        "options": [
+          "set",
+          "collection",
+          "len",
+          "list",
+          "unique_types",
+          "count"
+        ],
+        "correctAnswers": {
+          "1": "set",
+          "2": "collection",
+          "3": "len"
+        }
+      },
+      "hint": {
+        "en": "Think about how to convert a list to a set, and how to count the number of elements in a collection.",
+        "fr": "Réfléchis à comment convertir une liste en set, et comment compter le nombre d'éléments dans une collection."
+      }
+    }
+  },
+  {
+    "id": "python_10_1_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "characteristics"
+      ]
+    },
+    "title": {
+      "en": "Set Characteristics",
+      "fr": "Caractéristiques des sets"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each characteristic with the correct data structure:",
+            "fr": "Associe chaque caractéristique à la structure de données correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Automatically removes duplicates",
+                "fr": "Supprime automatiquement les doublons"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "Set"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Elements can be accessed by index",
+                "fr": "Les éléments peuvent être accédés par index"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "List"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Created with curly braces and no duplicates",
+                "fr": "Créé avec des accolades et sans doublons"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "Set"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Maintains insertion order",
+                "fr": "Maintient l'ordre d'insertion"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "List"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_1_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "uniqueness",
+        "conversion",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Codémon Collection Analysis",
+      "fr": "Analyse de collection Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You've been catching Codémon all day and your collection has many duplicates!\n\nConvert your collection list to a set to find out how many unique types you've caught, then display them.",
+            "fr": "Tu as capturé des Codémon toute la journée et ta collection a beaucoup de doublons !\n\nConvertis ta liste de collection en set pour découvrir combien de types uniques tu as capturés, puis affiche-les."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "caught_today = ['fire', 'water', 'fire', 'plant', 'water', 'electric', 'fire', 'water', 'plant', 'ice', 'fire']\n\nprint(\"=== DAILY CATCH REPORT ===\")\nprint(f\"Total catches: {len(caught_today)}\")\n\n# Convert to set to get unique types\n\n# Display results\n\n",
+          "fr": "captures_du_jour = ['fire', 'water', 'fire', 'plant', 'water', 'electric', 'fire', 'water', 'plant', 'ice', 'fire']\n\nprint(\"=== RAPPORT DE CAPTURES QUOTIDIEN ===\")\nprint(f\"Total de captures : {len(captures_du_jour)}\")\n\n# Convertis en set pour obtenir les types uniques\n\n# Affiche les résultats\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "caught_today = ['fire', 'water', 'fire', 'plant', 'water', 'electric', 'fire', 'water', 'plant', 'ice', 'fire']\n\nprint(\"=== DAILY CATCH REPORT ===\")\nprint(f\"Total catches: {len(caught_today)}\")\n\n# Convert to set to get unique types\nunique_types = set(caught_today)\n\n# Display results\nprint(f\"Unique types caught: {len(unique_types)}\")\nprint(f\"Types: {unique_types}\")",
+            "fr": "captures_du_jour = ['fire', 'water', 'fire', 'plant', 'water', 'electric', 'fire', 'water', 'plant', 'ice', 'fire']\n\nprint(\"=== RAPPORT DE CAPTURES QUOTIDIEN ===\")\nprint(f\"Total de captures : {len(captures_du_jour)}\")\n\n# Convertis en set pour obtenir les types uniques\ntypes_uniques = set(captures_du_jour)\n\n# Affiche les résultats\nprint(f\"Types uniques capturés : {len(types_uniques)}\")\nprint(f\"Types : {types_uniques}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "add",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Adding Elements with add()",
+      "fr": "Ajouter des éléments avec add()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Sets can be modified, we can add, remove, or update elements. Let's start easy with the ```add()``` method.",
+            "fr": "Les ensembles (sets) peuvent être modifiés, nous pouvons ajouter, supprimer ou mettre à jour des éléments. Commençons par la méthode ```add()```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```add()``` method allows you to add a single element to a set. Remember that sets automatically maintain uniqueness, so adding an element that already exists won't create a duplicate.",
+            "fr": "La méthode ```add()``` te permet d'ajouter un seul élément à un ensemble. Rappelle-toi que les ensembles maintiennent automatiquement l'unicité, donc ajouter un élément qui existe déjà ne créera pas de doublon."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Basic syntax:",
+            "fr": "Syntaxe de base :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "my_set.add(element)"
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_types = {'water', 'fire', 'plant'}\nprint(\"Original set:\", codemon_types)\n\n# Add a new type\ncodemon_types.add('electric')\nprint(\"After adding 'electric':\", codemon_types)\n\n# Try adding a duplicate\ncodemon_types.add('water')\nprint(\"After trying to add 'water' again:\", codemon_types)",
+            "fr": "codemon_types = {'water', 'fire', 'plant'}\nprint(\"Ensemble original:\", codemon_types)\n\n# Ajouter un nouveau type\ncodemon_types.add('electric')\nprint(\"Après avoir ajouté 'electric':\", codemon_types)\n\n# Essayer d'ajouter un doublon\ncodemon_types.add('water')\nprint(\"Après avoir essayé d'ajouter 'water' à nouveau:\", codemon_types)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how adding 'water' again didn't create a duplicate. The set still contains only unique elements.",
+            "fr": "Remarque comment ajouter 'water' à nouveau n'a pas créé de doublon. L'ensemble ne contient toujours que des éléments uniques."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "add() vs append()",
+              "fr": "add() vs append()"
+            },
+            "content": {
+              "en": "Unlike lists which use ```append()```, sets use ```add()``` to add elements. This is because sets don't have a concept of order or position where elements are 'appended' to.",
+              "fr": "Contrairement aux listes qui utilisent ```append()```, les ensembles utilisent ```add()``` pour ajouter des éléments. C'est parce que les ensembles n'ont pas de concept d'ordre ou de position où les éléments sont 'ajoutés à la fin'."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_2_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "add",
+        "behavior"
+      ]
+    },
+    "title": {
+      "en": "Understanding add() with Duplicates",
+      "fr": "Comprendre add() avec les doublons"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quelle sera la sortie du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_names = {'Aquachu', 'Pyrochu'}\ncodemon_names.add('Aquachu')\ncodemon_names.add('Florachu')\nprint(len(codemon_names))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```3```"
+          },
+          {
+            "type": "text",
+            "value": "```4```"
+          },
+          {
+            "type": "text",
+            "value": "```2```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error will occur",
+              "fr": "Une erreur se produira"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that sets automatically prevent duplicates. Count how many unique elements will be in the set after all operations.",
+        "fr": "Rappelle-toi que les ensembles empêchent automatiquement les doublons. Compte combien d'éléments uniques seront dans l'ensemble après toutes les opérations."
+      }
+    }
+  },
+  {
+    "id": "python_10_2_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "update",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Adding Multiple Elements with update()",
+      "fr": "Ajouter plusieurs éléments avec update()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "While ```add()``` adds a single element, ```update()``` allows you to add multiple elements at once from any iterable (list, tuple, another set, etc.).",
+            "fr": "Alors que ```add()``` ajoute un seul élément, ```update()``` te permet d'ajouter plusieurs éléments à la fois depuis n'importe quel itérable (liste, tuple, autre set, etc.)."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Basic syntax:",
+            "fr": "Syntaxe de base :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "my_set.update(iterable)"
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "my_codemon = {'Aquachu', 'Pyrochu'}\nprint(\"Original set:\", my_codemon)\n\n# Add multiple Codémon from a list\nnew_codemon = ['Florachu', 'Zap']\nmy_codemon.update(new_codemon)\nprint(\"After update with list:\", my_codemon)",
+            "fr": "my_codemon = {'Aquachu', 'Pyrochu'}\nprint(\"Set original:\", my_codemon)\n\n# Ajouter plusieurs Codémon depuis une liste\nnew_codemon = ['Florachu', 'Zap']\nmy_codemon.update(new_codemon)\nprint(\"Après update avec liste:\", my_codemon)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how ```update()``` can accept lists, sets, or any iterable. It automatically handles duplicates, just like ```add()```.",
+            "fr": "Remarque comment ```update()``` peut accepter des listes, des sets ou n'importe quel itérable. Il gère automatiquement les doublons, tout comme ```add()```."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Common Mistake",
+              "fr": "Erreur courante"
+            },
+            "content": {
+              "en": "Don't confuse ```add()``` and ```update()```! If you try ```my_set.add(['a', 'b'])```, Python will try to add the entire list as a single element (which will cause an error because lists aren't hashable). Use ```update()``` for multiple elements!",
+              "fr": "Ne confonds pas ```add()``` et ```update()``` ! Si tu essaies ```my_set.add(['a', 'b'])```, Python essaiera d'ajouter la liste entière comme un seul élément (ce qui causera une erreur car les listes ne sont pas hashables). Utilise ```update()``` pour plusieurs éléments !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_2_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "add",
+        "update"
+      ]
+    },
+    "title": {
+      "en": "Using add() and update() Correctly",
+      "fr": "Utiliser add() et update() correctement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to add elements to the set correctly. Use ```add()``` for single elements and ```update()``` for multiple elements.",
+            "fr": "Complète le code pour ajouter des éléments dans le set. Utilise ```add()``` pour les éléments uniques et ```update()``` pour plusieurs éléments."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# Create a set of caught Codémon\ncaught_codemon = {'Aquachu'}\ncaught_codemon.{{}}('Pyrochu')\nnew_catches = ['Florachu', 'Zap', 'Rockachu']\ncaught_codemon.{{}}(new_catches)\n\nprint(caught_codemon)",
+        "options": [
+          "add",
+          "update",
+          "append",
+          "extend",
+          "insert",
+          "add",
+          "update"
+        ],
+        "correctAnswers": {
+          "1": "add",
+          "2": "update"
+        }
+      },
+      "hint": {
+        "en": "Think about which method is used for single elements versus multiple elements. One adds a single item, the other adds from an iterable.",
+        "fr": "Réfléchis à quelle méthode est utilisée pour les éléments uniques par rapport aux éléments multiples. L'une ajoute un seul élément, l'autre ajoute depuis un itérable."
+      }
+    }
+  },
+  {
+    "id": "python_10_2_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "remove",
+        "discard",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Removing Elements: remove() vs discard()",
+      "fr": "Supprimer des éléments : remove() vs discard()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python provides two methods to remove specific elements from a set: ```remove()``` and ```discard()```. The key difference is how they handle elements that don't exist in the set.",
+            "fr": "Python fournit deux méthodes pour supprimer des éléments spécifiques d'un set : ```remove()``` et ```discard()```. La différence clé est comment elles gèrent les éléments qui n'existent pas dans le set."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***remove()***:\n- Removes the specified element\n- Raises a ```KeyError``` if the element doesn't exist\n- Use when you're certain the element exists",
+            "fr": "***remove()*** :\n- Supprime l'élément spécifié\n- Lève une ```KeyError``` si l'élément n'existe pas\n- À utiliser quand tu es certain que l'élément existe"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***discard()***:\n- Removes the specified element\n- Does nothing if the element doesn't exist (no error)\n- Use when you're unsure if the element exists",
+            "fr": "***discard()*** :\n- Supprime l'élément spécifié\n- Ne fait rien si l'élément n'existe pas (pas d'erreur)\n- À utiliser quand tu n'es pas sûr que l'élément existe"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_team = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint(\"Original team:\", codemon_team)\n\n# Using discard() - safe even if element doesn't exist\ncodemon_team.discard('Pyrochu')\nprint(\"After discard('Pyrochu'):\", codemon_team)\n\ncodemon_team.discard('Zap')  # Doesn't exist, but no error!\nprint(\"After discard('Zap'):\", codemon_team)",
+            "fr": "codemon_team = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint(\"Équipe originale:\", codemon_team)\n\n# Utiliser discard() - sûr même si l'élément n'existe pas\ncodemon_team.discard('Pyrochu')\nprint(\"Après discard('Pyrochu'):\", codemon_team)\n\ncodemon_team.discard('Zap')  # N'existe pas, mais pas d'erreur !\nprint(\"Après discard('Zap'):\", codemon_team)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_team = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint(\"Original team:\", codemon_team)\n\n# Using remove() - will work if element exists\ncodemon_team.remove('Aquachu')\nprint(\"After remove('Aquachu'):\", codemon_team)\n\n# Uncommenting the next line would cause a KeyError\n# codemon_team.remove('Zap')  # KeyError!",
+            "fr": "codemon_team = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint(\"Équipe originale:\", codemon_team)\n\n# Utiliser remove() - fonctionnera si l'élément existe\ncodemon_team.remove('Aquachu')\nprint(\"Après remove('Aquachu'):\", codemon_team)\n\n# Décommenter la ligne suivante causerait une KeyError\n# codemon_team.remove('Zap')  # KeyError!"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_2_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "remove",
+        "discard"
+      ]
+    },
+    "title": {
+      "en": "Choosing Between remove() and discard()",
+      "fr": "Choisir entre remove() et discard()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're writing code to manage a player's Codémon inventory. The player can release Codémon they no longer want, but sometimes they might try to release a Codémon they don't have. Which method should you use?",
+            "fr": "Tu écris du code pour gérer l'inventaire de Codémon d'un joueur. Le joueur peut relâcher des Codémon qu'il ne veut plus, mais parfois il peut essayer de relâcher un Codémon qu'il n'a pas. Quelle méthode devrais-tu utiliser ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```discard()```",
+              "fr": "```discard()```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```remove()```",
+              "fr": "```remove()```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```pop()```",
+              "fr": "```pop()```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```clear()```",
+              "fr": "```clear()```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about whether you want the program to crash with an error or continue running smoothly even if the player makes a mistake.",
+        "fr": "Réfléchis si tu veux que le programme plante avec une erreur ou continue de fonctionner même si le joueur fait une erreur."
+      }
+    }
+  },
+  {
+    "id": "python_10_2_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "remove",
+        "discard"
+      ]
+    },
+    "title": {
+      "en": "Implementing remove() and discard()",
+      "fr": "Implémenter remove() et discard()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to manage a Codémon collection.",
+            "fr": "Complète le code pour gérer une collection de Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "active_codemon = {'Aquachu', 'Pyrochu', 'Florachu'}\n\n# Aquachu is in for sure\nactive_codemon.{{}}('Aquachu')\n\n# We're not sure if Zap is in the set\nactive_codemon.{{}}('Zap')\n\nprint(active_codemon)",
+        "options": [
+          "remove",
+          "discard",
+          "pop",
+          "delete",
+          "remove",
+          "discard"
+        ],
+        "correctAnswers": {
+          "1": "remove",
+          "2": "discard"
+        }
+      },
+      "hint": {
+        "en": "Consider which method raises an error if the element doesn't exist and which one doesn't.",
+        "fr": "Réfléchis à quelle méthode lève une erreur si l'élément n'existe pas et laquelle ne le fait pas."
+      }
+    }
+  },
+  {
+    "id": "python_10_2_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "pop",
+        "clear",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "pop() and clear() Methods",
+      "fr": "Méthodes pop() et clear()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Two more useful methods for removing elements from sets are ```pop()``` and ```clear()```.",
+            "fr": "Deux autres méthodes utiles pour supprimer des éléments des ensembles sont ```pop()``` et ```clear()```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***pop()***:\n- Removes and returns an arbitrary element from the set\n- Raises a ```KeyError``` if the set is empty\n- You don't control which element gets removed\n- Useful when you need any element from the set",
+            "fr": "***pop()*** :\n- Supprime et retourne un élément arbitraire de l'ensemble\n- Lève une ```KeyError``` si l'ensemble est vide\n- Tu ne contrôles pas quel élément est supprimé\n- Utile quand tu as besoin de n'importe quel élément de l'ensemble"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***clear()***:\n- Removes all elements from the set\n- The set becomes empty\n- No parameters needed",
+            "fr": "***clear()*** :\n- Supprime tous les éléments de l'ensemble\n- L'ensemble devient vide\n- Aucun paramètre nécessaire"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_types = {'water', 'fire', 'plant', 'electric'}\nprint(\"Original set:\", codemon_types)\n\nremoved = codemon_types.pop()\nprint(f\"Removed element: {removed}\")\nprint(\"After pop():\", codemon_types)\n\n# Try running multiple times - different element each time!\nremoved2 = codemon_types.pop()\nprint(f\"Removed another: {removed2}\")\nprint(\"After second pop():\", codemon_types)",
+            "fr": "codemon_types = {'water', 'fire', 'plant', 'electric'}\nprint(\"Ensemble original:\", codemon_types)\n\nremoved = codemon_types.pop()\nprint(f\"Élément supprimé: {removed}\")\nprint(\"Après pop():\", codemon_types)\n\n# Essaie d'exécuter plusieurs fois - élément différent à chaque fois !\nremoved2 = codemon_types.pop()\nprint(f\"Encore supprimé: {removed2}\")\nprint(\"Après le deuxième pop():\", codemon_types)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_team = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint(\"Original team:\", codemon_team)\nprint(\"Size before:\", len(codemon_team))\n\ncodemon_team.clear()\nprint(\"\\nAfter clear():\", codemon_team)\nprint(\"Size after:\", len(codemon_team))\nprint(\"Is empty?\", len(codemon_team) == 0)",
+            "fr": "codemon_team = {'Aquachu', 'Pyrochu', 'Florachu'}\nprint(\"Équipe originale:\", codemon_team)\nprint(\"Taille avant:\", len(codemon_team))\n\ncodemon_team.clear()\nprint(\"\\nAprès clear():\", codemon_team)\nprint(\"Taille après:\", len(codemon_team))\nprint(\"Est vide ?\", len(codemon_team) == 0)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "pop() is Unpredictable",
+              "fr": "pop() est imprévisible"
+            },
+            "content": {
+              "en": "Unlike lists where ```pop()``` removes the last element, sets don't have order, so ```pop()``` removes an arbitrary element. Each time you run the code, a different element might be removed! Don't use ```pop()``` if you need to remove a specific element.",
+              "fr": "Contrairement aux listes où ```pop()``` supprime le dernier élément, les ensembles n'ont pas d'ordre, donc ```pop()``` supprime un élément arbitraire. Chaque fois que tu exécutes le code, un élément différent pourrait être supprimé ! N'utilise pas ```pop()``` si tu as besoin de supprimer un élément spécifique."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_2_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "pop",
+        "behavior"
+      ]
+    },
+    "title": {
+      "en": "Understanding pop() Behavior",
+      "fr": "Comprendre le comportement de pop()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the key characteristic of the ```pop()``` method when used with sets?",
+            "fr": "Quelle est la caractéristique clé de la méthode ```pop()``` lorsqu'elle est utilisée avec les ensembles ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It removes and returns an arbitrary (random) element from the set",
+              "fr": "Elle supprime et retourne un élément arbitraire (aléatoire) de l'ensemble"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It always removes the first element that was added to the set",
+              "fr": "Elle supprime toujours le premier élément qui a été ajouté à l'ensemble"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It removes the element with the smallest value",
+              "fr": "Elle supprime l'élément avec la plus petite valeur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It removes the last element that was added to the set",
+              "fr": "Elle supprime le dernier élément qui a été ajouté à l'ensemble"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about the fundamental property of sets - they are unordered collections. How would this affect which element gets removed?",
+        "fr": "Réfléchis à la propriété fondamentale des ensembles - ce sont des collections non ordonnées. Comment cela affecterait-il quel élément est supprimé ?"
+      }
+    }
+  },
+  {
+    "id": "python_10_2_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "methods",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Match Set Methods with Their Behaviors",
+      "fr": "Associer les méthodes d'ensemble à leurs comportements"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each set method with its correct description:",
+            "fr": "Associe chaque méthode d'ensemble à sa description correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```add()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds a single element to the set",
+                "fr": "Ajoute un seul élément à l'ensemble"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```update()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds multiple elements from an iterable",
+                "fr": "Ajoute plusieurs éléments depuis un itérable"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```remove()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes element, raises error if not found",
+                "fr": "Supprime l'élément, lève une erreur si non trouvé"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```discard()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes element, no error if not found",
+                "fr": "Supprime l'élément, pas d'erreur si non trouvé"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": "```pop()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes and returns arbitrary element",
+                "fr": "Supprime et retourne un élément arbitraire"
+              }
+            }
+          },
+          {
+            "id": "6",
+            "term": {
+              "type": "text",
+              "value": "```clear()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes all elements from the set",
+                "fr": "Supprime tous les éléments de l'ensemble"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_2_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "methods",
+        "comprehensive"
+      ]
+    },
+    "title": {
+      "en": "Comprehensive Understanding Check",
+      "fr": "Vérification de la compréhension globale"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the final output of this code?",
+            "fr": "Quelle sera la sortie finale de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_set = {'Aquachu', 'Pyrochu'}\ncodemon_set.add('Florachu')\ncodemon_set.update(['Zap', 'Aquachu'])\ncodemon_set.discard('Rockachu')\ncodemon_set.remove('Pyrochu')\nprint(len(codemon_set))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```3```"
+          },
+          {
+            "type": "text",
+            "value": "```4```"
+          },
+          {
+            "type": "text",
+            "value": "```5```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error will occur",
+              "fr": "Une erreur se produira"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Trace through each operation carefully. Remember that sets maintain uniqueness, discard doesn't error on missing elements, and remove does remove existing elements.",
+        "fr": "Suis chaque opération attentivement. Rappelle-toi que les ensembles maintiennent l'unicité, discard ne génère pas d'erreur sur les éléments manquants, et remove supprime bien les éléments existants."
+      }
+    }
+  },
+  {
+    "id": "python_10_2_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "add",
+        "update",
+        "remove",
+        "discard",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Build Your Battle Team",
+      "fr": "Construis ton équipe de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're preparing for a tournament and need to build your perfect battle team!\n\n1. Add a new Codémon named 'Zap' to your team\n2. You found 3 more Codémon in the wild: 'Florachu', 'Shadowchu', and 'Aquachu' - add them all at once\n3. Remove 'Rockachu' from your team (you're sure it's there)\n4. Try to remove 'Pyrochu' (you're not sure if it's in the team)\n5. Display your final team and count",
+            "fr": "Tu te prépares pour un tournoi et tu dois construire ton équipe de combat parfaite !\n1. Ajoute un nouveau Codémon nommé 'Zap' à ton équipe\n2. Tu as trouvé 3 autres Codémon dans la nature : 'Florachu', 'Shadowchu', et 'Aquachu' - ajoute-les tous en une fois\n3. Retire 'Rockachu' de ton équipe (tu es sûr qu'il y est)\n4. Essaie de retirer 'Pyrochu' (tu n'es pas sûr qu'il soit dans l'équipe)\n5. Affiche ton équipe finale et son nombre"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "battle_team = {'Aquachu', 'Pyrochu', 'Rockachu'}\n\nprint(\"=== BUILDING BATTLE TEAM ===\")\nprint(\"Starting team:\", battle_team)\n\n# 1. Add Zap\n\n# 2. Add multiple Codémon from the wild\n\n# 3. Remove Rockachu (we're sure it's there)\n\n# 4. Try to remove Pyrochu (not sure if it exists)\n\n# 5. Display final team\nprint(\"\\n=== FINAL BATTLE TEAM ===\")\nprint(\"Team:\", battle_team)\nprint(f\"Total members: {len(battle_team)}\")",
+          "fr": "equipe_combat = {'Aquachu', 'Pyrochu', 'Rockachu'}\n\nprint(\"=== CONSTRUCTION DE L'ÉQUIPE ===\")\nprint(\"Équipe de départ:\", equipe_combat)\n\n# 1. Ajoute Zap\n\n# 2. Ajoute plusieurs Codémon de la nature\n\n# 3. Retire Rockachu (on est sûr qu'il y est)\n\n# 4. Essaie de retirer Pyrochu (pas sûr qu'il existe)\n\n# 5. Affiche l'équipe finale\nprint(\"\\n=== ÉQUIPE DE COMBAT FINALE ===\")\nprint(\"Équipe:\", equipe_combat)\nprint(f\"Nombre total de membres : {len(equipe_combat)}\")"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "battle_team = {'Aquachu', 'Pyrochu', 'Rockachu'}\n\nprint(\"=== BUILDING BATTLE TEAM ===\")\nprint(\"Starting team:\", battle_team)\n\n# 1. Add Zap\nbattle_team.add('Zap')\n\n# 2. Add multiple Codémon from the wild\nwild_codemon = ['Florachu', 'Shadowchu', 'Aquachu']\nbattle_team.update(wild_codemon)\n\n# 3. Remove Rockachu (we're sure it's there)\nbattle_team.remove('Rockachu')\n\n# 4. Try to remove Pyrochu (not sure if it exists)\nbattle_team.discard('Pyrochu')\n\n# 5. Display final team\nprint(\"\\n=== FINAL BATTLE TEAM ===\")\nprint(\"Team:\", battle_team)\nprint(f\"Total members: {len(battle_team)}\")",
+            "fr": "equipe_combat = {'Aquachu', 'Pyrochu', 'Rockachu'}\n\nprint(\"=== CONSTRUCTION DE L'ÉQUIPE ===\")\nprint(\"Équipe de départ:\", equipe_combat)\n\n# 1. Ajoute Zap\nequipe_combat.add('Zap')\n\n# 2. Ajoute plusieurs Codémon de la nature\ncodemon_sauvages = ['Florachu', 'Shadowchu', 'Aquachu']\nequipe_combat.update(codemon_sauvages)\n\n# 3. Retire Rockachu (on est sûr qu'il y est)\nequipe_combat.remove('Rockachu')\n\n# 4. Essaie de retirer Pyrochu (pas sûr qu'il existe)\nequipe_combat.discard('Pyrochu')\n\n# 5. Affiche l'équipe finale\nprint(\"\\n=== ÉQUIPE DE COMBAT FINALE ===\")\nprint(\"Équipe:\", equipe_combat)\nprint(f\"Nombre total de membres : {len(equipe_combat)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "union",
+        "set operations"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Set Union",
+      "fr": "Introduction à l'union d'ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Sets can be combined using various operations. One of the most common operations is the ***union***.",
+            "fr": "Les sets peuvent être combinés en utilisant diverses opérations. L'une des opérations les plus courantes est l'***union***."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ***union*** operation combines all elements from two or more sets. It creates a new set containing every unique element from all sets involved.",
+            "fr": "L'opération ***union*** combine tous les éléments de deux ou plusieurs ensembles. Elle crée un nouvel ensemble contenant chaque élément unique de tous les ensembles impliqués."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_union_diff_inter"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can perform union in two ways:\n\n- Using the ```|``` operator\n- Using the ```.union()``` method",
+            "fr": "En Python, tu peux effectuer une union de deux façons :\n\n- En utilisant l'opérateur ```|```\n- En utilisant la méthode ```.union()```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "trainer_1 = {'Aquachu', 'Pyrochu'}\ntrainer_2 = {'Florachu', 'Rockachu'}\n\n# Using | operator\nall_codemon_1 = trainer_1 | trainer_2\nprint('Union with |:', all_codemon_1)\n\n# Using .union() method\nall_codemon_2 = trainer_1.union(trainer_2)\nprint('Union with .union():', all_codemon_2)\n\n# Both give the same result\nprint('Are they equal?', all_codemon_1 == all_codemon_2)",
+            "fr": "dresseur_1 = {'Aquachu', 'Pyrochu'}\ndresseur_2 = {'Florachu', 'Rockachu'}\n\n# Utilisation de l'opérateur |\ntous_codemon_1 = dresseur_1 | dresseur_2\nprint('Union avec | :', tous_codemon_1)\n\n# Utilisation de la méthode .union()\ntous_codemon_2 = dresseur_1.union(dresseur_2)\nprint('Union avec .union() :', tous_codemon_2)\n\n# Les deux donnent le même résultat\nprint('Sont-ils égaux ?', tous_codemon_1 == tous_codemon_2)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how the union contains all Codémon from both sets, with no duplicates. The order may vary since sets are unordered.",
+            "fr": "Remarque comment l'union contient tous les Codémon des deux ensembles, sans doublons. L'ordre peut varier car les ensembles ne sont pas ordonnés."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Union with Duplicates",
+              "fr": "Union avec des doublons"
+            },
+            "content": {
+              "en": "If the same element exists in both sets, it appears only once in the union. For example, if ```{'A', 'B'} | {'B', 'C'}```, the result is ```{'A', 'B', 'C'}``` - B appears only once even though it's in both sets.",
+              "fr": "Si le même élément existe dans les deux ensembles, il n'apparaît qu'une seule fois dans l'union. Par exemple, si ```{'A', 'B'} | {'B', 'C'}```, le résultat est ```{'A', 'B', 'C'}``` - B n'apparaît qu'une fois même s'il est dans les deux ensembles."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_3_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "union",
+        "multiple sets"
+      ]
+    },
+    "title": {
+      "en": "Union with Multiple Sets",
+      "fr": "Union avec plusieurs ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can perform union on more than two sets at once. The result will contain all unique elements from all sets combined.",
+            "fr": "Tu peux effectuer une union sur plus de deux ensembles à la fois. Le résultat contiendra tous les éléments uniques de tous les ensembles combinés."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "trainer_1 = {'Aquachu', 'Pyrochu'}\ntrainer_2 = {'Florachu', 'Rockachu'}\ntrainer_3 = {'Zap', 'Shadowchu'}\n\n# Using | operator with multiple sets\nall_codemon = trainer_1 | trainer_2 | trainer_3\nprint('All Codémon:', all_codemon)\nprint('Total count:', len(all_codemon))\n\n# Using .union() method with multiple sets\nall_codemon_2 = trainer_1.union(trainer_2, trainer_3)\nprint('\\nUsing .union():', all_codemon_2)",
+            "fr": "dresseur_1 = {'Aquachu', 'Pyrochu'}\ndresseur_2 = {'Florachu', 'Rockachu'}\ndresseur_3 = {'Zap', 'Shadowchu'}\n\n# Utilisation de l'opérateur | avec plusieurs ensembles\ntous_codemon = dresseur_1 | dresseur_2 | dresseur_3\nprint('Tous les Codémon :', tous_codemon)\nprint('Nombre total :', len(tous_codemon))\n\n# Utilisation de la méthode .union() avec plusieurs ensembles\ntous_codemon_2 = dresseur_1.union(dresseur_2, dresseur_3)\nprint('\\nUtilisation de .union() :', tous_codemon_2)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The union operation is ***commutative***, which means the order doesn't matter: ```A | B | C``` gives the same result as ```C | B | A```.",
+            "fr": "L'opération union est ***commutative***, ce qui signifie que l'ordre n'a pas d'importance : ```A | B | C``` donne le même résultat que ```C | B | A```."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_3_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "union"
+      ]
+    },
+    "title": {
+      "en": "Understanding Union Results",
+      "fr": "Comprendre les résultats de l'union"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given these two sets of Codémon:",
+            "fr": "Étant donné ces deux ensembles de Codémon :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "team_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam_b = {'Pyrochu', 'Zap', 'Rockachu'}\n\nresult = team_a | team_b",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "How many Codémon will be in the result set?",
+            "fr": "Combien de Codémon seront dans l'ensemble résultant ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "5"
+          },
+          {
+            "type": "text",
+            "value": "6"
+          },
+          {
+            "type": "text",
+            "value": "3"
+          },
+          {
+            "type": "text",
+            "value": "4"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that union combines all elements from both sets, but removes duplicates. Count the unique Codémon names across both sets.",
+        "fr": "Rappelle-toi que l'union combine tous les éléments des deux ensembles, mais supprime les doublons. Compte les noms de Codémon uniques dans les deux ensembles."
+      }
+    }
+  },
+  {
+    "id": "python_10_3_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "intersection",
+        "set operations"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Set Intersection",
+      "fr": "Introduction à l'intersection d'ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ***intersection*** operation returns only the elements that exist in ALL sets. It finds the common elements shared between sets.",
+            "fr": "L'opération ***intersection*** ne retourne que les éléments qui existent dans TOUS les ensembles. Elle trouve les éléments communs partagés entre les ensembles."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_union_diff_inter"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can perform intersection in two ways:\n\n- Using the ```&``` operator\n- Using the ```.intersection()``` method",
+            "fr": "En Python, tu peux effectuer une intersection de deux façons :\n\n- En utilisant l'opérateur ```&```\n- En utilisant la méthode ```.intersection()```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "trainer_a = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap'}\ntrainer_b = {'Pyrochu', 'Zap', 'Rockachu', 'Shadowchu'}\n\n# Using & operator\ncommon_1 = trainer_a & trainer_b\nprint('Common with &:', common_1)\n\n# Using .intersection() method\ncommon_2 = trainer_a.intersection(trainer_b)\nprint('Common with .intersection():', common_2)\n\n# Both give the same result\nprint('Are they equal?', common_1 == common_2)",
+            "fr": "dresseur_a = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap'}\ndresseur_b = {'Pyrochu', 'Zap', 'Rockachu', 'Shadowchu'}\n\n# Utilisation de l'opérateur &\ncommuns_1 = dresseur_a & dresseur_b\nprint('Communs avec & :', communs_1)\n\n# Utilisation de la méthode .intersection()\ncommuns_2 = dresseur_a.intersection(dresseur_b)\nprint('Communs avec .intersection() :', communs_2)\n\n# Les deux donnent le même résultat\nprint('Sont-ils égaux ?', communs_1 == communs_2)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The intersection contains only Pyrochu and Zap because they're the only Codémon that both trainers have.",
+            "fr": "L'intersection contient seulement Pyrochu et Zap car ce sont les seuls Codémon que les deux dresseurs possèdent."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Empty Intersection",
+              "fr": "Intersection vide"
+            },
+            "content": {
+              "en": "If two sets have no common elements, their intersection will be an empty set ```set()```. For example, ```{'A', 'B'} & {'C', 'D'}``` results in ```set()```.",
+              "fr": "Si deux ensembles n'ont aucun élément en commun, leur intersection sera un ensemble vide ```set()```. Par exemple, ```{'A', 'B'} & {'C', 'D'}``` donne ```set()```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_3_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "intersection",
+        "union"
+      ]
+    },
+    "title": {
+      "en": "Union vs Intersection",
+      "fr": "Union vs Intersection"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to find all Codémon types that exist (union) and types that are shared between both regions (intersection).",
+            "fr": "Complète le code pour trouver tous les types de Codémon qui existent (union) et les types qui sont partagés entre les deux régions (intersection)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "region_a_types = {'water', 'fire', 'plant', 'electric'}\nregion_b_types = {'fire', 'plant', 'rock', 'ice'}\n\n# All types from both regions\nall_types = region_a_types {{}} region_b_types\nprint('All types:', all_types)\n\n# Types found in both regions\nshared_types = region_a_types {{}} region_b_types\nprint('Shared types:', shared_types)",
+        "options": [
+          "|",
+          "&",
+          "-",
+          "^",
+          "+",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "|",
+          "2": "&"
+        }
+      },
+      "hint": {
+        "en": "Think about which operator combines all elements (union) and which finds only common elements (intersection).",
+        "fr": "Réfléchis à quel opérateur combine tous les éléments (union) et lequel trouve seulement les éléments communs (intersection)."
+      }
+    }
+  },
+  {
+    "id": "python_10_3_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "difference",
+        "set operations"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Set Difference",
+      "fr": "Introduction à la différence d'ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ***difference*** operation returns elements that are in the first set but NOT in the second set. This operation is ***not commutative*** - the order matters!",
+            "fr": "L'opération ***différence*** retourne les éléments qui sont dans le premier ensemble mais PAS dans le second. Cette opération n'est ***pas commutative*** - l'ordre compte !"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_union_diff_inter"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can perform difference in two ways:\n\n- Using the ```-``` operator\n- Using the ```.difference()``` method",
+            "fr": "En Python, tu peux effectuer une différence de deux façons :\n\n- En utilisant l'opérateur ```-```\n- En utilisant la méthode ```.difference()```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "# Finding which Codémon are unique to each trainer\ntrainer_a = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap'}\ntrainer_b = {'Pyrochu', 'Zap', 'Rockachu', 'Shadowchu'}\n\n# Codémon only trainer A has\nunique_to_a = trainer_a - trainer_b\nprint('Only trainer A has:', unique_to_a)\n\n# Codémon only trainer B has\nunique_to_b = trainer_b - trainer_a\nprint('Only trainer B has:', unique_to_b)\n\n# Notice they are different!\nprint('\\nAre they the same?', unique_to_a == unique_to_b)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how ```A - B``` gives different results than ```B - A```. The difference operation removes elements from the first set that also appear in the second set.",
+            "fr": "Remarque comment ```A - B``` donne des résultats différents de ```B - A```. L'opération différence retire du premier ensemble les éléments qui apparaissent aussi dans le second."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Order Matters!",
+              "fr": "L'ordre compte !"
+            },
+            "content": {
+              "en": "Unlike union and intersection, difference is NOT commutative. ```A - B``` means \"elements in A but not in B\", while ```B - A``` means \"elements in B but not in A\". These are usually different!",
+              "fr": "Contrairement à l'union et l'intersection, la différence n'est PAS commutative. ```A - B``` signifie \"éléments dans A mais pas dans B\", tandis que ```B - A``` signifie \"éléments dans B mais pas dans A\". Ce sont généralement des résultats différents !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_3_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "difference"
+      ]
+    },
+    "title": {
+      "en": "Understanding Difference Order",
+      "fr": "Comprendre l'ordre de la différence"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given these two sets:",
+            "fr": "Étant donné ces deux ensembles :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "caught = {'Aquachu', 'Pyrochu', 'Florachu'}\nwanted = {'Pyrochu', 'Zap', 'Rockachu'}\n\nresult = wanted - caught",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What will ```result``` contain?",
+            "fr": "Que contiendra ```result``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```{'Zap', 'Rockachu'}```"
+          },
+          {
+            "type": "text",
+            "value": "```{'Aquachu', 'Florachu'}```"
+          },
+          {
+            "type": "text",
+            "value": "```{'Pyrochu'}```"
+          },
+          {
+            "type": "text",
+            "value": "```{'Aquachu', 'Florachu', 'Zap', 'Rockachu'}```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that ```A - B``` means elements in A but not in B. Which Codémon are in wanted but not in caught?",
+        "fr": "Rappelle-toi que ```A - B``` signifie les éléments dans A mais pas dans B. Quels Codémon sont dans wanted mais pas dans caught ?"
+      }
+    }
+  },
+  {
+    "id": "python_10_3_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "symmetric difference",
+        "set operations"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Symmetric Difference",
+      "fr": "Introduction à la différence symétrique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ***symmetric difference*** returns elements that are in either set, but NOT in both. It's like saying \"unique to each set\" or \"everything except what's common\".",
+            "fr": "La ***différence symétrique*** retourne les éléments qui sont dans l'un ou l'autre ensemble, mais PAS dans les deux. C'est comme dire \"unique à chaque ensemble\" ou \"tout sauf ce qui est commun\"."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_union_diff_inter"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can perform symmetric difference in two ways:\n\n- Using the ```^``` operator\n- Using the ```.symmetric_difference()``` method",
+            "fr": "En Python, tu peux effectuer une différence symétrique de deux façons :\n\n- En utilisant l'opérateur ```^```\n- En utilisant la méthode ```.symmetric_difference()```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "trainer_a = {'Aquachu', 'Pyrochu', 'Florachu', 'Voltachu'}\ntrainer_b = {'Pyrochu', 'Voltachu', 'Rockachu', 'Shadowchu'}\n\n# Using ^ operator\nunique_to_each = trainer_a ^ trainer_b\nprint('Unique to each:', unique_to_each)\n\n# Using .symmetric_difference() method\nunique_to_each_2 = trainer_a.symmetric_difference(trainer_b)\nprint('Using method:', unique_to_each_2)\n\n# What they have in common (for comparison)\ncommon = trainer_a & trainer_b\nprint('\\nWhat they share:', common)",
+            "fr": "trainer_a = {'Aquachu', 'Pyrochu', 'Florachu', 'Voltachu'}\ntrainer_b = {'Pyrochu', 'Voltachu', 'Rockachu', 'Shadowchu'}\n\n# Utiliser l'opérateur ^\nunique_to_each = trainer_a ^ trainer_b\nprint('Unique à chaque:', unique_to_each)\n\n# Utiliser la méthode .symmetric_difference()\nunique_to_each_2 = trainer_a.symmetric_difference(trainer_b)\nprint('Utilisation de la méthode:', unique_to_each_2)\n\n# Ce qu'ils ont en commun (pour comparaison)\ncommon = trainer_a & trainer_b\nprint('\\nCe qu\\'ils partagent:', common)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The symmetric difference contains Aquachu, Florachu (unique to A), and Rockachu, Shadowchu (unique to B). It excludes Pyrochu and Voltachu because they're in both sets.",
+            "fr": "La différence symétrique contient Aquachu, Florachu (uniques à A), et Rockachu, Shadowchu (uniques à B). Elle exclut Pyrochu et Voltachu car ils sont dans les deux ensembles."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Another Way to Think About It",
+              "fr": "Une autre façon d'y penser"
+            },
+            "content": {
+              "en": "Symmetric difference is equivalent to: ```(A | B) - (A & B)``` - it's the union minus the intersection. Or equivalently: ```(A - B) | (B - A)``` - elements unique to A plus elements unique to B.",
+              "fr": "La différence symétrique équivaut à : ```(A | B) - (A & B)``` - c'est l'union moins l'intersection. Ou de manière équivalente : ```(A - B) | (B - A)``` - les éléments uniques à A plus les éléments uniques à B."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_3_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "symmetric difference",
+        "difference"
+      ]
+    },
+    "title": {
+      "en": "Complete the Set Operations",
+      "fr": "Complète les opérations d'ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code using the appropriate set operations to find:\n1. Codémon that team A has but team B doesn't\n2. Codémon that are unique to each team (not shared)",
+            "fr": "Complète le code en utilisant les opérations d'ensembles appropriées pour trouver :\n1. Les Codémon que l'équipe A possède mais pas l'équipe B\n2. Les Codémon qui sont uniques à chaque équipe (non partagés)"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam_b = {'Pyrochu', 'Voltachu', 'Rockachu'}\n\n# Codémon only in team A\nonly_a = team_a {{}} team_b\nprint('Only team A:', only_a)\n\n# Codémon unique to each team\nunique_each = team_a {{}} team_b\nprint('Unique to each:', unique_each)",
+        "options": [
+          "-",
+          "^",
+          "&",
+          "|",
+          "+",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "-",
+          "2": "^"
+        }
+      },
+      "hint": {
+        "en": "Think about which operator removes elements from the first set that are in the second, and which finds elements in either but not both.",
+        "fr": "Réfléchis à quel opérateur retire du premier ensemble les éléments qui sont dans le second, et lequel trouve les éléments dans l'un ou l'autre mais pas les deux."
+      }
+    }
+  },
+  {
+    "id": "python_10_3_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "operations",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Match Set Operations with Descriptions",
+      "fr": "Associer les opérations d'ensembles aux descriptions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each set operation with its correct description:",
+            "fr": "Associe chaque opération d'ensemble à sa description correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```A | B```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "All elements from both sets",
+                "fr": "Tous les éléments des deux ensembles"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```A & B```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Only elements in both sets",
+                "fr": "Seulement les éléments dans les deux ensembles"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```A - B```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Elements in A but not in B",
+                "fr": "Éléments dans A mais pas dans B"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```A ^ B```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Elements in either set but not both",
+                "fr": "Éléments dans l'un ou l'autre mais pas les deux"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_3_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "operations",
+        "application"
+      ]
+    },
+    "title": {
+      "en": "Choosing the Right Operation",
+      "fr": "Choisir la bonne opération"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You have two sets of Codémon types:\n- Types that are strong against water\n- Types that are strong against fire\n\nYou want to find types that are strong against water OR fire (or both). Which operation should you use?",
+            "fr": "Tu as deux ensembles de types de Codémon :\n- Les types forts contre l'eau\n- Les types forts contre le feu\n\nTu veux trouver les types qui sont forts contre l'eau OU le feu (ou les deux). Quelle opération devrais-tu utiliser ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Union (```|```)",
+              "fr": "Union (```|```)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Intersection (```&```)",
+              "fr": "Intersection (```&```)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Difference (```-```)",
+              "fr": "Différence (```-```)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Symmetric Difference (```^```)",
+              "fr": "Différence symétrique (```^```)"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about whether you want to combine all types (union), find types that satisfy both conditions (intersection), or something else.",
+        "fr": "Réfléchis si tu veux combiner tous les types (union), trouver les types qui satisfont les deux conditions (intersection), ou autre chose."
+      }
+    }
+  },
+  {
+    "id": "python_10_3_12",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "operations",
+        "results"
+      ]
+    },
+    "title": {
+      "en": "Match Operations with Results",
+      "fr": "Associer les opérations aux résultats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given ```A = {'Aquachu', 'Pyrochu', 'Florachu'}``` and ```B = {'Pyrochu', 'Zap'}```, match each operation with its result:",
+            "fr": "Étant donné ```A = {'Aquachu', 'Pyrochu', 'Florachu'}``` et ```B = {'Pyrochu', 'Zap'}```, associe chaque opération à son résultat :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```A | B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Aquachu', 'Pyrochu', 'Florachu', 'Zap'}```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```A & B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Pyrochu'}```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```A - B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Aquachu', 'Florachu'}```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```A ^ B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Aquachu', 'Florachu', 'Zap'}```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_3_13",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "union",
+        "intersection",
+        "difference",
+        "symmetric difference",
+        "operations",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Tournament Team Analysis",
+      "fr": "Analyse d'équipe de tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Two trainers are preparing for a tournament and want to analyze their teams!\n\n1. Find which Codémon both trainers have\n2. Find which Codémon are unique to each trainer (not shared by both)\n3. Create a combined super team with all their Codémon\n4. Add 'Shadowchu' to the super team\n5. Remove 'Zap' from the super team (it's too unpredictable!)\n6. Display the final super team and its size",
+            "fr": "Deux dresseurs se préparent pour un tournoi et veulent analyser leurs équipes !\n1. Trouve quels Codémon les deux dresseurs possèdent\n2. Trouve quels Codémon sont uniques à chaque dresseur (pas partagés par les deux)\n3. Crée une super équipe combinée avec tous leurs Codémon\n4. Ajoute 'Shadowchu' à la super équipe\n5. Retire 'Zap' de la super équipe (il est trop imprévisible !)\n6. Affiche la super équipe finale et sa taille"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "trainer_a = {'Aquachu', 'Pyrochu', 'Florachu'}\ntrainer_b = {'Pyrochu', 'Rockachu', 'Zap'}\n\nprint(\"=== TOURNAMENT TEAM ANALYSIS ===\")\nprint(\"Trainer A:\", trainer_a)\nprint(\"Trainer B:\", trainer_b)\n\n# 1. Find common Codémon\n\n# 2. Find unique Codémon to each\n\n# 3. Create combined super team\n\n# 4. Add Shadowchu\n\n# 5. Remove Zap\n\n# 6. Display final team\nprint(\"\\n=== FINAL SUPER TEAM ===\")\nprint(\"Team:\", super_team)\nprint(f\"Total members: {len(super_team)}\")",
+          "fr": "dresseur_a = {'Aquachu', 'Pyrochu', 'Florachu'}\ndresseur_b = {'Pyrochu', 'Rockachu', 'Zap'}\n\nprint(\"=== ANALYSE D'ÉQUIPE DE TOURNOI ===\")\nprint(\"Dresseur A :\", dresseur_a)\nprint(\"Dresseur B :\", dresseur_b)\n\n# 1. Trouve les Codémon communs\n\n# 2. Trouve les Codémon uniques à chacun\n\n# 3. Crée une super équipe combinée\n\n# 4. Ajoute Shadowchu\n\n# 5. Retire Zap\n\n# 6. Affiche l'équipe finale\nprint(\"\\n=== SUPER ÉQUIPE FINALE ===\")\nprint(\"Équipe :\", super_equipe)\nprint(f\"Nombre total de membres : {len(super_equipe)}\")"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "trainer_a = {'Aquachu', 'Pyrochu', 'Florachu'}\ntrainer_b = {'Pyrochu', 'Rockachu', 'Zap'}\n\nprint(\"=== TOURNAMENT TEAM ANALYSIS ===\")\nprint(\"Trainer A:\", trainer_a)\nprint(\"Trainer B:\", trainer_b)\n\n# 1. Find common Codémon (intersection)\ncommon = trainer_a & trainer_b\nprint(\"\\nCommon Codémon:\", common)\n\n# 2. Find unique Codémon to each (symmetric difference)\nunique = trainer_a ^ trainer_b\nprint(\"Unique to each:\", unique)\n\n# 3. Create combined super team (union)\nsuper_team = trainer_a | trainer_b\nprint(\"\\nCombined team:\", super_team)\n\n# 4. Add Shadowchu\nsuper_team.add('Shadowchu')\nprint(\"After adding Shadowchu:\", super_team)\n\n# 5. Remove Zap\nsuper_team.discard('Zap')\nprint(\"After removing Zap:\", super_team)\n\n# 6. Display final team\nprint(\"\\n=== FINAL SUPER TEAM ===\")\nprint(\"Team:\", super_team)\nprint(f\"Total members: {len(super_team)}\")",
+            "fr": "dresseur_a = {'Aquachu', 'Pyrochu', 'Florachu'}\ndresseur_b = {'Pyrochu', 'Rockachu', 'Zap'}\n\nprint(\"=== ANALYSE D'ÉQUIPE DE TOURNOI ===\")\nprint(\"Dresseur A :\", dresseur_a)\nprint(\"Dresseur B :\", dresseur_b)\n\n# 1. Trouve les Codémon communs (intersection)\ncommuns = dresseur_a & dresseur_b\nprint(\"\\nCodeémon communs :\", communs)\n\n# 2. Trouve les Codémon uniques à chacun (différence symétrique)\nuniques = dresseur_a ^ dresseur_b\nprint(\"Uniques à chacun :\", uniques)\n\n# 3. Crée une super équipe combinée (union)\nsuper_equipe = dresseur_a | dresseur_b\nprint(\"\\nÉquipe combinée :\", super_equipe)\n\n# 4. Ajoute Shadowchu\nsuper_equipe.add('Shadowchu')\nprint(\"Après avoir ajouté Shadowchu :\", super_equipe)\n\n# 5. Retire Zap\nsuper_equipe.discard('Zap')\nprint(\"Après avoir retiré Zap :\", super_equipe)\n\n# 6. Affiche l'équipe finale\nprint(\"\\n=== SUPER ÉQUIPE FINALE ===\")\nprint(\"Équipe :\", super_equipe)\nprint(f\"Nombre total de membres : {len(super_equipe)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "membership",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Checking Membership with 'in'",
+      "fr": "Vérifier l'appartenance avec 'in'"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```in``` operator allows you to check if an element exists in a set. It returns ```True``` if the element is found, ```False``` otherwise.",
+            "fr": "L'opérateur ```in``` te permet de vérifier si un élément existe dans un set. Il renvoie ```True``` si l'élément est trouvé, ```False``` sinon."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": "water_types = {'Aquachu', 'Hydro', 'Wave'}\n\nprint('Aquachu' in water_types)\nprint('Pyrochu' in water_types)\nprint('Hydro' in water_types)"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```in``` operator is very fast with sets because sets use hash tables internally. This makes membership testing much more efficient than with lists.",
+            "fr": "L'opérateur ```in``` est très rapide avec les sets car ils utilisent des tables de hachage en interne. Cela rend le test d'appartenance beaucoup plus efficace qu'avec les listes."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Sets vs Lists for Membership Testing",
+              "fr": "Sets vs Listes pour tester l'appartenance"
+            },
+            "content": {
+              "en": "When you need to frequently check if elements exist in a collection, sets are much faster than lists. With lists, Python has to check each element one by one. With sets, it can find elements almost instantly.",
+              "fr": "Lorsque tu dois fréquemment vérifier si des éléments existent dans une collection, les sets sont beaucoup plus rapides que les listes. Avec les listes, Python doit vérifier chaque élément un par un. Avec les sets, il peut trouver les éléments presque instantanément."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_4_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "membership",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "What Does 'in' Return?",
+      "fr": "Que renvoie 'in' ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following code, what will be printed?",
+            "fr": "Étant donné le code suivant, qu'est-ce qui sera affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "fire_types = {'Pyrochu', 'Flame', 'Blaze'}\nresult = 'Aquachu' in fire_types\nprint(result)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          },
+          {
+            "type": "text",
+            "value": "```'Aquachu'```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The ```in``` operator returns a boolean value: ```True``` if the element is in the set, ```False``` if it's not.",
+        "fr": "L'opérateur ```in``` renvoie une valeur booléenne : ```True``` si l'élément est dans l'ensemble, ```False``` s'il n'y est pas."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "membership",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Check if Codémon Can Battle",
+      "fr": "Vérifier si un Codémon peut combattre"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if a Codémon is in the team and can battle.",
+            "fr": "Complète le code pour vérifier si un Codémon est dans l'équipe et peut combattre."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = {'Aquachu', 'Pyrochu', 'Florachu'}\ncodemon = 'Aquachu'\n\nif codemon {{}} team:\n    print(f'{codemon} is ready to battle!')\nelse:\n    print(f'{codemon} is not in your team')",
+        "options": [
+          "in",
+          "not in",
+          "==",
+          "is"
+        ],
+        "correctAnswers": {
+          "1": "in"
+        }
+      },
+      "hint": {
+        "en": "Use the ```in``` operator to check if an element exists in a set.",
+        "fr": "Utilise l'opérateur ```in``` pour vérifier si un élément existe dans un ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "isdisjoint",
+        "set methods"
+      ]
+    },
+    "title": {
+      "en": "Understanding Disjoint Sets",
+      "fr": "Comprendre les ensembles disjoints"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Two sets are ***disjoint*** if they have no elements in common. The ```isdisjoint()``` method returns ```True``` if the sets share no elements, ```False``` otherwise.",
+            "fr": "Deux ensembles sont ***disjoints*** s'ils n'ont aucun élément en commun. La méthode ```isdisjoint()``` renvoie ```True``` si les ensembles ne partagent aucun élément, ```False``` sinon."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "water_types = {'Aquachu', 'Hydrochu', 'Wavechu'}\nfire_types = {'Pyrochu', 'Flamechu', 'Blazechu'}\nmixed_types = {'Aquachu', 'Pyrochu', 'Grasschu'}\n\nprint(water_types.isdisjoint(fire_types)) # Water and fire types are completely different\n\nprint(water_types.isdisjoint(mixed_types)) # Water and mixed have Aquachu in common",
+            "fr": "water_types = {'Aquachu', 'Hydrochu', 'Wavechu'}\nfire_types = {'Pyrochu', 'Flamechu', 'Blazechu'}\nmixed_types = {'Aquachu', 'Pyrochu', 'Grasschu'}\n\nprint(water_types.isdisjoint(fire_types)) # Les types d'eau et de feu sont complètement différents\n\nprint(water_types.isdisjoint(mixed_types)) # L'eau et le mixte ont Aquachu en commun"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Disjoint sets are useful when you want to ensure two collections have nothing in common, like checking if a team has duplicate Codémon types or if two players have completely different teams.",
+            "fr": "Les ensembles disjoints sont utiles lorsque tu veux t'assurer que deux collections n'ont rien en commun, comme vérifier si une équipe a des types de Codémon en double ou si deux joueurs ont des équipes complètement différentes."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Empty Sets Are Disjoint",
+              "fr": "Les ensembles vides sont disjoints"
+            },
+            "content": {
+              "en": "An empty set is disjoint with any other set (including another empty set) because it has no elements to share. For example: ```set().isdisjoint({1, 2, 3})``` returns ```True```.",
+              "fr": "Un ensemble vide est disjoint avec n'importe quel autre ensemble (y compris un autre ensemble vide) car il n'a aucun élément à partager. Par exemple : ```set().isdisjoint({1, 2, 3})``` renvoie ```True```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_4_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "isdisjoint",
+        "set methods"
+      ]
+    },
+    "title": {
+      "en": "Are These Sets Disjoint?",
+      "fr": "Ces ensembles sont-ils disjoints ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which pair of sets is disjoint (shares no common elements)?",
+            "fr": "Quelle paire d'ensembles est disjointe (ne partage aucun élément commun) ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```set1 = {'Aquachu', 'Hydro'}```\n```set2 = {'Pyrochu', 'Flame'}```"
+          },
+          {
+            "type": "text",
+            "value": "```set1 = {'Aquachu', 'Pyrochu'}```\n```set2 = {'Pyrochu', 'Flame'}```"
+          },
+          {
+            "type": "text",
+            "value": "```set1 = {'Aquachu', 'Hydro', 'Wave'}```\n```set2 = {'Aquachu', 'Pyrochu'}```"
+          },
+          {
+            "type": "text",
+            "value": "```set1 = {'Pyrochu', 'Flame'}```\n```set2 = {'Flame', 'Blaze'}```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Check each pair carefully to see if they share any elements. Disjoint sets have absolutely no elements in common.",
+        "fr": "Vérifie chaque paire attentivement pour voir si elles partagent des éléments. Les ensembles disjoints n'ont absolument aucun élément en commun."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "isdisjoint",
+        "set methods"
+      ]
+    },
+    "title": {
+      "en": "Check If Teams Are Different",
+      "fr": "Vérifier si les équipes sont différentes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if two teams have completely different Codémon (no duplicates).",
+            "fr": "Complète le code pour vérifier si deux équipes ont des Codémon complètement différents (aucun doublon)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team1 = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam2 = {'Zap', 'Rockachu'}\n\nif team1.{{}}(team2):\n    print('Teams have no common Codémon!')\nelse:\n    print('Teams share some Codémon')",
+        "options": [
+          "isdisjoint",
+          "issubset",
+          "issuperset",
+          "intersection",
+          "difference"
+        ],
+        "correctAnswers": {
+          "1": "isdisjoint"
+        }
+      },
+      "hint": {
+        "en": "Use ```isdisjoint()``` to check if two sets have no elements in common.",
+        "fr": "Utilise ```isdisjoint()``` pour vérifier si deux ensembles n'ont aucun élément en commun."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "issubset",
+        "issuperset",
+        "set methods"
+      ]
+    },
+    "title": {
+      "en": "Understanding Subsets and Supersets",
+      "fr": "Comprendre les sous-ensembles et sur-ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A set A is a ***subset*** of set B if all elements of A are in B. Conversely, B is a ***superset*** of A. Python provides ```issubset()``` and ```issuperset()``` methods to check these relationships.",
+            "fr": "Un ensemble A est un ***sous-ensemble*** (subset) de l'ensemble B si tous les éléments de A sont dans B. De plus, B est un ***sur-ensemble*** (superset) de A. Python fournit les méthodes ```issubset()``` et ```issuperset()``` pour vérifier ces relations."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "main_types = {'water', 'fire', 'grass', 'electric', 'rock'}\nstarter_types = {'water', 'fire', 'grass'}\nrare_types = {'dragon', 'psychic'}\n\nprint(starter_types.issubset(main_types)) # Starter types are a subset of all types\n\nprint(main_types.issuperset(starter_types)) # All types is a superset of starter types\n\nprint(rare_types.issubset(main_types)) # Rare types are not a subset of all types",
+            "fr": "main_types = {'water', 'fire', 'grass', 'electric', 'rock'}\nstarter_types = {'water', 'fire', 'grass'}\nrare_types = {'dragon', 'psychic'}\n\nprint(starter_types.issubset(main_types)) # Les types de départ sont un sous-ensemble de tous les types\n\nprint(main_types.issuperset(starter_types)) # Tous les types sont un sur-ensemble des types de départ\n\nprint(rare_types.issubset(main_types)) # Les types rares ne sont pas un sous-ensemble de tous les types"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Important: A set is always a subset and superset of itself. For example, ```{1, 2}.issubset({1, 2})``` returns ```True```.",
+            "fr": "Important : Un ensemble est toujours un sous-ensemble et un sur-ensemble de lui-même. Par exemple, ```{1, 2}.issubset({1, 2})``` renvoie ```True```."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Subset Operators",
+              "fr": "Opérateurs de sous-ensemble"
+            },
+            "content": {
+              "en": "You can also use operators for subset checking:\n- ```<=``` for subset (same as ```issubset()```)\n- ```<``` for proper subset (subset but not equal)\n- ```>=``` for superset (same as ```issuperset()```)\n- ```>``` for proper superset (superset but not equal)",
+              "fr": "Tu peux aussi utiliser des opérateurs pour vérifier les sous-ensembles :\n- ```<=``` pour sous-ensemble (identique à ```issubset()```)\n- ```<``` pour sous-ensemble propre (sous-ensemble mais pas égal)\n- ```>=``` pour sur-ensemble (identique à ```issuperset()```)\n- ```>``` pour sur-ensemble propre (sur-ensemble mais pas égal)"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_4_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "issubset",
+        "set methods"
+      ]
+    },
+    "title": {
+      "en": "Identifying Subset Relationships",
+      "fr": "Identifier les relations de sous-ensemble"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following sets, which statement is ```True```?",
+            "fr": "Étant donné les ensembles suivants, quelle affirmation est ```True``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "setA = {'Aquachu', 'Pyrochu'}\nsetB = {'Aquachu', 'Pyrochu', 'Florachu'}\nsetC = {'Zap', 'Rockachu'}"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```setA.issubset(setB)```"
+          },
+          {
+            "type": "text",
+            "value": "```setB.issubset(setA)```"
+          },
+          {
+            "type": "text",
+            "value": "```setC.issubset(setB)```"
+          },
+          {
+            "type": "text",
+            "value": "```setA.issubset(setC)```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "For setA to be a subset of setB, all elements of setA must be in setB. Check which option satisfies this condition.",
+        "fr": "Pour que setA soit un sous-ensemble de setB, tous les éléments de setA doivent être dans setB. Vérifie quelle option satisfait cette condition."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_9",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "set methods",
+        "issubset",
+        "issuperset",
+        "isdisjoint"
+      ]
+    },
+    "title": {
+      "en": "Match Methods with Descriptions",
+      "fr": "Associer les méthodes aux descriptions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each set method with its correct description:",
+            "fr": "Associe chaque méthode d'ensemble à sa description correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```in```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if an element exists in a set",
+                "fr": "Vérifie si un élément existe dans un ensemble"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```isdisjoint()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if two sets have no common elements",
+                "fr": "Vérifie si deux ensembles n'ont aucun élément commun"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```issubset()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if all elements are in another set",
+                "fr": "Vérifie si tous les éléments sont dans un autre ensemble"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```issuperset()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if a set contains all elements of another set",
+                "fr": "Vérifie si un ensemble contient tous les éléments d'un autre ensemble"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_4_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "issuperset",
+        "set methods"
+      ]
+    },
+    "title": {
+      "en": "Check If Team Has All Required Types",
+      "fr": "Vérifier si l'équipe a tous les types requis"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if a team has all the required Codémon types for a tournament.",
+            "fr": "Complète le code pour vérifier si une équipe a tous les types de Codémon requis pour un tournoi."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team_types = {'water', 'fire', 'grass', 'electric'}\nrequired_types = {'water', 'fire', 'grass'}\n\nif team_types.{{}}(required_types):\n    print('Your team is eligible for the tournament!')\nelse:\n    print('Your team is missing some required types')",
+        "options": [
+          "issuperset",
+          "issubset",
+          "isdisjoint",
+          "union",
+          "intersection"
+        ],
+        "correctAnswers": {
+          "1": "issuperset"
+        }
+      },
+      "hint": {
+        "en": "Think about which set should contain all elements of the other. The team should have all required types, so team_types should be a superset of required_types.",
+        "fr": "Réfléchis à quel ensemble devrait contenir tous les éléments de l'autre. L'équipe devrait avoir tous les types requis, donc team_types devrait être un sur-ensemble de required_types."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "set methods",
+        "relationships"
+      ]
+    },
+    "title": {
+      "en": "Understanding Set Relationships",
+      "fr": "Comprendre les relations d'ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quel sera le résultat du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "set1 = {'Aquachu'}\nset2 = {'Aquachu', 'Pyrochu'}\nset3 = {'Florachu'}\n\nprint(set1.issubset(set2) and set3.isdisjoint(set2))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          },
+          {
+            "type": "text",
+            "value": "An error will occur"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Evaluate each part separately: Is set1 a subset of set2? Are set3 and set2 disjoint? Then combine with ```and```.",
+        "fr": "Évalue chaque partie séparément : set1 est-il un sous-ensemble de set2 ? set3 et set2 sont-ils disjoints ? Puis combine avec ```and```."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_12",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "set methods",
+        "combined"
+      ]
+    },
+    "title": {
+      "en": "Validate Tournament Team",
+      "fr": "Valider l'équipe du tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if a team is valid for a tournament. The team must:\n1. Have all required types\n2. Not have any banned types",
+            "fr": "Complète le code pour vérifier si une équipe est valide pour un tournoi. L'équipe doit :\n1. Avoir tous les types requis\n2. Ne pas avoir de types interdits"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = {'water', 'fire', 'grass', 'electric'}\nrequired = {'water', 'fire'}\nbanned = {'dark', 'ghost'}\n\nhas_required = team.{{}}(required)\nno_banned = team.{{}}(banned)\n\nif has_required and no_banned:\n    print('Team is valid!')\nelse:\n    print('Team is invalid')",
+        "options": [
+          "issuperset",
+          "issubset",
+          "isdisjoint",
+          "intersection",
+          "union",
+          "difference"
+        ],
+        "correctAnswers": {
+          "1": "issuperset",
+          "2": "isdisjoint"
+        }
+      },
+      "hint": {
+        "en": "Think about which method checks if one set contains all elements of another, and which checks if two sets share no elements.",
+        "fr": "Réfléchis à quelle méthode vérifie si un ensemble contient tous les éléments d'un autre, et laquelle vérifie si deux ensembles ne partagent aucun élément."
+      }
+    }
+  },
+  {
+    "id": "python_10_4_13",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "in",
+        "isdisjoint",
+        "issubset",
+        "issuperset",
+        "membership",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Tournament Registration System",
+      "fr": "Système d'inscription au tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're managing tournament registrations and need to validate teams!\n\n1. Check if 'Aquachu' is in team_a\n2. Check if 'Shadowchu' is in team_b\n3. Check if team_a and team_b have no Codémon in common\n4. Check if team_a contains all the starter Codémon (Aquachu, Pyrochu, Florachu)\n5. Display all validation results",
+            "fr": "Tu gères les inscriptions au tournoi et tu dois valider les équipes !\n1. Vérifie si 'Aquachu' est dans team_a\n2. Vérifie si 'Shadowchu' est dans team_b\n3. Vérifie si team_a et team_b n'ont aucun Codémon en commun\n4. Vérifie si team_a contient tous les Codémon de départ (Aquachu, Pyrochu, Florachu)\n5. Affiche tous les résultats de validation"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "team_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam_b = {'Rockachu', 'Zap', 'Shadowchu'}\nstarter_codemon = {'Aquachu', 'Pyrochu', 'Florachu'}\n\nprint(\"=== TOURNAMENT REGISTRATION VALIDATION ===\")\nprint(\"Team A:\", team_a)\nprint(\"Team B:\", team_b)\n\n# 1. Check if Aquachu is in team_a\n\n# 2. Check if Shadowchu is in team_b\n\n# 3. Check if teams have no common Codémon\n\n# 4. Check if team_a has all starter Codémon\n\n# 5. Display results\nprint(\"\\n=== VALIDATION RESULTS ===\")\nprint(f\"Aquachu in Team A: {has_aquachu}\")\nprint(f\"Shadowchu in Team B: {has_shadowchu}\")\nprint(f\"Teams are completely different: {teams_different}\")\nprint(f\"Team A has all starters: {has_all_starters}\")",
+          "fr": "team_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam_b = {'Rockachu', 'Zap', 'Shadowchu'}\nstarter_codemon = {'Aquachu', 'Pyrochu', 'Florachu'}\n\nprint(\"=== VALIDATION D'INSCRIPTION AU TOURNOI ===\")\nprint(\"Équipe A :\", team_a)\nprint(\"Équipe B :\", team_b)\n\n# 1. Vérifie si Aquachu est dans team_a\n\n# 2. Vérifie si Shadowchu est dans team_b\n\n# 3. Vérifie si les équipes n'ont aucun Codémon en commun\n\n# 4. Vérifie si team_a a tous les Codémon de départ\n\n# 5. Affiche les résultats\nprint(\"\\n=== RÉSULTATS DE VALIDATION ===\")\nprint(f\"Aquachu dans l'équipe A : {has_aquachu}\")\nprint(f\"Shadowchu dans l'équipe B : {has_shadowchu}\")\nprint(f\"Les équipes sont complètement différentes : {teams_different}\")\nprint(f\"L'équipe A a tous les starters : {has_all_starters}\")"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "team_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam_b = {'Rockachu', 'Zap', 'Shadowchu'}\nstarter_codemon = {'Aquachu', 'Pyrochu', 'Florachu'}\n\nprint(\"=== TOURNAMENT REGISTRATION VALIDATION ===\")\nprint(\"Team A:\", team_a)\nprint(\"Team B:\", team_b)\n\n# 1. Check if Aquachu is in team_a\nhas_aquachu = 'Aquachu' in team_a\n\n# 2. Check if Shadowchu is in team_b\nhas_shadowchu = 'Shadowchu' in team_b\n\n# 3. Check if teams have no common Codémon\nteams_different = team_a.isdisjoint(team_b)\n\n# 4. Check if team_a has all starter Codémon\nhas_all_starters = team_a.issuperset(starter_codemon)\n\n# 5. Display results\nprint(\"\\n=== VALIDATION RESULTS ===\")\nprint(f\"Aquachu in Team A: {has_aquachu}\")\nprint(f\"Shadowchu in Team B: {has_shadowchu}\")\nprint(f\"Teams are completely different: {teams_different}\")\nprint(f\"Team A has all starters: {has_all_starters}\")",
+            "fr": "team_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam_b = {'Rockachu', 'Zap', 'Shadowchu'}\nstarter_codemon = {'Aquachu', 'Pyrochu', 'Florachu'}\n\nprint(\"=== VALIDATION D'INSCRIPTION AU TOURNOI ===\")\nprint(\"Équipe A :\", team_a)\nprint(\"Équipe B :\", team_b)\n\n# 1. Vérifie si Aquachu est dans team_a\nhas_aquachu = 'Aquachu' in team_a\n\n# 2. Vérifie si Shadowchu est dans team_b\nhas_shadowchu = 'Shadowchu' in team_b\n\n# 3. Vérifie si les équipes n'ont aucun Codémon en commun\nteams_different = team_a.isdisjoint(team_b)\n\n# 4. Vérifie si team_a a tous les Codémon de départ\nhas_all_starters = team_a.issuperset(starter_codemon)\n\n# 5. Affiche les résultats\nprint(\"\\n=== RÉSULTATS DE VALIDATION ===\")\nprint(f\"Aquachu dans l'équipe A : {has_aquachu}\")\nprint(f\"Shadowchu dans l'équipe B : {has_shadowchu}\")\nprint(f\"Les équipes sont complètement différentes : {teams_different}\")\nprint(f\"L'équipe A a tous les starters : {has_all_starters}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_5_1",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "creation",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Creating Your First Set",
+      "fr": "Créer ton premier set"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a set with three Codémon types:",
+            "fr": "Complète le code pour créer un set avec trois types de Codémon :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# Create a set of Codémon types\ncodemon_types = {{}}'water', 'fire', 'grass'{{}}\nprint(codemon_types, type(codemon_types))",
+        "options": [
+          "{",
+          "}",
+          "[",
+          "]",
+          "(",
+          ")"
+        ],
+        "correctAnswers": {
+          "1": "{",
+          "2": "}"
+        }
+      },
+      "hint": {
+        "en": "Sets are created using curly braces. Think about which bracket type defines a set.",
+        "fr": "Les sets sont créés avec des accolades. Réfléchis à quel type de crochets définit un set."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_2",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "add",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Adding a Single Element",
+      "fr": "Ajouter un seul élément"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Add 'Rockachu' to the team:",
+            "fr": "Ajoute 'Rockachu' à l'équipe :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = {'Aquachu', 'Pyrochu'}\nteam.{{}}('Rockachu')\nprint(team)",
+        "options": [
+          "add",
+          "append",
+          "insert",
+          "update",
+          "push"
+        ],
+        "correctAnswers": {
+          "1": "add"
+        }
+      },
+      "hint": {
+        "en": "Think about the method specifically designed to add a single element to a set.",
+        "fr": "Pense à la méthode spécialement conçue pour ajouter un seul élément à un ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "union",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Combining Two Sets",
+      "fr": "Combiner deux ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Combine both teams into one set:",
+            "fr": "Combine les deux équipes en un seul ensemble :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team_a = {'Aquachu', 'Pyrochu'}\nteam_b = {'Florachu', 'Zap'}\n\nall_codemon = team_a {{}} team_b\nprint(all_codemon)",
+        "options": [
+          "|",
+          "&",
+          "-",
+          "^",
+          "+",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "|"
+        }
+      },
+      "hint": {
+        "en": "Think about the operation that combines all elements from both sets without duplicates.",
+        "fr": "Pense à l'opération qui combine tous les éléments des deux ensembles sans doublons."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "conversion",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Converting List to Set",
+      "fr": "Convertir une liste en ensemble"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Convert the list to a set to remove duplicates:",
+            "fr": "Convertis la liste en ensemble pour supprimer les doublons :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "caught = ['fire', 'water', 'fire', 'grass', 'water']\nunique_types = {{}}(caught)\nprint(unique_types)",
+        "options": [
+          "set",
+          "list",
+          "dict",
+          "tuple",
+          "Set",
+          "unique"
+        ],
+        "correctAnswers": {
+          "1": "set"
+        }
+      },
+      "hint": {
+        "en": "Use the function that converts any iterable into a set structure.",
+        "fr": "Utilise la fonction qui convertit n'importe quel itérable en structure d'ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "intersection",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Finding Common Elements",
+      "fr": "Trouver les éléments communs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Find Codémon that appear in both regions:",
+            "fr": "Trouve les Codémon qui apparaissent dans les deux régions :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "region_1 = {'Aquachu', 'Pyrochu', 'Florachu'}\nregion_2 = {'Pyrochu', 'Zap', 'Florachu'}\n\ncommon = region_1 {{}} region_2\nprint(common)",
+        "options": [
+          "&",
+          "|",
+          "-",
+          "^",
+          "+",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "&"
+        }
+      },
+      "hint": {
+        "en": "Think about the operation that finds elements present in both sets.",
+        "fr": "Pense à l'opération qui trouve les éléments présents dans les deux ensembles."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "update",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Adding Multiple Elements",
+      "fr": "Ajouter plusieurs éléments"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Add multiple Codémon from the list to your team:",
+            "fr": "Ajoute plusieurs Codémon de la liste à ton équipe :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = {'Aquachu'}\nnew_catches = ['Pyrochu', 'Florachu', 'Zap']\n\nteam.{{}}(new_catches)\nprint(team)",
+        "options": [
+          "update",
+          "add",
+          "extend",
+          "append",
+          "insert",
+          "merge"
+        ],
+        "correctAnswers": {
+          "1": "update"
+        }
+      },
+      "hint": {
+        "en": "Think about the method that adds multiple elements from an iterable to a set.",
+        "fr": "Pense à la méthode qui ajoute plusieurs éléments d'un itérable à un ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "remove",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Removing an Element Safely",
+      "fr": "Supprimer un élément en toute sécurité"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Remove 'Shadowchu' from the team, but don't cause an error if it's not there:",
+            "fr": "Supprime 'Shadowchu' de l'équipe, mais ne provoque pas d'erreur s'il n'y est pas :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam.{{}}('Shadowchu')\nprint(team)",
+        "options": [
+          "discard",
+          "remove",
+          "delete",
+          "pop",
+          "clear",
+          "drop"
+        ],
+        "correctAnswers": {
+          "1": "discard"
+        }
+      },
+      "hint": {
+        "en": "Think about which method removes an element without raising an error if it doesn't exist.",
+        "fr": "Pense à quelle méthode supprime un élément sans lever d'erreur s'il n'existe pas."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "membership",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Checking Membership",
+      "fr": "Vérifier l'appartenance"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if 'Pyrochu' is in the active team:",
+            "fr": "Vérifie si 'Pyrochu' est dans l'équipe active :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "active_team = {'Aquachu', 'Pyrochu', 'Florachu'}\n\nif 'Pyrochu' {{}} active_team:\n    print('Pyrochu is ready!')",
+        "options": [
+          "in",
+          "is",
+          "==",
+          "contains",
+          "exists",
+          "has"
+        ],
+        "correctAnswers": {
+          "1": "in"
+        }
+      },
+      "hint": {
+        "en": "Use the operator that checks if an element belongs to a collection.",
+        "fr": "Utilise l'opérateur qui vérifie si un élément appartient à une collection."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "uniqueness",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Understanding Set Uniqueness",
+      "fr": "Comprendre l'unicité des ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the length of this set?",
+            "fr": "Quelle sera la longueur de cet ensemble ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu', 'Pyrochu'}\nprint(len(codemon))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```3```",
+              "fr": "```3```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```5```",
+              "fr": "```5```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```2```",
+              "fr": "```2```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```4```",
+              "fr": "```4```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that sets automatically remove duplicates. Count the unique elements.",
+        "fr": "Rappelle-toi que les ensembles suppriment automatiquement les doublons. Compte les éléments uniques."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "difference",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Set Difference Result",
+      "fr": "Résultat de la différence d'ensembles"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the result of this operation?",
+            "fr": "Quel sera le résultat de cette opération ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "set_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nset_b = {'Pyrochu', 'Zap'}\nresult = set_a - set_b\nprint(result)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Aquachu', 'Florachu'}```",
+              "fr": "```{'Aquachu', 'Florachu'}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Pyrochu'}```",
+              "fr": "```{'Pyrochu'}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Zap'}```",
+              "fr": "```{'Zap'}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Aquachu', 'Florachu', 'Zap'}```",
+              "fr": "```{'Aquachu', 'Florachu', 'Zap'}```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The difference operation (A - B) returns elements in A that are not in B.",
+        "fr": "L'opération de différence (A - B) renvoie les éléments dans A qui ne sont pas dans B."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "pop",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Understanding pop() Behavior",
+      "fr": "Comprendre le comportement de pop()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you call ```pop()``` on a set?",
+            "fr": "Que se passe-t-il quand tu appelles ```pop()``` sur un ensemble ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It removes and returns an arbitrary element",
+              "fr": "Il supprime et renvoie un élément arbitraire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It removes the first element added",
+              "fr": "Il supprime le premier élément ajouté"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It removes the last element added",
+              "fr": "Il supprime le dernier élément ajouté"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It removes all elements",
+              "fr": "Il supprime tous les éléments"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that sets are unordered, so there's no concept of 'first' or 'last' element.",
+        "fr": "Rappelle-toi que les ensembles ne sont pas ordonnés, donc il n'y a pas de concept de 'premier' ou 'dernier' élément."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "isdisjoint",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Identifying Disjoint Sets",
+      "fr": "Identifier les ensembles disjoints"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which statement will return ```True```?",
+            "fr": "Quelle instruction renverra ```True``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "set1 = {'Aquachu', 'Pyrochu'}\nset2 = {'Florachu', 'Rockachu'}\nset3 = {'Pyrochu', 'Rockachu'}"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```set1.isdisjoint(set2)```",
+              "fr": "```set1.isdisjoint(set2)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```set1.isdisjoint(set3)```",
+              "fr": "```set1.isdisjoint(set3)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```set2.isdisjoint(set3)```",
+              "fr": "```set2.isdisjoint(set3)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "None of them",
+              "fr": "Aucune d'entre elles"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Disjoint sets have no elements in common. Check which pairs share no Codémon.",
+        "fr": "Les ensembles disjoints n'ont aucun élément en commun. Vérifie quelles paires ne partagent aucun Codémon."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_13",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "symmetric_difference",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Symmetric Difference Output",
+      "fr": "Sortie de la différence symétrique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this code output?",
+            "fr": "Que produira ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "team_a = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam_b = {'Pyrochu', 'Zap', 'Rockachu'}\nresult = team_a ^ team_b\nprint(result)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Aquachu', 'Florachu', 'Zap', 'Rockachu'}```",
+              "fr": "```{'Aquachu', 'Florachu', 'Zap', 'Rockachu'}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Pyrochu'}```",
+              "fr": "```{'Pyrochu'}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu'}```",
+              "fr": "```{'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu'}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```{'Aquachu', 'Florachu'}```",
+              "fr": "```{'Aquachu', 'Florachu'}```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Symmetric difference returns elements that are in either set, but not in both.",
+        "fr": "La différence symétrique renvoie les éléments qui sont dans l'un ou l'autre ensemble, mais pas dans les deux."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "clear",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "What Does clear() Do?",
+      "fr": "Que fait clear() ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of this code?",
+            "fr": "Quelle sera la sortie de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "team = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam.clear()\nprint(len(team))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```0```",
+              "fr": "```0```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```3```",
+              "fr": "```3```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```1```",
+              "fr": "```1```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```None```",
+              "fr": "```None```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The clear() method removes all elements from a set, leaving it empty.",
+        "fr": "La méthode clear() supprime tous les éléments d'un ensemble, le laissant vide."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_15",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "issubset",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Subset Relationship",
+      "fr": "Relation de sous-ensemble"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which statement is ```True```?",
+            "fr": "Quelle instruction est ```True``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "starter = {'Aquachu', 'Pyrochu', 'Florachu'}\nteam = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu'}"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```starter.issubset(team)```",
+              "fr": "```starter.issubset(team)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```team.issubset(starter)```",
+              "fr": "```team.issubset(starter)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```starter.isdisjoint(team)```",
+              "fr": "```starter.isdisjoint(team)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "None of them",
+              "fr": "Aucune d'entre elles"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "A set is a subset of another if all its elements are contained in the other set.",
+        "fr": "Un ensemble est un sous-ensemble d'un autre si tous ses éléments sont contenus dans l'autre ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_16",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "methods",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Method Behavior Difference",
+      "fr": "Différence de comportement des méthodes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the main difference between ```remove()``` and ```discard()```?",
+            "fr": "Quelle est la principale différence entre ```remove()``` et ```discard()``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```remove()``` raises an error if element doesn't exist, ```discard()``` doesn't",
+              "fr": "```remove()``` lève une erreur si l'élément n'existe pas, ```discard()``` non"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```discard()``` is faster than ```remove()```",
+              "fr": "```discard()``` est plus rapide que ```remove()```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```remove()``` can remove multiple elements, ```discard()``` only one",
+              "fr": "```remove()``` peut supprimer plusieurs éléments, ```discard()``` un seul"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "There is no difference",
+              "fr": "Il n'y a pas de différence"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about error handling when trying to remove an element that doesn't exist.",
+        "fr": "Pense à la gestion des erreurs quand on essaie de supprimer un élément qui n'existe pas."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_17",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "operators",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Match Operators with Operations",
+      "fr": "Associer les opérateurs aux opérations"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operator with its corresponding set operation:",
+            "fr": "Associe chaque opérateur à son opération d'ensemble correspondante :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```|```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Union - combines all elements",
+                "fr": "Union - combine tous les éléments"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```&```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Intersection - elements in both sets",
+                "fr": "Intersection - éléments dans les deux ensembles"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```-```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Difference - elements in first but not second",
+                "fr": "Différence - éléments dans le premier mais pas le second"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```^```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Symmetric difference - elements in either but not both",
+                "fr": "Différence symétrique - éléments dans l'un ou l'autre mais pas les deux"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_5_18",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "methods",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Match Methods with Actions",
+      "fr": "Associer les méthodes aux actions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each method with what it does:",
+            "fr": "Associe chaque méthode à ce qu'elle fait :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```add()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds a single element to the set",
+                "fr": "Ajoute un seul élément à l'ensemble"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```update()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Adds multiple elements from an iterable",
+                "fr": "Ajoute plusieurs éléments d'un itérable"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```pop()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes and returns an arbitrary element",
+                "fr": "Supprime et renvoie un élément arbitraire"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```clear()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes all elements from the set",
+                "fr": "Supprime tous les éléments de l'ensemble"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": "```discard()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Removes element without error if missing",
+                "fr": "Supprime un élément sans erreur s'il est absent"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_5_19",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "comparison_methods",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Match Comparison Methods",
+      "fr": "Associer les méthodes de comparaison"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each method with its meaning:",
+            "fr": "Associe chaque méthode à sa signification :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```issubset()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "All elements of this set are in the other",
+                "fr": "Tous les éléments de cet ensemble sont dans l'autre"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```issuperset()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "This set contains all elements of the other",
+                "fr": "Cet ensemble contient tous les éléments de l'autre"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```isdisjoint()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Sets have no elements in common",
+                "fr": "Les ensembles n'ont aucun élément en commun"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```in```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if an element exists in the set",
+                "fr": "Vérifie si un élément existe dans l'ensemble"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_5_20",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "operations_results",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Match Operations to Results",
+      "fr": "Associer les opérations aux résultats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given ```A = {'Aquachu', 'Pyrochu'}``` and ```B = {'Pyrochu', 'Florachu'}```, match each operation to its result:",
+            "fr": "Étant donné ```A = {'Aquachu', 'Pyrochu'}``` et ```B = {'Pyrochu', 'Florachu'}```, associe chaque opération à son résultat :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```A | B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Aquachu', 'Pyrochu', 'Florachu'}```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```A & B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Pyrochu'}```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```A - B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Aquachu'}```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```A ^ B```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```{'Aquachu', 'Florachu'}```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_5_21",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "characteristics",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Set vs List Characteristics",
+      "fr": "Caractéristiques Set vs Liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each characteristic with the correct data structure:",
+            "fr": "Associe chaque caractéristique à la structure de données correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Automatically removes duplicates",
+                "fr": "Supprime automatiquement les doublons"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Set",
+                "fr": "Set"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Elements are ordered",
+                "fr": "Les éléments sont ordonnés"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "List",
+                "fr": "Liste"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Very fast membership testing",
+                "fr": "Test d'appartenance très rapide"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Set",
+                "fr": "Set"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Can access elements by index",
+                "fr": "Peut accéder aux éléments par index"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "List",
+                "fr": "Liste"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_10_5_22",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "combined_operations",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Complex Team Analysis",
+      "fr": "Analyse d'équipe complexe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this analysis to find Codémon that are in your team OR your friend's team, but NOT in both:",
+            "fr": "Complète cette analyse pour trouver les Codémon qui sont dans ton équipe OU celle de ton ami, mais PAS dans les deux :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap'}\nfriend_team = {'Pyrochu', 'Rockachu', 'Shadowchu', 'Zap'}\n\n# Codémon unique to each team (not shared)\nunique_codemon = my_team {{}} friend_team\n\nprint('Unique to each team:', unique_codemon)",
+        "options": [
+          "^",
+          "|",
+          "&",
+          "-",
+          "+",
+          "*"
+        ],
+        "correctAnswers": {
+          "1": "^"
+        }
+      },
+      "hint": {
+        "en": "Think about which operation finds elements that are in either set but not in both sets.",
+        "fr": "Pense à quelle opération trouve les éléments qui sont dans l'un ou l'autre ensemble mais pas dans les deux."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_23",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "issuperset",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Tournament Eligibility Check",
+      "fr": "Vérification d'éligibilité au tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if your team has all the required types for the tournament:",
+            "fr": "Vérifie si ton équipe a tous les types requis pour le tournoi :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team_types = {'water', 'fire', 'grass', 'electric', 'ice'}\nrequired_types = {'water', 'fire', 'grass'}\n\nif team_types.{{}}(required_types):\n    print('Your team is eligible!')\nelse:\n    print('Missing required types')",
+        "options": [
+          "issuperset",
+          "issubset",
+          "isdisjoint",
+          "contains",
+          "includes",
+          "hasall"
+        ],
+        "correctAnswers": {
+          "1": "issuperset"
+        }
+      },
+      "hint": {
+        "en": "Think about which method checks if one set contains all elements of another set.",
+        "fr": "Pense à quelle méthode vérifie si un ensemble contient tous les éléments d'un autre ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_24",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "multiple_operations",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Finding Missing Codémon",
+      "fr": "Trouver les Codémon manquants"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Find which Codémon you still need to catch to complete your collection:",
+            "fr": "Trouve quels Codémon tu dois encore capturer pour compléter ta collection :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "all_starters = {'Aquachu', 'Pyrochu', 'Florachu', 'Rockachu', 'Zap', 'Shadowchu'}\ncaught = {'Aquachu', 'Pyrochu', 'Zap'}\n\n# Find starters you haven't caught yet\nmissing = all_starters {{}} caught\n\nprint('Still need to catch:', missing)",
+        "options": [
+          "-",
+          "&",
+          "|",
+          "^",
+          "+",
+          "/"
+        ],
+        "correctAnswers": {
+          "1": "-"
+        }
+      },
+      "hint": {
+        "en": "Think about which operation gives you elements in the first set that are not in the second set.",
+        "fr": "Pense à quelle opération te donne les éléments du premier ensemble qui ne sont pas dans le second ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_10_5_25",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "validation",
+        "review"
+      ]
+    },
+    "title": {
+      "en": "Battle Team Validation",
+      "fr": "Validation d'équipe de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Validate that both teams have no Codémon in common before starting the battle:",
+            "fr": "Valide que les deux équipes n'ont aucun Codémon en commun avant de commencer le combat :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "player1_team = {'Aquachu', 'Pyrochu', 'Florachu'}\nplayer2_team = {'Zap', 'Rockachu', 'Shadowchu'}\n\nif player1_team.{{}}(player2_team):\n    print('Battle can start! Teams are valid.')\nelse:\n    print('Error: Teams share some Codémon!')",
+        "options": [
+          "isdisjoint",
+          "issubset",
+          "issuperset",
+          "different",
+          "notequal",
+          "separate"
+        ],
+        "correctAnswers": {
+          "1": "isdisjoint"
+        }
+      },
+      "hint": {
+        "en": "Think about which method checks if two sets have no elements in common.",
+        "fr": "Pense à quelle méthode vérifie si deux ensembles n'ont aucun élément en commun."
+      }
+    }
+  },
+  {
+    "id": "python_10_10_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "len",
+        "counting"
+      ]
+    },
+    "title": {
+      "en": "Daily Catch Count",
+      "fr": "Compte des captures du jour"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You caught many Codémon today! Let's analyze your catches.\n\n- Count the total number of catches (including duplicates) and display it",
+            "fr": "Tu as capturé beaucoup de Codémon aujourd'hui ! Analysons tes captures.\n\n- Compte le nombre total de captures (doublons inclus) et affiche-le"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\n",
+          "fr": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nprint(f\"Total catches: {len(caught_today)}\")",
+            "fr": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nprint(f\"Total de captures : {len(caught_today)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_10_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "conversion",
+        "uniqueness"
+      ]
+    },
+    "title": {
+      "en": "Finding Unique Codémon",
+      "fr": "Trouver les Codémon uniques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You noticed there are duplicates in your catches! Time to find which Codémon are unique.\n\n- Convert your catch list to a set to remove duplicates\n- Display the unique Codémon names\n- Count and display how many unique species you have",
+            "fr": "Tu as remarqué qu'il y a des doublons dans tes captures ! Il est temps de trouver quels Codémon sont uniques.\n\n- Convertis ta liste de captures en set pour retirer les doublons\n- Affiche les noms de Codémon uniques\n- Compte et affiche combien d'espèces uniques tu as"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nprint(f\"Total catches: {len(caught_today)}\")\n\n",
+          "fr": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nprint(f\"Total de captures : {len(caught_today)}\")\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nprint(f\"Total catches: {len(caught_today)}\")\n\nunique_codemon = set(caught_today)\nprint(f\"Unique Codémon: {unique_codemon}\")\nprint(f\"Number of unique species: {len(unique_codemon)}\")",
+            "fr": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nprint(f\"Total de captures : {len(caught_today)}\")\n\nunique_codemon = set(caught_today)\nprint(f\"Codémon uniques : {unique_codemon}\")\nprint(f\"Nombre d'espèces uniques : {len(unique_codemon)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_10_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "loops",
+        "count"
+      ]
+    },
+    "title": {
+      "en": "Complete Catch Report",
+      "fr": "Rapport complet des captures"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Time to analyze ALL your catches! Display how many times you caught each unique Codémon.\n\n- Loop through each unique Codémon\n- Count how many times each one appears in your catches\n- Display the name and count for each",
+            "fr": "Il est temps d'analyser TOUTES tes captures ! Affiche combien de fois tu as capturé chaque Codémon unique.\n\n- Parcours chaque Codémon unique\n- Compte combien de fois chacun apparaît dans tes captures\n- Affiche le nom et le compte pour chacun"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nunique_codemon = set(caught_today)\n\n",
+          "fr": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nunique_codemon = set(caught_today)\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nunique_codemon = set(caught_today)\n\nfor codemon in unique_codemon:\n    count = caught_today.count(codemon)\n    print(f\"{codemon}: {count} time(s)\")",
+            "fr": "caught_today = [\n    'Aquachu', 'Pyrochu', 'Aquachu', 'Florachu',\n    'Pyrochu', 'Aquachu', 'Zap', 'Pyrochu',\n    'Florachu', 'Aquachu', 'Rockachu', 'Zap'\n]\n\nunique_codemon = set(caught_today)\n\nfor codemon in unique_codemon:\n    count = caught_today.count(codemon)\n    print(f\"{codemon} : {count} fois\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_11_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "add",
+        "creation"
+      ]
+    },
+    "title": {
+      "en": "Building Your First Team",
+      "fr": "Construire ta première équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Time to build a battle team! Start with your starter and add some Codémon.\n- Create a set with your starter Codémon\n- Add 'Pyrochu' to your team\n- Add 'Florachu' to your team\n- Display your team",
+            "fr": "Il est temps de construire une équipe de combat ! Commence avec ton Codémon de départ et ajoute des Codémon.\n- Crée un ensemble avec ton Codémon de départ\n- Ajoute 'Pyrochu' à ton équipe\n- Ajoute 'Florachu' à ton équipe\n- Affiche ton équipe"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "starter = 'Aquachu'\n\n",
+          "fr": "starter = 'Aquachu'\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "starter = 'Aquachu'\n\nmy_team = set([starter])\nmy_team.add('Pyrochu')\nmy_team.add('Florachu')\nprint(f\"My team: {my_team}\")",
+            "fr": "starter = 'Aquachu'\n\nmy_team = set([starter])\nmy_team.add('Pyrochu')\nmy_team.add('Florachu')\nprint(f\"Mon équipe : {my_team}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_11_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "add",
+        "loops"
+      ]
+    },
+    "title": {
+      "en": "Completing Your Team",
+      "fr": "Compléter ton équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You found more Codémon! Add them to your team, but remember: max 6 total.\n- Loop through the available Codémon\n- Add each one to your team if there's space (max 6)\n- Display your complete team",
+            "fr": "Tu as trouvé plus de Codémon ! Ajoute-les à ton équipe, mais rappelle-toi : max 6 au total.\n- Parcours les Codémon disponibles\n- Ajoute chacun à ton équipe s'il y a de la place (max 6)\n- Affiche ton équipe complète"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "my_team = {'Aquachu', 'Pyrochu', 'Florachu'}\navailable_codemon = ['Zap', 'Rockachu', 'Shadowchu', 'Flame']\n\n",
+          "fr": "my_team = {'Aquachu', 'Pyrochu', 'Florachu'}\navailable_codemon = ['Zap', 'Rockachu', 'Shadowchu', 'Flame']\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "my_team = {'Aquachu', 'Pyrochu', 'Florachu'}\navailable_codemon = ['Zap', 'Rockachu', 'Shadowchu', 'Flame']\n\nfor codemon in available_codemon:\n  if len(my_team) < 6:\n    my_team.add(codemon)\n\nprint(f\"Complete team: {my_team}\")",
+            "fr": "my_team = {'Aquachu', 'Pyrochu', 'Florachu'}\navailable_codemon = ['Zap', 'Rockachu', 'Shadowchu', 'Flame']\n\nfor codemon in available_codemon:\n  if len(my_team) < 6:\n    my_team.add(codemon)\n\nprint(f\"Équipe complète : {my_team}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_11_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "difference",
+        "isdisjoint"
+      ]
+    },
+    "title": {
+      "en": "Removing Banned Codémon",
+      "fr": "Retirer les Codémon bannis"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Oh no! The tournament has a banned list. Remove any banned Codémon from your team.\n- Remove all banned Codémon from your team\n- Verify your team has no banned Codémon\n- Display your clean team and verification status",
+            "fr": "Oh non ! Le tournoi a une liste de Codémon bannis. Retire les Codémon bannis de ton équipe.\n- Retire tous les Codémon bannis de ton équipe\n- Vérifie que ton équipe n'a aucun Codémon banni\n- Affiche ton équipe propre et le statut de vérification"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\n",
+          "fr": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\nmy_team = my_team - banned_list\nprint(f\"Team after removing banned: {my_team}\")\n\nis_clean = my_team.isdisjoint(banned_list)\nprint(f\"Team is clean: {is_clean}\")",
+            "fr": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu', 'Shadowchu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\nmy_team = my_team - banned_list\nprint(f\"Équipe après retrait des bannis : {my_team}\")\n\nis_clean = my_team.isdisjoint(banned_list)\nprint(f\"Équipe propre : {is_clean}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_10_11_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "sets",
+        "validation",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Final Team Validation",
+      "fr": "Validation finale de l'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Before entering the tournament, verify your team meets all requirements!\n- Check and display if team size is valid (between 3 and 6)\n- If team has no banned Codémon AND size is valid, display success message\n- Otherwise, display which requirement failed",
+            "fr": "Avant d'entrer dans le tournoi, vérifie que ton équipe respecte tous les critères !\n- Vérifie et affiche si la taille de l'équipe est valide (entre 3 et 6)\n- Si l'équipe n'a pas de Codémon bannis ET que la taille est valide, affiche un message de succès\n- Sinon, affiche quel critère a échoué"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\nis_clean = my_team.isdisjoint(banned_list)\nprint(f\"Team is clean: {is_clean}\")\n\n",
+          "fr": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\nis_clean = my_team.isdisjoint(banned_list)\nprint(f\"Équipe propre : {is_clean}\")\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\nis_clean = my_team.isdisjoint(banned_list)\nprint(f\"Team is clean: {is_clean}\")\n\nteam_size = len(my_team)\nis_valid_size = 3 <= team_size <= 6\nprint(f\"Team size: {team_size}\")\nprint(f\"Valid size (3-6): {is_valid_size}\")\n\nif is_clean and is_valid_size:\n  print(\"*** TEAM IS VALID! Ready for tournament! ***\")\nelse:\n  print(\"*** TEAM IS INVALID! ***\")\n  if not is_clean:\n    print(\"- Contains banned Codémon\")\n  if not is_valid_size:\n    print(f\"- Invalid size ({team_size}, need 3-6)\")",
+            "fr": "my_team = {'Aquachu', 'Pyrochu', 'Florachu', 'Zap', 'Rockachu'}\nbanned_list = {'Shadowchu', 'Darkmon', 'Glitchmon'}\n\nis_clean = my_team.isdisjoint(banned_list)\nprint(f\"Équipe propre : {is_clean}\")\n\nteam_size = len(my_team)\nis_valid_size = 3 <= team_size <= 6\nprint(f\"Taille de l'équipe : {team_size}\")\nprint(f\"Taille valide (3-6) : {is_valid_size}\")\n\nif is_clean and is_valid_size:\n  print(\"*** ÉQUIPE VALIDE ! Prêt pour le tournoi ! ***\")\nelse:\n  print(\"*** ÉQUIPE INVALIDE ! ***\")\n  if not is_clean:\n    print(\"- Contient des Codémon bannis\")\n  if not is_valid_size:\n    print(f\"- Taille invalide ({team_size}, besoin de 3-6)\")"
+          }
+        }
+      ]
+    }
+  }
+]

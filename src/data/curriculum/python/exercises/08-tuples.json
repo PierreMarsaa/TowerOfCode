@@ -1,0 +1,2907 @@
+[
+  {
+    "id": "python_8_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "data structures"
+      ]
+    },
+    "title": {
+      "en": "What are Tuples?",
+      "fr": "Qu'est-ce que les Tuples ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A tuple is an ordered, immutable collection of elements. In simple terms, it's like a list that cannot be changed after creation.",
+            "fr": "Un tuple est une collection ordonnée et immuable d'éléments. En termes simples, c'est comme une liste qui ne peut pas être modifiée après sa création."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Tuples are created using parentheses () or the tuple() constructor. Here are some examples:",
+            "fr": "Les tuples sont créés en utilisant des parenthèses () ou le constructeur tuple(). Voici quelques exemples :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_team = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\nprint(type(codemon_team), codemon_team)\n\ncodemon_levels = tuple([5, 7, 3])\nprint(type(codemon_levels), codemon_levels)\n\nempty_tuple = ()\nprint(type(empty_tuple), empty_tuple)",
+            "fr": "equipe_codemon = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\nprint(type(equipe_codemon), equipe_codemon)\n\nniveaux_codemon = tuple([5, 7, 3])\nprint(type(niveaux_codemon), niveaux_codemon)\n\ntuple_vide = ()\nprint(type(tuple_vide), tuple_vide)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Creating a tuple with one element",
+              "fr": "Créer un tuple avec un seul élément"
+            },
+            "content": {
+              "en": "To create a tuple with just one element, you must include a trailing comma after the element. Without the comma, Python treats it as a regular value in parentheses.\n\nExample: single_element = (42,) # This is a tuple\nNot a tuple: just_a_number = (42) # This is just an integer",
+              "fr": "Pour créer un tuple avec un seul élément, tu dois inclure une virgule après l'élément. Sans la virgule, Python le traite comme une valeur normale entre parenthèses.\n\nExemple: un_element = (42,) # Ceci est un tuple\nPas un tuple: juste_un_nombre = (42) # Ceci est juste un entier"
+            }
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# A single element tuple - note the comma!\nsingle_codemon = (\"Aquachu\",)\nprint(single_codemon, type(single_codemon))\n\n# Without the comma - this is NOT a tuple\nnot_a_tuple = (\"Aquachu\")\nprint(not_a_tuple, type(not_a_tuple))",
+            "fr": "# Un tuple avec un seul élément - note la virgule !\nun_seul_codemon = (\"Aquachu\",)\nprint(un_seul_codemon, type(un_seul_codemon))\n\n# Sans la virgule - ce n'est PAS un tuple\npas_un_tuple = (\"Aquachu\")\nprint(pas_un_tuple, type(pas_un_tuple))"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_1_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "data structures"
+      ]
+    },
+    "title": {
+      "en": "Creating Valid Tuples",
+      "fr": "Créer des Tuples Valides"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following correctly creates a tuple with a single value of 5?",
+            "fr": "Laquelle des options suivantes crée correctement un tuple avec une seule valeur de 5 ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```(5,)```"
+          },
+          {
+            "type": "text",
+            "value": "```(5)```"
+          },
+          {
+            "type": "text",
+            "value": "```tuple(5)```"
+          },
+          {
+            "type": "text",
+            "value": "```[5]```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: To create a single-element tuple, you need a trailing comma after the element. ```tuple(5)``` will create an error because it tries to convert the integer 5 into a tuple, which is not valid.",
+        "fr": "Rappelle-toi : Pour créer un tuple avec un seul élément, tu as besoin d'une virgule après l'élément. ```tuple(5)``` va créer une erreur car il essaie de convertir le nombre 5 en tuple, ce qui n'est pas valide."
+      }
+    }
+  },
+  {
+    "id": "python_8_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "accessing elements",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Accessing Tuple Elements",
+      "fr": "Accéder aux Éléments d'un Tuple"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can access elements in a tuple using indexing, just like with lists. Remember that indexing starts at 0 in Python.",
+            "fr": "Tu peux accéder aux éléments d'un tuple en utilisant l'indexation, comme avec les listes. N'oublie pas que l'indexation commence à 0 en Python."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_team = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\n\n# Access the first element (index 0)\nfirst_codemon = codemon_team[0]\nprint(\"First Codémon:\", first_codemon)\n\n# Access the second element (index 1)\nsecond_codemon = codemon_team[1]\nprint(\"Second Codémon:\", second_codemon)\n\n# Access the last element (index -1)\nlast_codemon = codemon_team[-1]\nprint(\"Last Codémon:\", last_codemon)",
+            "fr": "equipe_codemon = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\n\n# Accéder au premier élément (index 0)\npremier_codemon = equipe_codemon[0]\nprint(\"Premier Codémon:\", premier_codemon)\n\n# Accéder au deuxième élément (index 1)\ndeuxieme_codemon = equipe_codemon[1]\nprint(\"Deuxième Codémon:\", deuxieme_codemon)\n\n# Accéder au dernier élément (index -1)\ndernier_codemon = equipe_codemon[-1]\nprint(\"Dernier Codémon:\", dernier_codemon)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can also use slicing to access a range of elements in a tuple:",
+            "fr": "Tu peux aussi utiliser le slicing pour accéder à une plage d'éléments dans un tuple. (comme avec les listes et les strings)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_stats = (\"Aquachu\", 10, 50, 30, 20)\n\n# Get elements from index 1 to 3 (exclusive)\nprint(codemon_stats[1:4])  # Output: (10, 50, 30)\n\n# Get all elements from index 2 to the end\nprint(codemon_stats[2:])  # Output: (50, 30, 20)\n\n# Get all elements from the beginning to index 3 (exclusive)\nprint(codemon_stats[:3])  # Output: ('Aquachu', 10, 50)",
+            "fr": "stats_codemon = (\"Aquachu\", 10, 50, 30, 20)\n\n# Obtenir les éléments de l'index 1 à 3 (exclusif)\nprint(stats_codemon[1:4])  # Sortie: (10, 50, 30)\n\n# Obtenir tous les éléments de l'index 2 jusqu'à la fin\nprint(stats_codemon[2:])  # Sortie: (50, 30, 20)\n\n# Obtenir tous les éléments du début jusqu'à l'index 3 (exclusif)\nprint(stats_codemon[:3])  # Sortie: ('Aquachu', 10, 50)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_1_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "accessing elements",
+        "indexing"
+      ]
+    },
+    "title": {
+      "en": "Accessing Tuple Elements Practice",
+      "fr": "Pratique d'Accès aux Éléments d'un Tuple"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to access the correct elements from the Codémon team tuple:\n1. Get the first Codémon\n2. Get the last Codémon using negative index\n3. Get the second and third Codémon",
+            "fr": "Complète le code pour accéder aux bons éléments du tuple d'équipe Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_team = (\"Zap\", \"Aquachu\", \"Pyrochu\", \"Florachu\")\nfirst = codemon_team[{{}}]\nprint(first)\nlast = codemon_team[{{}}]\nprint(last)\nmiddle_two = codemon_team[{{}}:{{}}]\nprint(middle_two)",
+        "options": [
+          "0",
+          "-1",
+          "3",
+          "1",
+          "3",
+          "4"
+        ],
+        "correctAnswers": {
+          "1": "0",
+          "2": "-1",
+          "3": "1",
+          "4": "3"
+        }
+      },
+      "hint": {
+        "en": "Remember: Indexing starts at 0, negative indices count from the end, and slices use ```start:end``` format where end is exclusive.",
+        "fr": "Rappelle-toi : L'indexation commence à 0, les indices négatifs comptent depuis la fin, et les tranches utilisent le format ```début:fin``` où fin est exclusif."
+      }
+    }
+  },
+  {
+    "id": "python_8_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "packing",
+        "unpacking"
+      ]
+    },
+    "title": {
+      "en": "Tuple Packing and Unpacking",
+      "fr": "Emballage et Déballage de Tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Tuple packing is when you assign multiple values to a single tuple. Tuple unpacking is when you assign the elements of a tuple to multiple variables in a single operation.",
+            "fr": "L'emballage de tuple (packing) se produit lorsque tu assignes plusieurs valeurs à un seul tuple. Le déballage de tuple (unpacking) se produit lorsque tu assignes les éléments d'un tuple à plusieurs variables en une seule opération."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Tuple packing\ncodemon_data = \"Aquachu\", 10, \"Water\", 50\nprint(codemon_data)\nprint(type(codemon_data))\n\n# Tuple unpacking\nname, level, element, hp = codemon_data\nprint(\"Name:\", name)\nprint(\"Level:\", level)\nprint(\"Element:\", element)\nprint(\"HP:\", hp)",
+            "fr": "# Emballage de tuple\ndonnees_codemon = \"Aquachu\", 10, \"Eau\", 50\nprint(donnees_codemon)\nprint(type(donnees_codemon))\n\n# Déballage de tuple\nnom, niveau, element, pv = donnees_codemon\nprint(\"Nom:\", nom)\nprint(\"Niveau:\", niveau)\nprint(\"Élément:\", element)\nprint(\"PV:\", pv)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how we created a tuple without using parentheses? That's called tuple packing.",
+            "fr": "On vient de créer un tuple sans utiliser de parenthèses ! C'est ce qu'on appelle l'emballage (packing) de tuple."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Tuple unpacking is particularly useful for swapping values",
+            "fr": "Le déballage de tuple est particulièrement utile pour échanger des valeurs"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Swapping values using tuple unpacking\na = 5\nb = 10\nprint(\"Before swap: a =\", a, \"b =\", b)\n\n# Swap values\na, b = b, a  # This is actually tuple packing and unpacking!\nprint(\"After swap: a =\", a, \"b =\", b)",
+            "fr": "# Échange de valeurs en utilisant le déballage de tuple\na = 5\nb = 10\nprint(\"Avant échange: a =\", a, \"b =\", b)\n\n# Échanger les valeurs\na, b = b, a  # Emballage et déballage de tuple !\nprint(\"Après échange: a =\", a, \"b =\", b)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_1_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "packing",
+        "unpacking"
+      ]
+    },
+    "title": {
+      "en": "Tuple Unpacking Practice",
+      "fr": "Pratique de Déballage de Tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to unpack the Codémon stats tuple into the appropriate variables.",
+            "fr": "Complète le code pour déballer le tuple de statistiques Codémon dans les variables appropriées."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# name, type, level, attack, defense\ncodemon_stats = (\"Florachu\", \"Plant\", 12, 45, 30)\n\n# Unpack the tuple into separate variables\n{{}} = codemon_stats\n\n# Print the stats\nprint(f\"Name: {name}\")\nprint(f\"Type: {element_type}\")\nprint(f\"Level: {level}\")\nprint(f\"Attack: {attack}\")\nprint(f\"Defense: {defense}\")",
+        "options": [
+          "name, element_type, level, attack, defense",
+          "name, level, element_type, attack",
+          "name = codemon_stats[0], element_type = codemon_stats[1]",
+          "codemon_stats[0], codemon_stats[1], codemon_stats[2]"
+        ],
+        "correctAnswers": {
+          "1": "name, element_type, level, attack, defense"
+        }
+      },
+      "hint": {
+        "en": "Remember: When unpacking a tuple, you need the same number of variables as elements in the tuple.",
+        "fr": "Rappelle-toi : Lors du déballage d'un tuple, tu as besoin du même nombre de variables que d'éléments dans le tuple."
+      }
+    }
+  },
+  {
+    "id": "python_8_1_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "immutability"
+      ]
+    },
+    "title": {
+      "en": "Tuple Immutability",
+      "fr": "Immutabilité des Tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "One of the key characteristics of tuples is that they are immutable. This means that once a tuple is created, its elements cannot be changed, added, or removed.",
+            "fr": "L'une des principales caractéristiques des tuples est qu'ils sont immuables. Cela signifie qu'une fois qu'un tuple est créé, ses éléments ne peuvent pas être modifiés, ajoutés ou supprimés."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If you need to modify a tuple, you'll have to create a new one:",
+            "fr": "Si tu dois modifier un tuple, tu devras en créer un nouveau :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_team = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\nprint(\"Original tuple:\", codemon_team)\n\n# Create a new tuple with a modified first element\nnew_team = (\"Zap\",) + codemon_team[1:]\nprint(\"New tuple:\", new_team)",
+            "fr": "equipe_codemon = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\nprint(\"Tuple original:\", equipe_codemon)\n\n# Créer un nouveau tuple avec un premier élément modifié\nnouvelle_equipe = (\"Zap\",) + equipe_codemon[1:]\nprint(\"Nouveau tuple:\", nouvelle_equipe)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "However, if a tuple contains mutable objects like lists, the contents of those objects can be changed:",
+            "fr": "Cependant, si un tuple contient des objets mutables comme des listes, le contenu de ces objets peut être modifié :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Tuple containing a mutable object (list)\ncodemon_with_moves = (\"Pyrochu\", [\"Ember\", \"Tackle\"])\nprint(\"Original tuple with list:\", codemon_with_moves)\n\n# We can modify the list inside the tuple\ncodemon_with_moves[1].append(\"Flame Charge\")\nprint(\"After modifying the list inside:\", codemon_with_moves)",
+            "fr": "# Tuple contenant un objet mutable (liste)\ncodemon_avec_attaques = (\"Pyrochu\", [\"Braise\", \"Charge\"])\nprint(\"Tuple original avec liste:\", codemon_avec_attaques)\n\n# Nous pouvons modifier la liste à l'intérieur du tuple\ncodemon_avec_attaques[1].append(\"Nitrocharge\")\nprint(\"Après modification de la liste à l'intérieur:\", codemon_avec_attaques)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to use tuples vs lists",
+              "fr": "Quand utiliser des tuples vs des listes"
+            },
+            "content": {
+              "en": "Use tuples when:\n- You need an immutable sequence\n- You want to store a collection of heterogeneous data (data of different types or different goal)\n- You want to ensure data integrity (can't be accidentally modified)\n\nUse lists when:\n- You need a collection that might change (add/remove elements)\n- You want to sort or modify elements frequently\n- You're working with homogeneous data that requires frequent manipulation",
+              "fr": "Utilise des tuples quand :\n- Tu as besoin d'une séquence immuable\n- Tu veux stocker une collection de données hétérogènes (différents types / utilisation)\n- Tu veux assurer l'intégrité des données (ne peuvent pas être modifiées accidentellement)\n\nUtilise des listes quand :\n- Tu as besoin d'une collection qui pourrait changer (ajouter/supprimer des éléments)\n- Tu veux trier ou modifier fréquemment les éléments\n- Tu travailles avec des données homogènes qui nécessitent des manipulations fréquentes"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_1_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Tuple Operations and Results",
+      "fr": "Opérations sur les Tuples et Résultats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each tuple operation with its correct result.",
+            "fr": "Associe chaque opération sur les tuples à son résultat correct."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```(1, 2) + (3, 4)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```(1, 2, 3, 4)```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```(\"Aquachu\",) * 3```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```(\"Aquachu\", \"Aquachu\", \"Aquachu\")```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```len((10, 20, 30, 40))```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```4```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```5 in (5, 10, 15)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_8_1_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "lists",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Tuples vs Lists",
+      "fr": "Tuples vs Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following statements about tuples and lists is FALSE?",
+            "fr": "Laquelle des affirmations suivantes sur les tuples et les listes est FAUSSE ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples can be modified after creation, just like lists.",
+              "fr": "Les tuples peuvent être modifiés après leur création, tout comme les listes."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples are defined using parentheses (), while lists use square brackets [].",
+              "fr": "Les tuples sont définis en utilisant des parenthèses (), tandis que les listes utilisent des crochets []."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples can be indexed and sliced just like lists.",
+              "fr": "Les tuples peuvent être indexés et découpés tout comme les listes."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples have a length just like lists.",
+              "fr": "Les tuples ont une taille (len) tout comme les listes."
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The key difference between tuples and lists is that tuples are immutable - they cannot be changed after creation.",
+        "fr": "Rappelle-toi : La principale différence entre les tuples et les listes est que les tuples sont immuables - ils ne peuvent pas être modifiés après leur création."
+      }
+    }
+  },
+  {
+    "id": "python_8_1_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "immutability"
+      ]
+    },
+    "title": {
+      "en": "Understanding Tuple Immutability",
+      "fr": "Comprendre l'Immutabilité des Tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following code, which operation would cause an error?",
+            "fr": "Étant donné le code suivant, quelle opération causerait une erreur ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_data = (\"Aquachu\", [\"Water Gun\", \"Bubble\"], 15)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon_data[0] = \"Pyrochu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_data[1].append(\"Surf\")```"
+          },
+          {
+            "type": "text",
+            "value": "```print(codemon_data[2])```"
+          },
+          {
+            "type": "text",
+            "value": "```new_data = codemon_data + (\"Water\",)```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: You cannot modify the tuple itself (changing, adding, or removing elements directly), but you can modify mutable objects contained within the tuple.",
+        "fr": "Rappelle-toi : Tu ne peux pas modifier le tuple lui-même (changer, ajouter ou supprimer des éléments directement), mais tu peux modifier des objets mutables contenus dans le tuple."
+      }
+    }
+  },
+  {
+    "id": "python_8_1_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "unpacking",
+        "immutability",
+        "indexing",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle Arena Challenge - Codémon Stats Manager",
+      "fr": "Défi Arène de Combat - Gestionnaire de Stats Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Battle Arena! You need to manage your Codémon's battle data using tuples.\n\n***Your tasks:***\n1. Create a tuple called ```codemon``` with: name \"Aquachu\" and level 5\n2. Unpack the tuple into separate variables (name, level) and display them\n3. Create a list called ```attacks``` with two attacks: \"Water Gun\" and \"Bubble\"\n4. Create a new tuple called ```codemon_with_attacks``` that contains the name, level, and the attacks list\n5. Add a new attack \"Surf\" to the attacks list inside the tuple and display the final result",
+            "fr": "Bienvenue à l'Arène de Combat ! Tu dois gérer les données de combat de ton Codémon en utilisant des tuples.\n\n***Tes tâches :***\n1. Crée un tuple appelé ```codemon``` avec : nom \"Aquachu\" et niveau 5\n2. Déballe le tuple dans des variables séparées (nom, niveau) et affiche-les\n3. Crée une liste appelée ```attaques``` avec deux attaques : \"Pistolet à O\" et \"Bulles d'O\"\n4. Crée un nouveau tuple appelé ```codemon_avec_attaques``` qui contient le nom, le niveau, et la liste d'attaques\n5. Ajoute une nouvelle attaque \"Surf\" à la liste d'attaques à l'intérieur du tuple et affiche le résultat final"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "print(\"=== BATTLE ARENA ===\")\n\n# Task 1: Create codemon tuple (name, level)\n\n# Task 2: Unpack and display\n\n# Task 3: Create attacks list with \"Water Gun\" and \"Bubble\"\n\n# Task 4: Create codemon_with_attacks tuple (name, level, attacks)\n\n# Task 5: Add \"Surf\" to the attacks list and display result\n\n",
+          "fr": "print(\"=== ARÈNE DE COMBAT ===\")\n\n# Tâche 1 : Crée le tuple codemon (nom, niveau)\n\n# Tâche 2 : Déballe et affiche\n\n# Tâche 3 : Crée la liste attaques avec \"Pistolet à O\" et \"Bulles d'O\"\n\n# Tâche 4 : Crée le tuple codemon_avec_attaques (nom, niveau, attaques)\n\n# Tâche 5 : Ajoute \"Surf\" à la liste d'attaques et affiche le résultat\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "print(\"=== BATTLE ARENA ===\")\n\n# Task 1: Create codemon tuple (name, level)\ncodemon = (\"Aquachu\", 5)\n\n# Task 2: Unpack and display\nname, level = codemon\nprint(f\"Codémon: {name}\")\nprint(f\"Level: {level}\")\n\n# Task 3: Create attacks list with \"Water Gun\" and \"Bubble\"\nattacks = [\"Water Gun\", \"Bubble\"]\n\n# Task 4: Create codemon_with_attacks tuple (name, level, attacks)\ncodemon_with_attacks = (name, level, attacks)\nprint(f\"Codémon data: {codemon_with_attacks}\")\n\n# Task 5: Add \"Surf\" to the attacks list and display result\ncodemon_with_attacks[2].append(\"Surf\")\nprint(f\"After learning new attack: {codemon_with_attacks}\")",
+            "fr": "print(\"=== ARÈNE DE COMBAT ===\")\n\n# Tâche 1 : Crée le tuple codemon (nom, niveau)\ncodemon = (\"Aquachu\", 5)\n\n# Tâche 2 : Déballe et affiche\nnom, niveau = codemon\nprint(f\"Codémon : {nom}\")\nprint(f\"Niveau : {niveau}\")\n\n# Tâche 3 : Crée la liste attaques avec \"Pistolet à O\" et \"Bulles d'O\"\nattaques = [\"Pistolet à O\", \"Bulles d'O\"]\n\n# Tâche 4 : Crée le tuple codemon_avec_attaques (nom, niveau, attaques)\ncodemon_avec_attaques = (nom, niveau, attaques)\nprint(f\"Données du Codémon : {codemon_avec_attaques}\")\n\n# Tâche 5 : Ajoute \"Surf\" à la liste d'attaques et affiche le résultat\ncodemon_avec_attaques[2].append(\"Surf\")\nprint(f\"Après apprentissage de nouvelle attaque : {codemon_avec_attaques}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Tuple Methods",
+      "fr": "Méthodes des tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Unlike lists, tuples are immutable, which means they have very few methods. In fact, tuples only have two built-in methods:",
+            "fr": "Contrairement aux listes, les tuples sont immuables, ce qui signifie qu'ils ont très peu de méthodes. En fait, les tuples n'ont que deux méthodes intégrées :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "1. ```count()```: Counts how many times a value appears in the tuple\n2. ```index()```: Finds the position of a value in the tuple",
+            "fr": "1. ```count()```: Compte combien de fois une valeur apparaît dans le tuple\n2. ```index()```: Trouve la position d'une valeur dans le tuple"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_types = (\"water\", \"fire\", \"plant\", \"water\", \"electric\")\n\n# Count how many water types we have\nwater_count = codemon_types.count(\"water\")\nprint(f\"Number of water types: {water_count}\")\n\n# Find the position of the first fire type\nfire_position = codemon_types.index(\"fire\")\nprint(f\"Position of fire type: {fire_position}\")",
+            "fr": "codemon_types = (\"eau\", \"feu\", \"plante\", \"eau\", \"électrique\")\n\n# Comptons combien de types eau nous avons\neau_count = codemon_types.count(\"eau\")\nprint(f\"Nombre de types eau : {eau_count}\")\n\n# Trouvons la position du premier type feu\nfeu_position = codemon_types.index(\"feu\")\nprint(f\"Position du type feu : {feu_position}\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Be careful with index()",
+              "fr": "Attention avec index()"
+            },
+            "content": {
+              "en": "If the value doesn't exist in the tuple, ```index()``` will raise a ValueError. Always check if the value exists first, or use a try-except block.",
+              "fr": "Si la valeur n'existe pas dans le tuple, ```index()``` va provoquer une erreur ValueError. Vérifie toujours si la valeur existe d'abord, ou utilise un bloc try-except."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_2_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Count Method",
+      "fr": "Méthode count"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of the following code?",
+            "fr": "Quel sera le résultat du code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "team = (\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Aquachu\")\nprint(team.count(\"Aquachu\"))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "2"
+          },
+          {
+            "type": "text",
+            "value": "1"
+          },
+          {
+            "type": "text",
+            "value": "0"
+          },
+          {
+            "type": "text",
+            "value": "Error"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: The count() method returns the number of times a specified value appears in the tuple.",
+        "fr": "Rappelle-toi : La méthode count() renvoie le nombre de fois qu'une valeur spécifiée apparaît dans le tuple."
+      }
+    }
+  },
+  {
+    "id": "python_8_2_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Finding an index",
+      "fr": "Touver l'index"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to find the position of ```\"Pyrochu\"``` in the tuple.",
+            "fr": "Complète le code pour trouver la position de ```\"Pyrochu\"``` dans le tuple."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = (\"Aquachu\", \"Pyrochu\", \"Florachu\", \"Aquachu\")\n\n# Find the position of Pyrochu\nposition = team.{{}}(\"Pyrochu\")\nprint(f\"Pyrochu is at position {position}\")",
+        "options": [
+          "index",
+          "find",
+          "position",
+          "count"
+        ],
+        "correctAnswers": {
+          "1": "index"
+        }
+      },
+      "hint": {
+        "en": "The index() method returns the first occurrence of the specified value.",
+        "fr": "La méthode index() renvoie la première occurrence de la valeur spécifiée."
+      }
+    }
+  },
+  {
+    "id": "python_8_2_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "functions"
+      ]
+    },
+    "title": {
+      "en": "The len() function with tuples",
+      "fr": "La fonction len() avec les tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Another important built-in function to use with tuples is ```len()```. It returns the number of items in the tuple.",
+            "fr": "Une autre fonction intégrée importante à utiliser avec les tuples est ```len()```. Elle renvoie le nombre d'éléments dans le tuple."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "team = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\n\n# Find out how many Codémon are in your team\nteam_size = len(team)\nprint(f\"You have {team_size} Codémon in your team\")\n\n# An empty tuple\nempty_team = ()\nprint(f\"Empty team size: {len(empty_team)}\")",
+            "fr": "equipe = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\n\n# Découvre combien de Codémon sont dans ton équipe\ntaille_equipe = len(equipe)\nprint(f\"Tu as {taille_equipe} Codémon dans ton équipe\")\n\n# Un tuple vide\nequipe_vide = ()\nprint(f\"Taille de l'équipe vide : {len(equipe_vide)}\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Function vs Method",
+              "fr": "Fonction vs Méthode"
+            },
+            "content": {
+              "en": "Note that ```len()``` is a function, not a method. You call it with the tuple as an argument: ```len(tuple)```, not ```tuple.len()```.",
+              "fr": "Note que ```len()``` est une fonction, pas une méthode. Tu l'appelles avec le tuple comme argument : ```len(tuple)```, pas ```tuple.len()```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_2_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "functions"
+      ]
+    },
+    "title": {
+      "en": "Tuple Length",
+      "fr": "Longueur d'un tuple"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the correct way to find the length of a tuple named ```codemon_stats```?",
+            "fr": "Quelle est la bonne façon de trouver la longueur d'un tuple nommé ```codemon_stats``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```len(codemon_stats)```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_stats.len()```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_stats.length()```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_stats.size()```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: len() is a built-in function that takes the tuple as an argument, not a method of the tuple.",
+        "fr": "Souviens-toi : len() est une fonction intégrée qui prend le tuple comme argument, pas une méthode du tuple."
+      }
+    }
+  },
+  {
+    "id": "python_8_2_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "conversion"
+      ]
+    },
+    "title": {
+      "en": "Converting to and from Tuples",
+      "fr": "Conversion vers et depuis les tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can convert other data types to tuples using the ```tuple()``` function, and convert tuples to other types like lists.",
+            "fr": "Tu peux convertir d'autres types de données en tuples en utilisant la fonction ```tuple()```, et convertir des tuples en d'autres types comme les listes."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_list = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\ncodemon_tuple = tuple(codemon_list)\nprint(f\"Tuple from list: {codemon_tuple}\")\n\n# Convert a string to a tuple\nname = \"Aquachu\"\nname_tuple = tuple(name)\nprint(f\"Tuple from string: {name_tuple}\")\n\n# Convert a tuple to a list\nstats_tuple = (120, 45, 80)\nstats_list = list(stats_tuple)\nprint(f\"List from tuple: {stats_list}\")",
+            "fr": "codemon_liste = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\ncodemon_tuple = tuple(codemon_liste)\nprint(f\"Tuple à partir d'une liste : {codemon_tuple}\")\n\n# Convertir une chaîne en tuple\nnom = \"Aquachu\"\nnom_tuple = tuple(nom)\nprint(f\"Tuple à partir d'une chaîne : {nom_tuple}\")\n\n# Convertir un tuple en liste\nstats_tuple = (120, 45, 80)\nstats_liste = list(stats_tuple)\nprint(f\"Liste à partir d'un tuple : {stats_liste}\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Why convert?",
+              "fr": "Pourquoi convertir ?"
+            },
+            "content": {
+              "en": "Converting between tuples and lists is useful when you need to either modify the data (use a list) or ensure it stays unchanged (use a tuple).",
+              "fr": "La conversion entre tuples et listes est utile lorsque tu as besoin soit de modifier les données (utiliser une liste) soit de t'assurer qu'elles restent inchangées (utiliser un tuple)."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_2_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "conversion"
+      ]
+    },
+    "title": {
+      "en": "Convert and Modify",
+      "fr": "Convertir et modifier"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "1. Turn the tuple into a list\n2. Modify the list\n3. Convert it back to a tuple",
+            "fr": "1. Transforme le tuple en liste\n2. Modifie la liste\n3. Reconvertis-la en tuple"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# tuple (HP, Attack, Defense)\nstats = (100, 45, 80)\n\n# Convert to a list to modify\nstats_list = {{}}(stats)\nprint(stats_list)\n# Change the data\nstats_list[1] = stats_list[1] + 10\n\n# Convert back to a tuple\nnew_stats = {{}}(stats_list)\nprint(new_stats)",
+        "options": [
+          "list",
+          "tuple",
+          "convert",
+          "array"
+        ],
+        "correctAnswers": {
+          "1": "list",
+          "2": "tuple"
+        }
+      },
+      "hint": {
+        "en": "Remember: Tuples are immutable, if you want changes, you need a list.",
+        "fr": "Rappelle-toi : Les tuples sont immuables, si tu veux des modifications, tu as besoin d'une liste."
+      }
+    }
+  },
+  {
+    "id": "python_8_2_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Tuple Operations",
+      "fr": "Opérations sur les tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each tuple operation with its description.",
+            "fr": "Associe chaque opération sur les tuples avec sa description."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```tuple.count(x)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Counts how many times x appears in the tuple",
+                "fr": "Compte combien de fois x apparaît dans le tuple"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```tuple.index(x)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns the position of the first occurrence of x",
+                "fr": "Renvoie la position de la première occurrence de x"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```len(tuple)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns the number of items in the tuple",
+                "fr": "Renvoie le nombre d'éléments dans le tuple"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```list(tuple)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Converts the tuple to a list",
+                "fr": "Convertit le tuple en liste"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_8_2_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "built-in functions"
+      ]
+    },
+    "title": {
+      "en": "Built-in Functions with Tuples",
+      "fr": "Fonctions intégrées avec les tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Several Python built-in functions work well with tuples. Let's look at some common ones:\n- ```min()```: Finds the smallest element in a tuple.\n- ```max()```: Finds the largest element in a tuple.\n- ```sum()```: Calculates the sum of all elements in a tuple.",
+            "fr": "Plusieurs fonctions intégrées de Python fonctionnent bien avec les tuples. Voyons quelques-unes des plus courantes :\n- ```min()```: Trouve le plus petit élément d'un tuple.\n- ```max()```: Trouve le plus grand élément d'un tuple.\n- ```sum()```: Calcule la somme de tous les éléments d'un tuple."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "levels = (15, 8, 23, 7, 42)\n\n# Find the min and max values\nprint(f\"Lowest level: {min(levels)}\")\nprint(f\"Highest level: {max(levels)}\")\n\n# Calculate the sum\nprint(f\"Total of all levels: {sum(levels)}\")",
+            "fr": "niveaux = (15, 8, 23, 7, 42)\n\n# Trouve les valeurs min et max\nprint(f\"Niveau le plus bas : {min(niveaux)}\")\nprint(f\"Niveau le plus élevé : {max(niveaux)}\")\n\n# Calcule la somme\nprint(f\"Total de tous les niveaux : {sum(niveaux)}\")"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_2_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "built-in functions"
+      ]
+    },
+    "title": {
+      "en": "Built-in Functions with Tuples",
+      "fr": "Fonctions intégrées avec les tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each function with its output for the tuple ```stats = (45, 90, 10, 75)```.",
+            "fr": "Associe chaque fonction avec son résultat pour le tuple ```stats = (45, 90, 10, 75)```."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```min(stats)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "10"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```max(stats)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "90"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```sum(stats)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "220"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_8_2_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "methods",
+        "conversion",
+        "built-in functions",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Stats Analyzer Challenge - Codémon Team Analysis",
+      "fr": "Défi Analyseur de Stats - Analyse d'Équipe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Stats Analyzer! You need to analyze your Codémon team's level data.\n\n***Your tasks:***\n1. Count how many times level 15 appears in the team and display it\n2. Find the position (index) of the highest level (25) and display it\n3. Display the total number of Codémon in the team\n4. Convert the tuple to a list, increase the first Codémon's level by 5, then convert back to a tuple\n5. Calculate and display the average level of the team",
+            "fr": "Bienvenue à l'Analyseur de Stats ! Tu dois analyser les données de niveau de ton équipe Codémon.\n\n***Tes tâches :***\n1. Compte combien de fois le niveau 15 apparaît dans l'équipe et affiche-le\n2. Trouve la position (index) du niveau le plus élevé (25) et affiche-la\n3. Affiche le nombre total de Codémon dans l'équipe\n4. Convertis le tuple en liste, augmente le niveau du premier Codémon de 5, puis reconvertis en tuple\n5. Calcule et affiche le niveau moyen de l'équipe"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "print(\"=== TEAM STATS ANALYZER ===\")\n\nteam_levels = (10, 15, 8, 15, 25, 12)\nprint(f\"Team levels: {team_levels}\")\n\n# Task 1: Count how many times level 15 appears\n\n# Task 2: Find the position of level 25\n\n# Task 3: Display total number of Codémon\n\n# Task 4: Convert to list, increase first level by 5, convert back\n\n# Task 5: Calculate and display average level\n\n",
+          "fr": "print(\"=== ANALYSEUR DE STATS D'ÉQUIPE ===\")\n\nteam_levels = (10, 15, 8, 15, 25, 12)\nprint(f\"Niveaux de l'équipe : {team_levels}\")\n\n# Tâche 1 : Compte combien de fois le niveau 15 apparaît\n\n# Tâche 2 : Trouve la position du niveau 25\n\n# Tâche 3 : Affiche le nombre total de Codémon\n\n# Tâche 4 : Convertis en liste, augmente le premier niveau de 5, reconvertis\n\n# Tâche 5 : Calcule et affiche le niveau moyen\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "print(\"=== TEAM STATS ANALYZER ===\")\n\nteam_levels = (10, 15, 8, 15, 25, 12)\nprint(f\"Team levels: {team_levels}\")\n\n# Task 1: Count how many times level 15 appears\ncount_15 = team_levels.count(15)\nprint(f\"Level 15 appears {count_15} times\")\n\n# Task 2: Find the position of level 25\nposition_25 = team_levels.index(25)\nprint(f\"Level 25 is at position {position_25}\")\n\n# Task 3: Display total number of Codémon\ntotal_codemon = len(team_levels)\nprint(f\"Total Codémon in team: {total_codemon}\")\n\n# Task 4: Convert to list, increase first level by 5, convert back\nlevels_list = list(team_levels)\nlevels_list[0] = levels_list[0] + 5\nupdated_levels = tuple(levels_list)\nprint(f\"Updated levels: {updated_levels}\")\n\n# Task 5: Calculate and display average level\naverage_level = sum(updated_levels) / len(updated_levels)\nprint(f\"Average team level: {average_level}\")",
+            "fr": "print(\"=== ANALYSEUR DE STATS D'ÉQUIPE ===\")\n\nteam_levels = (10, 15, 8, 15, 25, 12)\nprint(f\"Niveaux de l'équipe : {team_levels}\")\n\n# Tâche 1 : Compte combien de fois le niveau 15 apparaît\ncount_15 = team_levels.count(15)\nprint(f\"Le niveau 15 apparaît {count_15} fois\")\n\n# Tâche 2 : Trouve la position du niveau 25\nposition_25 = team_levels.index(25)\nprint(f\"Le niveau 25 est à la position {position_25}\")\n\n# Tâche 3 : Affiche le nombre total de Codémon\ntotal_codemon = len(team_levels)\nprint(f\"Total de Codémon dans l'équipe : {total_codemon}\")\n\n# Tâche 4 : Convertis en liste, augmente le premier niveau de 5, reconvertis\nniveaux_liste = list(team_levels)\nniveaux_liste[0] = niveaux_liste[0] + 5\nniveaux_mis_a_jour = tuple(niveaux_liste)\nprint(f\"Niveaux mis à jour : {niveaux_mis_a_jour}\")\n\n# Tâche 5 : Calcule et affiche le niveau moyen\nniveau_moyen = sum(niveaux_mis_a_jour) / len(niveaux_mis_a_jour)\nprint(f\"Niveau moyen de l'équipe : {niveau_moyen}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_3_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "syntax",
+        "creation"
+      ]
+    },
+    "title": {
+      "en": "Creating Coordinates",
+      "fr": "Créer des coordonnées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which is the correct way to create a tuple for coordinates (x=5, y=3)?",
+            "fr": "Quelle est la bonne façon de créer un tuple pour des coordonnées (x=5, y=3) ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```position = (5, 3)```"
+          },
+          {
+            "type": "text",
+            "value": "```position = [5, 3]```"
+          },
+          {
+            "type": "text",
+            "value": "```position = {5, 3}```"
+          },
+          {
+            "type": "text",
+            "value": "```position = ((5, 3))```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "[] is for lists, {} is for sets, and () is for tuples.",
+        "fr": "[] est pour les listes, {} est pour les ensembles, et () est pour les tuples."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "immutability",
+        "vs_lists"
+      ]
+    },
+    "title": {
+      "en": "Codémon Stats Mutability",
+      "fr": "Mutabilité des statistiques Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you try to change a Codémon's base stats stored in a tuple?",
+            "fr": "Que se passe-t-il quand tu essaies de changer les statistiques de base d'un Codémon stockées dans un tuple ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "base_stats = (100, 85, 90)  # HP, Attack, Defense\nbase_stats[0] = 120"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "TypeError: tuples are immutable",
+              "fr": "TypeError : les tuples sont immutables"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The HP changes to 120",
+              "fr": "Les HP changent à 120"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A new tuple is created",
+              "fr": "Un nouveau tuple est créé"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The tuple becomes a list",
+              "fr": "Le tuple devient une liste"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about it, are tuples mutable or immutable?",
+        "fr": "Réfléchis-y, les tuples sont-ils mutables ou immuables ?"
+      }
+    }
+  },
+  {
+    "id": "python_8_3_3",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "indexing",
+        "access"
+      ]
+    },
+    "title": {
+      "en": "Accessing Codémon Position",
+      "fr": "Accéder à la position Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to get the x and y coordinates from a Codémon's position tuple.",
+            "fr": "Complète le code pour obtenir les coordonnées x et y du tuple de position d'un Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "position = (15, 22)\nx_coord = position{{}}\ny_coord = position{{}}\nprint(x_coord, y_coord)",
+        "options": [
+          "[0]",
+          "[1]",
+          "(0)",
+          "(1)",
+          ".0",
+          ".1"
+        ],
+        "correctAnswers": {
+          "1": "[0]",
+          "2": "[1]"
+        }
+      },
+      "hint": {
+        "en": "Declaring tuples and accesing their elements are not the same.",
+        "fr": "Déclarer des tuples et accéder à leurs éléments ne sont pas la même chose."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "vs_lists",
+        "characteristics"
+      ]
+    },
+    "title": {
+      "en": "Tuple vs List Properties",
+      "fr": "Propriétés Tuple vs Liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each data structure with its key characteristic for Codémon data storage.",
+            "fr": "Associe chaque structure de données avec sa caractéristique clé pour le stockage de données Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```tuple```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Immutable (cannot be changed)",
+                "fr": "Immutable (ne peut pas être modifié)"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```list```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Mutable (can be modified)",
+                "fr": "Mutable (peut être modifié)"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Tuple syntax",
+                "fr": "Syntaxe de tuple"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```[]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "List syntax",
+                "fr": "Syntaxe de liste"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_8_3_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "unpacking",
+        "assignment"
+      ]
+    },
+    "title": {
+      "en": "Codémon Tuple Unpacking",
+      "fr": "Déballage de tuple Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the values of name and level after this Codémon tuple unpacking?",
+            "fr": "Quelles seront les valeurs de name et level après ce déballage de tuple Codémon ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_info = (\"Aquachu\", 25)\nname, level = codemon_info"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```name = \"Aquachu\", level = 25```"
+          },
+          {
+            "type": "text",
+            "value": "```name = 25, level = \"Aquachu\"```"
+          },
+          {
+            "type": "text",
+            "value": "```name = (\"Aquachu\", 25), level = None```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: cannot unpack tuple",
+              "fr": "Erreur : impossible de déballer le tuple"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about tuple unpacking.",
+        "fr": "Pense à l'unpacking de tuple."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "methods",
+        "vs_lists"
+      ]
+    },
+    "title": {
+      "en": "Codémon Tuple Methods",
+      "fr": "Méthodes de tuple Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to count how many times \"Fire\" appears in a Codémon's type history tuple.",
+            "fr": "Complète le code pour compter combien de fois \"Fire\" apparaît dans le tuple d'historique de type d'un Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "type_history = (\"Water\", \"Fire\", \"Water\", \"Fire\")\nfire_count = type_history.{{}}(\"Fire\")\nprint(fire_count)",
+        "options": [
+          "count",
+          "find",
+          "index",
+          "search",
+          "get",
+          "length"
+        ],
+        "correctAnswers": {
+          "1": "count"
+        }
+      },
+      "hint": {
+        "en": "The method to count occurrences in tuples is the same than for lists.",
+        "fr": "La méthode pour compter les occurrences dans les tuples est similaire à celle des listes."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "use_cases",
+        "vs_lists"
+      ]
+    },
+    "title": {
+      "en": "When to Use Tuples vs Lists",
+      "fr": "Quand utiliser les tuples vs les listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which data should be stored in a tuple rather than a list?",
+            "fr": "Quelles données devraient être stockées dans un tuple plutôt que dans une liste ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "RGB color values (255, 100, 50) - fixed data",
+              "fr": "Valeurs de couleur RGB (255, 100, 50) - données fixes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Inventory items - can add/remove items",
+              "fr": "Objets d'inventaire - peut ajouter/supprimer des objets"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Battle log - continuously updated",
+              "fr": "Journal de combat - mis à jour en continu"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Player scores - changes over time",
+              "fr": "Scores du joueur - changent au fil du temps"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about the difference of use between tuples and lists.",
+        "fr": "Pense à la différence d'utilisation entre les tuples et les listes."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "creation",
+        "single_element"
+      ]
+    },
+    "title": {
+      "en": "Single Element Codémon Tuple",
+      "fr": "Tuple Codémon à un élément"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a tuple containing only one Codémon name. Is this code correct and just need a space?",
+            "fr": "Crée un tuple contenant seulement un nom de Codémon. Est-ce que ce code est correct et a juste besoin d'un espace ?"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "single_codemon = (\"Aquachu\"{{}})\nprint(single_codemon, type(single_codemon))",
+        "options": [
+          ",",
+          ";",
+          ":",
+          "."
+        ],
+        "correctAnswers": {
+          "1": ","
+        }
+      },
+      "hint": {
+        "en": "Single-element tuples are a bit special..",
+        "fr": "Les tuples à un seul élément sont un peu spéciaux."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "concatenation",
+        "vs_lists"
+      ]
+    },
+    "title": {
+      "en": "Combining Codémon Tuples",
+      "fr": "Combiner des tuples Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of combining these two Codémon coordinate tuples?",
+            "fr": "Quel est le résultat de la combinaison de ces deux tuples de coordonnées Codémon ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "pos1 = (1, 2)\npos2 = (3, 4)\ncombined = pos1 + pos2"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```(1, 2, 3, 4)```"
+          },
+          {
+            "type": "text",
+            "value": "```(4, 6)```"
+          },
+          {
+            "type": "text",
+            "value": "```[(1, 2), (3, 4)]```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: cannot add tuples",
+              "fr": "Erreur : impossible d'additionner les tuples"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about concatenation.",
+        "fr": "Pense à la concaténation."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "methods",
+        "vs_lists"
+      ]
+    },
+    "title": {
+      "en": "Tuple vs List Methods",
+      "fr": "Méthodes Tuple vs Liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each method with the data structure(s) that support it for Codémon data.",
+            "fr": "Associe chaque méthode avec la/les structure(s) de données qui la supportent pour les données Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```.count()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Both tuples and lists",
+                "fr": "Tuples et listes"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```.append()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Only lists",
+                "fr": "Uniquement les listes"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```.index()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Both tuples and lists",
+                "fr": "Tuples et listes"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```.remove()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Only lists",
+                "fr": "Uniquement les listes"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_8_3_11",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "unpacking",
+        "multiple_assignment"
+      ]
+    },
+    "title": {
+      "en": "Codémon Stats Unpacking",
+      "fr": "Déballage de statistiques Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Unpack the Codémon stats tuple into separate variables for HP, Attack, and Defense.",
+            "fr": "Déballe le tuple de statistiques Codémon en variables séparées pour HP, Attaque et Défense."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "stats = (120, 95, 80)\n{{}}, {{}}, {{}} = stats",
+        "options": [
+          "hp",
+          "attack",
+          "defense",
+          "level",
+          "speed",
+          "magic"
+        ],
+        "correctAnswers": {
+          "1": "hp",
+          "2": "attack",
+          "3": "defense"
+        }
+      },
+      "hint": {
+        "en": "Think about tuples unpacking.",
+        "fr": "Pense à l'unpacking de tuples."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "nested",
+        "access"
+      ]
+    },
+    "title": {
+      "en": "Nested Codémon Tuples",
+      "fr": "Tuples Codémon imbriqués"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How do you access Pyrochu's attack stat from this nested tuple? (attack is the third element in Pyrochu's tuple)",
+            "fr": "Comment accèdes-tu à la statistique d'attaque de Pyrochu dans ce tuple imbriqué ? (l'attaque est le troisième élément du tuple de Pyrochu)"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_data = ((\"Aquachu\", 100, 80), (\"Pyrochu\", 90, 110))"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon_data[1][2]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_data[2][1]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_data[0][2]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_data[1][1]```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about indexing.",
+        "fr": "Pense à l'indexation."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_13",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "conversion",
+        "vs_lists"
+      ]
+    },
+    "title": {
+      "en": "Converting Lists to Tuples",
+      "fr": "Convertir des listes en tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How do you convert a Codémon inventory list to a tuple to make it unchangeable?",
+            "fr": "Comment convertis-tu une liste d'inventaire Codémon en tuple pour la rendre immuable ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "invent_l = [\"potion\", \"crystal\", \"gem\"]"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```invent_t = tuple(invent_l)```"
+          },
+          {
+            "type": "text",
+            "value": "```invent_t = (invent_l)```"
+          },
+          {
+            "type": "text",
+            "value": "```invent_t = list.to_tuple()```"
+          },
+          {
+            "type": "text",
+            "value": "```invent_t = tuple.convert(invent_l)```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about casting.",
+        "fr": "Pense à la conversion de type."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_14",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "repetition",
+        "operations"
+      ]
+    },
+    "title": {
+      "en": "Repeating Codémon Tuples",
+      "fr": "Répéter des tuples Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a tuple with 3 times the position in it. (5, 10, 5, 10, 5, 10)",
+            "fr": "Complète le code pour créer un tuple avec 3 fois la position dedans. (5, 10, 5, 10, 5, 10)"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "position = (5, 10)\nrepeated = position {{}} 3\nprint(repeated)",
+        "options": [
+          "*",
+          "+",
+          "//",
+          "**",
+          "%",
+          "/"
+        ],
+        "correctAnswers": {
+          "1": "*"
+        }
+      },
+      "hint": {
+        "en": "Think about repetition of tuples.",
+        "fr": "Pense à la répétition de tuples."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_15",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "immutable",
+        "vs_lists"
+      ]
+    },
+    "title": {
+      "en": "Immutable Data",
+      "fr": "Données immutables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What makes tuples better than lists for storing base coordinates that should never change?",
+            "fr": "Qu'est-ce qui rend les tuples meilleurs que les listes pour stocker les coordonnées de base Codémon qui ne devraient jamais changer ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples are immutable - they prevent accidental changes",
+              "fr": "Les tuples sont immutables - ils empêchent les changements accidentels"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples can store more data than lists",
+              "fr": "Les tuples peuvent stocker plus de données que les listes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples have more methods available",
+              "fr": "Les tuples ont plus de méthodes disponibles"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples use different syntax",
+              "fr": "Les tuples utilisent une syntaxe différente"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about mutable and immutable.",
+        "fr": "Pense à muable et immuable."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_16",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "operations",
+        "results"
+      ]
+    },
+    "title": {
+      "en": "Tuple Operations Results",
+      "fr": "Résultats d'opérations sur les tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each tuple operation with its result.",
+            "fr": "Associe chaque opération de tuple avec son résultat."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```(1, 2) + (3, 4)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```(1, 2, 3, 4)```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```(1, 2) * 2```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```(1, 2, 1, 2)```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```len((5, 10, 15))```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```3```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```(\"A\", \"B\")[1]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```\"B\"```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_8_3_17",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "slicing",
+        "access"
+      ]
+    },
+    "title": {
+      "en": "Codémon Tuple Slicing",
+      "fr": "Découpage de tuple Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to get the first two Codémon names from the tuple.",
+            "fr": "Complète le code pour obtenir les deux premiers noms de Codémon du tuple."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_names = (\"Aquachu\", \"Pyrochu\", \"Florachu\")\nfirst_two = codemon_names[{{}}:{{}}]\nprint(first_two)",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "correctAnswers": {
+          "1": "0",
+          "2": "2"
+        }
+      },
+      "hint": {
+        "en": "Think about slicing.",
+        "fr": "Pense au découpage (slicing)."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_18",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "vs_lists",
+        "modification"
+      ]
+    },
+    "title": {
+      "en": "Modifying Codémon Data",
+      "fr": "Modifier des données Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which operation is possible with an inventory list but ***NOT*** with a tuple?",
+            "fr": "Quelle opération est possible avec une liste d'inventaire mais ***PAS*** avec un tuple ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```inventory.append(\"new_item\")```"
+          },
+          {
+            "type": "text",
+            "value": "```inventory[0]```"
+          },
+          {
+            "type": "text",
+            "value": "```len(inventory)```"
+          },
+          {
+            "type": "text",
+            "value": "```inventory.count(\"potion\")```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about the main difference between lists and tuples.",
+        "fr": "Pense à la différence principale entre les listes et les tuples."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_19",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "membership",
+        "in_operator"
+      ]
+    },
+    "title": {
+      "en": "Checking Codémon in Tuple",
+      "fr": "Vérifier Codémon dans le tuple"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if \"Aquachu\" is in the Codémon team tuple.",
+            "fr": "Complète le code pour vérifier si \"Aquachu\" est dans le tuple d'équipe Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team = (\"Pyrochu\", \"Aquachu\", \"Florachu\")\nif \"Aquachu\" {{}} team:\n  print(\"Aquachu is in the team!\")",
+        "options": [
+          "in",
+          "==",
+          "is",
+          "contains",
+          "has",
+          "exists"
+        ],
+        "correctAnswers": {
+          "1": "in"
+        }
+      },
+      "hint": {
+        "en": "Think how to check membership in tuples and list!",
+        "fr": "Pense à comment vérifier l'appartenance dans les tuples et les listes !"
+      }
+    }
+  },
+  {
+    "id": "python_8_3_20",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "length",
+        "functions"
+      ]
+    },
+    "title": {
+      "en": "Codémon Team Size",
+      "fr": "Taille d'équipe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How do you find out how many Codémon are in this team tuple?",
+            "fr": "Comment découvres-tu combien de Codémon sont dans ce tuple d'équipe ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "team = (\"Aquachu\", \"Pyrochu\", \"Florachu\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```len(team)```"
+          },
+          {
+            "type": "text",
+            "value": "```team.size()```"
+          },
+          {
+            "type": "text",
+            "value": "```team.count()```"
+          },
+          {
+            "type": "text",
+            "value": "```team.length```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about built-in methods.",
+        "fr": "Pense aux méthodes intégrées."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_21",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "vs_lists",
+        "use_cases"
+      ]
+    },
+    "title": {
+      "en": "Data Storage Choices",
+      "fr": "Choix de stockage de données"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each data type with the best storage choice.",
+            "fr": "Associe chaque type de données avec le meilleur choix de stockage."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Map coordinates (x, y)",
+                "fr": "Coordonnées (x, y)"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "```tuple``` - fixed position data",
+                "fr": "```tuple``` - données de position fixe"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Shopping cart items",
+                "fr": "Articles dans un panier"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "```list``` - add/remove items",
+                "fr": "```list``` - ajouter/supprimer des articles"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "RGB color (255, 128, 0)",
+                "fr": "Couleur RGB (255, 128, 0)"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "```tuple``` - color values don't change",
+                "fr": "```tuple``` - les valeurs de couleur ne changent pas"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Battle log entries",
+                "fr": "Entrées (logs) d'un journal de combat"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "```list``` - continuously updated",
+                "fr": "```list``` - mis à jour en continu"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_8_3_22",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "conversion",
+        "list_to_tuple"
+      ]
+    },
+    "title": {
+      "en": "Converting Data",
+      "fr": "Convertir des données "
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to convert a tuple to a list for modification.",
+            "fr": "Complète le code pour convertir un tuple en liste pour modification."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "stats_tuple = (100, 85, 90)\nstats_list = {{}}(stats_tuple)\nstats_list.append(75) # Add speed stat\nprint(stats_list)",
+        "options": [
+          "list",
+          "tuple",
+          "array",
+          "convert",
+          "change",
+          "modify"
+        ],
+        "correctAnswers": {
+          "1": "list"
+        }
+      },
+      "hint": {
+        "en": "Think about casting.",
+        "fr": "Pense à la conversion de type."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_23",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "mixed_types",
+        "heterogeneous"
+      ]
+    },
+    "title": {
+      "en": "Mixed Data Types in Tuples",
+      "fr": "Types de données mixtes dans les tuples"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of accessing different elements from this mixed Codémon data tuple?",
+            "fr": "Quel est le résultat de l'accès à différents éléments de ce tuple de données Codémon mixtes ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon = (\"Aquachu\", 25, True, 98.5)\nname = codemon[0]\nlevel = codemon[1]\nis_rare = codemon[2]"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```name=\"Aquachu\", level=25, is_rare=True```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "All variables become strings",
+              "fr": "Toutes les variables deviennent des strings"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error: mixed types not allowed",
+              "fr": "Erreur : types mixtes non autorisés"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "All variables become the same type",
+              "fr": "Toutes les variables deviennent du même type"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about unpacking.",
+        "fr": "Pense à l'unpacking."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_24",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "min_max",
+        "functions"
+      ]
+    },
+    "title": {
+      "en": "Stat Analysis",
+      "fr": "Analyse de statistiques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to find the highest and lowest stats from a stat tuple.",
+            "fr": "Complète le code pour trouver les statistiques les plus hautes et les plus basses du tuple de stats."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "stats = (85, 110, 75, 95)\nhighest = {{}}(stats)\nlowest = {{}}(stats)\nprint(highest, lowest)",
+        "options": [
+          "max",
+          "min",
+          "high",
+          "low",
+          "top",
+          "bottom"
+        ],
+        "correctAnswers": {
+          "1": "max",
+          "2": "min"
+        }
+      },
+      "hint": {
+        "en": "Think about methods.",
+        "fr": "Pense aux méthodes."
+      }
+    }
+  },
+  {
+    "id": "python_8_3_25",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "memory",
+        "performance"
+      ]
+    },
+    "title": {
+      "en": "Tuple vs List Performance",
+      "fr": "Performance Tuple vs Liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Why might you choose tuples over lists for storing stats that never change?",
+            "fr": "Pourquoi pourrais-tu choisir les tuples plutôt que les listes pour stocker les statistiques qui ne changent jamais ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples are faster and use less memory for fixed data",
+              "fr": "Les tuples sont plus rapides et utilisent moins de mémoire pour les données fixes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples can store more elements than lists",
+              "fr": "Les tuples peuvent stocker plus d'éléments que les listes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples have more built-in methods",
+              "fr": "Les tuples ont plus de méthodes intégrées"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples work better with loops",
+              "fr": "Les tuples fonctionnent mieux avec les boucles"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about Tuple vs List. This is a logical answer.",
+        "fr": "Pense à la différence entre les tuples et les listes. C'est une réponse logique."
+      }
+    }
+  },
+  {
+    "id": "python_8_10_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "unpacking"
+      ]
+    },
+    "title": {
+      "en": "Codémon Eggs - First Discovery",
+      "fr": "Œufs Codémon - Première découverte"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Prof Pi just gave you 3 mysterious Codémon eggs! Each egg is a tuple: (name, power, type)\n\n- Unpack the first egg into three variables: ```name```, ```power```, and ```type```\n- Display each variable",
+            "fr": "Le Prof Pi vient de te donner 3 œufs Codémon mystérieux ! Chaque œuf est un tuple : (nom, puissance, type)\n\n- Décompose le premier œuf en trois variables : ```name```, ```power```, et ```type```\n- Affiche chaque variable"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "egg1 = (\"Pyrochu\", 45, \"Fire\")\n\n# Code here\n\n",
+          "fr": "egg1 = (\"Pyrochu\", 45, \"Fire\")\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "egg1 = (\"Pyrochu\", 45, \"Fire\")\n\nname, power, type = egg1\n\nprint(name)\nprint(power)\nprint(type)",
+            "fr": "egg1 = (\"Pyrochu\", 45, \"Fire\")\n\nname, power, type = egg1\n\nprint(name)\nprint(power)\nprint(type)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_10_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "concatenation"
+      ]
+    },
+    "title": {
+      "en": "Codémon Eggs - Hatching",
+      "fr": "Œufs Codémon - Éclosion"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Your first egg hatched! The Codémon needs a complete profile.\n\n- Combine both tuples to create a complete profile and store it in ```complete_profile```\n- Display the complete profile.",
+            "fr": "Ton premier œuf a éclos ! Le Codémon a besoin d'un profil complet.\n\n- Combine les deux tuples pour créer un profil complet et stocke-le dans ```complete_profile```\n- Affiche le profil complet."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "base_info = (\"Pyrochu\", 45, \"Fire\")\nbonus_stats = (150, 60)\n\n# Code here\n\n",
+          "fr": "base_info = (\"Pyrochu\", 45, \"Fire\")\nbonus_stats = (150, 60)\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "base_info = (\"Pyrochu\", 45, \"Fire\")\nbonus_stats = (150, 60)\n\ncomplete_profile = base_info + bonus_stats\n\nprint(complete_profile)",
+            "fr": "base_info = (\"Pyrochu\", 45, \"Fire\")\nbonus_stats = (150, 60)\n\ncomplete_profile = base_info + bonus_stats\n\nprint(complete_profile)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_10_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "unpacking",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Codémon Eggs - Choosing the Best",
+      "fr": "Œufs Codémon - Choisir le meilleur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now, you look at the 2 others eggs..\n\n- Unpack both eggs and compare their power levels.\n- Keep the strongest egg (higher power) in ```strongest_egg```\n- Display the strongest egg",
+            "fr": "Maintenant, tu regardes les 2 autres oeufs..\n\n- Déballe les deux œufs et compare leurs niveaux de puissance.\n- Garde l'œuf le plus fort (puissance plus élevée) dans ```strongest_egg```\n- Affiche l'œuf le plus fort"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "egg2 = (\"Aquachu\", 38, \"Water\")\negg3 = (\"Florachu\", 52, \"Plant\")\n\n# Code here\n\n",
+          "fr": "egg2 = (\"Aquachu\", 38, \"Water\")\negg3 = (\"Florachu\", 52, \"Plant\")\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "egg2 = (\"Aquachu\", 38, \"Water\")\negg3 = (\"Florachu\", 52, \"Plant\")\n\nname2, power2, type2 = egg2\nname3, power3, type3 = egg3\n\nif power2 > power3:\n    strongest_egg = egg2\nelse:\n    strongest_egg = egg3\n\nprint(strongest_egg)",
+            "fr": "egg2 = (\"Aquachu\", 38, \"Water\")\negg3 = (\"Florachu\", 52, \"Plant\")\n\nname2, power2, type2 = egg2\nname3, power3, type3 = egg3\n\nif power2 > power3:\n    strongest_egg = egg2\nelse:\n    strongest_egg = egg3\n\nprint(strongest_egg)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_8_10_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "tuples",
+        "unpacking",
+        "immutability"
+      ]
+    },
+    "title": {
+      "en": "Codémon Eggs - Power Boost",
+      "fr": "Œufs Codémon - Boost de puissance"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The strongest egg hatched! Your Codémon gained experience and its power increased by 10!\n\n- Unpack Florachu, create a new tuple with power increased by 10.\n- Replace the old Florachu tuple in your collection at index 1.\n- Display your updated collection.",
+            "fr": "L'œuf le plus fort a éclos ! Ton Codémon a gagné de l'expérience et sa puissance a augmenté de 10 !\n\n- Déballe Florachu, crée un nouveau tuple avec la puissance augmentée de 10.\n- Remplace l'ancien tuple de Florachu dans ta collection à l'index 1.\n- Affiche ta collection mise à jour."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "my_collection = [(\"Pyrochu\", 45, \"Fire\"), (\"Florachu\", 52, \"Plant\")]\n\n# Code here\n\n",
+          "fr": "my_collection = [(\"Pyrochu\", 45, \"Fire\"), (\"Florachu\", 52, \"Plant\")]\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "my_collection = [(\"Pyrochu\", 45, \"Fire\"), (\"Florachu\", 52, \"Plant\")]\n\nname, power, type = my_collection[1]\nnew_florachu = (name, power + 10, type)\n\nmy_collection[1] = new_florachu\n\nprint(my_collection)",
+            "fr": "my_collection = [(\"Pyrochu\", 45, \"Fire\"), (\"Florachu\", 52, \"Plant\")]\n\nname, power, type = my_collection[1]\nnew_florachu = (name, power + 10, type)\n\nmy_collection[1] = new_florachu\n\nprint(my_collection)"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -8,10 +8,18 @@ import frDialogs from '@/i18n/locales/fr/dialogs.json'
 
 type Language = 'en' | 'fr'
 type LocaleData = Record<string, string | string[]>
+export type I18nParams = Record<string, string | number>
 
 const locales: Record<Language, LocaleData> = {
   en: { ...enUi, ...enMaps, ...enDialogs },
   fr: { ...frUi, ...frMaps, ...frDialogs },
+}
+
+/** Replace `{name}` placeholders with values from params */
+function interpolate(text: string, params?: I18nParams): string {
+  if (!params) return text
+  return text.replace(/\{(\w+)\}/g, (match, name: string) =>
+    name in params ? String(params[name]) : match)
 }
 
 class I18nManagerImpl {
@@ -25,10 +33,19 @@ class I18nManagerImpl {
     return this.language
   }
 
-  t(key: string): string {
-    const val = locales[this.language][key]
-    if (typeof val === 'string') return val
-    if (Array.isArray(val)) return val.join('\n')
+  /** Lookup in the current language, falling back to English */
+  private lookup(key: string): string | string[] | undefined {
+    return locales[this.language][key] ?? locales.en[key]
+  }
+
+  has(key: string): boolean {
+    return this.lookup(key) !== undefined
+  }
+
+  t(key: string, params?: I18nParams): string {
+    const val = this.lookup(key)
+    if (typeof val === 'string') return interpolate(val, params)
+    if (Array.isArray(val)) return interpolate(val.join('\n'), params)
     return `[${key}]`
   }
 
@@ -38,13 +55,13 @@ class I18nManagerImpl {
     return Object.keys(data).filter(k => Array.isArray(data[k]))
   }
 
-  getDialog(key: string, speaker?: string): DialogLine[] {
-    const val = locales[this.language][key]
+  getDialog(key: string, speaker?: string, params?: I18nParams): DialogLine[] {
+    const val = this.lookup(key)
     if (Array.isArray(val)) {
-      return val.map(text => ({ speaker, text }))
+      return val.map(text => ({ speaker, text: interpolate(text, params) }))
     }
     if (typeof val === 'string') {
-      return [{ speaker, text: val }]
+      return [{ speaker, text: interpolate(val, params) }]
     }
     return [{ speaker, text: `[${key}]` }]
   }

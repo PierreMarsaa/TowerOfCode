@@ -1,2 +1,2 @@
 export { PythonRunner } from './PythonRunner'
-export type { PythonResult, RunnerStatus } from './types'
+export type { GradeResult, PythonResult, RunnerStatus } from './types'

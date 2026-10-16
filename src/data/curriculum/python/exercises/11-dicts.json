@@ -1,0 +1,5174 @@
+[
+  {
+    "id": "python_11_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "introduction",
+        "key-value pairs"
+      ]
+    },
+    "title": {
+      "en": "What is a Dictionary?",
+      "fr": "Qu'est-ce qu'un dictionnaire ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A dictionary in Python is a collection of ***key-value pairs***. Think of it like a real dictionary where you look up a word (the key) to find its definition (the value).",
+            "fr": "Un dictionnaire en Python est une collection de ***paires clé-valeur***. Pense à ça comme un vrai dictionnaire où tu cherches un mot (la clé) pour trouver sa définition (la valeur)."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Dictionaries are created using curly braces ```{}``` with keys and values separated by colons ```:```",
+            "fr": "Les dictionnaires sont créés avec des accolades ```{}``` et les clés et valeurs sont séparées par des deux-points ```:```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\nprint(codemon)\nprint(type(codemon))",
+            "fr": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\nprint(codemon)\nprint(type(codemon))"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example:\n- ```\"name\"```, ```\"type\"```, and ```\"level\"``` are the ***keys***\n- ```\"Aquachu\"```, ```\"water\"```, and ```15``` are the ***values***\n- Each key is associated with exactly one value",
+            "fr": "Dans cet exemple :\n- ```\"name\"```, ```\"type\"``` et ```\"level\"``` sont les ***clés***\n- ```\"Aquachu\"```, ```\"water\"``` et ```15``` sont les ***valeurs***\n- Chaque clé est associée à exactement une valeur"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "syntax",
+        "creation"
+      ]
+    },
+    "title": {
+      "en": "Dictionary Syntax and Structure",
+      "fr": "Syntaxe et structure des dictionnaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The basic syntax for creating a dictionary is:\n\n```dictionary_name = {key1: value1, key2: value2, key3: value3}```\n\nYou can also create an empty dictionary and add elements later.",
+            "fr": "La syntaxe de base pour créer un dictionnaire est :\n\n```nom_dictionnaire = {clé1: valeur1, clé2: valeur2, clé3: valeur3}```\n\nTu peux aussi créer un dictionnaire vide et ajouter des éléments plus tard."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "empty_dict = {}\nprint(\"Empty dictionary:\", empty_dict)",
+            "fr": "dict_vide = {}\nprint(\"Dictionnaire vide:\", dict_vide)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Dictionary Values Can Be Anything",
+              "fr": "Les valeurs d'un dictionnaire peuvent être n'importe quoi"
+            },
+            "content": {
+              "en": "Dictionary values can be of any type: strings, numbers, booleans, lists, or even other dictionaries! Keys, however, must be immutable (like strings or numbers).",
+              "fr": "Les valeurs d'un dictionnaire peuvent être de n'importe quel type : chaînes, nombres, booléens, listes, ou même d'autres dictionnaires ! Les clés, cependant, doivent être immuables (comme des chaînes ou des nombres)."
+            }
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 20,\n    \"is_evolved\": False\n}\n\nprint(\"\\nCodemon dictionary:\", codemon)",
+            "fr": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 20,\n    \"is_evolved\": False\n}\n\nprint(\"\\nDictionnaire Codémon:\", codemon)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_1_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Valid Dictionary Syntax",
+      "fr": "Syntaxe valide de dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following is the correct way to create a dictionary in Python?",
+            "fr": "Laquelle des options suivantes est la bonne façon de créer un dictionnaire en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon = {\"name\": \"Florachu\", \"type\": \"plant\"}```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon = [\"name\": \"Florachu\", \"type\": \"plant\"]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon = {\"name\" = \"Florachu\", \"type\" = \"plant\"}```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon = (\"name\": \"Florachu\", \"type\": \"plant\")```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: dictionaries use curly braces {} and colons : to separate keys from values.",
+        "fr": "Rappelle-toi : les dictionnaires utilisent des accolades {} et des deux-points : pour séparer les clés des valeurs."
+      }
+    }
+  },
+  {
+    "id": "python_11_1_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "creation"
+      ]
+    },
+    "title": {
+      "en": "Create Your First Dictionary",
+      "fr": "Crée ton premier dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a dictionary for a Codémon with its name and power level.",
+            "fr": "Complète le code pour créer un dictionnaire pour un Codémon avec son nom et son niveau de puissance."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {{}}\"name\"{{}} \"Aquachu\", \"power\"{{}} 75{{}}\nprint(codemon)",
+        "options": [
+          "{",
+          ":",
+          ":",
+          "}",
+          "[",
+          "]",
+          "=",
+          ","
+        ],
+        "correctAnswers": {
+          "1": "{",
+          "2": ":",
+          "3": ":",
+          "4": "}"
+        }
+      },
+      "hint": {
+        "en": "Dictionaries are created with curly braces, and each key-value pair is separated by a colon.",
+        "fr": "Les dictionnaires sont créés avec des accolades, et chaque paire clé-valeur est séparée par un deux-points."
+      }
+    }
+  },
+  {
+    "id": "python_11_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "lists",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Dictionaries vs Lists",
+      "fr": "Dictionnaires vs Listes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the main difference between dictionaries and lists?",
+            "fr": "Quelle est la principale différence entre les dictionnaires et les listes ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Lists*** use numeric indices (0, 1, 2...) to access elements, while ***dictionaries*** use custom keys (strings, numbers, etc.).",
+            "fr": "Les ***listes*** utilisent des indices numériques (0, 1, 2...) pour accéder aux éléments, tandis que les ***dictionnaires*** utilisent des clés personnalisées (chaînes, nombres, etc.)."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_list = [\"Aquachu\", \"water\", 15]\n# List: access by position (index)\nprint(\"List access by index:\")\nprint(codemon_list[0])  # First element\nprint(codemon_list[1])  # Second element",
+            "fr": "codemon_list = [\"Aquachu\", \"water\", 15]\n# Liste : accès par position (index)\nprint(\"Accès liste par index:\")\nprint(codemon_list[0])  # Premier élément\nprint(codemon_list[1])  # Deuxième élément"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_dict = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n# Dictionary: access by key name\nprint(\"\\nDictionary access by key:\")\nprint(codemon_dict[\"name\"])  # Access by key\nprint(codemon_dict[\"type\"])  # Access by key",
+            "fr": "codemon_dict = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n# Dictionnaire : accès par nom de clé\nprint(\"\\nAccès dictionnaire par clé:\")\nprint(codemon_dict[\"name\"])  # Accès par clé\nprint(codemon_dict[\"type\"])  # Accès par clé"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "With dictionaries, the order doesn't matter as much because you access values by their meaningful key names, not by remembering their position.",
+            "fr": "Avec les dictionnaires, l'ordre n'a pas autant d'importance car tu accèdes aux valeurs par leurs noms de clés significatifs, pas en mémorisant leur position."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_1_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "use cases"
+      ]
+    },
+    "title": {
+      "en": "When to Use Dictionaries",
+      "fr": "Quand utiliser les dictionnaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which scenario is BEST suited for using a dictionary instead of a list?",
+            "fr": "Quel scénario est le MIEUX adapté pour utiliser un dictionnaire plutôt qu'une liste ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Storing a Codémon's attributes like name, type, level, and power with labeled access",
+              "fr": "Stocker les attributs d'un Codémon comme le nom, le type, le niveau et la puissance avec un accès étiqueté"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Storing a sequence of high scores in order from highest to lowest",
+              "fr": "Stocker une séquence de scores dans l'ordre du plus élevé au plus bas"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Keeping a list of player names in the order they joined the game",
+              "fr": "Garder une liste de noms de joueurs dans l'ordre où ils ont rejoint le jeu"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Storing coordinates as (x, y) pairs in sequence",
+              "fr": "Stocker des coordonnées sous forme de paires (x, y) en séquence"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about when meaningful labels (keys) are more useful than numeric positions (indices).",
+        "fr": "Réfléchis à quand des étiquettes significatives (clés) sont plus utiles que des positions numériques (indices)."
+      }
+    }
+  },
+  {
+    "id": "python_11_1_7",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "use cases"
+      ]
+    },
+    "title": {
+      "en": "Dictionary Use Cases",
+      "fr": "Cas d'utilisation des dictionnaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each scenario with whether it's better suited for a dictionary or a list:",
+            "fr": "Associe chaque scénario avec s'il est mieux adapté pour un dictionnaire ou une liste :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Store a Codémon's name, type, and stats",
+                "fr": "Stocker le nom, le type et les stats d'un Codémon"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Dictionary (labeled data)",
+                "fr": "Dictionnaire (données étiquetées)"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Track top 10 scores in order",
+                "fr": "Suivre les 10 meilleurs scores dans l'ordre"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "List (ordered sequence)",
+                "fr": "Liste (séquence ordonnée)"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Store a Team of Codémon with their types, levels, and abilities",
+                "fr": "Stocker une équipe de Codémon avec leurs types, niveaux et capacités"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Array of dictionaries",
+                "fr": "Tableau de dictionnaires"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Keep items in a shopping cart",
+                "fr": "Garder des articles dans un panier"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "List (ordered sequence)",
+                "fr": "Liste (séquence ordonnée)"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_1_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "creation",
+        "practice"
+      ]
+    },
+    "title": {
+      "en": "Create a Codémon Team Dictionary",
+      "fr": "Crée un dictionnaire d'équipe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a dictionary storing information about your Codémon team leader.",
+            "fr": "Complète le code pour créer un dictionnaire stockant les informations sur le chef de ton équipe Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "team_leader = {{}}\n    \"trainer_name\"{{}} \"Pierre\",\n    \"team_size\"{{}} 6,\n    \"badges\"{{}} 8\n{{}}\n\nprint(team_leader)",
+        "options": [
+          "{",
+          ":",
+          ":",
+          ":",
+          "}",
+          "[",
+          "]",
+          "="
+        ],
+        "correctAnswers": {
+          "1": "{",
+          "2": ":",
+          "3": ":",
+          "4": ":",
+          "5": "}"
+        }
+      },
+      "hint": {
+        "en": "Remember the dictionary structure: curly braces for the container, colons to separate keys from values.",
+        "fr": "Rappelle-toi la structure du dictionnaire : accolades pour le conteneur, deux-points pour séparer les clés des valeurs."
+      }
+    }
+  },
+  {
+    "id": "python_11_1_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "keys",
+        "values"
+      ]
+    },
+    "title": {
+      "en": "Understanding Keys and Values",
+      "fr": "Comprendre les clés et les valeurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the dictionary: ```codemon = {\"name\": \"Pyrochu\", \"level\": 25}```\n\nWhat are the keys in this dictionary?",
+            "fr": "Étant donné le dictionnaire : ```codemon = {\"name\": \"Pyrochu\", \"level\": 25}```\n\nQuelles sont les clés dans ce dictionnaire ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"name\"``` and ```\"level\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Pyrochu\"``` and ```25```"
+          },
+          {
+            "type": "text",
+            "value": "```\"name\": \"Pyrochu\"``` and ```\"level\": 25```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: keys are on the left side of the colon, values are on the right side.",
+        "fr": "Rappelle-toi : les clés sont du côté gauche du deux-points, les valeurs sont du côté droit."
+      }
+    }
+  },
+  {
+    "id": "python_11_1_10",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "lists",
+        "creation",
+        "challenge"
+      ]
+    },
+    "title": {
+      "en": "Challenge: Create a Complete Codémon",
+      "fr": "Défi : Crée un Codémon complet"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a complete Codémon dictionary with the following information:\n1. Create a dictionary named ```codemon``` with:\n    - A key ```\"name\"``` with the value ```\"Florachu\"```\n    - A key ```\"level\"``` with the value ```30```\n    - A key ```\"abilities\"``` with a list containing: ```\"Solar Beam\"```, ```\"Vine Whip\"```, and ```\"Synthesis\"```\n2. Print the dictionary and the abilities",
+            "fr": "Crée un dictionnaire complet de Codémon avec les informations suivantes :\n1. Crée un dictionnaire nommé ```codemon``` avec :\n    - Une clé ```\"name\"``` avec la valeur ```\"Florachu\"```\n    - Une clé ```\"level\"``` avec la valeur ```30```\n    - Une clé ```\"abilities\"``` avec une liste contenant : ```\"Solar Beam\"```, ```\"Vine Whip\"``` et ```\"Synthesis\"```\n2. Affiche le dictionnaire et les capacités"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create your Codémon dictionary here\n\n# Print the dictionary\n\n# Print just the abilities\n",
+          "fr": "# Crée ton dictionnaire Codémon ici\n\n# Affiche le dictionnaire\n\n# Affiche seulement les capacités\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Create your Codémon dictionary here\ncodemon = {\n    \"name\": \"Florachu\",\n    \"level\": 30,\n    \"abilities\": [\"Solar Beam\", \"Vine Whip\", \"Synthesis\"]\n}\n\n# Print the dictionary\nprint(codemon)\n\n# Print just the abilities\nprint(\"Abilities:\", codemon[\"abilities\"])",
+            "fr": "# Crée ton dictionnaire Codémon ici\ncodemon = {\n    \"name\": \"Florachu\",\n    \"level\": 30,\n    \"abilities\": [\"Solar Beam\", \"Vine Whip\", \"Synthesis\"]\n}\n\n# Affiche le dictionnaire\nprint(codemon)\n\n# Affiche seulement les capacités\nprint(\"Capacités:\", codemon[\"abilities\"])"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "access",
+        "square brackets"
+      ]
+    },
+    "title": {
+      "en": "Accessing Dictionary Values with Square Brackets",
+      "fr": "Accéder aux valeurs d'un dictionnaire avec les crochets"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "To access a value in a dictionary, use square brackets ```[]``` with the key inside. This is similar to how you access elements in a list, but instead of using an index number, you use the key.",
+            "fr": "Pour accéder à une valeur dans un dictionnaire, utilise les crochets ```[]``` avec la clé à l'intérieur. C'est similaire à la façon dont tu accèdes aux éléments d'une liste, mais au lieu d'utiliser un numéro d'index, tu utilises la clé."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15,\n    \"power\": 75\n}\n\n# Access values using keys\nprint(\"Name:\", aquachu[\"name\"])\nprint(\"Type:\", aquachu[\"type\"])\nprint(\"Level:\", aquachu[\"level\"])\nprint(\"Power:\", aquachu[\"power\"])",
+            "fr": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15,\n    \"power\": 75\n}\n\n# Accéder aux valeurs avec les clés\nprint(\"Nom:\", aquachu[\"name\"])\nprint(\"Type:\", aquachu[\"type\"])\nprint(\"Niveau:\", aquachu[\"level\"])\nprint(\"Puissance:\", aquachu[\"power\"])"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The syntax is: ```dictionary_name[key]```\n\nWhen you use the correct key, Python returns the corresponding value. Make sure the key exists in the dictionary, otherwise you'll get a ```KeyError```!",
+            "fr": "La syntaxe est : ```nom_dictionnaire[clé]```\n\nQuand tu utilises la bonne clé, Python renvoie la valeur correspondante. Assure-toi que la clé existe dans le dictionnaire, sinon tu obtiendras une ```KeyError``` (erreur de clé) !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "access",
+        "KeyError"
+      ]
+    },
+    "title": {
+      "en": "Understanding KeyError",
+      "fr": "Comprendre KeyError"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When you try to access a key that doesn't exist in a dictionary, Python raises a ```KeyError```. This is an error that stops your program.",
+            "fr": "Quand tu essaies d'accéder à une clé qui n'existe pas dans un dictionnaire, Python lève une ```KeyError```. C'est une erreur qui arrête ton programme."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "pyrochu = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 18\n}\n\n# This works fine\nprint(\"Name:\", pyrochu[\"name\"])\n\n# This will cause a KeyError!\n# Uncomment the line below to see the error\n# print(\"Power:\", pyrochu[\"power\"])",
+            "fr": "pyrochu = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 18\n}\n\n# Ceci fonctionne bien\nprint(\"Nom:\", pyrochu[\"name\"])\n\n# Ceci va causer une KeyError !\n# Décommente la ligne ci-dessous pour voir l'erreur\n# print(\"Puissance:\", pyrochu[\"power\"])"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```KeyError``` occurs because ```\"power\"``` is not a key in the ```pyrochu``` dictionary. To avoid this error, you can:\n\n1. Make sure the key exists before accessing it\n2. Use the ```.get()``` method (we'll learn this next!)",
+            "fr": "La ```KeyError``` se produit parce que ```\"power\"``` n'est pas une clé dans le dictionnaire ```pyrochu```. Pour éviter cette erreur, tu peux :\n\n1. T'assurer que la clé existe avant d'y accéder\n2. Utiliser la méthode ```.get()``` (nous allons l'apprendre ensuite !)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Always check your keys!",
+              "fr": "Vérifie toujours tes clés !"
+            },
+            "content": {
+              "en": "```KeyError``` is one of the most common errors when working with dictionaries. Double-check that your keys are spelled correctly and actually exist in the dictionary!",
+              "fr": "```KeyError``` est l'une des erreurs les plus courantes lors du travail avec les dictionnaires. Vérifie bien que tes clés sont correctement écrites et existent vraiment dans le dictionnaire !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_2_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "access",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Correct Dictionary Access Syntax",
+      "fr": "Syntaxe correcte pour accéder au dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following dictionary, which is the correct way to access the ```\"type\"``` value?",
+            "fr": "Étant donné le dictionnaire suivant, quelle est la bonne façon d'accéder à la valeur ```\"type\"``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "florachu = {\n    \"name\": \"Florachu\",\n    \"type\": \"plant\",\n    \"level\": 12\n}"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```florachu[\"type\"]```"
+          },
+          {
+            "type": "text",
+            "value": "```florachu(\"type\")```"
+          },
+          {
+            "type": "text",
+            "value": "```florachu.type```"
+          },
+          {
+            "type": "text",
+            "value": "```florachu{\"type\"}```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that dictionary access uses square brackets ```[]``` with the key inside as a string.",
+        "fr": "Rappelle-toi que l'accès au dictionnaire utilise les crochets ```[]``` avec la clé à l'intérieur comme chaîne de caractères."
+      }
+    }
+  },
+  {
+    "id": "python_11_2_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "get method",
+        "safe access"
+      ]
+    },
+    "title": {
+      "en": "Safe Access with the .get() Method",
+      "fr": "Accès sécurisé avec la méthode .get()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```.get()``` method is a safer way to access dictionary values. Instead of raising a ```KeyError``` when the key doesn't exist, it returns ```None``` (or a default value you specify).",
+            "fr": "La méthode ```.get()``` est une façon plus sûre d'accéder aux valeurs d'un dictionnaire. Au lieu de lever une ```KeyError``` quand la clé n'existe pas, elle renvoie ```None``` (ou une valeur par défaut que tu spécifies)."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Syntax:\n- ```dictionary.get(key)``` - Returns the value or ```None``` if key doesn't exist\n- ```dictionary.get(key, default_value)``` - Returns the value or ```default_value``` if key doesn't exist",
+            "fr": "Syntaxe :\n- ```dictionnaire.get(clé)``` - Renvoie la valeur ou ```None``` si la clé n'existe pas\n- ```dictionnaire.get(clé, valeur_par_défaut)``` - Renvoie la valeur ou ```valeur_par_défaut``` si la clé n'existe pas"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\n# Using .get() with existing key\nprint(\"Name:\", aquachu.get(\"name\"))\n\n# Using .get() with non-existing key (returns None)\nprint(\"Power:\", aquachu.get(\"power\"))\n\n# Using .get() with default value\nprint(\"Power with default:\", aquachu.get(\"power\", 0))\nprint(\"HP with default:\", aquachu.get(\"hp\", 100))",
+            "fr": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\n# Utiliser .get() avec une clé existante\nprint(\"Nom:\", aquachu.get(\"name\"))\n\n# Utiliser .get() avec une clé non existante (renvoie None)\nprint(\"Puissance:\", aquachu.get(\"power\"))\n\n# Utiliser .get() avec une valeur par défaut\nprint(\"Puissance avec défaut:\", aquachu.get(\"power\", 0))\nprint(\"PV avec défaut:\", aquachu.get(\"hp\", 100))"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to use .get() vs []",
+              "fr": "Quand utiliser .get() vs []"
+            },
+            "content": {
+              "en": "Personally, I use ```get()``` most of the time to avoid unexpected errors in my code but there are no hard rules.",
+              "fr": "Personnellement, j'utilise ```get()``` la plupart du temps pour éviter des erreurs inattendues dans mon code, mais il n'y a pas de règles strictes."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_2_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "get method",
+        "default values"
+      ]
+    },
+    "title": {
+      "en": "Understanding .get() Return Values",
+      "fr": "Comprendre les valeurs de retour de .get()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will the following code print?",
+            "fr": "Que va afficher le code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {\"name\": \"Pyrochu\", \"type\": \"fire\"}\nresult = codemon.get(\"level\", 1)\nprint(result)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```1```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          },
+          {
+            "type": "text",
+            "value": "```KeyError```"
+          },
+          {
+            "type": "text",
+            "value": "```\"level\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what happens when ```.get()``` is called with a key that doesn't exist and a default value is provided.",
+        "fr": "Réfléchis à ce qui se passe quand ```.get()``` est appelé avec une clé qui n'existe pas et qu'une valeur par défaut est fournie."
+      }
+    }
+  },
+  {
+    "id": "python_11_2_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "modification",
+        "update values"
+      ]
+    },
+    "title": {
+      "en": "Modifying Dictionary Values",
+      "fr": "Modifier les valeurs du dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can change the value of an existing key by using assignment with square brackets. The syntax is the same as accessing, but you use the assignment operator ```=``` to set a new value.",
+            "fr": "Tu peux changer la valeur d'une clé existante en utilisant l'affectation avec les crochets. La syntaxe est la même que pour accéder, mais tu utilises l'opérateur d'affectation ```=``` pour définir une nouvelle valeur."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"level\": 10,\n    \"power\": 50\n}\n\nprint(\"Before:\", aquachu)\n\n# Update the level\naquachu[\"level\"] = 15\n\n# Update the power\naquachu[\"power\"] = 75\n\nprint(\"After:\", aquachu)",
+            "fr": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"level\": 10,\n    \"power\": 50\n}\n\nprint(\"Avant:\", aquachu)\n\n# Mettre à jour le niveau\naquachu[\"level\"] = 15\n\n# Mettre à jour la puissance\naquachu[\"power\"] = 75\n\nprint(\"Après:\", aquachu)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The syntax is: ```dictionary[existing_key] = new_value```\n\nThis replaces the old value with the new one (or creates the key if it doesn't exist).",
+            "fr": "La syntaxe est : ```dictionnaire[clé_existante] = nouvelle_valeur```\n\nCela remplace l'ancienne valeur par la nouvelle (ou crée la clé si elle n'existe pas)."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_2_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "adding keys",
+        "new entries"
+      ]
+    },
+    "title": {
+      "en": "Adding New Key-Value Pairs",
+      "fr": "Ajouter de nouvelles paires clé-valeur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Like I just said in the last exercise, you can add new key-value pairs to a dictionary using the same syntax as updating values. If the key doesn't exist, Python creates it automatically!",
+            "fr": "Comme je viens de le dire dans l'exercice précédent, tu peux ajouter de nouvelles paires clé-valeur à un dictionnaire en utilisant la même syntaxe que pour mettre à jour les valeurs. Si la clé n'existe pas, Python la crée automatiquement !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "florachu = {\n    \"name\": \"Florachu\",\n    \"type\": \"plant\"\n}\n\nprint(\"Original:\", florachu)\n\n# Add new keys\nflorachu[\"level\"] = 12\nflorachu[\"power\"] = 70\nflorachu[\"hp\"] = 100\n\nprint(\"After adding keys:\", florachu)",
+            "fr": "florachu = {\n    \"name\": \"Florachu\",\n    \"type\": \"plant\"\n}\n\nprint(\"Original:\", florachu)\n\n# Ajouter de nouvelles clés\nflorachu[\"level\"] = 12\nflorachu[\"power\"] = 70\nflorachu[\"hp\"] = 100\n\nprint(\"Après ajout des clés:\", florachu)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The syntax is: ```dictionary[new_key] = value```\n\nPython doesn't differentiate between updating an existing key and creating a new one - it's the same operation! If the key exists, it updates; if it doesn't exist, it creates.",
+            "fr": "La syntaxe est : ```dictionnaire[nouvelle_clé] = valeur```\n\nPython ne fait pas de différence entre mettre à jour une clé existante et en créer une nouvelle - c'est la même opération ! Si la clé existe, elle est mise à jour ; si elle n'existe pas, elle est créée."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Dictionaries are dynamic",
+              "fr": "Les dictionnaires sont dynamiques"
+            },
+            "content": {
+              "en": "Unlike some other programming languages, Python dictionaries can grow and shrink dynamically. You can add as many key-value pairs as you need at any time!",
+              "fr": "Contrairement à certains autres langages de programmation, les dictionnaires Python peuvent grandir et rétrécir dynamiquement. Tu peux ajouter autant de paires clé-valeur que tu veux à tout moment !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_2_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "access",
+        "modification"
+      ]
+    },
+    "title": {
+      "en": "Practice Accessing and Modifying",
+      "fr": "Pratique d'accès et de modification"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to access the Codémon's type, update its level to 20, and add a new ```\"hp\"``` key with value 150.",
+            "fr": "Complète le code pour accéder au type du Codémon, mettre à jour son niveau à 20, et ajouter une nouvelle clé ```\"hp\"``` avec la valeur 150."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "pyrochu = {\"name\": \"Pyrochu\", \"type\": \"fire\", \"level\": 15}\n\n# Access the type\ncodemon_type = pyrochu{{}}\n\n# Update level to 20\npyrochu{{}} = 20\n\n# Add hp with value 150\npyrochu{{}} = 150\nprint(codemon_type, pyrochu)",
+        "options": [
+          ".get(\"type\")",
+          "[\"level\"]",
+          ".get(\"level\")",
+          "[\"hp\"]",
+          ".get(\"hp\")"
+        ],
+        "correctAnswers": {
+          "1": ".get(\"type\")",
+          "2": "[\"level\"]",
+          "3": "[\"hp\"]"
+        }
+      },
+      "hint": {
+        "en": "Remember: use square brackets with the key name for both accessing and modifying/adding values.",
+        "fr": "Rappelle-toi : utilise les crochets avec le nom de la clé pour accéder et modifier/ajouter des valeurs."
+      }
+    }
+  },
+  {
+    "id": "python_11_2_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "in keyword",
+        "checking keys"
+      ]
+    },
+    "title": {
+      "en": "Checking if a Key Exists",
+      "fr": "Vérifier si une clé existe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Before accessing a dictionary value with ```[]```, it's often useful to check if the key exists to avoid ```KeyError```. You can use the ```in``` keyword for this.",
+            "fr": "Avant d'accéder à une valeur de dictionnaire avec ```[]```, il est souvent utile de vérifier si la clé existe pour éviter la ```KeyError```. Tu peux utiliser le mot-clé ```in``` pour cela."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\n# Check if keys exist\nprint(\"Has 'name'?\", \"name\" in aquachu)\nprint(\"Has 'power'?\", \"power\" in aquachu)\nprint(\"Has 'type'?\", \"type\" in aquachu)",
+            "fr": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\n# Vérifier si les clés existent\nprint(\"A 'name' ?\", \"name\" in aquachu)\nprint(\"A 'power' ?\", \"power\" in aquachu)\nprint(\"A 'type' ?\", \"type\" in aquachu)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\n# Use with conditional\nif \"power\" in aquachu:\n    print(\"Power:\", aquachu[\"power\"])\nelse:\n    print(\"Power not found, setting default\")\n    aquachu[\"power\"] = 50\n    print(\"Power:\", aquachu[\"power\"])",
+            "fr": "aquachu = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15\n}\n\n# Utiliser avec une condition\nif \"power\" in aquachu:\n    print(\"Puissance:\", aquachu[\"power\"])\nelse:\n    print(\"Puissance non trouvée, définition par défaut\")\n    aquachu[\"power\"] = 50\n    print(\"Puissance:\", aquachu[\"power\"])"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The syntax is: ```key in dictionary```\n\nThis returns ```True``` if the key exists, ```False``` otherwise. It's very useful in conditional statements to safely check before accessing.",
+            "fr": "La syntaxe est : ```clé in dictionnaire```\n\nCela renvoie ```True``` si la clé existe, ```False``` sinon. C'est très utile dans les instructions conditionnelles pour vérifier en toute sécurité avant d'accéder."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_2_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "access methods",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Match Dictionary Access Methods",
+      "fr": "Associer les méthodes d'accès au dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each dictionary operation with its correct description:",
+            "fr": "Associe chaque opération de dictionnaire à sa description correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```dict[\"key\"]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Access value, raises KeyError if key doesn't exist",
+                "fr": "Accède à la valeur, lève KeyError si la clé n'existe pas"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```dict.get(\"key\")```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Access value, returns None if key doesn't exist",
+                "fr": "Accède à la valeur, renvoie None si la clé n'existe pas"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```dict[\"key\"] = value```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Update existing key or create new key-value pair",
+                "fr": "Met à jour une clé existante ou crée une nouvelle paire clé-valeur"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"key\" in dict```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Check if key exists, returns True or False",
+                "fr": "Vérifie si la clé existe, renvoie True ou False"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_2_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "access",
+        "modification",
+        "adding keys",
+        "challenge"
+      ]
+    },
+    "title": {
+      "en": "Challenge: Level Up Your Codémon",
+      "fr": "Défi : Fais évoluer ton Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Your Codémon just won a battle and needs to be updated! Use dictionary operations to manage its stats.\n1. Print the Codémon's current name and level\n2. Increase the level by 5\n3. Increase the power by 20\n4. Add a new key ```\"wins\"``` with the value ```1```\n5. Add a new key ```\"hp\"``` with the value ```120```\n6. Print the updated dictionary",
+            "fr": "Ton Codémon vient de gagner un combat et doit être mis à jour ! Utilise les opérations de dictionnaire pour gérer ses stats.\n1. Affiche le nom et le niveau actuels du Codémon\n2. Augmente le niveau de 5\n3. Augmente la puissance de 20\n4. Ajoute une nouvelle clé ```\"wins\"``` avec la valeur ```1```\n5. Ajoute une nouvelle clé ```\"hp\"``` avec la valeur ```120```\n6. Affiche le dictionnaire mis à jour"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 10,\n    \"power\": 50\n}\n\nprint(\"=== BEFORE BATTLE ===\")\n# 1. Print current name and level\n\nprint(\"\\n=== UPDATING STATS ===\")\n# 2. Increase level by 5\n\n# 3. Increase power by 20\n\n# 4. Add wins key with value 1\n\n# 5. Add hp key with value 120\n\nprint(\"\\n=== AFTER BATTLE ===\")\n# 6. Print updated dictionary\n",
+          "fr": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 10,\n    \"power\": 50\n}\n\nprint(\"=== AVANT LE COMBAT ===\")\n# 1. Affiche le nom et le niveau actuels\n\nprint(\"\\n=== MISE À JOUR DES STATS ===\")\n# 2. Augmente le niveau de 5\n\n# 3. Augmente la puissance de 20\n\n# 4. Ajoute la clé wins avec la valeur 1\n\n# 5. Ajoute la clé hp avec la valeur 120\n\nprint(\"\\n=== APRÈS LE COMBAT ===\")\n# 6. Affiche le dictionnaire mis à jour\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 10,\n    \"power\": 50\n}\n\nprint(\"=== BEFORE BATTLE ===\")\n# 1. Print current name and level\nprint(f\"Name: {codemon.get('name')}\")\nprint(f\"Level: {codemon.get('level')}\")\n\nprint(\"\\n=== UPDATING STATS ===\")\n# 2. Increase level by 5\ncodemon[\"level\"] = codemon.get(\"level\") + 5\nprint(f\"New level: {codemon.get('level')}\")\n\n# 3. Increase power by 20\ncodemon[\"power\"] = codemon.get(\"power\") + 20\nprint(f\"New power: {codemon.get('power')}\")\n\n# 4. Add wins key with value 1\ncodemon[\"wins\"] = 1\nprint(\"Added wins stat\")\n\n# 5. Add hp key with value 120\ncodemon[\"hp\"] = 120\nprint(\"Added hp stat\")\n\nprint(\"\\n=== AFTER BATTLE ===\")\n# 6. Print updated dictionary\nprint(codemon)",
+            "fr": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 10,\n    \"power\": 50\n}\n\nprint(\"=== AVANT LE COMBAT ===\")\n# 1. Affiche le nom et le niveau actuels\nprint(f\"Nom: {codemon.get('name')}\")\nprint(f\"Niveau: {codemon.get('level')}\")\n\nprint(\"\\n=== MISE À JOUR DES STATS ===\")\n# 2. Augmente le niveau de 5\ncodemon[\"level\"] = codemon.get(\"level\") + 5\nprint(f\"Nouveau niveau: {codemon.get('level')}\")\n\n# 3. Augmente la puissance de 20\ncodemon[\"power\"] = codemon.get(\"power\") + 20\nprint(f\"Nouvelle puissance: {codemon.get('power')}\")\n\n# 4. Ajoute la clé wins avec la valeur 1\ncodemon[\"wins\"] = 1\nprint(\"Stat wins ajoutée\")\n\n# 5. Ajoute la clé hp avec la valeur 120\ncodemon[\"hp\"] = 120\nprint(\"Stat hp ajoutée\")\n\nprint(\"\\n=== APRÈS LE COMBAT ===\")\n# 6. Affiche le dictionnaire mis à jour\nprint(codemon)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "removing elements"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Removing Dictionary Elements",
+      "fr": "Introduction à la suppression d'éléments dans un dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python provides several ways to remove elements from a dictionary. Each method has its own use case and behavior:",
+            "fr": "Python offre plusieurs façons de supprimer des éléments d'un dictionnaire. Chaque méthode a son propre cas d'utilisation et comportement :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- ```del``` - Removes an item by key (raises error if key doesn't exist)\n- ```pop()``` - Removes an item and returns its value (can provide default)\n- ```popitem()``` - Removes and returns the last inserted key-value pair\n- ```clear()``` - Removes all items from the dictionary",
+            "fr": "- ```del``` - Supprime un élément par clé (lève une erreur si la clé n'existe pas)\n- ```pop()``` - Supprime un élément et retourne sa valeur (peut fournir une valeur par défaut)\n- ```popitem()``` - Supprime et retourne la dernière paire clé-valeur insérée\n- ```clear()``` - Supprime tous les éléments du dictionnaire"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_3_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "del statement"
+      ]
+    },
+    "title": {
+      "en": "The del Statement",
+      "fr": "L'instruction del"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```del``` statement is the simplest way to remove an item from a dictionary. You just specify the key you want to delete:",
+            "fr": "L'instruction ```del``` est la façon la plus simple de supprimer un élément d'un dictionnaire. Tu spécifies simplement la clé que tu veux supprimer :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "del dictionary[key]"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see it in action:",
+            "fr": "Voyons-le en action :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 20,\n    \"power\": 80\n}\n\nprint(\"Before deletion:\", codemon)\n\n# Remove the 'power' key\ndel codemon[\"power\"]\nprint(\"After deleting power:\", codemon)\n\n# Remove the 'type' key\ndel codemon[\"type\"]\nprint(\"After deleting type:\", codemon)",
+            "fr": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 20,\n    \"power\": 80\n}\n\nprint(\"Avant suppression:\", codemon)\n\n# Supprimer la clé 'power'\ndel codemon[\"power\"]\nprint(\"Après suppression de power:\", codemon)\n\n# Supprimer la clé 'type'\ndel codemon[\"type\"]\nprint(\"Après suppression de type:\", codemon)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "KeyError with del",
+              "fr": "KeyError avec del"
+            },
+            "content": {
+              "en": "If you try to delete a key that doesn't exist, Python will raise a ```KeyError```. Always make sure the key exists before using ```del```, or use ```pop()``` with a default value instead.",
+              "fr": "Si tu essaies de supprimer une clé qui n'existe pas, Python lèvera une erreur ```KeyError```. Assure-toi toujours que la clé existe avant d'utiliser ```del```, ou utilise ```pop()``` avec une valeur par défaut à la place."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_3_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "del statement"
+      ]
+    },
+    "title": {
+      "en": "Understanding del Behavior",
+      "fr": "Comprendre le comportement de del"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will happen when running this code?",
+            "fr": "Que va-t-il se passer en exécutant ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {\"name\": \"Florachu\", \"type\": \"plant\"}\ndel codemon[\"level\"]\nprint(codemon)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "A ```KeyError``` will be raised because 'level' doesn't exist",
+              "fr": "Une erreur ```KeyError``` sera levée car 'level' n'existe pas"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The code will print ```{'name': 'Florachu', 'type': 'plant'}```",
+              "fr": "Le code affichera ```{'name': 'Florachu', 'type': 'plant'}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The code will print an empty dictionary ```{}```",
+              "fr": "Le code affichera un dictionnaire vide ```{}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The ```del``` statement will do nothing and the original dictionary will be printed",
+              "fr": "L'instruction ```del``` ne fera rien et le dictionnaire original sera affiché"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that ```del``` raises a ```KeyError``` if you try to delete a key that doesn't exist in the dictionary.",
+        "fr": "Rappelle-toi que ```del``` lève une erreur ```KeyError``` si tu essaies de supprimer une clé qui n'existe pas dans le dictionnaire."
+      }
+    }
+  },
+  {
+    "id": "python_11_3_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "pop method"
+      ]
+    },
+    "title": {
+      "en": "The pop() Method",
+      "fr": "La méthode pop()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```pop()``` method removes a key from the dictionary and returns its value. Unlike ```del```, you can provide a default value to return if the key doesn't exist:",
+            "fr": "La méthode ```pop()``` supprime une clé du dictionnaire et retourne sa valeur. Contrairement à ```del```, tu peux fournir une valeur par défaut à retourner si la clé n'existe pas :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "value = dictionary.pop(key)\n# or with default\nvalue = dictionary.pop(key, default_value)"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see how it works:",
+            "fr": "Voyons comment ça fonctionne :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15,\n    \"power\": 75\n}\n\n# pop() returns the value\npower = codemon.pop(\"power\")\nprint(\"Removed power:\", power)\nprint(\"Dictionary after pop:\", codemon)\n\n# Using pop() with a default value\nexperience = codemon.pop(\"experience\", 0)\nprint(\"Experience (with default):\", experience)\nprint(\"Dictionary after second pop:\", codemon)",
+            "fr": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15,\n    \"power\": 75\n}\n\n# pop() retourne la valeur\npower = codemon.pop(\"power\")\nprint(\"Puissance supprimée:\", power)\nprint(\"Dictionnaire après pop:\", codemon)\n\n# Utilisation de pop() avec une valeur par défaut\nexperience = codemon.pop(\"experience\", 0)\nprint(\"Expérience (avec défaut):\", experience)\nprint(\"Dictionnaire après second pop:\", codemon)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Why Use pop()?",
+              "fr": "Pourquoi utiliser pop() ?"
+            },
+            "content": {
+              "en": "Use ```pop()``` when you need to retrieve the value before removing it, or when you want to provide a default value if the key doesn't exist. This makes your code safer and more flexible than using ```del```.",
+              "fr": "Utilise ```pop()``` quand tu as besoin de récupérer la valeur avant de la supprimer, ou quand tu veux fournir une valeur par défaut si la clé n'existe pas. Cela rend ton code plus sûr et plus flexible que d'utiliser ```del```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_3_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "pop method"
+      ]
+    },
+    "title": {
+      "en": "Using pop() with Defaults",
+      "fr": "Utiliser pop() avec des valeurs par défaut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to safely remove the \"trainer\" key from the dictionary. If it doesn't exist, use \"Unknown\" as the default value.",
+            "fr": "Complète le code pour supprimer en toute sécurité la clé \"trainer\" du dictionnaire. Si elle n'existe pas, utilise \"Unknown\" comme valeur par défaut."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 18\n}\n\ntrainer_name = codemon.{{}}({{}}{{}}{{}})\nprint(\"Trainer:\", trainer_name)",
+        "options": [
+          "pop",
+          "remove",
+          "delete",
+          "\"trainer\"",
+          "trainer",
+          ",",
+          ":",
+          "\"Unknown\"",
+          "Unknown"
+        ],
+        "correctAnswers": {
+          "1": "pop",
+          "2": "\"trainer\"",
+          "3": ",",
+          "4": "\"Unknown\""
+        }
+      },
+      "hint": {
+        "en": "Remember the syntax: ```dictionary.pop(key, default_value)```. The default value is optional but useful for safe operations.",
+        "fr": "Rappelle-toi la syntaxe : ```dictionary.pop(clé, valeur_par_défaut)```. La valeur par défaut est optionnelle mais utile pour des opérations sûres."
+      }
+    }
+  },
+  {
+    "id": "python_11_3_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "popitem method"
+      ]
+    },
+    "title": {
+      "en": "The popitem() Method",
+      "fr": "La méthode popitem()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```popitem()``` method removes and returns the last inserted key-value pair as a tuple. This is useful when you need to process items one by one:",
+            "fr": "La méthode ```popitem()``` supprime et retourne la dernière paire clé-valeur insérée sous forme de tuple. C'est utile quand tu dois traiter des éléments un par un :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "key, value = dictionary.popitem()"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see it in action:",
+            "fr": "Voyons-le en action :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Florachu\",\n    \"type\": \"plant\",\n    \"level\": 16,\n    \"power\": 70\n}\n\nprint(\"Original:\", codemon)\n\n# Remove the last inserted item\nkey, value = codemon.popitem()\nprint(f\"Removed: {key} = {value}\")\nprint(\"After first popitem:\", codemon)\n\n# Remove another item\nkey, value = codemon.popitem()\nprint(f\"Removed: {key} = {value}\")\nprint(\"After second popitem:\", codemon)",
+            "fr": "codemon = {\n    \"name\": \"Florachu\",\n    \"type\": \"plant\",\n    \"level\": 16,\n    \"power\": 70\n}\n\nprint(\"Original:\", codemon)\n\n# Supprimer le dernier élément inséré\nkey, value = codemon.popitem()\nprint(f\"Supprimé: {key} = {value}\")\nprint(\"Après premier popitem:\", codemon)\n\n# Supprimer un autre élément\nkey, value = codemon.popitem()\nprint(f\"Supprimé: {key} = {value}\")\nprint(\"Après second popitem:\", codemon)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Empty Dictionary Error",
+              "fr": "Erreur de dictionnaire vide"
+            },
+            "content": {
+              "en": "If you call ```popitem()``` on an empty dictionary, Python will raise a ```KeyError```. Always check if the dictionary is not empty before using ```popitem()```.",
+              "fr": "Si tu appelles ```popitem()``` sur un dictionnaire vide, Python lèvera une erreur ```KeyError```. Vérifie toujours que le dictionnaire n'est pas vide avant d'utiliser ```popitem()```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_3_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "pop vs popitem"
+      ]
+    },
+    "title": {
+      "en": "pop() vs popitem()",
+      "fr": "pop() vs popitem()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the main difference between ```pop()``` and ```popitem()```?",
+            "fr": "Quelle est la principale différence entre ```pop()``` et ```popitem()``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```pop()``` requires a key and returns only the value, while ```popitem()``` removes the last item and returns both key and value",
+              "fr": "```pop()``` nécessite une clé et retourne seulement la valeur, tandis que ```popitem()``` supprime le dernier élément et retourne la clé et la valeur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```pop()``` removes the last item while ```popitem()``` requires a key",
+              "fr": "```pop()``` supprime le dernier élément tandis que ```popitem()``` nécessite une clé"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "They are exactly the same, just different names",
+              "fr": "Ils sont exactement les mêmes, juste des noms différents"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```pop()``` can only be used once while ```popitem()``` can be used multiple times",
+              "fr": "```pop()``` ne peut être utilisé qu'une fois tandis que ```popitem()``` peut être utilisé plusieurs fois"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what parameters each method needs and what they return.",
+        "fr": "Réfléchis aux paramètres dont chaque méthode a besoin et à ce qu'elles retournent."
+      }
+    }
+  },
+  {
+    "id": "python_11_3_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "clear method"
+      ]
+    },
+    "title": {
+      "en": "The clear() Method",
+      "fr": "La méthode clear()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```clear()``` method removes all items from a dictionary, leaving it empty. This is useful when you want to reset a dictionary:",
+            "fr": "La méthode ```clear()``` supprime tous les éléments d'un dictionnaire, le laissant vide. C'est utile quand tu veux réinitialiser un dictionnaire :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "dictionary.clear()"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see it in action:",
+            "fr": "Voyons-le en action :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15,\n    \"power\": 75\n}\n\nprint(\"Before clear:\", codemon)\nprint(\"Dictionary has\", len(codemon), \"items\")\n\ncodemon.clear()\n\nprint(\"After clear:\", codemon)\nprint(\"Dictionary has\", len(codemon), \"items\")",
+            "fr": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15,\n    \"power\": 75\n}\n\nprint(\"Avant clear:\", codemon)\nprint(\"Le dictionnaire a\", len(codemon), \"éléments\")\n\ncodemon.clear()\n\nprint(\"Après clear:\", codemon)\nprint(\"Le dictionnaire a\", len(codemon), \"éléments\")"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "clear() vs Creating New Dictionary",
+              "fr": "clear() vs Créer un nouveau dictionnaire"
+            },
+            "content": {
+              "en": "Using ```dictionary.clear()``` is different from ```dictionary = {}```. The ```clear()``` method empties the existing dictionary object, while ```dictionary = {}``` creates a new empty dictionary. This matters when other variables reference the same dictionary.",
+              "fr": "Utiliser ```dictionary.clear()``` est différent de ```dictionary = {}```. La méthode ```clear()``` vide le dictionnaire existant, tandis que ```dictionary = {}``` crée un nouveau dictionnaire vide. C'est important quand d'autres variables référencent le même dictionnaire."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_3_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "removing elements"
+      ]
+    },
+    "title": {
+      "en": "Choosing the Right Removal Method",
+      "fr": "Choisir la bonne méthode de suppression"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code with the appropriate removal methods:",
+            "fr": "Complète le code avec les méthodes de suppression appropriées :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 20,\n    \"power\": 80\n}\n\n# Remove 'power' without needing its value\n{{}} codemon[\"power\"]\nprint(codemon)\n\n# Remove 'type' and store its value\ncodemon_type = codemon.{{}}(\"type\")\nprint(codemon_type)\n\n# Empty the entire dictionary\ncodemon.{{}}()\nprint(codemon)",
+        "options": [
+          "del",
+          "remove",
+          "pop",
+          "popitem",
+          "clear",
+          "delete",
+          "empty"
+        ],
+        "correctAnswers": {
+          "1": "del",
+          "2": "pop",
+          "3": "clear"
+        }
+      },
+      "hint": {
+        "en": "Think about when you need the value (```pop()```), when you just want to remove (```del```), and when you want to empty everything (```clear()```).",
+        "fr": "Réfléchis à quand tu as besoin de la valeur (```pop()```), quand tu veux juste supprimer (```del```), et quand tu veux tout vider (```clear()```)."
+      }
+    }
+  },
+  {
+    "id": "python_11_3_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "removing elements"
+      ]
+    },
+    "title": {
+      "en": "Match Methods with Their Purposes",
+      "fr": "Associer les méthodes à leurs objectifs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each removal method with its best use case:",
+            "fr": "Associe chaque méthode de suppression à son meilleur cas d'utilisation :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```del dictionary[key]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove an item when you don't need its value",
+                "fr": "Supprimer un élément quand tu n'as pas besoin de sa valeur"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```dictionary.pop(key)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove an item and get its value safely",
+                "fr": "Supprimer un élément et obtenir sa valeur en toute sécurité"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```dictionary.popitem()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove and return the last inserted key-value pair",
+                "fr": "Supprimer et retourner la dernière paire clé-valeur insérée"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```dictionary.clear()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove all items from the dictionary",
+                "fr": "Supprimer tous les éléments du dictionnaire"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_3_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "removing elements"
+      ]
+    },
+    "title": {
+      "en": "Safe Removal Practice",
+      "fr": "Pratique de suppression sécurisée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of these is the safest way to remove a key that might not exist in the dictionary?",
+            "fr": "Laquelle de ces méthodes est la plus sûre pour supprimer une clé qui pourrait ne pas exister dans le dictionnaire ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon.pop(\"trainer\", None)```"
+          },
+          {
+            "type": "text",
+            "value": "```del codemon[\"trainer\"]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon.popitem()```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon.clear()```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about which method won't raise an error if the key doesn't exist.",
+        "fr": "Réfléchis à quelle méthode ne lèvera pas d'erreur si la clé n'existe pas."
+      }
+    }
+  },
+  {
+    "id": "python_11_3_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "del",
+        "pop",
+        "popitem",
+        "clear",
+        "removing elements",
+        "challenge"
+      ]
+    },
+    "title": {
+      "en": "Challenge: Managing Codémon Stats",
+      "fr": "Défi : Gérer les stats de Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You need to clean up and manage your Codémon's stats! Use the appropriate removal methods for each situation.\n1. Remove the ```\"nickname\"``` key (you don't need its value)\n2. Remove the ```\"experience\"``` key and print its value (if it doesn't exist, use ```0``` as default)\n3. Remove the last inserted key-value pair and print what was removed\n4. Print the final cleaned dictionary",
+            "fr": "Tu dois nettoyer et gérer les stats de ton Codémon ! Utilise les méthodes de suppression appropriées pour chaque situation.\n1. Supprime la clé ```\"nickname\"``` (tu n'as pas besoin de sa valeur)\n2. Supprime la clé ```\"experience\"``` et affiche sa valeur (si elle n'existe pas, utilise ```0``` par défaut)\n3. Supprime la dernière paire clé-valeur insérée et affiche ce qui a été supprimé\n4. Affiche le dictionnaire final nettoyé"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 25,\n    \"power\": 85,\n    \"nickname\": \"Splash\",\n    \"hp\": 150\n}\n\nprint(\"=== CLEANING CODEMON ===\")\nprint(\"Original:\", codemon)\n\n# 1. Remove 'nickname' (you don't need its value)\n\n# 2. Remove 'experience' and print its value (default 0)\n\n# 3. Remove last inserted key-value pair and print it\n\n# 4. Print final cleaned dictionary\nprint(\"\\n=== FINAL RESULT ===\")\n",
+          "fr": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 25,\n    \"power\": 85,\n    \"nickname\": \"Splash\",\n    \"hp\": 150\n}\n\nprint(\"=== NETTOYAGE CODEMON ===\")\nprint(\"Original:\", codemon)\n\n# 1. Supprime 'nickname' (tu n'as pas besoin de sa valeur)\n\n# 2. Supprime 'experience' et affiche sa valeur (défaut 0)\n\n# 3. Supprime la dernière paire clé-valeur insérée et affiche-la\n\n# 4. Affiche le dictionnaire final nettoyé\nprint(\"\\n=== RÉSULTAT FINAL ===\")\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 25,\n    \"power\": 85,\n    \"nickname\": \"Splash\",\n    \"hp\": 150\n}\n\nprint(\"=== CLEANING CODEMON ===\")\nprint(\"Original:\", codemon)\n\n# 1. Remove 'nickname' (you don't need its value)\ndel codemon[\"nickname\"]\nprint(\"After removing nickname:\", codemon)\n\n# 2. Remove 'experience' and print its value (default 0)\nexperience = codemon.pop(\"experience\", 0)\nprint(f\"Experience value: {experience}\")\n\n# 3. Remove last inserted key-value pair and print it\nlast_key, last_value = codemon.popitem()\nprint(f\"Removed last item: {last_key} = {last_value}\")\n\n# 4. Print final cleaned dictionary\nprint(\"\\n=== FINAL RESULT ===\")\nprint(\"Final codemon:\", codemon)",
+            "fr": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 25,\n    \"power\": 85,\n    \"nickname\": \"Splash\",\n    \"hp\": 150\n}\n\nprint(\"=== NETTOYAGE CODEMON ===\")\nprint(\"Original:\", codemon)\n\n# 1. Supprime 'nickname' (tu n'as pas besoin de sa valeur)\ndel codemon[\"nickname\"]\nprint(\"Après suppression de nickname:\", codemon)\n\n# 2. Supprime 'experience' et affiche sa valeur (défaut 0)\nexperience = codemon.pop(\"experience\", 0)\nprint(f\"Valeur d'expérience: {experience}\")\n\n# 3. Supprime la dernière paire clé-valeur insérée et affiche-la\nlast_key, last_value = codemon.popitem()\nprint(f\"Dernier élément supprimé: {last_key} = {last_value}\")\n\n# 4. Affiche le dictionnaire final nettoyé\nprint(\"\\n=== RÉSULTAT FINAL ===\")\nprint(\"Codemon final:\", codemon)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods",
+        "keys",
+        "values",
+        "items"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Dictionary Methods",
+      "fr": "Introduction aux méthodes de dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python dictionaries come with several built-in methods that make it easy to access and work with their data. The three most important methods are:",
+            "fr": "Les dictionnaires Python sont fournis avec plusieurs méthodes intégrées qui facilitent l'accès et le travail avec leurs données. Les trois méthodes les plus importantes sont :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- ```.keys()``` - Returns all the keys in the dictionary\n- ```.values()``` - Returns all the values in the dictionary\n- ```.items()``` - Returns all key-value pairs as tuples",
+            "fr": "- ```.keys()``` - Renvoie toutes les clés du dictionnaire\n- ```.values()``` - Renvoie toutes les valeurs du dictionnaire\n- ```.items()``` - Renvoie toutes les paires clé-valeur sous forme de tuples"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see these methods in details!",
+            "fr": "Voyons ces méthodes en détail !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_4_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods",
+        "keys"
+      ]
+    },
+    "title": {
+      "en": "The .keys() Method",
+      "fr": "La méthode .keys()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```.keys()``` method returns a view of all the keys in a dictionary. This is useful when you want to:",
+            "fr": "La méthode ```.keys()``` renvoie une vue de toutes les clés dans un dictionnaire. C'est utile quand tu veux :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- Check what information is available in the dictionary\n- See all the field names\n- Prepare to iterate through keys (next chapter!)",
+            "fr": "- Vérifier quelles informations sont disponibles dans le dictionnaire\n- Voir tous les noms de champs\n- Préparer l'itération à travers les clés (prochain chapitre !)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemon = { \"name\": \"Pyrochu\", \"type\": \"fire\", \"level\": 18 }\n\nkeys = codemon.keys() # Get all keys\nprint(\"Dictionary keys:\", keys)\n\n# Convert to list if needed\nkeys_list = list(keys)\nprint(\"As a list:\", keys_list)",
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "View Objects vs Lists",
+              "fr": "Objets de vue vs Listes"
+            },
+            "content": {
+              "en": "The ```.keys()``` method doesn't return a regular list - it returns a special view object. This view object reflects changes to the dictionary in real-time. If you need a regular list, use ```list(codemon.keys())```.",
+              "fr": "La méthode ```.keys()``` ne renvoie pas une liste normale - elle renvoie un objet de vue spécial. Cet objet de vue reflète les changements dans le dictionnaire en temps réel. Si tu as besoin d'une liste normale, utilise ```list(codemon.keys())```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_4_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods",
+        "keys"
+      ]
+    },
+    "title": {
+      "en": "What Does .keys() Return?",
+      "fr": "Que renvoie .keys() ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following dictionary, what will ```list(codemon.keys())``` contain?",
+            "fr": "Étant donné le dictionnaire suivant, que contiendra ```list(codemon.keys())``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon = {\n    \"name\": \"Florachu\",\n    \"type\": \"plant\",\n    \"level\": 12\n}",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```['name', 'type', 'level']```"
+          },
+          {
+            "type": "text",
+            "value": "```['Florachu', 'plant', 12]```"
+          },
+          {
+            "type": "text",
+            "value": "```[('name', 'Florachu'), ('type', 'plant'), ('level', 12)]```"
+          },
+          {
+            "type": "text",
+            "value": "```{'name', 'type', 'level'}```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what ```.keys()``` is designed to return - the keys or the values?",
+        "fr": "Réfléchis à ce que ```.keys()``` est conçu pour renvoyer - les clés ou les valeurs ?"
+      }
+    }
+  },
+  {
+    "id": "python_11_4_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods",
+        "values"
+      ]
+    },
+    "title": {
+      "en": "The .values() Method",
+      "fr": "La méthode .values()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```.values()``` method returns a view of all the values in a dictionary. This is useful when you want to:",
+            "fr": "La méthode ```.values()``` renvoie une vue de toutes les valeurs dans un dictionnaire. C'est utile quand tu veux :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- Work with just the data (ignoring the keys)\n- Calculate statistics on all values\n- Check if a specific value exists anywhere in the dictionary",
+            "fr": "- Travailler uniquement avec les données (en ignorant les clés)\n- Calculer des statistiques sur toutes les valeurs\n- Vérifier si une valeur spécifique existe quelque part dans le dictionnaire"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemon = { \"name\": \"Aquachu\", \"type\": \"water\", \"level\": 15 }\n\nvalues = codemon.values() # Get all values\nprint(\"Dictionary values:\", values)\n\n# Convert to list and check if a value exists\nvalues_list = list(values)\nprint(\"Does codemon have 'water'?\", \"water\" in values_list)\nprint(\"Does codemon have level 15?\", 15 in values_list)",
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Values Can Be Duplicates",
+              "fr": "Les valeurs peuvent être dupliquées"
+            },
+            "content": {
+              "en": "Unlike keys (which must be unique), dictionary values can be duplicated. So ```.values()``` might return the same value multiple times if it appears in different key-value pairs.",
+              "fr": "Contrairement aux clés (qui doivent être uniques), les valeurs de dictionnaire peuvent être dupliquées. Donc ```.values()``` peut renvoyer la même valeur plusieurs fois si elle apparaît dans différentes paires clé-valeur."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_4_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods",
+        "items"
+      ]
+    },
+    "title": {
+      "en": "The .items() Method",
+      "fr": "La méthode .items()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```.items()``` method returns a view of all key-value pairs as tuples. Each tuple contains ```(key, value)```. This is useful when you need both the key and value together.",
+            "fr": "La méthode ```.items()``` renvoie une vue de toutes les paires clé-valeur sous forme de tuples. Chaque tuple contient ```(clé, valeur)```. C'est utile quand tu as besoin à la fois de la clé et de la valeur ensemble."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "codemon = { \"name\": \"Pyrochu\", \"type\": \"fire\", \"level\": 18 }\n\nitems = codemon.items() # Get all key-value pairs\nprint(\"Dictionary items:\", items)\n\n# Convert to list to see the tuples clearly\nitems_list = list(items)\nprint(\"As a list of tuples:\", items_list)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```.items()``` method is particularly useful for iteration (which we'll cover in the next chapter), because it gives you both pieces of information at once.",
+            "fr": "La méthode ```.items()``` est particulièrement utile pour l'itération (que nous verrons dans le prochain chapitre), car elle te donne les deux informations en même temps."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_4_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Using Dictionary Methods",
+      "fr": "Utiliser les méthodes de dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to use the appropriate dictionary methods to get all keys, all values, and all key-value pairs.",
+            "fr": "Complète le code pour utiliser les méthodes de dictionnaire appropriées pour obtenir toutes les clés, toutes les valeurs, et toutes les paires clé-valeur."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\n    \"name\": \"Florachu\",\n    \"type\": \"plant\",\n    \"level\": 12,\n    \"power\": 70\n}\n\n# Get all keys\nall_keys = codemon.{{}}\nprint(\"Keys:\", all_keys)\n\n# Get all values\nall_values = codemon.{{}}\nprint(\"Values:\", all_values)\n\n# Get all key-value pairs\nall_items = codemon.{{}}\nprint(\"Items:\", all_items)",
+        "options": [
+          "keys()",
+          "values()",
+          "items()",
+          "get()",
+          "pop()",
+          "clear()"
+        ],
+        "correctAnswers": {
+          "1": "keys()",
+          "2": "values()",
+          "3": "items()"
+        }
+      },
+      "hint": {
+        "en": "Think about which method returns keys, which returns values, and which returns both together.",
+        "fr": "Réfléchis à quelle méthode renvoie les clés, laquelle renvoie les valeurs, et laquelle renvoie les deux ensemble."
+      }
+    }
+  },
+  {
+    "id": "python_11_4_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "in operator",
+        "keys"
+      ]
+    },
+    "title": {
+      "en": "The 'in' Operator with Dictionaries",
+      "fr": "L'opérateur 'in' avec les dictionnaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```in``` operator checks if a ***key*** exists in a dictionary. By default, it only checks keys, not values.",
+            "fr": "L'opérateur ```in``` vérifie si une ***clé*** existe dans un dictionnaire. Par défaut, il ne vérifie que les clés, pas les valeurs."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon = { \"name\": \"Aquachu\", \"type\": \"water\", \"level\": 15 }\n\n# Check if keys exist\nprint(\"Does 'name' key exist?\", \"name\" in codemon)\nprint(\"Does 'power' key exist?\", \"power\" in codemon)\n\n# This checks KEYS, not values!\nprint(\"Does 'Aquachu' exist?\", \"Aquachu\" in codemon)  # False! (it's a value, not a key)\nprint(\"Does 'water' exist?\", \"water\" in codemon)  # False! (it's a value, not a key)\n\n# To check if a value exists, use .values()\nprint(\"Does 'Aquachu' exist in values?\", \"Aquachu\" in codemon.values())",
+            "fr": "codemon = { \"name\": \"Aquachu\", \"type\": \"water\", \"level\": 15 }\n\n# Vérifier si les clés existent\nprint(\"La clé 'name' existe-t-elle ?\", \"name\" in codemon)\nprint(\"La clé 'power' existe-t-elle ?\", \"power\" in codemon)\n\n# Cela vérifie les CLÉS, pas les valeurs !\nprint(\"'Aquachu' existe-t-il ?\", \"Aquachu\" in codemon)  # Faux ! (c'est une valeur, pas une clé)\nprint(\"'water' existe-t-il ?\", \"water\" in codemon)  # Faux ! (c'est une valeur, pas une clé)\n\n# Pour vérifier si une valeur existe, utilise .values()\nprint(\"'Aquachu' existe-t-il dans les valeurs ?\", \"Aquachu\" in codemon.values())"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Common Mistake",
+              "fr": "Erreur courante"
+            },
+            "content": {
+              "en": "A common mistake is thinking ```in``` checks both keys and values. It ONLY checks keys by default. To check if a value exists, you must use ```in codemon.values()```.",
+              "fr": "Une erreur courante est de penser que ```in``` vérifie à la fois les clés et les valeurs. Il vérifie UNIQUEMENT les clés par défaut. Pour vérifier si une valeur existe, tu dois utiliser ```in codemon.values()```."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_4_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Understanding the 'in' Operator",
+      "fr": "Comprendre l'opérateur 'in'"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following dictionary, what will this code print?",
+            "fr": "Étant donné le dictionnaire suivant, qu'affichera ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon = {\n    \"name\": \"Pyrochu\",\n    \"type\": \"fire\",\n    \"level\": 18\n}\n\nprint(\"fire\" in codemon)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error will occur",
+              "fr": "Une erreur se produira"
+            }
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that ```in``` checks for keys by default, not values. Is 'fire' a key or a value in this dictionary?",
+        "fr": "Rappelle-toi que ```in``` vérifie les clés par défaut, pas les valeurs. Est-ce que 'fire' est une clé ou une valeur dans ce dictionnaire ?"
+      }
+    }
+  },
+  {
+    "id": "python_11_4_9",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Match Methods with Their Purpose",
+      "fr": "Associer les méthodes à leur objectif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each dictionary method or operator with what it does:",
+            "fr": "Associe chaque méthode de dictionnaire ou opérateur à ce qu'il fait :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```.keys()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns all keys from the dictionary",
+                "fr": "Renvoie toutes les clés du dictionnaire"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```.values()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns all values from the dictionary",
+                "fr": "Renvoie toutes les valeurs du dictionnaire"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```.items()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns all key-value pairs as tuples",
+                "fr": "Renvoie toutes les paires clé-valeur sous forme de tuples"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```in```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks if a key exists in the dictionary",
+                "fr": "Vérifie si une clé existe dans le dictionnaire"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_4_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "methods",
+        "practical"
+      ]
+    },
+    "title": {
+      "en": "Practical Application",
+      "fr": "Application pratique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if a Codémon has a 'moves' key, and if a specific move exists in the dictionary's values.",
+            "fr": "Complète le code pour vérifier si un Codémon a une clé 'moves', et si un mouvement spécifique existe dans les valeurs du dictionnaire."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\n    \"name\": \"Aquachu\",\n    \"type\": \"water\",\n    \"level\": 15,\n    \"moves\": [\"splash\", \"bubble\"]\n}\n\n# Check if 'moves' key exists\nhas_moves = \"moves\" {{}} codemon\nprint(\"Has moves key:\", has_moves)\n\n# Check if 'water' exists as a value\nhas_water = \"water\" {{}} codemon.{{}}\nprint(\"Has water value:\", has_water)\n\n# Get all keys as a list\nall_keys = list(codemon.{{}})\nprint(\"All keys:\", all_keys)",
+        "options": [
+          "in",
+          "not in",
+          "in",
+          "not in",
+          "values()",
+          "keys()",
+          "items()",
+          "get()"
+        ],
+        "correctAnswers": {
+          "1": "in",
+          "2": "in",
+          "3": "values()",
+          "4": "keys()"
+        }
+      },
+      "hint": {
+        "en": "Think about when to use ```in``` directly versus ```in codemon.values()``` or ```in codemon.keys()```.",
+        "fr": "Réfléchis à quand utiliser ```in``` directement par rapport à ```in codemon.values()``` ou ```in codemon.keys()```."
+      }
+    }
+  },
+  {
+    "id": "python_11_4_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "keys",
+        "values",
+        "items",
+        "in operator",
+        "methods",
+        "challenge"
+      ]
+    },
+    "title": {
+      "en": "Challenge: Codémon Team Analysis",
+      "fr": "Défi : Analyse d'équipe Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Analyze your Codémon's stats using dictionary methods!\n1. Print all the stat names (keys) available for this Codémon\n2. Print all the stat values\n3. Check if the Codémon has a ```\"speed\"``` stat\n4. Check if the value ```\"legendary\"``` exists anywhere in the stats\n5. Print each stat with its value in a readable format using the appropriate method",
+            "fr": "Analyse les stats de ton Codémon en utilisant les méthodes de dictionnaire !\n1. Affiche tous les noms de stats (clés) disponibles pour ce Codémon\n2. Affiche toutes les valeurs des stats\n3. Vérifie si le Codémon a une stat ```\"speed\"```\n4. Vérifie si la valeur ```\"legendary\"``` existe quelque part dans les stats\n5. Affiche chaque stat avec sa valeur dans un format lisible en utilisant la méthode appropriée"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "codemon = {\"name\": \"Aquachu\", \"type\": \"water\", \"level\": 25, \"power\": 85, \"rarity\": \"rare\"}\n\nprint(\"=== CODEMON ANALYSIS ===\")\n\n# 1. Print all stat names (keys)\n\n# 2. Print all stat values\n\n# 3. Check if 'speed' stat exists\n\n# 4. Check if 'legendary' value exists\n\n# 5. Print each stat with its value\nprint(\"\\n=== DETAILED STATS ===\")\n",
+          "fr": "codemon = {\"name\": \"Aquachu\", \"type\": \"water\", \"level\": 25, \"power\": 85, \"rarity\": \"rare\"}\n\nprint(\"=== ANALYSE DU CODÉMON ===\")\n\n# 1. Affiche tous les noms de stats (clés)\n\n# 2. Affiche toutes les valeurs des stats\n\n# 3. Vérifie si la stat 'speed' existe\n\n# 4. Vérifie si la valeur 'legendary' existe\n\n# 5. Affiche chaque stat avec sa valeur\nprint(\"\\n=== STATS DÉTAILLÉES ===\")\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\"name\": \"Aquachu\", \"type\": \"water\", \"level\": 25, \"power\": 85, \"rarity\": \"rare\"}\n\nprint(\"=== CODEMON ANALYSIS ===\")\n\n# 1. Print all stat names (keys)\nprint(\"\\nAvailable stats:\", list(codemon.keys()))\n\n# 2. Print all stat values\nprint(\"All values:\", list(codemon.values()))\n\n# 3. Check if 'speed' stat exists\nhas_speed = \"speed\" in codemon\nprint(f\"\\nHas speed stat: {has_speed}\")\n\n# 4. Check if 'legendary' value exists\nis_legendary = \"legendary\" in codemon.values()\nprint(f\"Is legendary: {is_legendary}\")\n\n# 5. Print each stat with its value\nprint(\"\\n=== DETAILED STATS ===\")\nfor key, value in codemon.items():\n    print(f\"{key}: {value}\")",
+            "fr": "codemon = {\"name\": \"Aquachu\", \"type\": \"water\", \"level\": 25, \"power\": 85, \"rarity\": \"rare\"}\n\nprint(\"=== ANALYSE DU CODÉMON ===\")\n\n# 1. Affiche tous les noms de stats (clés)\nprint(\"\\nStats disponibles:\", list(codemon.keys()))\n\n# 2. Affiche toutes les valeurs des stats\nprint(\"Toutes les valeurs:\", list(codemon.values()))\n\n# 3. Vérifie si la stat 'speed' existe\nhas_speed = \"speed\" in codemon\nprint(f\"\\nA la stat speed: {has_speed}\")\n\n# 4. Vérifie si la valeur 'legendary' existe\nis_legendary = \"legendary\" in codemon.values()\nprint(f\"Est légendaire: {is_legendary}\")\n\n# 5. Affiche chaque stat avec sa valeur\nprint(\"\\n=== STATS DÉTAILLÉES ===\")\nfor key, value in codemon.items():\n    print(f\"{key}: {value}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_5_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "loops"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Dictionary Iteration",
+      "fr": "Introduction à l'itération dans les dictionnaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now that we know how to create, access, and modify dictionaries, let's learn how to loop through them! There are three main ways to iterate through a dictionary in Python.",
+            "fr": "Maintenant qu'on sait créer, accéder et modifier des dictionnaires, apprenons comment les parcourir ! Il y a trois façons principales d'itérer à travers un dictionnaire en Python."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "When you use a ```for``` loop with a dictionary directly, Python iterates over the ***keys*** by default:",
+            "fr": "Quand tu utilises une boucle ```for``` avec un dictionnaire directement, Python itère sur les ***clés*** par défaut :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_stats = {\"name\": \"Aquachu\", \"type\": \"water\", \"level\": 15, \"power\": 75}\n\n# Iterating over keys (default behavior)\nprint(\"Keys in the dictionary:\")\nfor key in codemon_stats:\n    print(key)",
+            "fr": "codemon_stats = {\"nom\": \"Aquachu\", \"type\": \"eau\", \"niveau\": 15, \"puissance\": 75}\n\n# Itération sur les clés (comportement par défaut)\nprint(\"Clés dans le dictionnaire :\")\nfor cle in codemon_stats:\n    print(cle)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice that the loop gives us only the keys, not the values. To access the values, we need to use the key inside the loop.",
+            "fr": "Tu peux voir que la boucle nous donne seulement les clés, pas les valeurs. Pour accéder aux valeurs, on doit utiliser la clé dans la boucle."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon_stats = {\"name\": \"Aquachu\", \"type\": \"water\", \"level\": 15, \"power\": 75}\n\n# Accessing values using keys in the loop\nprint(\"\\nKeys and their values:\")\nfor key in codemon_stats:\n    print(f\"{key}: {codemon_stats.get(key)}\")",
+            "fr": "codemon_stats = {\"nom\": \"Aquachu\", \"type\": \"eau\", \"niveau\": 15, \"puissance\": 75}\n\n# Accéder aux valeurs en utilisant les clés dans la boucle\nprint(\"\\nClés et leurs valeurs :\")\nfor cle in codemon_stats:\n    print(f\"{cle}: {codemon_stats.get(cle)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_5_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "Three Ways to Iterate: keys(), values(), items()",
+      "fr": "Trois façons d'itérer : keys(), values(), items()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Python dictionaries provide three methods specifically for iteration. Let's explore each one:",
+            "fr": "Les dictionnaires Python fournissent trois méthodes spécifiquement pour l'itération. Explorons chacune d'elles :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Method 1: .keys()*** - Explicitly iterate over keys (like we saw before)",
+            "fr": "***Méthode 1 : .keys()*** - Itérer explicitement sur les clés (comme nous l'avons vu auparavant)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\"name\": \"Pyrochu\", \"type\": \"fire\", \"level\": 18}\n\nprint(\"Using .keys():\")\nfor key in codemon.keys():\n    print(key)",
+            "fr": "codemon = {\"nom\": \"Pyrochu\", \"type\": \"feu\", \"niveau\": 18}\n\nprint(\"Avec .keys() :\")\nfor cle in codemon.keys():\n    print(cle)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Method 2: .values()*** - Iterate over values only (ignoring keys)",
+            "fr": "***Méthode 2 : .values()*** - Itérer sur les valeurs uniquement (en ignorant les clés)"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\"name\": \"Pyrochu\", \"type\": \"fire\", \"level\": 18}\n\nprint(\"Using .values():\")\nfor value in codemon.values():\n    print(value)",
+            "fr": "codemon = {\"nom\": \"Pyrochu\", \"type\": \"feu\", \"niveau\": 18}\n\nprint(\"Avec .values() :\")\nfor valeur in codemon.values():\n    print(valeur)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Method 3: .items()*** - Iterate over key-value pairs together",
+            "fr": "***Méthode 3 : .items()*** - Itérer sur les paires clé-valeur ensemble"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "codemon = {\"name\": \"Pyrochu\", \"type\": \"fire\", \"level\": 18}\n\nprint(\"Using .items():\")\nfor key, value in codemon.items():\n    print(f\"{key}: {value}\")",
+            "fr": "codemon = {\"nom\": \"Pyrochu\", \"type\": \"feu\", \"niveau\": 18}\n\nprint(\"Avec .items() :\")\nfor cle, valeur in codemon.items():\n    print(f\"{cle}: {valeur}\")"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to use each method",
+              "fr": "Quand utiliser chaque méthode"
+            },
+            "content": {
+              "en": "Use ```.keys()``` when you only need the keys (though ```for key in dict:``` works too).\n\nUse ```.values()``` when you only need the values and don't care about the keys.\n\nUse ```.items()``` when you need both keys and values - this is the most common!",
+              "fr": "Utilise ```.keys()``` quand tu as besoin seulement des clés (bien que ```for cle in dict:``` fonctionne aussi).\n\nUtilise ```.values()``` quand tu as besoin seulement des valeurs et que les clés ne t'intéressent pas.\n\nUtilise ```.items()``` quand tu as besoin des clés ET des valeurs - c'est le plus courant !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_5_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "methods"
+      ]
+    },
+    "title": {
+      "en": "What Does This Loop Return?",
+      "fr": "Que retourne cette boucle ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following code, what will be printed?",
+            "fr": "Étant donné le code suivant, qu'est-ce qui sera affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {\"name\": \"Florachu\", \"type\": \"plant\", \"level\": 20}\n\nfor item in codemon.values():\n    print(item)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```Florachu```\n```plant```\n```20```",
+              "fr": "```Florachu```\n```plant```\n```20```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```name```\n```type```\n```level```",
+              "fr": "```name```\n```type```\n```level```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```name: Florachu```\n```type: plant```\n```level: 20```",
+              "fr": "```name: Florachu```\n```type: plant```\n```level: 20```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```('name', 'Florachu')```\n```('type', 'plant')```\n```('level', 20)```",
+              "fr": "```('name', 'Florachu')```\n```('type', 'plant')```\n```('level', 20)```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember what ```.values()``` returns - it gives you only the values from the dictionary, not the keys.",
+        "fr": "Rappelle-toi ce que ```.values()``` retourne - il te donne seulement les valeurs du dictionnaire, pas les clés."
+      }
+    }
+  },
+  {
+    "id": "python_11_5_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "items"
+      ]
+    },
+    "title": {
+      "en": "Complete the Items Loop",
+      "fr": "Complète la boucle items"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to iterate through all key-value pairs and print them in the format \"key: value\".",
+            "fr": "Complète le code pour itérer à travers toutes les paires clé-valeur et les afficher au format \"clé: valeur\"."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_inventory = {\n    \"codeballs\": 10,\n    \"potions\": 5,\n    \"revives\": 3\n}\n\nfor {{}}{{}}{{}} in codemon_inventory{{}}{{}}{{}}:\n    print(f\"{key}: {value}\")",
+        "options": [
+          "key",
+          ",",
+          "value",
+          ".",
+          "items",
+          "()",
+          "keys",
+          "values"
+        ],
+        "correctAnswers": {
+          "1": "key",
+          "2": ",",
+          "3": "value",
+          "4": ".",
+          "5": "items",
+          "6": "()"
+        }
+      },
+      "hint": {
+        "en": "Think about which dictionary method returns both keys and values as pairs, and how to unpack those pairs in a for loop.",
+        "fr": "Réfléchis à quelle méthode de dictionnaire retourne à la fois les clés et les valeurs sous forme de paires, et comment déballer ces paires dans une boucle for."
+      }
+    }
+  },
+  {
+    "id": "python_11_5_5",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "use cases"
+      ]
+    },
+    "title": {
+      "en": "Match Iteration Methods to Use Cases",
+      "fr": "Associer les méthodes d'itération aux cas d'usage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each dictionary iteration method with its best use case:",
+            "fr": "Associe chaque méthode d'itération de dictionnaire à son meilleur cas d'usage :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```for key in dict:```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When you need to check if certain keys exist",
+                "fr": "Quand tu dois vérifier si certaines clés existent"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```for value in dict.values():```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When you need to calculate the sum of all numbers",
+                "fr": "Quand tu dois calculer la somme de tous les nombres"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```for key, value in dict.items():```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When you need to display or process both keys and values",
+                "fr": "Quand tu dois afficher ou traiter les clés et les valeurs"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```for key in dict.keys():```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When you want to be explicit about iterating keys (same as default)",
+                "fr": "Quand tu veux être explicite sur l'itération des clés (identique au défaut)"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_5_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "unpacking"
+      ]
+    },
+    "title": {
+      "en": "Understanding items() Unpacking",
+      "fr": "Comprendre le déballage de items()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does the following code demonstrate?",
+            "fr": "Que démontre le code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "stats = {\"hp\": 100, \"attack\": 75}\n\nfor stat_name, stat_value in stats.items():\n    print(f\"{stat_name}: {stat_value}\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Unpacking key-value pairs into two separate variables in the loop",
+              "fr": "Déballer les paires clé-valeur en deux variables séparées dans la boucle"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Creating two dictionaries named stat_name and stat_value",
+              "fr": "Créer deux dictionnaires nommés stat_name et stat_value"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Iterating only over the keys and ignoring the values",
+              "fr": "Itérer uniquement sur les clés et ignorer les valeurs"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Converting the dictionary into a list of tuples",
+              "fr": "Convertir le dictionnaire en liste de tuples"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Look at how the for loop uses two variable names and what ```.items()``` returns from a dictionary.",
+        "fr": "Regarde comment la boucle for utilise deux noms de variables et ce que ```.items()``` retourne d'un dictionnaire."
+      }
+    }
+  },
+  {
+    "id": "python_11_5_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "filtering"
+      ]
+    },
+    "title": {
+      "en": "Filter Codémons by Level",
+      "fr": "Filtrer les Codémons par niveau"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to find and print all Codémon names that have a level greater than 15.",
+            "fr": "Complète le code pour trouver et afficher tous les noms de Codémon qui ont un niveau supérieur à 15."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_team = {\n  \"Aquachu\": 15,\n  \"Pyrochu\": 20,\n  \"Florachu\": 12,\n  \"Zap\": 18\n}\n\nprint(\"Codémons with level > 15:\")\nfor {{}}{{}}{{}} in codemon_team{{}}{{}}{{}}:\n  if {{}} > 15:\n    print(name)",
+        "options": [
+          "name",
+          ",",
+          "level",
+          ".",
+          "items",
+          "()",
+          "level",
+          "name",
+          "value"
+        ],
+        "correctAnswers": {
+          "1": "name",
+          "2": ",",
+          "3": "level",
+          "4": ".",
+          "5": "items",
+          "6": "()",
+          "7": "level"
+        }
+      },
+      "hint": {
+        "en": "You need both the name and level to check the condition. Think about which method gives you both pieces of information.",
+        "fr": "Tu as besoin du nom et du niveau pour vérifier la condition. Réfléchis à quelle méthode te donne les deux informations."
+      }
+    }
+  },
+  {
+    "id": "python_11_5_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "patterns"
+      ]
+    },
+    "title": {
+      "en": "Common Dictionary Iteration Patterns",
+      "fr": "Motifs courants d'itération de dictionnaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now let's look at some practical patterns you'll use frequently when iterating through dictionaries:",
+            "fr": "Regardons maintenant quelques motifs pratiques que tu utiliseras fréquemment lors de l'itération à travers les dictionnaires :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Pattern 1: Calculating totals***",
+            "fr": "***Motif 1 : Calculer des totaux***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Sum all values in a dictionary\ncodemon_counts = {\"Aquachu\": 5, \"Pyrochu\": 3, \"Florachu\": 7}\n\ntotal_codemons = 0\nfor count in codemon_counts.values():\n  total_codemons += count\n\nprint(f\"Total Codémons: {total_codemons}\")",
+            "fr": "# Sommer toutes les valeurs d'un dictionnaire\ncodemon_counts = {\"Aquachu\": 5, \"Pyrochu\": 3, \"Florachu\": 7}\n\ntotal_codemons = 0\nfor count in codemon_counts.values():\n  total_codemons += count\n\nprint(f\"Total de Codémons : {total_codemons}\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Pattern 2: Building a new dictionary***",
+            "fr": "***Motif 2 : Construire un nouveau dictionnaire***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Create a new dictionary with modified values\noriginal_levels = {\"Aquachu\": 10, \"Pyrochu\": 15}\nleveled_up = {}\n\nfor name, level in original_levels.items():\n  leveled_up[name] = level + 5\n\nprint(\"After leveling up:\", leveled_up)",
+            "fr": "# Créer un nouveau dictionnaire avec des valeurs modifiées\nniveaux_originaux = {\"Aquachu\": 10, \"Pyrochu\": 15}\nmontes_niveau = {}\n\nfor nom, niveau in niveaux_originaux.items():\n  montes_niveau[nom] = niveau + 5\n\nprint(\"Après montée de niveau :\", montes_niveau)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Pattern 3: Conditional filtering***",
+            "fr": "***Motif 3 : Filtrage conditionnel***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Find all items that meet a condition\ncodemon_types = {\"Aquachu\": \"water\", \"Pyrochu\": \"fire\", \"Florachu\": \"plant\", \"Zap\": \"electric\"}\n\nwater_codemons = []\nfor name, type in codemon_types.items():\n  if type == \"water\":\n    water_codemons.append(name)\n\nprint(\"Water type Codémons:\", water_codemons)",
+            "fr": "# Trouver tous les éléments qui remplissent une condition\ncodemon_types = {\"Aquachu\": \"eau\", \"Pyrochu\": \"feu\", \"Florachu\": \"plante\", \"Zap\": \"électrique\"}\n\ncodemons_eau = []\nfor nom, type in codemon_types.items():\n  if type == \"eau\":\n    codemons_eau.append(nom)\n\nprint(\"Codémons de type eau :\", codemons_eau)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Dictionary comprehension preview",
+              "fr": "Aperçu des compréhensions de dictionnaire"
+            },
+            "content": {
+              "en": "Python has a more concise way to create new dictionaries called \"dictionary comprehension\", but we'll learn that later. For now, focus on understanding these basic iteration patterns!",
+              "fr": "Python a une façon plus concise de créer de nouveaux dictionnaires appelée \"compréhension de dictionnaire\", mais on l'apprendra plus tard. Pour l'instant, concentre-toi sur la compréhension de ces motifs d'itération de base !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_5_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "debugging"
+      ]
+    },
+    "title": {
+      "en": "Fix the Iteration Bug",
+      "fr": "Corriger le bug d'itération"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's wrong with this code?",
+            "fr": "Quel est le problème avec ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {\"name\": \"Aquachu\", \"level\": 10}\n\nfor item in codemon:\n    print(f\"Key: {item[0]}, Value: {item[1]}\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```for item in codemon``` only gives keys, not key-value pairs. Should use ```.items()```",
+              "fr": "```for item in codemon``` donne seulement les clés, pas les paires clé-valeur. Il faut utiliser ```.items()```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The dictionary keys should be numbers, not strings",
+              "fr": "Les clés du dictionnaire devraient être des nombres, pas des chaînes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "You can't use f-strings with dictionary items",
+              "fr": "Tu ne peux pas utiliser les f-strings avec les éléments de dictionnaire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The loop variable should be named 'key', not 'item'",
+              "fr": "La variable de boucle devrait s'appeler 'cle', pas 'item'"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what happens when you iterate through a dictionary without using a specific method. What does the loop variable contain?",
+        "fr": "Réfléchis à ce qui se passe quand tu itères à travers un dictionnaire sans utiliser une méthode spécifique. Que contient la variable de boucle ?"
+      }
+    }
+  },
+  {
+    "id": "python_11_5_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "practical"
+      ]
+    },
+    "title": {
+      "en": "Build a Codémon Battle Summary",
+      "fr": "Créer un résumé de combat de Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to display a battle summary showing each Codémon's name and whether they won (if wins > 0).",
+            "fr": "Complète le code pour afficher un résumé de combat montrant le nom de chaque Codémon et s'il a gagné (si victoires > 0)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "battle_results = {\n  \"Aquachu\": 3,\n  \"Pyrochu\": 0,\n  \"Florachu\": 5,\n  \"Zap\": 0\n}\n\nprint(\"Battle Summary:\")\nfor {{}}{{}}{{}} in battle_results{{}}{{}}{{}}:\n  if {{}} > 0:\n    print(f\"{codemon_name} won {wins} battles!\")\n  else:\n    print(f\"{codemon_name} didn't win any battles.\")",
+        "options": [
+          "codemon_name",
+          ",",
+          "wins",
+          ".",
+          "items",
+          "()",
+          "wins",
+          "codemon_name"
+        ],
+        "correctAnswers": {
+          "1": "codemon_name",
+          "2": ",",
+          "3": "wins",
+          "4": ".",
+          "5": "items",
+          "6": "()",
+          "7": "wins"
+        }
+      },
+      "hint": {
+        "en": "You need to access both the Codémon name and the number of wins. Think about which iteration method provides both pieces of information.",
+        "fr": "Tu as besoin d'accéder à la fois au nom du Codémon et au nombre de victoires. Réfléchis à quelle méthode d'itération fournit les deux informations."
+      }
+    }
+  },
+  {
+    "id": "python_11_5_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration",
+        "keys",
+        "values",
+        "items"
+      ]
+    },
+    "title": {
+      "en": "Challenge: Battle Records Analysis",
+      "fr": "Défi : Analyse des records de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Analyze your Codémon team's battle records using dictionary iteration!\n1. Calculate the total number of battles won by all Codémons combined\n2. Check if ```\"Rockachu\"``` is in your team\n3. Find and print the name of the Codémon with the most wins",
+            "fr": "Analyse les records de combat de ton équipe de Codémon en utilisant l'itération de dictionnaire !\n1. Calcule le nombre total de combats gagnés par tous les Codémons combinés\n2. Vérifie si ```\"Rockachu\"``` est dans ton équipe\n3. Trouve et affiche le nom du Codémon avec le plus de victoires"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "battle_records = {\"Aquachu\": 8, \"Pyrochu\": 15, \"Florachu\": 12, \"Zap\": 6}\n\nprint(\"=== BATTLE RECORDS ANALYSIS ===\")\n\n# 1. Calculate total battles won\n\n# 2. Check if 'Rockachu' is in the team\n\n# 3. Find the Codémon with the most wins\n",
+          "fr": "battle_records = {\"Aquachu\": 8, \"Pyrochu\": 15, \"Florachu\": 12, \"Zap\": 6}\n\nprint(\"=== ANALYSE DES RECORDS DE COMBAT ===\")\n\n# 1. Calcule le total de combats gagnés\n\n# 2. Vérifie si 'Rockachu' est dans l'équipe\n\n# 3. Trouve le Codémon avec le plus de victoires\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "battle_records = {\"Aquachu\": 8, \"Pyrochu\": 15, \"Florachu\": 12, \"Zap\": 6}\n\nprint(\"=== BATTLE RECORDS ANALYSIS ===\")\n\n# 1. Calculate total battles won\ntotal_wins = 0\nfor wins in battle_records.values():\n  total_wins += wins\nprint(f\"\\nTotal battles won: {total_wins}\")\n\n# 2. Check if 'Rockachu' is in the team\nhas_Rockachu = \"Rockachu\" in battle_records\nprint(f\"Rockachu in team: {has_Rockachu}\")\n\n# 3. Find the Codémon with the most wins\nmax_wins = 0\nchampion = \"\"\nfor name, wins in battle_records.items():\n  if wins > max_wins:\n    max_wins = wins\n    champion = name\nprint(f\"\\nChampion: {champion} with {max_wins} wins!\")",
+            "fr": "battle_records = {\"Aquachu\": 8, \"Pyrochu\": 15, \"Florachu\": 12, \"Zap\": 6}\n\nprint(\"=== ANALYSE DES RECORDS DE COMBAT ===\")\n\n# 1. Calcule le total de combats gagnés\ntotal_victoires = 0\nfor victoires in battle_records.values():\n  total_victoires += victoires\nprint(f\"\\nTotal de combats gagnés : {total_victoires}\")\n\n# 2. Vérifie si 'Rockachu' est dans l'équipe\nhas_Rockachu = \"Rockachu\" in battle_records\nprint(f\"Rockachu dans l'équipe : {has_Rockachu}\")\n\n# 3. Trouve le Codémon avec le plus de victoires\nmax_victoires = 0\nchampion = \"\"\nfor nom, victoires in battle_records.items():\n  if victoires > max_victoires:\n    max_victoires = victoires\n    champion = nom\nprint(f\"\\nChampion : {champion} avec {max_victoires} victoires !\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_6_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Valid Dictionary Syntax",
+      "fr": "Quiz : Syntaxe valide de dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following creates a valid dictionary?",
+            "fr": "Lequel des éléments suivants crée un dictionnaire valide ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon = {\"name\": \"Aquachu\", \"level\": 15}```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon = [\"name\": \"Aquachu\", \"level\": 15]```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon = {name: Aquachu, level: 15}```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon = (\"name\": \"Aquachu\", \"level\": 15)```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Dictionaries use curly braces ```{}``` and keys must be strings in quotes.",
+        "fr": "Les dictionnaires utilisent des accolades ```{}``` et les clés doivent être des chaînes entre guillemets."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_2",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "creation"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Create a Dictionary",
+      "fr": "Quiz : Créer un dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to create a dictionary with two key-value pairs.",
+            "fr": "Complète le code pour créer un dictionnaire avec deux paires clé-valeur."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "stats {{}} {{}}\"hp\"{{}} 100{{}} \"attack\"{{}} 75 {{}}\nprint(stats)",
+        "options": [
+          "=",
+          "{",
+          ":",
+          ",",
+          "}",
+          "[",
+          "]",
+          ":"
+        ],
+        "correctAnswers": {
+          "1": "=",
+          "2": "{",
+          "3": ":",
+          "4": ",",
+          "5": ":",
+          "6": "}"
+        }
+      },
+      "hint": {
+        "en": "Remember: ```variable = {\"key\": value, \"key2\": value2}```",
+        "fr": "Rappelle-toi : ```variable = {\"clé\": valeur, \"clé2\": valeur2}```"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "data types"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Dictionary Values",
+      "fr": "Quiz : Valeurs du dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What types of values can a dictionary contain?",
+            "fr": "Quels types de valeurs un dictionnaire peut-il contenir ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Any data type (strings, numbers, lists, etc.)",
+              "fr": "N'importe quel type de données (chaînes, nombres, listes, etc.)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only strings",
+              "fr": "Seulement des chaînes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only numbers",
+              "fr": "Seulement des nombres"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only strings and numbers",
+              "fr": "Seulement des chaînes et des nombres"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what we've seen in dictionaries - can they hold lists, booleans, and other types?",
+        "fr": "Réfléchis à ce qu'on a vu dans les dictionnaires - peuvent-ils contenir des listes, des booléens et d'autres types ?"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "terminology"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Dictionary Terminology",
+      "fr": "Quiz : Terminologie des dictionnaires"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each term with its definition:",
+            "fr": "Associe chaque terme à sa définition :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Key",
+                "fr": "Clé"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "The identifier used to access a value",
+                "fr": "L'identifiant utilisé pour accéder à une valeur"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Value",
+                "fr": "Valeur"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "The data stored with a key",
+                "fr": "Les données stockées avec une clé"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Key-Value Pair",
+                "fr": "Paire clé-valeur"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "One complete entry in a dictionary",
+                "fr": "Une entrée complète dans un dictionnaire"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Empty Dictionary",
+                "fr": "Dictionnaire vide"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```{}```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_6_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "unique keys"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Duplicate Keys",
+      "fr": "Quiz : Clés dupliquées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens if you create a dictionary with duplicate keys?",
+            "fr": "Que se passe-t-il si tu crées un dictionnaire avec des clés dupliquées ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {\"type\": \"fire\", \"type\": \"water\"}\nprint(codemon)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Only the last value is kept: ```{\"type\": \"water\"}```",
+              "fr": "Seule la dernière valeur est conservée : ```{\"type\": \"water\"}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Both values are kept as a list",
+              "fr": "Les deux valeurs sont conservées dans une liste"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error is raised",
+              "fr": "Une erreur est levée"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only the first value is kept: ```{\"type\": \"fire\"}```",
+              "fr": "Seule la première valeur est conservée : ```{\"type\": \"fire\"}```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Dictionary keys must be unique - what happens when you redefine a key?",
+        "fr": "Les clés de dictionnaire doivent être uniques - que se passe-t-il quand tu redéfinis une clé ?"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "access"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Accessing Values",
+      "fr": "Quiz : Accéder aux valeurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to access the ```\"name\"``` value from the dictionary.",
+            "fr": "Complète le code pour accéder à la valeur ```\"name\"``` du dictionnaire."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\"name\": \"Pyrochu\", \"level\": 20}\n\nname = codemon{{}}{{}}{{}}{{}}{{}}\nprint(name)",
+        "options": [
+          "[",
+          "\"",
+          "name",
+          "]",
+          "(",
+          ")",
+          "'",
+          ".",
+          "\""
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": "\"",
+          "3": "name",
+          "4": "\"",
+          "5": "]"
+        }
+      },
+      "hint": {
+        "en": "Use square brackets with the key name in quotes.",
+        "fr": "Utilise des crochets avec le nom de la clé entre guillemets."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "get method"
+      ]
+    },
+    "title": {
+      "en": "Quiz: .get() vs [] Access",
+      "fr": "Quiz : .get() vs [] pour l'accès"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the advantage of using ```.get()``` instead of ```[]``` to access dictionary values?",
+            "fr": "Quel est l'avantage d'utiliser ```.get()``` au lieu de ```[]``` pour accéder aux valeurs du dictionnaire ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```.get()``` doesn't raise an error if the key doesn't exist",
+              "fr": "```.get()``` ne lève pas d'erreur si la clé n'existe pas"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```.get()``` is faster",
+              "fr": "```.get()``` est plus rapide"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```.get()``` can modify values",
+              "fr": "```.get()``` peut modifier les valeurs"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "There is no difference",
+              "fr": "Il n'y a aucune différence"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what happens when you try to access a key that doesn't exist with each method.",
+        "fr": "Réfléchis à ce qui se passe quand tu essaies d'accéder à une clé qui n'existe pas avec chaque méthode."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "modification"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Updating Values",
+      "fr": "Quiz : Mettre à jour les valeurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to change the level to 25.",
+            "fr": "Complète le code pour changer le niveau à 25."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\"name\": \"Florachu\", \"level\": 12}\n\ncodemon{{}}\"level\"{{}} {{}} 25\nprint(codemon)",
+        "options": [
+          "[",
+          "]",
+          "=",
+          ":",
+          "==",
+          ".",
+          "get"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": "]",
+          "3": "="
+        }
+      },
+      "hint": {
+        "en": "Use the same syntax as accessing, but with the assignment operator.",
+        "fr": "Utilise la même syntaxe que pour l'accès, mais avec l'opérateur d'affectation."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "adding keys"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Adding New Keys",
+      "fr": "Quiz : Ajouter de nouvelles clés"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How do you add a new key-value pair to an existing dictionary?",
+            "fr": "Comment ajouter une nouvelle paire clé-valeur à un dictionnaire existant ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon[\"hp\"] = 100```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon.add(\"hp\", 100)```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon.insert(\"hp\", 100)```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon.append({\"hp\": 100})```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "It's the same syntax as modifying - just use a key that doesn't exist yet!",
+        "fr": "C'est la même syntaxe que pour modifier - utilise juste une clé qui n'existe pas encore !"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "in operator"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Checking Key Existence",
+      "fr": "Quiz : Vérifier l'existence d'une clé"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does ```\"level\" in codemon``` check?",
+            "fr": "Que vérifie ```\"level\" in codemon``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "If ```\"level\"``` exists as a key",
+              "fr": "Si ```\"level\"``` existe comme clé"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "If ```\"level\"``` exists as a value",
+              "fr": "Si ```\"level\"``` existe comme valeur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "If ```\"level\"``` is greater than 0",
+              "fr": "Si ```\"level\"``` est supérieur à 0"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "If the dictionary is empty",
+              "fr": "Si le dictionnaire est vide"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The ```in``` operator checks keys by default, not values.",
+        "fr": "L'opérateur ```in``` vérifie les clés par défaut, pas les valeurs."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "removal methods"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Removal Methods",
+      "fr": "Quiz : Méthodes de suppression"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each removal method with what it does:",
+            "fr": "Associe chaque méthode de suppression à ce qu'elle fait :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```del dict[key]```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove a key without returning its value",
+                "fr": "Supprimer une clé sans retourner sa valeur"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```dict.pop(key)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove a key and return its value",
+                "fr": "Supprimer une clé et retourner sa valeur"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```dict.popitem()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove and return the last key-value pair",
+                "fr": "Supprimer et retourner la dernière paire clé-valeur"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```dict.clear()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Remove all items from the dictionary",
+                "fr": "Supprimer tous les éléments du dictionnaire"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_6_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "del statement"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Using del",
+      "fr": "Quiz : Utiliser del"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens if you use ```del``` on a key that doesn't exist?",
+            "fr": "Que se passe-t-il si tu utilises ```del``` sur une clé qui n'existe pas ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "A ```KeyError``` is raised",
+              "fr": "Une ```KeyError``` est levée"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing happens",
+              "fr": "Rien ne se passe"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```None``` is returned",
+              "fr": "```None``` est retourné"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The dictionary is cleared",
+              "fr": "Le dictionnaire est vidé"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```del``` is not safe - it will complain if the key doesn't exist!",
+        "fr": "```del``` n'est pas sûr - il va se plaindre si la clé n'existe pas !"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_13",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "pop method"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Safe Removal with pop()",
+      "fr": "Quiz : Suppression sécurisée avec pop()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to safely remove ```\"trainer\"``` with a default value of ```\"Unknown\"```.",
+            "fr": "Complète le code pour supprimer en toute sécurité ```\"trainer\"``` avec une valeur par défaut de ```\"Unknown\"```."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\"name\": \"Aquachu\", \"level\": 10}\n\ntrainer = codemon.{{}}(\"{{}}\",\"{{}}\")\nprint(trainer)",
+        "options": [
+          "pop",
+          "\"",
+          "trainer",
+          ",",
+          "Unknown",
+          "get",
+          "remove",
+          "'"
+        ],
+        "correctAnswers": {
+          "1": "pop",
+          "2": "trainer",
+          "3": "Unknown"
+        }
+      },
+      "hint": {
+        "en": "Syntax: ```.pop(key, default_value)```",
+        "fr": "Syntaxe : ```.pop(clé, valeur_par_défaut)```"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "popitem method"
+      ]
+    },
+    "title": {
+      "en": "Quiz: popitem() Behavior",
+      "fr": "Quiz : Comportement de popitem()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does ```.popitem()``` return?",
+            "fr": "Que retourne ```.popitem()``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "A tuple containing ```(key, value)```",
+              "fr": "Un tuple contenant ```(clé, valeur)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Just the key",
+              "fr": "Juste la clé"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Just the value",
+              "fr": "Juste la valeur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A list of all remaining keys",
+              "fr": "Une liste de toutes les clés restantes"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```.popitem()``` removes and returns the last added pair as a tuple.",
+        "fr": "```.popitem()``` supprime et retourne la dernière paire ajoutée sous forme de tuple."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_15",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "clear method"
+      ]
+    },
+    "title": {
+      "en": "Quiz: After clear()",
+      "fr": "Quiz : Après clear()"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does a dictionary look like after calling ```.clear()```?",
+            "fr": "À quoi ressemble un dictionnaire après avoir appelé ```.clear()``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```{}```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          },
+          {
+            "type": "text",
+            "value": "```[]```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The dictionary is deleted",
+              "fr": "Le dictionnaire est supprimé"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```.clear()``` removes all items but keeps the dictionary itself.",
+        "fr": "```.clear()``` supprime tous les éléments mais garde le dictionnaire lui-même."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_16",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "keys method"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Get All Keys",
+      "fr": "Quiz : Obtenir toutes les clés"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to get all dictionary keys.",
+            "fr": "Complète le code pour obtenir toutes les clés du dictionnaire."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\"name\": \"Pyrochu\", \"type\": \"fire\", \"level\": 18}\n\nall_keys = codemon.{{}}()\nprint(all_keys)",
+        "options": [
+          "keys",
+          "values",
+          "items",
+          "get",
+          "pop",
+          "clear"
+        ],
+        "correctAnswers": {
+          "1": "keys"
+        }
+      },
+      "hint": {
+        "en": "There's a method specifically for getting all keys!",
+        "fr": "Il y a une méthode spécifique pour obtenir toutes les clés !"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_17",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "values method"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Checking Values",
+      "fr": "Quiz : Vérifier les valeurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How do you check if a value exists in a dictionary?",
+            "fr": "Comment vérifier si une valeur existe dans un dictionnaire ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"water\" in codemon.values()```"
+          },
+          {
+            "type": "text",
+            "value": "```\"water\" in codemon```"
+          },
+          {
+            "type": "text",
+            "value": "```\"water\" in codemon.keys()```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon.has_value(\"water\")```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "By default, ```in``` checks keys. To check values, use ```.values()```.",
+        "fr": "Par défaut, ```in``` vérifie les clés. Pour vérifier les valeurs, utilise ```.values()```."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_18",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "items method"
+      ]
+    },
+    "title": {
+      "en": "Quiz: What .items() Returns",
+      "fr": "Quiz : Ce que .items() retourne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What format does ```.items()``` return key-value pairs in?",
+            "fr": "Dans quel format ```.items()``` retourne-t-il les paires clé-valeur ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Tuples: ```(key, value)```",
+              "fr": "Tuples : ```(clé, valeur)```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Lists: ```[key, value]```",
+              "fr": "Listes : ```[clé, valeur]```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Dictionaries: ```{key: value}```",
+              "fr": "Dictionnaires : ```{clé: valeur}```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Strings: ```\"key: value\"```",
+              "fr": "Chaînes : ```\"clé: valeur\"```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```.items()``` returns pairs as tuples that can be unpacked.",
+        "fr": "```.items()``` retourne des paires sous forme de tuples qui peuvent être déballés."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_19",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "methods comparison"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Method Purposes",
+      "fr": "Quiz : Objectifs des méthodes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each method with what it returns:",
+            "fr": "Associe chaque méthode à ce qu'elle retourne :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```.keys()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "All the keys",
+                "fr": "Toutes les clés"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```.values()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "All the values",
+                "fr": "Toutes les valeurs"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```.items()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "All key-value pairs as tuples",
+                "fr": "Toutes les paires clé-valeur sous forme de tuples"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```.get(key)```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "A single value (or None)",
+                "fr": "Une seule valeur (ou None)"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_6_20",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "in operator default"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Default 'in' Behavior",
+      "fr": "Quiz : Comportement par défaut de 'in'"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "By default, what does the ```in``` operator check in a dictionary?",
+            "fr": "Par défaut, que vérifie l'opérateur ```in``` dans un dictionnaire ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Keys only",
+              "fr": "Les clés uniquement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Values only",
+              "fr": "Les valeurs uniquement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Both keys and values",
+              "fr": "Les clés et les valeurs"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The dictionary size",
+              "fr": "La taille du dictionnaire"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```\"name\" in dict``` checks if ```\"name\"``` is a key.",
+        "fr": "```\"nom\" in dict``` vérifie si ```\"nom\"``` est une clé."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_21",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "iteration"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Basic Dictionary Loop",
+      "fr": "Quiz : Boucle de dictionnaire basique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to loop through dictionary keys by default.",
+            "fr": "Complète le code pour boucler sur les clés du dictionnaire par défaut."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "stats = {\"hp\": 100, \"attack\": 75, \"defense\": 60}\n\n{{}} stat {{}} stats:\n    print(stat)",
+        "options": [
+          "for",
+          "in",
+          "while",
+          "if",
+          "from",
+          "with"
+        ],
+        "correctAnswers": {
+          "1": "for",
+          "2": "in"
+        }
+      },
+      "hint": {
+        "en": "Use a standard for loop - Python will iterate over keys by default!",
+        "fr": "Utilise une boucle for standard - Python va itérer sur les clés par défaut !"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "iteration values"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Iterating Over Values",
+      "fr": "Quiz : Itérer sur les valeurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which loop iterates over dictionary values only?",
+            "fr": "Quelle boucle itère uniquement sur les valeurs du dictionnaire ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```for value in dict.values():```"
+          },
+          {
+            "type": "text",
+            "value": "```for value in dict:```"
+          },
+          {
+            "type": "text",
+            "value": "```for value in dict.keys():```"
+          },
+          {
+            "type": "text",
+            "value": "```for value in dict.items():```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "To get only values, you need to explicitly use ```.values()```.",
+        "fr": "Pour obtenir seulement les valeurs, tu dois explicitement utiliser ```.values()```."
+      }
+    }
+  },
+  {
+    "id": "python_11_6_23",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "iteration items"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Unpacking Key-Value Pairs",
+      "fr": "Quiz : Déballer les paires clé-valeur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to loop through both keys and values.",
+            "fr": "Complète le code pour boucler sur les clés et les valeurs."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon = {\"name\": \"Aquachu\", \"level\": 15}\n\nfor {{}}{{}}{{}} in codemon.{{}}():\n    print(f\"{key}: {value}\")",
+        "options": [
+          "key",
+          ",",
+          "value",
+          "items",
+          "values",
+          "keys",
+          "pairs"
+        ],
+        "correctAnswers": {
+          "1": "key",
+          "2": ",",
+          "3": "value",
+          "4": "items"
+        }
+      },
+      "hint": {
+        "en": "Use ```.items()``` and unpack into two variables!",
+        "fr": "Utilise ```.items()``` et déballe en deux variables !"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_24",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "common patterns"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Summing Values",
+      "fr": "Quiz : Sommer les valeurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the best way to calculate the sum of all dictionary values?",
+            "fr": "Quelle est la meilleure façon de calculer la somme de toutes les valeurs du dictionnaire ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Loop through ```.values()``` and add each one",
+              "fr": "Boucler sur ```.values()``` et ajouter chacune"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Loop through ```.keys()``` and add each one",
+              "fr": "Boucler sur ```.keys()``` et ajouter chacune"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Loop through ```.items()``` and add keys",
+              "fr": "Boucler sur ```.items()``` et ajouter les clés"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "You only need the values to sum them, not the keys!",
+        "fr": "Tu as besoin seulement des valeurs pour les sommer, pas des clés !"
+      }
+    }
+  },
+  {
+    "id": "python_11_6_25",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "quiz",
+        "use cases"
+      ]
+    },
+    "title": {
+      "en": "Quiz: When to Use Each Method",
+      "fr": "Quiz : Quand utiliser chaque méthode"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each scenario with the best iteration method:",
+            "fr": "Associe chaque scénario à la meilleure méthode d'itération :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Calculate total of all numbers",
+                "fr": "Calculer le total de tous les nombres"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```.values()```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Check if certain keys exist",
+                "fr": "Vérifier si certaines clés existent"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```.keys()``` or ```in```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Display formatted key: value pairs",
+                "fr": "Afficher des paires clé: valeur formatées"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```.items()```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Filter items based on conditions",
+                "fr": "Filtrer les éléments selon des conditions"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```.items()``` with ```if```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_11_10_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "creation",
+        "access"
+      ]
+    },
+    "title": {
+      "en": "Battle Records Start",
+      "fr": "Début des records de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Track your Codémon battle wins! Create a record system.\n\n- Create a dictionary with battle records: Aquachu has 15 wins, Pyrochu has 22 wins, Florachu has 8 wins, Zap has 18 wins\n- Display the complete battle records",
+            "fr": "Suit les victoires au combat de tes Codémon ! Crée un système d'enregistrement.\n\n- Crée un dictionnaire avec les records de combat : Aquachu a 15 victoires, Pyrochu a 22 victoires, Florachu a 8 victoires, Zap a 18 victoires\n- Affiche les records de combat complets"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here\n\n",
+          "fr": "# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Florachu\": 8, \"Zap\": 18}\nprint(f\"Battle records: {battle_records}\")",
+            "fr": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Florachu\": 8, \"Zap\": 18}\nprint(f\"Records de combat : {battle_records}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_10_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "pop"
+      ]
+    },
+    "title": {
+      "en": "Retiring a Codémon",
+      "fr": "Retirer un Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Florachu is retiring from battles! Remove it from records.\n\n- Remove Florachu from the dictionary and store its wins\n- Display how many wins Florachu had\n- Display the updated battle records",
+            "fr": "Florachu prend sa retraite des combats ! Retire-le des records.\n\n- Retire Florachu du dictionnaire et stocke ses victoires\n- Affiche combien de victoires Florachu avait\n- Affiche les records de combat mis à jour"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Florachu\": 8, \"Zap\": 18}\nprint(f\"Battle records: {battle_records}\")\n\n",
+          "fr": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Florachu\": 8, \"Zap\": 18}\nprint(f\"Records de combat : {battle_records}\")\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Florachu\": 8, \"Zap\": 18}\nprint(f\"Battle records: {battle_records}\")\n\nflorachu_wins = battle_records.pop(\"Florachu\")\nprint(f\"Florachu retired with {florachu_wins} wins\")\nprint(f\"Updated records: {battle_records}\")",
+            "fr": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Florachu\": 8, \"Zap\": 18}\nprint(f\"Records de combat : {battle_records}\")\n\nflorachu_wins = battle_records.pop(\"Florachu\")\nprint(f\"Florachu retraité avec {florachu_wins} victoires\")\nprint(f\"Records mis à jour : {battle_records}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_10_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "add",
+        "values",
+        "sum"
+      ]
+    },
+    "title": {
+      "en": "New Recruit and Average",
+      "fr": "Nouvelle recrue et moyenne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Rockachu joins your team! Track its stats and calculate the average.\n\n- Add Rockachu to battle records with 5 wins\n- Calculate the average wins across all Codémon\n- Display the average",
+            "fr": "Rockachu rejoint ton équipe ! Suit ses stats et calcule la moyenne.\n\n- Ajoute Rockachu aux records de combat avec 5 victoires\n- Calcule la moyenne des victoires de tous les Codémon\n- Affiche la moyenne"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18}\n\n",
+          "fr": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18}\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18}\n\nbattle_records[\"Rockachu\"] = 5\n\naverage = sum(battle_records.values()) / len(battle_records)\nprint(f\"Average wins: {average}\")",
+            "fr": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18}\n\nbattle_records[\"Rockachu\"] = 5\n\naverage = sum(battle_records.values()) / len(battle_records)\nprint(f\"Moyenne de victoires : {average}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_10_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "items",
+        "loops",
+        "max"
+      ]
+    },
+    "title": {
+      "en": "Finding the Champion",
+      "fr": "Trouver le champion"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Time to find which Codémon is the battle champion!\n\n- Loop through all Codémon and their wins\n- Find which one has the most wins\n- Display the champion name and its win count",
+            "fr": "Il est temps de trouver quel Codémon est le champion des combats !\n\n- Parcours tous les Codémon et leurs victoires\n- Trouve celui qui a le plus de victoires\n- Affiche le nom du champion et son nombre de victoires"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18, \"Rockachu\": 5}\n\n",
+          "fr": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18, \"Rockachu\": 5}\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18, \"Rockachu\": 5}\n\nchampion_name = \"\"\nmax_wins = 0\nfor name, wins in battle_records.items():\n  if wins > max_wins:\n    max_wins = wins\n    champion_name = name\n\nprint(f\"Champion: {champion_name} with {max_wins} wins\")",
+            "fr": "battle_records = {\"Aquachu\": 15, \"Pyrochu\": 22, \"Zap\": 18, \"Rockachu\": 5}\n\nchampion_name = \"\"\nmax_wins = 0\nfor name, wins in battle_records.items():\n  if wins > max_wins:\n    max_wins = wins\n    champion_name = name\n\nprint(f\"Champion : {champion_name} avec {max_wins} victoires\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_11_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "creation",
+        "access"
+      ]
+    },
+    "title": {
+      "en": "Opening the Shop",
+      "fr": "Ouvrir la boutique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to the Trading Post! Set up your shop.\n\n- Create a shop dictionary with items and prices: potion costs 50, codeball costs 100, revive costs 150, rare_candy costs 200\n- Display all shop items and prices",
+            "fr": "Bienvenue au comptoir d'échange ! Installe ta boutique.\n\n- Crée un dictionnaire de boutique avec objets et prix : potion coûte 50, codeball coûte 100, revive coûte 150, rare_candy coûte 200\n- Affiche tous les objets et prix de la boutique"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here\n\n",
+          "fr": "# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\nfor item, price in shop.items():\n    print(f\"{item}: {price} coins\")",
+            "fr": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\nfor item, price in shop.items():\n    print(f\"{item} : {price} pièces\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_11_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "get",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "First Purchase",
+      "fr": "Premier achat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Time to buy your first item! Check if you can afford it.\n\n- Create coins variable with 300\n- Create empty inventory dictionary\n- Check if you can afford a codeball (price: 100)\n- If yes: subtract coins and add codeball to inventory\n- Display coins left and inventory",
+            "fr": "Il est temps d'acheter ton premier objet ! Vérifie si tu peux te le permettre.\n\n- Crée une variable coins avec 300\n- Crée un dictionnaire inventory vide\n- Vérifie si tu peux acheter un codeball (prix : 100)\n- Si oui : retire les pièces et ajoute codeball à l'inventaire\n- Affiche les pièces restantes et l'inventaire"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\n",
+          "fr": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\ncoins = 300\ninventory = {}\n\nitem_to_buy = \"codeball\"\nprice = shop[item_to_buy]\n\nif coins >= price:\n    coins -= price\n    inventory[item_to_buy] = inventory.get(item_to_buy, 0) + 1\n    print(f\"Bought {item_to_buy}!\")\n\nprint(f\"Coins left: {coins}\")\nprint(f\"Inventory: {inventory}\")",
+            "fr": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\ncoins = 300\ninventory = {}\n\nitem_to_buy = \"codeball\"\nprice = shop[item_to_buy]\n\nif coins >= price:\n    coins -= price\n    inventory[item_to_buy] = inventory.get(item_to_buy, 0) + 1\n    print(f\"Acheté {item_to_buy} !\")\n\nprint(f\"Pièces restantes : {coins}\")\nprint(f\"Inventaire : {inventory}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_11_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "get",
+        "loops",
+        "conditions"
+      ]
+    },
+    "title": {
+      "en": "Buying Spree",
+      "fr": "Frénésie d'achat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Hummm, your next fight is going to be tough, buy as many potions as you can afford!\n\n- Loop while you can afford a potion (price: 50)\n- Each iteration: subtract coins and add potion to inventory\n- Display coins left and inventory",
+            "fr": "Hummm, ton prochain combat va être très compliqué, achète autant de potions que tu peux te permettre !\n\n- Boucle tant que tu peux acheter une potion (prix : 50)\n- À chaque itération : retire les pièces et ajoute potion à l'inventaire\n- Affiche les pièces restantes et l'inventaire"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\ncoins = 200\ninventory = {\"codeball\": 1}\n\nitem_to_buy = \"potion\"\nprice = shop[item_to_buy]\n\nif coins >= price:\n    coins -= price\n    inventory[item_to_buy] = inventory.get(item_to_buy, 0) + 1\n\nprint(f\"Coins left: {coins}\")\nprint(f\"Inventory: {inventory}\")\n\n",
+          "fr": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\ncoins = 200\ninventory = {\"codeball\": 1}\n\nitem_to_buy = \"potion\"\nprice = shop[item_to_buy]\n\nif coins >= price:\n    coins -= price\n    inventory[item_to_buy] = inventory.get(item_to_buy, 0) + 1\n\nprint(f\"Pièces restantes : {coins}\")\nprint(f\"Inventaire : {inventory}\")\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\ncoins = 200\ninventory = {\"codeball\": 1}\n\nitem_to_buy = \"potion\"\nprice = shop[item_to_buy]\n\nwhile coins >= price:\n    coins -= price\n    inventory[item_to_buy] = inventory.get(item_to_buy, 0) + 1\n\nprint(f\"Coins left: {coins}\")\nprint(f\"Inventory: {inventory}\")",
+            "fr": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\n\ncoins = 200\ninventory = {\"codeball\": 1}\n\nitem_to_buy = \"potion\"\nprice = shop[item_to_buy]\n\nwhile coins >= price:\n    coins -= price\n    inventory[item_to_buy] = inventory.get(item_to_buy, 0) + 1\n\nprint(f\"Pièces restantes : {coins}\")\nprint(f\"Inventaire : {inventory}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_11_11_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "dictionaries",
+        "in",
+        "conditions",
+        "modification"
+      ]
+    },
+    "title": {
+      "en": "Selling Back",
+      "fr": "Revendre"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You changed your mind, it's no good to spend all your money, keep some of it. Sell one codeball back to the shop.\n\n- Check if codeball is in inventory and quantity is greater than 0\n- If yes: add half the shop price to coins (100 // 2 = 50)\n- Decrease codeball quantity in inventory by 1\n- Display coins and inventory",
+            "fr": "Tu as changé d'avis, ce n'est pas bien de tout dépenser, garde un peu d'argent. Revends une codeball à la boutique.\n\n- Vérifie si codeball est dans l'inventaire et que la quantité est supérieure à 0\n- Si oui : ajoute la moitié du prix boutique aux pièces (100 // 2 = 50)\n- Diminue la quantité de codeball dans l'inventaire de 1\n- Affiche les pièces et l'inventaire"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\ncoins = 0\ninventory = {\"codeball\": 1, \"potion\": 4}\n\n",
+          "fr": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\ncoins = 0\ninventory = {\"codeball\": 1, \"potion\": 4}\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\ncoins = 0\ninventory = {\"codeball\": 1, \"potion\": 4}\n\nitem_to_sell = \"codeball\"\n\nif item_to_sell in inventory and inventory[item_to_sell] > 0:\n    sell_price = shop[item_to_sell] // 2\n    coins += sell_price\n    inventory[item_to_sell] -= 1\n    print(f\"Sold {item_to_sell} for {sell_price} coins\")\n\nprint(f\"Coins now: {coins}\")\nprint(f\"Inventory: {inventory}\")",
+            "fr": "shop = {\"potion\": 50, \"codeball\": 100, \"revive\": 150, \"rare_candy\": 200}\ncoins = 0\ninventory = {\"codeball\": 1, \"potion\": 4}\n\nitem_to_sell = \"codeball\"\n\nif item_to_sell in inventory and inventory[item_to_sell] > 0:\n    sell_price = shop[item_to_sell] // 2\n    coins += sell_price\n    inventory[item_to_sell] -= 1\n    print(f\"Vendu {item_to_sell} pour {sell_price} pièces\")\n\nprint(f\"Pièces maintenant : {coins}\")\nprint(f\"Inventaire : {inventory}\")"
+          }
+        }
+      ]
+    }
+  }
+]

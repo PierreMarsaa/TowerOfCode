@@ -19,13 +19,17 @@ export class MenuScene extends Phaser.Scene {
     const cx = cam.centerX
     const save = saveManager
 
+    // Fields survive a scene restart: drop the texts destroyed by the previous run
+    this.menuItems = []
+    this.selectedIndex = 0
+
     i18n.setLanguage(save.getData().language)
     this.cameras.main.fadeIn(300, 26, 26, 46)
 
     // Restart scene when language is toggled via HTML button
     this.langHandler = () => this.scene.restart()
     window.addEventListener('toggle-language', this.langHandler)
-    this.events.on('shutdown', () => {
+    this.events.once('shutdown', () => {
       if (this.langHandler) {
         window.removeEventListener('toggle-language', this.langHandler)
         this.langHandler = undefined

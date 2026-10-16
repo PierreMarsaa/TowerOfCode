@@ -1,0 +1,3506 @@
+[
+  {
+    "id": "python_4_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "AND Operator",
+      "fr": "Opérateur AND (ET)"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```and``` operator is a logical operator that returns ```True``` if both sides are ```True```. Otherwise, it returns ```False```.",
+            "fr": "L'opérateur ```and``` ('et' en français) est un opérateur logique qui renvoie ```True``` (vrai) si les deux côtés sont ```True```. Sinon, il renvoie ```False```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here is a truth table for the ```and``` operator with 2 variables (```A and B = ?```). It shows all possible combinations of ```True``` and ```False```.",
+            "fr": "Voici une table de vérité pour l'opérateur ```and``` pour 2 variables (```A and B = ?```). Elle montre toutes les combinaisons possibles de ```True``` et ```False```."
+          }
+        },
+        {
+          "type": "image",
+          "value": "truth_table_and",
+          "caption": {
+            "en": "Truth table : AND",
+            "fr": "Table de vérité : AND"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "AND Operator",
+      "fr": "Opérateur AND (ET)"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "We can also try to display the truth table with code !",
+            "fr": "Nous pouvons également essayer d'afficher la table de vérité avec du code !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "print(\"False and False =\", False and False)\nprint(\"True and False =\", True and False)\nprint(\"False and True =\", False and True)\nprint(\"True and True =\", True and True)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Remember, ```and``` returns ```True``` only if both sides are ```True```.",
+            "fr": "N'oublie pas, ```and``` renvoie ```True``` uniquement si les deux côtés sont ```True```."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_1_3",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Did you get AND?",
+      "fr": "T'as compris AND ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each formula of the left with its result on the right.",
+            "fr": "Associe chaque formule de gauche avec son résultat à droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```True and True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```True and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```False and True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```False and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_1_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "and",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "AND Operator Quiz",
+      "fr": "Quiz sur l'opérateur AND"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the result of ```True and False```?",
+            "fr": "Quel sera le résultat de ```True and False``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "With AND operator, both sides must be True to get True.",
+        "fr": "Avec l'opérateur AND, les deux côtés doivent être True pour obtenir True."
+      }
+    }
+  },
+  {
+    "id": "python_4_1_5",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "and",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Match AND Results",
+      "fr": "Associer les résultats AND"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each AND operation with its correct result (in these type of operations, you're gonna want to read from left to right, evaluating what's within parentheses first if there are any)",
+            "fr": "Associe chaque opération AND avec son résultat correct (dans ce type d'opérations, tu vas vouloir lire de gauche à droite, en évaluant ce qui est dans les parenthèses en premier s'il y en a)"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```True and True and True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```True and False and True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```False and False and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```True and True and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "OR Operator",
+      "fr": "Opérateur OR (OU)"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```or``` operator is a logical operator that returns ```True``` if at least one side is ```True```. Otherwise, it returns ```False```.",
+            "fr": "L'opérateur ```or``` ('ou' en français) est un opérateur logique qui renvoie ```True``` (vrai) si au moins un côté est ```True```. Sinon, il renvoie ```False```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here is a truth table for the ```or``` operator with 2 variables (```A or B = ?```). It shows all possible combinations of ```True``` and ```False```.",
+            "fr": "Voici une table de vérité pour l'opérateur ```or``` pour 2 variables (```A or B = ?```). Elle montre toutes les combinaisons possibles de ```True``` et ```False```."
+          }
+        },
+        {
+          "type": "image",
+          "value": "truth_table_or",
+          "caption": {
+            "en": "Truth table : OR",
+            "fr": "Table de vérité : OR"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "OR Operator",
+      "fr": "Opérateur OR (OU)"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "We can also try to display the truth table with code !",
+            "fr": "Nous pouvons également essayer d'afficher la table de vérité avec du code !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "print(\"False or False =\", False or False)\nprint(\"True or False =\", True or False)\nprint(\"False or True =\", False or True)\nprint(\"True or True =\", True or True)",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Remember, ```or``` returns ```True``` if at least one side is ```True```.",
+            "fr": "N'oublie pas, ```or``` renvoie ```True``` si au moins un côté est ```True```."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_2_3",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Did you get OR?",
+      "fr": "T'as compris OR ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each formula of the left with its result on the right.",
+            "fr": "Associe chaque formule de gauche avec son résultat à droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```True or True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```True or False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```False or True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```False or False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_2_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "or",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "OR Operator Quiz",
+      "fr": "Quiz sur l'opérateur OR"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the result of ```False or True```?",
+            "fr": "Quel sera le résultat de ```False or True``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "With OR operator, if at least one side is True, the result is True. Since one side is True, the result is True.",
+        "fr": "Avec l'opérateur OR, si au moins un côté est True, le résultat est True. Comme un côté est True, le résultat est True."
+      }
+    }
+  },
+  {
+    "id": "python_4_2_5",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "or",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Match OR Results",
+      "fr": "Associer les résultats OR"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each OR operation with its correct result.\n\nIn these type of operations, you're gonna want to read from left to right, evaluating what's within parentheses first if there are any, AND is evaluated before OR (similar to multiplication before addition).",
+            "fr": "Associe chaque opération OR avec son résultat correct.\n\nDans ce type d'opérations, tu vas vouloir lire de gauche à droite, en évaluant ce qui est dans les parenthèses en premier s'il y en a, AND est prioritaire sur OR (comme la multiplication sur l'addition)."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```True or True or True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```False or True or False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```False or False or False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```True or False or True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_2_6",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "or",
+        "and",
+        "operators",
+        "parentheses"
+      ]
+    },
+    "title": {
+      "en": "Match Complex Boolean Results",
+      "fr": "Associer les résultats booléens complexes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each boolean operation with its correct result.\n\nRemember: evaluate what's in parentheses first, then AND operations, and finally OR operations (reading left to right).",
+            "fr": "Associe chaque opération booléenne avec son résultat correct.\n\nRappelle-toi : évalue d'abord ce qui est dans les parenthèses, puis les opérations AND, et enfin les opérations OR (en lisant de gauche à droite)."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```(True or False) and True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```False or (True and False)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```(False and True) or True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```True and (False or True)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": "```(True and False) or False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "NOT Operator",
+      "fr": "Opérateur NOT (NON)"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```not``` operator is a logical operator that negates the value of a boolean. It returns ```True``` if the value is ```False```, and ```False``` if the value is ```True```.",
+            "fr": "L'opérateur ```not``` ('non' en français) est un opérateur logique qui nie la valeur d'un booléen. Il renvoie ```True``` si la valeur est ```False```, et ```False``` si la valeur est ```True```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's display the truth table with code !",
+            "fr": "Affichons la table de vérité avec du code !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "print(\"not False =\", not False)\nprint(\"not True =\", not True)",
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_3_2",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Did you get NOT?",
+      "fr": "T'as compris NOT ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each formula of the left with its result on the right.",
+            "fr": "Associe chaque formule de gauche avec son résultat à droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```not True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```not False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```not not True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```not not False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_3_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "not",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "NOT Operator Quiz",
+      "fr": "Quiz sur l'opérateur NOT"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the result of ```not True```?",
+            "fr": "Quel sera le résultat de ```not True``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "False"
+          },
+          {
+            "type": "text",
+            "value": "True"
+          },
+          {
+            "type": "text",
+            "value": "Error"
+          },
+          {
+            "type": "text",
+            "value": "None"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "NOT operator inverts the boolean value. Since True becomes False, the result is False.",
+        "fr": "L'opérateur NOT inverse la valeur booléenne. Comme True devient False, le résultat est False."
+      }
+    }
+  },
+  {
+    "id": "python_4_3_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "not",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Match NOT Results",
+      "fr": "Associer les résultats NOT"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each NOT operation with its correct result:",
+            "fr": "Associe chaque opération NOT avec son résultat correct :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```not True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```not False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```not (True and False)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```not (False or True)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_4_1",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "AND or OR?",
+      "fr": "ET ou OU ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You need to check if your Codémons can train. For that, you need to check if they're both ready to fight. If both conditions are met, you can train them.",
+            "fr": "Tu dois vérifier si tes Codémons peuvent s'entraîner. Pour cela, tu dois vérifier s'ils sont tous les deux prêts à se battre. Si les deux conditions sont remplies, tu peux les entraîner."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_1_ready = True\ncodemon_2_ready = True\n\ncan_train = codemon_1_ready {{}} codemon_2_ready\nprint(can_train)",
+        "options": [
+          "and",
+          "or",
+          "not"
+        ],
+        "correctAnswers": {
+          "1": "and"
+        }
+      },
+      "hint": {
+        "en": "Remember: And is used to check if both conditions are True. Or is used to check if at least one condition is True.",
+        "fr": "Souviens-toi : And est utilisé pour vérifier si les deux conditions sont vraies. Or est utilisé pour vérifier si au moins une condition est vraie."
+      }
+    }
+  },
+  {
+    "id": "python_4_4_2",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "AND or OR?",
+      "fr": "ET ou OU ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "First phase of training is done, for the second phase, you're going to battle someone else, you only need one Codémon to be ready to fight. If at least one of them is ready, you can train them.",
+            "fr": "La première phase d'entraînement est terminée, pour la deuxième phase, tu vas combattre quelqu'un d'autre, il suffit qu'un seul Codémon soit prêt à se battre. Si au moins l'un d'eux est prêt, tu peux les entraîner."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_1_ready = True\ncodemon_2_ready = False\n\ncan_train = codemon_1_ready {{}} codemon_2_ready\nprint(can_train)",
+        "options": [
+          "and",
+          "or",
+          "not"
+        ],
+        "correctAnswers": {
+          "1": "or"
+        }
+      },
+      "hint": {
+        "en": "Remember: And is used to check if both conditions are True. Or is used to check if at least one condition is True.",
+        "fr": "Souviens-toi : And est utilisé pour vérifier si les deux conditions sont vraies. Or est utilisé pour vérifier si au moins une condition est vraie."
+      }
+    }
+  },
+  {
+    "id": "python_4_4_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "logic"
+      ]
+    },
+    "title": {
+      "en": "Boolean Logic in Action",
+      "fr": "Logique booléenne en action"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Your Codémon needs rest if it's either tired OR injured. What operator should you use?",
+            "fr": "Ton Codémon a besoin de repos s'il est fatigué OU blessé. Quel opérateur dois-tu utiliser ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "or"
+          },
+          {
+            "type": "text",
+            "value": "and"
+          },
+          {
+            "type": "text",
+            "value": "not"
+          },
+          {
+            "type": "text",
+            "value": "None of these"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Use OR when at least one condition needs to be true. If the Codémon is tired OR injured, it needs rest.",
+        "fr": "Utilise OR quand au moins une condition doit être vraie. Si le Codémon est fatigué OU blessé, il a besoin de repos."
+      }
+    }
+  },
+  {
+    "id": "python_4_4_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "not",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "To train or not to train?",
+      "fr": "S'entraîner ou ne pas s'entraîner ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Your Codémon can only fight if it's NOT sleeping. Complete the code:",
+            "fr": "Ton Codémon peut seulement combattre s'il ne dort PAS. Complète le code :"
+          }
+        }
+      ],
+      "exercise": {
+        "text": "is_sleeping = False\n\ncan_fight = {{}} is_sleeping\nprint(can_fight)",
+        "options": [
+          "not",
+          "and",
+          "or",
+          "!"
+        ],
+        "correctAnswers": {
+          "1": "not"
+        }
+      },
+      "hint": {
+        "en": "NOT operator inverts a boolean value. If is_sleeping is True, then ```not is_sleeping``` is False.",
+        "fr": "L'opérateur NOT inverse une valeur booléenne. Si is_sleeping est False, alors ```not is_sleeping``` est True."
+      }
+    }
+  },
+  {
+    "id": "python_4_4_5",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "scenarios"
+      ]
+    },
+    "title": {
+      "en": "Match the Scenario",
+      "fr": "Associer le scénario"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each scenario with the correct boolean operator:",
+            "fr": "Associe chaque scénario avec le bon opérateur booléen :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Codémon can evolve if level >= 30 AND has evolution stone",
+                "fr": "Le Codémon peut évoluer si le niveau >= 30 ET a une pierre d'évolution"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```and```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Codémon needs healing if HP < 20 OR poisoned",
+                "fr": "Le Codémon a besoin de soins si HP < 20 OU empoisonné"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```or```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Codémon can enter battle if NOT fainted",
+                "fr": "Le Codémon peut entrer en bataille si PAS évanoui"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```not```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Shop is open if day_time OR emergency",
+                "fr": "La boutique est ouverte si jour OU urgence"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```or```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_4_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "evaluation"
+      ]
+    },
+    "title": {
+      "en": "Complex Boolean Expression",
+      "fr": "Expression booléenne complexe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of: ```True and (False or True)```?",
+            "fr": "Quel est le résultat de : ```True and (False or True)``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "True"
+          },
+          {
+            "type": "text",
+            "value": "False"
+          },
+          {
+            "type": "text",
+            "value": "Error"
+          },
+          {
+            "type": "text",
+            "value": "None"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "First evaluate parentheses: (False or True) = True. Then: True and True = True.",
+        "fr": "D'abord évalue les parenthèses : (False or True) = True. Puis : True and True = True."
+      }
+    }
+  },
+  {
+    "id": "python_4_4_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "complex"
+      ]
+    },
+    "title": {
+      "en": "Complete the Logic",
+      "fr": "Compléter la logique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A Codémon can use a special attack if it has enough MP AND it's not paralyzed. Complete the expression:",
+            "fr": "Un Codémon peut utiliser une attaque spéciale s'il a assez de MP ET qu'il n'est pas paralysé. Complète l'expression :"
+          }
+        }
+      ],
+      "exercise": {
+        "text": "has_enough_mp, is_paralyzed = True, False\ncan_use_special = has_enough_mp {{}} {{}} is_paralyzed\nprint(can_use_special)",
+        "options": [
+          "and",
+          "or",
+          "not",
+          "&",
+          "|"
+        ],
+        "correctAnswers": {
+          "1": "and",
+          "2": "not"
+        }
+      },
+      "hint": {
+        "en": "You can combine and and not operators. Use AND to require both conditions, and NOT to invert is_paralyzed (not paralyzed means can act).",
+        "fr": "Tu peux combiner les opérateurs and et not. Utilise AND pour exiger que les deux conditions soient remplies, et NOT pour inverser is_paralyzed (ne pas être paralysé signifie pouvoir agir)."
+      }
+    }
+  },
+  {
+    "id": "python_4_5_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Intro to Comparison operators",
+      "fr": "Opérateurs de comparaison - Introduction"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Hopefully, you remember the boolean values ```True``` and ```False``` from the previous lesson.",
+            "fr": "J'espère que tu te souviens des valeurs booléennes ```True``` et ```False``` des leçons précédente."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "There is a way to \"create\" those boolean values, by using comparison operators. They are used to compare two values and return a boolean value.",
+            "fr": "Il existe un moyen de \"créer\" ces valeurs booléennes, en utilisant des opérateurs de comparaison. Ils sont utilisés pour comparer deux valeurs et renvoyer une valeur booléenne."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If the result of the comparison is true, it returns ```True```, otherwise it returns ```False```.",
+            "fr": "Si le résultat de la comparaison est vrai, il renvoie ```True```, sinon il renvoie ```False```."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "print(2 > 1) # 2 > 1, True\nprint(1 > 2) # 1 > 2, False",
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_5_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Comparison operators",
+      "fr": "Opérateurs de comparaison"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can create Boolean values by comparing values with these operators:\n\n```==``` Equal to (checks if two values are the same)\n```!=``` Not equal to (checks if two values are different)\n```>``` Greater than\n```<``` Less than\n```>=``` Greater than or equal to\n```<=``` Less than or equal to",
+            "fr": "Tu peux créer des valeurs booléennes en comparant des valeurs avec ces opérateurs :\n\n```==``` Égal à (vérifie si deux valeurs sont identiques)\n```!=``` Différent de (vérifie si deux valeurs sont différentes)\n```>``` Supérieur à\n```<``` Inférieur à\n```>=``` Supérieur ou égal à\n```<=``` Inférieur ou égal à"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "So basically, if the comparision is true, it will return ```True```, otherwise it will return ```False```.",
+            "fr": "Pour résumer, si la comparaison est vraie, elle renverra ```True```, sinon elle renverra ```False```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Try to play around with the code below to understand how it works.",
+            "fr": "Essaie de jouer avec le code ci-dessous pour comprendre comment ça fonctionne."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "print('equal to', 2 == 2)\nprint('not equal to', 2 != 2)\nprint('greater than', 2 > 1)\nprint('less than', 1 < 2)\nprint('greater than or equal to', 2 >= 1)\nprint('less than or equal to', 1 <= 2)",
+            "fr": "print('égal à', 2 == 2)\nprint('différent de', 2 != 2)\nprint('supérieur à', 2 > 1)\nprint('inférieur à', 1 < 2)\nprint('supérieur ou égal à', 2 >= 1)\nprint('inférieur ou égal à', 1 <= 2)"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_5_3",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "True or False?",
+      "fr": "Vrai ou Faux ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each comparison on the left with it's result on the right.",
+            "fr": "Associe chaque comparaison à gauche avec son résultat à droite."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```10 == 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```10 != 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```10 > 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```10 <= 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_5_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Which comparison method",
+      "fr": "Quelle méthode de comparaison"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which comparison will return True for these values: ```codemon_level = 75```, ```opponent_level = 70``` ?",
+            "fr": "Quelle comparaison renverra True pour ces valeurs : ```codemon_level = 75```, ```opponent_level = 70``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```codemon_level > opponent_level```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_level < opponent_level```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_level == opponent_level```"
+          },
+          {
+            "type": "text",
+            "value": "```codemon_level >> opponent_level```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: == is the operator for 'equal to', != is the operator for 'not equal to', you can figure out the rest",
+        "fr": "Rappelle-toi : == est l'opérateur pour 'égal à', != est l'opérateur pour 'différent de', tu peux deviner le reste"
+      }
+    }
+  },
+  {
+    "id": "python_4_5_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Combination of comparison",
+      "fr": "Combinaison de comparaisons"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Hopefully, you remember that we saw the operators ```OR```, ```AND``` and ```NOT```. They are used to combine boolean values.",
+            "fr": "J'espère aussi que tu te souviens que nous avons vu les opérateurs ```OR```, ```AND``` et ```NOT```. Ils sont utilisés pour combiner des valeurs booléennes."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Like we saw earlier, we can replace boolean values with comparison, we can also use those operators to combine everything!",
+            "fr": "Comme vu plus tôt, nous pouvons remplacer les valeurs booléennes par des comparaisons, nous pouvons aussi utiliser ces opérateurs pour combiner tout ça !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "level = 10\nalive = True\nprint('Codemon ready ?', level > 5 and alive)",
+            "fr": "niveau = 10\nvivant = True\nprint('Codemon prêt ?', niveau > 5 and vivant)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_5_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Try to solve this",
+      "fr": "Essaie de résoudre ça"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if your Codémon can train. For that, his HP must be greater than 0 and he must be awake.",
+            "fr": "Vérifie si ton Codémon peut s'entraîner. Pour cela, ses HP (pv) doivent être supérieurs à 0 et il doit être réveillé (awake)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_hp = 10\ncodemon_awake = True\n\ncan_train = codemon_hp {{}} 0 {{}} codemon_awake\nprint(can_train)",
+        "options": [
+          "and",
+          "or",
+          "not",
+          "==",
+          "<",
+          ">",
+          "!="
+        ],
+        "correctAnswers": {
+          "1": ">",
+          "2": "and"
+        }
+      },
+      "hint": {
+        "en": "Remember: And is used to check if both conditions are True. Or is used to check if at least one condition is True.",
+        "fr": "Souviens-toi : And est utilisé pour vérifier si les deux conditions sont vraies. Or est utilisé pour vérifier si au moins une condition est vraie."
+      }
+    }
+  },
+  {
+    "id": "python_4_5_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Try to solve this",
+      "fr": "Essaie de résoudre ça"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You want to enter a tournament with a level limit. Check if your Codémon level is between 10 and 20 (inclusive).",
+            "fr": "Tu veux entrer dans un tournoi avec une limite de niveau. Vérifie si le niveau de ton Codémon est entre 10 et 20 (inclus)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_level = 15\ncan_enter = codemon_level {{}} 10 {{}} codemon_level {{}} 20\nprint(can_enter)",
+        "options": [
+          "and",
+          "or",
+          "not",
+          "==",
+          "<=",
+          ">=",
+          "!="
+        ],
+        "correctAnswers": {
+          "1": ">=",
+          "2": "and",
+          "3": "<="
+        }
+      },
+      "hint": {
+        "en": "Remember: And is used to check if both conditions are True. Or is used to check if at least one condition is True.",
+        "fr": "Souviens-toi : And est utilisé pour vérifier si les deux conditions sont vraies. Or est utilisé pour vérifier si au moins une condition est vraie."
+      }
+    }
+  },
+  {
+    "id": "python_4_5_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Try to solve this",
+      "fr": "Essaie de résoudre ça"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "To enter this arena, you need to either pay 10 coins (so you need at least 10 coins) or have a Codémon with a level strictly greater than 20. Check if you can enter.",
+            "fr": "Pour entrer dans cette arène, tu dois soit payer 10 pièces (donc avoir minimum 10 pièces), soit avoir un Codémon avec un niveau strictement supérieur à 20. Vérifie si tu peux entrer."
+          }
+        }
+      ],
+      "exercise": {
+        "run": false,
+        "language": "python",
+        "text": "coins = 5\ncodemon_level = 25\ncan_enter = coins {{}} 10 {{}} codemon_level {{}} 20\nprint(can_enter)",
+        "options": [
+          ">=",
+          "==",
+          "!=",
+          ">",
+          "<",
+          "or",
+          "and",
+          "not"
+        ],
+        "correctAnswers": {
+          "1": ">=",
+          "2": "or",
+          "3": ">"
+        }
+      },
+      "hint": {
+        "en": "Remember: Strictly greater than X means than X is not included. ",
+        "fr": "Souviens-toi : Strictement supérieur à X signifie que X n'est pas inclus. "
+      }
+    }
+  },
+  {
+    "id": "python_4_5_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "opeators",
+        "comparison",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Try to solve this",
+      "fr": "Essaie de résoudre ça"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Can you check if at least one of your 2 Codémon is awake ?",
+            "fr": "Peux-tu vérifier si au moins un de tes 2 Codémon est réveillé ?"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "cdm_1_sleeping = False\ncdm_2_sleeping = True\none_awake = {{}} cdm_1_sleeping {{}} {{}} cdm_2_sleeping\nprint(one_awake)",
+        "options": [
+          "and",
+          "or",
+          "not",
+          "not",
+          "or",
+          "and"
+        ],
+        "correctAnswers": {
+          "1": "not",
+          "2": "or",
+          "3": "not"
+        }
+      },
+      "hint": {
+        "en": "Remember: Not is used to invert a boolean value. And is used to check if both conditions are True. Or is used to check if at least one condition is True.",
+        "fr": "Souviens-toi : Not est utilisé pour inverser une valeur booléenne. And est utilisé pour vérifier si les deux conditions sont vraies. Or est utilisé pour vérifier si au moins une condition est vraie."
+      }
+    }
+  },
+  {
+    "id": "python_4_5_10",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "operators",
+        "comparison",
+        "boolean",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Tournament Eligibility Check",
+      "fr": "Vérification d'éligibilité au tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The Grand Tournament has strict rules! Your Codémon can participate if:\n- Its level is between 15 and 30 (inclusive)\n- AND it's awake\n- AND it has either won at least 5 battles OR has a power greater than 80\n\nCreate a boolean variable ```can_participate``` that checks all these conditions, then print it.",
+            "fr": "Le Grand Tournoi a des règles strictes ! Ton Codémon peut participer si :\n- Son niveau est entre 15 et 30 (inclus)\n- ET il est réveillé\n- ET il a soit gagné au moins 5 combats OU a une puissance supérieure à 80\n\nCrée une variable booléenne ```can_participate``` qui vérifie toutes ces conditions, puis affiche-la."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "level = 20\npower = 75\nis_awake = True\nbattles_won = 6\n\n# Code here",
+          "fr": "level = 20\npower = 75\nis_awake = True\nbattles_won = 6\n\n# Code ici"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "level = 20\npower = 75\nis_awake = True\nbattles_won = 6\n\ncan_participate = level >= 15 and level <= 30 and is_awake and (battles_won >= 5 or power > 80)\n\nprint(can_participate)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_6_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "and",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "AND Basics",
+      "fr": "Bases de AND"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How many values need to be ```True``` for ```and``` to return ```True```?",
+            "fr": "Combien de valeurs doivent être ```True``` pour que ```and``` renvoie ```True``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "All of them",
+              "fr": "Toutes"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "At least one",
+              "fr": "Au moins une"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Exactly one",
+              "fr": "Exactement une"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "None of them",
+              "fr": "Aucune"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "AND requires ALL conditions to be True to return True.",
+        "fr": "AND nécessite que TOUTES les conditions soient True pour renvoyer True."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "or",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "OR Basics",
+      "fr": "Bases de OR"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does ```False or False or False``` return?",
+            "fr": "Que renvoie ```False or False or False``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "OR returns False only when ALL values are False.",
+        "fr": "OR renvoie False seulement quand TOUTES les valeurs sont False."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "not",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "NOT Effect",
+      "fr": "Effet de NOT"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```not not not True```?",
+            "fr": "Quel est le résultat de ```not not not True``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "NOT returns the opposite of a boolean value. Double NOT brings you back to the original value.",
+        "fr": "NOT renvoie l'opposé d'une valeur booléenne. Double NOT vous ramène à la valeur d'origine."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Equality Check",
+      "fr": "Vérification d'égalité"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does ```5 == 5``` return?",
+            "fr": "Que renvoie ```5 == 5``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```5```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The == operator checks if two values are equal and returns a boolean.",
+        "fr": "L'opérateur == vérifie si deux valeurs sont égales et renvoie un booléen."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_5",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Operator Symbols",
+      "fr": "Symboles des opérateurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operator with its meaning:",
+            "fr": "Associe chaque opérateur avec sa signification :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```==```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Equal to",
+                "fr": "Égal à"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```!=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Not equal to",
+                "fr": "Différent de"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```>=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Greater than or equal to",
+                "fr": "Supérieur ou égal à"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```<=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Less than or equal to",
+                "fr": "Inférieur ou égal à"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_6_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Basic Comparison",
+      "fr": "Comparaison basique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the comparison to check if your Codémon's level is exactly 50:",
+            "fr": "Complète la comparaison pour vérifier si le niveau de ton Codémon est exactement 50 :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_level = 50\nis_max = codemon_level {{}} 50\nprint(is_max)",
+        "options": [
+          "==",
+          "!=",
+          ">",
+          "<",
+          ">=",
+          "<="
+        ],
+        "correctAnswers": {
+          "1": "=="
+        }
+      },
+      "hint": {
+        "en": "```==``` is used to check if two values are exactly equal. ```!=``` checks if they are not equal.",
+        "fr": "```==``` est utilisé pour vérifier si deux valeurs sont exactement égales. ```!=``` vérifie si elles ne sont pas égales."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "combined"
+      ]
+    },
+    "title": {
+      "en": "Combined Expression",
+      "fr": "Expression combinée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```True or False and False```?",
+            "fr": "Quel est le résultat de ```True or False and False``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "AND has higher priority than OR. Take care of it first, then the OR.",
+        "fr": "AND a une priorité plus élevée que OR. Traite-le en premier, puis l'OR."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Inequality Check",
+      "fr": "Vérification d'inégalité"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does ```10 != 20``` return?",
+            "fr": "Que renvoie ```10 != 20``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```10```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```==``` is used to check if two values are exactly equal. ```!=``` checks if they are not equal.",
+        "fr": "```==``` est utilisé pour vérifier si deux valeurs sont exactement égales. ```!=``` vérifie si elles ne sont pas égales."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Battle Conditions",
+      "fr": "Conditions de combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A Codémon can battle if its HP is more than zero. Complete:",
+            "fr": "Un Codémon peut combattre si ses HP sont supérieurs à zéro. Complète :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "hp = 50\ncan_battle = hp {{}} 0\nprint(can_battle)",
+        "options": [
+          "==",
+          "!=",
+          ">",
+          "<",
+          ">=",
+          "<="
+        ],
+        "correctAnswers": {
+          "1": ">"
+        }
+      },
+      "hint": {
+        "en": "```>``` checks if a value is greater than another. ```>=``` checks if it's greater than or equal.",
+        "fr": "```>``` vérifie si une valeur est supérieure à une autre. ```>=``` vérifie si elle est supérieure ou égale."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Parentheses Priority",
+      "fr": "Priorité des parenthèses"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```(True or False) and False```?",
+            "fr": "Quel est le résultat de ```(True or False) and False``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Parentheses are evaluated before AND, and AND before OR.",
+        "fr": "Les parenthèses sont évaluées avant AND, et AND avant OR."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Comparison Results",
+      "fr": "Résultats de comparaisons"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each comparison with its result:",
+            "fr": "Associe chaque comparaison avec son résultat :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```7 < 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```15 > 20```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```8 >= 8```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```5 <= 3```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_6_12",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "combined"
+      ]
+    },
+    "title": {
+      "en": "Arena Entry",
+      "fr": "Entrée d'arène"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can enter the arena if your level is at least 15 AND you have at least 5 badges:",
+            "fr": "Tu peux entrer dans l'arène si ton niveau est au moins 15 ET que tu as au moins 5 badges :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "level = 20\nbadges = 6\ncan_enter = level {{}} 15 {{}} badges {{}} 5\nprint(can_enter)",
+        "options": [
+          ">=",
+          "<=",
+          ">",
+          "<",
+          "==",
+          "!=",
+          "and",
+          "or",
+          ">="
+        ],
+        "correctAnswers": {
+          "1": ">=",
+          "2": "and",
+          "3": ">="
+        }
+      },
+      "hint": {
+        "en": "Use >= for 'at least' (includes the value), and AND when both conditions are required.",
+        "fr": "Utilise >= pour 'au moins' (inclut la valeur), et AND quand les deux conditions sont requises."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_13",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "not"
+      ]
+    },
+    "title": {
+      "en": "NOT with Comparison",
+      "fr": "NOT avec comparaison"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```not (5 > 10)```?",
+            "fr": "Quel est le résultat de ```not (5 > 10)``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```5```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Evaluate what's in parentheses first, then apply NOT.",
+        "fr": "Évaluez d'abord ce qui est entre parenthèses, puis appliquez NOT."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Complex AND",
+      "fr": "AND complexe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```True and True and False and True```?",
+            "fr": "Quel est le résultat de ```True and True and False and True``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Compute it step by step. Remember with AND you need both sides to be True for it to be True.",
+        "fr": "Avec AND, vous devez vous rappeler que les deux côtés doivent être True pour que le résultat soit True."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_15",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Evolution Check",
+      "fr": "Vérification d'évolution"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A Codémon evolves if its level is greater than 30 OR it has a special stone:",
+            "fr": "Un Codémon évolue si son niveau est supérieur à 30 OU s'il a une pierre spéciale :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "level = 25\nhas_stone = True\ncan_evolve = level {{}} 30 {{}} has_stone\nprint(can_evolve)",
+        "options": [
+          ">",
+          "<",
+          ">=",
+          "<=",
+          "==",
+          "!=",
+          "and",
+          "or"
+        ],
+        "correctAnswers": {
+          "1": ">",
+          "2": "or"
+        }
+      },
+      "hint": {
+        "en": "Greater than and greater than or equal to are different, pay attention!",
+        "fr": "Supérieur et supérieur ou égal sont différents, fais attention !"
+      }
+    }
+  },
+  {
+    "id": "python_4_6_16",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Operator Behavior",
+      "fr": "Comportement des opérateurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each operator with when it returns ```True```:",
+            "fr": "Associe chaque opérateur avec quand il renvoie ```True``` :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```and```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When ALL values are True",
+                "fr": "Quand TOUTES les valeurs sont True"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```or```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When AT LEAST ONE value is True",
+                "fr": "Quand AU MOINS UNE valeur est True"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```not```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When the value is False",
+                "fr": "Quand la valeur est False"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```==```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When both values are equal",
+                "fr": "Quand les deux valeurs sont égales"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_6_17",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Range Check",
+      "fr": "Vérification de plage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```10 <= 15 and 15 <= 20```?",
+            "fr": "Quel est le résultat de ```10 <= 15 and 15 <= 20``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```15```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Compute each comparison first, then apply AND.",
+        "fr": "Évaluez chaque comparaison d'abord, puis appliquez AND."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_18",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "not"
+      ]
+    },
+    "title": {
+      "en": "Status Check",
+      "fr": "Vérification de statut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A Codémon can train if it's NOT poisoned AND NOT paralyzed:",
+            "fr": "Un Codémon peut s'entraîner s'il n'est PAS empoisonné ET PAS paralysé :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "is_poisoned = False\nis_paralyzed = False\ncan_train = {{}} is_poisoned {{}} {{}} is_paralyzed\nprint(can_train)",
+        "options": [
+          "not",
+          "not",
+          "and",
+          "or",
+          "==",
+          "!="
+        ],
+        "correctAnswers": {
+          "1": "not",
+          "2": "and",
+          "3": "not"
+        }
+      },
+      "hint": {
+        "en": "We need both sides to be True so he can train.",
+        "fr": "Nous avons besoin que les deux côtés soient True pour qu'il puisse s'entraîner."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_19",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Mixed Operators",
+      "fr": "Opérateurs mélangés"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```not (True and False)```?",
+            "fr": "Quel est le résultat de ```not (True and False)``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Evaluate what's in the parentheses first, then apply NOT.",
+        "fr": "Calcule d'abord ce qui est entre parenthèses, puis applique NOT."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_20",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "expressions"
+      ]
+    },
+    "title": {
+      "en": "Expression Evaluation",
+      "fr": "Évaluation d'expressions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each expression with its result:",
+            "fr": "Associe chaque expression avec son résultat :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```not (False or False)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```True and not False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```False or True and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```not True or not False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_6_21",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Item Check",
+      "fr": "Vérification d'objet"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if you have more than 10 potions OR exactly 5 revives:",
+            "fr": "Vérifie si tu as plus de 10 potions OU exactement 5 réanimations :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "potions = 12\nrevives = 5\nhas_items = potions {{}} 10 {{}} revives {{}} 5\nprint(has_items)",
+        "options": [
+          ">",
+          "<",
+          ">=",
+          "<=",
+          "==",
+          "!=",
+          "and",
+          "or"
+        ],
+        "correctAnswers": {
+          "1": ">",
+          "2": "or",
+          "3": "=="
+        }
+      },
+      "hint": {
+        "en": "```>``` is for strictly greater than, ```>=``` is for greater than or equal to",
+        "fr": "```>``` est pour strictement supérieur à, ```>=``` est pour supérieur ou égal à"
+      }
+    }
+  },
+  {
+    "id": "python_4_6_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Complex OR",
+      "fr": "OR complexe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```False or False or True or False```?",
+            "fr": "Quel est le résultat de ```False or False or True or False``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "OR returns True if at least one value is True. Here, one value is True.",
+        "fr": "OR renvoie True si au moins une valeur est True. Ici, une valeur est True."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_23",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "operators",
+        "combined"
+      ]
+    },
+    "title": {
+      "en": "Tournament Entry",
+      "fr": "Entrée de tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "To enter, your level must be between 20 and 50 (inclusive) AND you must NOT be banned:",
+            "fr": "Pour entrer, ton niveau doit être entre 20 et 50 (inclus) ET tu ne dois PAS être banni :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "level = 35\nis_banned = False\ncan_enter = level {{}} 20 {{}} level {{}} 50 {{}} {{}} is_banned\nprint(can_enter)",
+        "options": [
+          ">=",
+          "<=",
+          ">",
+          "<",
+          "and",
+          "and",
+          "or",
+          "not"
+        ],
+        "correctAnswers": {
+          "1": ">=",
+          "2": "and",
+          "3": "<=",
+          "4": "and",
+          "5": "not"
+        }
+      },
+      "hint": {
+        "en": "This is a subtile combination of comparisons and boolean operators, take 2 minutes and you will get it!",
+        "fr": "C'est une combinaison subtile de comparaisons et d'opérateurs booléens, prends 2 minutes et tu y arriveras !"
+      }
+    }
+  },
+  {
+    "id": "python_4_6_24",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Comparison Chain",
+      "fr": "Chaîne de comparaisons"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the result of ```5 != 5```?",
+            "fr": "Quel est le résultat de ```5 != 5``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```False```"
+          },
+          {
+            "type": "text",
+            "value": "```True```"
+          },
+          {
+            "type": "text",
+            "value": "```5```"
+          },
+          {
+            "type": "text",
+            "value": "```Error```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The != operator checks if values are different.",
+        "fr": "L'opérateur != vérifie si les valeurs sont différentes."
+      }
+    }
+  },
+  {
+    "id": "python_4_6_25",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "scenarios"
+      ]
+    },
+    "title": {
+      "en": "Real Scenarios",
+      "fr": "Scénarios réels"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each scenario with the correct expression:",
+            "fr": "Associe chaque scénario avec l'expression correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Can fight if HP > 0 and not sleeping",
+                "fr": "Peut combattre si HP > 0 et pas endormi"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```hp > 0 and not sleeping```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Need rest if tired or injured",
+                "fr": "Besoin de repos si fatigué ou blessé"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```tired or injured```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Level must be exactly 50",
+                "fr": "Le niveau doit être exactement 50"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```level == 50```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Age must be 18 or more",
+                "fr": "L'âge doit être 18 ou plus"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```age >= 18```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_4_7_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "variables",
+        "boolean",
+        "numbers",
+        "strings"
+      ]
+    },
+    "title": {
+      "en": "Meet Zap - The Challenger",
+      "fr": "Rencontre Zap - Le challenger"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The Grand Arena Tournament is about to begin! Let's create Zap's fighter profile.\n\nCreate the following variables:\n- ```name``` with the string ```\"Zap\"```\n- ```xp``` with the integer ```2000```\n- ```power``` with ```75```\n- ```hp``` with ```100```\n- ```level``` by dividing ```xp``` by ```100``` and converting it to an integer\n- ```is_awake``` with ```True```\n\nThen print Zap's complete profile.",
+            "fr": "Le Grand Tournoi de l'Arène va commencer ! Créons le profil de combattant de Zap.\n\nCrée les variables suivantes :\n- ```name``` avec la chaîne ```\"Zap\"```\n- ```xp``` avec l'entier ```2000```\n- ```power``` avec ```75```\n- ```hp``` avec ```100```\n- ```level``` en divisant ```xp``` par ```100``` et en le convertissant en entier\n- ```is_awake``` avec ```True```\n\nPuis affiche le profil complet de Zap."
+          }
+        },
+        {
+          "type": "image",
+          "value": "fakemon_zap"
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here\n\n",
+          "fr": "# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "name = \"Zap\"\nxp, power, hp = 2000, 75, 100\nlevel = int(xp / 100)\nis_awake = True\n\nprint(name, \"- Level:\", level, \"- Power:\", power, \"- HP:\", hp, \"- Awake:\", is_awake, \"- XP:\", xp)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_7_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison",
+        "operators",
+        "and"
+      ]
+    },
+    "title": {
+      "en": "Arena Laws - Can Zap Fight?",
+      "fr": "Lois de l'arène - Zap peut-il combattre ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Before entering the arena, Zap must meet all the tournament requirements.",
+            "fr": "Avant d'entrer dans l'arène, Zap doit respecter toutes les exigences du tournoi."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a boolean variable ```can_enter``` that checks if Zap meets ALL these following conditions using comparison operators:\n- Level must be between 15 and 30 (inclusive)\n- Power must be greater than 50\n- Must be awake\n\nThen print the result.",
+            "fr": "Crée une variable booléenne ```can_enter``` qui vérifie si Zap remplit TOUTES ces conditions en utilisant les opérateurs de comparaison :\n- Le niveau doit être entre 15 et 30 (inclus)\n- La puissance doit être supérieure à 50\n- Doit être réveillé\n\nPuis affiche le résultat."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "name = \"Zap\"\nxp, power, hp = 2000, 75, 100\nlevel = int(xp / 100)\nis_awake = True\n\n# Code here\n\n",
+          "fr": "name = \"Zap\"\nxp, power, hp = 2000, 75, 100\nlevel = int(xp / 100)\nis_awake = True\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "name = \"Zap\"\nxp, power, hp = 2000, 75, 100\nlevel = int(xp / 100)\nis_awake = True\n\ncan_enter = level >= 15 and level <= 30 and power > 50 and is_awake\n\nprint(\"Zap can enter:\", can_enter)",
+            "fr": "name = \"Zap\"\nxp, power, hp = 2000, 75, 100\nlevel = int(xp / 100)\nis_awake = True\n\ncan_enter = level >= 15 and level <= 30 and power > 50 and is_awake\n\nprint(\"Zap peut entrer:\", can_enter)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_7_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison",
+        "operators",
+        "and",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Meet Pyrochu - The Fire Rival",
+      "fr": "Rencontre Pyrochu - Le rival de feu"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Meet Pyrochu! He is going to be Zap's opponent.",
+            "fr": "Rencontre Pyrochu ! C'est l'adversaire de Zap."
+          }
+        },
+        {
+          "type": "image",
+          "value": "fakemon_pyro"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Create Pyrochu's profile with these stats:\n- ```pyro_name``` = ```\"Pyrochu\"```\n- ```pyro_xp``` = ```1800```\n- ```pyro_power``` = ```70```\n- ```pyro_hp``` = ```120```\n- ```pyro_level``` by dividing ```pyro_xp``` by ```100``` and converting it to an integer\n- ```pyro_is_awake``` = ```True```",
+            "fr": "Crée le profil de Pyrochu avec ces stats :\n- ```pyro_name``` = ```\"Pyrochu\"```\n- ```pyro_xp``` = ```1800```\n- ```pyro_power``` = ```70```\n- ```pyro_hp``` = ```120```\n- ```pyro_level``` en divisant ```pyro_xp``` par ```100``` et en le convertissant en entier\n- ```pyro_is_awake``` = ```True```"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Then create ```pyro_can_enter``` to check if Pyrochu meets the arena laws:\n- level between 15-30\n- power > 50\n- is awake\n\nPrint Pyrochu's profile and whether it can enter the arena.",
+            "fr": "Puis crée ```pyro_can_enter``` pour vérifier si Pyrochu respecte les lois de l'arène :\n- niveau entre 15-30\n- puissance > 50\n- est réveillé\n\nAffiche le profil de Pyrochu et s'il peut entrer dans l'arène."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Code here\n\n",
+          "fr": "# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "pyro_name = \"Pyrochu\"\npyro_xp, pyro_power, pyro_hp = 1800, 70, 120\npyro_level = int(pyro_xp / 100)\npyro_is_awake = True\n\npyro_can_enter = pyro_level >= 15 and pyro_level <= 30 and pyro_power > 50 and pyro_is_awake\n\nprint(pyro_name, \"- Level:\", pyro_level, \"- Power:\", pyro_power, \"- HP:\", pyro_hp)\nprint(\"Can enter arena:\", pyro_can_enter)",
+            "fr": "pyro_name = \"Pyrochu\"\npyro_xp, pyro_power, pyro_hp = 1800, 70, 120\npyro_level = int(pyro_xp / 100)\npyro_is_awake = True\n\npyro_can_enter = pyro_level >= 15 and pyro_level <= 30 and pyro_power > 50 and pyro_is_awake\n\nprint(pyro_name, \"- Level:\", pyro_level, \"- Power:\", pyro_power, \"- HP:\", pyro_hp)\nprint(\"Peut entrer dans l'arène:\", pyro_can_enter)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_7_4",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison",
+        "operators",
+        "and",
+        "or"
+      ]
+    },
+    "title": {
+      "en": "The Battle - Advantage Analysis",
+      "fr": "Le combat - Analyse d'avantage"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The battle is about to begin! Let's analyze who has the advantage.",
+            "fr": "Le combat va commencer ! Analysons qui a l'avantage."
+          }
+        },
+        {
+          "type": "image",
+          "value": "fakemon_vs_zap_pyro"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Create boolean variables to compare the Codémons:\n- ```zap_stronger```: Is Zap's power greater than Pyrochu's?\n- ```zap_more_xp```: Is Zap's level greater than Pyrochu's?\n- ```zap_healthier```: Does Zap have more HP than Pyrochu?\n- ```zap_has_advantage```: Does Zap have the advantage? (He needs to be stronger AND (more experienced OR healthier))\n- Print all these comparison results.",
+            "fr": "Crée des variables booléennes pour comparer les Codémons :\n- ```zap_stronger``` : La puissance de Zap est-elle supérieure à celle de Pyrochu ?\n- ```zap_more_xp``` : Le niveau de Zap est-il supérieur à celui de Pyrochu ?\n- ```zap_healthier``` : Zap a-t-il plus de HP que Pyrochu ?\n- ```zap_has_advantage``` : Zap a-t-il l'avantage ? (Il doit être plus fort ET (plus expérimenté OU en meilleure santé))\n- Affiche tous ces résultats de comparaison."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "name, xp = \"Zap\", 2000\nlevel = int(xp / 100)\npower, hp = 75, 100\n\npyro_name, pyro_xp = \"Pyrochu\", 1800\npyro_level = int(pyro_xp / 100)\npyro_power, pyro_hp = 70, 120\n\n# Code here\n\n",
+          "fr": "name, xp = \"Zap\", 2000\nlevel = int(xp / 100)\npower, hp = 75, 100\n\npyro_name, pyro_xp = \"Pyrochu\", 1800\npyro_level = int(pyro_xp / 100)\npyro_power, pyro_hp = 70, 120\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "name = \"Zap\"\nxp, power, hp = 2000, 75, 100\nlevel = int(xp / 100)\n\npyro_name = \"Pyrochu\"\npyro_xp, pyro_power, pyro_hp = 1800, 70, 120\npyro_level = int(pyro_xp / 100)\n\nzap_stronger = power > pyro_power\nzap_more_xp = level > pyro_level\nzap_healthier = hp > pyro_hp\nzap_has_advantage = zap_stronger and (zap_more_xp or zap_healthier)\n\nprint(\"Zap is stronger:\", zap_stronger)\nprint(\"Zap is more experienced:\", zap_more_xp)\nprint(\"Zap is healthier:\", zap_healthier)\nprint(\"Zap has advantage:\", zap_has_advantage)",
+            "fr": "name = \"Zap\"\nxp, power, hp = 2000, 75, 100\nlevel = int(xp / 100)\n\npyro_name = \"Pyrochu\"\npyro_xp, pyro_power, pyro_hp = 1800, 70, 120\npyro_level = int(pyro_xp / 100)\n\nzap_stronger = power > pyro_power\nzap_more_xp = level > pyro_level\nzap_healthier = hp > pyro_hp\nzap_has_advantage = zap_stronger and (zap_more_xp or zap_healthier)\n\nprint(\"Zap est plus fort :\", zap_stronger)\nprint(\"Zap est plus expérimenté :\", zap_more_xp)\nprint(\"Zap est en meilleure santé :\", zap_healthier)\nprint(\"Zap a l'avantage :\", zap_has_advantage)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_4_7_5",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "boolean",
+        "comparison",
+        "operators",
+        "casting",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Victory Rewards & New Stats",
+      "fr": "Récompenses de victoire & nouvelles stats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The battle is over and Zap emerged victorious! Time to calculate the rewards.\n\nCreate the following variables:\n- ```xp_gained = 150```\n- Calculate ```new_xp``` which is zap current ```xp``` added to ```xp_gained```\n- Calculate the ```new_level``` by dividing ```new_xp``` by ```100``` and casting it to an integer\n- Print the results: XP gained, old level, new level, and a victory message.",
+            "fr": "Le combat est terminé et Zap en est sorti victorieux ! Il est temps de calculer les récompenses.\n\nCrée les variables suivantes :\n- ```xp_gained = 150```\n- Calcule ```new_xp``` qui est l'```xp``` actuel de Zap ajouté à ```xp_gained```\n- Calcule le ```new_level``` en divisant ```new_xp``` par ```100``` et en le convertissant en entier\n- Affiche les résultats : les XP gagnés, l'ancien niveau, le nouveau niveau, et un message de victoire."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "name = \"Zap\"\nxp, power = 2000, 75\nlevel = int(xp / 100)\n\n# Code here\n\n",
+          "fr": "name = \"Zap\"\nxp, power = 2000, 75\nlevel = int(xp / 100)\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "name = \"Zap\"\nxp, power = 2000, 75\nlevel = int(xp / 100)\n\nxp_gained = 150\nnew_xp = xp + xp_gained\nnew_level = int(new_xp / 100)\n\nprint(\"XP gained:\", xp_gained)\nprint(\"Old level:\", level)\nprint(\"New level:\", new_level)\nprint(name, \"wins the fight!\")",
+            "fr": "name = \"Zap\"\nxp, power = 2000, 75\nlevel = int(xp / 100)\n\nxp_gained = 150\nnew_xp = xp + xp_gained\nnew_level = int(new_xp / 100)\n\nprint(\"XP gagnés :\", xp_gained)\nprint(\"Ancien niveau :\", level)\nprint(\"Nouveau niveau :\", new_level)\nprint(name, \"gagne le combat !\")"
+          }
+        }
+      ]
+    }
+  }
+]

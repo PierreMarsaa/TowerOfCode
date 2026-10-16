@@ -1,0 +1,4858 @@
+[
+  {
+    "id": "python_12_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "introduction",
+        "DRY principle"
+      ]
+    },
+    "title": {
+      "en": "What are Functions?",
+      "fr": "Qu'est-ce qu'une fonction ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Imagine you're training multiple Codémon and need to display a welcome message for each one. Without functions, you'd have to write the same code over and over:",
+            "fr": "Imagine que tu entraînes plusieurs Codémon et que tu dois afficher un message de bienvenue pour chacun. Sans fonctions, tu devrais écrire le même code encore et encore :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "print(\"============================\")\nprint(\"Welcome to Codémon Training!\")\nprint(\"============================\")\nprint(\"Training Aquachu...\")\n\nprint(\"============================\")\nprint(\"Welcome to Codémon Training!\")\nprint(\"============================\")\nprint(\"Training Pyrochu...\")\n\nprint(\"============================\")\nprint(\"Welcome to Codémon Training!\")\nprint(\"============================\")\nprint(\"Training Florachu...\")"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This is repetitive and hard to maintain. What if you want to change the message? You'd have to update it in multiple places!\n\n***Functions*** solve this problem by letting you write code once and reuse it many times. This follows the ***DRY principle***: Don't Repeat Yourself.",
+            "fr": "C'est répétitif et difficile à maintenir. Et si tu veux changer le message ? Tu devrais le mettre à jour à plusieurs endroits !\n\nLes ***fonctions*** résolvent ce problème en te permettant d'écrire du code une fois et de le réutiliser plusieurs fois. Cela suit le principe ***DRY*** : Don't Repeat Yourself (Ne te répète pas)."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Why Functions Matter",
+              "fr": "Pourquoi les fonctions sont importantes"
+            },
+            "content": {
+              "en": "Functions help you:\n- Write less code\n- Make your code easier to read\n- Fix bugs in one place instead of many\n- Organize your code better",
+              "fr": "Les fonctions t'aident à :\n- Écrire moins de code\n- Rendre ton code plus facile à lire\n- Corriger les bugs à un seul endroit au lieu de plusieurs\n- Mieux organiser ton code"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "def keyword",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Creating Your First Function",
+      "fr": "Créer ta première fonction"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, we create functions using the ```def``` keyword (short for \"define\"). Here's the basic syntax:",
+            "fr": "En Python, on crée des fonctions en utilisant le mot-clé ```def``` (abréviation de \"define\", définir). Voici la syntaxe de base :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def function_name():\n    # Code to execute goes here\n    # This code is indented",
+            "fr": "def nom_de_fonction():\n    # Le code à exécuter va ici\n    # Ce code est indenté"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's break this down:\n- ```def``` tells Python we're creating a function\n- ```function_name``` is what we call our function (you choose this!)\n- ```()``` are parentheses (required, even if empty for now)\n- ```:``` marks the end of the function header\n- The code inside must be ***indented*** (usually 2 or 4 spaces)",
+            "fr": "Décomposons cela :\n- ```def``` indique à Python qu'on crée une fonction\n- ```function_name``` est le nom qu'on donne à notre fonction (tu le choisis !)\n- ```()``` sont des parenthèses (obligatoires, même si vides pour l'instant)\n- ```:``` marque la fin de l'en-tête de la fonction\n- Le code à l'intérieur doit être ***indenté*** (généralement 2 or 4 espaces)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's a real example:",
+            "fr": "Voici un exemple concret :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": "def show_welcome():\n    print(\"============================\")\n    print(\"Welcome to Codémon Training!\")\n    print(\"============================\")\n\n# To use the function, we \"call\" it:\nshow_welcome()"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how we:\n1. ***Define*** the function with ```def show_welcome():```\n2. ***Call*** the function with ```show_welcome()```\n\nThe function doesn't run until we call it!",
+            "fr": "Comme tu peux voir, on :\n1. ***Définit*** la fonction avec ```def show_welcome():```\n2. ***Appelle*** la fonction avec ```show_welcome()```\n\nLa fonction ne s'exécute pas tant qu'on ne l'appelle pas !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Common Mistakes",
+              "fr": "Erreurs courantes"
+            },
+            "content": {
+              "en": "- Forgetting the colon ```:``` after the function name\n- Not indenting the code inside the function\n- Forgetting the parentheses ```()``` when calling the function\n- Last but not least, forgetting to call the function!",
+              "fr": "- Oublier les deux-points ```:``` après le nom de la fonction\n- Ne pas indenter le code à l'intérieur de la fonction\n- Oublier les parenthèses ```()``` quand on appelle la fonction\n- Le plus important, oublier d'appeler la fonction !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_1_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Identifying Valid Function Syntax",
+      "fr": "Identifier une syntaxe de fonction valide"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following is the correct way to define a function in Python?",
+            "fr": "Laquelle des options suivantes est la bonne façon de définir une fonction en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "def greet_codemon():\n    print(\"Hello, Codémon!\")"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def greet_codemon()\nprint(\"Hello, Codémon!\")"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def greet_codemon:\n    print(\"Hello, Codémon!\")"
+          },
+          {
+            "type": "codeBlock",
+            "value": "function greet_codemon():\n    print(\"Hello, Codémon!\")"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: functions need the ```def``` keyword, parentheses ```()```, a colon ```:```, and indented code inside.",
+        "fr": "Rappelle-toi : les fonctions ont besoin du mot-clé ```def```, de parenthèses ```()```, de deux-points ```:```, et de code indenté à l'intérieur."
+      }
+    }
+  },
+  {
+    "id": "python_12_1_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "syntax",
+        "terminology"
+      ]
+    },
+    "title": {
+      "en": "Function Parts and Their Names",
+      "fr": "Parties d'une fonction et leurs noms"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each part of a function with its correct name:",
+            "fr": "Associe chaque partie d'une fonction à son nom correct :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```def```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Keyword to create a function",
+                "fr": "Mot-clé pour créer une fonction"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```show_message```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Function name",
+                "fr": "Nom de la fonction"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```()```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Parentheses (required after function name)",
+                "fr": "Parenthèses (obligatoires après le nom)"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```:```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Colon (marks end of function header)",
+                "fr": "Deux-points (marque la fin de l'en-tête)"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_1_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "def keyword",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Complete the Function Definition",
+      "fr": "Complète la définition de fonction"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to define a function that displays a training message:",
+            "fr": "Complète le code pour définir une fonction qui affiche un message d'entraînement :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}} train_codemon{{}}{{}}\n    print(\"Training your Codémon...\")\n    print(\"Great job!\")\ntrain_codemon()",
+        "options": [
+          "def",
+          "function",
+          ":",
+          ";",
+          "()"
+        ],
+        "correctAnswers": {
+          "1": "def",
+          "2": "()",
+          "3": ":"
+        }
+      },
+      "hint": {
+        "en": "Remember the basic syntax: ```def function_name():``` followed by indented code.",
+        "fr": "Rappelle-toi la syntaxe de base : ```def nom_fonction():``` suivi de code indenté."
+      }
+    }
+  },
+  {
+    "id": "python_12_1_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "calling functions"
+      ]
+    },
+    "title": {
+      "en": "Understanding Function Calls",
+      "fr": "Comprendre les appels de fonction"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you define a function in Python?",
+            "fr": "Que se passe-t-il quand tu définis une fonction en Python ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def say_hello():\n    print(\"Hello!\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing is printed - the function is just stored in memory",
+              "fr": "Rien n'est affiché - la fonction est juste stockée en mémoire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "\"Hello!\" is printed immediately",
+              "fr": "\"Hello!\" est affiché immédiatement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error occurs",
+              "fr": "Une erreur se produit"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The function runs automatically every time the program starts",
+              "fr": "La fonction s'exécute automatiquement à chaque démarrage du programme"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Defining a function doesn't run it. You need to call it with ```function_name()``` to execute the code inside.",
+        "fr": "Définir une fonction ne l'exécute pas. Tu dois l'appeler avec ```nom_fonction()``` pour exécuter le code à l'intérieur."
+      }
+    }
+  },
+  {
+    "id": "python_12_1_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "complete function"
+      ]
+    },
+    "title": {
+      "en": "Create a Complete Function",
+      "fr": "Créer une fonction complète"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this code to create and call a function that displays a Codémon's power level:",
+            "fr": "Complète ce code pour créer et appeler une fonction qui affiche le niveau de puissance d'un Codémon :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}} show_power(){{}}\n    print(\"Codémon power: 75\")\n\n# call the function\n{{}}",
+        "options": [
+          "def",
+          "function",
+          ":",
+          ";",
+          "show_power()",
+          "show_power",
+          "call show_power()"
+        ],
+        "correctAnswers": {
+          "1": "def",
+          "2": ":",
+          "3": "show_power()"
+        }
+      },
+      "hint": {
+        "en": "First define the function with ```def```, then call it using the function name with parentheses.",
+        "fr": "D'abord définis la fonction avec ```def```, puis appelle-la en utilisant le nom de la fonction avec des parenthèses."
+      }
+    }
+  },
+  {
+    "id": "python_12_1_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "calling",
+        "reusability"
+      ]
+    },
+    "title": {
+      "en": "Calling Functions Multiple Times",
+      "fr": "Appeler des fonctions plusieurs fois"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The real power of functions is that you can call them as many times as you want! Let's see this in action:",
+            "fr": "Le vrai pouvoir des fonctions c'est que tu peux les appeler autant de fois que tu veux ! Voyons ça en action :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": "def battle_cry():\n    print(\"⚡ Codémon, attack! ⚡\")\n\n# Call it three times\nbattle_cry()\nbattle_cry()\nbattle_cry()"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "See how we wrote the code once but used it three times? This is much better than copying and pasting the same code (especially with real code and big functions)!\n\nYou can call a function anywhere in your code after it's been defined, and as many times as you need.",
+            "fr": "Tu vois comment on a écrit le code une fois mais on l'a utilisé trois fois ? C'est bien mieux que de copier-coller le même code (surtout avec du vrai code et de grosses fonctions) !\n\nTu peux appeler une fonction n'importe où dans ton code après qu'elle ait été définie, et autant de fois que nécessaire."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "success",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Function Naming Convention",
+              "fr": "Convention de nommage des fonctions"
+            },
+            "content": {
+              "en": "Function names should:\n- Use lowercase letters\n- Use underscores between words (snake_case)\n- Be descriptive of what the function does\n- Examples: ```calculate_damage()```, ```heal_codemon()```, ```show_stats()```",
+              "fr": "Les noms de fonctions doivent :\n- Utiliser des lettres minuscules\n- Utiliser des underscores entre les mots (snake_case)\n- Être descriptifs de ce que fait la fonction\n- Exemples : ```calculate_damage()```, ```heal_codemon()```, ```show_stats()```"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_1_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "complete example"
+      ]
+    },
+    "title": {
+      "en": "Identify the Correct Code",
+      "fr": "Identifier le code correct"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which code correctly defines and calls a function that displays \"Codémon healed!\"?",
+            "fr": "Quel code définit et appelle correctement une fonction qui affiche \"Codémon soigné !\" ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "def heal():\n    print(\"Codémon healed!\")\n\nheal()"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def heal()\n    print(\"Codémon healed!\")\n\nheal()"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def heal():\nprint(\"Codémon healed!\")\n\nheal()"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def heal():\n    print(\"Codémon healed!\")\n\nheal"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Check for: colon after function definition, proper indentation, and parentheses when calling.",
+        "fr": "Vérifie : deux-points après la définition, indentation correcte, et parenthèses lors de l'appel."
+      }
+    }
+  },
+  {
+    "id": "python_12_1_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "debugging",
+        "fix errors"
+      ]
+    },
+    "title": {
+      "en": "Fix the Broken Function",
+      "fr": "Corriger la fonction cassée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "This code has several errors. Fix them to make the function work correctly:",
+            "fr": "Ce code a plusieurs erreurs. Corrige-les pour faire fonctionner la fonction correctement :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}} display_stats(){{}}\n   print(\"Name: Aquachu\")\n   print(\"Type: Water\")\n\n# Call the function\n{{}}",
+        "options": [
+          "def",
+          "function",
+          ":",
+          ";",
+          "display_stats()",
+          "display_stats"
+        ],
+        "correctAnswers": {
+          "1": "def",
+          "2": ":",
+          "3": "display_stats()"
+        }
+      },
+      "hint": {
+        "en": "Remember: ```def``` keyword, colon, proper indentation for both lines, and parentheses when calling.",
+        "fr": "Rappelle-toi : mot-clé ```def```, deux-points, indentation correcte pour les deux lignes, et parenthèses lors de l'appel."
+      }
+    }
+  },
+  {
+    "id": "python_12_1_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "def keyword",
+        "calling functions",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle Simulator",
+      "fr": "Simulateur de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a battle simulator using a function and a loop! Your tasks:\n\n1. Print \"=== Battle Started ===\"\n2. Define a function ```fight()``` that prints \"⚔️ Aquachu attacks!\"\n3. Use a loop to call ```fight()``` 5 times (simulate 5 attacks)\n4. Print \"=== Victory! ===\"",
+            "fr": "Crée un simulateur de combat en utilisant une fonction et une boucle ! Tes tâches :\n\n1. Afficher \"=== Combat commencé ===\"\n2. Définir une fonction ```fight()``` qui affiche \"⚔️ Aquachu attaque !\"\n3. Utiliser une boucle pour appeler ```fight()``` 5 fois (simuler 5 attaques)\n4. Afficher \"=== Victoire ! ===\""
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# 1. Print battle start message\n\n# 2. Define fight() function\n\n# 3. Loop 5 times and call fight() each time\n\n# 4. Print victory message\n",
+          "fr": "# 1. Afficher le message de début\n\n# 2. Définir la fonction fight()\n\n# 3. Boucler 5 fois et appeler fight() à chaque fois\n\n# 4. Afficher le message de victoire\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# 1. Print battle start message\nprint(\"=== Battle Started ===\")\n\n# 2. Define fight() function\ndef fight():\n    print(\"⚔️ Aquachu attacks!\")\n\n# 3. Loop 5 times and call fight() each time\nfor i in range(5):\n    fight()\n\n# 4. Print victory message\nprint(\"=== Victory! ===\")",
+            "fr": "# 1. Afficher le message de début\nprint(\"=== Combat commencé ===\")\n\n# 2. Définir la fonction fight()\ndef fight():\n    print(\"⚔️ Aquachu attaque !\")\n\n# 3. Boucler 5 fois et appeler fight() à chaque fois\nfor i in range(5):\n    fight()\n\n# 4. Afficher le message de victoire\nprint(\"=== Victoire ! ===\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "arguments"
+      ]
+    },
+    "title": {
+      "en": "Parameters vs Arguments",
+      "fr": "Paramètres vs Arguments"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "So far, our functions have been simple - they always do exactly the same thing every time we call them. But what if we want a function that can work with different values?\n\n***Parameters*** are how functions ask for information when they're called. Think of them as questions the function needs answered before it can do its job. For example, a ```greet_codemon()``` function needs to know which Codémon to greet! Here is an example:",
+            "fr": "Jusqu'à présent, nos fonctions étaient simples - elles faisaient toujours la même chose, à chaque appel. Mais que faire si on veut une fonction qui peut s'adapter en fonctions de différentes valeurs ?\n\nLes ***paramètres*** peuvent nous aider à régler ce problème. Ce sont comme des variables vides qui sont attendus par la fonction pour faire son travail. Par exemple, une fonction ```greet_codemon()``` doit savoir quel Codémon saluer, et donc, a besoin de son nom ! Voici un exemple :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def greet_codemon(codemon_name):\n    print(f\"Hello, {codemon_name}!\")\n\ngreet_codemon(\"Aquachu\")\ngreet_codemon(\"Pyrochu\")",
+            "fr": "def greet_codemon(codemon_name):\n    print(f\"Bonjour, {codemon_name} !\")\n\ngreet_codemon(\"Aquachu\")\ngreet_codemon(\"Pyrochu\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As you can see, the function ```greet_codemon()``` has a parameter called ```codemon_name```. When we call the function, we provide different values for that parameter: first \"Aquachu\", then \"Pyrochu\". The function uses those arguments to customize its behavior.",
+            "fr": "Comme tu peux le voir, la fonction ```greet_codemon()``` a un paramètre appelé ```codemon_name```. Quand nous appelons la fonction, nous fournissons différentes valeurs pour ce paramètre : d'abord \"Aquachu\", puis \"Pyrochu\". La fonction utilise ces arguments pour personnaliser son comportement."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "arguments"
+      ]
+    },
+    "title": {
+      "en": "Parameters vs Arguments",
+      "fr": "Paramètres vs Arguments"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Actually, I lied to you a little bit. It's not just parameters, it's parameters and arguments!",
+            "fr": "En fait, je t'ai dit un petit mensonge. Il n'y a pas juste des paramètres, il y a des paramètres et des arguments !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- ***Parameters*** are the variables listed in the function definition\n- ***Arguments*** are the actual values you pass when calling the function\n\nSo yeah, it's basically the same thing, but with different names depending on whether you're defining the function or calling it.",
+            "fr": "- Les ***paramètres*** sont les variables listées dans la définition de la fonction\n- Les ***arguments*** sont les valeurs réelles que tu passes lors de l'appel de la fonction\n\nC'est plus ou moins la même chose, mais avec des noms différents selon que tu définis la fonction ou que tu l'appelles."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# 'codemon_name' is a PARAMETER\ndef greet_codemon(codemon_name):\n    print(f\"Hello, {codemon_name}!\")\n\n# 'Aquachu' is an ARGUMENT\ngreet_codemon(\"Aquachu\")\n\n# 'Pyrochu' is also an ARGUMENT\ngreet_codemon(\"Pyrochu\")",
+            "fr": "# 'codemon_name' est un PARAMÈTRE\ndef greet_codemon(codemon_name):\n    print(f\"Bonjour, {codemon_name} !\")\n\n# 'Aquachu' est un ARGUMENT\ngreet_codemon(\"Aquachu\")\n\n# 'Pyrochu' est aussi un ARGUMENT\ngreet_codemon(\"Pyrochu\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Think of parameters as empty variables waiting to get a value assigned. Arguments are the actual values you assign to those parameters when you call the function.",
+            "fr": "Pense aux paramètres comme des espaces réservés ou des variables qui recevront des valeurs. Les arguments sont les valeurs réelles que tu fournis pour remplir ces espaces réservés lorsque tu appelles la fonction."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_2_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "arguments"
+      ]
+    },
+    "title": {
+      "en": "Identify Parameters and Arguments",
+      "fr": "Identifier les paramètres et arguments"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Look at this code:",
+            "fr": "Regarde ce code :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def train_codemon(codemon, hours):\n    print(f\"{codemon} trained for {hours} hours\")\n\ntrain_codemon(\"Florachu\", 3)"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What are the parameters in this code?",
+            "fr": "Quels sont les paramètres dans ce code ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```codemon``` and ```hours```",
+              "fr": "```codemon``` et ```hours```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```\"Florachu\"``` and ```3```",
+              "fr": "```\"Florachu\"``` et ```3```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```train_codemon```",
+              "fr": "```train_codemon```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```codemon```, ```hours```, ```\"Florachu\"```, and ```3```",
+              "fr": "```codemon```, ```hours```, ```\"Florachu\"``` et ```3```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: parameters are the variables in the function definition (the ```def``` line), not the values passed when calling the function.",
+        "fr": "Rappelle-toi : les paramètres sont les variables dans la définition de la fonction (la ligne ```def```), pas les valeurs passées lors de l'appel de la fonction."
+      }
+    }
+  },
+  {
+    "id": "python_12_2_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters"
+      ]
+    },
+    "title": {
+      "en": "Create a Function with a Parameter",
+      "fr": "Créer une fonction avec un paramètre"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the function definition and function call to calculate a Codémon's power after leveling up. The function should take the current level as a parameter and print the new power (level * 10).",
+            "fr": "Complète la définition de la fonction et l'appel de fonction pour calculer la puissance d'un Codémon après avoir monté de niveau. La fonction doit prendre le niveau actuel comme paramètre et afficher la nouvelle puissance (niveau * 10)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def calculate_power({{}}):\n    power = {{}} * 10\n    print(f\"Power: {power}\")\n\n# Call the function with level 5\ncalculate_power({{}})",
+        "options": [
+          "level",
+          "level",
+          "5",
+          "power"
+        ],
+        "correctAnswers": {
+          "1": "level",
+          "2": "level",
+          "3": "5"
+        }
+      },
+      "hint": {
+        "en": "Think about what variable name makes sense for the parameter, and how to use that parameter inside the function. Then pass the correct value when calling.",
+        "fr": "Réfléchis au nom de variable qui a du sens pour le paramètre, et comment utiliser ce paramètre à l'intérieur de la fonction. Puis passe la bonne valeur lors de l'appel."
+      }
+    }
+  },
+  {
+    "id": "python_12_2_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "multiple parameters"
+      ]
+    },
+    "title": {
+      "en": "Functions with Multiple Parameters",
+      "fr": "Fonctions avec plusieurs paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Functions can have multiple parameters separated by commas. When you call the function, you need to provide arguments in the same order as the parameters are defined.",
+            "fr": "Les fonctions peuvent avoir plusieurs paramètres séparés par des virgules. Lorsque tu appelles la fonction, tu dois fournir les arguments dans le même ordre que les paramètres sont définis."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def battle(attacker, defender, damage):\n    print(f\"{attacker} attacks {defender}!\")\n    print(f\"{defender} takes {damage} damage!\")\n\n# The order of arguments must match the order of parameters\nbattle(\"Aquachu\", \"Pyrochu\", 25)\nprint(\"---\")\nbattle(\"Florachu\", \"Aquachu\", 30)",
+            "fr": "def battle(attacker, defender, damage):\n    print(f\"{attacker} attaque {defender} !\")\n    print(f\"{defender} prend {damage} points de dégâts !\")\n\n# L'ordre des arguments doit correspondre à l'ordre des paramètres\nbattle(\"Aquachu\", \"Pyrochu\", 25)\nprint(\"---\")\nbattle(\"Florachu\", \"Aquachu\", 30)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The order is crucial! If you pass ```battle(25, \"Aquachu\", \"Pyrochu\")```, Python will assign:\n- ```attacker = 25``` (wrong!)\n- ```defender = \"Aquachu\"``` (wrong!)\n- ```damage = \"Pyrochu\"``` (wrong!)",
+            "fr": "L'ordre est crucial ! Si tu passes ```battle(25, \"Aquachu\", \"Pyrochu\")```, Python assignera :\n- ```attacker = 25``` (faux !)\n- ```defender = \"Aquachu\"``` (faux !)\n- ```damage = \"Pyrochu\"``` (faux !)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_2_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "multiple parameters"
+      ]
+    },
+    "title": {
+      "en": "Create a Function with Multiple Parameters",
+      "fr": "Créer une fonction avec plusieurs paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the function that displays information about a Codémon. It should have three parameters: name, type, and level.",
+            "fr": "Complète la fonction qui affiche des informations sur un Codémon. Elle doit avoir trois paramètres : nom (name), type et niveau (level)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def display_codemon({{}}, {{}}, {{}}):\n    print(f\"Name: {name}\")\n    print(f\"Type: {type}\")\n    print(f\"Level: {level}\")\n\n# Call with appropriate arguments\ndisplay_codemon({{}}, {{}}, {{}})",
+        "options": [
+          "name",
+          "type",
+          "level",
+          "\"Aquachu\"",
+          "\"water\"",
+          "15"
+        ],
+        "correctAnswers": {
+          "1": "name",
+          "2": "type",
+          "3": "level",
+          "4": "\"Aquachu\"",
+          "5": "\"water\"",
+          "6": "15"
+        }
+      },
+      "hint": {
+        "en": "Define the three parameters in the order that makes sense (name, type, level), then pass arguments in that same order when calling the function.",
+        "fr": "Définis les trois paramètres dans l'ordre qui a du sens (nom, type, niveau), puis passe les arguments dans ce même ordre lors de l'appel de la fonction."
+      }
+    }
+  },
+  {
+    "id": "python_12_2_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "arguments",
+        "order"
+      ]
+    },
+    "title": {
+      "en": "Understanding Argument Order",
+      "fr": "Comprendre l'ordre des arguments"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given this function definition:",
+            "fr": "Étant donné cette définition de fonction :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def evolve_codemon(name, level, new_name):\n    print(f\"{name} at level {level} evolves into {new_name}!\")"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which function call is correct?",
+            "fr": "Quel appel de fonction est correct ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```evolve_codemon(\"Aquachu\", 20, \"Aquaking\")```"
+          },
+          {
+            "type": "text",
+            "value": "```evolve_codemon(20, \"Aquachu\", \"Aquaking\")```"
+          },
+          {
+            "type": "text",
+            "value": "```evolve_codemon(\"Aquaking\", \"Aquachu\", 20)```"
+          },
+          {
+            "type": "text",
+            "value": "```evolve_codemon(\"Aquachu\", \"Aquaking\", 20)```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Look at the parameter order in the function definition: name first, then level, then new_name. Your arguments must follow the same order.",
+        "fr": "Regarde l'ordre des paramètres dans la définition de la fonction : nom d'abord, puis niveau, puis nouveau nom. Tes arguments doivent suivre le même ordre."
+      }
+    }
+  },
+  {
+    "id": "python_12_2_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "arguments"
+      ]
+    },
+    "title": {
+      "en": "Match Function Concepts",
+      "fr": "Associer les concepts de fonction"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each term with its correct description:",
+            "fr": "Associe chaque terme à sa description correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Parameter",
+                "fr": "Paramètre"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Variable in function definition",
+                "fr": "Variable dans la définition de la fonction"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Argument",
+                "fr": "Argument"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Actual value passed when calling",
+                "fr": "Valeur réelle passée lors de l'appel"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Positional argument",
+                "fr": "Argument positionnel"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Argument matched by position/order",
+                "fr": "Argument associé par position/ordre"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Function call",
+                "fr": "Appel de fonction"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Using the function with arguments",
+                "fr": "Utiliser la fonction avec des arguments"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_2_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "default parameters",
+        "optional parameters"
+      ]
+    },
+    "title": {
+      "en": "Default Parameter Values",
+      "fr": "Valeurs par défaut des paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Sometimes you want a parameter to have a default value that's used if no argument is provided. You can do this by assigning a value to the parameter in the function definition.",
+            "fr": "Parfois, tu veux qu'un paramètre ait une valeur par défaut qui est utilisée si aucun argument n'est fourni. Tu peux faire cela en assignant une valeur au paramètre dans la définition de la fonction."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def create_codemon(name, type, level=1):\n    print(f\"Created {name}!\")\n    print(f\"Type: {type}, Level: {level}\")\n\ncreate_codemon(\"Aquachu\", \"water\")\nprint(\"---\")\ncreate_codemon(\"Pyrochu\", \"fire\", 1)",
+            "fr": "def create_codemon(name, type, level=1):\n    print(f\"Création de {name} !\")\n    print(f\"Type : {type}, Niveau : {level}\")\n\ncreate_codemon(\"Aquachu\", \"eau\")\nprint(\"---\")\ncreate_codemon(\"Pyrochu\", \"feu\", 1)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If you look at the example above and run it, you'll see that we call the function twice. The first time, we only provide the name and type, so the level defaults to 1. The second time, we provide all three arguments, so level is set to 1 explicitly. Technically we didn't need to provide level in the second call since it's already 1 by default, but I did it to show you it was the same.",
+            "fr": "Si tu regardes l'exemple ci-dessus et que tu l'exécutes, tu verras que nous appelons la fonction deux fois. La première fois, nous ne fournissons que le nom et le type, donc le niveau par défaut est 1. La deuxième fois, nous fournissons les trois arguments, donc le niveau est explicitement défini sur 1. Techniquement, nous n'avions pas besoin de fournir le niveau dans le deuxième appel puisque c'est déjà 1 par défaut, mais je l'ai fait pour te montrer que c'était la même chose."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Key points about default parameters:\n- Parameters with defaults are ***optional*** - you can omit them when calling\n- Parameters without defaults are ***required*** - you must provide them\n- Default parameters must come ***after*** required parameters",
+            "fr": "Points clés sur les paramètres par défaut :\n- Les paramètres avec des valeurs par défaut sont ***optionnels*** - tu peux les omettre lors de l'appel\n- Les paramètres sans valeurs par défaut sont ***obligatoires*** - tu dois les fournir\n- Les paramètres par défaut doivent venir ***après*** les paramètres obligatoires"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Common Use Cases",
+              "fr": "Cas d'utilisation courants"
+            },
+            "content": {
+              "en": "Default parameters are great for:\n- Configuration options\n- Optional features\n- Common default values\n\nFor example, most Codémon start at level 1, so making it a default makes sense!",
+              "fr": "Les paramètres par défaut sont parfaits pour :\n- Les options de configuration\n- Les fonctionnalités optionnelles\n- Les valeurs par défaut courantes\n\nPar exemple, la plupart des Codémon commencent au niveau 1, donc en faire une valeur par défaut a du sens !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_2_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "default parameters"
+      ]
+    },
+    "title": {
+      "en": "Create a Function with Default Parameters",
+      "fr": "Créer une fonction avec des paramètres par défaut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the function that heals a Codémon. The ```potion_type``` parameter should default to ```\"basic\"```. If the potion is ```\"super\"```, heal 50 HP, otherwise heal 30 HP.",
+            "fr": "Complète la fonction qui soigne un Codémon. Le paramètre ```potion_type``` doit avoir ```\"basic\"``` par défaut. Si la potion est ```\"super\"```, soigne 50 HP, sinon soigne 30 HP."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def heal_codemon(name, potion_type{{}}):\n  if potion_type {{}} \"super\":\n    hp = {{}}\n  else:\n    hp = 30\n  print(f\"Healing {name} with {potion_type} potion: {hp} HP\")\n\n# Call with default potion_type (basic)\nheal_codemon({{}})\n\n# Call with super potion  \nheal_codemon(\"Pyrochu\", \"super\")",
+        "options": [
+          "=\"basic\"",
+          "==\"basic\"",
+          "==",
+          "50",
+          "30",
+          "\"Aquachu\"",
+          "Aquachu",
+          "=\"super\""
+        ],
+        "correctAnswers": {
+          "1": "=\"basic\"",
+          "2": "==",
+          "3": "50",
+          "4": "\"Aquachu\""
+        }
+      },
+      "hint": {
+        "en": "Remember: use ```=``` for default values in function definition, and ```==``` to compare values in conditions.",
+        "fr": "Rappelle-toi : utilise ```=``` pour les valeurs par défaut dans la définition de fonction, et ```==``` pour comparer des valeurs dans les conditions."
+      }
+    }
+  },
+  {
+    "id": "python_12_2_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "default parameters"
+      ]
+    },
+    "title": {
+      "en": "When Are Default Values Used?",
+      "fr": "Quand les valeurs par défaut sont-elles utilisées ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Look at this function:",
+            "fr": "Regarde cette fonction :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def catch_codemon(name, ball_type=\"codeball\", difficulty=5):\n    print(f\"Trying to catch {name}\")\n    print(f\"Using {ball_type}, difficulty: {difficulty}\")\n\ncatch_codemon(\"Florachu\", \"ultraball\")"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the value of ```difficulty``` in this function call?",
+            "fr": "Quelle sera la valeur de ```difficulty``` dans cet appel de fonction ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```5``` (the default value)"
+          },
+          {
+            "type": "text",
+            "value": "```\"ultraball\"```"
+          },
+          {
+            "type": "text",
+            "value": "```None```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "An error will occur",
+              "fr": "Une erreur se produira"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "When you don't provide an argument for a parameter with a default value, Python uses that default. Here, only 2 arguments are provided, so the third parameter uses its default value of 5.",
+        "fr": "Lorsque tu ne fournis pas d'argument pour un paramètre avec une valeur par défaut, Python utilise cette valeur par défaut. Ici, seulement 2 arguments sont fournis, donc le troisième paramètre utilise sa valeur par défaut de 5."
+      }
+    }
+  },
+  {
+    "id": "python_12_2_12",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "best practices"
+      ]
+    },
+    "title": {
+      "en": "Best Practices for Parameters",
+      "fr": "Bonnes pratiques pour les paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Here are some important guidelines to follow when working with parameters:",
+            "fr": "Voici quelques lignes directrices importantes à suivre lorsque tu travailles avec des paramètres :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***1. Use descriptive parameter names***\n- Good: ```def calculate_damage(attacker_power, defender_defense)```\n- Bad: ```def calculate_damage(x, y)```",
+            "fr": "***1. Utilise des noms de paramètres descriptifs***\n- Bien : ```def calculate_damage(attacker_power, defender_defense)```\n- Mal : ```def calculate_damage(x, y)```"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***2. Order parameters logically***\n- Required parameters first\n- Optional parameters (with defaults) after\n- Most important parameters at the beginning",
+            "fr": "***2. Ordonne les paramètres logiquement***\n- Les paramètres obligatoires d'abord\n- Les paramètres optionnels (avec valeurs par défaut) après\n- Les paramètres les plus importants au début"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***3. Don't use too many parameters***\n- If a function needs more than 3-4 parameters, consider if it's doing too much\n- Maybe split it into smaller functions",
+            "fr": "***3. N'utilise pas trop de paramètres***\n- Si une fonction a besoin de plus de 3-4 paramètres, demande-toi si elle fait trop de choses\n- Peut-être la diviser en fonctions plus petites"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Good example: clear, ordered parameters\ndef train_codemon(name, training_type, duration=1, boost=False):\n  result = f\"{name} trained in {training_type}\"\n  if boost:\n    result += \" with XP boost\"\n  result += f\" for {duration} hour(s)\"\n  print(result)\n\ntrain_codemon(\"Aquachu\", \"battle\")\ntrain_codemon(\"Pyrochu\", \"defense\", 2, True)",
+            "fr": "# Bon exemple : paramètres clairs et ordonnés\ndef train_codemon(name, training_type, duration=1, boost=False):\n  result = f\"{name} s'est entraîné en {training_type}\"\n  if boost:\n    result += \" avec bonus XP\"\n  result += f\" pendant {duration} heure(s)\"\n  print(result)\n\ntrain_codemon(\"Aquachu\", \"combat\")\ntrain_codemon(\"Pyrochu\", \"défense\", 2, True)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Remember",
+              "fr": "À retenir"
+            },
+            "content": {
+              "en": "Good parameter design makes your functions:\n- Easier to understand\n- Easier to use correctly\n- Easier to maintain and modify later\n\nTake time to think about your parameters!",
+              "fr": "Une bonne conception des paramètres rend tes fonctions :\n- Plus faciles à comprendre\n- Plus faciles à utiliser correctement\n- Plus faciles à maintenir et à modifier plus tard\n\nPrends le temps de réfléchir à tes paramètres !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_2_13",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "arguments",
+        "default parameters",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Codémon Stats Display",
+      "fr": "Affichage des stats Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a function to display Codémon battle statistics! Your tasks:\n\n1. Define a function ```show_stats()``` with these parameters:\n   - ```name``` (required)\n   - ```type``` (required)\n   - ```level``` (optional, default = 1)\n   - ```hp``` (optional, default = 100)\n\n2. The function should print all the stats in a formatted way\n\n3. Call the function 3 times:\n   - With only required parameters (Aquachu, water)\n   - With required + level (Pyrochu, fire, level 5)\n   - With all parameters (Florachu, plant, level 10, hp 150)",
+            "fr": "Crée une fonction pour afficher les statistiques de combat d'un Codémon ! Tes tâches :\n\n1. Définir une fonction ```show_stats()``` avec ces paramètres :\n   - ```name``` (obligatoire)\n   - ```type``` (obligatoire)\n   - ```level``` (optionnel, par défaut = 1)\n   - ```hp``` (optionnel, par défaut = 100)\n\n2. La fonction doit afficher toutes les stats de façon formatée\n\n3. Appeler la fonction 3 fois :\n   - Avec seulement les paramètres obligatoires (Aquachu, eau)\n   - Avec obligatoires + level (Pyrochu, feu, niveau 5)\n   - Avec tous les paramètres (Florachu, plante, niveau 10, hp 150)"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# 1. Define show_stats() with required and optional parameters\n\n# 2. Inside the function, print the stats\n\n# 3. Call with only required parameters\n\n# 4. Call with required + level\n\n# 5. Call with all parameters\n",
+          "fr": "# 1. Définir show_stats() avec paramètres obligatoires et optionnels\n\n# 2. Dans la fonction, afficher les stats\n\n# 3. Appeler avec seulement les paramètres obligatoires\n\n# 4. Appeler avec obligatoires + level\n\n# 5. Appeler avec tous les paramètres\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# 1 & 2. Define show_stats() with parameters and print stats\ndef show_stats(name, type, level=1, hp=100):\n    print(f\"=== {name} ===\")\n    print(f\"Type: {type}\")\n    print(f\"Level: {level}\")\n    print(f\"HP: {hp}\")\n\n# 3. Call with only required parameters\nshow_stats(\"Aquachu\", \"water\")\n\n# 4. Call with required + level\nshow_stats(\"Pyrochu\", \"fire\", 5)\n\n# 5. Call with all parameters\nshow_stats(\"Florachu\", \"plant\", 10, 150)",
+            "fr": "# 1 & 2. Définir show_stats() avec paramètres et afficher stats\ndef show_stats(name, type, level=1, hp=100):\n    print(f\"=== {name} ===\")\n    print(f\"Type : {type}\")\n    print(f\"Niveau : {level}\")\n    print(f\"HP : {hp}\")\n\n# 3. Appeler avec seulement les paramètres obligatoires\nshow_stats(\"Aquachu\", \"eau\")\n\n# 4. Appeler avec obligatoires + level\nshow_stats(\"Pyrochu\", \"feu\", 5)\n\n# 5. Appeler avec tous les paramètres\nshow_stats(\"Florachu\", \"plante\", 10, 150)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "return values"
+      ]
+    },
+    "title": {
+      "en": "Introduction to the return Statement",
+      "fr": "Introduction à l'instruction return"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "So far, we've seen functions that perform actions (like printing), but functions can also ***give back*** a value to the code that called them. This is done using the ```return``` keyword.",
+            "fr": "Jusqu'à présent, nous avons vu des fonctions qui effectuent des actions (comme afficher du texte), mais les fonctions peuvent aussi ***renvoyer*** une valeur au code qui les a appelées. Cela se fait en utilisant le mot-clé ```return```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Think of a function like a calculator: you give it numbers (parameters), it does calculations, and then it ***returns*** the result to you.",
+            "fr": "Imagine une fonction comme une calculatrice : tu lui donnes des nombres (paramètres), elle fait des calculs, puis elle te ***renvoie*** le résultat."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def calculate_power(base_power, level):\n    total_power = base_power + (level * 2)\n    return total_power\n\n# When we call this function, it returns a value\ncodemon_power = calculate_power(50, 10)\nprint(\"Codémon power:\", codemon_power)",
+            "fr": "def calculer_puissance(puissance_base, niveau):\n    puissance_totale = puissance_base + (niveau * 2)\n    return puissance_totale\n\n# Quand on appelle cette fonction, elle renvoie une valeur\npuissance_codemon = calculer_puissance(50, 10)\nprint(\"Puissance du Codémon:\", puissance_codemon)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example:\n1. The function calculates the total power\n2. ```return``` sends that value back to where the function was called\n3. We store the returned value in the ```codemon_power``` variable\n4. We can then use that value however we want",
+            "fr": "Dans cet exemple :\n1. La fonction calcule la puissance totale\n2. ```return``` renvoie cette valeur à l'endroit où la fonction a été appelée\n3. On stocke la valeur renvoyée dans la variable ```puissance_codemon```\n4. On peut ensuite utiliser cette valeur comme on le souhaite"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Function Execution Stops at return",
+              "fr": "L'exécution s'arrête à return"
+            },
+            "content": {
+              "en": "When Python encounters a ```return``` statement, it immediately exits the function. Any code written after ```return``` will not be executed!",
+              "fr": "Quand Python rencontre une instruction ```return```, il sort immédiatement de la fonction. Tout code écrit après ```return``` ne sera pas exécuté !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_3_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "execution flow"
+      ]
+    },
+    "title": {
+      "en": "What Happens After return?",
+      "fr": "Que se passe-t-il après return ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this function return when called with ```check_type('fire')```?",
+            "fr": "Que renverra cette fonction quand elle est appelée avec ```check_type('fire')``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def check_type(codemon_type):\n  if codemon_type == 'water':\n    return 'Strong against fire'\n  return 'Not water type'\n  print('This line will never execute')",
+            "fr": "def check_type(type_codemon):\n  if type_codemon == 'water':\n    return 'Fort contre le feu'\n  return 'Pas de type eau'\n  print('Cette ligne ne s\\'exécutera jamais')"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```'Not water type'```",
+              "fr": "```'Pas de type eau'```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```'Strong against fire'```",
+              "fr": "```'Fort contre le feu'```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```'This line will never execute'```",
+              "fr": "```'Cette ligne ne s\\'exécutera jamais'```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The function will cause an error",
+              "fr": "La fonction causera une erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The function checks the condition, and since the type is 'fire' (not 'water'), it skips the first return and executes the second return statement.",
+        "fr": "La fonction vérifie la condition, et comme le type est 'fire' (pas 'water'), elle saute le premier return et exécute le deuxième return."
+      }
+    }
+  },
+  {
+    "id": "python_12_3_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "using return values"
+      ]
+    },
+    "title": {
+      "en": "Using Return Values",
+      "fr": "Utiliser les valeurs de retour"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Once a function returns a value, you can use it in several ways:",
+            "fr": "Une fois qu'une fonction renvoie une valeur, tu peux l'utiliser de plusieurs façons :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Method 1: Store in a variable***",
+            "fr": "***Méthode 1 : Stocker dans une variable***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def get_codemon_level():\n    return 25\n\nlevel = get_codemon_level()\nprint(\"Level stored:\", level)",
+            "fr": "def obtenir_niveau_codemon():\n    return 25\n\nniveau = obtenir_niveau_codemon()\nprint(\"Niveau stocké:\", niveau)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Method 2: Use directly in an expression***",
+            "fr": "***Méthode 2 : Utiliser directement dans une expression***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def get_codemon_level():\n    return 25\n\nnext_level = get_codemon_level() + 1\nprint(\"Next level:\", next_level)",
+            "fr": "def obtenir_niveau_codemon():\n    return 25\n\nniveau_suivant = obtenir_niveau_codemon() + 1\nprint(\"Niveau suivant:\", niveau_suivant)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Method 3: Use directly in a condition***",
+            "fr": "***Méthode 3 : Utiliser directement dans une condition***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def get_codemon_level():\n    return 25\n\nif get_codemon_level() > 20:\n    print(\"Strong Codémon!\")",
+            "fr": "def obtenir_niveau_codemon():\n    return 25\n\nif obtenir_niveau_codemon() > 20:\n    print(\"Codémon puissant!\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can even use the return value of one function as an argument for another function!",
+            "fr": "Tu peux même utiliser la valeur de retour d'une fonction comme argument pour une autre fonction !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def get_base_power():\n    return 50\n\ndef calculate_damage(power):\n    return power * 2\n\ntotal_damage = calculate_damage(get_base_power())\nprint(\"Total damage:\", total_damage)",
+            "fr": "def obtenir_puissance_base():\n    return 50\n\ndef calculer_degats(puissance):\n    return puissance * 2\n\ndegats_totaux = calculer_degats(obtenir_puissance_base())\nprint(\"Dégâts totaux:\", degats_totaux)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_3_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Complete the Return Statement",
+      "fr": "Complète l'instruction return"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the function so it returns the result of adding the Codémon's base power and bonus power.",
+            "fr": "Complète la fonction pour qu'elle renvoie le résultat de l'addition de la puissance de base du Codémon et de la puissance bonus."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def calculate_total_power(base_power, bonus_power):\n    total = base_power + bonus_power\n    {{}} {{}}\n\n# Test the function\nresult = calculate_total_power(50, 25)\nprint(result)",
+        "options": [
+          "return",
+          "total",
+          "print",
+          "base_power",
+          "bonus_power",
+          "result"
+        ],
+        "correctAnswers": {
+          "1": "return",
+          "2": "total"
+        }
+      },
+      "hint": {
+        "en": "Think about which keyword sends a value back from a function, and what value you want to send back.",
+        "fr": "Réfléchis au mot-clé qui renvoie une valeur depuis une fonction, et à quelle valeur tu veux renvoyer."
+      }
+    }
+  },
+  {
+    "id": "python_12_3_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "print",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Return vs Print",
+      "fr": "Return vs Print"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A very common confusion for beginners: ```return``` and ```print()``` are NOT the same thing!",
+            "fr": "Une confusion très courante pour les débutants : ```return``` et ```print()``` ne sont PAS la même chose !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- ```print()``` displays something on the screen for humans to see\n- ```return``` sends a value back to the code for the program to use",
+            "fr": "- ```print()``` affiche quelque chose à l'écran pour que les humains le voient\n- ```return``` renvoie une valeur au code pour que le programme l'utilise"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Function with print() - displays but returns nothing:***",
+            "fr": "***Fonction avec print() - affiche mais ne renvoie rien :***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def greet_with_print(name):\n    print(f\"Hello {name}!\")\n    # This function returns None by default\n\nresult = greet_with_print(\"Aquachu\")\nprint(\"Result stored in variable:\", result)  # Will show None",
+            "fr": "def saluer_avec_print(nom):\n    print(f\"Bonjour {nom} !\")\n    # Cette fonction renvoie None par défaut\n\nresultat = saluer_avec_print(\"Aquachu\")\nprint(\"Résultat stocké dans la variable:\", resultat)  # Affichera None"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Function with return - sends back a value:***",
+            "fr": "***Fonction avec return - renvoie une valeur :***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def greet_with_return(name):\n    return f\"Hello {name}!\"\n\nresult = greet_with_return(\"Pyrochu\")\nprint(\"Result stored in variable:\", result)  # Will show the greeting",
+            "fr": "def saluer_avec_return(nom):\n    return f\"Bonjour {nom} !\"\n\nresultat = saluer_avec_return(\"Pyrochu\")\nprint(\"Résultat stocké dans la variable:\", resultat)  # Affichera le message"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to Use Which?",
+              "fr": "Quand utiliser quoi ?"
+            },
+            "content": {
+              "en": "Use ```return``` when you want the function to give back a value that your program will use later. Use ```print()``` only when you want to display information to the user.",
+              "fr": "Utilise ```return``` quand tu veux que la fonction renvoie une valeur que ton programme utilisera plus tard. Utilise ```print()``` seulement quand tu veux afficher une information à l'utilisateur."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_3_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "print"
+      ]
+    },
+    "title": {
+      "en": "Return or Print?",
+      "fr": "Return ou Print ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which function correctly returns a value that can be used in a calculation?",
+            "fr": "Quelle fonction renvoie correctement une valeur qui peut être utilisée dans un calcul ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "def get_power():\n    return 100"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def get_power():\n    print(100)"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def get_power():\n    power = 100"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def get_power():\n    100"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about which statement actually sends a value back from the function so it can be stored or used in calculations.",
+        "fr": "Réfléchis à quelle instruction renvoie réellement une valeur depuis la fonction pour qu'elle puisse être stockée ou utilisée dans des calculs."
+      }
+    }
+  },
+  {
+    "id": "python_12_3_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "None"
+      ]
+    },
+    "title": {
+      "en": "Introduction to None",
+      "fr": "Introduction à None"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, if a function doesn't have a ```return``` statement, or has a ```return``` without a value, it automatically returns a special value called ```None```.",
+            "fr": "En Python, si une fonction n'a pas d'instruction ```return```, ou a un ```return``` sans valeur, elle renvoie automatiquement une valeur spéciale appelée ```None```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "```None``` is Python's way of representing \"nothing\" or \"no value\". It's like an empty box.",
+            "fr": "```None``` est la façon dont Python représente \"rien\" ou \"pas de valeur\". C'est comme une boîte vide."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Case 1: Function with no return statement***",
+            "fr": "***Cas 1 : Fonction sans instruction return***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def display_codemon(name):\n    print(f\"Codémon: {name}\")\n\nresult = display_codemon(\"Aquachu\")\nprint(\"Result:\", result)  # None",
+            "fr": "def afficher_codemon(nom):\n    print(f\"Codémon: {nom}\")\n\nresultat = afficher_codemon(\"Aquachu\")\nprint(\"Résultat:\", resultat)  # None"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Case 2: Function with empty return***",
+            "fr": "***Cas 2 : Fonction avec return vide***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def check_status():\n    print(\"Checking...\")\n    return\n\nresult = check_status()\nprint(\"Result:\", result)  # None",
+            "fr": "def verifier_statut():\n    print(\"Vérification...\")\n    return\n\nresultat = verifier_statut()\nprint(\"Résultat:\", resultat)  # None"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Case 3: Function that returns a value***",
+            "fr": "***Cas 3 : Fonction qui renvoie une valeur***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def get_level():\n    return 25\n\nresult = get_level()\nprint(\"Result:\", result)  # 25",
+            "fr": "def obtenir_niveau():\n    return 25\n\nresultat = obtenir_niveau()\nprint(\"Résultat:\", resultat)  # 25"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Three ways a function returns ```None```:\n1. No ```return``` statement at all\n2. ```return``` with no value after it\n3. ```return None``` explicitly (rarely used)",
+            "fr": "Trois façons dont une fonction renvoie ```None``` :\n1. Pas d'instruction ```return``` du tout\n2. ```return``` sans valeur après\n3. ```return None``` explicitement (rarement utilisé)"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Is None Bad?",
+              "fr": "Est-ce que None est mauvais ?"
+            },
+            "content": {
+              "en": "No! ```None``` is perfectly valid. Functions that perform actions (like printing or modifying data) often don't need to return anything, so ```None``` is appropriate. Just be aware that if you try to use ```None``` in calculations, you might get errors.",
+              "fr": "Non ! ```None``` est parfaitement valide. Les fonctions qui effectuent des actions (comme afficher ou modifier des données) n'ont souvent pas besoin de renvoyer quelque chose, donc ```None``` est approprié. Sache juste que si tu essaies d'utiliser ```None``` dans des calculs, tu pourrais avoir des erreurs."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_3_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "None"
+      ]
+    },
+    "title": {
+      "en": "Match Functions with Their Return Values",
+      "fr": "Associe les fonctions à leurs valeurs de retour"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each function with what it returns when called:",
+            "fr": "Associe chaque fonction avec ce qu'elle renvoie quand elle est appelée :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "codeBlock",
+              "value": "def func1():\n    return 42"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns the number ```42```",
+                "fr": "Renvoie le nombre ```42```"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "codeBlock",
+              "value": "def func2():\n    print(42)"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns ```None```",
+                "fr": "Renvoie ```None```"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "codeBlock",
+              "value": "def func3():\n    x = 42\n    return"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns ```None```",
+                "fr": "Renvoie ```None```"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "codeBlock",
+              "value": "def func4():\n    return 'Aquachu'"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns the string ```'Aquachu'```",
+                "fr": "Renvoie la chaîne ```'Aquachu'```"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_3_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "expressions"
+      ]
+    },
+    "title": {
+      "en": "Using Return Values in Expressions",
+      "fr": "Utiliser les valeurs de retour dans des expressions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to calculate the total power by using the return value of ```get_base_power()``` in an expression.",
+            "fr": "Complète le code pour calculer la puissance totale en utilisant la valeur de retour de ```get_base_power()``` dans une expression."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def get_base_power():\n    return 50\n\ndef get_bonus():\n    return 20\n\n# Calculate total by using both return values\ntotal_power = {{}} + {{}}\nprint(\"Total power:\", total_power)",
+        "options": [
+          "get_base_power()",
+          "get_bonus()",
+          "base_power",
+          "bonus",
+          "50",
+          "20"
+        ],
+        "correctAnswers": {
+          "1": "get_base_power()",
+          "2": "get_bonus()"
+        }
+      },
+      "hint": {
+        "en": "Remember: to use a function's return value, you need to call the function with parentheses ().",
+        "fr": "Rappelle-toi : pour utiliser la valeur de retour d'une fonction, tu dois appeler la fonction avec des parenthèses ()."
+      }
+    }
+  },
+  {
+    "id": "python_12_3_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "None",
+        "errors"
+      ]
+    },
+    "title": {
+      "en": "Working with None",
+      "fr": "Travailler avec None"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will happen when this code runs?",
+            "fr": "Que se passera-t-il quand ce code s'exécutera ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def get_power():\n    print(\"Getting power...\")\n\nresult = get_power()\nfinal_power = result * 2\nprint(final_power)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It will cause an error because you can't multiply ```None``` by 2",
+              "fr": "Cela causera une erreur car tu ne peux pas multiplier ```None``` par 2"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will print ```None```",
+              "fr": "Cela affichera ```None```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will print ```2```",
+              "fr": "Cela affichera ```2```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will print ```0```",
+              "fr": "Cela affichera ```0```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what value ```get_power()``` returns, and whether that value can be used in mathematical operations.",
+        "fr": "Réfléchis à quelle valeur ```get_power()``` renvoie, et si cette valeur peut être utilisée dans des opérations mathématiques."
+      }
+    }
+  },
+  {
+    "id": "python_12_3_11",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "practical"
+      ]
+    },
+    "title": {
+      "en": "Complete the Codémon Function",
+      "fr": "Complète la fonction Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function that checks if a Codémon is strong enough. It should return ```True``` if the level is 20 or higher, and ```False``` otherwise.",
+            "fr": "Complète cette fonction qui vérifie si un Codémon est assez fort. Elle doit renvoyer ```True``` si le niveau est 20 ou plus, et ```False``` sinon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def is_strong(level):\n  if level >= 20:\n    {{}} {{}}\n  {{}} {{}}\n\n# Test the function\nprint(is_strong(25))  # Should print True\nprint(is_strong(15))  # Should print False",
+        "options": [
+          "return",
+          "True",
+          "return",
+          "False",
+          "print",
+          "level"
+        ],
+        "correctAnswers": {
+          "1": "return",
+          "2": "True",
+          "3": "return",
+          "4": "False"
+        }
+      },
+      "hint": {
+        "en": "Think about what values you want to send back based on the condition, and use the return keyword to send them back.",
+        "fr": "Réfléchis aux valeurs que tu veux renvoyer selon la condition, et utilise le mot-clé return pour les renvoyer."
+      }
+    }
+  },
+  {
+    "id": "python_12_3_12",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "return",
+        "data types",
+        "lists",
+        "dictionaries"
+      ]
+    },
+    "title": {
+      "en": "Functions Can Return Any Data Type",
+      "fr": "Les fonctions peuvent renvoyer n'importe quel type de données"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "So far, we've seen functions return numbers and strings. But here's the cool part: functions can return ***any data type*** in Python - lists, dictionaries, booleans, and even other functions!",
+            "fr": "Jusqu'à présent, on a vu des fonctions renvoyer des nombres et des chaînes. Mais voici la partie cool : les fonctions peuvent renvoyer ***n'importe quel type de données*** en Python - listes, dictionnaires, booléens, et même d'autres fonctions !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Returning a List:***",
+            "fr": "***Renvoyer une liste :***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def get_codemon_moves():\n  moves = [\"Water Blast\", \"Bubble Shield\", \"Tidal Wave\"]\n  return moves\n\n# Use the returned list\naquachu_moves = get_codemon_moves()\nprint(\"Aquachu's moves:\")\nfor move in aquachu_moves:\n  print(\"-\", move)",
+            "fr": "def obtenir_attaques_codemon():\n  attaques = [\"Jet d'eau\", \"Bouclier Bulle\", \"Raz-de-marée\"]\n  return attaques\n\n# Utiliser la liste renvoyée\nattaques_aquachu = obtenir_attaques_codemon()\nprint(\"Attaques d'Aquachu :\")\nfor attaque in attaques_aquachu:\n  print(\"-\", attaque)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Returning a Dictionary:***",
+            "fr": "***Renvoyer un dictionnaire :***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def get_codemon_stats(name, level):\n  stats = {\n    \"name\": name,\n    \"level\": level,\n    \"hp\": level * 10,\n    \"attack\": level * 5\n  }\n  return stats\n\n# Use the returned dictionary\npyrochu = get_codemon_stats(\"Pyrochu\", 15)\nprint(f\"Name: {pyrochu['name']}\")\nprint(f\"Level: {pyrochu['level']}\")\nprint(f\"HP: {pyrochu['hp']}\")\nprint(f\"Attack: {pyrochu['attack']}\")",
+            "fr": "def obtenir_stats_codemon(nom, niveau):\n  stats = {\n    \"nom\": nom,\n    \"niveau\": niveau,\n    \"hp\": niveau * 10,\n    \"attaque\": niveau * 5\n  }\n  return stats\n\n# Utiliser le dictionnaire renvoyé\npyrochu = obtenir_stats_codemon(\"Pyrochu\", 15)\nprint(f\"Nom : {pyrochu['nom']}\")\nprint(f\"Niveau : {pyrochu['niveau']}\")\nprint(f\"HP : {pyrochu['hp']}\")\nprint(f\"Attaque : {pyrochu['attaque']}\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This flexibility makes functions incredibly powerful! You can create functions that organize and return complex data structures, making your code more modular and reusable.",
+            "fr": "Cette flexibilité rend les fonctions incroyablement puissantes ! Tu peux créer des fonctions qui organisent et renvoient des structures de données complexes, rendant ton code plus modulaire et réutilisable."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_3_13",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "parameters",
+        "return",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Codémon Battle Calculator",
+      "fr": "Calculateur de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a damage calculator using functions with parameters and return values! Your tasks:\n\n1. Define a function ```calculate_attack(power, level)``` that:\n   - Returns: ```power + (level * 2)```\n\n2. Define a function ```calculate_bonus(level)``` that:\n   - Returns ```50``` if level is greater than 15\n   - Returns ```0``` otherwise\n\n3. Call both functions with power = 50 and level = 20, add the results together, and print the total damage",
+            "fr": "Crée un calculateur de dégâts en utilisant des fonctions avec paramètres et valeurs de retour ! Tes tâches :\n\n1. Définir une fonction ```calculate_attack(power, level)``` qui :\n   - Renvoie : ```power + (level * 2)```\n\n2. Définir une fonction ```calculate_bonus(level)``` qui :\n   - Renvoie ```50``` si le niveau est supérieur à 15\n   - Renvoie ```0``` sinon\n\n3. Appeler les deux fonctions avec power = 50 et level = 20, additionner les résultats, et afficher les dégâts totaux"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# 1. Define calculate_attack(power, level)\n\n# 2. Define calculate_bonus(level)\n\n# 3. Call both functions and calculate total damage\n",
+          "fr": "# 1. Définir calculate_attack(power, level)\n\n# 2. Définir calculate_bonus(level)\n\n# 3. Appeler les deux fonctions et calculer les dégâts totaux\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# 1. Define calculate_attack(power, level)\ndef calculate_attack(power, level):\n  return power + (level * 2)\n\n# 2. Define calculate_bonus(level)\ndef calculate_bonus(level):\n  if level > 15:\n    return 50\n  return 0\n\n# 3. Call both functions and calculate total damage\nattack_damage = calculate_attack(50, 20)\nbonus_damage = calculate_bonus(20)\ntotal_damage = attack_damage + bonus_damage\n\nprint(f\"Attack damage: {attack_damage}\")\nprint(f\"Bonus damage: {bonus_damage}\")\nprint(f\"Total damage: {total_damage}\")",
+            "fr": "# 1. Définir calculate_attack(power, level)\ndef calculate_attack(power, level):\n  return power + (level * 2)\n\n# 2. Définir calculate_bonus(level)\ndef calculate_bonus(level):\n  if level > 15:\n    return 50\n  return 0\n\n# 3. Appeler les deux fonctions et calculer les dégâts totaux\ndegats_attaque = calculate_attack(50, 20)\ndegats_bonus = calculate_bonus(20)\ndegats_totaux = degats_attaque + degats_bonus\n\nprint(f\"Dégâts d'attaque : {degats_attaque}\")\nprint(f\"Dégâts bonus : {degats_bonus}\")\nprint(f\"Dégâts totaux : {degats_totaux}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_4_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "local variables"
+      ]
+    },
+    "title": {
+      "en": "Introduction to Variable Scope",
+      "fr": "Introduction à la portée des variables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, ***scope*** refers to the region of code where a variable can be accessed. Understanding scope is crucial for writing bug-free functions.",
+            "fr": "En Python, le ***périmètre*** (scope) désigne la région du code où une variable peut être accessible. Comprendre le scope est crucial pour écrire des fonctions sans bugs."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "When you create a variable inside a function, it's called a ***local variable***. This variable only exists inside that function and cannot be accessed from outside.",
+            "fr": "Quand tu crées une variable à l'intérieur d'une fonction, on l'appelle une ***variable locale***. Cette variable n'existe qu'à l'intérieur de cette fonction et ne peut pas être accessible de l'extérieur."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "def train_codemon():\n    # codemon_name is a LOCAL variable\n    codemon_name = \"Aquachu\"\n    print(f\"Training {codemon_name}!\")\n\ntrain_codemon()\n\n# print(codemon_name) # Error variable not defined",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example, ```codemon_name``` only exists inside the ```train_codemon()``` function. If you try to use it outside (uncomment the last line), Python will give you an error saying the variable doesn't exist.",
+            "fr": "Dans cet exemple, ```codemon_name``` n'existe qu'à l'intérieur de la fonction ```train_codemon()```. Si tu essaies de l'utiliser à l'extérieur (décommente la dernière ligne), Python te donnera une erreur disant que la variable n'existe pas."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Why Local Variables?",
+              "fr": "Pourquoi des variables locales ?"
+            },
+            "content": {
+              "en": "Local variables help keep functions independent and prevent accidental changes to variables. Each function has its own \"workspace\" with its own variables.",
+              "fr": "Les variables locales aident à garder les fonctions indépendantes et empêchent les modifications accidentelles de variables. Chaque fonction a son propre \"espace de travail\" avec ses propres variables."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_4_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "local variables"
+      ]
+    },
+    "title": {
+      "en": "Identifying Variable Scope",
+      "fr": "Identifier la portée des variables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Look at this code. What will happen when we try to print ```level``` outside the function?",
+            "fr": "Regarde ce code. Que va-t-il se passer quand on essaie d'afficher ```level``` en dehors de la fonction ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "def evolve_codemon():\n    level = 20\n    print(f\"Codemon evolved at level {level}!\")\n\nevolve_codemon()\nprint(level)",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Python will show an error because ```level``` doesn't exist outside the function",
+              "fr": "Python affichera une erreur car ```level``` n'existe pas en dehors de la fonction"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will print 20",
+              "fr": "Il affichera 20"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will print 0",
+              "fr": "Il affichera 0"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will print None",
+              "fr": "Il affichera None"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that variables created inside a function are local to that function and cannot be accessed from outside.",
+        "fr": "Rappelle-toi que les variables créées à l'intérieur d'une fonction sont locales à cette fonction et ne peuvent pas être accessibles de l'extérieur."
+      }
+    }
+  },
+  {
+    "id": "python_12_4_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "global variables"
+      ]
+    },
+    "title": {
+      "en": "Global Variables",
+      "fr": "Variables globales"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Variables created outside of any function are called ***global variables***. These variables can be accessed from anywhere in your code, including inside functions.",
+            "fr": "Les variables créées en dehors de toute fonction sont appelées ***variables globales***. Ces variables peuvent être accessibles de partout dans ton code, y compris à l'intérieur des fonctions."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "trainer_name = \"Pierre\" # global var\n\ndef greet_trainer():\n    # We can READ global variables inside functions\n    print(f\"Hello, {trainer_name}!\")\n\ndef battle():\n    # Both functions can access the same global variable\n    print(f\"{trainer_name} is battling!\")\n\ngreet_trainer()\nbattle()\nprint(f\"Trainer: {trainer_name}\")",
+            "fr": "trainer_name = \"Pierre\" # var globale\n\ndef greet_trainer():\n    # On peut LIRE les variables globales à l'intérieur des fonctions\n    print(f\"Bonjour, {trainer_name} !\")\n\ndef battle():\n    # Les deux fonctions peuvent accéder à la même variable globale\n    print(f\"{trainer_name} est en combat !\")\n\ngreet_trainer()\nbattle()\nprint(f\"Dresseur : {trainer_name}\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this example, ```trainer_name``` is a global variable. Both ```greet_trainer()``` and ```battle()``` can read its value, and we can also use it outside any function.",
+            "fr": "Dans cet exemple, ```trainer_name``` est une variable globale. Les fonctions ```greet_trainer()``` et ```battle()``` peuvent toutes les deux lire sa valeur, et nous pouvons aussi l'utiliser en dehors de toute fonction."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Reading vs. Modifying",
+              "fr": "Lire vs. Modifier"
+            },
+            "content": {
+              "en": "You can READ global variables inside functions without any issues. However, MODIFYING them requires special syntax (the ```global``` keyword), which we'll learn about soon.",
+              "fr": "Tu peux LIRE les variables globales à l'intérieur des fonctions sans problème. Cependant, les MODIFIER nécessite une syntaxe spéciale (le mot-clé ```global```), que nous verrons bientôt."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_4_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "local variables"
+      ]
+    },
+    "title": {
+      "en": "Create a Function with Local Variables",
+      "fr": "Créer une fonction avec des variables locales"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the function to calculate and return the total power of a Codémon. The variables should be local to the function.",
+            "fr": "Complète la fonction pour calculer et retourner la puissance totale d'un Codémon. Les variables doivent être locales à la fonction."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def calculate_total_power(base_power, level):\n    # Create a local variable for the multiplier\n    {{}} = 1.5\n    \n    # Calculate total power\n    total = base_power * level * multiplier\n    \n    # Return the result\n    {{}} total\n\n# Test the function\nresult = calculate_total_power(50, 10)\nprint(f\"Total power: {result}\")",
+        "options": [
+          "multiplier",
+          "return",
+          "global",
+          "print",
+          "def",
+          "power"
+        ],
+        "correctAnswers": {
+          "1": "multiplier",
+          "2": "return"
+        }
+      },
+      "hint": {
+        "en": "The first blank should create a local variable to store the multiplier. The second blank should return the calculated value from the function.",
+        "fr": "Le premier trou doit créer une variable locale pour stocker le multiplicateur. Le deuxième trou doit retourner la valeur calculée depuis la fonction."
+      }
+    }
+  },
+  {
+    "id": "python_12_4_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "variable shadowing"
+      ]
+    },
+    "title": {
+      "en": "Variable Shadowing",
+      "fr": "Masquage de variables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When a local variable has the same name as a global variable, the local variable \"shadows\" (hides) the global one inside the function. What will this code print?",
+            "fr": "Quand une variable locale a le même nom qu'une variable globale, la variable locale \"masque\" (cache) la globale à l'intérieur de la fonction. Qu'est-ce que ce code affichera ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_type = \"Water\"\n\ndef check_type():\n    codemon_type = \"Fire\"\n    print(f\"Inside function: {codemon_type}\")\n\ncheck_type()\nprint(f\"Outside function: {codemon_type}\")",
+          "language": "python"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Inside function: Fire\nOutside function: Water",
+              "fr": "Inside function: Fire\nOutside function: Water"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Inside function: Water\nOutside function: Water",
+              "fr": "Inside function: Water\nOutside function: Water"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Inside function: Fire\nOutside function: Fire",
+              "fr": "Inside function: Fire\nOutside function: Fire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It will cause an error",
+              "fr": "Cela causera une erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about which variable is used in each context. Inside the function, Python uses the local variable. Outside, it uses the global variable.",
+        "fr": "Réfléchis à quelle variable est utilisée dans chaque contexte. À l'intérieur de la fonction, Python utilise la variable locale. À l'extérieur, il utilise la variable globale."
+      }
+    }
+  },
+  {
+    "id": "python_12_4_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "variable lifetime"
+      ]
+    },
+    "title": {
+      "en": "Variable Lifetime",
+      "fr": "Durée de vie des variables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Variables have a ***lifetime*** - they are created at a certain point and destroyed at another point in your program.",
+            "fr": "Les variables ont une ***durée de vie*** - elles sont créées à un certain moment et détruites à un autre moment dans ton programme."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "- ***Local variables***: Created when the function is called, destroyed when the function returns\n- ***Global variables***: Created when the program starts, destroyed when the program ends",
+            "fr": "- ***Variables locales*** : Créées quand la fonction est appelée, détruites quand la fonction se termine\n- ***Variables globales*** : Créées quand le programme démarre, détruites quand le programme se termine"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "def battle_codemon():\n    # hp is created HERE\n    hp = 100\n    print(f\"Battle started! HP: {hp}\")\n    hp = hp - 30\n    print(f\"After attack! HP: {hp}\")\n    # hp is destroyed HERE when function ends\n\n# Each call creates a NEW hp variable\nbattle_codemon()\nprint(\"---\")\nbattle_codemon()",
+            "fr": "def battle_codemon():\n    # hp est créée ICI\n    hp = 100\n    print(f\"Combat commencé ! HP : {hp}\")\n    hp = hp - 30\n    print(f\"Après l'attaque ! HP : {hp}\")\n    # hp est détruite ICI quand la fonction se termine\n\n# Chaque appel crée une NOUVELLE variable hp\nbattle_codemon()\nprint(\"---\")\nbattle_codemon()"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice that each time we call ```battle_codemon()```, a new ```hp``` variable is created with the value 100. The variable from the first call doesn't exist anymore when we make the second call.",
+            "fr": "Remarque que chaque fois qu'on appelle ```battle_codemon()```, une nouvelle variable ```hp``` est créée avec la valeur 100. La variable du premier appel n'existe plus quand on fait le deuxième appel."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Fresh Start",
+              "fr": "Nouveau départ"
+            },
+            "content": {
+              "en": "Each function call gets its own set of local variables. This is why functions are reliable - they always start with the same initial state unless you pass different arguments.",
+              "fr": "Chaque appel de fonction obtient son propre ensemble de variables locales. C'est pourquoi les fonctions sont fiables - elles commencent toujours avec le même état initial sauf si tu passes des arguments différents."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_4_7",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "debugging"
+      ]
+    },
+    "title": {
+      "en": "Fix the Scope Issue",
+      "fr": "Corriger le problème de portée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code.",
+            "fr": "Complète le code."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def power_up_codemon():\n    new_power = 150\n    {{}} new_power\n\n# Store the returned value\ncodemon_power = {{}}\nprint(f\"Codemon power: {codemon_power}\")",
+        "options": [
+          "return",
+          "power_up_codemon()",
+          "print",
+          "new_power",
+          "global",
+          "codemon_power"
+        ],
+        "correctAnswers": {
+          "1": "return",
+          "2": "power_up_codemon()"
+        }
+      },
+      "hint": {
+        "en": "To use a value from inside a function, you need to return it and store the result when calling the function.",
+        "fr": "Pour utiliser une valeur de l'intérieur d'une fonction, tu dois la retourner et stocker le résultat quand tu appelles la fonction."
+      }
+    }
+  },
+  {
+    "id": "python_12_4_8",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "global keyword"
+      ]
+    },
+    "title": {
+      "en": "The global Keyword",
+      "fr": "Le mot-clé global"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "If you need to modify a global variable from inside a function, you must use the ```global``` keyword to tell Python you want to work with the global variable, not create a new local one.",
+            "fr": "Si tu as besoin de modifier une variable globale depuis l'intérieur d'une fonction, tu dois utiliser le mot-clé ```global``` pour dire à Python que tu veux travailler avec la variable globale, et non créer une nouvelle variable locale."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": "total_battles = 0\n\ndef win_battle():\n    global total_battles\n    total_battles = total_battles + 1\n    print(f\"Battles won: {total_battles}\")\n\nwin_battle()\nwin_battle()\nwin_battle()\nprint(f\"Total: {total_battles}\")",
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```global total_battles``` line tells Python: \"I want to modify the global variable, not create a local one.\" Without it, Python would create a new local variable instead.",
+            "fr": "La ligne ```global total_battles``` dit à Python : \"Je veux modifier la variable globale, pas en créer une locale.\" Sans elle, Python créerait une nouvelle variable locale à la place."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Try not to use global",
+              "fr": "Essaie de ne pas utiliser global"
+            },
+            "content": {
+              "en": "While ```global``` might be useful, it's generally better to use parameters and return values. Global variables can make code harder to understand and debug. Use them only when necessary.",
+              "fr": "Bien que ```global``` peut être utile, il est généralement préférable d'utiliser des paramètres et des valeurs de retour. Les variables globales rendent le code plus difficile à comprendre et à déboguer. Utilise-les seulement quand c'est nécessaire."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_4_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "global keyword"
+      ]
+    },
+    "title": {
+      "en": "When to Use global",
+      "fr": "Quand utiliser global"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of these situations requires the ```global``` keyword?",
+            "fr": "Laquelle de ces situations nécessite le mot-clé ```global``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "When you need to modify a global variable's value inside a function",
+              "fr": "Quand tu as besoin de modifier la valeur d'une variable globale à l'intérieur d'une fonction"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "When you need to read a global variable's value inside a function",
+              "fr": "Quand tu as besoin de lire la valeur d'une variable globale à l'intérieur d'une fonction"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "When you create a new local variable inside a function",
+              "fr": "Quand tu crées une nouvelle variable locale à l'intérieur d'une fonction"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "When you want to return a value from a function",
+              "fr": "Quand tu veux retourner une valeur depuis une fonction"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that you can read global variables without any special keyword, but modifying them requires the global keyword.",
+        "fr": "Rappelle-toi que tu peux lire les variables globales sans mot-clé spécial, mais les modifier nécessite le mot-clé global."
+      }
+    }
+  },
+  {
+    "id": "python_12_4_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "scope",
+        "concepts"
+      ]
+    },
+    "title": {
+      "en": "Match Scope Concepts",
+      "fr": "Associer les concepts de portée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each scope-related concept with its correct description:",
+            "fr": "Associe chaque concept lié à la portée avec sa description correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Local Variable",
+                "fr": "Variable locale"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Created inside a function, only accessible within that function",
+                "fr": "Créée à l'intérieur d'une fonction, accessible uniquement dans cette fonction"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Global Variable",
+                "fr": "Variable globale"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Created outside functions, accessible everywhere in the code",
+                "fr": "Créée en dehors des fonctions, accessible partout dans le code"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Variable Shadowing",
+                "fr": "Masquage de variable"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "When a local variable has the same name as a global variable",
+                "fr": "Quand une variable locale a le même nom qu'une variable globale"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```global```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Keyword needed to modify a global variable inside a function",
+                "fr": "Mot-clé nécessaire pour modifier une variable globale dans une fonction"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_5_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "purpose"
+      ]
+    },
+    "title": {
+      "en": "Why Use Functions?",
+      "fr": "Pourquoi utiliser des fonctions ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the main benefit of using functions in your code?",
+            "fr": "Quel est le principal avantage d'utiliser des fonctions dans ton code ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Reuse code and avoid repetition (DRY principle)",
+              "fr": "Réutiliser le code et éviter la répétition (principe DRY)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Make the program run faster",
+              "fr": "Faire fonctionner le programme plus rapidement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Use less memory",
+              "fr": "Utiliser moins de mémoire"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Print more information",
+              "fr": "Afficher plus d'informations"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about the DRY principle: Don't Repeat Yourself!",
+        "fr": "Pense au principe DRY : Don't Repeat Yourself (Ne te répète pas) !"
+      }
+    }
+  },
+  {
+    "id": "python_12_5_2",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Complete the Function Structure",
+      "fr": "Compléter la structure de fonction"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function that takes a Codémon name as parameter and returns a greeting:",
+            "fr": "Complète cette fonction qui prend un nom de Codémon comme paramètre et renvoie un message de salutation :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}} greet(name){{}}\n    message = f\"Hello, {name}!\"\n    {{}} message\n\nresult = greet({{}})\nprint(result)",
+        "options": [
+          "def",
+          "function",
+          ":",
+          ";",
+          "return",
+          "print",
+          "\"Aquachu\"",
+          "Aquachu"
+        ],
+        "correctAnswers": {
+          "1": "def",
+          "2": ":",
+          "3": "return",
+          "4": "\"Aquachu\""
+        }
+      },
+      "hint": {
+        "en": "Remember: ```def``` to define, ```:``` after parameters, ```return``` to send back a value, and quotes for string arguments.",
+        "fr": "Rappelle-toi : ```def``` pour définir, ```:``` après les paramètres, ```return``` pour renvoyer une valeur, et guillemets pour les arguments string."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "return vs print"
+      ]
+    },
+    "title": {
+      "en": "Return vs Print - Understanding the Difference",
+      "fr": "Return vs Print - Comprendre la différence"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the difference between these two functions?",
+            "fr": "Quelle est la différence entre ces deux fonctions ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def function_a():\n    print(100)\n\ndef function_b():\n    return 100"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```function_a``` displays 100 but returns None, ```function_b``` returns 100 without displaying",
+              "fr": "```function_a``` affiche 100 mais renvoie None, ```function_b``` renvoie 100 sans afficher"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "They do exactly the same thing",
+              "fr": "Elles font exactement la même chose"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```function_a``` returns 100, ```function_b``` displays 100",
+              "fr": "```function_a``` renvoie 100, ```function_b``` affiche 100"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Both return and display 100",
+              "fr": "Les deux renvoient et affichent 100"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "```print()``` displays to screen but doesn't return a value. ```return``` sends a value back but doesn't display.",
+        "fr": "```print()``` affiche à l'écran mais ne renvoie pas de valeur. ```return``` renvoie une valeur mais n'affiche pas."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_4",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "terminology"
+      ]
+    },
+    "title": {
+      "en": "Function Terminology Review",
+      "fr": "Révision de la terminologie des fonctions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each term with its correct meaning:",
+            "fr": "Associe chaque terme à sa signification correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Parameter",
+                "fr": "Paramètre"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Variable in function definition",
+                "fr": "Variable dans la définition de fonction"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Argument",
+                "fr": "Argument"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Value passed when calling function",
+                "fr": "Valeur passée lors de l'appel de fonction"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Return value",
+                "fr": "Valeur de retour"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Value sent back from function",
+                "fr": "Valeur renvoyée par la fonction"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Local variable",
+                "fr": "Variable locale"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Variable created inside function",
+                "fr": "Variable créée dans la fonction"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_5_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "scope"
+      ]
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens when you try to access a local variable outside its function?",
+            "fr": "Que se passe-t-il quand tu essaies d'accéder à une variable locale en dehors de sa fonction ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def battle():\n    damage = 50\n    print(damage)\n\nbattle()\nprint(damage)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "A ```NameError``` occurs because ```damage``` doesn't exist outside the function",
+              "fr": "Une ```NameError``` se produit car ```damage``` n'existe pas en dehors de la fonction"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It prints 50 twice",
+              "fr": "Cela affiche 50 deux fois"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It prints 50 then None",
+              "fr": "Cela affiche 50 puis None"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The code works fine",
+              "fr": "Le code fonctionne bien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Local variables only exist inside their function and are destroyed when the function ends.",
+        "fr": "Les variables locales n'existent qu'à l'intérieur de leur fonction et sont détruites quand la fonction se termine."
+      }
+    },
+    "title": {
+      "en": "Local Variable Access",
+      "fr": "Accès aux variables locales"
+    }
+  },
+  {
+    "id": "python_12_5_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "default parameters"
+      ]
+    },
+    "title": {
+      "en": "Function with Default Parameter",
+      "fr": "Fonction avec paramètre par défaut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function where ```element``` has a default value of ```\"water\"```:",
+            "fr": "Complète cette fonction où ```element``` a une valeur par défaut de ```\"water\"``` :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def create_codemon(name, element{{}}):\n    return f\"{name} ({element} type)\"\n\n# Call with default\nresult1 = create_codemon({{}})\nprint(result1)\n\n# Call with custom element\nresult2 = create_codemon(\"Pyrochu\", {{}})\nprint(result2)",
+        "options": [
+          "=\"water\"",
+          "=water",
+          "\"Aquachu\"",
+          "Aquachu",
+          "\"fire\"",
+          "fire"
+        ],
+        "correctAnswers": {
+          "1": "=\"water\"",
+          "2": "\"Aquachu\"",
+          "3": "\"fire\""
+        }
+      },
+      "hint": {
+        "en": "Use ```=``` to set default values in function definition. String arguments need quotes.",
+        "fr": "Utilise ```=``` pour définir des valeurs par défaut dans la définition de fonction. Les arguments string ont besoin de guillemets."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "parameter order"
+      ]
+    },
+    "title": {
+      "en": "Parameter Order Rules",
+      "fr": "Règles d'ordre des paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which function definition is correct?",
+            "fr": "Quelle définition de fonction est correcte ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": "def battle(attacker, defender, damage=10):"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def battle(attacker, damage=10, defender):"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def battle(damage=10, attacker, defender):"
+          },
+          {
+            "type": "codeBlock",
+            "value": "def battle(attacker=None, defender, damage):"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Parameters with default values must come AFTER parameters without defaults.",
+        "fr": "Les paramètres avec valeurs par défaut doivent venir APRÈS les paramètres sans valeurs par défaut."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "return values"
+      ]
+    },
+    "title": {
+      "en": "Using Return Values in Calculations",
+      "fr": "Utiliser les valeurs de retour dans des calculs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to calculate total stats by adding the return values of both functions:",
+            "fr": "Complète le code pour calculer les stats totales en additionnant les valeurs de retour des deux fonctions :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def get_attack():\n    {{}} 75\n\ndef get_defense():\n    {{}} 60\n\ntotal_stats = {{}} + {{}}\nprint(f\"Total: {total_stats}\")",
+        "options": [
+          "return",
+          "print",
+          "get_attack()",
+          "get_defense()",
+          "attack",
+          "defense",
+          "return"
+        ],
+        "correctAnswers": {
+          "1": "return",
+          "2": "return",
+          "3": "get_attack()",
+          "4": "get_defense()"
+        }
+      },
+      "hint": {
+        "en": "Use ```return``` to send values back, then call the functions with ```()``` to get their return values.",
+        "fr": "Utilise ```return``` pour renvoyer des valeurs, puis appelle les fonctions avec ```()``` pour obtenir leurs valeurs de retour."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "None"
+      ]
+    },
+    "title": {
+      "en": "What Does This Function Return?",
+      "fr": "Que renvoie cette fonction ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What value does this function return?",
+            "fr": "Quelle valeur cette fonction renvoie-t-elle ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def show_level(level):\n    print(f\"Level: {level}\")\n\nresult = show_level(25)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```None```"
+          },
+          {
+            "type": "text",
+            "value": "```25```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Level: 25\"```"
+          },
+          {
+            "type": "text",
+            "value": "```level```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Functions without a ```return``` statement automatically return ```None```.",
+        "fr": "Les fonctions sans instruction ```return``` renvoient automatiquement ```None```."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "scope concepts"
+      ]
+    },
+    "title": {
+      "en": "Scope Concepts",
+      "fr": "Concepts de portée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each scope concept with its example:",
+            "fr": "Associe chaque concept de portée à son exemple :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Local variable",
+                "fr": "Variable locale"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Created inside function, destroyed after",
+                "fr": "Créée dans la fonction, détruite après"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Global variable",
+                "fr": "Variable globale"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Created outside functions, accessible everywhere",
+                "fr": "Créée hors des fonctions, accessible partout"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "```global``` keyword",
+                "fr": "Mot-clé ```global```"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Needed to modify global variable in function",
+                "fr": "Nécessaire pour modifier variable globale dans fonction"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Variable shadowing",
+                "fr": "Masquage de variables"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Local variable hides global with same name",
+                "fr": "Variable locale cache globale avec même nom"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_5_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "return types"
+      ]
+    },
+    "title": {
+      "en": "Return Value Data Types",
+      "fr": "Types de données des valeurs de retour"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What can a function return?",
+            "fr": "Que peut renvoyer une fonction ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Any data type (int, string, list, dict, etc.)",
+              "fr": "N'importe quel type de données (int, string, list, dict, etc.)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only numbers (int and float)",
+              "fr": "Seulement des nombres (int et float)"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only strings and numbers",
+              "fr": "Seulement des strings et des nombres"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only simple types, not lists or dicts",
+              "fr": "Seulement des types simples, pas de lists ou dicts"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Functions are very flexible with what they can return!",
+        "fr": "Les fonctions sont très flexibles avec ce qu'elles peuvent renvoyer !"
+      }
+    }
+  },
+  {
+    "id": "python_12_5_12",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "multiple parameters"
+      ]
+    },
+    "title": {
+      "en": "Function with Three Parameters",
+      "fr": "Fonction avec trois paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function that takes 3 parameters and returns their sum:",
+            "fr": "Complète cette fonction qui prend 3 paramètres et renvoie leur somme :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def add_three_stats(attack, defense, speed):\n    total = attack {{}} defense {{}} speed\n    {{}} total\n\nresult = add_three_stats({{}})\nprint(result)",
+        "options": [
+          "+",
+          "-",
+          "*",
+          "+",
+          "-",
+          "*",
+          "return",
+          "print",
+          "50, 40, 30",
+          "50 40 30"
+        ],
+        "correctAnswers": {
+          "1": "+",
+          "2": "+",
+          "3": "return",
+          "4": "50, 40, 30"
+        }
+      },
+      "hint": {
+        "en": "Use ```+``` to add values, ```return``` to send back result, and commas to separate multiple arguments.",
+        "fr": "Utilise ```+``` pour additionner, ```return``` pour renvoyer le résultat, et des virgules pour séparer plusieurs arguments."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_13",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "variable shadowing"
+      ]
+    },
+    "title": {
+      "en": "Variable Shadowing",
+      "fr": "Masquage de variables"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does this code print?",
+            "fr": "Qu'affiche ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "level = 10\n\ndef show_level():\n    level = 25\n    print(level)\n\nshow_level()"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```25```"
+          },
+          {
+            "type": "text",
+            "value": "```10```"
+          },
+          {
+            "type": "text",
+            "value": "```NameError```"
+          },
+          {
+            "type": "text",
+            "value": "```10``` then ```25```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The local ```level``` inside the function shadows (hides) the global one.",
+        "fr": "Le ```level``` local dans la fonction masque (cache) le global."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_14",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "return boolean"
+      ]
+    },
+    "title": {
+      "en": "Function Returning Boolean",
+      "fr": "Fonction renvoyant un booléen"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function that returns ```True``` if HP is above 50, otherwise ```False```:",
+            "fr": "Complète cette fonction qui renvoie ```True``` si les HP sont au-dessus de 50, sinon ```False``` :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def is_healthy(hp):\n  if hp {{}} 50:\n    {{}} True\n  else:\n    {{}} False\n\nresult = is_healthy(75)\nprint(result)",
+        "options": [
+          ">",
+          "<",
+          "==",
+          "return",
+          "print",
+          "return",
+          "print"
+        ],
+        "correctAnswers": {
+          "1": ">",
+          "2": "return",
+          "3": "return"
+        }
+      },
+      "hint": {
+        "en": "Use ```>``` to compare, and ```return``` to send back the boolean result.",
+        "fr": "Utilise ```>``` pour comparer, et ```return``` pour renvoyer le résultat booléen."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_15",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "calling functions"
+      ]
+    },
+    "title": {
+      "en": "When Are Parameters Needed?",
+      "fr": "Quand les paramètres sont-ils nécessaires ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given this function definition:",
+            "fr": "Étant donné cette définition de fonction :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def heal_codemon(name, hp):\n    return f\"{name} healed for {hp} HP!\""
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which function call is correct?",
+            "fr": "Quel appel de fonction est correct ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```heal_codemon(\"Aquachu\", 30)```"
+          },
+          {
+            "type": "text",
+            "value": "```heal_codemon()```"
+          },
+          {
+            "type": "text",
+            "value": "```heal_codemon(\"Aquachu\")```"
+          },
+          {
+            "type": "text",
+            "value": "```heal_codemon(name=\"Aquachu\")```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "When calling a function, you must provide values for all parameters that don't have default values.",
+        "fr": "Lors de l'appel d'une fonction, tu dois fournir des valeurs pour tous les paramètres qui n'ont pas de valeurs par défaut."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_16",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "function behaviors"
+      ]
+    },
+    "title": {
+      "en": "Function Behaviors",
+      "fr": "Comportements des fonctions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each function characteristic with its behavior:",
+            "fr": "Associe chaque caractéristique de fonction à son comportement :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Function without ```return```",
+                "fr": "Fonction sans ```return```"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Returns ```None``` automatically",
+                "fr": "Renvoie ```None``` automatiquement"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Function with default parameter",
+                "fr": "Fonction avec paramètre par défaut"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Can be called with or without that argument",
+                "fr": "Peut être appelée avec ou sans cet argument"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Function with ```return```",
+                "fr": "Fonction avec ```return```"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Sends value back to be used",
+                "fr": "Renvoie une valeur à utiliser"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Function with only ```print```",
+                "fr": "Fonction avec seulement ```print```"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Shows text but returns ```None```",
+                "fr": "Affiche du texte mais renvoie ```None```"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_5_17",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "return list"
+      ]
+    },
+    "title": {
+      "en": "Function Returning a List",
+      "fr": "Fonction renvoyant une liste"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function that returns a list of Codémon moves:",
+            "fr": "Complète cette fonction qui renvoie une liste d'attaques de Codémon :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def get_moves(codemon_type):\n  if codemon_type == \"fire\":\n    moves = {{}}\"Flamme\", \"Inferno\"]\n  else:\n    moves = [\"Tackle\", \"Scratch\"]\n  {{}} moves\n\nfire_moves = {{}}\nprint(fire_moves)",
+        "options": [
+          "[",
+          "{",
+          "(",
+          "return",
+          "print",
+          "get_moves(\"fire\")",
+          "get_moves(fire)"
+        ],
+        "correctAnswers": {
+          "1": "[",
+          "2": "return",
+          "3": "get_moves(\"fire\")"
+        }
+      },
+      "hint": {
+        "en": "Lists start with ```[```, functions return values with ```return```, and string arguments need quotes.",
+        "fr": "Les listes commencent par ```[```, les fonctions renvoient des valeurs avec ```return```, et les arguments string ont besoin de guillemets."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_18",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "best practices"
+      ]
+    },
+    "title": {
+      "en": "Function Naming Best Practice",
+      "fr": "Bonne pratique de nommage de fonctions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which function name follows Python best practices?",
+            "fr": "Quel nom de fonction suit les bonnes pratiques Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```calculate_damage```"
+          },
+          {
+            "type": "text",
+            "value": "```CalculateDamage```"
+          },
+          {
+            "type": "text",
+            "value": "```calculateDamage```"
+          },
+          {
+            "type": "text",
+            "value": "```CALCULATE_DAMAGE```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Python functions use lowercase with underscores (snake_case).",
+        "fr": "Les fonctions Python utilisent des minuscules avec underscores (snake_case)."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_19",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "conditional return"
+      ]
+    },
+    "title": {
+      "en": "Conditional Returns",
+      "fr": "Retours conditionnels"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function with conditional return values:",
+            "fr": "Complète cette fonction avec des valeurs de retour conditionnelles :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def check_battle_result(player_hp, enemy_hp):\n  if player_hp {{}} 0 and enemy_hp > 0:\n    {{}} \"Defeat\"\n  elif player_hp > 0 {{}} enemy_hp <= 0:\n    {{}} \"Victory\"\n  else:\n    return \"Draw\"\n\nresult = check_battle_result(0, 50)\nprint(result)",
+        "options": [
+          "<=",
+          ">=",
+          "and",
+          "or",
+          "return",
+          "print",
+          "return",
+          "print"
+        ],
+        "correctAnswers": {
+          "1": "<=",
+          "2": "return",
+          "3": "and",
+          "4": "return"
+        }
+      },
+      "hint": {
+        "en": "Use ```<=``` for \"less than or equal\", ```and``` to combine conditions, and ```return``` to send back values.",
+        "fr": "Utilise ```<=``` pour \"inférieur ou égal\", ```and``` pour combiner des conditions, et ```return``` pour renvoyer des valeurs."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_20",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "default parameters"
+      ]
+    },
+    "title": {
+      "en": "Default Parameter Values",
+      "fr": "Valeurs par défaut des paramètres"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens if you don't provide an argument for a parameter with a default value?",
+            "fr": "Que se passe-t-il si tu ne fournis pas d'argument pour un paramètre avec une valeur par défaut ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The default value is used automatically",
+              "fr": "La valeur par défaut est utilisée automatiquement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The parameter becomes ```None```",
+              "fr": "Le paramètre devient ```None```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Python raises a ```TypeError```",
+              "fr": "Python déclenche une ```TypeError```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The parameter is skipped",
+              "fr": "Le paramètre est ignoré"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Default values exist specifically to make parameters optional!",
+        "fr": "Les valeurs par défaut existent spécifiquement pour rendre les paramètres optionnels !"
+      }
+    }
+  },
+  {
+    "id": "python_12_5_21",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "return dict"
+      ]
+    },
+    "title": {
+      "en": "Function Returning a Dictionary",
+      "fr": "Fonction renvoyant un dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this function that returns Codémon stats as a dictionary:",
+            "fr": "Complète cette fonction qui renvoie les stats d'un Codémon dans un dictionnaire :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def get_stats(name, hp, attack):\n  stats = {{}}\n    \"name\": name,\n    \"hp\": hp,\n    \"attack\": attack\n  }\n  {{}} stats\n\naquachu = get_stats({{}})\nprint(aquachu)",
+        "options": [
+          "{",
+          "[",
+          "return",
+          "print",
+          "\"Aquachu\", 100, 75",
+          "Aquachu, 100, 75",
+          "[\"name\"]",
+          "[\"hp\"]"
+        ],
+        "correctAnswers": {
+          "1": "{",
+          "2": "return",
+          "3": "\"Aquachu\", 100, 75"
+        }
+      },
+      "hint": {
+        "en": "Dictionaries start with ```{```, use ```return``` to send them back, separate arguments with commas, and access values with ```[\"key\"]```.",
+        "fr": "Les dictionnaires commencent par ```{```, utilise ```return``` pour les renvoyer, sépare les arguments avec des virgules, et accède aux valeurs avec ```[\"clé\"]```."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "parameter vs argument"
+      ]
+    },
+    "title": {
+      "en": "Parameter vs Argument",
+      "fr": "Paramètre vs Argument"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In this code, what is ```\"Pyrochu\"```?",
+            "fr": "Dans ce code, qu'est-ce que ```\"Pyrochu\"``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "def display_codemon(name):\n    print(name)\n\ndisplay_codemon(\"Pyrochu\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "An argument",
+              "fr": "Un argument"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A parameter",
+              "fr": "Un paramètre"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A return value",
+              "fr": "Une valeur de retour"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A local variable",
+              "fr": "Une variable locale"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Parameter is in the definition, argument is the actual value passed.",
+        "fr": "Le paramètre est dans la définition, l'argument est la valeur réelle passée."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_23",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "multiple functions"
+      ]
+    },
+    "title": {
+      "en": "Calling Multiple Functions",
+      "fr": "Appeler plusieurs fonctions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code where one function uses the result of another:",
+            "fr": "Complète le code où une fonction utilise le résultat d'une autre :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def get_base_damage():\n    {{}} 50\n\ndef calculate_critical(damage):\n    {{}} damage * 2\n\nbase = {{}}\ncritical = calculate_critical({{}})\nprint(critical)",
+        "options": [
+          "return",
+          "print",
+          "return",
+          "print",
+          "get_base_damage()",
+          "get_base_damage",
+          "base",
+          "damage"
+        ],
+        "correctAnswers": {
+          "1": "return",
+          "2": "return",
+          "3": "get_base_damage()",
+          "4": "base"
+        }
+      },
+      "hint": {
+        "en": "Both functions need ```return``` to send values back. Call the first function with ```()``` and store its result.",
+        "fr": "Les deux fonctions ont besoin de ```return``` pour renvoyer des valeurs. Appelle la première fonction avec ```()``` et stocke son résultat."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_24",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "global keyword"
+      ]
+    },
+    "title": {
+      "en": "When to Use global Keyword",
+      "fr": "Quand utiliser le mot-clé global"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When do you need the ```global``` keyword inside a function?",
+            "fr": "Quand as-tu besoin du mot-clé ```global``` dans une fonction ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "When you want to MODIFY a global variable",
+              "fr": "Quand tu veux MODIFIER une variable globale"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "When you want to READ a global variable",
+              "fr": "Quand tu veux LIRE une variable globale"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "For all variables in a function",
+              "fr": "Pour toutes les variables dans une fonction"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "When creating a new local variable",
+              "fr": "Quand on crée une nouvelle variable locale"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "You can read global variables freely, but need ```global``` to change their values.",
+        "fr": "Tu peux lire les variables globales librement, mais tu as besoin de ```global``` pour changer leurs valeurs."
+      }
+    }
+  },
+  {
+    "id": "python_12_5_25",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "review",
+        "complete concepts"
+      ]
+    },
+    "title": {
+      "en": "Function Concepts Review",
+      "fr": "Révision des concepts de fonctions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each concept with its correct definition:",
+            "fr": "Associe chaque concept à sa définition correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "DRY principle",
+                "fr": "Principe DRY"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Don't Repeat Yourself - use functions instead",
+                "fr": "Don't Repeat Yourself - utilise des fonctions"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "```return``` statement",
+                "fr": "Instruction ```return```"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Sends a value back from function",
+                "fr": "Renvoie une valeur depuis la fonction"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Default parameter",
+                "fr": "Paramètre par défaut"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Parameter with ```=value```, becomes optional",
+                "fr": "Paramètre avec ```=valeur```, devient optionnel"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Variable lifetime",
+                "fr": "Durée de vie d'une variable"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Local variables destroyed after function ends",
+                "fr": "Variables locales détruites après la fin de la fonction"
+              }
+            }
+          },
+          {
+            "id": "5",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "```snake_case```",
+                "fr": "```snake_case```"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Python naming: lowercase with underscores",
+                "fr": "Nommage Python : minuscules avec underscores"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_12_10_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "lists",
+        "parameters",
+        "return",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Team Manager - Basic Operations",
+      "fr": "Gestionnaire d'équipe - Opérations de base"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Start building a team management system! Create a basic function:\n\n- ```add_codemon(team, name)``` that adds a Codémon to the team list and returns the updated team\n- Test by creating an empty team, adding Aquachu, Pyrochu, and Florachu, then display the team.",
+            "fr": "Commence à construire un système de gestion d'équipe ! Crée une fonction de base :\n\n- ```add_codemon(team, name)``` qui ajoute un Codémon à la liste d'équipe et retourne l'équipe mise à jour\n- Teste en créant une équipe vide, en ajoutant Aquachu, Pyrochu et Florachu, puis affiche l'équipe."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create add_codemon function\n\n# Test it\n\n",
+          "fr": "# Créer la fonction add_codemon\n\n# Teste ça\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def add_codemon(team, name):\n    team.append(name)\n    return team\n\nmy_team = []\nmy_team = add_codemon(my_team, \"Aquachu\")\nmy_team = add_codemon(my_team, \"Pyrochu\")\nmy_team = add_codemon(my_team, \"Florachu\")\n\nprint(f\"My team: {my_team}\")",
+            "fr": "def add_codemon(equipe, nom):\n    equipe.append(nom)\n    return equipe\n\nmon_equipe = []\nmon_equipe = add_codemon(mon_equipe, \"Aquachu\")\nmon_equipe = add_codemon(mon_equipe, \"Pyrochu\")\nmon_equipe = add_codemon(mon_equipe, \"Florachu\")\n\nprint(f\"Mon équipe : {mon_equipe}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_10_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "lists",
+        "parameters",
+        "return",
+        "conditions",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Team Manager - Team Full Check",
+      "fr": "Gestionnaire d'équipe - Vérification équipe pleine"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A Codémon team can hold maximum 6 members. Add a function to check if the team is full:\n\n- Keep the existing ```add_codemon``` function in your starting code\n- Create ```is_team_full(team)``` that returns ```True``` if there are 6 or more Codémons, ```False``` otherwise\n- Test by adding 6 Codémons and checking if the team is full.",
+            "fr": "Une équipe Codémon peut contenir maximum 6 membres. Ajoute une fonction pour vérifier si l'équipe est pleine :\n\n- Garde la fonction ```add_codemon``` existante dans ton code de départ\n- Crée ```is_team_full(team)``` qui retourne ```True``` s'il y a 6 Codémons ou plus, ```False``` sinon\n- Teste en ajoutant 6 Codémons et en vérifiant si l'équipe est pleine."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def add_codemon(team, name):\n  team.append(name)\n  return team\n\n# Create is_team_full function\n\n# Test it\n\n",
+          "fr": "def add_codemon(equipe, nom):\n  equipe.append(nom)\n  return equipe\n\n# Créer la fonction is_team_full\n\n# Teste ça\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def add_codemon(team, name):\n  team.append(name)\n  return team\n\ndef is_team_full(team):\n  if len(team) >= 6:\n    return True\n  else:\n    return False\n\nmy_team = []\nmy_team = add_codemon(my_team, \"Aquachu\")\nmy_team = add_codemon(my_team, \"Pyrochu\")\nmy_team = add_codemon(my_team, \"Florachu\")\nmy_team = add_codemon(my_team, \"Rockachu\")\nmy_team = add_codemon(my_team, \"Shadowchu\")\nmy_team = add_codemon(my_team, \"Zap\")\n\nprint(f\"Team full: {is_team_full(my_team)}\")",
+            "fr": "def add_codemon(equipe, nom):\n  equipe.append(nom)\n  return equipe\n\ndef is_team_full(equipe):\n  if len(equipe) >= 6:\n    return True\n  else:\n    return False\n\nmon_equipe = []\nmon_equipe = add_codemon(mon_equipe, \"Aquachu\")\nmon_equipe = add_codemon(mon_equipe, \"Pyrochu\")\nmon_equipe = add_codemon(mon_equipe, \"Florachu\")\nmon_equipe = add_codemon(mon_equipe, \"Rockachu\")\nmon_equipe = add_codemon(mon_equipe, \"Shadowchu\")\nmon_equipe = add_codemon(mon_equipe, \"Zap\")\n\nprint(f\"Équipe pleine : {is_team_full(mon_equipe)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_10_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "lists",
+        "parameters",
+        "loops",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Team Manager - Display Team",
+      "fr": "Gestionnaire d'équipe - Afficher l'équipe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete your team manager by adding a display function:\n\n- Keep all previous functions in your starting code\n- Create ```display_team(team)``` that prints each Codémon with its position number\n- Test by building a team and displaying it nicely!",
+            "fr": "Complète ton gestionnaire d'équipe en ajoutant une fonction d'affichage :\n\n- Garde toutes les fonctions précédentes dans ton code de départ\n- Crée ```display_team(team)``` qui affiche chaque Codémon avec son numéro de position\n- Teste en construisant une équipe et en l'affichant joliment !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def add_codemon(team, name):\n  team.append(name)\n  return team\n\ndef is_team_full(team):\n  if len(team) >= 6:\n    return True\n  else:\n    return False\n\n# Create display_team function\n\n# Test it\n\n",
+          "fr": "def add_codemon(equipe, nom):\n  equipe.append(nom)\n  return equipe\n\ndef is_team_full(equipe):\n  if len(equipe) >= 6:\n    return True\n  else:\n    return False\n\n# Créer la fonction display_team\n\n# Teste ça\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def add_codemon(team, name):\n  team.append(name)\n  return team\n\ndef is_team_full(team):\n  if len(team) >= 6:\n    return True\n  else:\n    return False\n\ndef display_team(team):\n  print(\"=== MY TEAM ===\")\n  for i in range(len(team)):\n    print(f\"{i + 1}. {team[i]}\")\n\nmy_team = []\nmy_team = add_codemon(my_team, \"Aquachu\")\nmy_team = add_codemon(my_team, \"Pyrochu\")\nmy_team = add_codemon(my_team, \"Florachu\")\nmy_team = add_codemon(my_team, \"Rockachu\")\n\ndisplay_team(my_team)\nprint(f\"\\nTeam full: {is_team_full(my_team)}\")",
+            "fr": "def add_codemon(equipe, nom):\n  equipe.append(nom)\n  return equipe\n\ndef is_team_full(equipe):\n  if len(equipe) >= 6:\n    return True\n  else:\n    return False\n\ndef display_team(equipe):\n  print(\"=== MON ÉQUIPE ===\")\n  for i in range(len(equipe)):\n    print(f\"{i + 1}. {equipe[i]}\")\n\nmon_equipe = []\nmon_equipe = add_codemon(mon_equipe, \"Aquachu\")\nmon_equipe = add_codemon(mon_equipe, \"Pyrochu\")\nmon_equipe = add_codemon(mon_equipe, \"Florachu\")\nmon_equipe = add_codemon(mon_equipe, \"Rockachu\")\n\ndisplay_team(mon_equipe)\nprint(f\"\\nÉquipe pleine : {is_team_full(mon_equipe)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_11_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "dictionaries",
+        "parameters",
+        "return",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle System - Codémon Creation",
+      "fr": "Système de combat - Création de Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Start building a battle system! Create a function to make Codémons:\n\n- ```create_codemon(name, hp, attack, defense)``` that returns a dictionary with these stats\n- Test by creating ```Aquachu``` ```(100 HP, 60 attack, 30 defense)``` and ```Pyrochu``` ```(80 HP, 60 attack, 20 defense)```, then display their stats.",
+            "fr": "Commence à construire un système de combat ! Crée une fonction pour créer des Codémons :\n\n- ```create_codemon(name, hp, attack, defense)``` qui retourne un dictionnaire avec ces stats\n- Teste en créant ```Aquachu``` ```(100 HP, 60 attaque, 30 défense)``` et ```Pyrochu``` ```(80 HP, 60 attaque, 20 défense)```, puis affiche leurs stats."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create create_codemon function\n\n# Test it\n\n",
+          "fr": "# Créer la fonction create_codemon\n\n# Teste ça\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def create_codemon(name, hp, attack, defense):\n  return {\n    \"name\": name,\n    \"hp\": hp,\n    \"attack\": attack,\n    \"defense\": defense\n  }\n\naquachu = create_codemon(\"Aquachu\", 100, 60, 30)\npyrochu = create_codemon(\"Pyrochu\", 80, 60, 20)\n\nprint(f\"Aquachu: {aquachu}\")\nprint(f\"Pyrochu: {pyrochu}\")",
+            "fr": "def create_codemon(nom, hp, attaque, defense):\n  return {\n    \"nom\": nom,\n    \"hp\": hp,\n    \"attaque\": attaque,\n    \"defense\": defense\n  }\n\naquachu = create_codemon(\"Aquachu\", 100, 60, 30)\npyrochu = create_codemon(\"Pyrochu\", 80, 60, 20)\n\nprint(f\"Aquachu : {aquachu}\")\nprint(f\"Pyrochu : {pyrochu}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_11_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "dictionaries",
+        "parameters",
+        "return",
+        "calculations",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle System - Damage Calculation",
+      "fr": "Système de combat - Calcul des dégâts"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Add damage calculation to your battle system:\n\n- Keep the ```create_codemon``` function in your starting code\n- Create ```calculate_damage(attacker, defender)``` that returns: attacker's attack - defender's defense (minimum 5 damage)\n- Test by creating two Codémons and calculating damage in both directions.",
+            "fr": "Ajoute le calcul de dégâts à ton système de combat :\n\n- Garde la fonction ```create_codemon``` dans ton code de départ\n- Crée ```calculate_damage(attacker, defender)``` qui retourne : attaque de l'attaquant - défense du défenseur (minimum 5 dégâts)\n- Teste en créant deux Codémons et en calculant les dégâts dans les deux sens."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def create_codemon(name, hp, attack, defense):\n  return {\n    \"name\": name,\n    \"hp\": hp,\n    \"attack\": attack,\n    \"defense\": defense\n  }\n\n# Create calculate_damage function\n\n# Test it\n\n",
+          "fr": "def create_codemon(nom, hp, attaque, defense):\n  return {\n    \"nom\": nom,\n    \"hp\": hp,\n    \"attaque\": attaque,\n    \"defense\": defense\n  }\n\n# Créer la fonction calculate_damage\n\n# Teste ça\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def create_codemon(name, hp, attack, defense):\n  return {\n    \"name\": name,\n    \"hp\": hp,\n    \"attack\": attack,\n    \"defense\": defense\n  }\n\ndef calculate_damage(attacker, defender):\n  damage = attacker[\"attack\"] - defender[\"defense\"]\n  if damage < 5:\n    damage = 5\n  return damage\n\naquachu = create_codemon(\"Aquachu\", 100, 60, 30)\npyrochu = create_codemon(\"Pyrochu\", 80, 60, 20)\n\nprint(\"=== DAMAGE CALCULATION ===\")\ndamage_to_aquachu = calculate_damage(pyrochu, aquachu)\nprint(f\"Pyrochu attacks Aquachu: {damage_to_aquachu} damage\")\n\ndamage_to_pyrochu = calculate_damage(aquachu, pyrochu)\nprint(f\"Aquachu attacks Pyrochu: {damage_to_pyrochu} damage\")",
+            "fr": "def create_codemon(nom, hp, attaque, defense):\n  return {\n    \"nom\": nom,\n    \"hp\": hp,\n    \"attaque\": attaque,\n    \"defense\": defense\n  }\n\ndef calculate_damage(attaquant, defenseur):\n  degats = attaquant[\"attaque\"] - defenseur[\"defense\"]\n  if degats < 5:\n    degats = 5\n  return degats\n\naquachu = create_codemon(\"Aquachu\", 100, 60, 30)\npyrochu = create_codemon(\"Pyrochu\", 80, 60, 20)\n\nprint(\"=== CALCUL DES DÉGÂTS ===\")\ndegats_aquachu = calculate_damage(pyrochu, aquachu)\nprint(f\"Pyrochu attaque Aquachu : {degats_aquachu} dégâts\")\n\ndegats_pyrochu = calculate_damage(aquachu, pyrochu)\nprint(f\"Aquachu attaque Pyrochu : {degats_pyrochu} dégâts\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_12_11_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "functions",
+        "dictionaries",
+        "parameters",
+        "return",
+        "conditions",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Battle System - Complete Battle",
+      "fr": "Système de combat - Combat complet"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete your battle system with damage application and status check:\n\n- Keep previous functions in your starting code\n- Create ```apply_damage(codemon, damage)``` that reduces HP and returns the updated Codémon\n- Create ```is_alive(codemon)``` that returns ```True``` if HP > 0, ```False``` otherwise\n\nSimulate a complete battle turn: Pyrochu attacks Aquachu, apply damage, and check if Aquachu is still alive.",
+            "fr": "Complète ton système de combat avec l'application des dégâts et la vérification de statut :\n\n- Garde les fonctions précédentes dans ton code de départ\n- Crée ```apply_damage(codemon, damage)``` qui réduit les HP et retourne le Codémon mis à jour\n- Crée ```is_alive(codemon)``` qui retourne ```True``` si HP > 0, ```False``` sinon\n\nSimule un tour de combat complet : Pyrochu attaque Aquachu, applique les dégâts, et vérifie si Aquachu est toujours vivant."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def create_codemon(name, hp, attack, defense):\n  return {\n    \"name\": name,\n    \"hp\": hp,\n    \"attack\": attack,\n    \"defense\": defense\n  }\n\ndef calculate_damage(attacker, defender):\n  damage = attacker[\"attack\"] - defender[\"defense\"]\n  if damage < 5:\n    damage = 5\n  return damage\n\n# Create apply_damage function\n\n# Create is_alive function\n\n# Test it\n\n",
+          "fr": "def create_codemon(nom, hp, attaque, defense):\n  return {\n    \"nom\": nom,\n    \"hp\": hp,\n    \"attaque\": attaque,\n    \"defense\": defense\n  }\n\ndef calculate_damage(attaquant, defenseur):\n  degats = attaquant[\"attaque\"] - defenseur[\"defense\"]\n  if degats < 5:\n    degats = 5\n  return degats\n\n# Créer la fonction apply_damage\n\n# Créer la fonction is_alive\n\n# Teste ça\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def create_codemon(name, hp, attack, defense):\n  return {\n    \"name\": name,\n    \"hp\": hp,\n    \"attack\": attack,\n    \"defense\": defense\n  }\n\ndef calculate_damage(attacker, defender):\n  damage = attacker[\"attack\"] - defender[\"defense\"]\n  if damage < 5:\n    damage = 5\n  return damage\n\ndef apply_damage(codemon, damage):\n  codemon[\"hp\"] = codemon[\"hp\"] - damage\n  return codemon\n\ndef is_alive(codemon):\n  if codemon[\"hp\"] > 0:\n    return True\n  else:\n    return False\n\naquachu = create_codemon(\"Aquachu\", 100, 60, 30)\npyrochu = create_codemon(\"Pyrochu\", 80, 60, 20)\n\nprint(\"=== BATTLE START ===\")\nprint(f\"{pyrochu['name']} attacks {aquachu['name']}!\\n\")\n\ndamage = calculate_damage(pyrochu, aquachu)\nprint(f\"Damage dealt: {damage}\")\n\naquachu = apply_damage(aquachu, damage)\nprint(f\"{aquachu['name']} HP: {aquachu['hp']}\")\nprint(f\"{aquachu['name']} alive: {is_alive(aquachu)}\")",
+            "fr": "def create_codemon(nom, hp, attaque, defense):\n  return {\n    \"nom\": nom,\n    \"hp\": hp,\n    \"attaque\": attaque,\n    \"defense\": defense\n  }\n\ndef calculate_damage(attaquant, defenseur):\n  degats = attaquant[\"attaque\"] - defenseur[\"defense\"]\n  if degats < 5:\n    degats = 5\n  return degats\n\ndef apply_damage(codemon, degats):\n  codemon[\"hp\"] = codemon[\"hp\"] - degats\n  return codemon\n\ndef is_alive(codemon):\n  if codemon[\"hp\"] > 0:\n    return True\n  else:\n    return False\n\naquachu = create_codemon(\"Aquachu\", 100, 60, 30)\npyrochu = create_codemon(\"Pyrochu\", 80, 60, 20)\n\nprint(\"=== DÉBUT DU COMBAT ===\")\nprint(f\"{pyrochu['nom']} attaque {aquachu['nom']} !\\n\")\n\ndegats = calculate_damage(pyrochu, aquachu)\nprint(f\"Dégâts infligés : {degats}\")\n\naquachu = apply_damage(aquachu, degats)\nprint(f\"{aquachu['nom']} HP : {aquachu['hp']}\")\nprint(f\"{aquachu['nom']} vivant : {is_alive(aquachu)}\")"
+          }
+        }
+      ]
+    }
+  }
+]

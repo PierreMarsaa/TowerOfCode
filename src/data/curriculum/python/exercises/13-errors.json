@@ -1,0 +1,4122 @@
+[
+  {
+    "id": "python_13_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "introduction",
+        "debugging"
+      ]
+    },
+    "title": {
+      "en": "What Are Errors in Python?",
+      "fr": "Qu'est-ce que les erreurs en Python ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When you write Python code, you'll encounter ***errors***. Don't worry - errors are not bad! They're actually Python's way of helping you understand what went wrong.",
+            "fr": "Quand tu écris du code Python, tu vas rencontrer des ***erreurs***. Ne t'inquiète pas - les erreurs ne sont pas mauvaises ! C'est en fait la façon dont Python t'aide à comprendre ce qui s'est mal passé."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Think of errors like a Codémon trainer giving you feedback: \"Hey, you can't make a Codémon fly without wings!\" Similarly, Python tells you: \"Hey, you can't divide by zero - that doesn't make sense!\" or \"Hey, I don't know what is this variable you're talking about!\"",
+            "fr": "Pense aux erreurs comme un dresseur de Codémon qui te donne un retour : \"Hé, tu ne peux pas faire voler un Codémon qui n'a pas d'ailes !\" De même, Python te dit : \"Hé, tu ne peux pas diviser par zéro - ça n'a pas de sens !\" ou \"Hé, je ne sais pas ce que c'est cette variable dont tu parles !\""
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# This code will cause an error\ncodemon_level = 10\nprint(codemon_levl)  # Typo: 'levl' instead of 'level'",
+            "fr": "# Ce code va provoquer une erreur\ncodemon_level = 10\nprint(codemon_levl)  # Faute de frappe : 'levl' au lieu de 'level'"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "When you run this code, Python will show an error message. This is ***good*** - it's telling you exactly what's wrong so you can fix it!",
+            "fr": "Quand tu exécutes ce code, Python va afficher un message d'erreur. C'est ***bien*** - il te dit exactement ce qui ne va pas pour que tu puisses le corriger !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Errors are displayed in english, and usually you want to read them from bottom to top, as the last line is often the most relevant one.",
+            "fr": "Les erreurs sont affichées en anglais (sorry mes ptits frenchies), et généralement tu veux les lire de bas en haut, car la dernière ligne est souvent la plus pertinente."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "On the code above, the error message would say something like ```\"NameError: name 'codemon_levl' is not defined\"```. This means that we never attributed a value to ```'codemon_levl'```, and yet, we're trying to print it.",
+            "fr": "Sur le code ci-dessus, le message d'erreur doit dire quelque chose comme ```\"NameError: name 'codemon_levl' is not defined\"``` (codemon_levl n'est pas défini). Cela veut dire que nous n'avons jamais attribué une valeur à ```'codemon_levl'```, et pourtant, on essaye de l'afficher, cela cause donc une erreur."
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Errors Are Your Friends",
+              "fr": "Les erreurs sont tes amies"
+            },
+            "content": {
+              "en": "Every programmer encounters errors, even experienced ones! The difference is that experienced programmers have learned to read and understand error messages quickly. By learning about errors now, you're building an essential skill.",
+              "fr": "Chaque programmeur rencontre des erreurs, même les expérimentés ! La différence est que les programmeurs expérimentés ont appris à lire et comprendre les messages d'erreur rapidement. En apprenant sur les erreurs maintenant, tu développes une compétence essentielle."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "syntax errors",
+        "runtime errors"
+      ]
+    },
+    "title": {
+      "en": "Syntax Errors vs Runtime Errors",
+      "fr": "Erreurs de syntaxe vs erreurs d'exécution"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "There are two main types of errors in Python:",
+            "fr": "Il existe deux types principaux d'erreurs en Python :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***1. Syntax Errors*** - These happen when Python can't understand your code because you broke the rules of the Python language. It's like trying to speak French but mixing up the grammar so badly that nobody can understand you.\n\nPython catches these ***before*** running your code.",
+            "fr": "***1. Erreurs de syntaxe*** - Elles se produisent quand Python ne peut pas comprendre ton code parce que tu as enfreint les règles du langage Python. C'est comme essayer de parler français mais le parler tellement mal que personne ne peut te comprendre.\n\nPython détecte ces erreurs ***avant*** d'exécuter ton code."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Syntax Error example - missing colon\nif codemon_hp > 0\n    print(\"Codemon can battle\")",
+            "fr": "# Exemple d'erreur de syntaxe - deux-points manquants\nif codemon_hp > 0\n    print(\"Codemon peut combattre\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***2. Runtime Errors*** - These happen when your code is written correctly according to Python's rules, but something goes wrong when the code actually runs.\n\nPython only discovers these ***while*** running your code.",
+            "fr": "***2. Erreurs d'exécution*** - Elles se produisent quand ton code est écrit correctement selon les règles de Python, mais quelque chose ne va pas quand le code s'exécute réellement.\n\nPython ne découvre ces erreurs que ***pendant*** l'exécution de ton code."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Runtime Error example - division by zero\ncodemon_power = 100\nenemy_defense = 0\ndamage = codemon_power / enemy_defense  # Can't divide by zero!",
+            "fr": "# Exemple d'erreur d'exécution - division par zéro\ncodemon_power = 100\nenemy_defense = 0\ndamage = codemon_power / enemy_defense  # On ne peut pas diviser par zéro !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The syntax is correct (Python understands what you wrote), but when it tries to divide by zero, it realizes this is impossible!",
+            "fr": "La syntaxe est correcte (Python comprend ce que tu as écrit), mais quand il essaie de diviser par zéro, il réalise que c'est impossible !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Summary",
+              "fr": "Résumé"
+            },
+            "content": {
+              "en": "***Syntax errors*** = Python can't read your code\n***Runtime errors*** = Python can read your code, but can't execute it",
+              "fr": "***Erreurs de syntaxe*** = Python ne peut pas lire ton code\n***Erreurs d'exécution*** = Python peut lire ton code, mais ne peut pas l'exécuter"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_1_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "syntax errors",
+        "runtime errors"
+      ]
+    },
+    "title": {
+      "en": "Identify the Error Type",
+      "fr": "Identifier le type d'erreur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Look at this code:",
+            "fr": "Regarde ce code :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_list = [\"Aquachu\", \"Pyrochu\", \"Florachu\"]\nprint(codemon_list[5])"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What type of error will this cause?",
+            "fr": "Quel type d'erreur cela va-t-il causer ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Runtime error - the syntax is correct, but trying to access index 5 in a list with only 3 items fails during execution",
+              "fr": "Erreur d'exécution - la syntaxe est correcte, mais essayer d'accéder à l'index 5 dans une liste avec seulement 3 éléments échoue pendant l'exécution"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Syntax error - Python can't understand the code",
+              "fr": "Erreur de syntaxe - Python ne peut pas comprendre le code"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "No error - the code will work fine",
+              "fr": "Pas d'erreur - le code fonctionnera bien"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Syntax error - lists cannot be indexed",
+              "fr": "Erreur de syntaxe - les listes ne peuvent pas être indexées"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about when Python will discover the problem. Can Python understand what you wrote? If yes, it's probably a runtime error.",
+        "fr": "Réfléchis à quand Python va découvrir le problème. Est-ce que Python peut comprendre ce que tu as écrit ? Si oui, c'est probablement une erreur d'exécution."
+      }
+    }
+  },
+  {
+    "id": "python_13_1_4",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "error messages",
+        "debugging"
+      ]
+    },
+    "title": {
+      "en": "How to Read Error Messages",
+      "fr": "Comment lire les messages d'erreur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When Python encounters an error, it gives you a detailed message. Let's learn to read it!",
+            "fr": "Quand Python rencontre une erreur, il te donne un message détaillé. Apprenons à le lire !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's an example error message:",
+            "fr": "Voici un exemple de message d'erreur :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "text",
+          "value": "Traceback (most recent call last):\n  File \"codemon.py\", line 3, in <module>\n    print(codemon_name)\nNameError: name 'codemon_name' is not defined"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's break this down:\n\n1. ***Traceback*** - indicating there is an error\n2. ***File and Line Number*** - ```File \"codemon.py\", line 3``` tells you exactly where to look\n3. ***The Problematic Code*** - ```print(codemon_name)``` shows the line that caused the error\n4. ***Error Type*** - ```NameError``` tells you what kind of error it is\n5. ***Error Description*** - ```name 'codemon_name' is not defined``` explains what went wrong",
+            "fr": "Décomposons ça :\n\n1. ***Traceback*** - explique qu'il y a une erreur\n2. ***Fichier et Numéro de Ligne*** - ```File \"codemon.py\", line 3``` te dit exactement où regarder\n3. ***Le Code Problématique*** - ```print(codemon_name)``` montre la ligne qui a causé l'erreur\n4. ***Type d'Erreur*** - ```NameError``` te dit quel type d'erreur c'est\n5. ***Description de l'Erreur*** - ```name 'codemon_name' is not defined``` explique ce qui s'est mal passé"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "success",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Reading Error Messages: A Strategy",
+              "fr": "Lire les messages d'erreur : Une stratégie"
+            },
+            "content": {
+              "en": "When you see an error:\n1. Don't panic! Read the message carefully\n2. Find the line number where the error occurred (if multiple files, look at the one at the bottom)\n3. Look at the error type (NameError, TypeError, etc.)\n4. Read the description to understand what went wrong\n5. Check your code at that line and try to fix it",
+              "fr": "Quand tu vois une erreur :\n1. Ne panique pas ! Lis le message attentivement\n2. Trouve le numéro de ligne où l'erreur s'est produite (si plusieurs fichiers, regarde celui tout en bas)\n3. Regarde le type d'erreur (NameError, TypeError, etc.)\n4. Lis la description pour comprendre ce qui s'est mal passé\n5. Vérifie ton code à cette ligne et essaie de le corriger"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "error types",
+        "nameerror",
+        "typeerror",
+        "valueerror"
+      ]
+    },
+    "title": {
+      "en": "Common Error Types - Part 1",
+      "fr": "Types d'erreurs courants - Partie 1"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's explore the most common error types you'll encounter. We'll look at three of them first:",
+            "fr": "Explorons les types d'erreurs les plus courants que tu vas rencontrer. Regardons-en trois d'abord :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***1. NameError*** - You're trying to use a variable that doesn't exist",
+            "fr": "***1. NameError*** - Tu essaies d'utiliser une variable qui n'existe pas"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# NameError example\nprint(codemon_hp)  # codemon_hp was never created!\n\n# To fix: create the variable first\ncodemon_hp = 100\nprint(codemon_hp)  # Now it works!",
+            "fr": "# Exemple de NameError\nprint(codemon_hp)  # codemon_hp n'a jamais été créé !\n\n# Corrigé : crée la variable d'abord\ncodemon_hp = 100\nprint(codemon_hp)  # Maintenant ça marche !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***2. TypeError*** - You're trying to use an operation on the wrong type of data",
+            "fr": "***2. TypeError*** - Tu essaies d'utiliser une opération sur le mauvais type de données"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# TypeError example\ncodemon_name = \"Aquachu\"\ncodemon_level = 10\nresult = codemon_name + codemon_level  # Can't add string and number!\n\n# To fix: convert to the same type\nresult = codemon_name + str(codemon_level)  # Now both are strings",
+            "fr": "# Exemple de TypeError\ncodemon_name = \"Aquachu\"\ncodemon_level = 10\nresult = codemon_name + codemon_level  # On ne peut pas additionner une chaîne et un nombre !\n\n# Corrigé : convertis au même type\nresult = codemon_name + str(codemon_level)  # Maintenant les deux sont des chaînes"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***3. ValueError*** - The type is right, but the value doesn't make sense for the operation",
+            "fr": "***3. ValueError*** - Le type est correct, mais la valeur n'a pas de sens pour l'opération"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# ValueError example\ncodemon_level = int(\"ten\")  # Can't convert \"ten\" to a number!\n\n# To fix: use a valid numeric string\ncodemon_level = int(\"10\")  # This works",
+            "fr": "# Exemple de ValueError\ncodemon_level = int(\"ten\")  # On ne peut pas convertir \"ten\" en nombre !\n\n# Corrigé : utilise une chaîne numérique valide\ncodemon_level = int(\"10\")  # Ça marche"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_1_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "error types",
+        "indexerror",
+        "keyerror",
+        "zerodivisionerror"
+      ]
+    },
+    "title": {
+      "en": "Common Error Types - Part 2",
+      "fr": "Types d'erreurs courants - Partie 2"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's continue with three more common error types:",
+            "fr": "Continuons avec trois autres types d'erreurs courants :"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***4. IndexError*** - You're trying to access a position in a list or string that doesn't exist",
+            "fr": "***4. IndexError*** - Tu essaies d'accéder à une position dans une liste ou une chaîne qui n'existe pas"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# IndexError example\ncodemon_team = [\"Aquachu\", \"Pyrochu\"]\nprint(codemon_team[5])  # There are only 2 items (indexes 0 and 1)!\n\n# To fix: use a valid index\nprint(codemon_team[1])  # This works",
+            "fr": "# Exemple d'IndexError\ncodemon_team = [\"Aquachu\", \"Pyrochu\"]\nprint(codemon_team[5])  # Il n'y a que 2 éléments (index 0 et 1) !\n\n# Corrigé : utilise un index valide\nprint(codemon_team[1])  # Ça marche"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***5. KeyError*** - You're trying to access a dictionary key that doesn't exist",
+            "fr": "***5. KeyError*** - Tu essaies d'accéder à une clé de dictionnaire qui n'existe pas"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# KeyError example\ncodemon_stats = {\"name\": \"Aquachu\", \"level\": 10}\nprint(codemon_stats[\"power\"])  # \"power\" key doesn't exist!\n\n# To fix: use an existing key or add the key first\nprint(codemon_stats[\"name\"])  # This works",
+            "fr": "# Exemple de KeyError\ncodemon_stats = {\"name\": \"Aquachu\", \"level\": 10}\nprint(codemon_stats[\"power\"])  # La clé \"power\" n'existe pas !\n\n# Corrigé : utilise une clé existante ou ajoute la clé d'abord\nprint(codemon_stats[\"name\"])  # Ça marche"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***6. ZeroDivisionError*** - You're trying to divide by zero (which is mathematically impossible)",
+            "fr": "***6. ZeroDivisionError*** - Tu essaies de diviser par zéro (ce qui est mathématiquement impossible)"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# ZeroDivisionError example\ncodemon_power = 100\nenemy_defense = 0\ndamage = codemon_power / enemy_defense  # Can't divide by zero!\n\n# To fix: check if the divisor is zero first\nif enemy_defense != 0:\n    damage = codemon_power / enemy_defense\nelse:\n    print(\"Enemy defense is zero!\")",
+            "fr": "# Exemple de ZeroDivisionError\ncodemon_power = 100\nenemy_defense = 0\ndamage = codemon_power / enemy_defense  # On ne peut pas diviser par zéro !\n\n# Corrigé : vérifie si le diviseur est zéro d'abord\nif enemy_defense != 0:\n    damage = codemon_power / enemy_defense\nelse:\n    print(\"La défense de l'ennemi est zéro !\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Other type of errors exist, but these six are among the most common you'll encounter as you code in Python. It's a good start to recognize and understand them!",
+            "fr": "D'autres types d'erreurs existent, mais ces six sont parmi les plus courants que tu rencontreras en codant en Python. C'est un bon début pour les reconnaître et les comprendre !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Remember These 6 Error Types",
+              "fr": "Retiens ces 6 types d'erreurs"
+            },
+            "content": {
+              "en": "***NameError*** = Variable doesn't exist\n***TypeError*** = Wrong type for operation\n***ValueError*** = Right type, wrong value\n***IndexError*** = List/string position doesn't exist\n***KeyError*** = Dictionary key doesn't exist\n***ZeroDivisionError*** = Trying to divide by zero",
+              "fr": "***NameError*** = La variable n'existe pas\n***TypeError*** = Mauvais type pour l'opération\n***ValueError*** = Bon type, mauvaise valeur\n***IndexError*** = Position dans la liste/chaîne n'existe pas\n***KeyError*** = Clé du dictionnaire n'existe pas\n***ZeroDivisionError*** = Essai de diviser par zéro"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_1_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "error types",
+        "identification"
+      ]
+    },
+    "title": {
+      "en": "Identify the Error Type",
+      "fr": "Identifier le type d'erreur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What error will this code produce?",
+            "fr": "Quelle erreur ce code va-t-il produire ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_types = {\"Aquachu\": \"water\", \"Pyrochu\": \"fire\"}\nprint(codemon_types[\"Florachu\"])"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```KeyError```"
+          },
+          {
+            "type": "text",
+            "value": "```IndexError```"
+          },
+          {
+            "type": "text",
+            "value": "```NameError```"
+          },
+          {
+            "type": "text",
+            "value": "```TypeError```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what data structure is being used and what operation is being performed. Is it trying to access something that doesn't exist?",
+        "fr": "Réfléchis à quelle structure de données est utilisée et quelle opération est effectuée. Est-ce qu'elle essaie d'accéder à quelque chose qui n'existe pas ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_1_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "error types"
+      ]
+    },
+    "title": {
+      "en": "Match Error Types with Descriptions",
+      "fr": "Associer les types d'erreurs aux descriptions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each error type with its description:",
+            "fr": "Associe chaque type d'erreur à sa description :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```NameError```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Variable is used but hasn't been created",
+                "fr": "Variable utilisée mais pas créée"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```TypeError```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Operation performed on wrong data type",
+                "fr": "Opération effectuée sur le mauvais type de données"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```IndexError```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Trying to access list position that doesn't exist",
+                "fr": "Essai d'accéder à une position de liste qui n'existe pas"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```ZeroDivisionError```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Attempting to divide a number by zero",
+                "fr": "Tentative de diviser un nombre par zéro"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_13_1_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "error types",
+        "fixing errors"
+      ]
+    },
+    "title": {
+      "en": "Fix the Error",
+      "fr": "Corriger l'erreur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "This code produces a ```NameError``` for now. Complete it to fix the error by creating the missing variable:",
+            "fr": "Ce code produit une ```NameError``` pour l'instant. Complète-le pour corriger l'erreur en créant la variable manquante :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# Create the missing variable\n{{}} = {{}}\n\n# Now this will work\nprint(\"Your Codémon is:\", codemon_name)",
+        "options": [
+          "codemon_name",
+          "codemon_level",
+          "\"Aquachu\"",
+          "Aquachu"
+        ],
+        "correctAnswers": {
+          "1": "codemon_name",
+          "2": "\"Aquachu\""
+        }
+      },
+      "hint": {
+        "en": "Think about what variable is being used in the print statement and what value it should have. Remember that string values need quotes!",
+        "fr": "Réfléchis à quelle variable est utilisée dans l'instruction print et quelle valeur elle devrait avoir. Rappelle-toi que les valeurs de type chaîne ont besoin de guillemets !"
+      }
+    }
+  },
+  {
+    "id": "python_13_1_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "error types",
+        "prediction"
+      ]
+    },
+    "title": {
+      "en": "Predict the Error",
+      "fr": "Prédire l'erreur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What error will this code cause?",
+            "fr": "Quelle erreur ce code va-t-il causer ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon_level = \"25\"\ncodemon_power = 100\ntotal = codemon_level + codemon_power"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```TypeError``` - Can't add a string and an integer",
+              "fr": "```TypeError``` - Impossible d'additionner une chaîne et un entier"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```ValueError``` - \"25\" is not a valid number",
+              "fr": "```ValueError``` - \"25\" n'est pas un nombre valide"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```NameError``` - codemon_level is not defined",
+              "fr": "```NameError``` - codemon_level n'est pas défini"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "No error - the code will work fine",
+              "fr": "Pas d'erreur - le code fonctionnera bien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Look carefully at the types of the variables being used. What happens when you try to perform operations with different types?",
+        "fr": "Regarde attentivement les types des variables utilisées. Que se passe-t-il quand tu essaies d'effectuer des opérations avec différents types ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_1_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "debugging",
+        "error types",
+        "problem solving"
+      ]
+    },
+    "title": {
+      "en": "Debug the Codémon Battle System",
+      "fr": "Déboguer le système de combat Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "A Codémon trainer wrote a battle system, but it's full of errors! Your mission is to fix all the bugs. The code should:\n\n1. Create a dictionary with Codémon stats (name, level, hp)\n2. Calculate damage based on level\n3. Apply damage to hp\n4. Display the battle result\n\nThe code has ***4 different errors***. Find and fix them all!",
+            "fr": "Un dresseur de Codémon a écrit un système de combat, mais il est plein d'erreurs ! Ta mission est de corriger tous les bugs. Le code devrait :\n\n1. Créer un dictionnaire avec les stats du Codémon (nom, niveau, hp)\n2. Calculer les dégâts basés sur le niveau\n3. Appliquer les dégâts aux hp\n4. Afficher le résultat du combat\n\nLe code contient ***4 erreurs différentes***. Trouve-les et corrige-les toutes !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Buggy Codémon battle system - fix all 4 errors!\n\n# Codémon stats\ncodemon = {\"name\": \"Aquachu\", \"level\": 15, \"hp\": 100}\n\n# Calculate damage\nenemy_level = \"10\"\ndamage = codemon[\"level\"] + enemy_level\n\n# Apply damage\ncodemon[\"hpp\"] = codemon[\"hp\"] - damage\n\n# Display result\nprint(codemon_name + \" took \" + damage + \" damage!\")\nprint(\"Remaining HP:\", codemon[\"hpp\"])\n",
+          "fr": "# Système de combat Codémon buggé - corrige les 4 erreurs !\n\n# Stats du Codémon\ncodemon = {\"name\": \"Aquachu\", \"level\": 15, \"hp\": 100}\n\n# Calculer les dégâts\nenemy_level = \"10\"\ndamage = codemon[\"level\"] + enemy_level\n\n# Appliquer les dégâts\ncodemon[\"hpp\"] = codemon[\"hp\"] - damage\n\n# Afficher le résultat\nprint(codemon_name + \" took \" + damage + \" damage!\")\nprint(\"Remaining HP:\", codemon[\"hpp\"])\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "# Fixed Codémon battle system\n\n# Codémon stats\ncodemon = {\"name\": \"Aquachu\", \"level\": 15, \"hp\": 100}\n\n# Calculate damage\n# FIX 1: TypeError - enemy_level should be int, not string\nenemy_level = 10\ndamage = codemon[\"level\"] + enemy_level\n\n# Apply damage\n# FIX 2: KeyError - use \"hp\" instead of \"health\" (or create \"health\" key)\ncodemon[\"hp\"] = codemon[\"hp\"] - damage\n\n# Display result\n# FIX 3: NameError - codemon_name doesn't exist, use codemon[\"name\"]\n# FIX 4: TypeError - can't concatenate string with int, convert damage to string\nprint(codemon[\"name\"] + \" took \" + str(damage) + \" damage!\")\nprint(\"Remaining HP:\", codemon[\"hp\"])"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "\n***The 4 errors were:***\n\n1. ***TypeError*** on line 6: ```enemy_level``` is a string but should be an integer for addition\n2. ***KeyError*** on line 10: Key ```\"health\"``` doesn't exist in the dictionary (should use ```\"hp\"```)\n3. ***NameError*** on line 13: Variable ```codemon_name``` was never defined (should use ```codemon[\"name\"]```)\n4. ***TypeError*** on line 13: Can't concatenate string with integer ```damage``` (need to convert with ```str()```)",
+            "fr": "\n***Les 4 erreurs étaient :***\n\n1. ***TypeError*** ligne 6 : ```enemy_level``` est une chaîne mais devrait être un entier pour l'addition\n2. ***KeyError*** ligne 10 : La clé ```\"health\"``` n'existe pas dans le dictionnaire (devrait utiliser ```\"hp\"```)\n3. ***NameError*** ligne 13 : La variable ```codemon_name``` n'a jamais été définie (devrait utiliser ```codemon[\"name\"]```)\n4. ***TypeError*** ligne 13 : Impossible de concaténer une chaîne avec l'entier ```damage``` (besoin de convertir avec ```str()```)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "error handling",
+        "try except"
+      ]
+    },
+    "title": {
+      "en": "What Are Exceptions?",
+      "fr": "Qu'est-ce qu'une exception ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You've already learned about different types of errors like ```NameError```, ```TypeError```, and ```ValueError```. These are called ***exceptions*** - errors that occur while your program is running.",
+            "fr": "Tu as déjà appris différents types d'erreurs comme ```NameError```, ```TypeError``` et ```ValueError```. Ce sont des ***exceptions*** - des erreurs qui se produisent pendant l'exécution de ton programme."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Without exception handling, when an error occurs, your program crashes immediately:",
+            "fr": "Sans gestion des exceptions, quand une erreur se produit, ton programme plante immédiatement :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "# This code will crash\ncodemon_level = int(\"not a number\")  # ValueError!\nprint(\"This line never runs\")"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "But what if we want to handle the error gracefully instead of crashing? That's where ***try/except*** comes in - it lets us catch and handle exceptions so our program can continue running.",
+            "fr": "Mais si on veut gérer l'erreur proprement au lieu de planter ? C'est là qu'intervient ***try/except*** - ça nous permet d'attraper et de gérer les exceptions pour que notre programme puisse continuer à fonctionner."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Think of it like catching a Codémon - instead of letting the error escape and crash your program, you catch it and decide what to do with it!",
+            "fr": "Imagine que c'est comme attraper un Codémon - au lieu de laisser l'erreur s'échapper et faire planter ton programme, tu l'attrapes et décides quoi en faire !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Syntax Errors vs Exceptions",
+              "fr": "Erreurs de syntaxe vs Exceptions"
+            },
+            "content": {
+              "en": "Remember: Syntax errors (like forgetting a colon) are caught before your program runs. Exceptions (like ValueError) happen while your program is running. You can only catch exceptions with try/except, not syntax errors.",
+              "fr": "Rappelle-toi : Les erreurs de syntaxe (comme oublier un deux-points) sont détectées avant que ton programme ne s'exécute. Les exceptions (comme ValueError) arrivent pendant que ton programme tourne. Tu ne peux attraper que les exceptions avec try/except, pas les erreurs de syntaxe."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try except",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Basic try/except Syntax",
+      "fr": "Syntaxe de base try/except"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The basic structure of exception handling uses two keywords: ```try``` and ```except```.",
+            "fr": "La structure de base de la gestion des exceptions utilise deux mots-clés : ```try``` et ```except```."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "try:\n    # Code that might cause an error\n    risky_code_here()\nexcept:\n    # Code that runs if an error occurs\n    handle_error_here()",
+            "fr": "try:\n    # Code qui pourrait causer une erreur\n    risky_code_here()\nexcept:\n    # Code qui s'exécute si une erreur se produit\n    handle_error_here()"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's how it works:\n\n1. Python tries to run the code in the ```try``` block\n2. If an exception occurs, Python stops the try block immediately\n3. Python jumps to the ```except``` block and runs that code instead\n4. If no exception occurs, the except block is skipped entirely",
+            "fr": "Voici comment ça fonctionne :\n\n1. Python essaie d'exécuter le code dans le bloc ```try```\n2. Si une exception se produit, Python arrête immédiatement le bloc try\n3. Python saute au bloc ```except``` et exécute ce code à la place\n4. Si aucune exception ne se produit, le bloc except est complètement ignoré"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see a real example with Codémon levels:",
+            "fr": "Voyons un exemple concret avec des niveaux de Codémon :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "user_input = \"twenty\"  # Try changing to \"20\"\n\ntry:\n    codemon_level = int(user_input)\n    print(f\"Your Codémon is level {codemon_level}!\")\nexcept:\n    print(\"Codemon level is not a valid number! Using default level 1.\")\n    codemon_level = 1\n\nprint(f\"Level set to: {codemon_level}\")\nprint(\"Program continues running!\")",
+            "fr": "user_input = \"vingt\"  # Essaie de changer en \"20\"\n\ntry:\n    codemon_level = int(user_input)\n    print(f\"Ton Codémon est niveau {codemon_level} !\")\nexcept:\n    print(\"Codemon level n'utilise pas un nombre valide ! Utilisation du niveau 1 par défaut.\")\n    codemon_level = 1\n\nprint(f\"Niveau défini à : {codemon_level}\")\nprint(\"Le programme continue !\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice that even though an error occurred, the program didn't crash - it handled the error and continued running!",
+            "fr": "Même si une erreur s'est produite, le programme n'a pas planté - il a géré l'erreur et a continué à fonctionner !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_2_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try except",
+        "usage"
+      ]
+    },
+    "title": {
+      "en": "When to Use try/except",
+      "fr": "Quand utiliser try/except"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following scenarios is the BEST use case for try/except?",
+            "fr": "Lequel des scénarios suivants est le MEILLEUR cas d'utilisation pour try/except ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Converting user input to a number, because the input might not be a valid number",
+              "fr": "Convertir une entrée utilisateur en nombre, car l'entrée pourrait ne pas être un nombre valide"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Calculating 2 + 2, because addition might fail",
+              "fr": "Calculer 2 + 2, car l'addition pourrait échouer"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Printing \"Hello\", because print statements might not work",
+              "fr": "Afficher \"Bonjour\", car les print pourraient ne pas fonctionner"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Creating a variable with name = \"Aquachu\", because assignment might fail",
+              "fr": "Créer une variable avec nom = \"Aquachu\", car l'assignation pourrait échouer"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about which operation could actually fail during normal program execution. Use try/except for code that might reasonably cause an exception.",
+        "fr": "Réfléchis à quelle opération pourrait réellement échouer pendant l'exécution normale du programme. Utilise try/except pour du code qui pourrait raisonnablement causer une exception."
+      }
+    }
+  },
+  {
+    "id": "python_13_2_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try except",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Complete the try/except Block",
+      "fr": "Complète le bloc try/except"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to handle the division by zero error. The program should print a message if division fails.",
+            "fr": "Complète le code pour gérer l'erreur de division par zéro. Le programme doit afficher un message si la division échoue."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_power = 100\ndefense = 0\n\n{{}}:\n    damage = codemon_power / defense\n    print(f\"Damage dealt: {damage}\")\n{{}}:\n    print(\"Cannot calculate damage - defense is zero!\")\n    damage = 0",
+        "options": [
+          "try",
+          "except",
+          "if",
+          "catch",
+          "error",
+          "handle"
+        ],
+        "correctAnswers": {
+          "1": "try",
+          "2": "except"
+        }
+      },
+      "hint": {
+        "en": "Remember the basic structure: try block first, then except block. Think about which keyword starts the risky code and which catches the error.",
+        "fr": "Rappelle-toi de la structure de base : le bloc try d'abord, puis le bloc except. Pense à quel mot-clé commence le code risqué et lequel attrape l'erreur."
+      }
+    }
+  },
+  {
+    "id": "python_13_2_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "specific exceptions",
+        "exception types"
+      ]
+    },
+    "title": {
+      "en": "Catching Specific Exceptions",
+      "fr": "Attraper des exceptions spécifiques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "So far we've used ```except:``` without specifying what type of exception to catch. This catches ALL exceptions without explaining what or why.",
+            "fr": "Jusqu'à présent, nous avons utilisé ```except:``` sans spécifier sur quel type d'exception il devait se déclencher. Il se déclenche donc sur TOUTES les exceptions sans expliquer comment ou pourquoi."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "There are 2 techniques to improve this:\n1. Catch specific exception types\n2. Access the actual error message with ```as e```",
+            "fr": "Il y a 2 techniques pour améliorer cela :\n1. Attraper des types d'exceptions spécifiques\n2. Accéder au message d'erreur réel avec ```as e```"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's the syntax for catching a specific exception type:",
+            "fr": "Voici la syntaxe pour attraper un type d'exception spécifique :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "try:\n    risky_code()\nexcept ValueError:\n    # Only catches ValueError\n    handle_value_error()",
+            "fr": "try:\n    code_risque()\nexcept ValueError:\n    # N'attrape que ValueError\n    gerer_value_error()"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Example 1: Catching a specific exception***",
+            "fr": "***Exemple 1 : Attraper une exception spécifique***"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Catching ValueError specifically\ntry:\n    codemon_level = int(\"not a number\")\nexcept ValueError:\n    print(\"ValueError caught: Invalid number format!\")\n    codemon_level = 1\n\nprint(f\"Level: {codemon_level}\")",
+            "fr": "# Attraper ValueError spécifiquement\ntry:\n    codemon_level = int(\"pas un nombre\")\nexcept ValueError:\n    print(\"ValueError attrapée : Format de nombre invalide !\")\n    codemon_level = 1\n\nprint(f\"Niveau : {codemon_level}\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Example 2: Accessing the error message with*** ```as e```",
+            "fr": "***Exemple 2 : Accéder au message d'erreur avec*** ```as e```"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can use ```as e``` to store the exception and see the actual error message:",
+            "fr": "Tu peux utiliser ```as e``` pour stocker l'exception et voir le message d'erreur réel :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Catching any exception with error message\ntry:\n    codemon_level = int(\"not a number\")\nexcept Exception as e:\n    print(f\"Error type: {type(e).__name__}\")\n    print(f\"Error message: {e}\")\n    codemon_level = 1\n\nprint(f\"Level: {codemon_level}\")",
+            "fr": "# Attraper n'importe quelle exception avec son message\ntry:\n    codemon_level = int(\"pas un nombre\")\nexcept Exception as e:\n    print(f\"Type d'erreur : {type(e).__name__}\")\n    print(f\"Message d'erreur : {e}\")\n    codemon_level = 1\n\nprint(f\"Niveau : {codemon_level}\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "***Example 3: Catching a specific exception with*** ```as e```",
+            "fr": "***Exemple 3 : Attraper une exception spécifique avec*** ```as e```"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can combine both: catch a specific exception type AND access its message:",
+            "fr": "Tu peux combiner les deux : attraper un type d'exception spécifique ET accéder à son message :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "# Catching specific exception with error message\ntry:\n    codemon_level = int(\"not a number\")\nexcept ValueError as e:\n    print(f\"ValueError caught: {e}\")\n    print(\"Setting default level...\")\n    codemon_level = 1\n\nprint(f\"Level: {codemon_level}\")",
+            "fr": "# Attraper une exception spécifique avec son message\ntry:\n    codemon_level = int(\"pas un nombre\")\nexcept ValueError as e:\n    print(f\"ValueError attrapée : {e}\")\n    print(\"Définition du niveau par défaut...\")\n    codemon_level = 1\n\nprint(f\"Niveau : {codemon_level}\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Why catch exception like this?\n\n- More informative error messages\n- Easier debugging - you know exactly what went wrong\n- You can handle different errors differently",
+            "fr": "Pourquoi utiliser les exceptions comme ça ?\n\n- Messages d'erreur plus informatifs\n- Débogage plus facile - tu sais exactement ce qui s'est mal passé\n- Tu peux gérer différentes erreurs différemment"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Common Exception Types",
+              "fr": "Types d'exceptions courants"
+            },
+            "content": {
+              "en": "You've already learned about these common exceptions:\n- ```ValueError```: Invalid value (e.g., int(\"abc\"))\n- ```TypeError```: Wrong type (e.g., \"hello\" + 5)\n- ```ZeroDivisionError```: Division by zero\n- ```IndexError```: Index out of range\n- ```KeyError```: Key not in dictionary\n- ```NameError```: Variable doesn't exist",
+              "fr": "Tu as déjà appris ces exceptions courantes :\n- ```ValueError``` : Valeur invalide (ex : int(\"abc\"))\n- ```TypeError``` : Mauvais type (ex : \"bonjour\" + 5)\n- ```ZeroDivisionError``` : Division par zéro\n- ```IndexError``` : Index hors limites\n- ```KeyError``` : Clé absente du dictionnaire\n- ```NameError``` : Variable inexistante"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_2_6",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "exception types"
+      ]
+    },
+    "title": {
+      "en": "Match Exceptions with Scenarios",
+      "fr": "Associe les exceptions aux scénarios"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each code scenario with the exception type it would raise:",
+            "fr": "Associe chaque scénario de code au type d'exception qu'il déclencherait :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```int(\"Aquachu\")```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```ValueError```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```codemon_power / 0```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```ZeroDivisionError```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```codemon_list = [1, 2, 3]\ncodemon_list[10]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```IndexError```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```\"level \" + 5```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```TypeError```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_13_2_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "specific vs general"
+      ]
+    },
+    "title": {
+      "en": "Specific vs General Exception Handling",
+      "fr": "Gestion d'exceptions spécifiques vs générales"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the main advantage of using ```except ValueError:``` instead of just ```except:```?",
+            "fr": "Quel est l'avantage principal d'utiliser ```except ValueError:``` au lieu de juste ```except:``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It makes debugging easier because you know exactly what type of error occurred",
+              "fr": "Ça facilite le débogage car tu sais exactement quel type d'erreur s'est produit"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It makes the code run faster",
+              "fr": "Ça fait tourner le code plus rapidement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It catches more types of errors",
+              "fr": "Ça attrape plus de types d'erreurs"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It prevents syntax errors from occurring",
+              "fr": "Ça empêche les erreurs de syntaxe de se produire"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what information you gain when you specify the exact exception type you're catching.",
+        "fr": "Pense à quelle information tu obtiens quand tu spécifies le type exact d'exception que tu attrapes."
+      }
+    }
+  },
+  {
+    "id": "python_13_2_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "specific exceptions"
+      ]
+    },
+    "title": {
+      "en": "Add Specific Exception Types",
+      "fr": "Ajoute des types d'exceptions spécifiques"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to catch the appropriate specific exception for each scenario.",
+            "fr": "Complète le code pour attraper l'exception spécifique appropriée pour chaque scénario."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "# Scenario 1: Converting string to int\nuser_input = \"Zap\"\ntry:\n    level = int(user_input)\nexcept {{}}:\n    print(\"Invalid number format!\")\n    level = 1\n\n# Scenario 2: Dividing by a value\npower, defense = 10, 0\ntry:\n    result = power / defense\nexcept {{}}:\n    print(\"Cannot divide by zero!\")\n    result = 0",
+        "options": [
+          "ValueError",
+          "ZeroDivisionError",
+          "TypeError",
+          "IndexError",
+          "Exception",
+          "KeyError"
+        ],
+        "correctAnswers": {
+          "1": "ValueError",
+          "2": "ZeroDivisionError"
+        }
+      },
+      "hint": {
+        "en": "Think about what type of error each operation would raise. What error do you get when converting an invalid string to int? What about dividing by zero?",
+        "fr": "Réfléchis à quel type d'erreur chaque opération déclencherait. Quelle erreur obtiens-tu quand tu convertis une chaîne invalide en int ? Et pour une division par zéro ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_2_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "multiple except",
+        "best practices"
+      ]
+    },
+    "title": {
+      "en": "Multiple except Blocks",
+      "fr": "Plusieurs blocs except"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can have multiple ```except``` blocks to handle different types of exceptions differently:",
+            "fr": "Tu peux avoir plusieurs blocs ```except``` pour gérer différents types d'exceptions différemment :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "try:\n  risky_code()\nexcept ValueError:\n  # Handle value errors\n  print(\"Invalid value!\")\nexcept TypeError:\n  # Handle type errors\n  print(\"Wrong type!\")\nexcept:\n  # Handle any other exception\n  print(\"Something else went wrong!\")",
+            "fr": "try:\n  code_risque()\nexcept ValueError:\n  # Gérer les erreurs de valeur\n  print(\"Valeur invalide !\")\nexcept TypeError:\n  # Gérer les erreurs de type\n  print(\"Mauvais type !\")\nexcept:\n  # Gérer toute autre exception\n  print(\"Quelque chose d'autre a mal tourné !\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see this with a Codémon battle calculator:",
+            "fr": "Voyons cela avec un calculateur de combat Codémon :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "language": "python",
+          "value": {
+            "en": "def calculate_damage(power, defense, level):\n  try:\n    # This could raise multiple types of errors\n    base_damage = power / defense\n    level_bonus = int(level) * 2\n    total_damage = base_damage + level_bonus\n    return total_damage\n  except ZeroDivisionError:\n    print(\"Error: Defense cannot be zero!\")\n    return 0\n  except ValueError:\n    print(\"Error: Level must be a number!\")\n    return 0\n  except TypeError:\n    print(\"Error: Invalid data types provided!\")\n    return 0\n\n# Test different scenarios\nprint(\"Test 1 - Normal:\", calculate_damage(100, 50, \"10\"))\nprint(\"Test 2 - Zero defense:\", calculate_damage(100, 0, \"10\"))\nprint(\"Test 3 - Invalid level:\", calculate_damage(100, 50, \"ten\"))",
+            "fr": "def calculate_damage(power, defense, level):\n  try:\n    # Ceci pourrait déclencher plusieurs types d'erreurs\n    base_damage = power / defense\n    level_bonus = int(level) * 2\n    total_damage = base_damage + level_bonus\n    return total_damage\n  except ZeroDivisionError:\n    print(\"Erreur : La défense ne peut pas être zéro !\")\n    return 0\n  except ValueError:\n    print(\"Erreur : Le niveau doit être un nombre !\")\n    return 0\n  except TypeError:\n    print(\"Erreur : Types de données invalides fournis !\")\n    return 0\n\n# Tester différents scénarios\nprint(\"Test 1 - Normal :\", calculate_damage(100, 50, \"10\"))\nprint(\"Test 2 - Défense zéro :\", calculate_damage(100, 0, \"10\"))\nprint(\"Test 3 - Niveau invalide :\", calculate_damage(100, 50, \"dix\"))"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Order Matters!",
+              "fr": "L'ordre compte !"
+            },
+            "content": {
+              "en": "Python checks except blocks from top to bottom and uses the first one that matches. Always put more specific exceptions BEFORE more general ones. If you put a general ```except:``` first, it will catch everything and the specific ones below will never run!",
+              "fr": "Python vérifie les blocs except de haut en bas et utilise le premier qui correspond. Mets toujours les exceptions plus spécifiques AVANT les plus générales. Si tu mets un ```except:``` général en premier, il attrapera tout et les spécifiques en dessous ne s'exécuteront jamais !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_2_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "multiple except",
+        "order"
+      ]
+    },
+    "title": {
+      "en": "Exception Handler Order",
+      "fr": "Ordre des gestionnaires d'exception"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In the following code, which except block will be executed if ```int(\"abc\")``` raises a ValueError?",
+            "fr": "Dans le code suivant, quel bloc except sera exécuté si ```int(\"abc\")``` déclenche une ValueError ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "try:\n    level = int(\"abc\")\nexcept:\n    print(\"General error\")\nexcept ValueError:\n    print(\"Value error\")\nexcept TypeError:\n    print(\"Type error\")",
+            "fr": "try:\n    niveau = int(\"abc\")\nexcept:\n    print(\"Erreur générale\")\nexcept ValueError:\n    print(\"Erreur de valeur\")\nexcept TypeError:\n    print(\"Erreur de type\")"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The first except block (\"General error\")",
+              "fr": "Le premier bloc except (\"Erreur générale\")"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The second except block (\"Value error\")",
+              "fr": "Le deuxième bloc except (\"Erreur de valeur\")"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The third except block (\"Type error\")",
+              "fr": "Le troisième bloc except (\"Erreur de type\")"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "All three except blocks will execute",
+              "fr": "Les trois blocs except s'exécuteront"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about the order in which Python checks except blocks. What happens when a general except: comes before specific exception types?",
+        "fr": "Pense à l'ordre dans lequel Python vérifie les blocs except. Que se passe-t-il quand un except: général vient avant des types d'exceptions spécifiques ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_2_11",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "multiple except",
+        "complete solution"
+      ]
+    },
+    "title": {
+      "en": "Complete Exception Handling",
+      "fr": "Gestion complète des exceptions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this Codémon level-up function with proper exception handling. It should handle both ValueError (invalid input) and ZeroDivisionError (when calculating experience rate).",
+            "fr": "Complète cette fonction de montée de niveau de Codémon avec une gestion appropriée des exceptions. Elle doit gérer à la fois ValueError (entrée invalide) et ZeroDivisionError (lors du calcul du taux d'expérience)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def level_up(current_level, exp_gained, battles_won):\n  {{}}:\n    new_level = current_level + int(exp_gained)\n    exp_rate = exp_gained / battles_won\n    print(f\"Level up! New level: {new_level}\")\n    print(f\"Experience rate: {exp_rate}\")\n  {{}} {{}}:\n    print(\"Invalid experience value!\")\n    new_level = current_level\n  {{}} {{}}:\n    print(\"Cannot calculate rate - no battles won!\")\n    new_level = current_level + int(exp_gained)\n  \n  return new_level\n\n# Test the function\nprint(level_up(5, 10, 3))",
+        "options": [
+          "try",
+          "except",
+          "try",
+          "except",
+          "ValueError",
+          "ZeroDivisionError",
+          "TypeError",
+          "catch",
+          "error"
+        ],
+        "correctAnswers": {
+          "1": "try",
+          "2": "except",
+          "3": "ValueError",
+          "4": "except",
+          "5": "ZeroDivisionError"
+        }
+      },
+      "hint": {
+        "en": "Think about the structure: try block first, then multiple except blocks with specific exception types. Remember which exception happens when converting invalid strings and which happens with division by zero.",
+        "fr": "Pense à la structure : bloc try d'abord, puis plusieurs blocs except avec des types d'exceptions spécifiques. Rappelle-toi quelle exception se produit lors de la conversion de chaînes invalides et laquelle lors d'une division par zéro."
+      }
+    }
+  },
+  {
+    "id": "python_13_2_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try except",
+        "error handling",
+        "multiple except",
+        "problem solving"
+      ]
+    },
+    "title": {
+      "en": "Codémon Stats Calculator",
+      "fr": "Calculateur de stats Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Build a robust Codémon stats calculator with proper error handling!\n\nCreate a function called ```calculate_stats``` that:\n\n1. Takes three parameters:\n   - ```name``` (string): The Codémon's name\n   - ```level``` (string): The level as a string\n   - ```stats``` (dictionary): With keys ```\"hp\"```, ```\"attack\"```, ```\"defense\"```\n2. Calculates total power: ```(attack + defense) * level```\n3. Calculates efficiency: ```total_power / hp```\n4. Handles these potential errors:\n   - ```ValueError```: When level can't be converted to int\n   - ```KeyError```: When a required stat is missing from the dictionary\n   - ```ZeroDivisionError```: When hp is zero\n5. Returns a formatted result string or an error message\n\nTest your function with the provided test cases!",
+            "fr": "Construis un calculateur de stats Codémon robuste avec une bonne gestion d'erreurs !\n\nCrée une fonction appelée ```calculate_stats``` qui :\n\n1. Prend trois paramètres :\n   - ```name``` (chaîne) : Le nom du Codémon\n   - ```level``` (chaîne) : Le niveau en chaîne de caractères\n   - ```stats``` (dictionnaire) : Avec les clés ```\"hp\"```, ```\"attack\"```, ```\"defense\"```\n2. Calcule la puissance totale : ```(attack + defense) * level```\n3. Calcule l'efficacité : ```total_power / hp```\n4. Gère ces erreurs potentielles :\n   - ```ValueError``` : Quand le niveau ne peut pas être converti en int\n   - ```KeyError``` : Quand une stat requise est absente du dictionnaire\n   - ```ZeroDivisionError``` : Quand hp est zéro\n5. Retourne une chaîne de résultat formatée ou un message d'erreur\n\nTeste ta fonction avec les cas de test fournis !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create the calculate_stats function with proper error handling\n# Parameters: name (str), level (str), stats (dict with 'hp', 'attack', 'defense')\n# Should handle ValueError, KeyError, and ZeroDivisionError\n\n\n# Test Case 1: Valid data\ncodemon1 = {\"hp\": 100, \"attack\": 50, \"defense\": 40}\nprint(\"Test 1:\", calculate_stats(\"Aquachu\", \"10\", codemon1))\n\n# Test Case 2: Invalid level (not a number)\ncodemon2 = {\"hp\": 80, \"attack\": 60, \"defense\": 30}\nprint(\"Test 2:\", calculate_stats(\"Pyrochu\", \"ten\", codemon2))\n\n# Test Case 3: Missing stat in dictionary\ncodemon3 = {\"hp\": 90, \"attack\": 45}  # 'defense' is missing\nprint(\"Test 3:\", calculate_stats(\"Florachu\", \"15\", codemon3))\n\n# Test Case 4: Zero HP\ncodemon4 = {\"hp\": 0, \"attack\": 70, \"defense\": 50}\nprint(\"Test 4:\", calculate_stats(\"Zap\", \"12\", codemon4))\n",
+          "fr": "# Créer la fonction calculate_stats avec une bonne gestion d'erreurs\n# Paramètres : name (str), level (str), stats (dict avec 'hp', 'attack', 'defense')\n# Doit gérer ValueError, KeyError et ZeroDivisionError\n\n\n# Test 1 : Données valides\ncodemon1 = {\"hp\": 100, \"attack\": 50, \"defense\": 40}\nprint(\"Test 1 :\", calculate_stats(\"Aquachu\", \"10\", codemon1))\n\n# Test 2 : Niveau invalide (pas un nombre)\ncodemon2 = {\"hp\": 80, \"attack\": 60, \"defense\": 30}\nprint(\"Test 2 :\", calculate_stats(\"Pyrochu\", \"dix\", codemon2))\n\n# Test 3 : Stat manquante dans le dictionnaire\ncodemon3 = {\"hp\": 90, \"attack\": 45}  # 'defense' manquant\nprint(\"Test 3 :\", calculate_stats(\"Florachu\", \"15\", codemon3))\n\n# Test 4 : HP à zéro\ncodemon4 = {\"hp\": 0, \"attack\": 70, \"defense\": 50}\nprint(\"Test 4 :\", calculate_stats(\"Zap\", \"12\", codemon4))\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def calculate_stats(name, level, stats):\n  try:\n    # Convert level to int (may raise ValueError)\n    level_int = int(level)\n    \n    # Access stats from dictionary (may raise KeyError)\n    hp = stats[\"hp\"]\n    attack = stats[\"attack\"]\n    defense = stats[\"defense\"]\n    \n    # Calculate total power\n    total_power = (attack + defense) * level_int\n    \n    # Calculate efficiency (may raise ZeroDivisionError)\n    efficiency = total_power / hp\n    \n    return f\"{name} - Power: {total_power}, Efficiency: {efficiency:.2f}\"\n  \n  except ValueError:\n    return f\"Error: '{level}' is not a valid level number!\"\n  \n  except KeyError as e:\n    return f\"Error: Missing stat {e} in Codémon data!\"\n  \n  except ZeroDivisionError:\n    return f\"Error: {name} has zero HP - cannot calculate efficiency!\"\n\n\n# Test Case 1: Valid data\ncodemon1 = {\"hp\": 100, \"attack\": 50, \"defense\": 40}\nprint(\"Test 1:\", calculate_stats(\"Aquachu\", \"10\", codemon1))\n\n# Test Case 2: Invalid level (not a number)\ncodemon2 = {\"hp\": 80, \"attack\": 60, \"defense\": 30}\nprint(\"Test 2:\", calculate_stats(\"Pyrochu\", \"ten\", codemon2))\n\n# Test Case 3: Missing stat in dictionary\ncodemon3 = {\"hp\": 90, \"attack\": 45}  # 'defense' is missing\nprint(\"Test 3:\", calculate_stats(\"Florachu\", \"15\", codemon3))\n\n# Test Case 4: Zero HP\ncodemon4 = {\"hp\": 0, \"attack\": 70, \"defense\": 50}\nprint(\"Test 4:\", calculate_stats(\"Zap\", \"12\", codemon4))",
+            "fr": "def calculate_stats(name, level, stats):\n  try:\n    # Convertir le niveau en int (peut déclencher ValueError)\n    level_int = int(level)\n    \n    # Accéder aux stats du dictionnaire (peut déclencher KeyError)\n    hp = stats[\"hp\"]\n    attack = stats[\"attack\"]\n    defense = stats[\"defense\"]\n    \n    # Calculer la puissance totale\n    total_power = (attack + defense) * level_int\n    \n    # Calculer l'efficacité (peut déclencher ZeroDivisionError)\n    efficiency = total_power / hp\n    \n    return f\"{name} - Puissance : {total_power}, Efficacité : {efficiency:.2f}\"\n  \n  except ValueError:\n    return f\"Erreur : '{level}' n'est pas un nombre de niveau valide !\"\n  \n  except KeyError as e:\n    return f\"Erreur : Stat {e} manquante dans les données du Codémon !\"\n  \n  except ZeroDivisionError:\n    return f\"Erreur : {name} a zéro HP - impossible de calculer l'efficacité !\"\n\n\n# Test 1 : Données valides\ncodemon1 = {\"hp\": 100, \"attack\": 50, \"defense\": 40}\nprint(\"Test 1 :\", calculate_stats(\"Aquachu\", \"10\", codemon1))\n\n# Test 2 : Niveau invalide (pas un nombre)\ncodemon2 = {\"hp\": 80, \"attack\": 60, \"defense\": 30}\nprint(\"Test 2 :\", calculate_stats(\"Pyrochu\", \"dix\", codemon2))\n\n# Test 3 : Stat manquante dans le dictionnaire\ncodemon3 = {\"hp\": 90, \"attack\": 45}  # 'defense' manquant\nprint(\"Test 3 :\", calculate_stats(\"Florachu\", \"15\", codemon3))\n\n# Test 4 : HP à zéro\ncodemon4 = {\"hp\": 0, \"attack\": 70, \"defense\": 50}\nprint(\"Test 4 :\", calculate_stats(\"Zap\", \"12\", codemon4))"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "try except",
+        "else clause"
+      ]
+    },
+    "title": {
+      "en": "Introduction to the else Clause",
+      "fr": "Introduction à la clause else"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "We saw ```try``` and ```except``` for handling errors. Now let's learn about the ```else``` clause!",
+            "fr": "Nous avons vu ```try``` et ```except``` pour gérer les erreurs. Apprenons maintenant la clause ```else``` !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```else``` clause in a try/except block is an optional part that runs ***only when no exception occurs*** in the try block.",
+            "fr": "La clause ```else``` dans un bloc try/except est une partie optionnelle qui s'exécute ***seulement quand aucune exception ne se produit*** dans le bloc try."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Basic syntax:",
+            "fr": "Syntaxe de base :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "try:\n  # Code that might raise an exception\n  risky_operation()\nexcept SomeError:\n  # Runs if exception occurs\n  print(\"Error occurred\")\nelse:\n  # Runs ONLY if no exception occurred\n  print(\"Success! No errors.\")",
+            "fr": "try:\n  # Code qui pourrait produire une exception\n  operation_risquee()\nexcept SomeError:\n  # S'exécute si une exception se produit\n  print(\"Une erreur s'est produite\")\nelse:\n  # S'exécute SEULEMENT si aucune exception ne s'est produite\n  print(\"Succès ! Aucune erreur.\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see it in action with a Codémon example:",
+            "fr": "Voyons ça en action avec un exemple Codémon :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "def train_codemon(codemon_name, training_hours):\n  try:\n    if training_hours < 0:\n      raise ValueError(\"Training hours cannot be negative\")\n    power_increase = training_hours * 10\n  except ValueError as e:\n    print(f\"Training failed: {e}\")\n  else:\n    print(\"else print\")\n    print(f\"{codemon_name} trained successfully!\")\n    print(f\"Power increased by {power_increase}\")\n\ntrain_codemon(\"Aquachu\", 3)\nprint(\"---\")\ntrain_codemon(\"Pyrochu\", -1)",
+            "fr": "def train_codemon(nom_codemon, heures_entrainement):\n  try:\n    if heures_entrainement < 0:\n      raise ValueError(\"Les heures d'entraînement ne peuvent pas être négatives\")\n    augmentation_puissance = heures_entrainement * 10\n  except ValueError as e:\n    print(f\"Entraînement échoué: {e}\")\n  else:\n    print(\"else print\")\n    print(f\"{nom_codemon} s'est entraîné avec succès!\")\n    print(f\"Puissance augmentée de {augmentation_puissance}\")\n\ntrain_codemon(\"Aquachu\", 3)\nprint(\"---\")\ntrain_codemon(\"Pyrochu\", -1)"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Why use else instead of putting code at the end of try?",
+              "fr": "Pourquoi utiliser else au lieu de mettre le code à la fin de try ?"
+            },
+            "content": {
+              "en": "The else clause makes your code clearer by separating the risky operation (in try) from the success actions (in else). It also ensures that only exceptions from the try block are caught, not from your success code.",
+              "fr": "La clause else rend ton code plus clair en séparant l'opération risquée (dans try) des actions de succès (dans else). Elle garantit aussi que seules les exceptions du bloc try sont attrapées, pas celles de ton code de succès."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_3_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "else clause"
+      ]
+    },
+    "title": {
+      "en": "When Does else Execute?",
+      "fr": "Quand else s'exécute-t-il ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following code, when will the ```else``` block execute?",
+            "fr": "Étant donné le code suivant, quand le bloc ```else``` s'exécutera-t-il ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "try:\n  codemon_level = int(input(\"Enter level: \"))\n  if codemon_level > 100:\n    raise ValueError(\"Level too high\")\nexcept ValueError:\n  print(\"Invalid level\")\nelse:\n  print(f\"Level set to {codemon_level}\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Only when no exception occurs in the try block",
+              "fr": "Seulement quand aucune exception ne se produit dans le bloc try"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only when a ValueError occurs",
+              "fr": "Seulement quand une ValueError se produit"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Always, regardless of exceptions",
+              "fr": "Toujours, peu importe les exceptions"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "When the except block finishes executing",
+              "fr": "Quand le bloc except finit de s'exécuter"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what makes else special - it only runs in the success case.",
+        "fr": "Réfléchis à ce qui rend else spécial - il ne s'exécute que dans le cas de succès."
+      }
+    }
+  },
+  {
+    "id": "python_13_3_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "finally clause"
+      ]
+    },
+    "title": {
+      "en": "Introduction to the finally Clause",
+      "fr": "Introduction à la clause finally"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```finally``` clause is an optional part of try/except that ***always executes***, whether an exception occurred or not. It's perfect for cleanup operations.",
+            "fr": "La clause ```finally``` est une partie optionnelle de try/except qui ***s'exécute toujours***, qu'une exception se soit produite ou non. C'est parfait pour les opérations de nettoyage."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Basic syntax:",
+            "fr": "Syntaxe de base :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "try:\n  # Code that might raise an exception\n  risky_operation()\nexcept SomeError:\n  # Runs if exception occurs\n  print(\"Error occurred\")\nfinally:\n  # ALWAYS runs, no matter what\n  print(\"Cleanup code\")",
+            "fr": "try:\n  # Code qui pourrait produire une exception\n  operation_risquee()\nexcept SomeError:\n  # S'exécute si une exception se produit\n  print(\"Une erreur s'est produite\")\nfinally:\n  # S'exécute TOUJOURS, quoi qu'il arrive\n  print(\"Code de nettoyage\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see it in action:",
+            "fr": "Voyons ça en action :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "def battle_codemon(attacker, defender):\n  print(f\"Battle started: {attacker} vs {defender}\")\n  \n  try:\n    if defender == \"\":\n      raise ValueError(\"Defender cannot be empty\")\n    print(f\"{attacker} attacks {defender}!\")\n  except ValueError as e:\n    print(f\"Battle error: {e}\")\n  finally:\n    print(\"Battle arena is now closed\")\n    print(\"---\")\n\nbattle_codemon(\"Aquachu\", \"Pyrochu\")\nbattle_codemon(\"Florachu\", \"\")",
+            "fr": "def battle_codemon(attaquant, defenseur):\n  print(f\"Combat commencé: {attaquant} vs {defenseur}\")\n  \n  try:\n    if defenseur == \"\":\n      raise ValueError(\"Le défenseur ne peut pas être vide\")\n    print(f\"{attaquant} attaque {defenseur}!\")\n  except ValueError as e:\n    print(f\"Erreur de combat: {e}\")\n  finally:\n    print(\"L'arène de combat est maintenant fermée\")\n    print(\"---\")\n\nbattle_codemon(\"Aquachu\", \"Pyrochu\")\nbattle_codemon(\"Florachu\", \"\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Common uses for finally",
+              "fr": "Utilisations courantes de finally"
+            },
+            "content": {
+              "en": "The finally clause is commonly used for:\n- Closing files\n- Releasing resources (database connections, network sockets)\n- Cleaning up temporary data\n- Logging operations\n\nAnything that must happen regardless of success or failure should go in finally.",
+              "fr": "La clause finally est couramment utilisée pour :\n- Fermer des fichiers\n- Libérer des ressources (connexions base de données, sockets réseau)\n- Nettoyer des données temporaires\n- Opérations de logging\n\nTout ce qui doit se produire peu importe le succès ou l'échec doit aller dans finally."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_3_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "finally clause"
+      ]
+    },
+    "title": {
+      "en": "Understanding finally Execution",
+      "fr": "Comprendre l'exécution de finally"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed when this code runs with a valid Codémon name?",
+            "fr": "Qu'est-ce qui sera affiché quand ce code s'exécute avec un nom de Codémon valide ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "try:\n    codemon_name = \"Aquachu\"\n    print(f\"Caught {codemon_name}!\")\nexcept Exception:\n    print(\"Catch failed\")\nfinally:\n    print(\"Pokéball returned to bag\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Both \"Caught Aquachu!\" and \"Pokéball returned to bag\"",
+              "fr": "Les deux \"Caught Aquachu!\" et \"Pokéball returned to bag\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only \"Caught Aquachu!\"",
+              "fr": "Seulement \"Caught Aquachu!\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only \"Pokéball returned to bag\"",
+              "fr": "Seulement \"Pokéball returned to bag\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only \"Catch failed\"",
+              "fr": "Seulement \"Catch failed\""
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember that finally always executes, whether there's an exception or not.",
+        "fr": "Rappelle-toi que finally s'exécute toujours, qu'il y ait une exception ou non."
+      }
+    }
+  },
+  {
+    "id": "python_13_3_5",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "else clause",
+        "finally clause"
+      ]
+    },
+    "title": {
+      "en": "Complete the try/except/else Structure",
+      "fr": "Complète la structure try/except/else"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to add an else clause that only runs when the Codémon evolution succeeds (no exception):",
+            "fr": "Complète le code pour ajouter une clause else qui s'exécute seulement quand l'évolution du Codémon réussit (pas d'exception) :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def evolve_codemon(codemon_name, level):\n  try:\n    if level < 16:\n      raise ValueError(\"Level too low to evolve\")\n    print(f\"{codemon_name} is evolving...\")\n  except ValueError as e:\n    print(f\"Evolution failed: {e}\")\n  {{}}:\n    # Success! Evolution completed\n    print(f\"{codemon_name} evolved successfully!\")\n    print(f\"New level: {level}\")\n\nevolve_codemon(\"Florachu\", 20)\nprint('---')\nevolve_codemon(\"Pyrochu\", 10)",
+        "options": [
+          "else",
+          "finally",
+          "except",
+          "then",
+          "success",
+          "if"
+        ],
+        "correctAnswers": {
+          "1": "else"
+        }
+      },
+      "hint": {
+        "en": "Think about which clause runs only when no exception occurs in the try block.",
+        "fr": "Réfléchis à quelle clause s'exécute seulement quand aucune exception ne se produit dans le bloc try."
+      }
+    }
+  },
+  {
+    "id": "python_13_3_6",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "try except",
+        "else clause",
+        "finally clause"
+      ]
+    },
+    "title": {
+      "en": "Complete Structure: try/except/else/finally",
+      "fr": "Structure complète : try/except/else/finally"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Now let's see how all four parts work together. Here's the complete structure:",
+            "fr": "Voyons maintenant comment les quatre parties fonctionnent ensemble. Voici la structure complète :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "try:\n  # Code that might raise an exception\n  risky_operation()\nexcept SomeError:\n  # Runs if exception occurs\n  handle_error()\nelse:\n  # Runs ONLY if NO exception occurred\n  success_actions()\nfinally:\n  # ALWAYS runs, no matter what\n  cleanup()",
+            "fr": "try:\n  # Code qui pourrait produire une exception\n  operation_risquee()\nexcept SomeError:\n  # S'exécute si une exception se produit\n  gerer_erreur()\nelse:\n  # S'exécute SEULEMENT si AUCUNE exception ne s'est produite\n  actions_succes()\nfinally:\n  # S'exécute TOUJOURS, quoi qu'il arrive\n  nettoyage()"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Execution order:\n1. ```try``` block always runs first\n2. If exception occurs → ```except``` block runs\n3. If NO exception occurs → ```else``` block runs\n4. ```finally``` block ALWAYS runs last",
+            "fr": "Ordre d'exécution :\n1. Le bloc ```try``` s'exécute toujours en premier\n2. Si une exception se produit → le bloc ```except``` s'exécute\n3. Si AUCUNE exception ne se produit → le bloc ```else``` s'exécute\n4. Le bloc ```finally``` s'exécute TOUJOURS en dernier"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see a complete example:",
+            "fr": "Voyons un exemple complet :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "def calculate_item_price(item_name, quantity):\n  print(f\"Processing order: {quantity}x {item_name}\")\n  \n  try:\n    # Risky operations - converting string to int\n    quantity_int = int(quantity)\n    base_price = 100\n    total = base_price * quantity_int\n    \n  except ValueError as e:\n    # Runs if exception occurs\n    print(f\"Error: Invalid quantity '{quantity}'\")\n    print(\"Order cancelled\")\n    \n  else:\n    # Runs ONLY if no exception\n    print(f\"Total price: {total} coins\")\n    print(\"Order confirmed!\")\n    \n  finally:\n    # ALWAYS runs\n    print(\"Transaction logged\")\n    print(\"---\")\n\n# Test with valid quantity\ncalculate_item_price(\"Potion\", \"5\")\n\n# Test with invalid quantity - watch the flow!\ncalculate_item_price(\"Revive\", \"three\")",
+            "fr": "def calculer_prix_objet(nom_objet, quantite):\n  print(f\"Traitement de la commande : {quantite}x {nom_objet}\")\n  \n  try:\n    # Opérations risquées - conversion de chaîne en int\n    quantite_int = int(quantite)\n    prix_base = 100\n    total = prix_base * quantite_int\n    \n  except ValueError as e:\n    # S'exécute si une exception se produit\n    print(f\"Erreur : Quantité invalide '{quantite}'\")\n    print(\"Commande annulée\")\n    \n  else:\n    # S'exécute SEULEMENT si pas d'exception\n    print(f\"Prix total : {total} pièces\")\n    print(\"Commande confirmée !\")\n    \n  finally:\n    # S'exécute TOUJOURS\n    print(\"Transaction enregistrée\")\n    print(\"---\")\n\n# Test avec une quantité valide\ncalculer_prix_objet(\"Potion\", \"5\")\n\n# Test avec une quantité invalide - observe le flux !\ncalculer_prix_objet(\"Revive\", \"trois\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Key Points to Remember",
+              "fr": "Points clés à retenir"
+            },
+            "content": {
+              "en": "• else and finally are both optional\n• else runs only on success (no exception)\n• finally runs always (success or failure)\n• Order: try → except/else → finally\n• You can use else without finally, or finally without else, or both together",
+              "fr": "• else et finally sont tous deux optionnels\n• else s'exécute seulement en cas de succès (pas d'exception)\n• finally s'exécute toujours (succès ou échec)\n• Ordre : try → except/else → finally\n• Tu peux utiliser else sans finally, ou finally sans else, ou les deux ensemble"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_3_7",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "clauses"
+      ]
+    },
+    "title": {
+      "en": "Match Clauses with Their Purpose",
+      "fr": "Associe les clauses à leur objectif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each clause with its correct execution condition:",
+            "fr": "Associe chaque clause à sa condition d'exécution correcte :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```try```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Always executes first, contains risky code",
+                "fr": "S'exécute toujours en premier, contient le code risqué"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```except```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Executes only when an exception occurs",
+                "fr": "S'exécute seulement quand une exception se produit"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```else```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Executes only when NO exception occurs",
+                "fr": "S'exécute seulement quand AUCUNE exception ne se produit"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```finally```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Always executes, used for cleanup",
+                "fr": "S'exécute toujours, utilisé pour le nettoyage"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_13_3_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "complete structure"
+      ]
+    },
+    "title": {
+      "en": "Complete the Full Structure",
+      "fr": "Complète la structure complète"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete this Codémon healing code with the appropriate clauses. The healing center should always close at the end (cleanup), and success message should only show if healing succeeds:",
+            "fr": "Complète ce code de soin de Codémon avec les clauses appropriées. Le centre de soin doit toujours fermer à la fin (nettoyage), et le message de succès ne doit apparaître que si le soin réussit :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "def heal_codemon(codemon_name, hp):\n  print(f\"Healing center opened for {codemon_name}\")\n  \n  {{}}:\n    restored_hp = 100\n    \n  {{}} ValueError as e:\n    print(f\"Healing failed: {e}\")\n    \n  {{}}:\n    print(f\"{codemon_name} fully healed!\")\n    print(f\"HP restored to {restored_hp}\")\n    \n  {{}}:\n    print(\"Healing center closed\")\n\nheal_codemon(\"Aquachu\", 50)",
+        "options": [
+          "try",
+          "except",
+          "else",
+          "finally",
+          "catch",
+          "always",
+          "success",
+          "cleanup"
+        ],
+        "correctAnswers": {
+          "1": "try",
+          "2": "except",
+          "3": "else",
+          "4": "finally"
+        }
+      },
+      "hint": {
+        "en": "Think about: which clause contains risky code? Which handles errors? Which runs on success? Which always runs for cleanup?",
+        "fr": "Réfléchis : quelle clause contient le code risqué ? Laquelle gère les erreurs ? Laquelle s'exécute en cas de succès ? Laquelle s'exécute toujours pour le nettoyage ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_3_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "error handling",
+        "execution order"
+      ]
+    },
+    "title": {
+      "en": "Understanding Execution Order",
+      "fr": "Comprendre l'ordre d'exécution"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In what order will the print statements execute if NO exception occurs?",
+            "fr": "Dans quel ordre les instructions print s'exécuteront-elles si AUCUNE exception ne se produit ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "try:\n    print(\"A\")\nexcept ValueError:\n    print(\"B\")\nelse:\n    print(\"C\")\nfinally:\n    print(\"D\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "A, C, D"
+          },
+          {
+            "type": "text",
+            "value": "A, B, D"
+          },
+          {
+            "type": "text",
+            "value": "A, D"
+          },
+          {
+            "type": "text",
+            "value": "A, B, C, D"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Trace through the execution: try runs first, then since there's no exception, else runs, then finally always runs.",
+        "fr": "Trace l'exécution : try s'exécute en premier, puis comme il n'y a pas d'exception, else s'exécute, puis finally s'exécute toujours."
+      }
+    }
+  },
+  {
+    "id": "python_13_3_10",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try except",
+        "else clause",
+        "finally clause",
+        "error handling"
+      ]
+    },
+    "title": {
+      "en": "Codémon Power Calculator",
+      "fr": "Calculateur de puissance Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a Codémon power calculator that uses ```else``` and ```finally``` properly!\n\nCreate a function called ```calculate_power``` that:\n\n1. Takes two parameters:\n   - ```name``` (string): Codémon name\n   - ```level``` (string): Level as a string to convert\n2. In the ```try``` block:\n   - Convert ```level``` to integer\n3. In the ```except``` block:\n   - Handle ```ValueError``` and set power to 0\n4. In the ```else``` block:\n   - Calculate power (level * 10) - only if conversion worked\n5. In the ```finally``` block:\n   - Display the final result (always runs)\n\nTest with the provided cases!",
+            "fr": "Crée un calculateur de puissance Codémon qui utilise ```else``` et ```finally``` correctement !\n\nCrée une fonction appelée ```calculate_power``` qui :\n\n1. Prend deux paramètres :\n   - ```name``` (chaîne) : Nom du Codémon\n   - ```level``` (chaîne) : Niveau en chaîne à convertir\n2. Dans le bloc ```try``` :\n   - Convertir ```level``` en entier\n3. Dans le bloc ```except``` :\n   - Gérer ```ValueError``` et mettre la puissance à 0\n4. Dans le bloc ```else``` :\n   - Calculer la puissance (niveau * 10) - seulement si la conversion a marché\n5. Dans le bloc ```finally``` :\n   - Afficher le résultat final (s'exécute toujours)\n\nTeste avec les cas fournis !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create the calculate_power function with try/except/else/finally\n\n\n# Test with valid level\ncalculate_power(\"Aquachu\", \"50\")\n\n# Test with invalid level\ncalculate_power(\"Pyrochu\", \"fifty\")\n",
+          "fr": "# Créer la fonction calculate_power avec try/except/else/finally\n\n\n# Test avec niveau valide\ncalculate_power(\"Aquachu\", \"50\")\n\n# Test avec niveau invalide\ncalculate_power(\"Pyrochu\", \"cinquante\")\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def calculate_power(name, level):\n  power = 0\n  \n  try:\n    level_int = int(level)\n  except ValueError:\n    power = 0\n  else:\n    power = level_int * 10\n  finally:\n    return f\"{name}: {power} power\"\n\n\nprint(calculate_power(\"Aquachu\", \"50\"))\nprint(calculate_power(\"Pyrochu\", \"fifty\"))",
+            "fr": "def calculate_power(name, level):\n  power = 0\n  \n  try:\n    level_int = int(level)\n  except ValueError:\n    power = 0\n  else:\n    power = level_int * 10\n  finally:\n    return f\"{name} : {power} de puissance\"\n\n\nprint(calculate_power(\"Aquachu\", \"50\"))\nprint(calculate_power(\"Pyrochu\", \"cinquante\"))"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_4_1",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "quiz",
+        "error types"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Which Error Type?",
+      "fr": "Quiz : Quel type d'erreur ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What error occurs when you try to use a variable that was never created?",
+            "fr": "Quelle erreur se produit quand tu essaies d'utiliser une variable qui n'a jamais été créée ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "print(codemon_power)\n# codemon_power was never defined!"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```NameError```"
+          },
+          {
+            "type": "text",
+            "value": "```ValueError```"
+          },
+          {
+            "type": "text",
+            "value": "```TypeError```"
+          },
+          {
+            "type": "text",
+            "value": "```KeyError```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "This error happens when Python doesn't recognize a variable name because it was never created.",
+        "fr": "Cette erreur se produit quand Python ne reconnaît pas un nom de variable car elle n'a jamais été créée."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "quiz",
+        "type conversion"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Type Conversion Error",
+      "fr": "Quiz : Erreur de conversion de type"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which line will cause a ```ValueError```?",
+            "fr": "Quelle ligne causera une ```ValueError``` ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "a = int(\"100\")\nb = int(\"25.5\")\nc = int(\"Aquachu\")\nd = str(100)"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "Line ```c``` - ```int(\"Aquachu\")```"
+          },
+          {
+            "type": "text",
+            "value": "Line ```b``` - ```int(\"25.5\")```"
+          },
+          {
+            "type": "text",
+            "value": "Both ```b``` and ```c```"
+          },
+          {
+            "type": "text",
+            "value": "Line ```a``` - ```int(\"100\")```"
+          }
+        ],
+        "correctAnswer": 2
+      },
+      "hint": {
+        "en": "int() can only convert strings that contain whole numbers. Think about which strings are not valid integers.",
+        "fr": "int() ne peut convertir que des chaînes contenant des nombres entiers. Réfléchis à quelles chaînes ne sont pas des entiers valides."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_3",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "quiz",
+        "error types"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Match Code to Error Type",
+      "fr": "Quiz : Associe le code au type d'erreur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each code snippet with the error it will produce:",
+            "fr": "Associe chaque extrait de code à l'erreur qu'il produira :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```print(undefined_var)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```NameError```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```result = 10 / 0```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```ZeroDivisionError```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"text\" + 5```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```TypeError```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```stats = {\"hp\": 100}\nstats[\"attack\"]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```KeyError```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_13_4_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "quiz",
+        "dictionary"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Dictionary Access Error",
+      "fr": "Quiz : Erreur d'accès au dictionnaire"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will happen when this code runs?",
+            "fr": "Que se passera-t-il quand ce code s'exécutera ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {\"name\": \"Aquachu\", \"level\": 15}\nprint(codemon[\"name\"])\nprint(codemon[\"type\"])"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Prints \"Aquachu\" then raises ```KeyError```",
+              "fr": "Affiche \"Aquachu\" puis déclenche ```KeyError```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Prints \"Aquachu\" then prints ```None```",
+              "fr": "Affiche \"Aquachu\" puis affiche ```None```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Raises ```KeyError``` immediately",
+              "fr": "Déclenche ```KeyError``` immédiatement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Prints both values successfully",
+              "fr": "Affiche les deux valeurs avec succès"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The first print works because \"name\" exists. What happens when we try to access a key that doesn't exist?",
+        "fr": "Le premier print fonctionne car \"name\" existe. Que se passe-t-il quand on essaie d'accéder à une clé qui n'existe pas ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_4_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "errors",
+        "quiz",
+        "syntax vs runtime"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Syntax vs Runtime Error",
+      "fr": "Quiz : Erreur de syntaxe vs d'exécution"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of these is a runtime error, not a syntax error?",
+            "fr": "Laquelle de ces erreurs est une erreur d'exécution, pas une erreur de syntaxe ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```ZeroDivisionError``` when dividing by zero",
+              "fr": "```ZeroDivisionError``` lors d'une division par zéro"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Missing colon after ```if``` statement",
+              "fr": "Deux-points manquants après une instruction ```if```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Incorrect indentation",
+              "fr": "Indentation incorrecte"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Misspelled keyword like ```prnit``` instead of ```print```",
+              "fr": "Mot-clé mal orthographié comme ```prnit``` au lieu de ```print```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Runtime errors occur during program execution. Syntax errors are detected before the code runs.",
+        "fr": "Les erreurs d'exécution se produisent pendant l'exécution du programme. Les erreurs de syntaxe sont détectées avant que le code ne s'exécute."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_6",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "try except",
+        "quiz",
+        "error recovery"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Exception Recovery",
+      "fr": "Quiz : Récupération après exception"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens to code AFTER a try/except block if an exception was caught?",
+            "fr": "Que se passe-t-il pour le code APRÈS un bloc try/except si une exception a été attrapée ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "try:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print(\"Error handled\")\n    result = 0\n\nprint(f\"Result: {result}\")\nprint(\"Program continues\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The program continues normally and executes the code after the try/except",
+              "fr": "Le programme continue normalement et exécute le code après le try/except"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The program stops immediately after the except block",
+              "fr": "Le programme s'arrête immédiatement après le bloc except"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The program skips all remaining code in the file",
+              "fr": "Le programme saute tout le code restant dans le fichier"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The program restarts from the beginning",
+              "fr": "Le programme redémarre depuis le début"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about the purpose of exception handling - it's meant to prevent crashes and allow the program to continue.",
+        "fr": "Pense à l'objectif de la gestion des exceptions - elle est conçue pour éviter les plantages et permettre au programme de continuer."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "try except",
+        "quiz",
+        "execution flow"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Exception Handling Flow",
+      "fr": "Quiz : Flux de gestion des exceptions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed when this code runs?",
+            "fr": "Qu'est-ce qui sera affiché quand ce code s'exécutera ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "try:\n    result = 10 / 2\n    print(\"Division successful\")\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero\")\nprint(\"Program continues\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "\"Division successful\" and \"Program continues\"",
+              "fr": "\"Division successful\" et \"Program continues\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only \"Program continues\"",
+              "fr": "Seulement \"Program continues\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "\"Cannot divide by zero\" and \"Program continues\"",
+              "fr": "\"Cannot divide by zero\" et \"Program continues\""
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only \"Division successful\"",
+              "fr": "Seulement \"Division successful\""
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "The division is valid (10/2), so no exception occurs. What executes when there's no error?",
+        "fr": "La division est valide (10/2), donc aucune exception ne se produit. Qu'est-ce qui s'exécute quand il n'y a pas d'erreur ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_4_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "try except",
+        "quiz",
+        "error identification"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Understanding Error Messages",
+      "fr": "Quiz : Comprendre les messages d'erreur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What information does a Python error message typically include?",
+            "fr": "Quelles informations un message d'erreur Python inclut-il typiquement ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The error type, line number, and a description of what went wrong",
+              "fr": "Le type d'erreur, le numéro de ligne et une description de ce qui s'est mal passé"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only the line number where the error occurred",
+              "fr": "Seulement le numéro de ligne où l'erreur s'est produite"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only the error type without any details",
+              "fr": "Seulement le type d'erreur sans aucun détail"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "A suggestion for how to fix the code",
+              "fr": "Une suggestion sur comment corriger le code"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what you see in the terminal when an error occurs - there's usually multiple pieces of useful information.",
+        "fr": "Pense à ce que tu vois dans le terminal quand une erreur se produit - il y a généralement plusieurs informations utiles."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "try except",
+        "quiz",
+        "program behavior"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Program Behavior Without Exception Handling",
+      "fr": "Quiz : Comportement du programme sans gestion des exceptions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What happens if an exception occurs and there's NO try/except to handle it?",
+            "fr": "Que se passe-t-il si une exception se produit et qu'il n'y a PAS de try/except pour la gérer ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The program crashes and stops immediately",
+              "fr": "Le programme plante et s'arrête immédiatement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The error is ignored and the program continues",
+              "fr": "L'erreur est ignorée et le programme continue"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Python automatically fixes the error",
+              "fr": "Python corrige automatiquement l'erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The program asks the user what to do",
+              "fr": "Le programme demande à l'utilisateur quoi faire"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what you've seen when running code with errors before learning about exception handling.",
+        "fr": "Pense à ce que tu as vu en exécutant du code avec des erreurs avant d'apprendre la gestion des exceptions."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "try except",
+        "quiz",
+        "practical"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Handle Division Error",
+      "fr": "Quiz : Gérer l'erreur de division"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to safely calculate damage, using 0 if division fails:",
+            "fr": "Complète le code pour calculer les dégâts en toute sécurité, en utilisant 0 si la division échoue :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "attack = 100\ndefense = 0\n\n{{}}:\n    damage = attack / defense\n{{}}:\n    damage = 0\n\nprint(f\"Damage: {damage}\")",
+        "options": [
+          "try",
+          "except",
+          "if",
+          "catch",
+          "handle",
+          "error"
+        ],
+        "correctAnswers": {
+          "1": "try",
+          "2": "except"
+        }
+      },
+      "hint": {
+        "en": "Use the basic try/except structure to catch the division by zero error.",
+        "fr": "Utilise la structure try/except de base pour attraper l'erreur de division par zéro."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_11",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "specific exceptions",
+        "quiz",
+        "ValueError"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Catch Specific ValueError",
+      "fr": "Quiz : Attraper une ValueError spécifique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to catch the exception that will happen when converting a non-numeric string to an integer:",
+            "fr": "Complète le code pour attraper l'exception qui se produira lors de la conversion d'une chaîne non numérique en entier :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "try:\n    level = int(\"not a number\")\nexcept {{}}:\n    print(\"Please enter a valid number!\")\n    level = 1",
+        "options": [
+          "ValueError",
+          "Exception",
+          "TypeError",
+          "Error",
+          "ZeroDivisionError",
+          "KeyError"
+        ],
+        "correctAnswers": {
+          "1": "ValueError"
+        }
+      },
+      "hint": {
+        "en": "What specific error occurs when converting an invalid string to int?",
+        "fr": "Quelle erreur spécifique se produit lors de la conversion d'une chaîne invalide en int ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_4_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "specific exceptions",
+        "quiz",
+        "exception as e"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Exception Message Access",
+      "fr": "Quiz : Accès au message d'exception"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What does the ```as e``` syntax do in exception handling?",
+            "fr": "Que fait la syntaxe ```as e``` dans la gestion des exceptions ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "try:\n    result = int(\"abc\")\nexcept ValueError as e:\n    print(f\"Error: {e}\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Stores the exception object in variable ```e``` so you can access the error message",
+              "fr": "Stocke l'objet exception dans la variable ```e``` pour accéder au message d'erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Prevents the exception from being raised",
+              "fr": "Empêche l'exception d'être déclenchée"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Creates a new error called ```e```",
+              "fr": "Crée une nouvelle erreur appelée ```e```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Makes the exception handling optional",
+              "fr": "Rend la gestion des exceptions optionnelle"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about why you might want to give the exception a variable name.",
+        "fr": "Réfléchis à pourquoi tu voudrais donner un nom de variable à l'exception."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_13",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "specific exceptions",
+        "quiz",
+        "exception types"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Match Exception to Situation",
+      "fr": "Quiz : Associe l'exception à la situation"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each situation with the specific exception you should catch:",
+            "fr": "Associe chaque situation à l'exception spécifique que tu devrais attraper :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Converting user input to integer",
+                "fr": "Convertir une entrée utilisateur en entier"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```ValueError```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Dividing by a variable that might be zero",
+                "fr": "Diviser par une variable qui pourrait être zéro"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```ZeroDivisionError```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Accessing a dictionary key that might not exist",
+                "fr": "Accéder à une clé de dictionnaire qui pourrait ne pas exister"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```KeyError```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": {
+                "en": "Accessing a list index that might be out of range",
+                "fr": "Accéder à un index de liste qui pourrait être hors limites"
+              }
+            },
+            "match": {
+              "type": "text",
+              "value": "```IndexError```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_13_4_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "specific exceptions",
+        "quiz",
+        "best practices"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Specific vs General Exception Handling",
+      "fr": "Quiz : Gestion d'exceptions spécifiques vs générales"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Why is ```except ValueError:``` better than just ```except:```?",
+            "fr": "Pourquoi ```except ValueError:``` est-il meilleur que juste ```except:``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It's more precise and helps with debugging by catching only the expected error",
+              "fr": "C'est plus précis et aide au débogage en attrapant seulement l'erreur attendue"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It makes the program run faster",
+              "fr": "Ça fait tourner le programme plus rapidement"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It catches more types of errors",
+              "fr": "Ça attrape plus de types d'erreurs"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It's required by Python syntax",
+              "fr": "C'est requis par la syntaxe Python"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what happens if an unexpected error occurs with a general except.",
+        "fr": "Pense à ce qui se passe si une erreur inattendue se produit avec un except général."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_15",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "specific exceptions",
+        "quiz",
+        "exception as e"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Use Exception Message",
+      "fr": "Quiz : Utiliser le message d'exception"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to catch the exception and display its error message:",
+            "fr": "Complète le code pour attraper l'exception et afficher son message d'erreur :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "try:\n    codemon_hp = int(\"invalid\")\nexcept ValueError {{}} {{}}:\n    print(f\"Conversion failed: {e}\")\n    codemon_hp = 100",
+        "options": [
+          "as",
+          "e",
+          "error",
+          "exception",
+          "msg",
+          "message"
+        ],
+        "correctAnswers": {
+          "1": "as",
+          "2": "e"
+        }
+      },
+      "hint": {
+        "en": "Use the syntax that allows you to access the exception object and its message.",
+        "fr": "Utilise la syntaxe qui te permet d'accéder à l'objet exception et son message."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_16",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "multiple except",
+        "quiz",
+        "execution order"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Multiple Exception Handlers",
+      "fr": "Quiz : Plusieurs gestionnaires d'exception"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which except block will execute if ```int(\"abc\")``` is called?",
+            "fr": "Quel bloc except s'exécutera si ```int(\"abc\")``` est appelé ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "try:\n    level = int(\"abc\")\nexcept ValueError:\n    print(\"Invalid number\")\nexcept TypeError:\n    print(\"Wrong type\")\nexcept:\n    print(\"Other error\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The ```ValueError``` block",
+              "fr": "Le bloc ```ValueError```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The ```TypeError``` block",
+              "fr": "Le bloc ```TypeError```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The general ```except:``` block",
+              "fr": "Le bloc ```except:``` général"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "All three blocks",
+              "fr": "Les trois blocs"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "int() with an invalid string raises ValueError. Python executes only the first matching except block.",
+        "fr": "int() avec une chaîne invalide déclenche ValueError. Python exécute seulement le premier bloc except correspondant."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_17",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "multiple except",
+        "quiz",
+        "exception priority"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Exception Handling Priority",
+      "fr": "Quiz : Priorité de gestion des exceptions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "How many except blocks will execute if an exception occurs?",
+            "fr": "Combien de blocs except s'exécuteront si une exception se produit ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "try:\n    codemon_hp = int(\"invalid\")\nexcept ValueError:\n    print(\"Invalid value\")\nexcept TypeError:\n    print(\"Wrong type\")\nexcept Exception:\n    print(\"General error\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Only ONE - the first matching except block",
+              "fr": "Seulement UN - le premier bloc except correspondant"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "All except blocks that match the error type",
+              "fr": "Tous les blocs except qui correspondent au type d'erreur"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only the most specific except block",
+              "fr": "Seulement le bloc except le plus spécifique"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "All three except blocks in order",
+              "fr": "Les trois blocs except dans l'ordre"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Python stops checking except blocks as soon as it finds one that matches the exception type.",
+        "fr": "Python arrête de vérifier les blocs except dès qu'il en trouve un qui correspond au type d'exception."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_18",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "multiple except",
+        "quiz",
+        "best practices"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Exception Handler Order Matters",
+      "fr": "Quiz : L'ordre des gestionnaires d'exception compte"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's wrong with this exception handling order?",
+            "fr": "Quel est le problème avec cet ordre de gestion des exceptions ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "try:\n    result = risky_operation()\nexcept:\n    print(\"General error\")\nexcept ValueError:\n    print(\"Value error\")\nexcept TypeError:\n    print(\"Type error\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "The general ```except:``` catches all errors first, so specific handlers never execute",
+              "fr": "Le ```except:``` général attrape toutes les erreurs en premier, donc les gestions d'erreurs spécifiques ne s'exécutent jamais"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "You can't have more than two except blocks",
+              "fr": "On ne peut pas avoir plus de deux blocs except"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "ValueError and TypeError can't be used together",
+              "fr": "ValueError et TypeError ne peuvent pas être utilisés ensemble"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing is wrong with this order",
+              "fr": "Il n'y a rien de mal avec cet ordre"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Python checks except blocks from top to bottom. What happens when a general except comes first?",
+        "fr": "Python vérifie les blocs except de haut en bas. Que se passe-t-il quand un except général vient en premier ?"
+      }
+    }
+  },
+  {
+    "id": "python_13_4_19",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "multiple except",
+        "quiz",
+        "execution flow"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Which Handler Executes?",
+      "fr": "Quiz : Quel gestionnaire s'exécute ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed if the dictionary access fails?",
+            "fr": "Qu'est-ce qui sera affiché si l'accès au dictionnaire échoue ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "codemon = {\"name\": \"Aquachu\"}\ntry:\n    print(codemon[\"level\"])\nexcept KeyError:\n    print(\"Key not found\")\nexcept ValueError:\n    print(\"Invalid value\")\nexcept:\n    print(\"Unknown error\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "\"Key not found\""
+          },
+          {
+            "type": "text",
+            "value": "\"Invalid value\""
+          },
+          {
+            "type": "text",
+            "value": "\"Unknown error\""
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "All three messages",
+              "fr": "Les trois messages"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Accessing a non-existent dictionary key raises KeyError. Only one except block executes.",
+        "fr": "Accéder à une clé de dictionnaire inexistante déclenche KeyError. Un seul bloc except s'exécute."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_20",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "multiple except",
+        "quiz",
+        "error scenarios"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Match Code to Exception Handler",
+      "fr": "Quiz : Associe le code au gestionnaire d'exception"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each code operation with the except block that would handle its error:",
+            "fr": "Associe chaque opération de code au bloc except qui gérerait son erreur :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```int(\"25.5\")```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```except ValueError:```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```[1, 2][5]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```except IndexError:```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```\"level\" + 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```except TypeError:```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```{\"hp\": 100}[\"mp\"]```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```except KeyError:```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_13_4_21",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "else clause",
+        "quiz",
+        "execution"
+      ]
+    },
+    "title": {
+      "en": "Quiz: When else Executes",
+      "fr": "Quiz : Quand else s'exécute"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When does the ```else``` clause execute in a try/except/else block?",
+            "fr": "Quand la clause ```else``` s'exécute-t-elle dans un bloc try/except/else ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Only when NO exception occurs in the try block",
+              "fr": "Seulement quand AUCUNE exception ne se produit dans le bloc try"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Only when an exception is caught by except",
+              "fr": "Seulement quand une exception est attrapée par except"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Always, regardless of exceptions",
+              "fr": "Toujours, peu importe les exceptions"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Before the try block executes",
+              "fr": "Avant que le bloc try ne s'exécute"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about what makes else special - it's for the success case.",
+        "fr": "Pense à ce qui rend else spécial - c'est pour le cas de succès."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_22",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "finally clause",
+        "quiz",
+        "execution"
+      ]
+    },
+    "title": {
+      "en": "Quiz: finally Clause Behavior",
+      "fr": "Quiz : Comportement de la clause finally"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is TRUE about the ```finally``` clause?",
+            "fr": "Qu'est-ce qui est VRAI à propos de la clause ```finally``` ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "It ALWAYS executes, whether an exception occurs or not",
+              "fr": "Elle s'exécute TOUJOURS, qu'une exception se produise ou non"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It only executes when an exception occurs",
+              "fr": "Elle s'exécute seulement quand une exception se produit"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It only executes when NO exception occurs",
+              "fr": "Elle s'exécute seulement quand AUCUNE exception ne se produit"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "It prevents exceptions from being raised",
+              "fr": "Elle empêche les exceptions d'être déclenchées"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "finally is used for cleanup code that must run no matter what happens.",
+        "fr": "finally est utilisé pour le code de nettoyage qui doit s'exécuter quoi qu'il arrive."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_23",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "complete structure",
+        "quiz",
+        "else finally"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Complete try/except/else/finally",
+      "fr": "Quiz : Compléter try/except/else/finally"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the full exception handling structure:",
+            "fr": "Complète la structure complète de gestion des exceptions :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "{{}}:\n    result = 10 / 2\n{{}} ZeroDivisionError:\n    print(\"Cannot divide by zero\")\n{{}}:\n    print(\"Success! Result:\", result)\n{{}}:\n    print(\"Cleanup complete\")",
+        "options": [
+          "try",
+          "except",
+          "else",
+          "finally",
+          "catch",
+          "always"
+        ],
+        "correctAnswers": {
+          "1": "try",
+          "2": "except",
+          "3": "else",
+          "4": "finally"
+        }
+      },
+      "hint": {
+        "en": "Order: risky code, error handling, success code, cleanup code.",
+        "fr": "Ordre : code risqué, gestion d'erreur, code de succès, code de nettoyage."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_24",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "execution order",
+        "quiz",
+        "else finally"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Execution Order with Exception",
+      "fr": "Quiz : Ordre d'exécution avec exception"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the execution order when an exception OCCURS?",
+            "fr": "Quel est l'ordre d'exécution quand une exception SE PRODUIT ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": "try:\n    print(\"A\")\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print(\"B\")\nelse:\n    print(\"C\")\nfinally:\n    print(\"D\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "A, B, D"
+          },
+          {
+            "type": "text",
+            "value": "A, C, D"
+          },
+          {
+            "type": "text",
+            "value": "A, B, C, D"
+          },
+          {
+            "type": "text",
+            "value": "B, D"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "When exception occurs: try runs until error, then except, else is skipped, finally always runs.",
+        "fr": "Quand une exception se produit : try s'exécute jusqu'à l'erreur, puis except, else est sauté, finally s'exécute toujours."
+      }
+    }
+  },
+  {
+    "id": "python_13_4_25",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "else finally",
+        "quiz",
+        "practical use"
+      ]
+    },
+    "title": {
+      "en": "Quiz: Practical else and finally Usage",
+      "fr": "Quiz : Utilisation pratique de else et finally"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code: use ```else``` for success message and ```finally``` for cleanup:",
+            "fr": "Complète le code : utilise ```else``` pour le message de succès et ```finally``` pour le nettoyage :"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_data = {\"name\": \"Aquachu\", \"level\": 50}\n\ntry:\n    power = codemon_data[\"level\"] * 10\nexcept KeyError:\n    print(\"Missing data!\")\n    power = 0\n{{}}:\n    print(f\"Power calculated: {power}\")\n{{}}:\n    print(\"Calculation complete\")",
+        "options": [
+          "else",
+          "finally",
+          "then",
+          "always",
+          "success",
+          "cleanup"
+        ],
+        "correctAnswers": {
+          "1": "else",
+          "2": "finally"
+        }
+      },
+      "hint": {
+        "en": "else runs only on success (no exception). finally always runs for cleanup.",
+        "fr": "else s'exécute seulement en cas de succès (pas d'exception). finally s'exécute toujours pour le nettoyage."
+      }
+    }
+  },
+  {
+    "id": "python_13_10_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try-except",
+        "functions",
+        "dictionaries",
+        "error-handling",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Safe Stats Viewer - Get Stat Safely",
+      "fr": "Visualiseur de stats sécurisé - Obtenir une stat en sécurité"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Start building a safe stats viewer!\n\n- Create ```get_stat(codemon, stat_name)``` that uses try/except to handle KeyError\n- If stat exists: return the value\n- If stat doesn't exist: print \"[stat_name] not found!\" and return 0\n- Test by getting existing stats (attack) and non-existing stats (speed)",
+            "fr": "Commence à construire un visualiseur de stats sécurisé !\n\n- Crée ```get_stat(codemon, stat_name)``` qui utilise try/except pour gérer KeyError\n- Si la stat existe : retourne la valeur\n- Si la stat n'existe pas : affiche \"[stat_name] non trouvé !\" et retourne 0\n- Teste en obtenant des stats existantes (attack) et inexistantes (speed)"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create get_stat function with KeyError handling\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\n# Test it\n",
+          "fr": "# Créer la fonction get_stat avec gestion de KeyError\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\n# Teste ça\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} not found!\")\n    return 0\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\nprint(\"=== STATS VIEWER ===\")\nprint(f\"Attack: {get_stat(aquachu, 'attack')}\")\nprint(f\"Speed: {get_stat(aquachu, 'speed')}\")",
+            "fr": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} non trouvé !\")\n    return 0\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\nprint(\"=== VISUALISEUR DE STATS ===\")\nprint(f\"Attaque : {get_stat(aquachu, 'attack')}\")\nprint(f\"Vitesse : {get_stat(aquachu, 'speed')}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_10_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try-except",
+        "functions",
+        "dictionaries",
+        "loops",
+        "error-handling",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Safe Stats Viewer - Calculate Total",
+      "fr": "Visualiseur de stats sécurisé - Calculer le total"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Expand your stats viewer to calculate totals:\n\n- Create ```calculate_total_stats(codemon)``` that safely sums all stat values (exclude \"name\")\n- Test by calculating the total stats of a Codémon",
+            "fr": "Enrichis ton visualiseur de stats pour calculer les totaux :\n\n- Crée ```calculate_total_stats(codemon)``` qui additionne toutes les valeurs de stats en toute sécurité (exclure \"name\")\n- Teste en calculant le total des stats d'un Codémon"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} not found!\")\n    return 0\n\n# Create calculate_total_stats function\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\n# Test it\n",
+          "fr": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} non trouvé !\")\n    return 0\n\n# Créer la fonction calculate_total_stats\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\n# Teste ça\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} not found!\")\n    return 0\n\ndef calculate_total_stats(codemon):\n  total = 0\n  for key in codemon:\n    if key != \"name\":\n      total = total + get_stat(codemon, key)\n  return total\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\nprint(\"=== STATS VIEWER ===\")\nprint(f\"Total stats: {calculate_total_stats(aquachu)}\")",
+            "fr": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} non trouvé !\")\n    return 0\n\ndef calculate_total_stats(codemon):\n  total = 0\n  for cle in codemon:\n    if cle != \"name\":\n      total = total + get_stat(codemon, cle)\n  return total\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\nprint(\"=== VISUALISEUR DE STATS ===\")\nprint(f\"Total des stats : {calculate_total_stats(aquachu)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_10_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try-except",
+        "functions",
+        "dictionaries",
+        "loops",
+        "error-handling",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Safe Stats Viewer - Stats Average",
+      "fr": "Visualiseur de stats sécurisé - Moyenne des stats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete your stats viewer with average calculation:\n\n- Create ```get_stat_average(codemon, stat_list)``` that uses try/except to handle ZeroDivisionError\n- Calculate the average of requested stats\n- Return 0 if stat_list is empty\n- Test with a normal list and an empty list",
+            "fr": "Complète ton visualiseur de stats avec le calcul de moyenne :\n\n- Crée ```get_stat_average(codemon, stat_list)``` qui utilise try/except pour gérer ZeroDivisionError\n- Calcule la moyenne des stats demandées\n- Retourne 0 si stat_list est vide\n- Teste avec une liste normale et une liste vide"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} not found!\")\n    return 0\n\n# Create get_stat_average function with ZeroDivisionError handling\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\n# Test it\n",
+          "fr": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} non trouvé !\")\n    return 0\n\n# Créer la fonction get_stat_average avec gestion de ZeroDivisionError\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\n# Teste ça\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} not found!\")\n    return 0\n\ndef get_stat_average(codemon, stat_list):\n  try:\n    total = 0\n    for stat in stat_list:\n      total = total + get_stat(codemon, stat)\n    average = total / len(stat_list)\n    return average\n  except ZeroDivisionError:\n    print(\"Cannot calculate average of empty list!\")\n    return 0\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\nprint(\"=== STATS VIEWER ===\")\nprint(f\"Average (hp, attack, defense): {get_stat_average(aquachu, ['hp', 'attack', 'defense'])}\")\nprint(f\"Average (empty): {get_stat_average(aquachu, [])}\")",
+            "fr": "def get_stat(codemon, stat_name):\n  try:\n    return codemon[stat_name]\n  except KeyError:\n    print(f\"{stat_name} non trouvé !\")\n    return 0\n\ndef get_stat_average(codemon, stat_list):\n  try:\n    total = 0\n    for stat in stat_list:\n      total = total + get_stat(codemon, stat)\n    moyenne = total / len(stat_list)\n    return moyenne\n  except ZeroDivisionError:\n    print(\"Impossible de calculer la moyenne d'une liste vide !\")\n    return 0\n\naquachu = {\"name\": \"Aquachu\", \"hp\": 100, \"attack\": 50, \"defense\": 30}\n\nprint(\"=== VISUALISEUR DE STATS ===\")\nprint(f\"Moyenne (hp, attack, defense) : {get_stat_average(aquachu, ['hp', 'attack', 'defense'])}\")\nprint(f\"Moyenne (vide) : {get_stat_average(aquachu, [])}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_11_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try-except",
+        "functions",
+        "type-conversion",
+        "error-handling",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Damage Processor - Process Single Damage",
+      "fr": "Processeur de dégâts - Traiter un dégât unique"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Start building a damage processor!\n\n- Create ```process_damage(damage_value)``` that converts damage_value to int\n- If conversion fails: print \"Invalid damage value!\" and return 0\n- Test with: 50, \"30\", \"invalid\", and None",
+            "fr": "Commence à construire un processeur de dégâts !\n\n- Crée ```process_damage(damage_value)``` qui convertit damage_value en int\n- Si la conversion échoue : affiche \"Valeur de dégâts invalide !\" et retourne 0\n- Teste avec : 50, \"30\", \"invalid\", et None"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Create process_damage function with ValueError and TypeError handling\n\n# Test it\n",
+          "fr": "# Créer la fonction process_damage avec gestion de ValueError et TypeError\n\n# Teste ça\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def process_damage(damage_value):\n  try:\n    return int(damage_value)\n  except Exception:\n    print(\"Invalid damage value!\")\n    return 0\n\nprint(\"=== DAMAGE PROCESSOR ===\")\nprint(f\"Process 50: {process_damage(50)}\")\nprint(f\"Process '30': {process_damage('30')}\")\nprint(f\"Process 'invalid': {process_damage('invalid')}\")\nprint(f\"Process None: {process_damage(None)}\")",
+            "fr": "def process_damage(damage_value):\n  try:\n    return int(damage_value)\n  except Exception:\n    print(\"Valeur de dégâts invalide !\")\n    return 0\n\nprint(\"=== PROCESSEUR DE DÉGÂTS ===\")\nprint(f\"Traiter 50 : {process_damage(50)}\")\nprint(f\"Traiter '30' : {process_damage('30')}\")\nprint(f\"Traiter 'invalid' : {process_damage('invalid')}\")\nprint(f\"Traiter None : {process_damage(None)}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_11_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try-except",
+        "functions",
+        "lists",
+        "loops",
+        "error-handling",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Damage Processor - Calculate Total Damage",
+      "fr": "Processeur de dégâts - Calculer le total des dégâts"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Expand your damage processor to handle lists:\n\n- Create ```calculate_damage_list(damage_list)``` that processes each damage and returns the total\n- Test it with ```damages``` list.",
+            "fr": "Enrichis ton processeur de dégâts pour gérer des listes :\n\n- Crée ```calculate_damage_list(damage_list)``` qui traite chaque dégât et retourne le total\n- Teste avec la liste ```degats```."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def process_damage(damage_value):\n  try:\n    return int(damage_value)\n  except Exception:\n    print(\"Invalid damage value!\")\n    return 0\n\n# Create calculate_damage_list function with loop\n\ndamages = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\n# Test it\n",
+          "fr": "def process_damage(damage_value):\n  try:\n    return int(damage_value)\n  except Exception:\n    print(\"Valeur de dégâts invalide !\")\n    return 0\n\n# Créer la fonction calculate_damage_list avec boucle\n\ndegats = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\n# Teste ça\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def process_damage(damage_value):\n  try:\n    return int(damage_value)\n  except Exception:\n    print(\"Invalid damage value!\")\n    return 0\n\ndef calculate_damage_list(damage_list):\n  total = 0\n  for damage in damage_list:\n    processed = process_damage(damage)\n    total = total + processed\n  return total\n\nprint(\"=== DAMAGE PROCESSOR ===\")\ndamages = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\nprint(\"Processing damages...\\n\")\ntotal = calculate_damage_list(damages)\nprint(f\"\\nTotal damage: {total}\")",
+            "fr": "def process_damage(damage_value):\n  try:\n    return int(damage_value)\n  except Exception:\n    print(\"Valeur de dégâts invalide !\")\n    return 0\n\ndef calculate_damage_list(damage_list):\n  total = 0\n  for degat in damage_list:\n    traite = process_damage(degat)\n    total = total + traite\n  return total\n\nprint(\"=== PROCESSEUR DE DÉGÂTS ===\")\ndegats = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\nprint(\"Traitement des dégâts...\\n\")\ntotal = calculate_damage_list(degats)\nprint(f\"\\nTotal des dégâts : {total}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_13_11_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "exceptions",
+        "try-except-else-finally",
+        "functions",
+        "lists",
+        "loops",
+        "error-handling",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Damage Processor - Average with Full Handling",
+      "fr": "Processeur de dégâts - Moyenne avec gestion complète"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete your damage processor with average calculation:\n\n- Create ```get_average_damage(damage_list)``` that calculates the average damage\n- Handle division by zero if no valid damages\n- Print \"Average calculated: [value]\" in else block\n- Print \"Calculation complete!\" in finally block",
+            "fr": "Complète ton processeur de dégâts avec le calcul de moyenne :\n\n- Crée ```get_average_damage(damage_list)``` qui calcule la moyenne des dégâts\n- Gère la division par zéro si aucun dégât valide\n- Affiche \"Moyenne calculée : [valeur]\" dans le bloc else\n- Affiche \"Calcul terminé !\" dans le bloc finally"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "def process_damage(damage_value):\n  try:\n  return int(damage_value)\n  except Exception:\n  print(\"Invalid damage value!\")\n  return 0\n\ndef calculate_damage_list(damage_list):\n  total = 0\n  for damage in damage_list:\n  processed = process_damage(damage)\n  total = total + processed\n  return total\n\n# Create get_average_damage function with try/except/else/finally\n\ndamages = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\n# Test it\n",
+          "fr": "def process_damage(damage_value):\n  try:\n  return int(damage_value)\n  except Exception:\n  print(\"Valeur de dégâts invalide !\")\n  return 0\n\ndef calculate_damage_list(damage_list):\n  total = 0\n  for degat in damage_list:\n  traite = process_damage(degat)\n  total = total + traite\n  return total\n\n# Créer la fonction get_average_damage avec try/except/else/finally\n\ndegats = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\n# Teste ça\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "def process_damage(damage_value):\n  try:\n  return int(damage_value)\n  except Exception:\n  print(\"Invalid damage value!\")\n  return 0\n\ndef calculate_damage_list(damage_list):\n  total = 0\n  for damage in damage_list:\n  processed = process_damage(damage)\n  total = total + processed\n  return total\n\ndef get_average_damage(damage_list):\n  try:\n  total = calculate_damage_list(damage_list)\n  valid_count = 0\n  for damage in damage_list:\n    if process_damage(damage) != 0:\n    valid_count = valid_count + 1\n  average = total / valid_count\n  except ZeroDivisionError:\n  print(\"No valid damage values!\")\n  average = 0\n  else:\n  print(f\"Average calculated: {average}\")\n  finally:\n  print(\"Calculation complete!\")\n  return average\n\nprint(\"=== DAMAGE PROCESSOR ===\")\ndamages = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\nprint(\"Calculating average...\\n\")\naverage = get_average_damage(damages)\nprint(f\"\\nAverage damage: {average}\")",
+            "fr": "def process_damage(damage_value):\n  try:\n  return int(damage_value)\n  except Exception:\n  print(\"Valeur de dégâts invalide !\")\n  return 0\n\ndef calculate_damage_list(damage_list):\n  total = 0\n  for degat in damage_list:\n  traite = process_damage(degat)\n  total = total + traite\n  return total\n\ndef get_average_damage(damage_list):\n  try:\n  total = calculate_damage_list(damage_list)\n  valid_count = 0\n  for degat in damage_list:\n    if process_damage(degat) != 0:\n    valid_count = valid_count + 1\n  moyenne = total / valid_count\n  except ZeroDivisionError:\n  print(\"Aucune valeur de dégâts valide !\")\n  moyenne = 0\n  else:\n  print(f\"Moyenne calculée : {moyenne}\")\n  finally:\n  print(\"Calcul terminé !\")\n  return moyenne\n\nprint(\"=== PROCESSEUR DE DÉGÂTS ===\")\ndegats = [50, \"30\", 45, \"invalid\", None, \"25\"]\n\nprint(\"Calcul de la moyenne...\\n\")\nmoyenne = get_average_damage(degats)\nprint(f\"\\nMoyenne des dégâts : {moyenne}\")"
+          }
+        }
+      ]
+    }
+  }
+]

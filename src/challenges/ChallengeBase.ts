@@ -1,7 +1,8 @@
-import type { ChallengeConfig } from '@/data/types'
+import type { ChallengeConfig, LocalizedText } from '@/data/types'
 import type { IChallenge } from '@/challenges/IChallenge'
 import { ClDomRenderer } from '@/challenges/cl-utils/ClDomRenderer'
 import { i18n } from '@/i18n/I18nManager'
+import { resolveText } from '@/utils/i18n-helpers'
 
 export abstract class ChallengeBase<C extends ChallengeConfig = ChallengeConfig>
   implements IChallenge
@@ -94,6 +95,19 @@ export abstract class ChallengeBase<C extends ChallengeConfig = ChallengeConfig>
   /** Notify the scene that the player gave a wrong answer (for HP damage) */
   protected notifyWrongAnswer(): void {
     this.scene.events.emit('challenge-wrong-answer')
+  }
+
+  /** Hint under the feedback: green after a right answer, orange after a wrong one */
+  protected showHint(container: HTMLElement, hint: LocalizedText | undefined, correct: boolean): void {
+    const text = resolveText(hint)
+    if (!text) return
+    const div = document.createElement('div')
+    div.className = 'cl-text-block'
+    div.style.color = correct ? '#22aa22' : '#cc6600'
+    div.style.fontSize = '12px'
+    div.style.textAlign = 'center'
+    div.textContent = text
+    container.appendChild(div)
   }
 
   /** Show a "Continue" button at the bottom of the panel after success */

@@ -1,0 +1,3949 @@
+[
+  {
+    "id": "python_6_1_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "decision making"
+      ]
+    },
+    "title": {
+      "en": "What are Conditional Statements?",
+      "fr": "Qu'est-ce que les conditions ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In programming, we often need our code to make decisions based on certain conditions, just like you do in real life!",
+            "fr": "En programmation, nous avons souvent besoin que notre code prenne des décisions basées sur certaines conditions, tout comme tu le fais dans la vie réelle !"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "For example, you might think: \"If my Codémon has 0 HP, he's fainted.\" In Python, we can write similar instructions using conditional statements.",
+            "fr": "Par exemple, tu pourrais penser : \"Si mon Codémon a 0 PV, il est KO.\" En Python, nous pouvons écrire des instructions similaires en utilisant des conditions."
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_if_intro"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The most basic conditional statement is the ```if``` statement. It allows your program to check a condition and execute some code only if that condition is true.",
+            "fr": "L'instruction de condition la plus basique est l'instruction ```if``` (si). Elle permet à ton programme de vérifier une condition et d'exécuter du code seulement si cette condition est vraie."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_1_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "The Basic Syntax of if Statements",
+      "fr": "La Syntaxe de Base des Instructions if"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's the basic structure of an if statement in Python:",
+            "fr": "Voici la structure de base d'une instruction if en Python :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "if condition:\n    # Code to execute if the condition is True",
+            "fr": "if condition:\n    # Code à exécuter si la condition est vraie"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's look at a Codémon example:",
+            "fr": "Regardons un exemple avec des Codémon :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_hp = 100 # Try to change me to 0 !!\n\nif codemon_hp > 0:\n    print(\"Your Codémon is ready to battle!\")\n\nprint(\"This line always runs, regardless of the condition.\")",
+            "fr": "codemon_pv = 100 # Change la valeur à 0 pour voir ce qu'il se passe\n\nif codemon_pv > 0:\n    print(\"Ton Codémon est prêt à combattre !\")\n\nprint(\"Cette ligne s'exécute toujours, peu importe soit la condition.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Important parts of an if statement:\n- The keyword if\n- A condition that evaluates to True or False\n- A colon ```:``` at the end of the condition\n- Indented code that runs only if the condition is True (I explain indentation in the next exercise, just hit 'Continue')",
+            "fr": "Parties importantes d'une instruction if :\n- Le mot-clé if\n- Une condition qui s'évalue à True ou False\n- Deux points ```:``` à la fin de la condition\n- Du code indenté qui ne s'exécute que si la condition est True, (j'explique l'indentation dans l'exercice suivant, clique sur 'Continuer')"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_1_3",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "indentation"
+      ]
+    },
+    "title": {
+      "en": "Indentation in Python if Statements",
+      "fr": "L'Indentation dans les Instructions if en Python"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, indentation is extremely important. It's how Python knows which code belongs to the if statement.",
+            "fr": "En Python, l'indentation est extrêmement importante. C'est comme ça que Python sait quel code appartient à l'instruction if."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Code that is indented (usually 4 spaces) after the if statement will only run if the condition is True. Code that is not indented will run regardless of the condition.",
+            "fr": "Le code qui est indenté (généralement 4 espaces) après l'instruction if ne s'exécutera que si la condition est vraie. Le code qui n'est pas indenté s'exécutera quelle que soit la condition."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_level = 5 # Try with 15 here!\n\nif codemon_level > 10:\n    print(\"Your Codémon is strong!\")\n    print(\"You can challenge the gym leader.\")\nprint(\"This line is not in the if, it will always run.\")",
+            "fr": "niveau_codemon = 5 # Essaie avec 15 ici !\n\nif niveau_codemon > 10:\n    print(\"Ton Codémon est fort !\")\n    print(\"Tu peux défier le champion d'arène.\")\nprint(\"Cette ligne n'est pas dans le if, elle s'exécutera toujours.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Watch out for indentation errors!",
+              "fr": "Attention aux erreurs d'indentation !"
+            },
+            "content": {
+              "en": "In Python, incorrect indentation can cause your code to behave unexpectedly or even lead to errors. Always be consistent with your indentation (usually 4 spaces per level).",
+              "fr": "En Python, une indentation incorrecte peut faire que ton code se comporte de manière inattendue ou même provoquer des erreurs. Sois toujours cohérent avec ton indentation (généralement 4 espaces par niveau)."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_1_4",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "indentation"
+      ]
+    },
+    "title": {
+      "en": "What's Going to be Printed?",
+      "fr": "Qu'est-ce qui va être affiché ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Consider the following code:",
+            "fr": "Considère le code suivant :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "codemon_hp = 0\n\nif codemon_hp > 0:\n    print(\"Your Codémon is healthy!\")\n    print(\"Ready to battle!\")\nprint(\"Program completed.\")",
+            "fr": "codemon_pv = 0\n\nif codemon_pv > 0:\n    print(\"Ton Codémon est en bonne santé !\")\n    print(\"Prêt à combattre !\")\nprint(\"Programme terminé.\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which lines will be printed when this code runs?",
+            "fr": "Quelles lignes seront affichées lorsque ce code s'exécute ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Only ```\"Program completed.\"```",
+              "fr": "Seulement ```\"Programme terminé.\"```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```\"Your Codémon is healthy!\"```, ```\"Ready to battle!\"```, and ```\"Program completed.\"```",
+              "fr": "```\"Ton Codémon est en bonne santé !\"```, ```\"Prêt à combattre !\"``` et ```\"Programme terminé.\"```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```\"Your Codémon is healthy!\"``` and ```\"Program completed.\"```",
+              "fr": "```\"Ton Codémon est en bonne santé !\"``` et ```\"Programme terminé.\"```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing will be printed",
+              "fr": "Rien ne sera affiché"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: Code inside the if block (indented) only runs if the condition is True.",
+        "fr": "Rappelle-toi : Le code à l'intérieur du bloc if (indenté) ne s'exécute que si la condition est vraie."
+      }
+    }
+  },
+  {
+    "id": "python_6_1_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Conditions with Comparison Operators",
+      "fr": "Conditions avec des Opérateurs de Comparaison"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The condition in an if statement is usually a comparison. We already talked about those in the boolean chapter, but let's review them here.",
+            "fr": "La condition dans une instruction if est généralement une comparaison. Nous en avons déjà parlé dans le chapitre sur les booléens, mais révisons-les ici."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Python has several comparison operators:\n- ```==``` Equal to\n- ```!=``` Not equal to\n- ```>``` Greater than\n- ```<``` Less than\n- ```>=``` Greater than or equal to\n- ```<=``` Less than or equal to",
+            "fr": "Python possède plusieurs opérateurs de comparaison :\n- ```==``` Égal à\n- ```!=``` Différent de\n- ```>``` Supérieur à\n- ```<``` Inférieur à\n- ```>=``` Supérieur ou égal à\n- ```<=``` Inférieur ou égal à"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_level = 15\nenemy_level = 10\n\nif codemon_level > enemy_level:\n    print(\"Your Codémon has an advantage!\")\n\nif codemon_level == enemy_level:\n    print(\"The levels are equal!\")\n\nif codemon_level != 20:\n    print(\"Your Codémon is not level 20 yet.\")",
+            "fr": "niveau_codemon = 15\nniveau_ennemi = 10\n\nif niveau_codemon > niveau_ennemi:\n    print(\"Ton Codémon a un avantage !\")\n\nif niveau_codemon == niveau_ennemi:\n    print(\"Les niveaux sont égaux !\")\n\nif niveau_codemon != 20:\n    print(\"Ton Codémon n'est pas encore niveau 20.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Common mistake: = vs ==",
+              "fr": "Erreur courante : = vs =="
+            },
+            "content": {
+              "en": "Be careful not to confuse the assignment operator (=) with the equality comparison operator (==). Using = in a condition will assign a value rather than compare, which can lead to unexpected behavior!",
+              "fr": "Fais attention à ne pas confondre l'opérateur d'affectation (=) avec l'opérateur de comparaison d'égalité (==). Utiliser = dans une condition assignera une valeur plutôt que de comparer, ce qui peut conduire à un comportement inattendu !"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_1_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Complete the if Statement",
+      "fr": "Complète l'Instruction if"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Fill in the blanks to complete this if statement. You want to check if your Codémon's level is high enough (at least 25) to enter a tournament.",
+            "fr": "Remplis les blancs pour compléter cette instruction if. Tu veux vérifier si le niveau de ton Codémon est assez élevé (au moins 25) pour participer à un tournoi."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_level = 30\n\n{{}} codemon_level {{}} 25{{}}\n    print(\"Your Codémon can enter the tournament!\")",
+        "options": [
+          "if",
+          "==",
+          "!=",
+          ">=",
+          "<=",
+          "==",
+          ":"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": ">=",
+          "3": ":"
+        }
+      },
+      "hint": {
+        "en": "Remember: The basic syntax is 'if condition:' where the condition compares values. Don't forget the colon at the end!",
+        "fr": "Rappelle-toi : La syntaxe de base est 'if condition:' où la condition compare des valeurs. N'oublie pas les deux points à la fin !"
+      }
+    }
+  },
+  {
+    "id": "python_6_1_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Which Condition is True?",
+      "fr": "Quelle Condition est Vraie ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Given the following variables:",
+            "fr": "Étant donné les variables suivantes :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "aquachu_level = 15\npyrochu_level = 20"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following conditions will evaluate to True?",
+            "fr": "Laquelle des conditions suivantes sera True ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```aquachu_level > pyrochu_level```"
+          },
+          {
+            "type": "text",
+            "value": "```aquachu_level == pyrochu_level```"
+          },
+          {
+            "type": "text",
+            "value": "```aquachu_level >= 20```"
+          },
+          {
+            "type": "text",
+            "value": "```aquachu_level < pyrochu_level```"
+          }
+        ],
+        "correctAnswer": 3
+      },
+      "hint": {
+        "en": "Remember: Check if each condition is true by substituting the variable values. For example, is 35 < 20 True ? No, it's False!",
+        "fr": "Rappelle-toi : Vérifie si chaque condition est vraie en substituant les valeurs des variables. Par exemple, est-ce que 35 < 20 est vrai ? Non, c'est faux !"
+      }
+    }
+  },
+  {
+    "id": "python_6_1_8",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Match the Conditions and Results",
+      "fr": "Associe les Conditions et les Résultats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each condition with its result, assuming: ```codemon_level = 15```",
+            "fr": "Associe chaque condition avec son résultat, en supposant : ```codemon_level = 15```"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level > 10```"
+            },
+            "match": {
+              "type": "text",
+              "value": "True"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level == 20```"
+            },
+            "match": {
+              "type": "text",
+              "value": "False"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level <= 15```"
+            },
+            "match": {
+              "type": "text",
+              "value": "True"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level != 15```"
+            },
+            "match": {
+              "type": "text",
+              "value": "False"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_1_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "boolean"
+      ]
+    },
+    "title": {
+      "en": "If Statements with Boolean Variables",
+      "fr": "Instructions If avec des Variables Booléennes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can also use boolean variables (```True```/```False```) directly in ```if``` statements without any comparison operators.",
+            "fr": "Tu peux aussi utiliser des variables booléennes (```True```/```False```) directement dans les instructions ```if``` sans aucun opérateur de comparaison."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_is_healthy = True\n\nif codemon_is_healthy:\n    print(\"Your Codémon is in good health!\")\n\n# This is the same as:\nif codemon_is_healthy == True:\n    print(\"This is another way to check if healthy.\")",
+            "fr": "codemon_est_en_bonne_sante = True\n\nif codemon_est_en_bonne_sante:\n    print(\"Ton Codémon est en bonne santé !\")\n\n# C'est la même chose que :\nif codemon_est_en_bonne_sante == True:\n    print(\"C'est une autre façon de vérifier s'il est en bonne santé.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "When you use a boolean variable in a condition, Python simply checks if it's True. If it is, the indented code will run. If it's False, the indented code will be skipped.",
+            "fr": "Lorsque tu utilises une variable booléenne dans une condition, Python vérifie simplement si elle est True. Si c'est le cas, le code indenté s'exécutera. Si c'est False, le code indenté sera ignoré."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_1_10",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "boolean"
+      ]
+    },
+    "title": {
+      "en": "Using Boolean Variables in Conditions",
+      "fr": "Utiliser des Variables Booléennes dans les Conditions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if your Codémon is ready for battle. A Codémon is ready if it's both healthy and not tired.",
+            "fr": "Complète le code pour vérifier si ton Codémon est prêt pour le combat. Un Codémon est prêt s'il est à la fois en bonne santé et pas fatigué. ```healthy``` veut dire en bonne santé et ```tired``` veut dire fatigué."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "is_healthy = True\nis_tired = False\n\n{{}} is_healthy {{}} not is_tired{{}}\n    print(\"Your Codémon is ready for battle!\")",
+        "options": [
+          "if",
+          "for",
+          "while",
+          "and",
+          "or",
+          "&&",
+          ":"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "and",
+          "3": ":"
+        }
+      },
+      "hint": {
+        "en": "Remember: When checking multiple conditions, use 'and' to require all conditions to be True. Use 'or' if you want at least one condition to be True.",
+        "fr": "Rappelle-toi : Lors de la vérification de plusieurs conditions, utilise 'and' pour exiger que toutes les conditions soient vraies. Utilise 'or' si tu veux qu'au moins une condition soit vraie."
+      }
+    }
+  },
+  {
+    "id": "python_6_1_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "code flow"
+      ]
+    },
+    "title": {
+      "en": "Understanding Code Flow",
+      "fr": "Comprendre le Flux du Code"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed when the following code runs?",
+            "fr": "Qu'est-ce qui sera affiché lorsque le code suivant s'exécute ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "codemon_type = \"water\"\ncodemon_level = 25\n\nif codemon_type == \"fire\":\n    print(\"Your Codémon is a fire type!\")\n\nif codemon_level > 20:\n    print(\"Your Codémon is quite strong!\")\n\nprint(\"End of program.\")",
+            "fr": "codemon_type = \"eau\"\ncodemon_level = 25\n\nif codemon_type == \"feu\":\n    print(\"Ton Codémon est de type feu !\")\n\nif codemon_level > 20:\n    print(\"Ton Codémon est fort !\")\n\nprint(\"Fin du programme.\")"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```Your Codémon is quite strong!```\n```End of program.```",
+              "fr": "```Ton Codémon est fort !```\n```Fin du programme.```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```Your Codémon is a fire type!```\n```Your Codémon is quite strong!```\n```End of program.```",
+              "fr": "```Ton Codémon est de type feu !```\n```Ton Codémon est fort !```\n```Fin du programme.```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```Your Codémon is a fire type!```\n```End of program.```",
+              "fr": "```Ton Codémon est de type feu !```\n```Fin du programme.```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```End of program.```",
+              "fr": "```End of program.```"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: Each if statement is evaluated independently. One can run and not the other, both can run, or none can run.",
+        "fr": "Rappelle-toi : Chaque instruction if est évaluée indépendamment. Une peut s'exécuter et pas l'autre, les deux peuvent s'exécuter, ou aucune ne peut s'exécuter."
+      }
+    }
+  },
+  {
+    "id": "python_6_1_12",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Fix the If Statement",
+      "fr": "Corrige l'Instruction If"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The following code should check if the Codémon has enough health to battle (```health > 0```) and if it's at least level 5. Fix the errors in the code.",
+            "fr": "Le code suivant devrait vérifier si le Codémon a assez de santé pour combattre (```health > 0```) et s'il est au moins niveau (level) 5. Corrige les erreurs dans le code."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_health = 100\ncodemon_level = 7\n\n{{}} codemon_health > 0 {{}} codemon_level {{}} 5{{}}  \n    print(\"Your Codémon can battle!\")",
+        "options": [
+          "if",
+          "and",
+          "or",
+          ">=",
+          "<=",
+          ":"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "and",
+          "3": ">=",
+          "4": ":"
+        }
+      },
+      "hint": {
+        "en": "Remember: The syntax requires 'if', followed by conditions which can be joined with 'and' or 'or', and ending with a colon.",
+        "fr": "Rappelle-toi : La syntaxe nécessite 'if', suivi de conditions qui peuvent être reliées par 'and' ou 'or', et se terminant par un deux-points."
+      }
+    }
+  },
+  {
+    "id": "python_6_1_13",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "comparison",
+        "boolean"
+      ]
+    },
+    "title": {
+      "en": "Battle Readiness System",
+      "fr": "Système de Préparation au Combat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Congratulations! You've learned how to use if statements. Now it's time to put everything together to create a Battle Readiness System!\n\nYour Aquachu is about to battle against a wild Pyrochu! Create a program that analyzes the battle situation and provides recommendations:\n\n1. Check if Aquachu can battle (health > 0 AND not tired)\n2. Check if Aquachu has a level advantage (Aquachu level > Pyrochu level)\n3. Check if Aquachu has a type advantage (Aquachu type is \"water\" AND Pyrochu type is \"fire\")\n4. Provide a final recommendation if Aquachu is ready AND has either level advantage OR type advantage\n\nUse print statements to display each analysis result!",
+            "fr": "Félicitations ! Tu as appris à utiliser les instructions if. Il est temps de tout combiner pour créer un Système de Préparation au Combat !\n\nTon Aquachu s'apprête à combattre un Pyrochu sauvage ! Crée un programme qui analyse la situation de combat et fournit des recommandations :\n\n1. Vérifie si Aquachu peut combattre (health > 0 ET not tired)\n2. Vérifie si Aquachu a un avantage de niveau (niveau Aquachu > niveau Pyrochu)\n3. Vérifie si Aquachu a un avantage de type (type Aquachu est \"water\" ET type Pyrochu est \"fire\")\n4. Fournis une recommandation finale si Aquachu est prêt ET a soit un avantage de niveau SOIT un avantage de type\n\nUtilise print pour afficher chaque résultat d'analyse !"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Aquachu stats\naquachu_health = 85\naquachu_level = 12\naquachu_type = \"water\"\nis_tired = False\n\n# Pyrochu stats\npyrochu_level = 10\npyrochu_type = \"fire\"\n\n# Write your Battle Readiness System here\n",
+          "fr": "# Stats d'Aquachu\naquachu_health = 85\naquachu_level = 12\naquachu_type = \"water\"\nis_tired = False\n\n# Stats de Pyrochu\npyrochu_level = 10\npyrochu_type = \"fire\"\n\n# Écris ton Système de Préparation au Combat ici\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Aquachu stats\naquachu_health = 85\naquachu_level = 12\naquachu_type = \"water\"\nis_tired = False\n\n# Pyrochu stats\npyrochu_level = 10\npyrochu_type = \"fire\"\n\nprint(\"=== BATTLE READINESS ANALYSIS ===\")\n\n# Final recommendation\nif aquachu_health > 0 and not is_tired:\n  if aquachu_level > pyrochu_level or (aquachu_type == \"water\" and pyrochu_type == \"fire\"):\n    print(\"RECOMMENDATION: GO FOR IT! Aquachu has good chances of winning!\")\n\nprint(\"End of analysis.\")",
+            "fr": "# Stats d'Aquachu\naquachu_health = 85\naquachu_level = 12\naquachu_type = \"water\"\nis_tired = False\n\n# Stats de Pyrochu\npyrochu_level = 10\npyrochu_type = \"fire\"\n\nprint(\"=== ANALYSE DE PRÉPARATION AU COMBAT ===\")\n\n# Recommandation finale\nif aquachu_health > 0 and not is_tired:\n  if aquachu_level > pyrochu_level or (aquachu_type == \"water\" and pyrochu_type == \"fire\"):\n    print(\"RECOMMANDATION : FONCE ! Aquachu a de bonnes chances de gagner !\")\n\nprint(\"Fin de l'analyse.\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_2_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "decision making"
+      ]
+    },
+    "title": {
+      "en": "Introduction to else Statements",
+      "fr": "Introduction aux instructions else"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```else``` statement works together with an ```if``` statement to provide an alternative path for your code. Here's the basic structure:",
+            "fr": "L'instruction ```else``` fonctionne avec une instruction ```if``` pour fournir un chemin alternatif à ton code. Voici la structure de base :"
+          }
+        },
+        {
+          "type": "image",
+          "value": "python_if_intro"
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "if condition:\n    # Code to execute if the condition is True\nelse:\n    # Code to execute if the condition is False",
+            "fr": "if condition:\n    # Code à exécuter si la condition est vraie\nelse:\n    # Code à exécuter si la condition est fausse"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "With ```if```/```else```, exactly one of the two code blocks will always run: either the condition is True and the ```if``` block runs, or the condition is False and the ```else``` block runs.",
+            "fr": "Avec ```if```/```else```, un des deux blocs de code s'exécutera toujours : soit la condition est vraie et le bloc ```if``` s'exécute, soit la condition est fausse et le bloc ```else``` s'exécute."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_2_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "code examples"
+      ]
+    },
+    "title": {
+      "en": "If/Else in Action",
+      "fr": "If/Else en action"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see some examples of ```if```/```else``` statements with our Codémon friends!",
+            "fr": "Voyons quelques exemples d'instructions ```if```/```else``` avec nos amis Codémon !"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_hp = 100  # Try changing this to 0\n\nif codemon_hp > 0:\n    print(\"Your Codémon is ready to battle!\")\nelse:\n    print(\"Your Codémon needs healing.\")",
+            "fr": "codemon_pv = 100  # Essaie de changer ça à 0\n\nif codemon_pv > 0:\n    print(\"Ton Codémon est prêt à combattre !\")\nelse:\n    print(\"Ton Codémon a besoin de soins.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's another example, checking if a Codémon's level is high enough for a tournament:",
+            "fr": "Voici un autre exemple, vérifiant si le niveau d'un Codémon est assez élevé pour un tournoi :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_level = 15\ntournament_requirement = 20\n\nif codemon_level >= tournament_requirement:\n    print(\"Welcome to the tournament!\")\nelse:\n    print(f\"Sorry, you need level {tournament_requirement} to enter.\")",
+            "fr": "niveau_codemon = 15\nexigence_tournoi = 20\n\nif niveau_codemon >= exigence_tournoi:\n    print(\"Bienvenue au tournoi !\")\nelse:\n    print(f\"Désolé, tu as besoin du niveau {exigence_tournoi} pour entrer.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Important Note about Indentation",
+              "fr": "Note importante sur l'indentation"
+            },
+            "content": {
+              "en": "Just like with if statements, the code inside the else block must be indented. Both the if and else parts should have the same level of indentation relative to each other.",
+              "fr": "Tout comme pour les instructions if, le code à l'intérieur du bloc else doit être indenté. Les parties if et else doivent avoir le même niveau d'indentation l'une par rapport à l'autre."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_2_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "code flow"
+      ]
+    },
+    "title": {
+      "en": "Understanding If/Else Flow",
+      "fr": "Comprendre le flux If/Else"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Consider the following code:",
+            "fr": "Considère le code suivant :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "water_type = True\n\nif water_type:\n    print(\"This Codémon is strong against fire types!\")\nelse:\n    print(\"This Codémon is not a water type.\")",
+            "fr": "type_eau = True\n\nif type_eau:\n    print(\"Ce Codémon est fort contre les types feu !\")\nelse:\n    print(\"Ce Codémon n'est pas de type eau.\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed when this code runs?",
+            "fr": "Qu'est-ce qui sera affiché lorsque ce code s'exécute ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "This Codémon is strong against fire types!",
+              "fr": "Ce Codémon est fort contre les types feu !"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "This Codémon is not a water type.",
+              "fr": "Ce Codémon n'est pas de type eau."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "This Codémon is strong against fire types!, This Codémon is not a water type.",
+              "fr": "Ce Codémon est fort contre les types feu !, Ce Codémon n'est pas de type eau."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "(nothing will be printed)",
+              "fr": "(rien ne sera affiché)"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: When the condition in the if is true, only the if block executes. The else block is skipped. If it's false, the else block executes.",
+        "fr": "Rappelle-toi : Quand type_eau est True, seul le bloc if s'exécute. Le bloc else est ignoré. L'instruction print finale est en dehors des deux blocs, donc elle s'exécute toujours."
+      }
+    }
+  },
+  {
+    "id": "python_6_2_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "syntax"
+      ]
+    },
+    "title": {
+      "en": "Complete the If/Else Statement",
+      "fr": "Complète l'instruction If/Else"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to check if your Codémon is a high enough level to challenge the gym leader. If it's at least level 25, it's ready; otherwise, it needs more training.",
+            "fr": "Complète le code pour vérifier si ton Codémon a un niveau suffisamment élevé pour défier le champion d'arène. S'il est au moins niveau 25, il est prêt ; sinon, il a besoin de plus d'entraînement."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_level = 20\nrequired_level = 25\n\n{{}} codemon_level {{}} required_level:\n    print(\"Your Codémon is ready!\")\n{{}}:\n    print(\"Your Codémon needs more training.\")",
+        "options": [
+          "if",
+          ">=",
+          "<=",
+          ">",
+          "<",
+          "else"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": ">=",
+          "3": "else"
+        }
+      },
+      "hint": {
+        "en": "Remember: The if statement checks if the condition is True, and the else statement provides an alternative when the condition is False.",
+        "fr": "Rappelle-toi : L'instruction if vérifie si la condition est vraie, et l'instruction else fournit une alternative lorsque la condition est fausse."
+      }
+    }
+  },
+  {
+    "id": "python_6_2_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "boolean"
+      ]
+    },
+    "title": {
+      "en": "If/Else with Boolean Variables",
+      "fr": "If/Else avec des variables booléennes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When using boolean variables with if/else statements, you can make your code more readable and efficient.",
+            "fr": "Lorsque tu utilises des variables booléennes avec des instructions if/else, tu peux rendre ton code plus lisible et efficace."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Instead of writing: ```if is_ready == True:```\nYou can simply write: ```if is_ready:```\n\nAnd instead of:```if is_ready == False:```\nYou can write:```if not is_ready:```",
+            "fr": "Au lieu d'écrire : ```if est_pret == True:```\nTu peux simplement écrire : ```if est_pret:```\n\nEt au lieu de :```if est_pret == False:```\nTu peux écrire :```if not est_pret:```"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "is_full_health = False  # Try changing this to True\n\nif is_full_health:\n    print(\"Your Codémon is at full health!\")\nelse:\n    print(\"Your Codémon needs healing.\")\n\n# You can also check the opposite of a boolean with 'not'\nif not is_full_health:  # Same as: if is_full_health == False\n    print(\"Heading to Healing Center...\")\nelse:\n    print(\"Ready for battle!\")",
+            "fr": "en_pleine_sante = False  # Essaie de changer ça à True\n\nif en_pleine_sante:\n    print(\"Ton Codémon est en pleine santé !\")\nelse:\n    print(\"Ton Codémon a besoin de soins.\")\n\n# Tu peux aussi vérifier l'opposé d'un booléen avec 'not'\nif not en_pleine_sante:  # Équivalent à : if en_pleine_sante == False\n    print(\"Direction le Centre de Soins...\")\nelse:\n    print(\"Prêt pour le combat !\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In Python, you can use boolean variables directly in your if conditions without comparing them to True or False. This makes your code cleaner and more readable.",
+            "fr": "En Python, tu peux utiliser directement des variables booléennes dans tes conditions if sans les comparer à True ou False. Cela rend ton code plus propre et plus lisible."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_2_6",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "code output"
+      ]
+    },
+    "title": {
+      "en": "Match the Condition with the Output",
+      "fr": "Associe la condition avec le résultat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each condition with what would be printed by the following code structure:",
+            "fr": "Associe chaque condition avec ce qui serait affiché par la structure de code suivante :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "codemon_level = 20\nis_water_type = True\nis_tired = False\n\nif (condition):\n    print(\"Output A\")\nelse:\n    print(\"Output B\")",
+            "fr": "codemon_level = 20\nis_water_type = True\nis_tired = False\n\nif (condition):\n    print(\"Résultat A\")\nelse:\n    print(\"Résultat B\")"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "condition : ```codemon_level > 25```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Output B",
+                "fr": "Résultat B"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "condition : ```is_water_type```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Output A",
+                "fr": "Résultat A"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "condition : ```hp = 0```"
+            },
+            "match": {
+              "type": "text",
+              "value": "NameError: name 'hp' is not defined"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "condition : ```not is_tired```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Output A",
+                "fr": "Résultat A"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_2_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "code prediction"
+      ]
+    },
+    "title": {
+      "en": "Predict the Output",
+      "fr": "Prédis le résultat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will the following code output?",
+            "fr": "Que va afficher le code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "codemon_type = \"fire\"\nenemy_type = \"water\"\n\nif codemon_type == \"water\" and enemy_type == \"fire\":\n    print(\"You have a type advantage!\")\nelse:\n    print(\"No type advantage here.\")\n    \nprint(\"Battle starts now!\")",
+            "fr": "type_codemon = \"feu\"\ntype_ennemi = \"eau\"\n\nif type_codemon == \"eau\" and type_ennemi == \"feu\":\n    print(\"Tu as un avantage de type !\")\nelse:\n    print(\"Pas d'avantage de type ici.\")\n    \nprint(\"Le combat commence maintenant !\")"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```You have a type advantage!```\n```Battle starts now!```",
+              "fr": "```Tu as un avantage de type !```\n```Le combat commence maintenant !```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```No type advantage here.```\n```Battle starts now!```",
+              "fr": "```Pas d'avantage de type ici.```\n```Le combat commence maintenant !```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```You have a type advantage!```",
+              "fr": "```Tu as un avantage de type !```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```Battle starts now!```",
+              "fr": "```Le combat commence maintenant !```"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Remember: if the condition in the if statement is true, the first block executes. If it's false, the else block executes. The rest of the code (not indented) runs after the if/else.",
+        "fr": "Rappelle-toi : si la condition dans l'instruction if est vraie, le premier bloc s'exécute. Si elle est fausse, le bloc else s'exécute. Le reste du code (non indenté) s'exécute après l'instruction if/else."
+      }
+    }
+  },
+  {
+    "id": "python_6_2_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "debugging"
+      ]
+    },
+    "title": {
+      "en": "Fix the If/Else Statement",
+      "fr": "Corrige l'instruction If/Else"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The following code should check if a Codémon has enough energy to use a special move. If it has at least 30 energy, it can use the move; otherwise, it needs to rest. Fix the errors in the code.",
+            "fr": "Le code suivant doit vérifier si un Codémon a assez d'énergie pour utiliser une attaque spéciale. S'il a au moins 30 d'énergie, il peut utiliser l'attaque ; sinon, il doit se reposer. Corrige les erreurs dans le code."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_energy = 25\nrequired_energy = 30\n\n{{}} codemon_energy {{}} required_energy {{}} \n    print(\"Special move activated!\")\n{{}} \n    print(\"Not enough energy.\")",
+        "options": [
+          "if",
+          "elif",
+          ">=",
+          "=>",
+          ":",
+          ";",
+          "else:"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": ">=",
+          "3": ":",
+          "4": "else:"
+        }
+      },
+      "hint": {
+        "en": "Remember: The correct syntax for an if/else statement is 'if condition:' followed by indented code, then 'else:' followed by more indented code.",
+        "fr": "Rappelle-toi : La syntaxe correcte pour une instruction if/else est 'if condition:' suivie de code indenté, puis 'else:' suivie de plus de code indenté."
+      }
+    }
+  },
+  {
+    "id": "python_6_2_9",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "nested"
+      ]
+    },
+    "title": {
+      "en": "Nested If/Else Statements",
+      "fr": "Instructions If/Else imbriquées"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Sometimes you need to make a decision, and then based on that answer, make another decision. This is called 'nesting' - putting ```if```/```else``` statements inside other ```if```/```else``` statements.",
+            "fr": "Parfois tu dois prendre une décision, puis basé sur cette réponse, prendre une autre décision. C'est ce qu'on appelle 'l'imbrication' - mettre des instructions ```if```/```else``` à l'intérieur d'autres instructions ```if```/```else```."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Imagine you're checking if your Codémon can participate in a battle:",
+            "fr": "Imagine que tu vérifies si ton Codémon peut participer à un combat :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "# Try changing these values!\nhas_codemon = True\ncodemon_hp = 50\n\n# 1st decision: Do you have a Codémon?\nif has_codemon:\n  print(\"Great! You have a Codémon!\")\n  \n  # 2nd decision: Is it alive ?\n  if codemon_hp > 0:\n    print(\"Your Codémon is alive!\")\n  else:\n    print(\"Your Codémon has fainted...\")\nelse:\n  print(\"You need to catch a Codémon first!\")",
+            "fr": "# Essaie de changer ces valeurs !\na_codemon = True\npv_codemon = 50\n\n# 1ere décision : As-tu un Codémon ?\nif a_codemon:\n  print(\"Super ! Tu as un Codémon !\")\n  \n  # 2eme décision : Est-il en vie ?\n  if pv_codemon > 0:\n    print(\"Ton Codémon est en vie !\")\n  else:\n    print(\"Ton Codémon est K.O...\")\nelse:\n  print(\"Tu dois attraper un Codémon !\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Notice how the second ```if``` statement is INSIDE the first ```if``` block. It only runs if you have a Codémon. Try changing ```has_codemon``` to ```False``` or ```codemon_hp``` to ```0``` to see different paths!",
+            "fr": "Le deuxième ```if``` est À L'INTÉRIEUR du premier bloc ```if```. Il ne s'exécute que si tu as un Codémon. Essaie de changer ```a_codemon``` à ```False``` ou ```pv_codemon``` à ```0``` pour voir différents chemins !"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_2_10",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "nested"
+      ]
+    },
+    "title": {
+      "en": "Nested If/Else Challenge",
+      "fr": "Défi If/Else imbriqué"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will the following code output?",
+            "fr": "Que va afficher le code suivant ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "has_badge = True\nis_level_30 = False\n\nif has_badge:\n  print(\"Welcome back, trainer!\")\n  \n  if is_level_30:\n    print(\"You can challenge the elite four!\")\n  else:\n    print(\"Keep training!\")\nelse:\n  print(\"You need to earn your first badge.\")\n\nprint(\"Good luck on your journey!\")",
+            "fr": "a_badge = True\nest_niveau_30 = False\n\nif a_badge:\n  print(\"Bon retour, dresseur !\")\n  \n  if est_niveau_30:\n    print(\"Tu peux défier le conseil 4 !\")\n  else:\n    print(\"Continue l'entraînement !\")\nelse:\n  print(\"Tu dois gagner ton premier badge.\")\n\nprint(\"Bonne chance dans ton voyage !\")"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "```Welcome back, trainer!```\n```You can challenge the elite four!```\n```Good luck on your journey!```",
+              "fr": "```Bon retour, dresseur !```\n```Tu peux défier le conseil 4 !```\n```Bonne chance dans ton voyage !```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```Welcome back, trainer!```\n```Keep training!```\n```Good luck on your journey!```",
+              "fr": "```Bon retour, dresseur !```\n```Continue l'entraînement !```\n```Bonne chance dans ton voyage !```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```You need to earn your first badge.```\n```Good luck on your journey!```",
+              "fr": "```Tu dois gagner ton premier badge.```\n```Bonne chance dans ton voyage !```"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "```Good luck on your journey!```",
+              "fr": "```Bonne chance dans ton voyage !```"
+            }
+          }
+        ],
+        "correctAnswer": 1
+      },
+      "hint": {
+        "en": "Remember: Nested if/else statements work like this: To get to the second if statement, the first if must be true.",
+        "fr": "Rappelle-toi : Les instructions if/else imbriquées fonctionnent comme ceci : Pour arriver à la deuxième instruction if, la première instruction if doit être vraie."
+      }
+    }
+  },
+  {
+    "id": "python_6_2_11",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "nested",
+        "boolean"
+      ]
+    },
+    "title": {
+      "en": "Codémon Healing Center",
+      "fr": "Centre de Soins Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Congratulations! You've learned how to use if/else statements. Now let's create a Codémon Healing Center system!\n\nYour Aquachu just finished a tough battle. Create a program that determines what treatment it needs:\n\n1. First, check if Aquachu needs healing (health < 100)\n   - If YES: Check the severity and provide appropriate treatment:\n   * If health <= 20: \"Critical condition! Emergency healing required.\"\n   * Otherwise: \"Standard healing treatment.\"\n   - If NO: \"Aquachu is in perfect health!\"\n\n2. Then, check if Aquachu is poisoned:\n   - If YES: \"Applying antidote...\"\n   - If NO: \"No status conditions detected.\"\n\n3. Finally, print \"Treatment complete!\" at the end (always prints)",
+            "fr": "Félicitations ! Tu as appris à utiliser les instructions if/else. Créons maintenant un système de Centre de Soins Codémon !\n\nTon Aquachu vient de finir un combat difficile. Crée un programme qui détermine quel traitement il a besoin :\n\n1. D'abord, vérifie si Aquachu a besoin de soins (health < 100)\n   - Si OUI : Vérifie la gravité et fournis le traitement approprié :\n   * Si health <= 20 : \"État critique ! Soins d'urgence requis.\"\n   * Sinon : \"Traitement de soins standard.\"\n   - Si NON : \"Aquachu est en parfaite santé !\"\n\n2. Ensuite, vérifie si Aquachu est empoisonné :\n   - Si OUI : \"Application de l'antidote...\"\n   - Si NON : \"Aucune condition de statut détectée.\"\n\n3. Finalement, affiche \"Traitement terminé !\" à la fin (s'affiche toujours)"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Aquachu's condition after battle\naquachu_health = 15\nis_poisoned = True\n\n# Create your Healing Center system here\n",
+          "fr": "# Condition d'Aquachu après le combat\naquachu_health = 15\nis_poisoned = True\n\n# Crée ton système de Centre de Soins ici\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Aquachu's condition after battle\naquachu_health = 15\nis_poisoned = True\n\nprint(\"=== CODÉMON HEALING CENTER ===\")\n\n# Check 1: Does Aquachu need healing?\nif aquachu_health < 100:\n  print(\"Aquachu needs healing.\")\n  \n  # Nested check: How severe is the condition?\n  if aquachu_health <= 20:\n    print(\"Critical condition! Emergency healing required.\")\n  else:\n    print(\"Standard healing treatment.\")\nelse:\n  print(\"Aquachu is in perfect health!\")\n\n# Check 2: Is Aquachu poisoned?\nif is_poisoned:\n  print(\"Applying antidote...\")\nelse:\n  print(\"No status conditions detected.\")\n\nprint(\"Treatment complete!\")",
+            "fr": "# Condition d'Aquachu après le combat\naquachu_health = 15\nis_poisoned = True\n\nprint(\"=== CENTRE DE SOINS CODÉMON ===\")\n\n# Vérification 1 : Aquachu a-t-il besoin de soins ?\nif aquachu_health < 100:\n  print(\"Aquachu a besoin de soins.\")\n  \n  # Vérification imbriquée : Quelle est la gravité ?\n  if aquachu_health <= 20:\n    print(\"État critique ! Soins d'urgence requis.\")\n  else:\n    print(\"Traitement de soins standard.\")\nelse:\n  print(\"Aquachu est en parfaite santé !\")\n\n# Vérification 2 : Aquachu est-il empoisonné ?\nif is_poisoned:\n  print(\"Application de l'antidote...\")\nelse:\n  print(\"Aucune condition de statut détectée.\")\n\nprint(\"Traitement terminé !\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_3_1",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif"
+      ]
+    },
+    "title": {
+      "en": "What is elif?",
+      "fr": "Qu'est-ce que elif ?"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What if you need to check multiple conditions? That's where ```elif``` comes in! (```elif```: short for \"else if\")",
+            "fr": "Imagine tu dois vérifier plusieurs conditions ? C'est là que ```elif``` entre en jeu ! (```elif``` : abréviation de \"else if\", ou \"sinon si\" en français)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The ```elif``` statement lets you check additional conditions if the previous conditions were False. It's a way to create multiple ways in your code.",
+            "fr": "L'instruction ```elif``` te permet de vérifier des conditions supplémentaires si les conditions précédentes étaient fausses. C'est une façon de créer plusieurs chemins dans ton code."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Here's a simple example: checking which type your Codémon is.",
+            "fr": "Voici un exemple simple : vérifier quel est le type de ton Codémon."
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_type = \"plant\"  # Try changing this to \"fire\" or \"plant\"\n\nif codemon_type == \"water\":\n    print(\"Your Codémon is a water type!\")\nelif codemon_type == \"fire\":\n    print(\"Your Codémon is a fire type!\")\nelif codemon_type == \"plant\":\n    print(\"Your Codémon is a plant type!\")\nelse:\n    print(\"Unknown Codémon type!\")",
+            "fr": "type_codemon = \"plante\"  # Essaie de changer ça à \"feu\" ou \"plante\"\n\nif type_codemon == \"eau\":\n    print(\"Ton Codémon est de type eau !\")\nelif type_codemon == \"feu\":\n    print(\"Ton Codémon est de type feu !\")\nelif type_codemon == \"plante\":\n    print(\"Ton Codémon est de type plante !\")\nelse:\n    print(\"Type de Codémon inconnu !\")"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_3_2",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif"
+      ]
+    },
+    "title": {
+      "en": "Elif Syntax and Structure",
+      "fr": "Syntaxe et structure de Elif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's look at the structure of if-elif-else statements:",
+            "fr": "Examinons la structure des instructions if-elif-else :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "if condition1:\n    # Code that runs if condition1 is True\nelif condition2:\n    # Code that runs if condition1 is False AND condition2 is True\nelif condition3:\n    # Code that runs if condition1 and condition2 are False AND condition3 is True\nelse:\n    # Code that runs if all conditions are False",
+            "fr": "if condition1:\n    # Code qui s'exécute si condition1 est vraie\nelif condition2:\n    # Code qui s'exécute si condition1 est fausse ET condition2 est vraie\nelif condition3:\n    # Code qui s'exécute si condition1 et condition2 sont fausses ET condition3 est vraie\nelse:\n    # Code qui s'exécute si toutes les conditions sont fausses"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Key points about elif:\n1. You can have multiple elif statements (no limit)\n2. Python checks conditions in order from top to bottom\n3. As soon as one condition is True, its code block runs and Python skips all the remaining ```elif```\n4. The else block is optional and only runs if all conditions before it are False",
+            "fr": "Points clés à propos de elif :\n1. Tu peux avoir plusieurs instructions elif (pas de limite)\n2. Python vérifie les conditions dans l'ordre de haut en bas\n3. Dès qu'une condition est vraie, son bloc de code s'exécute et Python ignore tous les ```elif``` restantes\n4. Le bloc else est optionnel et ne s'exécute que si toutes les conditions précédentes sont fausses"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see a Codémon level example:",
+            "fr": "Voyons un exemple avec le niveau d'un Codémon :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_level = 25  # Try different values like 5, 15, 30, or 50\n\nif codemon_level < 10:\n    print(\"Your Codémon is a beginner.\")\nelif codemon_level < 20:\n    print(\"Your Codémon is intermediate.\")\nelif codemon_level < 40:\n    print(\"Your Codémon is advanced.\")\nelse:\n    print(\"Your Codémon is a master!\")\n\nprint(f\"Codémon level: {codemon_level}\")",
+            "fr": "niveau_codemon = 25  # Essaie différentes valeurs comme 5, 15, 30, ou 50\n\nif niveau_codemon < 10:\n    print(\"Ton Codémon est débutant.\")\nelif niveau_codemon < 20:\n    print(\"Ton Codémon est intermédiaire.\")\nelif niveau_codemon < 40:\n    print(\"Ton Codémon est avancé.\")\nelse:\n    print(\"Ton Codémon est un maître !\")\n\nprint(f\"Niveau du Codémon : {niveau_codemon}\")"
+          },
+          "language": "python"
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_3_3",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif"
+      ]
+    },
+    "title": {
+      "en": "Understanding Elif Syntax",
+      "fr": "Comprendre la syntaxe de Elif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which of the following is the correct syntax for an if-elif-else statement in Python?",
+            "fr": "Laquelle des options suivantes est la syntaxe correcte pour une instruction if-elif-else en Python ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "if condition1:\n    # code block\nelif condition2:\n    # code block\nelse:\n    # code block\n",
+              "fr": "if condition1:\n    # bloc de code\nelif condition2:\n    # bloc de code\nelse:\n    # bloc de code\n"
+            }
+          },
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "if condition1:\n    # code block\nelse if condition2:\n    # code block\nelse:\n    # code block\n",
+              "fr": "if condition1:\n    # bloc de code\nelse if condition2:\n    # bloc de code\nelse:\n    # bloc de code\n"
+            }
+          },
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "if condition1:\n    # code block\nelseif condition2:\n    # code block\nelse:\n    # code block\n",
+              "fr": "if condition1:\n    # bloc de code\nelseif condition2:\n    # bloc de code\nelse:\n    # bloc de code\n"
+            }
+          },
+          {
+            "type": "codeBlock",
+            "value": {
+              "en": "if (condition1) {\n    # code block\n} elif (condition2) {\n    # code block\n} else {\n    # code block\n}\n",
+              "fr": "if (condition1) {\n    # bloc de code\n} elif (condition2) {\n    # bloc de code\n} else {\n    # bloc de code\n}\n"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: In Python, the correct order is if, elif, else.",
+        "fr": "Rappelle-toi : En Python, l'ordre correct est if, elif, else."
+      }
+    }
+  },
+  {
+    "id": "python_6_3_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif"
+      ]
+    },
+    "title": {
+      "en": "Complete the Elif Statement",
+      "fr": "Complète l'instruction Elif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the code to determine the evolution state of a Codémon based on its level.",
+            "fr": "Complète le code pour déterminer l'état d'évolution d'un Codémon en fonction de son niveau."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_level = 20\n\nif codemon_level < 10:\n    print(\"Basic form.\")\n{{}} codemon_level < 30{{}}  \n    print(\"First evolution.\")\n{{}}{{}}  \n    print(\"Final form!\")",
+        "options": [
+          "elif",
+          "else if",
+          ":",
+          "else",
+          ":",
+          ";",
+          "elseif",
+          "if",
+          "if else"
+        ],
+        "correctAnswers": {
+          "1": "elif",
+          "2": ":",
+          "3": "else",
+          "4": ":"
+        }
+      },
+      "hint": {
+        "en": "Remember: The correct syntax is elif condition: for additional conditions and else: for the final alternative.",
+        "fr": "Rappelle-toi : La syntaxe correcte est elif condition: pour les conditions supplémentaires et else: pour l'alternative finale."
+      }
+    }
+  },
+  {
+    "id": "python_6_3_5",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif",
+        "multiple conditions"
+      ]
+    },
+    "title": {
+      "en": "Multiple Elif Statements",
+      "fr": "Plusieurs instructions Elif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You can use as many ```elif``` statements as you need. This is useful when you have many possible conditions to check.",
+            "fr": "Tu peux utiliser autant d'instructions ```elif``` que nécessaire. C'est utile quand tu as beaucoup de conditions possibles à vérifier."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "For example, let's determine a Codémon's type advantage based on the opponent's type:",
+            "fr": "Par exemple, déterminons l'avantage de type d'un Codémon en fonction du type de l'adversaire :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "my_codemon = \"water\"    # Try different values: \"water\", \"fire\", \"plant\", \"electric\" \nopponent = \"fire\"      # Try different values: \"water\", \"fire\", \"plant\", \"rock\"\n\nif my_codemon == \"water\" and opponent == \"fire\":\n    print(\"You have a STRONG advantage!\")\nelif my_codemon == \"water\" and opponent == \"rock\":\n    print(\"You have an advantage!\")\nelif my_codemon == \"fire\" and opponent == \"plant\":\n    print(\"You have an advantage!\")\nelif my_codemon == \"plant\" and opponent == \"water\":\n    print(\"You have an advantage!\")\nelif my_codemon == \"electric\" and opponent == \"water\":\n    print(\"You have an advantage!\")\nelif my_codemon == opponent:\n    print(\"It's an even match.\")\nelse:\n    print(\"You have no advantage or are at a disadvantage.\")",
+            "fr": "mon_codemon = \"eau\"     # Essaie différentes valeurs: \"eau\", \"feu\", \"plante\", \"électrique\"\nadversaire = \"feu\"     # Essaie différentes valeurs: \"eau\", \"feu\", \"plante\", \"roche\"\n\nif mon_codemon == \"eau\" and adversaire == \"feu\":\n    print(\"Tu as un FORT avantage !\")\nelif mon_codemon == \"eau\" and adversaire == \"roche\":\n    print(\"Tu as un avantage !\")\nelif mon_codemon == \"feu\" and adversaire == \"plante\":\n    print(\"Tu as un avantage !\")\nelif mon_codemon == \"plante\" and adversaire == \"eau\":\n    print(\"Tu as un avantage !\")\nelif mon_codemon == \"électrique\" and adversaire == \"eau\":\n    print(\"Tu as un avantage !\")\nelif mon_codemon == adversaire:\n    print(\"C'est un match équilibré.\")\nelse:\n    print(\"Tu n'as pas d'avantage ou tu es désavantagé.\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "infoCard",
+          "cardType": "info",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to use multiple elif statements",
+              "fr": "Quand utiliser plusieurs instructions elif"
+            },
+            "content": {
+              "en": "Use multiple elif statements when you have several mutually exclusive conditions (only one can be true at a time) and you want to perform different actions based on which condition is true.",
+              "fr": "Utilise plusieurs instructions elif lorsque tu as plusieurs conditions mutuellement exclusives (une seule peut être vraie à la fois) et que tu veux effectuer différentes actions selon la condition qui est vraie."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_3_6",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif"
+      ]
+    },
+    "title": {
+      "en": "Match the Conditions with Their Results",
+      "fr": "Associe les conditions à leurs résultats"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Consider this code:",
+            "fr": "Considère ce code :"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "if codemon_level < 10:\n    result = \"Beginner\"\nelif codemon_level < 20:\n    result = \"Intermediate\"\nelif codemon_level < 30:\n    result = \"Advanced\"\nelse:\n    result = \"Master\"\n\nprint(result)",
+            "fr": "if niveau_codemon < 10:\n    resultat = \"Débutant\"\nelif niveau_codemon < 20:\n    resultat = \"Intermédiaire\"\nelif niveau_codemon < 30:\n    resultat = \"Avancé\"\nelse:\n    resultat = \"Maître\"\n\nprint(resultat)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each possible value of codemon_level with the output it would produce:",
+            "fr": "Associe chaque valeur possible de niveau_codemon avec le résultat qu'elle produirait :"
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level = 5```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Beginner",
+                "fr": "Débutant"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level = 15```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Intermediate",
+                "fr": "Intermédiaire"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level = 25```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Advanced",
+                "fr": "Avancé"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```codemon_level = 35```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Master",
+                "fr": "Maître"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_3_7",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif",
+        "order"
+      ]
+    },
+    "title": {
+      "en": "Order Matters in Elif Statements",
+      "fr": "L'ordre est important dans les instructions Elif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The order of your conditions in if-elif-else statements is very important! Python checks the conditions in order from top to bottom and executes the code block for the first condition that is True.",
+            "fr": "L'ordre de tes conditions dans les instructions if-elif-else est très important ! Python vérifie les conditions dans l'ordre de haut en bas et exécute le bloc de code pour la première condition qui est vraie."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's see what happens when we check conditions in different orders:",
+            "fr": "Voyons ce qui se passe quand nous vérifions des conditions dans différents ordres :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_level = 15\n\n# CORRECT ORDER - Most specific to least specific\nprint(\"CORRECT ORDER:\")\nif codemon_level < 10:\n    print(\"Beginner trainer\")\nelif codemon_level < 20:\n    print(\"Intermediate trainer\")\nelif codemon_level < 30:\n    print(\"Advanced trainer\")\nelse:\n    print(\"Master trainer\")\n\n# INCORRECT ORDER - This will not work as expected!\nprint(\"INCORRECT ORDER:\")\nif codemon_level < 30:  # This will catch ALL levels below 30!\n    print(\"Advanced trainer or lower\")\nelif codemon_level < 20:  # This will never run for any value!\n    print(\"Intermediate trainer or lower\")\nelif codemon_level < 10:  # This will never run for any value!\n    print(\"Beginner trainer\")\nelse:\n    print(\"Master trainer\")",
+            "fr": "niveau_codemon = 15\n\n# ORDRE CORRECT - Du plus spécifique au moins spécifique\nprint(\"ORDRE CORRECT:\")\nif niveau_codemon < 10:\n    print(\"Dresseur débutant\")\nelif niveau_codemon < 20:\n    print(\"Dresseur intermédiaire\")\nelif niveau_codemon < 30:\n    print(\"Dresseur avancé\")\nelse:\n    print(\"Maître dresseur\")\n\n# ORDRE INCORRECT - Cela ne fonctionnera pas comme prévu !\nprint(\"ORDRE INCORRECT:\")\nif niveau_codemon < 30:  # Cela attrapera TOUS les niveaux inférieurs à 30 !\n    print(\"Dresseur avancé ou inférieur\")\nelif niveau_codemon < 20:  # Cela ne s'exécutera jamais pour aucune valeur !\n    print(\"Dresseur intermédiaire ou inférieur\")\nelif niveau_codemon < 10:  # Cela ne s'exécutera jamais pour aucune valeur !\n    print(\"Dresseur débutant\")\nelse:\n    print(\"Maître dresseur\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As you can see, in the incorrect order, some conditions never get a chance to be checked because a previous, more general condition already catches those cases!",
+            "fr": "Comme tu peux le voir, dans l'ordre incorrect, certaines conditions n'ont jamais la chance d'être vérifiées car une condition précédente, plus générale, capture déjà ces cas !"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "warning",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "Best Practice",
+              "fr": "Bonne pratique"
+            },
+            "content": {
+              "en": "When using if-elif-else statements, order your conditions from most specific to most general to ensure all conditions have a chance to be evaluated appropriately.",
+              "fr": "Lorsque tu utilises des instructions if-elif-else, ordonne tes conditions de la plus spécifique à la plus générale pour t'assurer que toutes les conditions ont une chance d'être évaluées de manière appropriée."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_3_8",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif",
+        "order"
+      ]
+    },
+    "title": {
+      "en": "Why Order Matters",
+      "fr": "Pourquoi l'ordre est important"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "codemon_level = 15\n\nif codemon_level <= 20:\n    print(\"Tier 1\")\nelif codemon_level <= 15:\n    print(\"Tier 0\")\nelse:\n    print(\"Tier 2\")",
+            "fr": "niveau_codemon = 15\n\nif niveau_codemon <= 20:\n    print(\"Niveau 1\")\nelif niveau_codemon <= 15:\n    print(\"Niveau 0\")\nelse:\n    print(\"Niveau 2\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Why will the ```elif``` condition never be executed?",
+            "fr": "Pourquoi la condition ```elif``` ne sera-t-elle jamais exécutée ?"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Because the first condition (```codemon_level <= 20```) is already True for any value of 20 or less, so the program never reaches the elif.",
+              "fr": "Parce que la première condition (```niveau_codemon <= 20```) est déjà vraie pour toute valeur de 20 ou moins, donc le programme n'atteint jamais le elif."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Because the elif condition is incorrect.",
+              "fr": "Parce que la condition elif est incorrecte."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Python always skips the second condition in an if-elif-else statement.",
+              "fr": "Python ignore toujours la deuxième condition dans une instruction if-elif-else."
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "The elif condition would be executed for ```codemon_level = 15```.",
+              "fr": "La condition elif serait exécutée pour ```niveau_codemon = 15```."
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: If the first condition is True, Python executes that block and skips all elif conditions. The elif condition will only run if the first condition is False.",
+        "fr": "Rappelle-toi : Si la première condition est vraie, Python exécute ce bloc et ignore toutes les conditions elif. La condition elif ne s'exécutera que si la première condition est fausse."
+      }
+    }
+  },
+  {
+    "id": "python_6_3_9",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif",
+        "multiple conditions"
+      ]
+    },
+    "title": {
+      "en": "Fix the Elif Order",
+      "fr": "Corrige l'ordre des Elif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "The following code is supposed to classify Codémon battles based on level differences, but the conditions were in the wrong order. Fix it by rearranging the conditions from most specific to most general.",
+            "fr": "Le code suivant est censé classer les combats de Codémon en fonction des différences de niveau, mais les conditions étaient dans le mauvais ordre. Corrige-le en réorganisant les conditions de la plus spécifique à la plus générale."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "my_level = 20\nopponent_level = 30\nlevel_difference = opponent_level - my_level\n\nif {{}}:  # Most specific condition first\n    print(\"Very unfair battle!\")\nelif {{}}:  # Second most specific\n    print(\"Challenging battle!\")\nelif {{}}:  # Third most specific\n    print(\"Fair battle!\")\nelse:\n    print(\"Easy battle!\")",
+        "options": [
+          "level_difference > 20",
+          "level_difference > 10",
+          "level_difference > 5"
+        ],
+        "correctAnswers": {
+          "1": "level_difference > 20",
+          "2": "level_difference > 10",
+          "3": "level_difference > 5"
+        }
+      },
+      "hint": {
+        "en": "Remember: Order conditions from most specific to most general.",
+        "fr": "Rappelle-toi : Ordonne les conditions de la plus spécifique à la plus générale."
+      }
+    }
+  },
+  {
+    "id": "python_6_3_10",
+    "type": "explanation",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Elif vs. Nested If",
+      "fr": "Elif vs. If imbriqué"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You might wonder: What's the difference between using ```elif``` and using nested ```if``` statements?",
+            "fr": "Tu pourrais te demander : Quelle est la différence entre l'utilisation de ```elif``` et l'utilisation d'instructions ```if``` imbriquées ?"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's compare the two approaches:",
+            "fr": "Comparons les deux approches :"
+          }
+        },
+        {
+          "type": "codeEditorRun",
+          "value": {
+            "en": "codemon_type = \"water\"  # Try changing this to \"fire\" or \"plant\"\n\n# Using if-elif-else\nprint(\"USING IF-ELIF-ELSE:\")\nif codemon_type == \"water\":\n  print(\"Water type: strong against fire!\")\nelif codemon_type == \"fire\":\n  print(\"Fire type: strong against plant!\")\nelif codemon_type == \"plant\":\n  print(\"Plant type: strong against water!\")\nelse:\n  print(\"Unknown type!\")\n\n# Using nested if statements\nprint(\"USING NESTED IFs:\")\nif codemon_type == \"water\":\n  print(\"Water type: strong against fire!\")\nelse:\n  if codemon_type == \"fire\":\n    print(\"Fire type: strong against plant!\")\n  else:\n    if codemon_type == \"plant\":\n      print(\"Plant type: strong against water!\")\n    else:\n      print(\"Unknown type!\")",
+            "fr": "type_codemon = \"eau\"  # Essaie de changer ça à \"feu\" ou \"plante\"\n\n# Utilisation de if-elif-else\nprint(\"UTILISATION DE IF-ELIF-ELSE:\")\nif type_codemon == \"eau\":\n  print(\"Type eau : fort contre le feu !\")\nelif type_codemon == \"feu\":\n  print(\"Type feu : fort contre la plante !\")\nelif type_codemon == \"plante\":\n  print(\"Type plante : fort contre l'eau !\")\nelse:\n  print(\"Type inconnu !\")\n\n# Utilisation d'instructions if imbriquées\nprint(\"UTILISATION DE IFs IMBRIQUÉS:\")\nif type_codemon == \"eau\":\n  print(\"Type eau : fort contre le feu !\")\nelse:\n  if type_codemon == \"feu\":\n    print(\"Type feu : fort contre la plante !\")\n  else:\n    if type_codemon == \"plante\":\n      print(\"Type plante : fort contre l'eau !\")\n    else:\n      print(\"Type inconnu !\")"
+          },
+          "language": "python"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Both approaches produce the same result, but the if-elif-else version is:\n1. More readable (less indentation)\n2. More maintainable (easier to add or remove conditions)\n3. More aligned with how we think about mutually exclusive choices",
+            "fr": "Les deux approches produisent le même résultat, mais la version if-elif-else est :\n1. Plus lisible (moins d'indentation)\n2. Plus facile à maintenir (plus facile d'ajouter ou de supprimer des conditions)\n3. Plus alignée avec notre façon de penser aux choix mutuellement exclusifs"
+          }
+        },
+        {
+          "type": "infoCard",
+          "cardType": "tip",
+          "expandable": true,
+          "value": {
+            "title": {
+              "en": "When to use which?",
+              "fr": "Quand utiliser lequel ?"
+            },
+            "content": {
+              "en": "- Use if-elif-else when you have mutually exclusive conditions (only one can be true)\n- Use nested if statements when you need to check additional conditions only in specific cases (conditions that depend on previous conditions)",
+              "fr": "- Utilise if-elif-else lorsque tu as des conditions mutuellement exclusives (une seule peut être vraie)\n- Utilise des instructions if imbriquées lorsque tu dois vérifier des conditions supplémentaires uniquement dans des cas spécifiques (conditions qui dépendent de conditions précédentes)"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_3_11",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "else",
+        "elif",
+        "practical"
+      ]
+    },
+    "title": {
+      "en": "Predict the Output",
+      "fr": "Prédis le résultat"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be the output of this code? (In real life you will never see code like this, it's complete nonsense, but it is a good exercise)",
+            "fr": "Quel sera le résultat de ce code ? (Dans la vraie vie, tu ne verras jamais de code comme ça, ça n'a pas de sens de comparer des valeurs aussi différentes, mais c'est un bon exercice)"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "en": "codemon_hp = 50\ncodemon_level = 10\ncodemon_type = \"water\"\n\nif codemon_hp <= 0:\n    print(\"Your Codémon needs healing!\")\nelif codemon_level < 5:\n    print(\"Your Codémon needs more training!\")\nelif codemon_type == \"fire\":\n    print(\"Your fire Codémon is ready!\")\nelif codemon_type == \"water\":\n    print(\"Your water Codémon is ready!\")\nelse:\n    print(\"Your Codémon is ready for battle!\")",
+            "fr": "codemon_pv = 50\ncodemon_niveau = 10\ncodemon_type = \"eau\"\n\nif codemon_pv <= 0:\n    print(\"Ton Codémon a besoin de soins !\")\nelif codemon_niveau < 5:\n    print(\"Ton Codémon a besoin de plus d'entraînement !\")\nelif codemon_type == \"feu\":\n    print(\"Ton Codémon de feu est prêt !\")\nelif codemon_type == \"eau\":\n    print(\"Ton Codémon d'eau est prêt !\")\nelse:\n    print(\"Ton Codémon est prêt pour le combat !\")"
+          }
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Your Codémon needs healing!",
+              "fr": "Ton Codémon a besoin de soins !"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Your Codémon needs more training!",
+              "fr": "Ton Codémon a besoin de plus d'entraînement !"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Your fire Codémon is ready!",
+              "fr": "Ton Codémon feu est prêt !"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Your water Codémon is ready!",
+              "fr": "Ton Codémon eau est prêt !"
+            }
+          }
+        ],
+        "correctAnswer": 3
+      },
+      "hint": {
+        "en": "Remember: Python checks conditions in order and executes the code for the first True condition.",
+        "fr": "Rappelle-toi : Python vérifie les conditions dans l'ordre et exécute le code pour la première condition vraie."
+      }
+    }
+  },
+  {
+    "id": "python_6_3_12",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "elif",
+        "else",
+        "comparison"
+      ]
+    },
+    "title": {
+      "en": "Tournament Battle Analyzer",
+      "fr": "Analyseur de Combat de Tournoi"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Congratulations! You've learned how to use if/elif/else statements. Now let's analyze a tournament battle!\n\nYour Aquachu is facing Pyrochu in a tournament. Create a program that analyzes the battle balance based on level difference:\n\nCalculate the level difference (your level - opponent level), then:\n- If difference > 10: \"This will be an easy victory!\"\n- Else if difference > 5: \"You have a solid advantage.\"\n- Else if difference > 0: \"Slight advantage on your side.\"\n- Else if difference == 0: \"This will be a balanced match.\"\n- Else if difference > -5: \"This will be challenging.\"\n- Otherwise: \"This will be very difficult!\"\n\nFinally, print \"Analysis complete.\" at the end.",
+            "fr": "Félicitations ! Tu as appris à utiliser les instructions if/elif/else. Analysons maintenant un combat de tournoi !\n\nTon Aquachu affronte Pyrochu dans un tournoi. Crée un programme qui analyse l'équilibre du combat basé sur la différence de niveau :\n\nCalcule la différence de niveau (ton niveau - niveau adversaire), puis :\n- Si différence > 10 : \"Ce sera une victoire facile !\"\n- Sinon si différence > 5 : \"Tu as un avantage solide.\"\n- Sinon si différence > 0 : \"Léger avantage de ton côté.\"\n- Sinon si différence == 0 : \"Ce sera un match équilibré.\"\n- Sinon si différence > -5 : \"Ce sera difficile.\"\n- Sinon : \"Ce sera très difficile !\"\n\nFinalement, affiche \"Analyse terminée.\" à la fin."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "# Aquachu's level\naquachu_level = 18\n\n# Pyrochu's level\npyrochu_level = 15\n\n# Analyze the battle balance here\n",
+          "fr": "# Niveau d'Aquachu\naquachu_level = 18\n\n# Niveau de Pyrochu\npyrochu_level = 15\n\n# Analyse l'équilibre du combat ici\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "# Aquachu's level\naquachu_level = 18\n\n# Pyrochu's level\npyrochu_level = 15\n\nprint(\"=== TOURNAMENT BATTLE ANALYZER ===\")\n\nlevel_difference = aquachu_level - pyrochu_level\n\nif level_difference > 10:\n    print(\"This will be an easy victory!\")\nelif level_difference > 5:\n    print(\"You have a solid advantage.\")\nelif level_difference > 0:\n    print(\"Slight advantage on your side.\")\nelif level_difference == 0:\n    print(\"This will be a balanced match.\")\nelif level_difference > -5:\n    print(\"This will be challenging.\")\nelse:\n    print(\"This will be very difficult!\")\n\nprint(\"Analysis complete.\")",
+            "fr": "# Niveau d'Aquachu\naquachu_level = 18\n\n# Niveau de Pyrochu\npyrochu_level = 15\n\nprint(\"=== ANALYSEUR DE COMBAT DE TOURNOI ===\")\n\nlevel_difference = aquachu_level - pyrochu_level\n\nif level_difference > 10:\n    print(\"Ce sera une victoire facile !\")\nelif level_difference > 5:\n    print(\"Tu as un avantage solide.\")\nelif level_difference > 0:\n    print(\"Léger avantage de ton côté.\")\nelif level_difference == 0:\n    print(\"Ce sera un match équilibré.\")\nelif level_difference > -5:\n    print(\"Ce sera difficile.\")\nelse:\n    print(\"Ce sera très difficile !\")\n\nprint(\"Analyse terminée.\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_4_1",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "if",
+        "nested",
+        "indentation"
+      ]
+    },
+    "title": {
+      "en": "Nested Codémon Battle Check",
+      "fr": "Vérification de bataille Codémon imbriquée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a nested condition to check both the Codémon's shield and health.",
+            "fr": "Crée une condition imbriquée pour vérifier à la fois le bouclier et la santé du Codémon."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_shield = 0\ncodemon_health = 100\n\n{{}} codemon_shield <= 0:\n  {{}} codemon_health > 50:\n    print(\"Still fighting!\")\n  {{}}:\n    print(\"Critical!\")",
+        "options": [
+          "if",
+          "if",
+          "elif",
+          "else",
+          "elif",
+          "else"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "if",
+          "3": "else"
+        }
+      },
+      "hint": {
+        "en": "Nested conditions means multiple if statements inside each other. Remember to keep the indentation correct.",
+        "fr": "Avoir des conditions imbriquées signifie plusieurs instructions if les unes à l'intérieur des autres. N'oublie pas de garder la bonne indentation."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_2",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "complex",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Complex Boolean Evaluation",
+      "fr": "Évaluation booléenne complexe"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed?",
+            "fr": "Qu'est-ce qui sera affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "x = 5\ny = 10\nif (x == y) or (x > 0 and y < 20):\n  print(\"Condition A\")\nelif x > y:\n  print(\"Condition B\")\nelse:\n  print(\"Condition C\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Condition A\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Condition B\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Condition C\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Evaluate the complex condition step by step.",
+        "fr": "Évalue la condition complexe étape par étape."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_3",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Boolean Operators Results",
+      "fr": "Résultats des opérateurs booléens"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each boolean expression with its result.",
+            "fr": "Associe chaque expression booléenne avec son résultat."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```True and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```not True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```False or True```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```not False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_4_4",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "elif",
+        "multiple_conditions"
+      ]
+    },
+    "title": {
+      "en": "Codémon Attack Damage System",
+      "fr": "Système de dégâts d'attaque Codémon"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the damage calculation system (100+ is critical, 50+ is high, 25+ is medium, rest is low).",
+            "fr": "Complète le système de calcul de dégâts (100+ est critique, 50+ est élevé, 25+ est moyen, le reste est faible)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "attack_damage = 0\n{{}} attack_damage >= 100:\n  print(\"Critical hit!\")\n{{}} attack_damage >= 50:\n  print(\"High damage\")\n{{}} attack_damage >= 25:\n  print(\"Medium damage\")\n{{}}:\n  print(\"Low damage\")",
+        "options": [
+          "if",
+          "elif",
+          "else",
+          "else if",
+          "if",
+          "elif",
+          "else",
+          "else if"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "elif",
+          "3": "elif",
+          "4": "else"
+        }
+      },
+      "hint": {
+        "en": "Order conditions from highest to lowest.",
+        "fr": "Ordonne les conditions du plus haut au plus bas."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_5",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "logic",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Boolean Logic Evaluation",
+      "fr": "Évaluation de logique booléenne"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed?",
+            "fr": "Qu'est-ce qui sera affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "a = True\nb = False\nc = True\nif not (a and b) or c:\n  print(\"Case 1\")\nelse:\n  print(\"Case 2\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Case 1\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Case 2\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Error",
+              "fr": "Erreur"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Evaluate the boolean expression step by step.",
+        "fr": "Évalue l'expression booléenne étape par étape."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_6",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "nested",
+        "multiple_conditions"
+      ]
+    },
+    "title": {
+      "en": "Status Check",
+      "fr": "Vérification du statut"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the Codémon status check (check if Codémon is alive first, then check power level).",
+            "fr": "Complète la vérification du statut du Codémon (vérifie d'abord si le Codémon est vivant, puis vérifie le niveau de puissance)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_health = 100\ncodemon_power = 50\n\n{{}} codemon_health > 0:\n  {{}} codemon_power >= 75:\n    print(\"Super strength!\")\n  {{}} codemon_power >= 25:\n    print(\"Normal strength\")\n  {{}}:\n    print(\"Weak\")\n{{}}:\n  print(\"Codémon fainted\")",
+        "options": [
+          "if",
+          "elif",
+          "else",
+          "if",
+          "elif",
+          "else",
+          "then"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "if",
+          "3": "elif",
+          "4": "else",
+          "5": "else"
+        }
+      },
+      "hint": {
+        "en": "Use nested conditions for multiple checks.",
+        "fr": "Utilise des conditions imbriquées pour plusieurs vérifications."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_7",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "precedence"
+      ]
+    },
+    "title": {
+      "en": "Operator Precedence",
+      "fr": "Précédence des opérateurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this code print?",
+            "fr": "Que va afficher ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "x,y,z = 11,10,15\nif x < y and y < z or x == z:\n  print(\"First\")\nelif x < z and y > x:\n  print(\"Second\")\nelse:\n  print(\"Third\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Third\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Second\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"First\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember the order: and is evaluated before or.",
+        "fr": "Rappelle-toi l'ordre : and est évalué avant or."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_8",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "parentheses"
+      ]
+    },
+    "title": {
+      "en": "Boss Battle Condition",
+      "fr": "Condition de combat de boss"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the boss battle condition (trainer wins if Codémon has full health AND either a special attack OR magic power).",
+            "fr": "Complète la condition du combat de boss (le dresseur gagne si le Codémon a toute sa santé ET soit une attaque spéciale SOIT un pouvoir magique)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "codemon_health = 100\nhas_special_attack = True\nhas_magic = False\n\nif codemon_health == 100 {{}} {{}} has_special_attack {{}} has_magic {{}}:\n  print(\"Victory!\")",
+        "options": [
+          "and",
+          "(",
+          "or",
+          ")",
+          "&&",
+          "||"
+        ],
+        "correctAnswers": {
+          "1": "and",
+          "2": "(",
+          "3": "or",
+          "4": ")"
+        }
+      },
+      "hint": {
+        "en": "Group conditions with parentheses properly.",
+        "fr": "Groupe les conditions avec des parenthèses correctement."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_9",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "elif",
+        "execution_flow"
+      ]
+    },
+    "title": {
+      "en": "Elif Execution Flow",
+      "fr": "Flux d'exécution elif"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this code print?",
+            "fr": "Que va afficher ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "codemon_power = 75\nif codemon_power > 100:\n  print(\"Super\")\nelif codemon_power > 60:\n  print(\"Good\")\nelif codemon_power > 70:\n  print(\"Normal\")\nelse:\n  print(\"Weak\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Good\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Normal\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Weak\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Follow the code execution and remember it stops at first True condition.",
+        "fr": "Suis l'exécution du code et rappelle-toi qu'il s'arrête à la première condition True."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_10",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "comparison",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Comparison Operators",
+      "fr": "Opérateurs de comparaison"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each comparison with its meaning.",
+            "fr": "Associe chaque comparaison avec sa signification."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```==```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Equal to",
+                "fr": "Égal à"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```!=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Not equal to",
+                "fr": "Différent de"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```>=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Greater than or equal",
+                "fr": "Supérieur ou égal"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```<=```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Less than or equal",
+                "fr": "Inférieur ou égal"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_4_11",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "if",
+        "elif",
+        "else"
+      ]
+    },
+    "title": {
+      "en": "Condition Keywords",
+      "fr": "Mots-clés de condition"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each condition keyword with its purpose.",
+            "fr": "Associe chaque mot-clé de condition avec son but."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```if```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "First condition to check",
+                "fr": "Première condition à vérifier"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```elif```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Additional condition to check",
+                "fr": "Condition supplémentaire à vérifier"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```else```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Runs when all conditions are false",
+                "fr": "S'exécute quand toutes les conditions sont fausses"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```and```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Both conditions must be true",
+                "fr": "Les deux conditions doivent être vraies"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_4_12",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "errors",
+        "variables"
+      ]
+    },
+    "title": {
+      "en": "Code Error Detection",
+      "fr": "Détection d'erreur de code"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's wrong with this code?",
+            "fr": "Qu'est-ce qui ne va pas dans ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "speed = 100\nif speed >= 100 and armor >= 50:\n  print(\"Tank mode\")\nelif not speed < 50:\n  print(\"Fast mode\")\nelif speed > 75:\n  print(\"Normal mode\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "armor is not defined",
+              "fr": "armor n'est pas défini"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Wrong indentation",
+              "fr": "Mauvaise indentation"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Missing else statement",
+              "fr": "Il manque une instruction else"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Too many elif statements",
+              "fr": "Trop d'instructions elif"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Check the logic of the conditions carefully.",
+        "fr": "Vérifie attentivement la logique des conditions."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_13",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "nested",
+        "multiple_paths"
+      ]
+    },
+    "title": {
+      "en": "Treasure Chest",
+      "fr": "Chasse au trésor"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the treasure chest logic (check if chest is unlocked, then if trainer has enough space).",
+            "fr": "Complète la logique du coffre au trésor (vérifie si le coffre est déverrouillé, puis si le dresseur a assez d'espace)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "is_unlocked = True\nhas_space = True\n\n{{}} is_unlocked:\n  {{}} has_space:\n    print(\"Got treasure!\")\n  {{}}:\n    print(\"Inventory full!\")\n{{}}:\n  print(\"Chest locked!\")",
+        "options": [
+          "if",
+          "else",
+          "elif",
+          "if",
+          "else",
+          "elif"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "if",
+          "3": "else",
+          "4": "else"
+        }
+      },
+      "hint": {
+        "en": "Think about the order of condition checks.",
+        "fr": "Réfléchis à l'ordre des vérifications des conditions."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_14",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "parentheses"
+      ]
+    },
+    "title": {
+      "en": "Parentheses Evaluation",
+      "fr": "Évaluation des parenthèses"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will this code print?",
+            "fr": "Que va afficher ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "x, y, z = 10, 20, 15\nif (x < y and y < z) or (x == z and y > x):\n  print(\"A\")\nelif x > z or y > z:\n  print(\"B\")\nelse:\n  print(\"C\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"B\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"A\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"C\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Evaluate conditions inside parentheses first.",
+        "fr": "Évalue d'abord les conditions entre parenthèses."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_15",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "expressions"
+      ]
+    },
+    "title": {
+      "en": "Complex Boolean Expressions",
+      "fr": "Expressions booléennes complexes"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each complex expression with its result when ```a=True```, ```b=False```.",
+            "fr": "Associe chaque expression complexe avec son résultat quand ```a=True```, ```b=False```."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```a and b```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```a or b```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```not a and b```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```not (a and b)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_4_16",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "logic",
+        "flow"
+      ]
+    },
+    "title": {
+      "en": "Condition Flow Results",
+      "fr": "Résultats de flux de conditions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each condition structure with what happens.",
+            "fr": "Associe chaque structure de condition avec ce qui se passe."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```if ... elif ... else```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Only one block executes",
+                "fr": "Un seul bloc s'exécute"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```if ... if ... if```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Multiple blocks can execute",
+                "fr": "Plusieurs blocs peuvent s'exécuter"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```if nested inside if```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Checks multiple levels of conditions",
+                "fr": "Vérifie plusieurs niveaux de conditions"
+              }
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```if condition:```"
+            },
+            "match": {
+              "type": "text",
+              "value": {
+                "en": "Executes only if True",
+                "fr": "S'exécute seulement si True"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_4_17",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "elif",
+        "order"
+      ]
+    },
+    "title": {
+      "en": "Training Medal System",
+      "fr": "Système de médailles d'entraînement"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed ?",
+            "fr": "Qu'est-ce qui sera affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "score = 85\nif score >= 90:\n  print(\"Gold medal\")\nelif score >= 80:\n  print(\"Silver medal\")\nelif score >= 70:\n  print(\"Bronze medal\")\nelse:\n  print(\"No medal\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Silver medal\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Gold medal\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Bronze medal\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"No medal\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Follow the condition checks in order.",
+        "fr": "Suis les vérifications des conditions dans l'ordre."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_18",
+    "type": "matching_pairs",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "precedence",
+        "operators"
+      ]
+    },
+    "title": {
+      "en": "Operator Precedence Order",
+      "fr": "Ordre de précédence des opérateurs"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Match each expression with its evaluation result.",
+            "fr": "Associe chaque expression avec son résultat d'évaluation."
+          }
+        }
+      ],
+      "exercise": {
+        "pairs": [
+          {
+            "id": "1",
+            "term": {
+              "type": "text",
+              "value": "```True or False and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          },
+          {
+            "id": "2",
+            "term": {
+              "type": "text",
+              "value": "```not True and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "3",
+            "term": {
+              "type": "text",
+              "value": "```(True or False) and False```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```False```"
+            }
+          },
+          {
+            "id": "4",
+            "term": {
+              "type": "text",
+              "value": "```not (True and False)```"
+            },
+            "match": {
+              "type": "text",
+              "value": "```True```"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "python_6_4_19",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "precedence"
+      ]
+    },
+    "title": {
+      "en": "Boolean Operator Precedence",
+      "fr": "Précédence des opérateurs booléens"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What will be printed?",
+            "fr": "Qu'est-ce qui sera affiché ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "a, b, c = True, False, True\nif not a or b and c:\n  print(\"First\")\nelif a and not b:\n  print(\"Second\")\nelse:\n  print(\"Third\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Second\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"First\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Third\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Remember: and has higher precedence than or.",
+        "fr": "Rappel : and a une priorité plus élevée que or."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_20",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "parentheses"
+      ]
+    },
+    "title": {
+      "en": "Secret Door Access",
+      "fr": "Accès à la porte secrète"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the secret door condition (needs key AND correct password, OR admin access).",
+            "fr": "Complète la condition de la porte secrète (nécessite clé ET mot de passe correct, OU accès admin)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "has_key = True\ncorrect_password = True\nis_admin = False\n\nif {{}} has_key {{}} correct_password {{}} {{}} is_admin:\n  print(\"Door opens!\")",
+        "options": [
+          "(",
+          "and",
+          ")",
+          "or",
+          "&&",
+          "||"
+        ],
+        "correctAnswers": {
+          "1": "(",
+          "2": "and",
+          "3": ")",
+          "4": "or"
+        }
+      },
+      "hint": {
+        "en": "Think about grouping related conditions.",
+        "fr": "Réfléchis au groupement des conditions liées."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_21",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "nested",
+        "indentation"
+      ]
+    },
+    "title": {
+      "en": "Nested Condition Path",
+      "fr": "Chemin de condition imbriquée"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What's the output?",
+            "fr": "Quel est le résultat ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "power = 50\nshield = 100\nif power > 75:\n  if shield > 50:\n    print(\"Strong\")\n  else:\n    print(\"Vulnerable\")\nelif power > 25:\n  if shield > 75:\n    print(\"Defensive\")\n  else:\n    print(\"Balanced\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Defensive\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Balanced\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Strong\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Vulnerable\"```"
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Follow the code path carefully.",
+        "fr": "Suis attentivement le chemin du code."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_22",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "elif",
+        "multiple"
+      ]
+    },
+    "title": {
+      "en": "Trainer Rank System",
+      "fr": "Système de rang de dresseur"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the trainer rank system (100+ is master, 50+ is expert, 20+ is advanced, rest is beginner).",
+            "fr": "Complète le système de rang du dresseur (100+ est maître, 50+ est expert, 20+ est avancé, reste est débutant)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "trainer_level = 65\n\n{{}} trainer_level >= 100:\n  print(\"Master\")\n{{}} trainer_level >= 50:\n  print(\"Expert\")\n{{}} trainer_level >= 20:\n  print(\"Advanced\")\n{{}}:\n  print(\"Beginner\")",
+        "options": [
+          "if",
+          "elif",
+          "else",
+          "else if",
+          "if",
+          "elif",
+          "else",
+          "else if"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "elif",
+          "3": "elif",
+          "4": "else"
+        }
+      },
+      "hint": {
+        "en": "Remember to check from highest to lowest.",
+        "fr": "Souviens-toi de vérifier du plus haut au plus bas."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_23",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "boolean",
+        "not_operator"
+      ]
+    },
+    "title": {
+      "en": "Not Operator Evaluation",
+      "fr": "Évaluation de l'opérateur not"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "What is the output of this code?",
+            "fr": "Quel est le résultat de ce code ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "a = True\nb = False\nif not a and b:\n  print(\"First\")\nelif not (a and b):\n  print(\"Second\")\nelse:\n  print(\"Third\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": "```\"Second\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"First\"```"
+          },
+          {
+            "type": "text",
+            "value": "```\"Third\"```"
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Nothing",
+              "fr": "Rien"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Evaluate the not operations first.",
+        "fr": "Évalue d'abord les opérations not."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_24",
+    "type": "fill_in_text",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "nested",
+        "boolean"
+      ]
+    },
+    "title": {
+      "en": "Boss Fight Conditions",
+      "fr": "Conditions de combat de boss"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Complete the boss fight code (check if trainer is alive, then if they have enough power OR special ability).",
+            "fr": "Complète le code du combat de boss (vérifie si le dresseur est vivant, puis s'il a assez de puissance OU une capacité spéciale)."
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "text": "trainer_health, codemon_power = 100, 75\nhas_special = True\n\n{{}} trainer_health > 0:\n  {{}} codemon_power >= 80 {{}} has_special:\n    print(\"Can fight boss!\")\n  {{}}:\n    print(\"Too weak!\")\n{{}}:\n  print(\"Game Over\")",
+        "options": [
+          "if",
+          "or",
+          "else",
+          "and",
+          "elif",
+          "if",
+          "else",
+          "elif"
+        ],
+        "correctAnswers": {
+          "1": "if",
+          "2": "if",
+          "3": "or",
+          "4": "else",
+          "5": "else"
+        }
+      },
+      "hint": {
+        "en": "Use nested conditions and combine with OR.",
+        "fr": "Utilise des conditions imbriquées et combine avec OR."
+      }
+    }
+  },
+  {
+    "id": "python_6_4_25",
+    "type": "multiple_choice",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditions",
+        "best_practices",
+        "boolean"
+      ]
+    },
+    "title": {
+      "en": "Clean Code Practices",
+      "fr": "Bonnes pratiques de code"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Which code is clearer?",
+            "fr": "Quel code est plus clair ?"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": "# Code 1\nif has_key and has_map and has_codeball:\n  print(\"Ready!\")"
+        },
+        {
+          "type": "codeBlock",
+          "value": "# Code 2\nif has_key == True and has_map == True and has_codeball == True:\n  print(\"Ready!\")"
+        }
+      ],
+      "exercise": {
+        "options": [
+          {
+            "type": "text",
+            "value": {
+              "en": "Code 1",
+              "fr": "Code 1"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Code 2",
+              "fr": "Code 2"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Both are equally good",
+              "fr": "Les deux sont aussi bons"
+            }
+          },
+          {
+            "type": "text",
+            "value": {
+              "en": "Neither is good",
+              "fr": "Aucun n'est bon"
+            }
+          }
+        ],
+        "correctAnswer": 0
+      },
+      "hint": {
+        "en": "Think about unnecessary comparisons with True.",
+        "fr": "Pense aux comparaisons inutiles avec True."
+      }
+    }
+  },
+  {
+    "id": "python_6_5_1",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "elif",
+        "else",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Gym Challenge - Badge Check",
+      "fr": "Défi Arène - Vérification des badges"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Before challenging a gym, you need to verify your progress.",
+            "fr": "Avant de défier une arène, tu dois vérifier ta progression."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a program that checks how many badges you have:\n- If badges < 8: \"You're not done yet, next gym to challenge: [badge + 1]\"\n- Elif badges == 8: \"Congratulations! You have all badges. Ready for the Elite Three!\"\n- Otherwise: \"Invalid badge count.\"\nFinally, print: \"Good luck, trainer!\"",
+            "fr": "Crée un programme qui vérifie combien de badges tu as :\n- Si badges < 8 : \"Tu as encore du chemin à faire, prochaine arène à défier : [badge + 1]\"\n- Sinon si badges == 8 : \"Félicitations ! Tu as tous les badges. Prêt pour le Conseil 3 !\"\n- Sinon : \"Nombre de badges invalide.\"\nEt enfin, affiche : \"Bonne chance, dresseur !\""
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "badges = 3\n\n# Code here\n\n",
+          "fr": "badges = 3\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "badges = 3\n\nif badges < 8:\n    print(f\"You're not done yet, next gym to challenge: {badges + 1}\")\nelif badges == 8:\n    print(\"Congratulations! You have all badges. Ready for the Elite Three!\")\nelse:\n    print(\"Invalid badge count.\")\n\nprint(\"Good luck, trainer!\")",
+            "fr": "badges = 3\n\nif badges < 8:\n    print(f\"Tu as encore du chemin à faire, prochaine arène à défier : {badges + 1}\")\nelif badges == 8:\n    print(\"Félicitations ! Tu as tous les badges. Prêt pour le Conseil des 3 !\")\nelse:\n    print(\"Nombre de badges invalide.\")\n\nprint(\"Bonne chance, dresseur !\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_5_2",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "elif",
+        "else",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Gym Challenge - Level Requirement",
+      "fr": "Défi Arène - Niveau requis"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Gyms are grouped by difficulty:\n- Gyms 1-3 (0-2 badges): Level 10 required\n- Gyms 4-5 (3-4 badges): Level 20 required\n- Gyms 6-7 (5-6 badges): Level 30 required\n- Gym 8 (7 badges): Level 40 required",
+            "fr": "Les arènes sont regroupées par difficulté :\n- Arènes 1-3 (0-2 badges) : Niveau 10 requis\n- Arènes 4-5 (3-4 badges) : Niveau 20 requis\n- Arènes 6-7 (5-6 badges) : Niveau 30 requis\n- Arène 8 (7 badges) : Niveau 40 requis"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Create a program that:\n- Determines the required level based on badges\n- Compares Zap's level to the requirement\n- If level >= required: \"Zap meets the level requirement!\"\n   Otherwise: \"Zap needs more training. Required level: [X]\"",
+            "fr": "Crée un programme qui :\n- Détermine le niveau requis basé sur badges\n- Compare le niveau de Zap à l'exigence\n- Si level >= requis : \"Zap atteint le niveau requis !\"\n   Sinon : \"Zap a besoin de plus d'entraînement. Niveau requis : [X]\""
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "badges = 3\nzap_level = 22\n\n# Code here\n\n",
+          "fr": "badges = 3\nzap_level = 22\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "badges = 3\nzap_level = 22\n\n# Determine required level based on badges\nif badges <= 2: required_level = 10\nelif badges <= 4: required_level = 20\nelif badges <= 6: required_level = 30\nelif badges == 7: required_level = 40\nelse: required_level = 0\n\n# Check if Zap meets the requirement\nif zap_level >= required_level:\n    print(\"Zap meets the level requirement!\")\nelse:\n    print(f\"Zap needs more training. Required level: {required_level}\")",
+            "fr": "badges = 3\nzap_level = 22\n\n# Détermine le niveau requis basé sur les badges\nif badges <= 2: required_level = 10\nelif badges <= 4: required_level = 20\nelif badges <= 6: required_level = 30\nelif badges == 7: required_level = 40\nelse: required_level = 0\n\n# Vérifie si Zap atteint l'exigence\nif zap_level >= required_level:\n    print(\"Zap atteint le niveau requis !\")\nelse:\n    print(f\"Zap a besoin de plus d'entraînement. Niveau requis : {required_level}\")"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "python_6_5_3",
+    "type": "challenge",
+    "metadata": {
+      "difficulty": "beginner",
+      "tags": [
+        "python",
+        "conditional",
+        "if",
+        "elif",
+        "else",
+        "nested",
+        "mini-project"
+      ]
+    },
+    "title": {
+      "en": "Arena Preparation - Potion Management",
+      "fr": "Préparation Arène - Gestion des potions"
+    },
+    "content": {
+      "question": [
+        {
+          "type": "text",
+          "value": {
+            "en": "You're about to challenge the arena, but first you need to make sure you're well prepared with enough potions!\n\nFor security reason, the arena ask you to have at least 3 potions to enter safely. Each potion costs 200 coins.",
+            "fr": "Tu t'apprêtes à défier l'arène, mais d'abord tu dois t'assurer d'être bien préparé avec assez de potions !\n\nPour des raisons de sécurité, l'arène te demande d'avoir au moins 3 potions pour entrer en toute sécurité. Chaque potion coûte 200 pièces."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Check if you have enough potions (>= 3)\n- If yes: ```\"You're ready!\"```\n- If no: Check if you have enough money to buy more\n  - Calculate how many potions you need and total cost\n  - If you can afford them, increment your potions count, decrement your money, and display: ```\"Buying X potions for Y coins\"```\n  - If you can't afford them, display: ```\"Not enough money! You need X more coins\"```\nPrint your money and number of potions at the end",
+            "fr": "Vérifie si tu as assez de potions (>= 3)\n- Si oui : ```\"Tu es prêt !\"```\n- Si non : Vérifie si tu as assez d'argent pour en acheter plus\n  - Calcule combien de potions tu as besoin et le coût total\n  - Si tu peux te les permettre, augmente ton nombre de potions, diminue ton argent, et affiche : ```\"Achat de X potions pour Y pièces\"```\n  - Si tu ne peux pas te les permettre, affiche : ```\"Pas assez d'argent ! Il te faut X pièces de plus\"```\nAffiche ton argent et le nombre de potions à la fin"
+          }
+        }
+      ],
+      "exercise": {
+        "language": "python",
+        "value": {
+          "en": "potions = 1\nmoney = 500\n\npotion_price = 200\nrequired_potions = 3\n\n# Code here\n\n",
+          "fr": "potions = 1\nmoney = 500\n\npotion_price = 200\nrequired_potions = 3\n\n# Code ici\n\n"
+        }
+      },
+      "solution": [
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "value": {
+            "en": "potions = 1\nmoney = 500\n\npotion_price = 200\nrequired_potions = 3\n\nif potions >= required_potions:\n  print(\"You're ready!\")\nelse:\n  potions_needed = required_potions - potions\n  total_cost = potions_needed * potion_price\n  \n  if money >= total_cost:\n    print(f\"Buying {potions_needed} potions for {total_cost} coins\")\n    potions = potions + potions_needed\n    money = money - total_cost\n  else:\n    coins_needed = total_cost - money\n    print(f\"Not enough money! You need {coins_needed} more coins\")\n\nprint(f\"Money: {money} coins\")\nprint(f\"Potions: {potions}\")",
+            "fr": "potions = 1\nmoney = 500\n\npotion_price = 200\nrequired_potions = 3\n\nif potions >= required_potions:\n  print(\"Tu es prêt !\")\nelse:\n  potions_needed = required_potions - potions\n  total_cost = potions_needed * potion_price\n  \n  if money >= total_cost:\n    print(f\"Achat de {potions_needed} potions pour {total_cost} pièces\")\n    potions = potions + potions_needed\n    money = money - total_cost\n  else:\n    coins_needed = total_cost - money\n    print(f\"Pas assez d'argent ! Il te faut {coins_needed} pièces de plus\")\n\nprint(f\"Argent : {money} pièces\")\nprint(f\"Potions : {potions}\")"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -4,6 +4,9 @@ import type { GridMovementSystem } from '@/systems/GridMovementSystem'
 import type { Player } from '@/entities/Player'
 import { DIR_OFFSETS } from '@/utils/helpers'
 import { saveManager } from '@/systems/SaveManager'
+import type { Direction } from '@/data/types'
+
+const ALL_DIRECTIONS: Direction[] = ['down', 'left', 'up', 'right']
 
 interface NpcState {
   npc: NPC
@@ -55,7 +58,8 @@ export class NpcBehaviorSystem {
     }
 
     // Clean up any pending resume handlers on scene shutdown
-    scene.events.on('shutdown', () => {
+    // ('once': a new system is built on every map load, so 'on' would pile up)
+    scene.events.once('shutdown', () => {
       for (const handler of this.pendingResumeHandlers) {
         this.scene.events.off('resume', handler)
       }
@@ -216,15 +220,18 @@ export class NpcBehaviorSystem {
   // ── Lookout ──
 
   private updateLookout(state: NpcState, delta: number): void {
-    const pattern = state.npc.data.lookoutPattern
-    if (!pattern || pattern.length === 0) return
+    const isRandom = state.npc.data.behavior === 'lookout-random'
+    const configured = state.npc.data.lookoutPattern
+    // A random lookout with no pattern looks in every direction
+    const pattern = configured?.length ? configured : isRandom ? ALL_DIRECTIONS : undefined
+    if (!pattern) return
 
     const tempo = (state.npc.data.lookoutTempo ?? 2) * 1000 // to ms
     state.lookoutTimer += delta
 
     if (state.lookoutTimer >= tempo) {
       state.lookoutTimer -= tempo
-      if (state.npc.data.behavior === 'lookout-random') {
+      if (isRandom) {
         state.lookoutIndex = Math.floor(Math.random() * pattern.length)
         // Also randomize the next tempo so timing is unpredictable
         state.lookoutTimer -= Math.random() * tempo * 0.4

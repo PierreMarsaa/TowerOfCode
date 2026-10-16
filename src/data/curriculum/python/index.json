@@ -1,0 +1,2153 @@
+{
+  "language": "python",
+  "classes": [
+    {
+      "key": "intro-python",
+      "title": {
+        "en": "Introduction to Python",
+        "fr": "Introduction à Python"
+      },
+      "chapters": [
+        {
+          "key": "intro-python/hello-world",
+          "title": {
+            "en": "Hello World!",
+            "fr": "Hello World!"
+          },
+          "exerciseIds": [
+            "python_1_1_1",
+            "python_1_1_2",
+            "python_1_1_3",
+            "python_1_1_4",
+            "python_1_1_5"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "variables-types",
+      "title": {
+        "en": "Variables and types",
+        "fr": "Variables et types"
+      },
+      "chapters": [
+        {
+          "key": "variables-types/what_are_variables",
+          "title": {
+            "en": "What's a variable ?",
+            "fr": "C'est quoi une variable ?"
+          },
+          "exerciseIds": [
+            "python_2_1_1",
+            "python_2_1_2",
+            "python_2_1_3",
+            "python_2_1_4",
+            "python_2_1_5",
+            "python_2_1_6",
+            "python_2_1_7",
+            "python_2_1_8"
+          ]
+        },
+        {
+          "key": "variables-types/naming-conventions",
+          "title": {
+            "en": "Naming Conventions",
+            "fr": "Conventions de nommage"
+          },
+          "exerciseIds": [
+            "python_2_2_1",
+            "python_2_2_2",
+            "python_2_2_3",
+            "python_2_2_4"
+          ]
+        },
+        {
+          "key": "variables-types/numbers",
+          "title": {
+            "en": "Numbers",
+            "fr": "Les nombres"
+          },
+          "exerciseIds": [
+            "python_2_3_1",
+            "python_2_3_2",
+            "python_2_3_3",
+            "python_2_3_4",
+            "python_2_3_5",
+            "python_2_3_6"
+          ]
+        },
+        {
+          "key": "variables-types/types",
+          "title": {
+            "en": "Types and Casting",
+            "fr": "Types et changement de type"
+          },
+          "exerciseIds": [
+            "python_2_4_1",
+            "python_2_4_2",
+            "python_2_4_3",
+            "python_2_4_4",
+            "python_2_4_5",
+            "python_2_4_6",
+            "python_2_4_7",
+            "python_2_4_8",
+            "python_2_4_9",
+            "python_2_4_10"
+          ]
+        },
+        {
+          "key": "variables-types/strings",
+          "title": {
+            "en": "Strings",
+            "fr": "Les chaînes de caractères"
+          },
+          "exerciseIds": [
+            "python_2_5_1",
+            "python_2_5_2",
+            "python_2_5_3",
+            "python_2_5_4",
+            "python_2_5_5",
+            "python_2_5_6"
+          ]
+        },
+        {
+          "key": "variables-types/boolean",
+          "title": {
+            "en": "Boolean",
+            "fr": "Les booléens"
+          },
+          "exerciseIds": [
+            "python_2_6_1",
+            "python_2_6_2",
+            "python_2_6_3",
+            "python_2_6_4",
+            "python_2_6_5",
+            "python_2_6_6"
+          ]
+        },
+        {
+          "key": "variables-types/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_2_7_1",
+            "python_2_7_2",
+            "python_2_7_3",
+            "python_2_7_4",
+            "python_2_7_5",
+            "python_2_7_6",
+            "python_2_7_7",
+            "python_2_7_8",
+            "python_2_7_9",
+            "python_2_7_10",
+            "python_2_7_11",
+            "python_2_7_12",
+            "python_2_7_13",
+            "python_2_7_14",
+            "python_2_7_15",
+            "python_2_7_16",
+            "python_2_7_17",
+            "python_2_7_18",
+            "python_2_7_19",
+            "python_2_7_20",
+            "python_2_7_21",
+            "python_2_7_22",
+            "python_2_7_23",
+            "python_2_7_24",
+            "python_2_7_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "variables-types/new-challenge",
+          "title": {
+            "en": "Challenge",
+            "fr": "Défi"
+          },
+          "exerciseIds": [
+            "python_2_8_1",
+            "python_2_8_2",
+            "python_2_8_3"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "helpers",
+      "title": {
+        "en": "Code Helpers",
+        "fr": "Aide au code"
+      },
+      "chapters": [
+        {
+          "key": "helpers/comments",
+          "title": {
+            "en": "Comments",
+            "fr": "Les commentaires"
+          },
+          "exerciseIds": [
+            "python_3_1_1",
+            "python_3_1_2",
+            "python_3_1_3",
+            "python_3_1_4",
+            "python_3_1_5"
+          ]
+        },
+        {
+          "key": "helpers/print",
+          "title": {
+            "en": "Print",
+            "fr": "Print"
+          },
+          "exerciseIds": [
+            "python_3_2_1",
+            "python_3_2_2",
+            "python_3_2_3",
+            "python_3_2_4",
+            "python_3_2_5",
+            "python_3_2_6",
+            "python_3_2_7",
+            "python_3_2_8",
+            "python_3_2_9",
+            "python_3_2_10",
+            "python_3_2_11"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "boolean-depth",
+      "title": {
+        "en": "Boolean in Depth",
+        "fr": "Les booléens en détail"
+      },
+      "chapters": [
+        {
+          "key": "boolean-depth/operator-and",
+          "title": {
+            "en": "AND Operator",
+            "fr": "Opérateur AND"
+          },
+          "exerciseIds": [
+            "python_4_1_1",
+            "python_4_1_2",
+            "python_4_1_3",
+            "python_4_1_4",
+            "python_4_1_5"
+          ]
+        },
+        {
+          "key": "boolean-depth/operator-or",
+          "title": {
+            "en": "OR Operator",
+            "fr": "Opérateur OR"
+          },
+          "exerciseIds": [
+            "python_4_2_1",
+            "python_4_2_2",
+            "python_4_2_3",
+            "python_4_2_4",
+            "python_4_2_5",
+            "python_4_2_6"
+          ]
+        },
+        {
+          "key": "boolean-depth/operator-not",
+          "title": {
+            "en": "NOT Operator",
+            "fr": "Opérateur NOT"
+          },
+          "exerciseIds": [
+            "python_4_3_1",
+            "python_4_3_2",
+            "python_4_3_3",
+            "python_4_3_4"
+          ]
+        },
+        {
+          "key": "boolean-depth/test-operators",
+          "title": {
+            "en": "Test OR, AND, NOT",
+            "fr": "Test OR, AND, NOT"
+          },
+          "exerciseIds": [
+            "python_4_4_1",
+            "python_4_4_2",
+            "python_4_4_3",
+            "python_4_4_4",
+            "python_4_4_5",
+            "python_4_4_6",
+            "python_4_4_7"
+          ]
+        },
+        {
+          "key": "boolean-depth/operators",
+          "title": {
+            "en": "Comparison Operators",
+            "fr": "Opérateurs de comparaison"
+          },
+          "exerciseIds": [
+            "python_4_5_1",
+            "python_4_5_2",
+            "python_4_5_3",
+            "python_4_5_4",
+            "python_4_5_5",
+            "python_4_5_6",
+            "python_4_5_7",
+            "python_4_5_8",
+            "python_4_5_9",
+            "python_4_5_10"
+          ]
+        },
+        {
+          "key": "boolean-depth/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_4_6_1",
+            "python_4_6_2",
+            "python_4_6_3",
+            "python_4_6_4",
+            "python_4_6_5",
+            "python_4_6_6",
+            "python_4_6_7",
+            "python_4_6_8",
+            "python_4_6_9",
+            "python_4_6_10",
+            "python_4_6_11",
+            "python_4_6_12",
+            "python_4_6_13",
+            "python_4_6_14",
+            "python_4_6_15",
+            "python_4_6_16",
+            "python_4_6_17",
+            "python_4_6_18",
+            "python_4_6_19",
+            "python_4_6_20",
+            "python_4_6_21",
+            "python_4_6_22",
+            "python_4_6_23",
+            "python_4_6_24",
+            "python_4_6_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "boolean-depth/new-challenge",
+          "title": {
+            "en": "Challenge",
+            "fr": "Défi"
+          },
+          "exerciseIds": [
+            "python_4_7_1",
+            "python_4_7_2",
+            "python_4_7_3",
+            "python_4_7_4",
+            "python_4_7_5"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "string-depth",
+      "title": {
+        "en": "String in Depth",
+        "fr": "Les strings en détail"
+      },
+      "chapters": [
+        {
+          "key": "string-depth/concatenation-repetition",
+          "title": {
+            "en": "Concat and repeat",
+            "fr": "Concaténation et répétition"
+          },
+          "exerciseIds": [
+            "python_5_1_1",
+            "python_5_1_2",
+            "python_5_1_3",
+            "python_5_1_4",
+            "python_5_1_5",
+            "python_5_1_6",
+            "python_5_1_7",
+            "python_5_1_8",
+            "python_5_1_9",
+            "python_5_1_10",
+            "python_5_1_11"
+          ]
+        },
+        {
+          "key": "string-depth/len-index",
+          "title": {
+            "en": "Length and index",
+            "fr": "Longueur et index"
+          },
+          "exerciseIds": [
+            "python_5_2_1",
+            "python_5_2_2",
+            "python_5_2_3",
+            "python_5_2_4",
+            "python_5_2_5",
+            "python_5_2_6",
+            "python_5_2_7",
+            "python_5_2_8",
+            "python_5_2_9",
+            "python_5_2_10"
+          ]
+        },
+        {
+          "key": "string-depth/slicing",
+          "title": {
+            "en": "Slicing",
+            "fr": "Découpage"
+          },
+          "exerciseIds": [
+            "python_5_3_1",
+            "python_5_3_2",
+            "python_5_3_3",
+            "python_5_3_4",
+            "python_5_3_5",
+            "python_5_3_6",
+            "python_5_3_7",
+            "python_5_3_8",
+            "python_5_3_9",
+            "python_5_3_10",
+            "python_5_3_11"
+          ]
+        },
+        {
+          "key": "string-depth/methods",
+          "title": {
+            "en": "Methods",
+            "fr": "Méthodes"
+          },
+          "exerciseIds": [
+            "python_5_4_1",
+            "python_5_4_2",
+            "python_5_4_3",
+            "python_5_4_4",
+            "python_5_4_5",
+            "python_5_4_6",
+            "python_5_4_7",
+            "python_5_4_8",
+            "python_5_4_9",
+            "python_5_4_10",
+            "python_5_4_11",
+            "python_5_4_12"
+          ]
+        },
+        {
+          "key": "string-depth/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_5_5_1",
+            "python_5_5_2",
+            "python_5_5_3",
+            "python_5_5_4",
+            "python_5_5_5",
+            "python_5_5_6",
+            "python_5_5_7",
+            "python_5_5_8",
+            "python_5_5_9",
+            "python_5_5_10",
+            "python_5_5_11",
+            "python_5_5_12",
+            "python_5_5_13",
+            "python_5_5_14",
+            "python_5_5_15",
+            "python_5_5_16",
+            "python_5_5_17",
+            "python_5_5_18",
+            "python_5_5_19",
+            "python_5_5_20",
+            "python_5_5_21",
+            "python_5_5_22",
+            "python_5_5_23",
+            "python_5_5_24",
+            "python_5_5_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "string-depth/new-challenge",
+          "title": {
+            "en": "Challenge",
+            "fr": "Défi"
+          },
+          "exerciseIds": [
+            "python_5_6_1",
+            "python_5_6_2",
+            "python_5_6_3"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "conditions",
+      "title": {
+        "en": "Conditions",
+        "fr": "Conditions"
+      },
+      "chapters": [
+        {
+          "key": "conditions/if-statements",
+          "title": {
+            "en": "If Statements",
+            "fr": "Instructions If"
+          },
+          "exerciseIds": [
+            "python_6_1_1",
+            "python_6_1_2",
+            "python_6_1_3",
+            "python_6_1_4",
+            "python_6_1_5",
+            "python_6_1_6",
+            "python_6_1_7",
+            "python_6_1_8",
+            "python_6_1_9",
+            "python_6_1_10",
+            "python_6_1_11",
+            "python_6_1_12",
+            "python_6_1_13"
+          ]
+        },
+        {
+          "key": "conditions/if-else-statements",
+          "title": {
+            "en": "If/Else Statements",
+            "fr": "Instructions If/Else"
+          },
+          "exerciseIds": [
+            "python_6_2_1",
+            "python_6_2_2",
+            "python_6_2_3",
+            "python_6_2_4",
+            "python_6_2_5",
+            "python_6_2_6",
+            "python_6_2_7",
+            "python_6_2_8",
+            "python_6_2_9",
+            "python_6_2_10",
+            "python_6_2_11"
+          ]
+        },
+        {
+          "key": "conditions/elif-statements",
+          "title": {
+            "en": "Elif Statements",
+            "fr": "Instructions Elif"
+          },
+          "exerciseIds": [
+            "python_6_3_1",
+            "python_6_3_2",
+            "python_6_3_3",
+            "python_6_3_4",
+            "python_6_3_5",
+            "python_6_3_6",
+            "python_6_3_7",
+            "python_6_3_8",
+            "python_6_3_9",
+            "python_6_3_10",
+            "python_6_3_11",
+            "python_6_3_12"
+          ]
+        },
+        {
+          "key": "conditions/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_6_4_1",
+            "python_6_4_2",
+            "python_6_4_3",
+            "python_6_4_4",
+            "python_6_4_5",
+            "python_6_4_6",
+            "python_6_4_7",
+            "python_6_4_8",
+            "python_6_4_9",
+            "python_6_4_10",
+            "python_6_4_11",
+            "python_6_4_12",
+            "python_6_4_13",
+            "python_6_4_14",
+            "python_6_4_15",
+            "python_6_4_16",
+            "python_6_4_17",
+            "python_6_4_18",
+            "python_6_4_19",
+            "python_6_4_20",
+            "python_6_4_21",
+            "python_6_4_22",
+            "python_6_4_23",
+            "python_6_4_24",
+            "python_6_4_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "conditions/new-challenge",
+          "title": {
+            "en": "Challenge",
+            "fr": "Défi"
+          },
+          "exerciseIds": [
+            "python_6_5_1",
+            "python_6_5_2",
+            "python_6_5_3"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "lists",
+      "title": {
+        "en": "Lists",
+        "fr": "Listes"
+      },
+      "chapters": [
+        {
+          "key": "lists/intro-lists",
+          "title": {
+            "en": "Introduction to Lists",
+            "fr": "Introduction aux Listes"
+          },
+          "exerciseIds": [
+            "python_7_1_1",
+            "python_7_1_2",
+            "python_7_1_3",
+            "python_7_1_4",
+            "python_7_1_5",
+            "python_7_1_6",
+            "python_7_1_7",
+            "python_7_1_8",
+            "python_7_1_9",
+            "python_7_1_10",
+            "python_7_1_11",
+            "python_7_1_12"
+          ]
+        },
+        {
+          "key": "lists/add-elements",
+          "title": {
+            "en": "Add Elements",
+            "fr": "Ajouter des Éléments"
+          },
+          "exerciseIds": [
+            "python_7_2_1",
+            "python_7_2_2",
+            "python_7_2_3",
+            "python_7_2_4",
+            "python_7_2_5",
+            "python_7_2_6",
+            "python_7_2_7",
+            "python_7_2_8",
+            "python_7_2_9",
+            "python_7_2_10",
+            "python_7_2_11"
+          ]
+        },
+        {
+          "key": "lists/remove-elements",
+          "title": {
+            "en": "Remove Elements",
+            "fr": "Supprimer des Éléments"
+          },
+          "exerciseIds": [
+            "python_7_3_1",
+            "python_7_3_2",
+            "python_7_3_3",
+            "python_7_3_4",
+            "python_7_3_5",
+            "python_7_3_6",
+            "python_7_3_7",
+            "python_7_3_8",
+            "python_7_3_9",
+            "python_7_3_10",
+            "python_7_3_11"
+          ]
+        },
+        {
+          "key": "lists/analyse-lists",
+          "title": {
+            "en": "Analyse Lists",
+            "fr": "Analyse des Listes"
+          },
+          "exerciseIds": [
+            "python_7_4_1",
+            "python_7_4_2",
+            "python_7_4_3",
+            "python_7_4_4",
+            "python_7_4_5",
+            "python_7_4_6",
+            "python_7_4_7",
+            "python_7_4_8",
+            "python_7_4_9",
+            "python_7_4_10",
+            "python_7_4_11",
+            "python_7_4_12",
+            "python_7_4_13"
+          ]
+        },
+        {
+          "key": "lists/lists-operations",
+          "title": {
+            "en": "Lists Operations",
+            "fr": "Opérations sur les Listes"
+          },
+          "exerciseIds": [
+            "python_7_5_1",
+            "python_7_5_2",
+            "python_7_5_3",
+            "python_7_5_4",
+            "python_7_5_5",
+            "python_7_5_6",
+            "python_7_5_7",
+            "python_7_5_8",
+            "python_7_5_9",
+            "python_7_5_10"
+          ]
+        },
+        {
+          "key": "lists/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_7_7_1",
+            "python_7_7_2",
+            "python_7_7_3",
+            "python_7_7_4",
+            "python_7_7_5",
+            "python_7_7_6",
+            "python_7_7_7",
+            "python_7_7_8",
+            "python_7_7_9",
+            "python_7_7_10",
+            "python_7_7_11",
+            "python_7_7_12",
+            "python_7_7_13",
+            "python_7_7_14",
+            "python_7_7_15",
+            "python_7_7_16",
+            "python_7_7_17",
+            "python_7_7_18",
+            "python_7_7_19",
+            "python_7_7_20",
+            "python_7_7_21",
+            "python_7_7_22",
+            "python_7_7_23",
+            "python_7_7_24",
+            "python_7_7_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "lists/new-challenge-1",
+          "title": {
+            "en": "Challenge 1",
+            "fr": "Défi 1"
+          },
+          "exerciseIds": [
+            "python_7_10_1",
+            "python_7_10_2",
+            "python_7_10_3",
+            "python_7_10_4",
+            "python_7_10_5"
+          ]
+        },
+        {
+          "key": "lists/new-challenge-2",
+          "title": {
+            "en": "Challenge 2",
+            "fr": "Défi 2"
+          },
+          "exerciseIds": [
+            "python_7_11_1",
+            "python_7_11_2",
+            "python_7_11_3"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "tuples",
+      "title": {
+        "en": "Tuples",
+        "fr": "Tuples"
+      },
+      "chapters": [
+        {
+          "key": "tuples/intro-tuples",
+          "title": {
+            "en": "Introduction to Tuples",
+            "fr": "Introduction aux Tuples"
+          },
+          "exerciseIds": [
+            "python_8_1_1",
+            "python_8_1_2",
+            "python_8_1_3",
+            "python_8_1_4",
+            "python_8_1_5",
+            "python_8_1_6",
+            "python_8_1_7",
+            "python_8_1_8",
+            "python_8_1_9",
+            "python_8_1_10",
+            "python_8_1_11"
+          ]
+        },
+        {
+          "key": "tuples/tuple-methods",
+          "title": {
+            "en": "Tuple Methods",
+            "fr": "Méthodes de Tuple"
+          },
+          "exerciseIds": [
+            "python_8_2_1",
+            "python_8_2_2",
+            "python_8_2_3",
+            "python_8_2_4",
+            "python_8_2_5",
+            "python_8_2_6",
+            "python_8_2_7",
+            "python_8_2_8",
+            "python_8_2_9",
+            "python_8_2_10",
+            "python_8_2_11"
+          ]
+        },
+        {
+          "key": "tuples/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_8_3_1",
+            "python_8_3_2",
+            "python_8_3_3",
+            "python_8_3_4",
+            "python_8_3_5",
+            "python_8_3_6",
+            "python_8_3_7",
+            "python_8_3_8",
+            "python_8_3_9",
+            "python_8_3_10",
+            "python_8_3_11",
+            "python_8_3_12",
+            "python_8_3_13",
+            "python_8_3_14",
+            "python_8_3_15",
+            "python_8_3_16",
+            "python_8_3_17",
+            "python_8_3_18",
+            "python_8_3_19",
+            "python_8_3_20",
+            "python_8_3_21",
+            "python_8_3_22",
+            "python_8_3_23",
+            "python_8_3_24",
+            "python_8_3_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "tuples/new-challenge",
+          "title": {
+            "en": "Challenge",
+            "fr": "Défi"
+          },
+          "exerciseIds": [
+            "python_8_10_1",
+            "python_8_10_2",
+            "python_8_10_3",
+            "python_8_10_4"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "loops",
+      "title": {
+        "en": "Loops",
+        "fr": "Boucles"
+      },
+      "chapters": [
+        {
+          "key": "loops/for-loops",
+          "title": {
+            "en": "For Loops",
+            "fr": "Boucles For"
+          },
+          "exerciseIds": [
+            "python_9_1_1",
+            "python_9_1_2",
+            "python_9_1_3",
+            "python_9_1_4",
+            "python_9_1_5",
+            "python_9_1_6",
+            "python_9_1_7",
+            "python_9_1_8",
+            "python_9_1_9",
+            "python_9_1_10",
+            "python_9_1_11",
+            "python_9_1_12",
+            "python_9_1_13",
+            "python_9_1_14",
+            "python_9_1_15",
+            "python_9_1_16"
+          ]
+        },
+        {
+          "key": "loops/while-loops",
+          "title": {
+            "en": "While Loops",
+            "fr": "Boucles While"
+          },
+          "exerciseIds": [
+            "python_9_2_1",
+            "python_9_2_2",
+            "python_9_2_3",
+            "python_9_2_4",
+            "python_9_2_5",
+            "python_9_2_6",
+            "python_9_2_7",
+            "python_9_2_8",
+            "python_9_2_9",
+            "python_9_2_10",
+            "python_9_2_11"
+          ]
+        },
+        {
+          "key": "loops/loop-control",
+          "title": {
+            "en": "Loop Control",
+            "fr": "Contrôle de Boucle"
+          },
+          "exerciseIds": [
+            "python_9_3_1",
+            "python_9_3_2",
+            "python_9_3_3",
+            "python_9_3_4",
+            "python_9_3_5",
+            "python_9_3_6",
+            "python_9_3_7",
+            "python_9_3_8",
+            "python_9_3_9",
+            "python_9_3_10",
+            "python_9_3_11"
+          ]
+        },
+        {
+          "key": "loops/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_9_4_1",
+            "python_9_4_2",
+            "python_9_4_3",
+            "python_9_4_4",
+            "python_9_4_5",
+            "python_9_4_6",
+            "python_9_4_7",
+            "python_9_4_8",
+            "python_9_4_9",
+            "python_9_4_10",
+            "python_9_4_11",
+            "python_9_4_12",
+            "python_9_4_13",
+            "python_9_4_14",
+            "python_9_4_15",
+            "python_9_4_16",
+            "python_9_4_17",
+            "python_9_4_18",
+            "python_9_4_19",
+            "python_9_4_20",
+            "python_9_4_21",
+            "python_9_4_22",
+            "python_9_4_23",
+            "python_9_4_24",
+            "python_9_4_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "loops/new-challenge-1",
+          "title": {
+            "en": "Challenge 1",
+            "fr": "Défi 1"
+          },
+          "exerciseIds": [
+            "python_9_5_1",
+            "python_9_5_2",
+            "python_9_5_3",
+            "python_9_5_4"
+          ]
+        },
+        {
+          "key": "loops/new-challenge-2",
+          "title": {
+            "en": "Challenge 2",
+            "fr": "Défi 2"
+          },
+          "exerciseIds": [
+            "python_9_6_1",
+            "python_9_6_2",
+            "python_9_6_3",
+            "python_9_6_4"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "sets",
+      "title": {
+        "en": "Sets",
+        "fr": "Sets"
+      },
+      "chapters": [
+        {
+          "key": "sets/set-intro",
+          "title": {
+            "en": "Intro to Sets",
+            "fr": "Intro aux Sets"
+          },
+          "exerciseIds": [
+            "python_10_1_1",
+            "python_10_1_2",
+            "python_10_1_3",
+            "python_10_1_4",
+            "python_10_1_5",
+            "python_10_1_6",
+            "python_10_1_7",
+            "python_10_1_8",
+            "python_10_1_9",
+            "python_10_1_10",
+            "python_10_1_11",
+            "python_10_1_12"
+          ]
+        },
+        {
+          "key": "sets/add-removing",
+          "title": {
+            "en": "Adding Removing Elements",
+            "fr": "Ajouter et Supprimer des Éléments"
+          },
+          "exerciseIds": [
+            "python_10_2_1",
+            "python_10_2_2",
+            "python_10_2_3",
+            "python_10_2_4",
+            "python_10_2_5",
+            "python_10_2_6",
+            "python_10_2_7",
+            "python_10_2_8",
+            "python_10_2_9",
+            "python_10_2_10",
+            "python_10_2_11",
+            "python_10_2_12"
+          ]
+        },
+        {
+          "key": "sets/set-operations",
+          "title": {
+            "en": "Set Operations",
+            "fr": "Opérations sur les Sets"
+          },
+          "exerciseIds": [
+            "python_10_3_1",
+            "python_10_3_2",
+            "python_10_3_3",
+            "python_10_3_4",
+            "python_10_3_5",
+            "python_10_3_6",
+            "python_10_3_7",
+            "python_10_3_8",
+            "python_10_3_9",
+            "python_10_3_10",
+            "python_10_3_11",
+            "python_10_3_12",
+            "python_10_3_13"
+          ]
+        },
+        {
+          "key": "sets/set-methods",
+          "title": {
+            "en": "Set Methods",
+            "fr": "Méthodes des Sets"
+          },
+          "exerciseIds": [
+            "python_10_4_1",
+            "python_10_4_2",
+            "python_10_4_3",
+            "python_10_4_4",
+            "python_10_4_5",
+            "python_10_4_6",
+            "python_10_4_7",
+            "python_10_4_8",
+            "python_10_4_9",
+            "python_10_4_10",
+            "python_10_4_11",
+            "python_10_4_12",
+            "python_10_4_13"
+          ]
+        },
+        {
+          "key": "sets/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_10_5_1",
+            "python_10_5_2",
+            "python_10_5_3",
+            "python_10_5_4",
+            "python_10_5_5",
+            "python_10_5_6",
+            "python_10_5_7",
+            "python_10_5_8",
+            "python_10_5_9",
+            "python_10_5_10",
+            "python_10_5_11",
+            "python_10_5_12",
+            "python_10_5_13",
+            "python_10_5_14",
+            "python_10_5_15",
+            "python_10_5_16",
+            "python_10_5_17",
+            "python_10_5_18",
+            "python_10_5_19",
+            "python_10_5_20",
+            "python_10_5_21",
+            "python_10_5_22",
+            "python_10_5_23",
+            "python_10_5_24",
+            "python_10_5_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "sets/new-challenge-1",
+          "title": {
+            "en": "Challenge 1",
+            "fr": "Défi 1"
+          },
+          "exerciseIds": [
+            "python_10_10_1",
+            "python_10_10_2",
+            "python_10_10_3"
+          ]
+        },
+        {
+          "key": "sets/new-challenge-2",
+          "title": {
+            "en": "Challenge 2",
+            "fr": "Défi 2"
+          },
+          "exerciseIds": [
+            "python_10_11_1",
+            "python_10_11_2",
+            "python_10_11_3",
+            "python_10_11_4"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "dicts",
+      "title": {
+        "en": "Dictionaries",
+        "fr": "Dictionnaires"
+      },
+      "chapters": [
+        {
+          "key": "dicts/dict-intro",
+          "title": {
+            "en": "Intro to Dictionaries",
+            "fr": "Intro aux Dictionnaires"
+          },
+          "exerciseIds": [
+            "python_11_1_1",
+            "python_11_1_2",
+            "python_11_1_3",
+            "python_11_1_4",
+            "python_11_1_5",
+            "python_11_1_6",
+            "python_11_1_7",
+            "python_11_1_8",
+            "python_11_1_9",
+            "python_11_1_10"
+          ]
+        },
+        {
+          "key": "dicts/access-create-update",
+          "title": {
+            "en": "Accessing, Creating, Updating",
+            "fr": "Accéder, Créer, Mettre à Jour"
+          },
+          "exerciseIds": [
+            "python_11_2_1",
+            "python_11_2_2",
+            "python_11_2_3",
+            "python_11_2_4",
+            "python_11_2_5",
+            "python_11_2_6",
+            "python_11_2_7",
+            "python_11_2_8",
+            "python_11_2_9",
+            "python_11_2_10",
+            "python_11_2_11"
+          ]
+        },
+        {
+          "key": "dicts/remove",
+          "title": {
+            "en": "Removing Elements",
+            "fr": "Supprimer des Éléments"
+          },
+          "exerciseIds": [
+            "python_11_3_1",
+            "python_11_3_2",
+            "python_11_3_3",
+            "python_11_3_4",
+            "python_11_3_5",
+            "python_11_3_6",
+            "python_11_3_7",
+            "python_11_3_8",
+            "python_11_3_9",
+            "python_11_3_10",
+            "python_11_3_11",
+            "python_11_3_12"
+          ]
+        },
+        {
+          "key": "dicts/dict-methods",
+          "title": {
+            "en": "Dicts Methods",
+            "fr": "Méthodes de Dicts"
+          },
+          "exerciseIds": [
+            "python_11_4_1",
+            "python_11_4_2",
+            "python_11_4_3",
+            "python_11_4_4",
+            "python_11_4_5",
+            "python_11_4_6",
+            "python_11_4_7",
+            "python_11_4_8",
+            "python_11_4_9",
+            "python_11_4_10",
+            "python_11_4_11"
+          ]
+        },
+        {
+          "key": "dicts/dict-loop",
+          "title": {
+            "en": "Iterating Over Dicts",
+            "fr": "Itération sur les Dicts"
+          },
+          "exerciseIds": [
+            "python_11_5_1",
+            "python_11_5_2",
+            "python_11_5_3",
+            "python_11_5_4",
+            "python_11_5_5",
+            "python_11_5_6",
+            "python_11_5_7",
+            "python_11_5_8",
+            "python_11_5_9",
+            "python_11_5_10",
+            "python_11_5_11"
+          ]
+        },
+        {
+          "key": "dicts/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_11_6_1",
+            "python_11_6_2",
+            "python_11_6_3",
+            "python_11_6_4",
+            "python_11_6_5",
+            "python_11_6_6",
+            "python_11_6_7",
+            "python_11_6_8",
+            "python_11_6_9",
+            "python_11_6_10",
+            "python_11_6_11",
+            "python_11_6_12",
+            "python_11_6_13",
+            "python_11_6_14",
+            "python_11_6_15",
+            "python_11_6_16",
+            "python_11_6_17",
+            "python_11_6_18",
+            "python_11_6_19",
+            "python_11_6_20",
+            "python_11_6_21",
+            "python_11_6_22",
+            "python_11_6_23",
+            "python_11_6_24",
+            "python_11_6_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "dicts/new-challenge-1",
+          "title": {
+            "en": "Challenge 1",
+            "fr": "Défi 1"
+          },
+          "exerciseIds": [
+            "python_11_10_1",
+            "python_11_10_2",
+            "python_11_10_3",
+            "python_11_10_4"
+          ]
+        },
+        {
+          "key": "dicts/new-challenge-2",
+          "title": {
+            "en": "Challenge 2",
+            "fr": "Défi 2"
+          },
+          "exerciseIds": [
+            "python_11_11_1",
+            "python_11_11_2",
+            "python_11_11_3",
+            "python_11_11_4"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "functions",
+      "title": {
+        "en": "Functions",
+        "fr": "Fonctions"
+      },
+      "chapters": [
+        {
+          "key": "functions/function-intro",
+          "title": {
+            "en": "Intro to Functions",
+            "fr": "Intro aux Fonctions"
+          },
+          "exerciseIds": [
+            "python_12_1_1",
+            "python_12_1_2",
+            "python_12_1_3",
+            "python_12_1_4",
+            "python_12_1_5",
+            "python_12_1_6",
+            "python_12_1_7",
+            "python_12_1_8",
+            "python_12_1_9",
+            "python_12_1_10",
+            "python_12_1_11"
+          ]
+        },
+        {
+          "key": "functions/Parameters-Arguments",
+          "title": {
+            "en": "Parameters and Arguments",
+            "fr": "Paramètres et Arguments"
+          },
+          "exerciseIds": [
+            "python_12_2_1",
+            "python_12_2_2",
+            "python_12_2_3",
+            "python_12_2_4",
+            "python_12_2_5",
+            "python_12_2_6",
+            "python_12_2_7",
+            "python_12_2_8",
+            "python_12_2_9",
+            "python_12_2_10",
+            "python_12_2_11",
+            "python_12_2_12",
+            "python_12_2_13"
+          ]
+        },
+        {
+          "key": "functions/Return-values",
+          "title": {
+            "en": "Return values",
+            "fr": "Valeurs de retour"
+          },
+          "exerciseIds": [
+            "python_12_3_1",
+            "python_12_3_2",
+            "python_12_3_3",
+            "python_12_3_4",
+            "python_12_3_5",
+            "python_12_3_6",
+            "python_12_3_7",
+            "python_12_3_8",
+            "python_12_3_9",
+            "python_12_3_10",
+            "python_12_3_11",
+            "python_12_3_12",
+            "python_12_3_13"
+          ]
+        },
+        {
+          "key": "functions/Scope",
+          "title": {
+            "en": "Scope",
+            "fr": "Périmètre (scope)"
+          },
+          "exerciseIds": [
+            "python_12_4_1",
+            "python_12_4_2",
+            "python_12_4_3",
+            "python_12_4_4",
+            "python_12_4_5",
+            "python_12_4_6",
+            "python_12_4_7",
+            "python_12_4_8",
+            "python_12_4_9",
+            "python_12_4_10"
+          ]
+        },
+        {
+          "key": "functions/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_12_5_1",
+            "python_12_5_2",
+            "python_12_5_3",
+            "python_12_5_4",
+            "python_12_5_5",
+            "python_12_5_6",
+            "python_12_5_7",
+            "python_12_5_8",
+            "python_12_5_9",
+            "python_12_5_10",
+            "python_12_5_11",
+            "python_12_5_12",
+            "python_12_5_13",
+            "python_12_5_14",
+            "python_12_5_15",
+            "python_12_5_16",
+            "python_12_5_17",
+            "python_12_5_18",
+            "python_12_5_19",
+            "python_12_5_20",
+            "python_12_5_21",
+            "python_12_5_22",
+            "python_12_5_23",
+            "python_12_5_24",
+            "python_12_5_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "functions/new-challenge-1",
+          "title": {
+            "en": "Challenge 1",
+            "fr": "Défi 1"
+          },
+          "exerciseIds": [
+            "python_12_10_1",
+            "python_12_10_2",
+            "python_12_10_3"
+          ]
+        },
+        {
+          "key": "functions/new-challenge-2",
+          "title": {
+            "en": "Challenge 2",
+            "fr": "Défi 2"
+          },
+          "exerciseIds": [
+            "python_12_11_1",
+            "python_12_11_2",
+            "python_12_11_3"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "errors",
+      "title": {
+        "en": "Errors and Exceptions",
+        "fr": "Erreurs et Exceptions"
+      },
+      "chapters": [
+        {
+          "key": "errors/errors-intro",
+          "title": {
+            "en": "Understanding errors",
+            "fr": "Comprendre les erreurs"
+          },
+          "exerciseIds": [
+            "python_13_1_1",
+            "python_13_1_2",
+            "python_13_1_3",
+            "python_13_1_4",
+            "python_13_1_5",
+            "python_13_1_6",
+            "python_13_1_7",
+            "python_13_1_8",
+            "python_13_1_9",
+            "python_13_1_10",
+            "python_13_1_11"
+          ]
+        },
+        {
+          "key": "errors/try-except",
+          "title": {
+            "en": "Try Except",
+            "fr": "Try Except"
+          },
+          "exerciseIds": [
+            "python_13_2_1",
+            "python_13_2_2",
+            "python_13_2_3",
+            "python_13_2_4",
+            "python_13_2_5",
+            "python_13_2_6",
+            "python_13_2_7",
+            "python_13_2_8",
+            "python_13_2_9",
+            "python_13_2_10",
+            "python_13_2_11",
+            "python_13_2_12"
+          ]
+        },
+        {
+          "key": "errors/else-finally",
+          "title": {
+            "en": "Else - Finally",
+            "fr": "Else - Finally"
+          },
+          "exerciseIds": [
+            "python_13_3_1",
+            "python_13_3_2",
+            "python_13_3_3",
+            "python_13_3_4",
+            "python_13_3_5",
+            "python_13_3_6",
+            "python_13_3_7",
+            "python_13_3_8",
+            "python_13_3_9",
+            "python_13_3_10"
+          ]
+        },
+        {
+          "key": "errors/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_13_4_1",
+            "python_13_4_2",
+            "python_13_4_3",
+            "python_13_4_4",
+            "python_13_4_5",
+            "python_13_4_6",
+            "python_13_4_7",
+            "python_13_4_8",
+            "python_13_4_9",
+            "python_13_4_10",
+            "python_13_4_11",
+            "python_13_4_12",
+            "python_13_4_13",
+            "python_13_4_14",
+            "python_13_4_15",
+            "python_13_4_16",
+            "python_13_4_17",
+            "python_13_4_18",
+            "python_13_4_19",
+            "python_13_4_20",
+            "python_13_4_21",
+            "python_13_4_22",
+            "python_13_4_23",
+            "python_13_4_24",
+            "python_13_4_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "errors/new-challenge 1",
+          "title": {
+            "en": "Challenge 1",
+            "fr": "Défi 1"
+          },
+          "exerciseIds": [
+            "python_13_10_1",
+            "python_13_10_2",
+            "python_13_10_3"
+          ]
+        },
+        {
+          "key": "errors/new-challenge 2",
+          "title": {
+            "en": "Challenge 2",
+            "fr": "Défi 2"
+          },
+          "exerciseIds": [
+            "python_13_11_1",
+            "python_13_11_2",
+            "python_13_11_3"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "some-intermediate-topics",
+      "title": {
+        "en": "Some intermediate topics",
+        "fr": "Some intermediate topics"
+      },
+      "chapters": [
+        {
+          "key": "some-intermediate-topics/congrats",
+          "title": {
+            "en": "Congratulations",
+            "fr": "Félicitations"
+          },
+          "exerciseIds": [
+            "python_14_1_1",
+            "python_14_1_2",
+            "python_14_1_3"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/file-handling-readwrite",
+          "title": {
+            "en": "File Handling (Read/Write)",
+            "fr": "Gestion de fichiers (Lire/Écrire)"
+          },
+          "exerciseIds": [
+            "python_14_2_1",
+            "python_14_2_2",
+            "python_14_2_3",
+            "python_14_2_4",
+            "python_14_2_5",
+            "python_14_2_6",
+            "python_14_2_7",
+            "python_14_2_8"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/enumerate",
+          "title": {
+            "en": "enumerate()",
+            "fr": "enumerate()"
+          },
+          "exerciseIds": [
+            "python_14_3_1",
+            "python_14_3_2",
+            "python_14_3_3",
+            "python_14_3_4",
+            "python_14_3_5",
+            "python_14_3_6",
+            "python_14_3_7",
+            "python_14_3_8",
+            "python_14_3_9",
+            "python_14_3_10",
+            "python_14_3_11",
+            "python_14_3_12"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/input",
+          "title": {
+            "en": "input()",
+            "fr": "input()"
+          },
+          "exerciseIds": [
+            "python_14_4_1",
+            "python_14_4_2",
+            "python_14_4_3",
+            "python_14_4_4",
+            "python_14_4_5",
+            "python_14_4_6",
+            "python_14_4_7",
+            "python_14_4_8",
+            "python_14_4_9",
+            "python_14_4_10",
+            "python_14_4_11"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/split",
+          "title": {
+            "en": "split()",
+            "fr": "split()"
+          },
+          "exerciseIds": [
+            "python_14_5_1",
+            "python_14_5_2",
+            "python_14_5_3",
+            "python_14_5_4",
+            "python_14_5_5",
+            "python_14_5_6",
+            "python_14_5_7",
+            "python_14_5_8",
+            "python_14_5_9",
+            "python_14_5_10",
+            "python_14_5_11",
+            "python_14_5_12"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/join",
+          "title": {
+            "en": "join()",
+            "fr": "join()"
+          },
+          "exerciseIds": [
+            "python_14_6_1",
+            "python_14_6_2",
+            "python_14_6_3",
+            "python_14_6_4",
+            "python_14_6_5",
+            "python_14_6_6",
+            "python_14_6_7",
+            "python_14_6_8",
+            "python_14_6_9",
+            "python_14_6_10",
+            "python_14_6_11"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/list-comprehensions",
+          "title": {
+            "en": "List Comprehensions",
+            "fr": "Listes en compréhension"
+          },
+          "exerciseIds": [
+            "python_14_7_1",
+            "python_14_7_2",
+            "python_14_7_3",
+            "python_14_7_4",
+            "python_14_7_5",
+            "python_14_7_6",
+            "python_14_7_7",
+            "python_14_7_8",
+            "python_14_7_9",
+            "python_14_7_10",
+            "python_14_7_11",
+            "python_14_7_12",
+            "python_14_7_13"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/modules-and-imports",
+          "title": {
+            "en": "Modules & Imports",
+            "fr": "Modules & Imports"
+          },
+          "exerciseIds": [
+            "python_14_8_1",
+            "python_14_8_2",
+            "python_14_8_3",
+            "python_14_8_4",
+            "python_14_8_5",
+            "python_14_8_6",
+            "python_14_8_7",
+            "python_14_8_8",
+            "python_14_8_9",
+            "python_14_8_10",
+            "python_14_8_11",
+            "python_14_8_12"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/date-time",
+          "title": {
+            "en": "Date & Time",
+            "fr": "Date & Heure"
+          },
+          "exerciseIds": [
+            "python_14_9_1",
+            "python_14_9_2",
+            "python_14_9_3",
+            "python_14_9_4",
+            "python_14_9_5",
+            "python_14_9_6",
+            "python_14_9_7",
+            "python_14_9_8",
+            "python_14_9_9",
+            "python_14_9_10",
+            "python_14_9_11",
+            "python_14_9_12"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/zip",
+          "title": {
+            "en": "zip()",
+            "fr": "zip()"
+          },
+          "exerciseIds": [
+            "python_14_10_1",
+            "python_14_10_2",
+            "python_14_10_3",
+            "python_14_10_4",
+            "python_14_10_5",
+            "python_14_10_6",
+            "python_14_10_7",
+            "python_14_10_8",
+            "python_14_10_9",
+            "python_14_10_10",
+            "python_14_10_11",
+            "python_14_10_12"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/regular-expressions",
+          "title": {
+            "en": "Regular Expressions",
+            "fr": "Expressions régulières"
+          },
+          "exerciseIds": [
+            "python_14_11_1",
+            "python_14_11_2",
+            "python_14_11_3",
+            "python_14_11_4",
+            "python_14_11_5",
+            "python_14_11_6",
+            "python_14_11_7",
+            "python_14_11_8",
+            "python_14_11_9",
+            "python_14_11_10",
+            "python_14_11_11",
+            "python_14_11_12",
+            "python_14_11_13"
+          ]
+        },
+        {
+          "key": "some-intermediate-topics/lambda-map-filter",
+          "title": {
+            "en": "Lambda, map() & filter()",
+            "fr": "Lambda, map() & filter()"
+          },
+          "exerciseIds": [
+            "python_14_12_1",
+            "python_14_12_2",
+            "python_14_12_3",
+            "python_14_12_4",
+            "python_14_12_5",
+            "python_14_12_6",
+            "python_14_12_7",
+            "python_14_12_8",
+            "python_14_12_9",
+            "python_14_12_10",
+            "python_14_12_11",
+            "python_14_12_12",
+            "python_14_12_13"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "classes-and-object-oriented-programming",
+      "title": {
+        "en": "Classes and OOP",
+        "fr": "Classes et POO"
+      },
+      "chapters": [
+        {
+          "key": "classes-and-object-oriented-programming/classes-and-objects",
+          "title": {
+            "en": "Classes and Objects",
+            "fr": "Classes et Objets"
+          },
+          "exerciseIds": [
+            "python_15_1_1",
+            "python_15_1_2",
+            "python_15_1_3",
+            "python_15_1_4",
+            "python_15_1_5",
+            "python_15_1_6",
+            "python_15_1_7",
+            "python_15_1_8",
+            "python_15_1_9",
+            "python_15_1_10",
+            "python_15_1_11",
+            "python_15_1_12",
+            "python_15_1_13",
+            "python_15_1_14"
+          ]
+        },
+        {
+          "key": "classes-and-object-oriented-programming/methods",
+          "title": {
+            "en": "Methods",
+            "fr": "Méthodes"
+          },
+          "exerciseIds": [
+            "python_15_2_1",
+            "python_15_2_2",
+            "python_15_2_3",
+            "python_15_2_4",
+            "python_15_2_5",
+            "python_15_2_6",
+            "python_15_2_7",
+            "python_15_2_8",
+            "python_15_2_9",
+            "python_15_2_10",
+            "python_15_2_11",
+            "python_15_2_12"
+          ]
+        },
+        {
+          "key": "classes-and-object-oriented-programming/inheritance",
+          "title": {
+            "en": "Inheritance",
+            "fr": "Héritage"
+          },
+          "exerciseIds": [
+            "python_15_3_1",
+            "python_15_3_2",
+            "python_15_3_3",
+            "python_15_3_4",
+            "python_15_3_5",
+            "python_15_3_6",
+            "python_15_3_7",
+            "python_15_3_8",
+            "python_15_3_9",
+            "python_15_3_10",
+            "python_15_3_11",
+            "python_15_3_12"
+          ]
+        },
+        {
+          "key": "classes-and-object-oriented-programming/encapsulation",
+          "title": {
+            "en": "Encapsulation",
+            "fr": "Encapsulation"
+          },
+          "exerciseIds": [
+            "python_15_4_1",
+            "python_15_4_2",
+            "python_15_4_3",
+            "python_15_4_4",
+            "python_15_4_5",
+            "python_15_4_6",
+            "python_15_4_7",
+            "python_15_4_8",
+            "python_15_4_9",
+            "python_15_4_10",
+            "python_15_4_11"
+          ]
+        },
+        {
+          "key": "classes-and-object-oriented-programming/special-methods",
+          "title": {
+            "en": "Special Methods",
+            "fr": "Méthodes spéciales"
+          },
+          "exerciseIds": [
+            "python_15_5_1",
+            "python_15_5_2",
+            "python_15_5_3",
+            "python_15_5_4",
+            "python_15_5_5",
+            "python_15_5_6",
+            "python_15_5_7",
+            "python_15_5_8",
+            "python_15_5_9",
+            "python_15_5_10",
+            "python_15_5_11"
+          ]
+        },
+        {
+          "key": "classes-and-object-oriented-programming/composition",
+          "title": {
+            "en": "Composition",
+            "fr": "Composition"
+          },
+          "exerciseIds": [
+            "python_15_6_1",
+            "python_15_6_2",
+            "python_15_6_3",
+            "python_15_6_4",
+            "python_15_6_5",
+            "python_15_6_6",
+            "python_15_6_7",
+            "python_15_6_8",
+            "python_15_6_9",
+            "python_15_6_10",
+            "python_15_6_11"
+          ]
+        },
+        {
+          "key": "classes-and-object-oriented-programming/quizz",
+          "title": {
+            "en": "Quizz",
+            "fr": "Quizz"
+          },
+          "exerciseIds": [
+            "python_15_7_1",
+            "python_15_7_2",
+            "python_15_7_3",
+            "python_15_7_4",
+            "python_15_7_5",
+            "python_15_7_6",
+            "python_15_7_7",
+            "python_15_7_8",
+            "python_15_7_9",
+            "python_15_7_10",
+            "python_15_7_11",
+            "python_15_7_12",
+            "python_15_7_13",
+            "python_15_7_14",
+            "python_15_7_15",
+            "python_15_7_16",
+            "python_15_7_17",
+            "python_15_7_18",
+            "python_15_7_19",
+            "python_15_7_20",
+            "python_15_7_21",
+            "python_15_7_22",
+            "python_15_7_23",
+            "python_15_7_24",
+            "python_15_7_25"
+          ],
+          "quiz": {
+            "pick": 15,
+            "shuffle": true
+          }
+        },
+        {
+          "key": "classes-and-object-oriented-programming/new-challenge-1",
+          "title": {
+            "en": "Challenge 1",
+            "fr": "Défi 1"
+          },
+          "exerciseIds": [
+            "python_15_8_1",
+            "python_15_8_2",
+            "python_15_8_3"
+          ]
+        },
+        {
+          "key": "classes-and-object-oriented-programming/new-challenge-2",
+          "title": {
+            "en": "Challenge 2",
+            "fr": "Défi 2"
+          },
+          "exerciseIds": [
+            "python_15_9_1",
+            "python_15_9_2",
+            "python_15_9_3"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "whats-next",
+      "title": {
+        "en": "What's next?",
+        "fr": "Et maintenant ?"
+      },
+      "chapters": [
+        {
+          "key": "whats-next/congratulations",
+          "title": {
+            "en": "Congratulations!",
+            "fr": "Félicitations !"
+          },
+          "exerciseIds": [
+            "python_16_1_1",
+            "python_16_1_2",
+            "python_16_1_3"
+          ]
+        },
+        {
+          "key": "whats-next/web-apis",
+          "title": {
+            "en": "Python & the Web",
+            "fr": "Python & le Web"
+          },
+          "exerciseIds": [
+            "python_16_2_1",
+            "python_16_2_2",
+            "python_16_2_3"
+          ]
+        },
+        {
+          "key": "whats-next/data-automation",
+          "title": {
+            "en": "Python & Data",
+            "fr": "Python & les Données"
+          },
+          "exerciseIds": [
+            "python_16_3_1",
+            "python_16_3_2",
+            "python_16_3_3"
+          ]
+        },
+        {
+          "key": "whats-next/game-dev",
+          "title": {
+            "en": "Python & Games",
+            "fr": "Python & les Jeux"
+          },
+          "exerciseIds": [
+            "python_16_4_1",
+            "python_16_4_2"
+          ]
+        }
+      ]
+    }
+  ]
+}

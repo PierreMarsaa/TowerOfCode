@@ -7,15 +7,29 @@ export type Direction = 'down' | 'up' | 'left' | 'right'
 
 export type NpcBehavior = 'static' | 'detect' | 'lookout' | 'lookout-random' | 'patrol' | 'gatekeeper'
 
+/** A trainer battle drawn from one chapter of the course */
+export interface TrainerBattleData {
+  /** Chapter key "<classId>/<chapterId>" (see src/data/curriculum/python/index.json) */
+  chapter: string
+  /** How many quiz questions to draw from the chapter (default 3, capped by what exists) */
+  questions?: number
+  /** End the battle with one of the chapter's coding challenges */
+  code?: boolean
+}
+
 export interface NPCData {
-  name: string
+  name: string  // unique per map: it identifies a trainer in the save
   tileX: number
   tileY: number
   facing: Direction
   spriteKey: string
   behavior: NpcBehavior
   dialogKey?: string
+  /** Legacy: explicit exercise ids (what the frozen editor writes). Prefer `battle`. */
   challengeIds?: string[]
+  battle?: TrainerBattleData
+  /** Opponent Codémon id (default: a stable pick from the trainer's name) */
+  codemon?: string
   lookoutPattern?: Direction[]
   lookoutTempo?: number
   patrolPath?: { x: number; y: number }[]
@@ -24,15 +38,16 @@ export interface NPCData {
 // --- CL Exercise format ---
 
 export interface ClContentBlock {
-  type: 'text' | 'codeBlock' | 'codeEditorRun' | 'image' | 'infoCard'
+  type: 'text' | 'codeBlock' | 'codeEditorRun' | 'image' | 'infoCard' | 'profPi' | 'row'
   language?: string
-  value: LocalizedText | string
+  value?: LocalizedText | string  // absent on 'row'
   caption?: LocalizedText
   cardType?: string
   expandable?: boolean
   initiallyExpanded?: boolean
   title?: LocalizedText
   content?: LocalizedText | string
+  children?: ClContentBlock[]     // 'row': blocks shown side by side
 }
 
 interface ClBase {
@@ -52,7 +67,7 @@ export interface ClExplanationConfig extends ClBase {
 }
 
 export interface ClMultipleChoiceOption {
-  type: 'text'
+  type: 'text' | 'codeBlock'
   value: LocalizedText | string
   language?: string
 }
@@ -75,19 +90,24 @@ export interface ClFillInTextConfig extends ClBase {
     question: ClContentBlock[]
     exercise: {
       run?: boolean
-      language: string
+      language?: string
       text: string
       options: string[]
       correctAnswers: Record<string, string>
     }
-    hint: LocalizedText
+    hint?: LocalizedText
   }
+}
+
+export interface ClMatchingValue {
+  type: 'text' | 'codeBlock'
+  value: LocalizedText | string
 }
 
 export interface ClMatchingPair {
   id: string
-  term: { type: 'text'; value: string }
-  match: { type: 'text'; value: LocalizedText | string }
+  term: ClMatchingValue
+  match: ClMatchingValue
 }
 
 export interface ClMatchingPairsConfig extends ClBase {
@@ -207,5 +227,7 @@ export interface SaveData {
   language: 'en' | 'fr'
   currentMap: string
   completedChallenges: string[]
+  /** Beaten trainers, as "<mapId>:<npcName>" */
+  defeatedTrainers: string[]
   companion?: string | null  // spriteKey (e.g. 'zap'), null = no companion
 }

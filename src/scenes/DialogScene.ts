@@ -1,15 +1,17 @@
 import Phaser from 'phaser'
 import { DialogSystem } from '@/systems/DialogSystem'
 import { i18n } from '@/i18n/I18nManager'
-import type { ChallengeConfig } from '@/data/types'
 import { SCENE } from '@/utils/constants'
+import type { BattlePlan } from '@/systems/TrainerBattle'
+import type { ChallengeSceneData } from '@/scenes/ChallengeScene'
 
-interface DialogSceneData {
+export interface DialogSceneData {
   dialogKey?: string
   npcName?: string
-  challengeConfig?: ChallengeConfig
-  challengeIds?: string[]
-  challengeCompleted?: boolean
+  /** Set when this NPC is a trainer: the battle that follows the dialog */
+  plan?: BattlePlan
+  /** The trainer was already beaten: offer a rematch instead of fighting right away */
+  defeated?: boolean
 }
 
 export class DialogScene extends Phaser.Scene {
@@ -138,23 +140,28 @@ export class DialogScene extends Phaser.Scene {
 
   private onDialogComplete(): void {
     if (this.transitioning) return
-    if (this.sceneData.challengeConfig) {
-      if (this.sceneData.challengeCompleted) {
+    if (this.sceneData.plan) {
+      if (this.sceneData.defeated) {
         this.showReplayPrompt()
       } else {
-        this.transitioning = true
-        this.playCombatTransition(() => {
-          this.scene.stop()
-          this.scene.launch(SCENE.CHALLENGE, {
-            challengeConfig: this.sceneData.challengeConfig,
-            challengeIds: this.sceneData.challengeIds,
-          })
-        })
+        this.startBattle()
       }
     } else {
       this.scene.stop()
       this.scene.resume(SCENE.GAME)
     }
+  }
+
+  /** Battle transition, then hand the plan to the challenge scene */
+  private startBattle(): void {
+    const plan = this.sceneData.plan
+    if (!plan) return
+    this.transitioning = true
+    this.playCombatTransition(() => {
+      const data: ChallengeSceneData = { plan }
+      this.scene.stop()
+      this.scene.launch(SCENE.CHALLENGE, data)
+    })
   }
 
   /** Classic RPG spiral-in battle transition */
@@ -262,7 +269,7 @@ export class DialogScene extends Phaser.Scene {
     this.selectedOption = 0 // default Yes
 
     // Show prompt as regular dialog text
-    this.dialogText.setText(i18n.t('challenge_replay_prompt'))
+    this.dialogText.setText(i18n.t('battle_rematch_prompt'))
 
     // Hide the pulsing advance indicator
     this.advanceIndicator.setVisible(false)
@@ -306,14 +313,7 @@ export class DialogScene extends Phaser.Scene {
   private confirmReplayChoice(): void {
     if (this.transitioning) return
     if (this.selectedOption === 0) {
-      this.transitioning = true
-      this.playCombatTransition(() => {
-        this.scene.stop()
-        this.scene.launch(SCENE.CHALLENGE, {
-          challengeConfig: this.sceneData.challengeConfig,
-          challengeIds: this.sceneData.challengeIds,
-        })
-      })
+      this.startBattle()
     } else {
       this.scene.stop()
       this.scene.resume(SCENE.GAME)

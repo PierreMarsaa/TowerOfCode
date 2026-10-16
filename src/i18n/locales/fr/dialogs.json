@@ -12,5 +12,19 @@
   "gatekeeper_blocked": [
     "On ne passe pas !",
     "Tu dois compléter tous les défis de cet étage avant de continuer."
+  ],
+  "trainer_battle_intro": [
+    "Hé, toi ! Voyons ce que tu sais faire !"
+  ],
+  "prof_pi_battle": [
+    "Bienvenue dans le Labyrinthe d'Entraînement ! Je suis le Professeur Pi.",
+    "Chaque dresseur ici va tester tes connaissances. Bats-les avec ton savoir, pas avec tes poings !",
+    "Commençons par les bases : les variables. Zap, à toi !"
+  ],
+  "trainer_defeated": [
+    "Tu m'as battu à la loyale ! Continue à t'entraîner et tu grimperas cette tour en un rien de temps."
+  ],
+  "trainer_content_missing": [
+    "Hmm... mon défi semble avoir disparu du cours. (Erreur de contenu : préviens le développeur !)"
   ]
 }

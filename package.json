@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:codelife": "node scripts/sync-codelife.mjs && python3 scripts/check-grading.py --write",
+    "check:grading": "python3 scripts/check-grading.py --write"
   },
   "devDependencies": {
     "canvas": "^3.2.2",
@@ -14,6 +16,7 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
+    "@codemirror/commands": "^6.10.2",
     "@codemirror/lang-python": "^6.2.1",
     "@codemirror/state": "^6.5.4",
     "@codemirror/theme-one-dark": "^6.1.3",

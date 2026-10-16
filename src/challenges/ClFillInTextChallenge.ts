@@ -280,6 +280,7 @@ export class ClFillInTextChallenge extends ChallengeBase<ClFillInTextConfig> {
       success.className = 'cl-success'
       success.textContent = this.t('challenge_feedback_correct')
       this.feedbackArea.appendChild(success)
+      this.showHint(this.feedbackArea, this.config.content.hint, true)
 
       this.hintBar.textContent = ''
       this.showDoneButton()
@@ -290,9 +291,11 @@ export class ClFillInTextChallenge extends ChallengeBase<ClFillInTextConfig> {
       fail.className = 'cl-failure'
       fail.textContent = this.t('challenge_feedback_not_quite')
       this.feedbackArea.appendChild(fail)
+      this.showHint(this.feedbackArea, this.config.content.hint, false)
       this.notifyWrongAnswer()
 
       // Feedback stays until user modifies a slot
     }
   }
+
 }

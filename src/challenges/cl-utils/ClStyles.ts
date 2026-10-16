@@ -273,6 +273,72 @@ export function injectClStyles(): void {
       margin-bottom: 12px;
     }
 
+    /* Course images: never wider than the panel, never stretched */
+    .cl-figure {
+      margin: 0 0 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .cl-figure img {
+      display: block;
+      max-width: 100%;
+      max-height: 260px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    .cl-figure figcaption {
+      font-size: 12px;
+      color: #888;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Prof Pi speaking: face + speech bubble */
+    .cl-profpi {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .cl-profpi-face {
+      flex: 0 0 auto;
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ccaa66;
+      background: #fff;
+    }
+    .cl-profpi-bubble {
+      flex: 1 1 auto;
+      min-width: 0;
+      background: #ffffff;
+      border: 2px solid #ccaa66;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+      white-space: pre-wrap;
+    }
+
+    /* Blocks side by side, wrapping on narrow screens */
+    .cl-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .cl-row-cell {
+      flex: 1 1 220px;
+      min-width: 0;
+    }
+
     .cl-hint-bar {
       text-align: center;
       font-size: 12px;
@@ -520,14 +586,6 @@ export function injectClStyles(): void {
       line-height: 1.6;
       margin-bottom: 10px;
       white-space: pre-wrap;
-    }
-
-    @keyframes challenge-heart-shake {
-      0%, 100% { transform: translateX(0); }
-      20% { transform: translateX(-4px); }
-      40% { transform: translateX(4px); }
-      60% { transform: translateX(-3px); }
-      80% { transform: translateX(2px); }
     }
 
     @keyframes challenge-hit {
