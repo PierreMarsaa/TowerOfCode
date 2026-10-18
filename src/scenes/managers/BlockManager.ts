@@ -1,8 +1,9 @@
 import Phaser from 'phaser'
-import { TILE_SIZE, PLAYER_MOVE_SPEED } from '@/config/game.config'
-import { tileToPixel, DIR_OFFSETS } from '@/utils/helpers'
+import { TILE_SIZE, WALK_STEP_MS } from '@/config/game.config'
+import { tileToPixel } from '@/utils/helpers'
 import type { GridMovementSystem } from '@/systems/GridMovementSystem'
 import type { Direction, MapData } from '@/data/types'
+import { pushOutcome } from '@/systems/movementRules'
 
 export class BlockManager {
   private scene: Phaser.Scene
@@ -52,20 +53,16 @@ export class BlockManager {
     const sprite = this.blockSprites.get(blockKey)
     if (!sprite) return false
 
-    const off = DIR_OFFSETS[dir]
-    const destX = blockX + off.x
-    const destY = blockY + off.y
-
-    const destEffect = this.mapData.tileEffects?.find(
-      e => e.tileX === destX && e.tileY === destY && e.effect === 'hole'
-    )
-
-    if (!destEffect && this.gridMovement.isBlocked(destX, destY)) return false
+    const outcome = pushOutcome(this.gridMovement.tiles, blockX, blockY, dir)
+    if (outcome.kind === 'blocked') return false
+    const destX = outcome.x
+    const destY = outcome.y
+    const destEffect = outcome.kind === 'fall'
 
     this.gridMovement.unblockTile(blockX, blockY)
     this.blockSprites.delete(blockKey)
 
-    const duration = (TILE_SIZE / PLAYER_MOVE_SPEED) * 1000
+    const duration = WALK_STEP_MS
 
     if (destEffect) {
       const destPx = tileToPixel(destX)

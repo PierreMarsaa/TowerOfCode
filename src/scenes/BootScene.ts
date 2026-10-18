@@ -4,6 +4,8 @@ import { getAllSprites } from '@/data/sprites/SpriteRegistry'
 import { normalizeTileTextures } from '@/utils/normalizeTileTextures'
 import { normalizeSpriteTextures } from '@/utils/normalizeSpriteTextures'
 import { SCENE } from '@/utils/constants'
+import { CODEMON, ZAP, codemonArtUrl, codemonTexture } from '@/data/codemon'
+import { preloadStoryArt, preloadUi, registerUi } from '@/ui/kit/assets'
 
 export class BootScene extends Phaser.Scene {
   constructor() {
@@ -21,40 +23,38 @@ export class BootScene extends Phaser.Scene {
     for (const sprite of getAllSprites()) {
       this.load.image(sprite.key, sprite.url)
     }
-    // Stairs
+    // Codémon pictures (Codédex, the hatching, the team)
+    for (const mon of [ZAP, ...CODEMON]) {
+      const url = codemonArtUrl(mon.id)
+      if (url) this.load.image(codemonTexture(mon.id), url)
+    }
+    // Stairs (the editor's palette), the interface, the title screen and the opening's egg
     this.load.image('stairs_straight', 'assets/tilesets/stairs_straight.png')
-    // UI
-    this.load.image('dialog-box', 'assets/ui/dialog-box.png')
+    preloadUi(this)
+    preloadStoryArt(this)
   }
 
   create(): void {
     normalizeTileTextures(this)
     normalizeSpriteTextures(this)
+    registerUi(this)
+    // Painted art is shown smaller than drawn: smooth it instead of pixelating it
+    for (const mon of [ZAP, ...CODEMON]) {
+      const key = codemonTexture(mon.id)
+      if (this.textures.exists(key)) this.textures.get(key).setFilter(Phaser.Textures.FilterMode.LINEAR)
+    }
     this.scene.start(SCENE.MENU)
   }
 
   private createLoadingBar(): void {
-    const width = this.cameras.main.width
-    const height = this.cameras.main.height
-
-    const barBg = this.add.rectangle(width / 2, height / 2, 300, 24, 0x222222)
-    const bar = this.add.rectangle(width / 2 - 146, height / 2, 0, 18, 0x4fc3f7)
-    bar.setOrigin(0, 0.5)
-
-    const text = this.add.text(width / 2, height / 2 - 28, 'Loading...', {
-      fontSize: '16px',
-      color: '#ffffff',
-      fontFamily: 'monospace',
-    }).setOrigin(0.5)
-
-    this.load.on('progress', (value: number) => {
-      bar.width = 292 * value
-    })
-
+    const { width, height } = this.scale
+    // The interface's colours: an indigo track, a gold bar
+    const barBg = this.add.rectangle(width / 2, height / 2, 200, 12, 0x2b2860).setStrokeStyle(2, 0x9095ff)
+    const bar = this.add.rectangle(width / 2 - 98, height / 2, 0, 8, 0xffc94a).setOrigin(0, 0.5)
+    this.load.on('progress', (value: number) => { bar.width = 196 * value })
     this.load.on('complete', () => {
       barBg.destroy()
       bar.destroy()
-      text.destroy()
     })
   }
 }

@@ -4,16 +4,21 @@ import { ClDomRenderer } from '@/challenges/cl-utils/ClDomRenderer'
 import { i18n } from '@/i18n/I18nManager'
 import { resolveText } from '@/utils/i18n-helpers'
 
+/** How the content is laid out (challenge.css): a reading column, a quiz card, or the code split */
+export type ChallengeLayout = 'lesson' | 'quiz' | 'code'
+
 export abstract class ChallengeBase<C extends ChallengeConfig = ChallengeConfig>
   implements IChallenge
 {
   protected readonly renderer = new ClDomRenderer()
+  protected readonly layout: ChallengeLayout = 'quiz'
   protected onComplete!: (success: boolean) => void
   protected scene!: Phaser.Scene
   private boundKeyHandler: ((e: KeyboardEvent) => void) | null = null
   private pendingTimers: ReturnType<typeof setTimeout>[] = []
   private attempts = 0
   private attemptEl: HTMLSpanElement | null = null
+  private contentEl: HTMLDivElement | null = null
 
   create(
     _scene: Phaser.Scene,
@@ -40,12 +45,16 @@ export abstract class ChallengeBase<C extends ChallengeConfig = ChallengeConfig>
     this.initPanel(panel, _scene, config)
   }
 
+  /** The panel is a fixed frame: the challenge renders into a scrolling content wrapper inside it */
   private initPanel(panel: HTMLDivElement, scene: Phaser.Scene, config: ChallengeConfig): void {
+    this.contentEl = document.createElement('div')
+    this.contentEl.className = `cl-content cl-content--${this.layout}`
+    panel.appendChild(this.contentEl)
     this.attemptEl = document.createElement('span')
     this.attemptEl.className = 'cl-attempt-counter'
     this.attemptEl.style.display = 'none'
-    panel.appendChild(this.attemptEl)
-    this.onCreate(scene, config as C, panel)
+    this.contentEl.appendChild(this.attemptEl)
+    this.onCreate(scene, config as C, this.contentEl)
   }
 
   update(): void {}
@@ -73,7 +82,7 @@ export abstract class ChallengeBase<C extends ChallengeConfig = ChallengeConfig>
   protected abstract onCreate(
     scene: Phaser.Scene,
     config: C,
-    panel: HTMLDivElement,
+    content: HTMLDivElement,
   ): void
 
   protected onDestroy(): void {}
@@ -102,27 +111,28 @@ export abstract class ChallengeBase<C extends ChallengeConfig = ChallengeConfig>
     const text = resolveText(hint)
     if (!text) return
     const div = document.createElement('div')
-    div.className = 'cl-text-block'
-    div.style.color = correct ? '#22aa22' : '#cc6600'
-    div.style.fontSize = '12px'
-    div.style.textAlign = 'center'
+    div.className = `cl-hint ${correct ? 'correct' : 'incorrect'}`
     div.textContent = text
     container.appendChild(div)
   }
 
-  /** Show a "Continue" button at the bottom of the panel after success */
-  protected showDoneButton(): void {
-    const panel = this.renderer.getPanel()
-    if (!panel) return
-    const bar = document.createElement('div')
-    bar.className = 'cl-hint-bar'
-    bar.style.marginTop = '12px'
+  /**
+   * "Continue" after success: in the given action bar (it takes the place of
+   * Submit/Verify), else in a new bar at the end of the content
+   */
+  protected showDoneButton(bar?: HTMLElement): void {
+    let host = bar
+    if (!host) {
+      if (!this.contentEl) return
+      host = document.createElement('div')
+      host.className = 'cl-actions'
+      this.contentEl.appendChild(host)
+    }
     const btn = document.createElement('button')
     btn.className = 'cl-btn-primary'
     btn.textContent = this.t('challenge_btn_continue')
     btn.addEventListener('click', () => this.onComplete(true))
-    bar.appendChild(btn)
-    panel.appendChild(bar)
+    host.appendChild(btn)
   }
 
   protected addTimer(callback: () => void, ms: number): ReturnType<typeof setTimeout> {

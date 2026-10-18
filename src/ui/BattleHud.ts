@@ -1,258 +1,135 @@
 /**
- * Battle header shown above the challenge panel: your Codémon (left, mirrored
- * to face the opponent) with your hearts, the trainer's Codémon (right) with its
- * HP. Pure DOM, laid out with flexbox, injected styles like ClStyles.
+ * The battle screen's top half: the opponent's Codémon top-right with its card
+ * (name, type, PV bar) top-left, yours bottom-left (mirrored to face it) with your
+ * card bottom-right, each on a glow in its type colour, and a text box for the
+ * battle messages. Pure DOM; styles in battle-hud.css.
  */
 
 import { CODEMON_TYPE_COLORS, codemonArtUrl, type CodemonDef } from '@/data/codemon'
+import { TYPE_NAMES } from '@/data/typeChart'
+import { i18n } from '@/i18n/I18nManager'
+import './battle-hud.css'
 
 export interface BattleHudOptions {
   player: CodemonDef
   opponent: CodemonDef
   trainerName: string
-  /** 0 = infinite hearts (map without HP): the hearts row is hidden */
-  maxHearts: number
-  hearts: number
-  /** Opponent HP = number of graded steps */
+  /** Your PV (0 max = no PV: the bar is hidden) */
+  maxHp: number
+  hp: number
+  /** Opponent PV = number of graded steps */
   opponentHp: number
 }
 
-const HEART_FULL = '♥'
-const HEART_EMPTY = '♡'
+const MESSAGE_SPEED_MS = 22
 
-let stylesInjected = false
-
-function injectBattleStyles(): void {
-  if (stylesInjected) return
-  stylesInjected = true
-  const style = document.createElement('style')
-  style.textContent = `
-    /* The overlay becomes a column: HUD on top, panel fills the rest */
-    .cl-overlay.battle {
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      padding: 12px 20px 20px;
-      gap: 10px;
-      box-sizing: border-box;
-    }
-    .cl-overlay.battle > .cl-panel {
-      width: auto;
-      height: auto;
-      flex: 1 1 0;
-      min-height: 0;
-    }
-
-    .battle-hud {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 8px 16px;
-      background: #1e1e2e;
-      border: 3px solid #ccaa66;
-      border-radius: 6px;
-      font-family: 'Courier New', monospace;
-      color: #eee;
-      min-width: 0;
-    }
-    .battle-side {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-    .battle-side.opponent {
-      flex-direction: row-reverse;
-      text-align: right;
-    }
-    .battle-mon {
-      flex: 0 0 auto;
-      width: 96px;
-      height: 96px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .battle-mon img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-    .battle-mon img.mirrored { transform: scaleX(-1); }
-    .battle-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 0;
-    }
-    .battle-side.opponent .battle-info { align-items: flex-end; }
-    .battle-name {
-      font-size: 16px;
-      font-weight: bold;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .battle-type {
-      font-size: 11px;
-      padding: 1px 8px;
-      border-radius: 10px;
-      color: #111;
-      font-weight: bold;
-      align-self: flex-start;
-    }
-    .battle-side.opponent .battle-type { align-self: flex-end; }
-    .battle-hearts {
-      display: flex;
-      gap: 4px;
-      font-size: 22px;
-      line-height: 1;
-    }
-    .battle-hearts span { transition: color 0.2s; }
-    .battle-hp {
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .battle-hp span {
-      width: 18px;
-      height: 10px;
-      border-radius: 2px;
-      background: #44cc66;
-      border: 1px solid #227733;
-      transition: background 0.3s;
-    }
-    .battle-hp span.empty {
-      background: #333;
-      border-color: #444;
-    }
-    .battle-trainer {
-      flex: 0 1 auto;
-      font-size: 12px;
-      color: #ccaa66;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: 0;
-    }
-
-    @keyframes battle-lunge-right {
-      0%, 100% { transform: translateX(0); }
-      40% { transform: translateX(28px); }
-    }
-    @keyframes battle-lunge-left {
-      0%, 100% { transform: translateX(0); }
-      40% { transform: translateX(-28px); }
-    }
-    @keyframes battle-hurt {
-      0%, 100% { transform: translateX(0); filter: none; }
-      15% { transform: translateX(-6px); filter: brightness(1.8) saturate(0.4); }
-      30% { transform: translateX(6px); }
-      45% { transform: translateX(-4px); filter: brightness(1.8) saturate(0.4); }
-      60% { transform: translateX(3px); filter: none; }
-    }
-    @keyframes battle-faint {
-      to { transform: translateY(24px); opacity: 0; }
-    }
-    .battle-mon.lunge-right { animation: battle-lunge-right 0.35s ease-out; }
-    .battle-mon.lunge-left { animation: battle-lunge-left 0.35s ease-out; }
-    .battle-mon.hurt { animation: battle-hurt 0.45s ease-out; }
-    .battle-mon.fainted { animation: battle-faint 0.6s ease-in forwards; }
-
-    /* Victory screen, rendered in the challenge panel */
-    .battle-victory {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      min-height: 100%;
-      text-align: center;
-    }
-
-    /* Short screens (landscape phones): smaller portraits */
-    @media (max-height: 560px) {
-      .battle-mon { width: 56px; height: 56px; }
-      .battle-name { font-size: 13px; }
-      .battle-hearts { font-size: 16px; }
-      .battle-hud { padding: 4px 10px; }
-      .cl-overlay.battle { padding: 6px 10px 10px; gap: 6px; }
-    }
-  `
-  document.head.appendChild(style)
+/** A type's colour, and the ink (dark or light) that reads best on it */
+function typeStyle(def: CodemonDef): { color: string; ink: string } {
+  const color = CODEMON_TYPE_COLORS[def.type]
+  const n = parseInt(color.slice(1), 16)
+  const luma = 0.299 * ((n >> 16) & 0xff) + 0.587 * ((n >> 8) & 0xff) + 0.114 * (n & 0xff)
+  return { color, ink: luma > 150 ? '#1c1846' : '#fafafe' }
 }
 
 export class BattleHud {
   readonly el: HTMLDivElement
   private readonly playerMon: HTMLDivElement
   private readonly opponentMon: HTMLDivElement
-  private readonly heartEls: HTMLSpanElement[] = []
-  private readonly hpEls: HTMLSpanElement[] = []
+  private readonly playerBar: HTMLDivElement | null
+  private readonly opponentBar: HTMLDivElement
+  private readonly playerHpText: HTMLSpanElement | null
+  private readonly message: HTMLDivElement
+  private readonly maxHp: number
+  private readonly opponentMax: number
+  private typing?: ReturnType<typeof setInterval>
+  private pause?: ReturnType<typeof setTimeout>
+  private readonly queue: string[] = []
 
   constructor(opts: BattleHudOptions) {
-    injectBattleStyles()
+    this.maxHp = opts.maxHp
+    this.opponentMax = Math.max(1, opts.opponentHp)
     this.el = document.createElement('div')
     this.el.className = 'battle-hud'
 
-    // ── You ──
-    const playerSide = document.createElement('div')
-    playerSide.className = 'battle-side player'
-    this.playerMon = this.createMon(opts.player, true)
-    playerSide.appendChild(this.playerMon)
-    const playerInfo = this.createInfo(opts.player)
-    if (opts.maxHearts > 0) {
-      const hearts = document.createElement('div')
-      hearts.className = 'battle-hearts'
-      for (let i = 0; i < opts.maxHearts; i++) {
-        const heart = document.createElement('span')
-        hearts.appendChild(heart)
-        this.heartEls.push(heart)
-      }
-      playerInfo.appendChild(hearts)
-    }
-    playerSide.appendChild(playerInfo)
+    const field = document.createElement('div')
+    field.className = 'battle-field'
 
-    // ── Trainer ──
-    const trainer = document.createElement('div')
-    trainer.className = 'battle-trainer'
-    trainer.textContent = opts.trainerName
+    // ── Opponent: info top-left, Codémon top-right ──
+    const oppInfo = this.createInfo(opts.opponent, 'opponent')
+    this.opponentBar = oppInfo.querySelector('.battle-bar-fill') as HTMLDivElement
+    this.opponentMon = this.createMon(opts.opponent, false, 'opponent')
 
-    // ── Opponent ──
-    const opponentSide = document.createElement('div')
-    opponentSide.className = 'battle-side opponent'
-    this.opponentMon = this.createMon(opts.opponent, false)
-    opponentSide.appendChild(this.opponentMon)
-    const opponentInfo = this.createInfo(opts.opponent)
-    const hp = document.createElement('div')
-    hp.className = 'battle-hp'
-    for (let i = 0; i < opts.opponentHp; i++) {
-      const seg = document.createElement('span')
-      hp.appendChild(seg)
-      this.hpEls.push(seg)
-    }
-    opponentInfo.appendChild(hp)
-    opponentSide.appendChild(opponentInfo)
+    // ── You: Codémon bottom-left, info bottom-right ──
+    this.playerMon = this.createMon(opts.player, true, 'player')
+    const playerInfo = this.createInfo(opts.player, 'player', opts.maxHp > 0)
+    this.playerBar = playerInfo.querySelector('.battle-bar-fill')
+    this.playerHpText = playerInfo.querySelector('.battle-hp-text')
 
-    this.el.append(playerSide, trainer, opponentSide)
-    this.setHearts(opts.hearts)
+    field.append(oppInfo, this.opponentMon, this.playerMon, playerInfo)
+
+    this.message = document.createElement('div')
+    this.message.className = 'battle-message'
+    this.message.setAttribute('aria-live', 'polite')
+
+    this.el.append(field, this.message)
+    this.setHp(opts.hp)
     this.setOpponentHp(opts.opponentHp)
   }
 
+  /** Your PV (in the same units as maxHp) */
+  setHp(hp: number): void {
+    if (!this.playerBar || this.maxHp <= 0) return
+    this.fill(this.playerBar, hp / this.maxHp)
+    if (this.playerHpText) this.playerHpText.textContent = `${Math.ceil((hp / this.maxHp) * 20)}/20`
+  }
+
+  /** Kept for callers using hearts */
   setHearts(hearts: number): void {
-    this.heartEls.forEach((el, i) => {
-      const filled = i < hearts
-      el.textContent = filled ? HEART_FULL : HEART_EMPTY
-      el.style.color = filled ? '#ff3344' : '#553333'
-    })
+    this.setHp(hearts)
   }
 
   setOpponentHp(hp: number): void {
-    this.hpEls.forEach((el, i) => el.classList.toggle('empty', i >= hp))
+    this.fill(this.opponentBar, hp / this.opponentMax)
+  }
+
+  /** A battle message, typed in the text box after the ones already waiting */
+  say(text: string): void {
+    // French punctuation never starts a line ("battre !" keeps its "!")
+    this.queue.push(text.replace(/ ([!?:;»])/g, '\u00a0$1'))
+    if (!this.typing && !this.pause) this.next()
+  }
+
+  /** Show a message at once, dropping the ones still waiting */
+  setMessage(text: string): void {
+    this.stopTyping()
+    this.queue.length = 0
+    this.message.textContent = text
+  }
+
+  private next(): void {
+    const text = this.queue.shift()
+    if (text === undefined) return
+    let n = 0
+    this.message.textContent = ''
+    this.typing = setInterval(() => {
+      n++
+      this.message.textContent = text.slice(0, n)
+      if (n < text.length) return
+      clearInterval(this.typing)
+      this.typing = undefined
+      // A beat to read it before the next one
+      this.pause = setTimeout(() => {
+        this.pause = undefined
+        this.next()
+      }, 450)
+    }, MESSAGE_SPEED_MS)
+  }
+
+  private stopTyping(): void {
+    if (this.typing) clearInterval(this.typing)
+    if (this.pause) clearTimeout(this.pause)
+    this.typing = undefined
+    this.pause = undefined
   }
 
   /** Right answer: your Codémon lunges, the opponent takes the hit */
@@ -271,6 +148,18 @@ export class BattleHud {
     this.opponentMon.classList.add('fainted')
   }
 
+  destroy(): void {
+    this.stopTyping()
+    this.queue.length = 0
+  }
+
+  private fill(bar: HTMLDivElement, ratio: number): void {
+    const r = Math.max(0, Math.min(1, ratio))
+    bar.style.width = `${r * 100}%`
+    bar.classList.toggle('mid', r <= 0.5 && r > 0.2)
+    bar.classList.toggle('low', r <= 0.2)
+  }
+
   private play(mon: HTMLDivElement, animation: string): void {
     if (mon.classList.contains('fainted')) return
     mon.classList.remove('lunge-right', 'lunge-left', 'hurt')
@@ -279,10 +168,11 @@ export class BattleHud {
     mon.addEventListener('animationend', () => mon.classList.remove(animation), { once: true })
   }
 
-  private createMon(def: CodemonDef, mirrored: boolean): HTMLDivElement {
+  private createMon(def: CodemonDef, mirrored: boolean, side: string): HTMLDivElement {
     // The wrapper animates; the image only mirrors (two transforms can't share an element)
     const wrap = document.createElement('div')
-    wrap.className = 'battle-mon'
+    wrap.className = `battle-mon ${side}`
+    wrap.style.setProperty('--type', typeStyle(def).color)
     const url = codemonArtUrl(def.id)
     if (url) {
       const img = document.createElement('img')
@@ -294,17 +184,38 @@ export class BattleHud {
     return wrap
   }
 
-  private createInfo(def: CodemonDef): HTMLDivElement {
+  private createInfo(def: CodemonDef, side: 'player' | 'opponent', withBar = true): HTMLDivElement {
     const info = document.createElement('div')
-    info.className = 'battle-info'
+    info.className = `battle-info ${side}`
     const name = document.createElement('div')
     name.className = 'battle-name'
-    name.textContent = def.name
+    name.textContent = def.name.toUpperCase()
     const type = document.createElement('div')
-    type.className = 'battle-type'
-    type.textContent = def.type
-    type.style.background = CODEMON_TYPE_COLORS[def.type]
+    type.className = `battle-type type-${def.type}`
+    const { color, ink } = typeStyle(def)
+    type.style.setProperty('--type', color)
+    type.style.setProperty('--type-ink', ink)
+    type.textContent = TYPE_NAMES[def.type][i18n.getLanguage()].toUpperCase()
     info.append(name, type)
+    if (withBar) {
+      const row = document.createElement('div')
+      row.className = 'battle-bar-row'
+      const label = document.createElement('span')
+      label.className = 'battle-bar-label'
+      label.textContent = i18n.t('battle_hp')
+      const bar = document.createElement('div')
+      bar.className = 'battle-bar'
+      const fill = document.createElement('div')
+      fill.className = 'battle-bar-fill'
+      bar.appendChild(fill)
+      row.append(label, bar)
+      info.appendChild(row)
+      if (side === 'player') {
+        const hp = document.createElement('span')
+        hp.className = 'battle-hp-text'
+        info.appendChild(hp)
+      }
+    }
     return info
   }
 }

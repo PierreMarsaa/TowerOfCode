@@ -7,6 +7,8 @@ import { saveManager } from '@/systems/SaveManager'
 import type { Direction } from '@/data/types'
 
 const ALL_DIRECTIONS: Direction[] = ['down', 'left', 'up', 'right']
+/** How far a story trainer sees when its data doesn't say (the Game Boy screen is 10×9 tiles) */
+export const STORY_SIGHT = 4
 
 interface NpcState {
   npc: NPC
@@ -29,6 +31,7 @@ export class NpcBehaviorSystem {
   private mapWidth: number
   private mapHeight: number
   private frozen = false
+  private readonly defaultSight: number
   private pendingResumeHandlers: Array<() => void> = []
 
   constructor(
@@ -36,7 +39,10 @@ export class NpcBehaviorSystem {
     npcs: NPC[],
     grid: GridMovementSystem,
     player: Player,
+    /** Sight of trainers without `sight` (editor maps: unlimited, as before) */
+    defaultSight = Infinity,
   ) {
+    this.defaultSight = defaultSight
     this.scene = scene
     this.grid = grid
     this.player = player
@@ -74,6 +80,7 @@ export class NpcBehaviorSystem {
       if (state.detecting) continue
 
       const { npc } = state
+      if (!npc.sprite.visible) continue // hidden until a script shows it
 
       // Gatekeepers: skip behavior if all challenges are completed (they vanish)
       if (npc.data.behavior === 'gatekeeper' && npc.data.challengeIds?.length && npc.data.challengeIds.every(id => save.isChallengeCompleted(id))) continue
@@ -102,8 +109,9 @@ export class NpcBehaviorSystem {
 
     let tx = npc.data.tileX + off.x
     let ty = npc.data.tileY + off.y
+    let range = npc.data.sight ?? this.defaultSight
 
-    while (tx >= 0 && tx < this.mapWidth && ty >= 0 && ty < this.mapHeight) {
+    while (range-- > 0 && tx >= 0 && tx < this.mapWidth && ty >= 0 && ty < this.mapHeight) {
       // Hit a wall — stop looking
       if (this.grid.isWallAt(tx, ty)) break
 
@@ -209,6 +217,15 @@ export class NpcBehaviorSystem {
   /** Freeze all NPC behavior (detection, lookout, patrol) */
   freeze(): void {
     this.frozen = true
+  }
+
+  unfreeze(): void {
+    this.frozen = false
+  }
+
+  /** Forget an NPC that left the map (a beaten guard) */
+  remove(npc: NPC): void {
+    this.states = this.states.filter(s => s.npc !== npc)
   }
 
   /** Mark an NPC as already detected (prevents re-detection after manual interaction) */

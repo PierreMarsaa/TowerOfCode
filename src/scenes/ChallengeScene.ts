@@ -3,7 +3,8 @@ import { createChallenge } from '@/challenges/ChallengeRegistry'
 import type { IChallenge } from '@/challenges/IChallenge'
 import type { ChallengeConfig } from '@/data/types'
 import { getChallenge } from '@/data/challenges'
-import { getCodemon, ZAP } from '@/data/codemon'
+import { getCodemon, ZAP, type CodemonDef } from '@/data/codemon'
+import { effectiveness } from '@/data/typeChart'
 import { saveManager } from '@/systems/SaveManager'
 import { i18n } from '@/i18n/I18nManager'
 import type { HpManager } from '@/systems/HpManager'
@@ -48,14 +49,23 @@ export class ChallengeScene extends Phaser.Scene {
   private victoryKeyHandler: ((e: KeyboardEvent) => void) | null = null
   private timers: ReturnType<typeof setTimeout>[] = []
   private peekPaid = new Set<string>() // solutions already paid for in this battle
+  private lead: CodemonDef = ZAP
+  /** The opponent's type is not very effective against your lead: wrong answers cost half */
+  private resisted = false
 
   // Field handlers so they can be removed by reference
   private readonly onWrongAnswer = (): void => {
     if (this.closing || this.closed) return
     this.hud?.opponentAttack()
     this.hitPanel()
-    if (!this.hpManager?.takeDamage()) return // map without hearts
-    this.hud?.setHearts(this.hpManager.hp)
+    const stepId = this.plan.steps[this.stepIndex]
+    if (this.hpManager?.isBar && stepId && getChallenge(stepId)?.type !== 'explanation') saveManager.addMissed(stepId)
+    if (this.hud) this.hud.say(this.resisted
+      ? i18n.t('battle_msg_resisted', { name: this.plan.opponent.name.toUpperCase() })
+      : i18n.t('battle_msg_hit', { name: this.plan.opponent.name.toUpperCase() }))
+    const damage = this.hpManager ? (this.resisted ? Math.max(1, this.hpManager.damagePerHit / 2) : this.hpManager.damagePerHit) : 0
+    if (!this.hpManager?.takeDamage(damage)) return // map without hearts
+    this.hud?.setHp(this.hpManager.hp)
     this.data.set('hearts', this.hpManager.hp)
     if (this.hpManager.isDead) {
       // Freeze the panel so a late click can't answer, then let GameScene handle death
@@ -105,22 +115,30 @@ export class ChallengeScene extends Phaser.Scene {
     this.data.set('peekCost', this.plan.gradedSteps > 0 && finiteHearts ? 1 : 0)
     this.data.set('hearts', this.hpManager?.hp ?? 0)
 
+    this.input.keyboard?.disableGlobalCapture()
     const { overlay, panel } = createChallengeOverlay(this)
     this.overlay = overlay
     this.panel = panel
 
     if (this.plan.gradedSteps > 0) {
       overlay.classList.add('battle')
-      const partner = saveManager.getCompanion()
+      // Your Codémon: the team's lead (story), else the old partner (editor test mode), else Zap
+      const lead = saveManager.getLead() ?? saveManager.getCompanion()
+      this.lead = (lead && getCodemon(lead)) || ZAP
+      this.resisted = effectiveness(this.plan.opponent.type, this.lead.type) < 1
+      // The Codédex records every Codémon you meet (story)
+      if (this.hpManager?.isBar) saveManager.markSeen(this.plan.opponent.id)
       this.hud = new BattleHud({
-        player: (partner && getCodemon(partner)) || ZAP,
+        player: this.lead,
         opponent: this.plan.opponent,
         trainerName: this.plan.trainerName,
-        maxHearts: this.hpManager && !this.hpManager.isInfinite ? this.hpManager.maxHp : 0,
-        hearts: this.hpManager?.hp ?? 0,
+        maxHp: this.hpManager && !this.hpManager.isInfinite ? this.hpManager.maxHp : 0,
+        hp: this.hpManager?.hp ?? 0,
         opponentHp: this.opponentHp,
       })
       overlay.insertBefore(this.hud.el, panel)
+      this.hud.say(i18n.t('battle_msg_start', { trainer: this.plan.trainerName, name: this.plan.opponent.name.toUpperCase() }))
+      this.hud.say(i18n.t('battle_msg_go', { name: this.lead.name.toUpperCase() }))
     }
 
     // A code fight ahead: download Python while the player answers the rest
@@ -138,11 +156,15 @@ export class ChallengeScene extends Phaser.Scene {
   }
 
   private showStep(index: number): void {
-    const config = getChallenge(this.plan.steps[index])
-    if (!config || !this.panel) {
-      this.closeScene(false)
+    if (!this.panel) return
+    // Skip steps whose exercise vanished (course re-sync) instead of losing the battle
+    while (index < this.plan.steps.length && !getChallenge(this.plan.steps[index])) index++
+    if (index >= this.plan.steps.length) {
+      if (this.plan.gradedSteps > 0) this.showVictory()
+      else this.closeScene(false)
       return
     }
+    const config = getChallenge(this.plan.steps[index])!
     this.stepIndex = index
     if (this.challenge) {
       this.challenge.softDestroy()
@@ -173,6 +195,10 @@ export class ChallengeScene extends Phaser.Scene {
       this.opponentHp = Math.max(0, this.opponentHp - 1)
       this.hud.setOpponentHp(this.opponentHp)
       this.hud.playerAttack()
+      const move = i18n.t(`battle_move_${config.type}`)
+      const strong = effectiveness(this.lead.type, this.plan.opponent.type) > 1
+      this.hud.say(i18n.t('battle_msg_attack', { name: this.lead.name.toUpperCase(), move })
+        + (strong ? ' ' + i18n.t('battle_msg_strong') : ''))
       delay = NEXT_STEP_DELAY
     }
 
@@ -194,6 +220,7 @@ export class ChallengeScene extends Phaser.Scene {
       this.challenge = null
     }
     this.hud?.opponentFaint()
+    if (this.hud) this.hud.setMessage(i18n.t('battle_msg_fainted', { name: this.plan.opponent.name.toUpperCase() }))
 
     const box = document.createElement('div')
     box.className = 'battle-victory'
@@ -260,6 +287,8 @@ export class ChallengeScene extends Phaser.Scene {
 
   /** Remove everything this scene put in the DOM (safe to call twice) */
   private teardown(): void {
+    this.input?.keyboard?.enableGlobalCapture()
+    this.hud?.destroy()
     for (const t of this.timers) clearTimeout(t)
     this.timers = []
     this.events.off('challenge-wrong-answer', this.onWrongAnswer)

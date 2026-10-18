@@ -1,8 +1,10 @@
 {
   "welcome_npc": [
     "Salut ! Bienvenue dans la Tour du Code !",
-    "Cet endroit est rempli de défis pour améliorer tes compétences en programmation.",
-    "Passe par ce point de téléportation quand tu es prêt !"
+    "Au nord se dressent trois tours, une par chapitre : Les bases dans la forêt, Données & boucles dans les grottes, Avancé dans la citadelle.",
+    "Chaque étage est un chapitre du cours de Python, et ses dresseurs ne te laisseront pas passer sans combat.",
+    "Bats le boss au sommet d'une tour et la tour suivante s'ouvre. Lis les panneaux si tu es perdu !",
+    "Tu veux t'échauffer d'abord ? La route à l'ouest mène à la Salle d'entraînement."
   ],
   "hint_npc_01": [
     "Salut ! Je suis aussi un élève ici.",
@@ -26,5 +28,205 @@
   ],
   "trainer_content_missing": [
     "Hmm... mon défi semble avoir disparu du cours. (Erreur de contenu : préviens le développeur !)"
+  ],
+  "tower_prof_lesson": [
+    "Bienvenue à l'{map} !",
+    "Voici ce qu'il faut savoir avant d'affronter les dresseurs de cet étage."
+  ],
+  "tower_prof_review": [
+    "Bienvenue à l'{map} !",
+    "Pas de nouvelle leçon ici : les dresseurs vont tester tout ce que tu as appris. Bonne chance !"
+  ],
+  "tower_guardian": [
+    "Tu veux les escaliers ? Il faudra d'abord me battre !"
+  ],
+  "tower_final": [
+    "Alors tu as gravi toute la tour... Je suis impressionné !",
+    "Je t'ai appris tout ce que je sais. Un dernier combat : montre-moi ce que tu as retenu !"
+  ],
+  "tower_ending": [
+    "Incroyable... tu m'as battu !",
+    "Avant que tu partes, laisse-moi te dire quelques derniers mots."
+  ],
+  "sign_act1": [
+    "CHAPITRE 1 · LES BASES",
+    "Variables, textes, booléens, conditions.",
+    "Des étages dans la forêt. Au sommet : Boole, maître du vrai et du faux."
+  ],
+  "sign_act2": [
+    "CHAPITRE 2 · DONNÉES & BOUCLES",
+    "Listes, tuples, boucles, ensembles, dictionnaires.",
+    "Des étages dans les grottes. Au sommet : Lovelace. S'ouvre quand Boole est battu."
+  ],
+  "sign_act3": [
+    "CHAPITRE 3 · AVANCÉ",
+    "Fonctions, erreurs, classes et plus encore.",
+    "Des étages dans la citadelle. Au sommet : Prof Pi en personne. S'ouvre quand Lovelace est battue."
+  ],
+  "sign_training": [
+    "SALLE D'ENTRAÎNEMENT",
+    "Des combats et des énigmes pour t'exercer, à ton rythme. Facultatif !"
+  ],
+  "sign_village": [
+    "L'ENTRÉE",
+    "Au nord : les trois tours. À l'ouest : la Salle d'entraînement."
+  ],
+  "boss_boole": [
+    "Alors tu as traversé la forêt...",
+    "Je suis Boole. Ici, tout est vrai ou faux, ta victoire aussi. Voyons ça !"
+  ],
+  "boss_boole_beaten": [
+    "Vrai ! Tu m'as vraiment battu.",
+    "Le portail derrière moi mène au Chapitre 2 · Données & boucles. Continue de grimper !"
+  ],
+  "boss_lovelace": [
+    "Bienvenue au fond des grottes. Je suis Lovelace.",
+    "J'ai écrit le tout premier programme. Montre-moi que tu sais boucler comme moi !"
+  ],
+  "boss_lovelace_beaten": [
+    "Remarquable... l'élève est devenu programmeur.",
+    "Le portail derrière moi mène au Chapitre 3 · Avancé. Le sommet n'est plus très loin !"
+  ],
+  "pc_bedroom": [
+    "Le PC affiche :",
+    "print(\"Hello, world!\")",
+    "Un classique."
+  ],
+  "tv_bedroom": [
+    "À la télé, des enfants partent à l'aventure avec leurs CODÉMON...",
+    "Ça a l'air génial !"
+  ],
+  "console_bedroom": [
+    "Une console de jeu ! Mais ce n'est pas le moment de jouer."
+  ],
+  "shelf_home": [
+    "Des livres de cuisine... et « PYTHON pour les débutants » !"
+  ],
+  "sink_home": [
+    "L'évier brille. La voisine y tient beaucoup."
+  ],
+  "sign_town0": [
+    "BOURG-HELLO",
+    "Ici, tout commence par un print()."
+  ],
+  "sign_home": [
+    "MAISON DE LA VOISINE"
+  ],
+  "sign_lab": [
+    "LABO DU PROF. PI",
+    "Recherche sur les CODÉMON... et le PYTHON !"
+  ],
+  "town_girl": [
+    "Tu as vu la TOUR DU CODE ? On dit que chaque étage est plus dur que le précédent !"
+  ],
+  "town_kid": [
+    "Le PROF. PI dit qu'un bon dresseur lit toujours le message d'erreur jusqu'au bout.",
+    "Moi, je lis seulement le début..."
+  ],
+  "town_fisher": [
+    "La mer est calme aujourd'hui. Parfait pour réfléchir à son code."
+  ],
+  "machine_lab": [
+    "Une énorme machine. Des lignes de code défilent à toute vitesse !"
+  ],
+  "pi_lesson_intro": [
+    "PROF. PI : {player} ! Enchanté !",
+    "PROF. PI : Ici, les CODÉMON se battent avec du code PYTHON. Chaque bonne réponse est une attaque !",
+    "PROF. PI : Avant tout, écris ta toute première ligne de code. Suis-moi !"
+  ],
+  "pi_codedex": [
+    "PROF. PI : Prends ceci : le CODÉDEX ! Il garde la trace de chaque CODÉMON que tu rencontres.",
+    "PROF. PI : Il en existe 18. Les trouver tous, c'est mon rêve !"
+  ],
+  "got_codedex": [
+    "{player} reçoit le CODÉDEX !"
+  ],
+  "pi_later": [
+    "PROF. PI : La TOUR DU CODE est juste au nord, {player}. Bonne chance !",
+    "PROF. PI : En combat, chaque bonne réponse est une attaque. Chaque erreur, un coup reçu !"
+  ],
+  "blackout": [
+    "{player} n'a plus de force pour coder !",
+    "{player} est tombé dans les pommes..."
+  ],
+  "desk_lab": [
+    "Des notes du PROF. PI :",
+    "« Les CODÉMON adorent les f-strings. À vérifier. »"
+  ],
+  "pi_welcome": [
+    "PROF. PI : Ah, te voilà ! Bienvenue dans mon labo, au pied de la TOUR DU CODE !",
+    "PROF. PI : Je suis le PROF. PI. Et voici ZAP, mon CODÉMON.",
+    "ZAP : Bzzt ! Bzzt !"
+  ],
+  "pi_name_ask": [
+    "PROF. PI : Et toi, comment t'appelles-tu ?"
+  ],
+  "pi_which_codemon": [
+    "PROF. PI : Bravo ! À la fin, tu as choisi un CODÉMON dans ton code...",
+    "PROF. PI : Alors, lequel as-tu choisi ?"
+  ],
+  "pi_egg": [
+    "PROF. PI : Parfait ! Regarde cet œuf : il a écouté toute ta leçon...",
+    "PROF. PI : Oh ! Il bouge !"
+  ],
+  "pi_hatched": [
+    "PROF. PI : Incroyable ! C'est un {starter} !",
+    "{player} et {starter} font maintenant équipe !"
+  ],
+  "pi_test_battle": [
+    "PROF. PI : Voyons ce que vous valez, tous les deux !",
+    "PROF. PI : Petit combat d'essai : ZAP, à toi ! Réponds juste pour attaquer, {player} !"
+  ],
+  "pi_battle_won": [
+    "PROF. PI : Excellent ! Tu as battu ZAP du premier coup !",
+    "PROF. PI : Laisse-moi soigner {starter}."
+  ],
+  "pi_battle_lost": [
+    "PROF. PI : Pas mal du tout pour un premier combat ! Avec un peu d'entraînement, tu iras loin.",
+    "PROF. PI : Laisse-moi soigner {starter}."
+  ],
+  "pi_go_tower": [
+    "PROF. PI : La TOUR DU CODE est juste au nord du bourg. Chaque étage, un chapitre de PYTHON !",
+    "PROF. PI : Si {starter} est fatigué, reviens au labo : mon assistante le soignera."
+  ],
+  "aide_heal": [
+    "ASSISTANTE : Tes CODÉMON ont l'air fatigués ? Je m'en occupe !"
+  ],
+  "aide_healed": [
+    "ASSISTANTE : Et voilà, ils sont en pleine forme !",
+    "ASSISTANTE : Si tu tombes K.O., tu te réveilleras ici, au labo."
+  ],
+  "zap_talk": [
+    "ZAP : Bzzt ! Bzzt bzzt !"
+  ],
+  "table_lab": [
+    "Des notes du PROF. PI sur les CODÉMON...",
+    "« Les œufs éclosent quand on leur parle en PYTHON. Fascinant ! »"
+  ],
+  "sign_tower": [
+    "TOUR DU CODE",
+    "Un étage, un chapitre de PYTHON. Tout en haut : la fin du cours !"
+  ],
+  "sign_student_home": [
+    "MAISON DE L'ÉTUDIANTE"
+  ],
+  "neighbour_talk": [
+    "VOISINE : Bonjour, {player} ! Mon petit-fils code toute la journée, là-haut.",
+    "VOISINE : Il dit qu'en PYTHON, une ligne qui commence par # est un commentaire : l'ordinateur l'ignore !"
+  ],
+  "student_talk": [
+    "ÉTUDIANTE : Je révise pour la TOUR DU CODE !",
+    "ÉTUDIANTE : Le secret, c'est de lire le message d'erreur jusqu'au bout. Il dit presque toujours où est le problème."
+  ],
+  "hall_reception": [
+    "ACCUEIL : Bienvenue dans la TOUR DU CODE !",
+    "ACCUEIL : L'escalier au fond mène au 1er étage. Chaque étage enseigne un chapitre de PYTHON.",
+    "ACCUEIL : Bonne nouvelle : en arrivant à chaque étage, ton CODÉMON est remis en forme. Bonne montée !"
+  ],
+  "hall_elevator": [
+    "Un ascenseur. Il n'est pas encore en service..."
+  ],
+  "hall_banner": [
+    "Sur la bannière : « Un étage, un chapitre. Du code, rien que du code. »"
   ]
 }

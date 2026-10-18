@@ -8,10 +8,15 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "sync:codelife": "node scripts/sync-codelife.mjs && python3 scripts/check-grading.py --write",
-    "check:grading": "python3 scripts/check-grading.py --write"
+    "check:grading": "python3 scripts/check-grading.py --write",
+    "check:tower": "node --experimental-strip-types --no-warnings scripts/check-tower.mjs",
+    "art": "node --experimental-strip-types --no-warnings scripts/draw-art.mjs",
+    "art:preview": "node --experimental-strip-types --no-warnings scripts/draw-art.mjs --preview",
+    "check:story": "node --experimental-strip-types --no-warnings scripts/check-story.mjs"
   },
   "devDependencies": {
     "canvas": "^3.2.2",
+    "opentype.js": "^1.3.4",
     "typescript": "~5.9.3",
     "vite": "^7.3.1"
   },

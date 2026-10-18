@@ -10,7 +10,7 @@ export class HeartPickupManager {
   private gridMovement: GridMovementSystem
   private hpManager: HpManager
   private heartHud: HeartHud | undefined
-  private heartSprites: Map<string, { sprite: Phaser.GameObjects.Text; restoreAmount: number }> = new Map()
+  private heartSprites: Map<string, { sprite: Phaser.GameObjects.Image; restoreAmount: number }> = new Map()
 
   constructor(
     scene: Phaser.Scene,
@@ -43,8 +43,8 @@ export class HeartPickupManager {
     this.heartSprites.delete(key)
     this.scene.tweens.add({
       targets: entry.sprite,
-      scaleX: 2,
-      scaleY: 2,
+      scaleX: 1.5,
+      scaleY: 1.5,
       alpha: 0,
       y: entry.sprite.y - 20,
       duration: 300,
@@ -61,11 +61,8 @@ export class HeartPickupManager {
   private createHeartPickup(tileX: number, tileY: number, restoreAmount: number): void {
     const px = tileToPixel(tileX)
     const py = tileToPixel(tileY)
-    const sprite = this.scene.add.text(px, py, '\u2665', {
-      fontSize: '24px',
-      color: '#ff4466',
-      fontFamily: 'monospace',
-    })
+    const sprite = this.scene.add.image(px, py, 'ui/heart_full')
+      .setScale(0.75)
       .setOrigin(0.5)
       .setDepth(py)
 

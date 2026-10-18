@@ -41,18 +41,26 @@ function shuffled<T>(items: T[], rng: () => number): T[] {
 }
 
 /**
- * Code fight: prefer challenges that are checked automatically (a real fight),
- * then ones the player hasn't done yet
+ * Code fight: prefer auto-checked challenges the player hasn't solved (a real fight),
+ * then any unsolved one (new practice beats a repeat), then auto-checked, then any
  */
 function pickCodeChallenge(pool: string[], rng: () => number): string | undefined {
+  const fresh = (id: string) => !saveManager.isChallengeCompleted(id)
   const tiers = [
-    pool.filter(id => isAutoGraded(id) && !saveManager.isChallengeCompleted(id)),
+    pool.filter(id => isAutoGraded(id) && fresh(id)),
+    pool.filter(fresh),
     pool.filter(id => isAutoGraded(id)),
-    pool.filter(id => !saveManager.isChallengeCompleted(id)),
     pool,
   ]
   const candidates = tiers.find(t => t.length) ?? []
   return candidates.length ? candidates[Math.floor(rng() * candidates.length)] : undefined
+}
+
+/** Draw `count` ids, unanswered ones first, so trainers on one floor don't repeat each other */
+function drawFreshFirst(pool: string[], count: number, rng: () => number): Set<string> {
+  const fresh = pool.filter(id => !saveManager.isChallengeCompleted(id))
+  const answered = pool.filter(id => saveManager.isChallengeCompleted(id))
+  return new Set([...shuffled(fresh, rng), ...shuffled(answered, rng)].slice(0, count))
 }
 
 /**
@@ -71,7 +79,7 @@ export function buildBattlePlan(mapId: string, npc: NPCData, rng: () => number =
 
     const questionPool = ids.filter(id => QUESTION_TYPES.has(typeOf(id)!))
     const count = Math.min(npc.battle.questions ?? 3, questionPool.length)
-    const drawn = new Set(shuffled(questionPool, rng).slice(0, count))
+    const drawn = drawFreshFirst(questionPool, count, rng)
 
     // Walk the chapter in course order so each lesson sits right before its questions.
     // Lessons already read are skipped: the first trainer of a chapter teaches it.
@@ -93,4 +101,17 @@ export function buildBattlePlan(mapId: string, npc: NPCData, rng: () => number =
   if (steps.length === 0) return `${npc.name}: none of its exercises exist`
 
   return { trainerId, trainerName: npc.name, opponent, steps, gradedSteps }
+}
+
+/**
+ * What a teacher NPC says (`lesson`): every lesson of those chapters, in course
+ * order, read-only (no battle, nothing to win). Undefined if none exist.
+ */
+export function buildLessonPlan(mapId: string, npc: NPCData): BattlePlan | undefined {
+  const steps = (npc.lesson ?? [])
+    .flatMap(key => getChapter(key)?.exerciseIds ?? [])
+    .filter(id => typeOf(id) === 'explanation')
+  if (!steps.length) return undefined
+  const trainerId = trainerIdOf(mapId, npc)
+  return { trainerId, trainerName: npc.name, opponent: codemonForTrainer(trainerId), steps, gradedSteps: 0 }
 }

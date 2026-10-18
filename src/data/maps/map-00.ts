@@ -1,6 +1,31 @@
 import type { MapData } from '@/data/types'
+import { cellHash, mask4, pickWeighted } from '@/generation/autotile'
 
-export const map00: MapData = {
+/**
+ * Inside the Training Hall: the maze's rocks become dojo partitions (a wall face
+ * where floor lies below, the wall's top elsewhere) and the floor wooden planks,
+ * shaded under the walls. Layout and gameplay are untouched.
+ */
+function insideTheHall(map: MapData): MapData {
+  const w = map.width!, h = map.height!
+  const isWall = (x: number, y: number): boolean => x >= 0 && y >= 0 && x < w && y < h && map.wallsLayer[y * w + x] === 'objects/rock'
+  const face = (x: number, y: number): boolean => isWall(x, y) && y + 1 < h && !isWall(x, y + 1)
+  const wallsLayer = map.wallsLayer.map((key, i) => {
+    if (key !== 'objects/rock') return key
+    const x = i % w, y = Math.floor(i / w)
+    if (!face(x, y)) return `objects/hall/wall_${mask4(isWall, x, y)}`
+    const left = face(x - 1, y), right = face(x + 1, y)
+    return `objects/hall/face_${left && right ? 'mid' : left ? 'right' : right ? 'left' : 'single'}`
+  })
+  const groundLayer = map.groundLayer.map((key, i) => {
+    if (key !== 'ground/basic/2') return key
+    const x = i % w, y = Math.floor(i / w)
+    return isWall(x, y - 1) ? 'ground/hall/shade' : `ground/hall/floor_${1 + pickWeighted(cellHash(x, y, 7), [70, 20, 10])}`
+  })
+  return { ...map, wallsLayer, groundLayer }
+}
+
+export const map00: MapData = insideTheHall({
   id: 'map-00',
   name: 'Training Maze',
   width: 20,
@@ -65,7 +90,7 @@ export const map00: MapData = {
       name: 'Ada',
       tileX: 6,
       tileY: 1,
-      spriteKey: 'npc',
+      spriteKey: 'trainer3',
       facing: 'right',
       behavior: 'detect',
       dialogKey: 'hint_npc_01',
@@ -84,7 +109,7 @@ export const map00: MapData = {
       name: 'Grace',
       tileX: 14,
       tileY: 4,
-      spriteKey: 'npc',
+      spriteKey: 'trainer5',
       facing: 'down',
       behavior: 'patrol',
       battle: { chapter: 'variables-types/types' },
@@ -94,7 +119,7 @@ export const map00: MapData = {
       name: 'Guido',
       tileX: 2,
       tileY: 9,
-      spriteKey: 'npc',
+      spriteKey: 'trainer2',
       facing: 'left',
       behavior: 'lookout',
       battle: { chapter: 'variables-types/strings' },
@@ -105,7 +130,7 @@ export const map00: MapData = {
       name: 'Linus',
       tileX: 6,
       tileY: 10,
-      spriteKey: 'npc',
+      spriteKey: 'trainer6',
       facing: 'down',
       behavior: 'lookout-random',
       battle: { chapter: 'variables-types/boolean' },
@@ -114,7 +139,7 @@ export const map00: MapData = {
       name: 'Margaret',
       tileX: 12,
       tileY: 12,
-      spriteKey: 'npc',
+      spriteKey: 'trainer4',
       facing: 'up',
       behavior: 'lookout',
       battle: { chapter: 'variables-types/quizz', questions: 4 },
@@ -125,7 +150,7 @@ export const map00: MapData = {
       name: 'Dennis',
       tileX: 7,
       tileY: 14,
-      spriteKey: 'npc',
+      spriteKey: 'trainer2',
       facing: 'right',
       behavior: 'detect',
       battle: { chapter: 'helpers/comments' },
@@ -134,7 +159,7 @@ export const map00: MapData = {
       name: 'Barbara',
       tileX: 14,
       tileY: 19,
-      spriteKey: 'npc',
+      spriteKey: 'trainer3',
       facing: 'up',
       behavior: 'lookout',
       battle: { chapter: 'helpers/print' },
@@ -145,7 +170,7 @@ export const map00: MapData = {
       name: 'Ken',
       tileX: 5,
       tileY: 17,
-      spriteKey: 'npc',
+      spriteKey: 'trainer6',
       facing: 'left',
       behavior: 'lookout',
       battle: { chapter: 'variables-types/new-challenge', questions: 0, code: true },
@@ -196,4 +221,4 @@ export const map00: MapData = {
     { id: 'tp-5', tileX: 12, tileY: 7, role: 'sender', targetId: 'tp-4' }
   ],
   startingHp: 3,
-}
+})

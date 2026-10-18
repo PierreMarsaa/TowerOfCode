@@ -16,13 +16,14 @@ export class ClFillInTextChallenge extends ChallengeBase<ClFillInTextConfig> {
   private chipEls: HTMLButtonElement[] = []
   private chipsContainer!: HTMLDivElement
   private verifyBtn!: HTMLButtonElement
+  private verifyBar!: HTMLDivElement
   private feedbackArea!: HTMLDivElement
   private hintBar!: HTMLDivElement
 
   protected onCreate(
     _scene: Phaser.Scene,
     config: ClFillInTextConfig,
-    panel: HTMLDivElement,
+    content: HTMLDivElement,
   ): void {
     this.config = config
 
@@ -42,45 +43,45 @@ export class ClFillInTextChallenge extends ChallengeBase<ClFillInTextConfig> {
     const title = document.createElement('div')
     title.className = 'cl-title'
     title.textContent = resolveText(this.config.title)
-    panel.appendChild(title)
+    content.appendChild(title)
 
     // Question content blocks
-    this.renderer.renderContentBlocks(panel, this.config.content.question)
+    this.renderer.renderContentBlocks(content, this.config.content.question)
 
     // Code template with slots
-    this.renderTemplate(panel)
+    this.renderTemplate(content)
 
     // Options label
     const optLabel = document.createElement('div')
-    optLabel.style.fontSize = '12px'
-    optLabel.style.color = '#888'
-    optLabel.style.marginBottom = '8px'
+    optLabel.className = 'cl-label'
     optLabel.textContent = this.t('challenge_label_options')
-    panel.appendChild(optLabel)
+    content.appendChild(optLabel)
 
     // Option chips
     this.chipsContainer = document.createElement('div')
     this.chipsContainer.className = 'cl-fill-options'
-    panel.appendChild(this.chipsContainer)
+    content.appendChild(this.chipsContainer)
     this.renderChips()
-
-    // Verify button
-    this.verifyBtn = document.createElement('button')
-    this.verifyBtn.className = 'cl-btn-primary'
-    this.verifyBtn.textContent = this.t('challenge_btn_verify')
-    this.verifyBtn.style.marginBottom = '10px'
-    this.verifyBtn.addEventListener('click', () => this.checkAnswer())
-    panel.appendChild(this.verifyBtn)
 
     // Feedback area
     this.feedbackArea = document.createElement('div')
-    panel.appendChild(this.feedbackArea)
+    content.appendChild(this.feedbackArea)
+
+    // Verify button (Continue takes its place once the answer is right)
+    this.verifyBar = document.createElement('div')
+    this.verifyBar.className = 'cl-actions'
+    content.appendChild(this.verifyBar)
+    this.verifyBtn = document.createElement('button')
+    this.verifyBtn.className = 'cl-btn-primary'
+    this.verifyBtn.textContent = this.t('challenge_btn_verify')
+    this.verifyBtn.addEventListener('click', () => this.checkAnswer())
+    this.verifyBar.appendChild(this.verifyBtn)
 
     // Hint bar
     this.hintBar = document.createElement('div')
     this.hintBar.className = 'cl-hint-bar'
     this.hintBar.textContent = this.t('challenge_hint_fill_in')
-    panel.appendChild(this.hintBar)
+    content.appendChild(this.hintBar)
 
     this.updateSlotHighlights()
     this.updateChipHighlights()
@@ -283,7 +284,7 @@ export class ClFillInTextChallenge extends ChallengeBase<ClFillInTextConfig> {
       this.showHint(this.feedbackArea, this.config.content.hint, true)
 
       this.hintBar.textContent = ''
-      this.showDoneButton()
+      this.showDoneButton(this.verifyBar)
     } else {
       this.triedCombinations.add(comboKey)
 

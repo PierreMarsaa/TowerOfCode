@@ -1,4 +1,4 @@
-import { MAP_WIDTH_TILES, MAP_HEIGHT_TILES } from '@/config/game.config'
+import { DEFAULT_MAP_WIDTH, DEFAULT_MAP_HEIGHT } from '@/config/game.config'
 import { getAnimatedTileDefs } from '@/data/tiles/TileRegistry'
 
 export interface TiledMapResult {
@@ -13,8 +13,8 @@ export interface TiledMapResult {
 export function buildTiledMapJson(
   groundLayer: readonly string[],
   wallsLayer: readonly string[],
-  width: number = MAP_WIDTH_TILES,
-  height: number = MAP_HEIGHT_TILES,
+  width: number = DEFAULT_MAP_WIDTH,
+  height: number = DEFAULT_MAP_HEIGHT,
 ): TiledMapResult {
   // Collect all unique tile keys across both layers
   const usedKeys = new Set<string>()

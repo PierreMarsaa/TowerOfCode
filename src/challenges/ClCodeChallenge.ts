@@ -21,6 +21,7 @@ import { renderConsoleOutput } from '@/challenges/cl-utils/ClCodeMirrorFactory'
  *   - scene data 'peekCost' / 'hearts' → the solution button shows the cost
  */
 export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
+  protected readonly layout = 'code'
   private config!: ClChallengeConfig
   private showSolution = false
   private peekAnnounced = false
@@ -38,7 +39,7 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
   protected onCreate(
     _scene: Phaser.Scene,
     config: ClChallengeConfig,
-    panel: HTMLDivElement,
+    content: HTMLDivElement,
   ): void {
     this.config = config
     this.showSolution = false
@@ -48,19 +49,27 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
     this.auto = isAutoGraded(config.id)
     const auto = this.auto
 
+    // Two columns on wide screens (challenge.css): the brief on the left, the work on the right
+    const brief = document.createElement('div')
+    brief.className = 'cl-code-brief'
+    content.appendChild(brief)
+    const work = document.createElement('div')
+    work.className = 'cl-code-work'
+    content.appendChild(work)
+
     // Title
     const title = document.createElement('div')
     title.className = 'cl-title'
     title.textContent = resolveText(this.config.title)
-    panel.appendChild(title)
+    brief.appendChild(title)
 
     // Question content blocks
-    this.renderer.renderContentBlocks(panel, this.config.content.question)
+    this.renderer.renderContentBlocks(brief, this.config.content.question)
 
     // Code editor with IDE-like layout (shared widget)
     const starterCode = resolveText(this.config.content.exercise.value)
     const { editor, outputEl } = this.renderer.createCodeMirrorEditable(
-      panel,
+      work,
       starterCode,
       [keymap.of([indentWithTab])],
     )
@@ -68,17 +77,18 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
     this.outputEl = outputEl
 
     this.feedbackArea = document.createElement('div')
-    panel.appendChild(this.feedbackArea)
+    work.appendChild(this.feedbackArea)
     if (!auto) this.setFeedback('cl-text-block', i18n.t('grade_self'))
 
     // Button bar — no keyboard shortcuts, just buttons (code editor needs all keys)
     this.btnBar = document.createElement('div')
-    this.btnBar.className = 'cl-hint-bar'
-    this.btnBar.style.display = 'flex'
-    this.btnBar.style.justifyContent = 'space-between'
-    this.btnBar.style.alignItems = 'center'
-    this.btnBar.style.gap = '8px'
-    panel.appendChild(this.btnBar)
+    this.btnBar.className = 'cl-actions'
+    work.appendChild(this.btnBar)
+
+    this.solBtn = document.createElement('button')
+    this.solBtn.className = 'cl-btn'
+    this.solBtn.addEventListener('click', () => this.toggleSolution())
+    this.btnBar.appendChild(this.solBtn)
 
     this.mainBtn = document.createElement('button')
     this.mainBtn.className = 'cl-btn-primary'
@@ -90,11 +100,6 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
       this.mainBtn.addEventListener('click', () => this.onComplete(true))
     }
     this.btnBar.appendChild(this.mainBtn)
-
-    this.solBtn = document.createElement('button')
-    this.solBtn.className = 'cl-btn'
-    this.solBtn.addEventListener('click', () => this.toggleSolution())
-    this.btnBar.appendChild(this.solBtn)
     this.updateSolutionLabel()
     this.scene.events.on('changedata-hearts', this.onHeartsChanged)
   }
@@ -163,7 +168,7 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
     this.done = true
     this.mainBtn.style.display = 'none'
     this.setFeedback(className, message)
-    this.showDoneButton()
+    this.showDoneButton(this.btnBar)
   }
 
   /** Name what's missing or wrong — never the expected value */
@@ -175,8 +180,7 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
     this.feedbackArea.appendChild(head)
 
     const list = document.createElement('ul')
-    list.className = 'cl-text-block'
-    list.style.margin = '6px 0 0 20px'
+    list.className = 'cl-problems'
     for (const p of result.problems) {
       const key = { missing: 'grade_missing', wrong: 'grade_wrong', type: 'grade_type', call: 'grade_call' }[p.kind]
       const [before, after] = i18n.t(key, { name: '\u0000' }).split('\u0000')
@@ -193,10 +197,7 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
   private showUnavailable(message: string): void {
     this.setFeedback('cl-failure', message)
     const row = document.createElement('div')
-    row.style.display = 'flex'
-    row.style.gap = '8px'
-    row.style.justifyContent = 'center'
-    row.style.marginTop = '8px'
+    row.className = 'cl-actions'
     const retry = document.createElement('button')
     retry.className = 'cl-btn'
     retry.textContent = i18n.t('grade_btn_retry')
@@ -267,22 +268,12 @@ export class ClCodeChallenge extends ChallengeBase<ClChallengeConfig> {
     solTitle.textContent = this.t('challenge_title_solution')
     solPanel.appendChild(solTitle)
 
-    // Render solution blocks
-    for (const block of this.config.content.solution) {
-      if (block.type === 'text') {
-        const textDiv = document.createElement('div')
-        textDiv.className = 'cl-solution-text'
-        textDiv.textContent = resolveText(block.value)
-        solPanel.appendChild(textDiv)
-      } else if (block.type === 'codeBlock') {
-        this.renderer.createCodeMirrorReadOnly(solPanel, resolveText(block.value))
-      }
-    }
+    // Solution blocks: formatted text and read-only code
+    this.renderer.renderContentBlocks(solPanel, this.config.content.solution)
 
     // Close button
     const closeBar = document.createElement('div')
-    closeBar.className = 'cl-hint-bar'
-    closeBar.style.borderTopColor = '#444'
+    closeBar.className = 'cl-actions'
     solPanel.appendChild(closeBar)
 
     const closeBtn = document.createElement('button')

@@ -1,8 +1,8 @@
 /**
  * Codémon roster, copied from Code-Life (src/services/codemon/config.ts).
  * Ids match Code-Life's and the art in src/assets/codemon/<id>.webp
- * (copied by `npm run sync:codelife`). Zap is Prof Pi's Codémon and the
- * player's partner; it is not one of the 18 collectibles.
+ * (copied by `npm run sync:codelife`). Zap is Prof Pi's own Codémon; it is
+ * not one of the 18 collectibles.
  */
 
 export type CodemonType =
@@ -73,6 +73,9 @@ const artUrls = new Map(
 export function getCodemon(id: string): CodemonDef | undefined {
   return byId.get(id)
 }
+
+/** Texture key of a Codémon's painted art in Phaser (loaded by BootScene) */
+export const codemonTexture = (id: string): string => `codemon-${id}`
 
 export function codemonArtUrl(id: string): string | undefined {
   return artUrls.get(id)

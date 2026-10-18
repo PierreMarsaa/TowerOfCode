@@ -1,4 +1,7 @@
 {
-  "map_00_name": "Le Labyrinthe d'Entraînement",
-  "map_01_name": "L'Entrée"
+  "map_00_name": "La Salle d'entraînement",
+  "map_01_name": "L'Entrée",
+  "loc_town0": "BOURG-HELLO",
+  "map_town_0_name": "Bourg-Hello",
+  "loc_tower0": "TOUR DU CODE"
 }

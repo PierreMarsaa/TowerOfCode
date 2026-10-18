@@ -1,0 +1,904 @@
+/*
+ * Challenge UI: battles, lessons, the exercise browser and the editor's test mode.
+ *
+ * Sized with container queries on .cl-overlay (not the viewport), so the same
+ * layout also fits the editor's 640×480 test box. Colours follow the game's
+ * windows (Code-Life's palette): deep indigo cards with a purple border, gold
+ * highlights, the Codédex's dark gradient behind.
+ *
+ * Layout: .cl-overlay > ( .battle-hud? , .cl-panel > .cl-content.cl-content--{lesson|quiz|code} )
+ * The panel is a fixed frame; .cl-content scrolls inside it.
+ */
+
+/* The game's interface font (drawn by scripts/draw-art.mjs): one font pixel per
+   1em/16, so it is crisp at 16 px and 32 px. CSS draws its shadow. */
+@font-face {
+  font-family: 'TowerUI';
+  src: url('../../assets/ui/ui-font.ttf') format('truetype');
+  font-display: block;
+}
+
+.cl-overlay {
+  /* Palette: Code-Life's indigo layers, purple lines, gold highlights */
+  --bg: #1b1842;
+  --frame: #9095ff;
+  --frame-inner: #3a3584;
+  --surface: #2b2860;
+  --surface-hover: #3a3584;
+  --text: #fafafe;
+  --muted: #a9a6d6;
+  --accent: #ffc94a;
+  --ok: #3ee07a;
+  --ok-bg: rgba(0, 255, 71, 0.12);
+  --ok-border: #2fbf6a;
+  --danger: #ff7a95;
+  --danger-bg: rgba(255, 70, 110, 0.15);
+  --danger-border: #e0506e;
+  --warn: #ffb347;
+  --info: #00deff;
+  --code-bg: #120f2e;
+  --code-border: #3a3584;
+  --primary-bg: linear-gradient(180deg, #ffd36e, #f59e0b);
+  --primary-hover: linear-gradient(180deg, #ffe39a, #f7ad2f);
+  --primary-fg: #1c1846;
+  --primary-border: #b87406;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --ink-shadow: #0b0920;
+  /* PV bars */
+  --hp-high: #3ee07a;
+  --hp-mid: #ffc94a;
+  --hp-low: #ff5c7a;
+  --hp-label: #ffc94a;
+
+  /* Type: readable sans for prose, monospace for code, the pixel font for titles and buttons */
+  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --font-pixel: 'TowerUI', ui-monospace, monospace;
+
+  /* Fluid sizes (container units: only valid in descendants, never on the overlay itself) */
+  --fs-small: clamp(13px, 0.75rem + 0.15cqi, 15px);
+  --fs-body: clamp(16px, 0.875rem + 0.35cqi, 18px);
+  --fs-code: clamp(14px, 0.8rem + 0.2cqi, 16px);
+  /* The pixel font only at whole pixel sizes: 16 px (labels) and 32 px (titles, buttons, the HUD) */
+  --fs-pixel: 16px;
+  --fs-pixel-lg: 32px;
+  --fs-title: var(--fs-pixel-lg);
+  --pad: clamp(12px, 2.5cqi, 32px);
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --gutter: clamp(6px, 2vmin, 24px);
+  --tap: 44px;
+  --frame-max: 72rem;
+  --measure-lesson: 44rem;
+  --measure-quiz: 52rem;
+
+  container: cl / size;
+  /* Sits on top of the canvas: the one place where absolute positioning is needed */
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gutter);
+  padding: var(--gutter);
+  background: linear-gradient(180deg, #1c1846 0%, #120f2e 55%, #0b0920 100%);
+  box-sizing: border-box;
+}
+
+.cl-overlay *,
+.cl-overlay *::before,
+.cl-overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ── Panel (fixed frame) and its scrolling content ── */
+
+.cl-panel {
+  flex: 1 1 0;
+  min-height: 0;
+  width: min(100%, var(--frame-max));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* 3px of padding holds the inner frame line drawn by the inset shadows */
+  padding: 3px;
+  background: linear-gradient(180deg, #24205a 0%, var(--bg) 40%);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  border: 2px solid var(--frame);
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px var(--ink-shadow), inset 0 0 0 1px var(--frame-inner), 0 8px 24px var(--shadow);
+}
+
+.cl-content {
+  --measure: var(--measure-quiz);
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-block: var(--pad);
+  /* A centred reading column without an extra wrapper */
+  padding-inline: max(var(--pad), calc((100% - var(--measure)) / 2));
+  scrollbar-width: thin;
+  scrollbar-color: var(--frame-inner) transparent;
+}
+.cl-content--lesson { --measure: var(--measure-lesson); }
+.cl-content--quiz { --measure: var(--measure-quiz); }
+.cl-content--code { --measure: 100%; }
+
+/* ── Text blocks ── */
+
+.cl-title {
+  margin: 0 0 var(--sp-4);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--accent);
+  text-shadow: 2px 0 0 var(--ink-shadow), 0 2px 0 var(--ink-shadow), 2px 2px 0 var(--ink-shadow);
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.cl-text-block {
+  margin: 0 0 var(--sp-3);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.cl-text-block strong,
+.cl-info-card-content strong,
+.cl-profpi-bubble strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Inline code (tokens are coloured by ClSyntaxHighlighter for a dark background) */
+.cl-overlay code {
+  padding: 0.1em 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: #e06c75;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 3px;
+}
+
+/* ── Code blocks and the editor widget (CodeMirror + oneDark) ── */
+
+.cl-code-block {
+  margin: 0 0 var(--sp-3);
+  overflow: hidden;
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+}
+
+/* Three classes: CodeMirror's theme rules use two and are injected later */
+.cl-overlay .cl-code-block .cm-editor,
+.cl-overlay .cl-editor-widget .cm-editor {
+  font-size: var(--fs-code);
+  border: none;
+  border-radius: 0;
+}
+.cl-overlay .cm-editor .cm-scroller {
+  padding: 8px 0;
+  font-family: var(--font-mono);
+  line-height: 1.5;
+}
+
+.cl-editor-widget {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 var(--sp-3);
+  overflow: hidden;
+  background: var(--code-bg);
+  border: 1px solid var(--frame-inner);
+  border-radius: 8px;
+}
+
+.cl-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  background: var(--code-bg);
+  border-bottom: 1px solid var(--frame-inner);
+}
+
+.cl-editor-toolbar .cl-run-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--ok);
+  background: var(--surface);
+  border: 1px solid var(--frame-inner);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cl-editor-toolbar .cl-run-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.cl-editor-toolbar .cl-run-btn .play-icon {
+  font-size: 0.75em;
+}
+
+.cl-editor-toolbar .cl-run-status {
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+.cl-editor-toolbar .cl-run-status.success { color: var(--ok); }
+.cl-editor-toolbar .cl-run-status.error { color: var(--danger); }
+
+.cl-editor-toolbar .cl-lang-label {
+  margin-left: auto;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  text-transform: lowercase;
+}
+
+.cl-console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  background: var(--code-bg);
+  border-top: 1px solid var(--frame-inner);
+}
+
+.cl-console-header .cl-console-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.cl-console-header .cl-clear-btn {
+  min-height: 26px;
+  padding: 0 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--frame-inner);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.cl-console-output {
+  min-height: 2.25em;
+  max-height: 150px;
+  overflow-y: auto;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  line-height: 1.45;
+  color: #dfe3ff;
+  background: #0b0920;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  scrollbar-width: thin;
+}
+.cl-console-output .cl-prompt { color: var(--ok); }
+.cl-console-output .cl-error { color: var(--danger); }
+.cl-console-output .cl-placeholder { color: var(--muted); }
+
+/* ── Info cards, images, Prof Pi, rows ── */
+
+.cl-info-card {
+  margin: 0 0 var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--frame-inner);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+}
+
+.cl-info-card-title {
+  margin-bottom: var(--sp-1);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.cl-info-card-content {
+  font-size: 0.95em;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+details.cl-info-card > summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+details.cl-info-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cl-image-placeholder {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--fs-small);
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Course images: never wider than the column, never stretched */
+.cl-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  margin: 0 0 var(--sp-3);
+}
+.cl-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: min(50cqh, 28rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.cl-figure figcaption {
+  font-size: var(--fs-small);
+  font-style: italic;
+  color: var(--muted);
+  text-align: center;
+}
+
+.cl-profpi {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  margin: 0 0 var(--sp-3);
+}
+.cl-profpi-face {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  background: var(--surface);
+  border: 2px solid var(--frame);
+  border-radius: 50%;
+}
+.cl-profpi-bubble {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--frame-inner);
+  border-radius: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.cl-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin: 0 0 var(--sp-3);
+}
+.cl-row-cell {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+/* ── Buttons ── */
+
+.cl-btn,
+.cl-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: var(--tap);
+  padding: 0 var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  box-shadow: 0 3px 0 var(--shadow);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s, transform 0.05s;
+}
+.cl-btn:active,
+.cl-btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--shadow);
+}
+.cl-btn:disabled,
+.cl-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.cl-btn {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--frame-inner);
+}
+.cl-btn.selected {
+  color: var(--accent);
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+.cl-btn.correct {
+  color: var(--ok);
+  background: var(--ok-bg);
+  border-color: var(--ok-border);
+}
+.cl-btn.incorrect {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+}
+.cl-btn.dimmed {
+  opacity: 0.45;
+}
+
+.cl-btn-primary {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-pixel-lg);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--primary-fg);
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-border);
+  box-shadow: 0 3px 0 #8a5503, inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+/* Hover only where a pointer can hover: a tapped button must not look selected */
+@media (hover: hover) {
+  .cl-btn:not(.correct):not(.incorrect):hover {
+    color: var(--text);
+    background: var(--surface-hover);
+    border-color: var(--accent);
+  }
+  .cl-btn-primary:hover {
+    background: var(--primary-hover);
+  }
+  .cl-editor-toolbar .cl-run-btn:hover {
+    background: var(--surface-hover);
+  }
+  .cl-console-header .cl-clear-btn:hover {
+    color: var(--text);
+    border-color: var(--frame);
+  }
+  .cl-fill-chip:not(.used):hover,
+  .cl-match-item:not(.correct):hover {
+    color: var(--text);
+    background: var(--surface-hover);
+  }
+}
+
+/* Action bars (Continue, Verify, Submit, Solution) */
+.cl-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+.cl-content--lesson .cl-actions,
+.cl-content--quiz .cl-actions {
+  justify-content: center;
+}
+.cl-content--lesson .cl-actions .cl-btn-primary,
+.cl-content--quiz .cl-actions .cl-btn-primary {
+  min-width: 12rem;
+}
+
+/* ── Multiple choice ── */
+
+.cl-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: var(--sp-4) 0;
+}
+
+.cl-btn.cl-option {
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 52px;
+  padding: var(--sp-2) var(--sp-4);
+  overflow-x: auto;
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+/* ▶ on the option the keyboard points at, like a battle menu */
+.cl-btn.cl-option.selected::before {
+  content: '▶';
+  flex: 0 0 auto;
+  font-size: 0.75em;
+  color: var(--accent);
+}
+
+/* Short answers: a 2×2 grid when there is room */
+@container cl (min-width: 600px) {
+  .cl-options--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Feedback, hints, counters ── */
+
+.cl-success,
+.cl-failure {
+  margin: var(--sp-3) 0 var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-align: center;
+  border-radius: 4px;
+}
+.cl-success {
+  color: var(--ok);
+  background: var(--ok-bg);
+  border: 1px solid var(--ok-border);
+}
+.cl-failure {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+}
+
+.cl-hint {
+  margin: 0 0 var(--sp-2);
+  font-size: var(--fs-small);
+  text-align: center;
+  white-space: pre-wrap;
+}
+.cl-hint.correct { color: var(--ok); }
+.cl-hint.incorrect { color: var(--warn); }
+
+.cl-hint-bar {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-2);
+  font-size: var(--fs-small);
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--frame-inner);
+}
+.cl-hint-bar:empty {
+  display: none;
+}
+
+.cl-attempt-counter {
+  display: block;
+  margin-bottom: var(--sp-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.cl-label {
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.cl-problems {
+  margin: var(--sp-2) 0 0 1.25em;
+  padding: 0;
+}
+.cl-problems li {
+  margin-bottom: var(--sp-1);
+}
+
+/* ── Fill in the blanks ── */
+
+.cl-fill-template {
+  margin: 0 0 var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  line-height: 2.1;
+  color: #abb2bf;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.cl-fill-slot {
+  display: inline-block;
+  min-width: 4.5em;
+  padding: 0 var(--sp-2);
+  line-height: 1.6;
+  color: var(--accent);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--frame-inner);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cl-fill-slot.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 201, 74, 0.3);
+}
+.cl-fill-slot.correct {
+  color: var(--ok);
+  background: var(--ok-bg);
+  border-color: var(--ok-border);
+}
+.cl-fill-slot.incorrect {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+}
+
+.cl-fill-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-2);
+}
+
+.cl-fill-chip {
+  min-height: var(--tap);
+  padding: 0 var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--frame-inner);
+  border-radius: 6px;
+  box-shadow: 0 3px 0 var(--shadow);
+  cursor: pointer;
+}
+.cl-fill-chip.selected {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.cl-fill-chip.used {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ── Matching pairs ── */
+
+/* Anchors the SVG layer that draws the connecting lines over the two columns */
+.cl-match-area {
+  position: relative;
+  margin: var(--sp-4) 0;
+}
+
+.cl-match-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.cl-match-container {
+  display: flex;
+  gap: clamp(24px, 6cqi, 64px);
+}
+
+.cl-match-column {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.cl-match-item {
+  min-height: var(--tap);
+  padding: var(--sp-2) var(--sp-3);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  color: var(--text);
+  text-align: center;
+  overflow-wrap: anywhere;
+  background: var(--surface);
+  border: 1px solid var(--frame-inner);
+  border-radius: 6px;
+  box-shadow: 0 3px 0 var(--shadow);
+  cursor: pointer;
+}
+.cl-match-item.selected {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.cl-match-item.connected {
+  color: var(--info);
+  border-color: var(--info);
+}
+.cl-match-item.correct {
+  color: var(--ok);
+  background: var(--ok-bg);
+  border-color: var(--ok-border);
+  cursor: default;
+  pointer-events: none;
+}
+.cl-match-item.incorrect {
+  color: var(--danger);
+  border-color: var(--danger-border);
+}
+
+/* ── Solution overlay ── */
+
+.cl-solution-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter);
+  background: rgba(3, 5, 46, 0.86);
+}
+
+.cl-solution-panel {
+  width: min(100%, 48rem);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--pad);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  border: 2px solid var(--frame);
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px var(--ink-shadow), 0 8px 24px var(--shadow);
+  scrollbar-width: thin;
+}
+
+.cl-solution-title {
+  margin: 0 0 var(--sp-4);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  color: var(--accent);
+  text-align: center;
+}
+
+/* ── Code challenge: instructions | editor, side by side when there is room ── */
+
+.cl-code-brief,
+.cl-code-work {
+  min-width: 0;
+}
+
+@container cl (min-width: 960px) {
+  .cl-content--code {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    column-gap: var(--pad);
+    overflow: hidden;
+  }
+  .cl-content--code > .cl-attempt-counter {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .cl-code-brief,
+  .cl-code-work {
+    grid-row: 2;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--frame-inner) transparent;
+  }
+  .cl-code-brief {
+    grid-column: 1;
+    padding-right: var(--sp-2);
+  }
+  .cl-code-brief > .cl-title {
+    text-align: left;
+  }
+  .cl-code-work {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  .cl-code-work > .cl-editor-widget {
+    flex: 1 1 auto;
+    min-height: 16rem;
+  }
+  .cl-overlay .cl-code-work .cl-editor-widget .cm-editor {
+    flex: 1 1 auto;
+    min-height: 8rem;
+  }
+  .cl-overlay .cl-code-work .cm-editor .cm-scroller {
+    overflow: auto;
+  }
+  .cl-code-work .cl-console-output {
+    max-height: clamp(5rem, 22cqh, 16rem);
+  }
+}
+
+/* ── Narrow screens ── */
+
+@container cl (max-width: 560px) {
+  .cl-actions > button {
+    flex: 1 1 100%;
+  }
+}
+
+/* ── Touch screens ── */
+
+@media (pointer: coarse) {
+  .cl-overlay {
+    --fs-code: 16px; /* readable, and iOS doesn't zoom into the editor */
+  }
+  .cl-editor-toolbar .cl-run-btn,
+  .cl-console-header .cl-clear-btn {
+    min-height: var(--tap);
+  }
+  .cl-fill-template {
+    line-height: 2.4;
+  }
+  .cl-fill-slot {
+    padding: 2px 10px;
+  }
+}
+
+/* Keyboard-only hints make no sense on a touch screen */
+@media (hover: none) and (pointer: coarse) {
+  .cl-keys-hint {
+    display: none;
+  }
+}
+
+/* ── Wrong answer: shake + red glow on the panel ── */
+
+@keyframes challenge-hit {
+  0% { transform: translateX(0); filter: brightness(1); }
+  10% { transform: translateX(-6px); filter: brightness(1.5) saturate(2) hue-rotate(-10deg); }
+  20% { transform: translateX(5px); }
+  30% { transform: translateX(-4px); filter: brightness(1.2); }
+  40% { transform: translateX(3px); }
+  50% { transform: translateX(-2px); filter: brightness(1); }
+  100% { transform: translateX(0); filter: brightness(1); }
+}
+
+.cl-panel.hit {
+  animation: challenge-hit 0.4s ease-out;
+  box-shadow:
+    0 0 0 2px var(--ink-shadow),
+    inset 0 0 0 1px var(--frame-inner),
+    0 0 30px rgba(255, 50, 50, 0.55),
+    inset 0 0 24px rgba(255, 0, 0, 0.18);
+}

@@ -33,11 +33,12 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
   private matchContainer!: HTMLDivElement
   private feedbackArea!: HTMLDivElement
   private hintBar!: HTMLDivElement
+  private resizeObserver: ResizeObserver | null = null
 
   protected onCreate(
     _scene: Phaser.Scene,
     config: ClMatchingPairsConfig,
-    panel: HTMLDivElement,
+    content: HTMLDivElement,
   ): void {
     this.config = config
     this.answered = false
@@ -63,26 +64,19 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
     const title = document.createElement('div')
     title.className = 'cl-title'
     title.textContent = resolveText(this.config.title)
-    panel.appendChild(title)
+    content.appendChild(title)
 
     // Question content blocks
-    this.renderer.renderContentBlocks(panel, this.config.content.question)
+    this.renderer.renderContentBlocks(content, this.config.content.question)
 
-    // Match container (relative positioning for SVG lines)
+    // Match area: the two columns, with the connecting lines drawn over them
     this.matchContainer = document.createElement('div')
-    this.matchContainer.style.position = 'relative'
-    this.matchContainer.style.margin = '14px 0'
-    panel.appendChild(this.matchContainer)
+    this.matchContainer.className = 'cl-match-area'
+    content.appendChild(this.matchContainer)
 
     // SVG for connection lines
     this.svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-    this.svgEl.style.position = 'absolute'
-    this.svgEl.style.top = '0'
-    this.svgEl.style.left = '0'
-    this.svgEl.style.width = '100%'
-    this.svgEl.style.height = '100%'
-    this.svgEl.style.pointerEvents = 'none'
-    this.svgEl.style.overflow = 'visible'
+    this.svgEl.setAttribute('class', 'cl-match-lines')
     this.matchContainer.appendChild(this.svgEl)
 
     // Two-column layout
@@ -139,15 +133,19 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
 
     this.updateHighlights()
 
+    // Lines follow the items when the window is resized or the phone rotates
+    this.resizeObserver = new ResizeObserver(() => this.drawConnections())
+    this.resizeObserver.observe(this.matchContainer)
+
     // Feedback area
     this.feedbackArea = document.createElement('div')
-    panel.appendChild(this.feedbackArea)
+    content.appendChild(this.feedbackArea)
 
     // Hint bar
     this.hintBar = document.createElement('div')
     this.hintBar.className = 'cl-hint-bar'
     this.hintBar.textContent = this.t('challenge_hint_matching')
-    panel.appendChild(this.hintBar)
+    content.appendChild(this.hintBar)
 
     // Keyboard navigation
     this.bindKeys({
@@ -189,6 +187,11 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
         }
       },
     })
+  }
+
+  protected onDestroy(): void {
+    this.resizeObserver?.disconnect()
+    this.resizeObserver = null
   }
 
   private connect(): void {
@@ -318,7 +321,10 @@ export class ClMatchingPairsChallenge extends ChallengeBase<ClMatchingPairsConfi
       if (line) line.setAttribute('stroke', '#cc3333')
 
       this.addTimer(() => {
-        this.connections.delete(termIdx)
+        // Undo only this wrong pair: the right one may have been made in the meantime
+        if (!this.lockedTerms.has(termIdx) && this.connections.get(termIdx) === matchDisplayIdx) {
+          this.connections.delete(termIdx)
+        }
         this.termEls[termIdx].classList.remove('incorrect')
         this.matchEls[matchDisplayIdx].classList.remove('incorrect')
         this.selectedTerm = -1

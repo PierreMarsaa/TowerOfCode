@@ -9,6 +9,15 @@ function resolveOptionText(option: ClMultipleChoiceOption): string {
   return raw.replace(/```/g, '')
 }
 
+/** Answers short enough for a 2×2 grid: one line, no code block, at most 30 characters */
+const GRID_MAX_LENGTH = 30
+function fitsGrid(options: ClMultipleChoiceOption[]): boolean {
+  return options.every(option => {
+    const text = resolveOptionText(option)
+    return option.type !== 'codeBlock' && !text.includes('\n') && text.length <= GRID_MAX_LENGTH
+  })
+}
+
 export class ClMultipleChoiceChallenge extends ChallengeBase<ClMultipleChoiceConfig> {
   private config!: ClMultipleChoiceConfig
   private selectedIndex = 0
@@ -25,7 +34,7 @@ export class ClMultipleChoiceChallenge extends ChallengeBase<ClMultipleChoiceCon
   protected onCreate(
     _scene: Phaser.Scene,
     config: ClMultipleChoiceConfig,
-    panel: HTMLDivElement,
+    content: HTMLDivElement,
   ): void {
     this.config = config
     this.selectedIndex = 0
@@ -35,30 +44,27 @@ export class ClMultipleChoiceChallenge extends ChallengeBase<ClMultipleChoiceCon
     const title = document.createElement('div')
     title.className = 'cl-title'
     title.textContent = resolveText(this.config.title)
-    panel.appendChild(title)
+    content.appendChild(title)
 
     // Question content blocks
-    this.renderer.renderContentBlocks(panel, this.config.content.question)
+    this.renderer.renderContentBlocks(content, this.config.content.question)
 
-    // Options container
+    // Options: one column, or a 2×2 grid on wide screens when the answers are short
     this.optionsDiv = document.createElement('div')
-    this.optionsDiv.style.display = 'flex'
-    this.optionsDiv.style.flexDirection = 'column'
-    this.optionsDiv.style.gap = '6px'
-    this.optionsDiv.style.margin = '14px 0'
-    panel.appendChild(this.optionsDiv)
+    this.optionsDiv.className = fitsGrid(this.config.content.exercise.options) ? 'cl-options cl-options--grid' : 'cl-options'
+    content.appendChild(this.optionsDiv)
 
     this.renderOptions()
 
     // Feedback area
     this.feedbackArea = document.createElement('div')
-    panel.appendChild(this.feedbackArea)
+    content.appendChild(this.feedbackArea)
 
-    // Hint bar
+    // Hint bar (keyboard keys: hidden on touch screens)
     this.hintBar = document.createElement('div')
-    this.hintBar.className = 'cl-hint-bar'
+    this.hintBar.className = 'cl-hint-bar cl-keys-hint'
     this.hintBar.textContent = this.t('challenge_hint_mcq')
-    panel.appendChild(this.hintBar)
+    content.appendChild(this.hintBar)
 
     this.setupKeyboard()
   }
@@ -78,8 +84,7 @@ export class ClMultipleChoiceChallenge extends ChallengeBase<ClMultipleChoiceCon
     for (let i = 0; i < options.length; i++) {
       const originalIdx = this.shuffleMap[i]
       const btn = document.createElement('button')
-      btn.className = 'cl-btn'
-      btn.style.textAlign = 'left'
+      btn.className = 'cl-btn cl-option'
       const option = options[originalIdx]
       const text = resolveOptionText(option)
       if (option.language || option.type === 'codeBlock') {

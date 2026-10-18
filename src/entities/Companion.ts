@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 import type { Direction } from '@/data/types'
-import { TILE_SIZE, PLAYER_MOVE_SPEED } from '@/config/game.config'
+import { TILE_SIZE, WALK_STEP_MS } from '@/config/game.config'
 import { tileToPixel, DIR_OFFSETS } from '@/utils/helpers'
 import { createDirectionalAnimations, DIR_ROW } from '@/utils/AnimationFactory'
 
@@ -51,7 +51,7 @@ export class Companion {
     this.isMoving = true
     this.sprite.play(`${this.animPrefix}-${this.facing}`, true)
 
-    const duration = (TILE_SIZE / PLAYER_MOVE_SPEED) * 1000
+    const duration = WALK_STEP_MS
 
     scene.tweens.add({
       targets: this.sprite,

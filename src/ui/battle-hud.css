@@ -1,0 +1,251 @@
+/*
+ * The battle screen's top half and the victory screen, in the game's windows style
+ * (Code-Life's indigo cards, purple lines, gold highlights). Uses the tokens declared
+ * on .cl-overlay (challenge.css); sizes come from the overlay's container queries,
+ * so it also fits the editor's 640×480 test box.
+ *
+ *   ┌───────────────────────────────────┐
+ *   │ ╭ ZAP ──────╮            (opp.)   │
+ *   │ │ PV ▬▬▬▬▬▬ │          ◍ glow     │
+ *   │ ╰───────────╯                     │
+ *   │  ◍ glow (yours)    ╭ FLORACHU ──╮ │
+ *   │                    │ PV ▬▬▬▬ 20 │ │
+ *   │                    ╰────────────╯ │
+ *   │ ╭ PROF. PI envoie ZAP ! ────────╮ │
+ *   └───────────────────────────────────┘
+ *
+ * The pixel font stays at whole pixel sizes: --hud-fs is 16 px, 32 px on big screens.
+ */
+
+.battle-hud {
+  --mon: clamp(64px, 17cqmin, 168px);
+  --hud-fs: 16px;
+  --hud-px: 1px;
+  flex: 0 0 auto;
+  width: min(100%, var(--frame-max));
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1.2cqi, 12px);
+  padding: clamp(8px, 1.6cqi, 18px) clamp(10px, 2.4cqi, 28px);
+  font-family: var(--font-pixel);
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% 130%, rgba(144, 149, 255, 0.2), transparent 60%),
+    linear-gradient(180deg, #24205a, var(--bg));
+  border: 2px solid var(--frame);
+  border-radius: 12px;
+  box-shadow: 0 0 0 2px var(--ink-shadow), inset 0 0 0 1px var(--frame-inner), 0 8px 24px var(--shadow);
+  text-shadow: var(--hud-px) 0 0 var(--ink-shadow), 0 var(--hud-px) 0 var(--ink-shadow), var(--hud-px) var(--hud-px) 0 var(--ink-shadow);
+}
+
+@container cl (min-width: 900px) and (min-height: 700px) {
+  .battle-hud {
+    --hud-fs: 32px;
+    --hud-px: 2px;
+  }
+}
+
+.battle-field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'oppinfo oppmon'
+    'mymon myinfo';
+  align-items: center;
+  column-gap: var(--sp-4);
+  row-gap: 0;
+}
+
+/* Each Codémon stands on a soft glow in its type colour (--type, set by BattleHud) */
+.battle-mon {
+  width: var(--mon);
+  height: var(--mon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 46% 12% at 50% 90%, rgba(11, 9, 32, 0.55), transparent),
+    radial-gradient(closest-side, color-mix(in srgb, var(--type, #9095ff) 60%, transparent), transparent);
+}
+.battle-mon.opponent { grid-area: oppmon; justify-self: end; margin-right: 6%; }
+.battle-mon.player { grid-area: mymon; justify-self: start; margin-left: 6%; }
+.battle-mon img {
+  display: block;
+  max-width: 88%;
+  max-height: 88%;
+  object-fit: contain;
+}
+.battle-mon img.mirrored {
+  transform: scaleX(-1);
+}
+
+/* Name, type and PV bar on a rounded card */
+.battle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 8px 14px 10px;
+  font-size: var(--hud-fs);
+  line-height: 1;
+  background: linear-gradient(180deg, var(--surface), #1d1a45);
+  border: 2px solid var(--frame-inner);
+  border-top-color: var(--frame);
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px var(--ink-shadow);
+}
+.battle-info.opponent {
+  grid-area: oppinfo;
+  justify-self: start;
+}
+.battle-info.player {
+  grid-area: myinfo;
+  justify-self: end;
+  align-items: flex-end;
+}
+.battle-name {
+  white-space: nowrap;
+}
+.battle-type {
+  align-self: flex-start;
+  padding: 3px 8px 2px;
+  font-size: var(--fs-pixel);
+  color: var(--type-ink, #1c1846);
+  background: var(--type, #9095ff);
+  border-radius: 999px;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: none;
+}
+.battle-info.player .battle-type { align-self: flex-end; }
+.battle-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.battle-bar-label {
+  font-size: var(--fs-pixel);
+  color: var(--hp-label);
+}
+.battle-bar {
+  width: clamp(96px, 22cqi, 220px);
+  height: clamp(10px, 1.6cqmin, 14px);
+  padding: 2px;
+  background: #0b0920;
+  border: 1px solid var(--frame-inner);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.battle-bar-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #8dffb5, var(--hp-high));
+  border-radius: 999px;
+  transition: width 0.45s ease-out;
+}
+.battle-bar-fill.mid { background: linear-gradient(180deg, #ffe39a, var(--hp-mid)); }
+.battle-bar-fill.low { background: linear-gradient(180deg, #ffa3b6, var(--hp-low)); }
+.battle-hp-text {
+  font-size: var(--fs-pixel);
+  letter-spacing: 0.06em;
+}
+
+/* The battle messages, in the game's text box */
+.battle-message {
+  min-height: calc(var(--hud-fs) * 2.4);
+  padding: 10px 16px;
+  font-size: var(--hud-fs);
+  line-height: 1.2;
+  background: #1c1846;
+  border: 2px solid var(--frame);
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px var(--ink-shadow), inset 0 0 0 1px var(--surface);
+  white-space: pre-wrap;
+}
+
+@keyframes battle-lunge-right {
+  0%, 100% { transform: translateX(0); }
+  40% { transform: translateX(28px); }
+}
+@keyframes battle-lunge-left {
+  0%, 100% { transform: translateX(0); }
+  40% { transform: translateX(-28px); }
+}
+@keyframes battle-hurt {
+  0%, 100% { opacity: 1; }
+  20%, 60% { opacity: 0; }
+  40%, 80% { opacity: 1; }
+}
+@keyframes battle-faint {
+  to { transform: translateY(40%); opacity: 0; clip-path: inset(0 0 100% 0); }
+}
+.battle-mon.lunge-right { animation: battle-lunge-right 0.35s ease-out; }
+.battle-mon.lunge-left { animation: battle-lunge-left 0.35s ease-out; }
+.battle-mon.hurt { animation: battle-hurt 0.5s steps(1, end); }
+.battle-mon.fainted { animation: battle-faint 0.6s ease-in forwards; }
+
+/* Victory and catch screens, rendered directly in the challenge panel */
+.battle-victory {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  padding: var(--pad);
+  text-align: center;
+}
+.battle-victory .cl-title {
+  margin: 0;
+}
+.battle-victory .cl-text-block {
+  margin: 0;
+}
+.battle-victory .cl-btn-primary {
+  min-width: 12rem;
+}
+
+/* Short screens (landscape phones, the editor's test box): one compact row,
+   both Codémon and their bars side by side, no message box */
+@container cl (max-height: 560px) {
+  .battle-hud {
+    --mon: 44px;
+    gap: 0;
+    padding: 4px 10px;
+  }
+  .battle-field {
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-areas: 'mymon myinfo oppinfo oppmon';
+    column-gap: var(--sp-3);
+  }
+  .battle-mon.player,
+  .battle-mon.opponent {
+    margin: 0;
+  }
+  /* Name and type on one line, the bar under them; the bar alone shows your PV */
+  .battle-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: 'name type' 'bar bar';
+    align-items: center;
+    justify-items: start;
+    column-gap: 8px;
+    row-gap: 4px;
+    padding: 4px 10px 6px;
+  }
+  .battle-name { grid-area: name; }
+  .battle-type { grid-area: type; }
+  .battle-bar-row { grid-area: bar; }
+  .battle-hp-text { display: none; }
+  .battle-info.player {
+    justify-self: start;
+  }
+  .battle-info.opponent {
+    justify-self: end;
+  }
+  .battle-message {
+    display: none;
+  }
+}

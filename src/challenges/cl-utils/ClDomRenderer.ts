@@ -1,15 +1,15 @@
 /**
  * Shared DOM rendering utility for CL challenge types.
  * Creates an HTML overlay on top of the Phaser canvas and renders
- * content blocks. Delegates to focused modules for styles, syntax
- * highlighting, and CodeMirror instances.
+ * content blocks. Delegates to focused modules for syntax highlighting
+ * and CodeMirror instances; styles live in challenge.css.
  */
 
 import { EditorView } from '@codemirror/view'
 import type { Extension } from '@codemirror/state'
 import type { ClContentBlock } from '@/data/types'
 import { resolveText } from '@/utils/i18n-helpers'
-import { injectClStyles } from './ClStyles'
+import './challenge.css'
 import { escapeHtml, highlightInlineCode } from './ClSyntaxHighlighter'
 import {
   createCodeMirrorReadOnly as cmReadOnly,
@@ -31,8 +31,6 @@ const PROF_PI_FACE = 'characters_ProfPiHead'
  * Exported so a scene can own one overlay across several chained challenges.
  */
 export function createChallengeOverlay(scene: Phaser.Scene): { overlay: HTMLDivElement; panel: HTMLDivElement } {
-  injectClStyles()
-
   const parent = scene.game.canvas.parentElement!
   if (getComputedStyle(parent).position === 'static') {
     parent.style.position = 'relative'
@@ -224,8 +222,6 @@ export class ClDomRenderer {
 
       const summary = document.createElement('summary')
       summary.className = 'cl-info-card-title'
-      summary.style.cursor = 'pointer'
-      summary.style.listStyle = 'none'
       summary.textContent = `${details.open ? '▾' : '▸'} ${cardTitle}`
       details.appendChild(summary)
 

@@ -1,322 +1,142 @@
 import Phaser from 'phaser'
-import { DialogSystem } from '@/systems/DialogSystem'
 import { i18n } from '@/i18n/I18nManager'
 import { SCENE } from '@/utils/constants'
 import type { BattlePlan } from '@/systems/TrainerBattle'
 import type { ChallengeSceneData } from '@/scenes/ChallengeScene'
+import { preloadUi, registerUi } from '@/ui/kit/assets'
+import { PadInput } from '@/ui/kit/input'
+import { TextBox } from '@/ui/kit/TextBox'
+import { askChoice, askYesNo } from '@/ui/kit/Menu'
+import { pickName } from '@/ui/kit/NameEntry'
+import { battleIntro } from '@/ui/kit/fade'
 
 export interface DialogSceneData {
   dialogKey?: string
+  /** Kept for callers; the name tag comes from a "NAME : " prefix on the line itself */
   npcName?: string
   /** Set when this NPC is a trainer: the battle that follows the dialog */
   plan?: BattlePlan
   /** The trainer was already beaten: offer a rematch instead of fighting right away */
   defeated?: boolean
+  /** Values for {placeholders} in the dialog lines (e.g. {chapter}) */
+  dialogParams?: Record<string, string | number>
+  /** Lines to show directly, instead of (or before) dialogKey's */
+  lines?: string[]
+  /** Ask a question after the last line: OUI/NON, or a list of answers */
+  choices?: 'yesno' | string[]
+  /** What B answers for a list of choices (default: null = no answer) */
+  cancelChoice?: number | null
+  /** B can't skip the question (a list of choices) */
+  required?: boolean
+  /** After the last line, the name entry (suggestions + letter grid) */
+  askName?: { presets: string[]; title: string }
+  /** The scene to resume afterwards (default GameScene) */
+  returnScene?: string
 }
 
+/** Sent with 'dialog-closed' to the scene that opened the dialog */
+export interface DialogResult {
+  /** The answer's index (OUI = 0, NON = 1), null when cancelled, undefined without a question */
+  choice?: number | null
+  /** The dialog handed over to a battle or a lesson instead of resuming the scene */
+  battle?: boolean
+  /** The name entered (askName) */
+  name?: string
+}
+
+/**
+ * Text over the paused map, in the text box. Then, depending on the data: a battle
+ * (trainer), a rematch question (beaten trainer), a question or the name entry
+ * (scripts), or back to the map.
+ */
 export class DialogScene extends Phaser.Scene {
-  private dialogSystem!: DialogSystem
-  private speakerText!: Phaser.GameObjects.Text
-  private dialogText!: Phaser.GameObjects.Text
-  private advanceIndicator!: Phaser.GameObjects.Text
-  private advanceTween?: Phaser.Tweens.Tween
   private sceneData!: DialogSceneData
-  private inReplayPrompt = false
-  private transitioning = false
-  private selectedOption = 0 // 0 = yes, 1 = no
-  private optionsText?: Phaser.GameObjects.Text
-  private yesLabel = ''
-  private noLabel = ''
+  private input2!: PadInput
+  private box!: TextBox
+  private closed = false
 
   constructor() {
     super({ key: SCENE.DIALOG })
   }
 
+  preload(): void {
+    preloadUi(this)
+  }
+
   create(data: DialogSceneData): void {
+    registerUi(this)
     this.sceneData = data
-    this.inReplayPrompt = false
-    this.transitioning = false
-    this.selectedOption = 1
-    const cam = this.cameras.main
-    const boxY = cam.height - 58
-
-    // Semi-transparent background overlay
-    this.add.rectangle(cam.centerX, cam.centerY, cam.width, cam.height, 0x000000, 0.3)
-      .setDepth(0)
-
-    // Dialog box
-    this.add.image(cam.centerX, boxY, 'dialog-box')
-      .setDepth(1)
-
-    // Speaker name
-    this.speakerText = this.add.text(cam.centerX - 286, boxY - 36, '', {
-      fontSize: '16px',
-      color: '#ffdd44',
-      fontFamily: 'monospace',
-    }).setDepth(2)
-
-    // Dialog text
-    this.dialogText = this.add.text(cam.centerX - 286, boxY - 14, '', {
-      fontSize: '14px',
-      color: '#ffffff',
-      fontFamily: 'monospace',
-      wordWrap: { width: 572 },
-      lineSpacing: 6,
-    }).setDepth(2)
-
-    // Advance indicator
-    this.advanceIndicator = this.add.text(cam.centerX + 286, boxY + 32, '>', {
-      fontSize: '16px',
-      color: '#aaaaaa',
-      fontFamily: 'monospace',
-    }).setDepth(2)
-
-    this.advanceTween = this.tweens.add({
-      targets: this.advanceIndicator,
-      alpha: 0.3,
-      yoyo: true,
-      repeat: -1,
-      duration: 500,
-    })
-
-    // Dialog system
-    this.dialogSystem = new DialogSystem(
-      this,
-      (text, speaker) => {
-        this.dialogText.setText(text)
-        if (speaker) this.speakerText.setText(speaker)
-      },
-      () => this.onDialogComplete(),
-    )
-
-    // Get dialog lines from i18n
-    const lines = data.dialogKey
-      ? i18n.getDialog(data.dialogKey, data.npcName)
-      : []
-    this.dialogSystem.start(lines)
-
-    // Input
-    this.input.keyboard!.on('keydown-SPACE', () => {
-      if (this.transitioning) return
-      if (this.inReplayPrompt) {
-        this.confirmReplayChoice()
-      } else {
-        this.dialogSystem.advance()
-      }
-    })
-
-    this.input.keyboard!.on('keydown-ENTER', () => {
-      if (this.transitioning) return
-      if (this.inReplayPrompt) this.confirmReplayChoice()
-    })
-
-    this.input.keyboard!.on('keydown-UP', () => {
-      if (this.inReplayPrompt) {
-        this.selectedOption = 0
-        this.updateReplayHighlight()
-      }
-    })
-
-    this.input.keyboard!.on('keydown-DOWN', () => {
-      if (this.inReplayPrompt) {
-        this.selectedOption = 1
-        this.updateReplayHighlight()
-      }
-    })
-
-    // Cleanup on shutdown (use 'once' to prevent listener accumulation across scene restarts)
-    this.events.once('shutdown', () => {
-      this.input.keyboard!.off('keydown-SPACE')
-      this.input.keyboard!.off('keydown-ENTER')
-      this.input.keyboard!.off('keydown-UP')
-      this.input.keyboard!.off('keydown-DOWN')
-      if (this.advanceTween) {
-        this.advanceTween.stop()
-        this.advanceTween = undefined
-      }
-      this.dialogSystem.destroy()
-    })
+    this.closed = false
+    this.input2 = new PadInput(this)
+    this.box = new TextBox(this, this.input2)
+    void this.run()
   }
 
-  private onDialogComplete(): void {
-    if (this.transitioning) return
-    if (this.sceneData.plan) {
-      if (this.sceneData.defeated) {
-        this.showReplayPrompt()
+  /** What test hooks read: the visible text */
+  get dialogText(): { text: string } {
+    return { text: String(this.box?.state().text ?? '') }
+  }
+
+  private lines(): string[] {
+    const data = this.sceneData
+    const fromKey = data.dialogKey ? i18n.getDialog(data.dialogKey, data.npcName, data.dialogParams).map(l => l.text) : []
+    return [...(data.lines ?? []), ...fromKey]
+  }
+
+  private async run(): Promise<void> {
+    const data = this.sceneData
+    const lines = this.lines()
+    const asks = !!data.choices || !!data.askName || (!!data.plan && !!data.defeated)
+    if (lines.length) await this.box.say(lines, { holdLast: asks && !data.defeated })
+    if (this.closed) return
+
+    if (data.plan) {
+      if (data.defeated) {
+        await this.box.say([i18n.t('battle_rematch_prompt')], { holdLast: true })
+        if (await askYesNo(this, this.input2)) await this.startBattle()
+        else this.close({ choice: 1 })
       } else {
-        this.startBattle()
+        await this.startBattle()
       }
+      return
+    }
+
+    if (data.askName) {
+      const name = await pickName(this, this.input2, data.askName)
+      this.close({ name })
+    } else if (data.choices === 'yesno') {
+      const yes = await askYesNo(this, this.input2)
+      this.close({ choice: yes ? 0 : 1 })
+    } else if (data.choices) {
+      const choice = await askChoice(this, this.input2, data.choices, { cancel: data.cancelChoice ?? null, noCancel: data.required })
+      this.close({ choice })
     } else {
-      this.scene.stop()
-      this.scene.resume(SCENE.GAME)
+      this.close({})
     }
   }
 
-  /** Battle transition, then hand the plan to the challenge scene */
-  private startBattle(): void {
+  /** The battle transition (none for a lesson: nothing to fight), then the challenge scene */
+  private async startBattle(): Promise<void> {
     const plan = this.sceneData.plan
-    if (!plan) return
-    this.transitioning = true
-    this.playCombatTransition(() => {
-      const data: ChallengeSceneData = { plan }
-      this.scene.stop()
-      this.scene.launch(SCENE.CHALLENGE, data)
-    })
-  }
-
-  /** Classic RPG spiral-in battle transition */
-  private playCombatTransition(onDone: () => void): void {
-    const cam = this.cameras.main
-    const w = cam.width
-    const h = cam.height
-    const cx = cam.centerX
-    const cy = cam.centerY
-    const maxRadius = Math.sqrt(cx * cx + cy * cy) + 20
-
-    // Phase 1: Two quick white flashes
-    const flash = this.add.rectangle(cx, cy, w, h, 0xffffff, 0).setDepth(100)
-
-    this.tweens.add({
-      targets: flash,
-      alpha: { from: 0, to: 0.7 },
-      duration: 80,
-      yoyo: true,
-      onComplete: () => {
-        this.tweens.add({
-          targets: flash,
-          alpha: { from: 0, to: 0.5 },
-          duration: 60,
-          yoyo: true,
-          onComplete: () => {
-            flash.destroy()
-            this.playSpiralWipe(cx, cy, maxRadius, w, h, onDone)
-          },
-        })
-      },
-    })
-  }
-
-  /** Iris-wipe closing circle with spinning accent — classic RPG battle entry */
-  private playSpiralWipe(cx: number, cy: number, maxRadius: number, w: number, h: number, onDone: () => void): void {
-    // Black rectangle that covers the screen — masked by a shrinking circle
-    const blackBg = this.add.rectangle(cx, cy, w, h, 0x111122).setDepth(99)
-
-    // Circle shape used as geometry mask (visible area = inside the circle)
-    const maskShape = this.make.graphics({ x: 0, y: 0 })
-    maskShape.fillStyle(0xffffff)
-    maskShape.fillCircle(cx, cy, maxRadius)
-
-    const mask = maskShape.createGeometryMask()
-    mask.invertAlpha = true // Invert: black shows OUTSIDE the circle
-    blackBg.setMask(mask)
-
-    // Accent ring that spins as it closes
-    const ringGfx = this.add.graphics().setDepth(100)
-
-    const duration = 650
-    const startTime = this.time.now
-
-    const updateEvent = this.time.addEvent({
-      delay: 16,
-      loop: true,
-      callback: () => {
-        const elapsed = this.time.now - startTime
-        const t = Math.min(elapsed / duration, 1)
-        // Ease-in curve — starts fast, decelerates at the end
-        const eased = 1 - Math.pow(1 - t, 3)
-
-        const r = maxRadius * (1 - eased)
-
-        // Redraw the mask circle at new radius
-        maskShape.clear()
-        maskShape.fillStyle(0xffffff)
-        maskShape.fillCircle(cx, cy, Math.max(r, 0))
-
-        // Spinning accent ring
-        ringGfx.clear()
-        if (r > 4) {
-          const spin = eased * Math.PI * 6
-          // Thin outer ring
-          ringGfx.lineStyle(2, 0xffdd44, 0.5 * (1 - eased))
-          ringGfx.strokeCircle(cx, cy, r)
-          // Bright spinning arc
-          ringGfx.lineStyle(3, 0xffdd44, 0.8 * (1 - eased * 0.5))
-          ringGfx.beginPath()
-          ringGfx.arc(cx, cy, r, spin, spin + 1.2)
-          ringGfx.strokePath()
-          // Secondary accent arc (opposite side)
-          ringGfx.lineStyle(2, 0x4488cc, 0.6 * (1 - eased))
-          ringGfx.beginPath()
-          ringGfx.arc(cx, cy, r, spin + Math.PI, spin + Math.PI + 0.8)
-          ringGfx.strokePath()
-        }
-
-        if (t >= 1) {
-          updateEvent.destroy()
-          ringGfx.destroy()
-          // Remove mask, just show full black
-          blackBg.clearMask(true)
-          maskShape.destroy()
-          blackBg.setFillStyle(0x111122)
-          this.time.delayedCall(120, onDone)
-        }
-      },
-    })
-  }
-
-  private showReplayPrompt(): void {
-    this.inReplayPrompt = true
-    this.selectedOption = 0 // default Yes
-
-    // Show prompt as regular dialog text
-    this.dialogText.setText(i18n.t('battle_rematch_prompt'))
-
-    // Hide the pulsing advance indicator
-    this.advanceIndicator.setVisible(false)
-    if (this.advanceTween) {
-      this.advanceTween.stop()
-      this.advanceTween = undefined
+    if (!plan || this.closed) return
+    this.closed = true
+    if (plan.gradedSteps > 0) {
+      this.box.setVisible(false)
+      await battleIntro(this)
     }
-
-    // Options displayed ABOVE the dialog box (player's response, not NPC speech)
-    const cam = this.cameras.main
-    const boxY = cam.height - 58
-    const optX = cam.centerX + 180
-    const optY = boxY - 110
-
-    this.yesLabel = i18n.t('yes')
-    this.noLabel = i18n.t('no')
-
-    // Small background panel for the options
-    this.add.rectangle(optX + 40, optY + 14, 110, 48, 0x000000, 0.8)
-      .setDepth(2).setStrokeStyle(1, 0x444444)
-
-    this.optionsText = this.add.text(optX, optY, '', {
-      fontSize: '14px',
-      color: '#ffffff',
-      fontFamily: 'monospace',
-      lineSpacing: 4,
-    }).setDepth(3)
-
-    this.updateReplayHighlight()
+    const returnScene = this.sceneData.returnScene ?? SCENE.GAME
+    this.scene.get(returnScene)?.events.emit('dialog-closed', { battle: true } satisfies DialogResult)
+    const next: ChallengeSceneData = { plan, returnScene }
+    this.scene.stop()
+    this.scene.launch(SCENE.CHALLENGE, next)
   }
 
-  private updateReplayHighlight(): void {
-    if (!this.optionsText) return
-    const arrow = '>'
-    const blank = ' '
-    const yesLine = `${this.selectedOption === 0 ? arrow : blank} ${this.yesLabel}`
-    const noLine = `${this.selectedOption === 1 ? arrow : blank} ${this.noLabel}`
-    this.optionsText.setText(`${yesLine}\n${noLine}`)
-  }
-
-  private confirmReplayChoice(): void {
-    if (this.transitioning) return
-    if (this.selectedOption === 0) {
-      this.startBattle()
-    } else {
-      this.scene.stop()
-      this.scene.resume(SCENE.GAME)
-    }
+  private close(result: DialogResult): void {
+    if (this.closed) return
+    this.closed = true
+    const returnScene = this.sceneData.returnScene ?? SCENE.GAME
+    this.scene.get(returnScene)?.events.emit('dialog-closed', result)
+    this.scene.stop()
+    this.scene.resume(returnScene)
   }
 }

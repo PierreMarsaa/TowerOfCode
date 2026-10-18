@@ -1,4 +1,7 @@
 {
-  "map_00_name": "The Training Maze",
-  "map_01_name": "The Entrance"
+  "map_00_name": "The Training Hall",
+  "map_01_name": "The Entrance",
+  "loc_town0": "HELLO TOWN",
+  "map_town_0_name": "Hello Town",
+  "loc_tower0": "TOWER OF CODE"
 }

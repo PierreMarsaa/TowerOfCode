@@ -30,9 +30,44 @@ export interface NPCData {
   battle?: TrainerBattleData
   /** Opponent Codémon id (default: a stable pick from the trainer's name) */
   codemon?: string
+  /** Blocks its tile until beaten, then leaves for good (tower bridges, stairs guardian) */
+  guard?: boolean
+  /** Chapter keys this NPC teaches when talked to: their lessons, no battle (Prof Pi on tower floors) */
+  lesson?: string[]
+  /** A guard says this once beaten, before stepping aside (a chapter's boss) */
+  beatenDialogKey?: string
+  /** Sprite tint (0xRRGGBB), so generated trainers don't all look alike */
+  tint?: number
   lookoutPattern?: Direction[]
   lookoutTempo?: number
   patrolPath?: { x: number; y: number }[]
+  // ── Story (all optional: the frozen editor never writes them) ──
+  /** Stable handle for scripts (defaults to the name) */
+  id?: string
+  /** Talking to this character runs a script instead of the dialog */
+  talkScript?: string
+  /** Only present when the save's story flags match */
+  visibleWhen?: Condition
+  /** Not on the map until a script shows it */
+  hidden?: boolean
+  /** How many tiles a 'detect' trainer sees ahead (default 4) */
+  sight?: number
+}
+
+/** A test on the save's story flags: every flag of `all`, none of `none` */
+export interface Condition {
+  all?: string[]
+  none?: string[]
+}
+
+/** Runs a story script when the player steps into an area, or when the map opens */
+export interface TriggerData {
+  id: string
+  on: 'step' | 'enter'
+  /** Tiles that trigger it (step triggers): x, y and an optional size */
+  area?: { x: number; y: number; w?: number; h?: number }
+  script: string
+  when?: Condition
 }
 
 // --- CL Exercise format ---
@@ -171,6 +206,25 @@ export interface StairData {
   tileX: number
   tileY: number
   targetMapId: string | null // null = map doesn't exist yet
+  /** Explicit direction (otherwise inferred from the stair's position vs playerStart) */
+  direction?: 'up' | 'down'
+  /** Where you appear when arriving through this stair (otherwise the tile below it) */
+  arrival?: { tileX: number; tileY: number; facing: Direction }
+  /**
+   * A hub gate into this game chapter (act, 1-based): its target is the act's first
+   * floor, it stays locked until the previous act's boss is beaten, and coming back
+   * from any floor of the act lands here. Its targetMapId stays null.
+   */
+  act?: number
+}
+
+// --- Signs ---
+
+/** A readable sign: face it and press the action key to read its dialog */
+export interface SignData {
+  tileX: number
+  tileY: number
+  textKey: string
 }
 
 // --- Teleports (intra-map) ---
@@ -206,6 +260,8 @@ export interface HeartPickupData {
 export interface MapData {
   id: string
   name: string
+  /** Display name per language (generated maps); takes precedence over the i18n key and `name` */
+  title?: LocalizedText
   width?: number   // tile columns (default 20)
   height?: number  // tile rows (default 15)
   groundLayer: string[]
@@ -221,13 +277,58 @@ export interface MapData {
   blocks?: PushableBlockData[]
   startingHp?: number          // 0 or undefined = infinite (no HP loss)
   hearts?: HeartPickupData[]
+  signs?: SignData[]
+  // ── Story maps (all optional) ──
+  triggers?: TriggerData[]
+  /** i18n key of the place's name, shown in a popup when you arrive (the town, the tower) */
+  location?: string
+  /** Tile drawn all around the map, beyond its edges (trees, sea…); none = black */
+  border?: string
+  /** An inside: a fixed camera centred on the room, black around it */
+  indoor?: boolean
+}
+
+/** A tile on a map, and which way you face there */
+export interface Spot {
+  mapId: string
+  tileX: number
+  tileY: number
+  facing: Direction
 }
 
 export interface SaveData {
+  version: 3
   language: 'en' | 'fr'
+  textSpeed: 'fast' | 'mid' | 'slow'
+  /** Map to load when no position is saved (and the map the game is on) */
   currentMap: string
   completedChallenges: string[]
   /** Beaten trainers, as "<mapId>:<npcName>" */
   defeatedTrainers: string[]
-  companion?: string | null  // spriteKey (e.g. 'zap'), null = no companion
+  /** Seed of this save's generated world: same seed, same maps */
+  towerSeed: number
+  /** Legacy partner (the editor's test mode still fights with it); the story has no follower */
+  companion?: string | null
+  playerName: string
+  /** The Codémon that hatched in Prof Pi's lab */
+  starter: string | null
+  /** Story progress: flags set by scripts (e.g. "got_starter") */
+  flags: string[]
+  /** Codémon caught, in order (the starter first) */
+  team: string[]
+  /** The Codémon that fights */
+  lead: string | null
+  /** Codémon met at least once (the Codédex's "seen") */
+  seen: string[]
+  /** Exercises that once cost a hit: review battles ask them first */
+  missed: string[]
+  /** Badges held: one per section master beaten (1–8) */
+  badges: number[]
+  /** Where you wake up after blacking out (the last healer, or Prof Pi's lab) */
+  lastHeal: Spot | null
+  /** Where you were when the game was last saved */
+  position: Spot | null
+  /** PV left, in half-hits (max 8); null = full */
+  hp: number | null
+  playTimeMs: number
 }

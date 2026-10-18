@@ -1,16 +1,18 @@
 import Phaser from 'phaser'
 
-const HEART_FULL = '\u2665'   // ♥
-const HEART_EMPTY = '\u2661'  // ♡
-const HEART_SIZE = 22
-const HEART_GAP = 4
-const HUD_X = 16
-const HUD_Y = 12
-const HUD_DEPTH = 200
+// Pixel hearts drawn by scripts/draw-art.mjs (32×32 once loaded), shown at 24 px
+const HEART_FULL = 'ui/heart_full'
+const HEART_EMPTY = 'ui/heart_empty'
+const HEART_SCALE = 0.75
+const HEART_SIZE = 24
+const HEART_GAP = 2
+const HUD_X = 12
+const HUD_Y = 10
+const HUD_DEPTH = 99990 // above characters (their depth is their y)
 
 export class HeartHud {
   private scene: Phaser.Scene
-  private hearts: Phaser.GameObjects.Text[] = []
+  private hearts: Phaser.GameObjects.Image[] = []
   private maxHp: number
   private hidden: boolean
 
@@ -22,16 +24,8 @@ export class HeartHud {
     if (this.hidden) return
 
     for (let i = 0; i < maxHp; i++) {
-      const heart = scene.add.text(
-        HUD_X + i * (HEART_SIZE + HEART_GAP),
-        HUD_Y,
-        HEART_FULL,
-        {
-          fontSize: `${HEART_SIZE}px`,
-          color: '#ff3344',
-          fontFamily: 'monospace',
-        }
-      )
+      const heart = scene.add.image(HUD_X + i * (HEART_SIZE + HEART_GAP), HUD_Y, HEART_FULL)
+        .setScale(HEART_SCALE)
         .setScrollFactor(0)
         .setDepth(HUD_DEPTH)
         .setOrigin(0, 0)
@@ -43,11 +37,7 @@ export class HeartHud {
     if (this.hidden) return
 
     for (let i = 0; i < this.maxHp; i++) {
-      const heart = this.hearts[i]
-      if (!heart) continue
-      const filled = i < hp
-      heart.setText(filled ? HEART_FULL : HEART_EMPTY)
-      heart.setColor(filled ? '#ff3344' : '#553333')
+      this.hearts[i]?.setTexture(i < hp ? HEART_FULL : HEART_EMPTY)
     }
   }
 
@@ -79,8 +69,8 @@ export class HeartHud {
 
     this.scene.tweens.add({
       targets: heart,
-      scaleX: 1.5,
-      scaleY: 1.5,
+      scaleX: HEART_SCALE * 1.5,
+      scaleY: HEART_SCALE * 1.5,
       duration: 150,
       yoyo: true,
       ease: 'Back.out',

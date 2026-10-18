@@ -1,8 +1,10 @@
 {
   "welcome_npc": [
     "Hey! Welcome to the Tower of Code!",
-    "This place is full of challenges to sharpen your coding skills.",
-    "Head through that warp point when you're ready to begin!"
+    "Up north stand three towers, one per chapter: The Basics in the woods, Data & Loops in the caves, Advanced in the citadel.",
+    "Each floor is a chapter of the Python course, and its trainers won't let you through without a battle.",
+    "Beat the boss at the top of a tower and the next tower opens. Read the signs if you're lost!",
+    "Want to warm up first? The road west leads to the Training Hall."
   ],
   "hint_npc_01": [
     "Hey there! I'm also a student here.",
@@ -26,5 +28,205 @@
   ],
   "trainer_content_missing": [
     "Hmm... my challenge seems to have disappeared from the course. (Content error: please tell the developer!)"
+  ],
+  "tower_prof_lesson": [
+    "Welcome to {map}!",
+    "Here's what you need to know before facing the trainers of this floor."
+  ],
+  "tower_prof_review": [
+    "Welcome to {map}!",
+    "No new lesson here: the trainers will test everything you've learned so far. Good luck!"
+  ],
+  "tower_guardian": [
+    "You want the stairs? You'll have to beat me first!"
+  ],
+  "tower_final": [
+    "So you climbed the whole tower... I'm impressed!",
+    "I've taught you everything I know. One last battle: show me what you've learned!"
+  ],
+  "tower_ending": [
+    "Incredible... you beat me!",
+    "Before you go, let me say a few last words."
+  ],
+  "sign_act1": [
+    "CHAPTER 1 · THE BASICS",
+    "Variables, text, booleans, conditions.",
+    "Floors in the woods. At the top: Boole, master of true and false."
+  ],
+  "sign_act2": [
+    "CHAPTER 2 · DATA & LOOPS",
+    "Lists, tuples, loops, sets, dictionaries.",
+    "Floors in the caves. At the top: Lovelace. Opens once Boole is beaten."
+  ],
+  "sign_act3": [
+    "CHAPTER 3 · ADVANCED",
+    "Functions, errors, classes and more.",
+    "Floors in the citadel. At the top: Prof Pi himself. Opens once Lovelace is beaten."
+  ],
+  "sign_training": [
+    "TRAINING HALL",
+    "Practice battles and puzzles, at your own pace. Optional!"
+  ],
+  "sign_village": [
+    "THE ENTRANCE",
+    "North: the three towers. West: the Training Hall."
+  ],
+  "boss_boole": [
+    "So you made it through the woods...",
+    "I am Boole. Everything here is true or false, and so is your victory. Let's find out!"
+  ],
+  "boss_boole_beaten": [
+    "True! You really did beat me.",
+    "The portal behind me leads to Chapter 2 · Data & Loops. Keep climbing!"
+  ],
+  "boss_lovelace": [
+    "Welcome to the bottom of the caves. I am Lovelace.",
+    "I wrote the first program ever written. Show me you can loop like I did!"
+  ],
+  "boss_lovelace_beaten": [
+    "Remarkable... the student has become the programmer.",
+    "The portal behind me leads to Chapter 3 · Advanced. The top isn't far now!"
+  ],
+  "pc_bedroom": [
+    "The PC shows:",
+    "print(\"Hello, world!\")",
+    "A classic."
+  ],
+  "tv_bedroom": [
+    "On TV, kids head off on an adventure with their CODÉMON...",
+    "Looks amazing!"
+  ],
+  "console_bedroom": [
+    "A game console! But this is no time to play."
+  ],
+  "shelf_home": [
+    "Cookbooks... and \"PYTHON for beginners\"!"
+  ],
+  "sink_home": [
+    "The sink is spotless. The neighbour takes good care of it."
+  ],
+  "sign_town0": [
+    "HELLO TOWN",
+    "Where everything starts with a print()."
+  ],
+  "sign_home": [
+    "THE NEIGHBOUR'S HOUSE"
+  ],
+  "sign_lab": [
+    "PROF. PI'S LAB",
+    "Research on CODÉMON... and PYTHON!"
+  ],
+  "town_girl": [
+    "Have you seen the TOWER OF CODE? They say each floor is harder than the last!"
+  ],
+  "town_kid": [
+    "PROF. PI says a good trainer always reads the error message to the end.",
+    "I only read the beginning..."
+  ],
+  "town_fisher": [
+    "The sea is calm today. Perfect for thinking about your code."
+  ],
+  "machine_lab": [
+    "A huge machine. Lines of code scroll by at full speed!"
+  ],
+  "pi_lesson_intro": [
+    "PROF. PI: {player}! Nice to meet you!",
+    "PROF. PI: Here, CODÉMON battle with PYTHON code. Every right answer is an attack!",
+    "PROF. PI: First things first: let's write your very first line of code. Follow me!"
+  ],
+  "pi_codedex": [
+    "PROF. PI: Take this: the CODÉDEX! It keeps track of every CODÉMON you meet.",
+    "PROF. PI: There are 18 of them. Finding them all is my dream!"
+  ],
+  "got_codedex": [
+    "{player} received the CODÉDEX!"
+  ],
+  "pi_later": [
+    "PROF. PI: The TOWER OF CODE is just north, {player}. Good luck!",
+    "PROF. PI: In battle, every right answer is an attack. Every mistake, a hit taken!"
+  ],
+  "blackout": [
+    "{player} has no strength left to code!",
+    "{player} blacked out..."
+  ],
+  "desk_lab": [
+    "PROF. PI's notes:",
+    "\"CODÉMON love f-strings. To be confirmed.\""
+  ],
+  "pi_welcome": [
+    "PROF. PI: Ah, there you are! Welcome to my lab, at the foot of the TOWER OF CODE!",
+    "PROF. PI: I'm PROF. PI. And this is ZAP, my CODÉMON.",
+    "ZAP: Bzzt! Bzzt!"
+  ],
+  "pi_name_ask": [
+    "PROF. PI: And you, what's your name?"
+  ],
+  "pi_which_codemon": [
+    "PROF. PI: Well done! At the end, you chose a CODÉMON in your code...",
+    "PROF. PI: So, which one did you pick?"
+  ],
+  "pi_egg": [
+    "PROF. PI: Perfect! Look at this egg: it listened to your whole lesson...",
+    "PROF. PI: Oh! It's moving!"
+  ],
+  "pi_hatched": [
+    "PROF. PI: Amazing! It's a {starter}!",
+    "{player} and {starter} are now a team!"
+  ],
+  "pi_test_battle": [
+    "PROF. PI: Let's see what you two can do!",
+    "PROF. PI: A little practice battle: ZAP, go! Answer right to attack, {player}!"
+  ],
+  "pi_battle_won": [
+    "PROF. PI: Excellent! You beat ZAP on your first try!",
+    "PROF. PI: Let me heal {starter}."
+  ],
+  "pi_battle_lost": [
+    "PROF. PI: Not bad at all for a first battle! With a bit of practice, you'll go far.",
+    "PROF. PI: Let me heal {starter}."
+  ],
+  "pi_go_tower": [
+    "PROF. PI: The TOWER OF CODE is just north of town. Each floor is a chapter of PYTHON!",
+    "PROF. PI: If {starter} gets tired, come back to the lab: my assistant will heal it."
+  ],
+  "aide_heal": [
+    "ASSISTANT: Your CODÉMON look tired? I'll take care of them!"
+  ],
+  "aide_healed": [
+    "ASSISTANT: There you go, they're in top shape!",
+    "ASSISTANT: If you ever faint, you'll wake up here, at the lab."
+  ],
+  "zap_talk": [
+    "ZAP: Bzzt! Bzzt bzzt!"
+  ],
+  "table_lab": [
+    "PROF. PI's notes on CODÉMON...",
+    "\"Eggs hatch when you talk to them in PYTHON. Fascinating!\""
+  ],
+  "sign_tower": [
+    "TOWER OF CODE",
+    "One floor, one chapter of PYTHON. At the very top: the end of the course!"
+  ],
+  "sign_student_home": [
+    "THE STUDENT'S HOUSE"
+  ],
+  "neighbour_talk": [
+    "NEIGHBOUR: Hello, {player}! My grandson codes all day long, upstairs.",
+    "NEIGHBOUR: He says that in PYTHON, a line starting with # is a comment: the computer ignores it!"
+  ],
+  "student_talk": [
+    "STUDENT: I'm studying for the TOWER OF CODE!",
+    "STUDENT: The secret is to read the error message to the end. It almost always tells you where the problem is."
+  ],
+  "hall_reception": [
+    "RECEPTION: Welcome to the TOWER OF CODE!",
+    "RECEPTION: The stairs at the back lead to floor 1. Each floor teaches a chapter of PYTHON.",
+    "RECEPTION: Good news: every time you reach a floor, your CODÉMON is back in top shape. Enjoy the climb!"
+  ],
+  "hall_elevator": [
+    "An elevator. It isn't running yet..."
+  ],
+  "hall_banner": [
+    "The banner reads: \"One floor, one chapter. Code, nothing but code.\""
   ]
 }
